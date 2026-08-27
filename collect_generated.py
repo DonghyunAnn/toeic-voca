@@ -9,6 +9,7 @@
 
 import json
 import re
+import sys
 from collections import Counter
 from pathlib import Path
 
@@ -44,6 +45,13 @@ def main():
     need = {wid for wid, w in words.items()
             if not w["examples"] or w["examples"][0].get("generated")}
 
+    # id는 바뀔 수 있다(악센트 접기, 추가 등급의 DAY 이동). 표제어로도 찾을 수
+    # 있게 해두면 그때마다 예문을 다시 만들지 않아도 된다.
+    by_head = {}
+    for wid in need:
+        key = re.sub(r"[^a-z0-9]+", "-", words[wid]["headword"].lower()).strip("-")
+        by_head.setdefault(key, wid)
+
     collected, problems = {}, Counter()
     samples = {"missing_word": [], "no_korean": [], "too_short": [], "too_long": []}
 
@@ -63,6 +71,11 @@ def main():
                 fixed = wid.replace("-x27-", "-")
                 if fixed in words:
                     wid = fixed
+            if wid not in words and wid:
+                # d31-patronage -> patronage 처럼 DAY를 떼고 표제어로 찾는다
+                tail = re.sub(r"^[a-z]?\d*-", "", wid)
+                if tail in by_head:
+                    wid = by_head[tail]
             if wid not in words:
                 problems["unknown_id"] += 1
                 continue
@@ -115,6 +128,10 @@ def main():
                 for s in samples[key][:6]:
                     print(f"    {s}")
 
+    if not collected:
+        # 조각 파일을 옮겨두고 실행하면 기존 예문 수천 개가 통째로 날아간다
+        print("\n수집된 예문이 없습니다. 기존 파일을 그대로 둡니다.")
+        sys.exit(1)
     OUT.write_text(json.dumps(collected, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"\n저장: {OUT} ({len(collected)}개)")
 

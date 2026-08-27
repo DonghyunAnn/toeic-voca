@@ -16,6 +16,7 @@ oversea를 overseas로, credit을 creditor로 잘못 잇는 등 위험만 컸다
 
 import argparse
 import csv
+import unicodedata
 import json
 import re
 from collections import defaultdict
@@ -71,15 +72,21 @@ MEANING_FIXES = {
 }
 
 
+def fold(text):
+    """악센트를 벗겨 ASCII로 눕힌다. résumé와 resume이 다른 단어가 되면 안 된다."""
+    return "".join(c for c in unicodedata.normalize("NFKD", text)
+                   if not unicodedata.combining(c))
+
+
 def slug(headword):
     """id로 쓸 안정적인 키. 재수집·재병합해도 같은 단어는 같은 id를 갖는다."""
-    s = re.sub(r"[^a-z0-9]+", "-", headword.lower()).strip("-")
+    s = re.sub(r"[^a-z0-9]+", "-", fold(headword).lower()).strip("-")
     return s or "x"
 
 
 def norm(headword):
     """비교용 정규화. 하이픈과 슬래시는 공백으로 살려둔다."""
-    s = headword.lower().replace("-", " ").replace("/", " ")
+    s = fold(headword).lower().replace("-", " ").replace("/", " ")
     return re.sub(r"\s+", " ", re.sub(r"[^a-z ]", " ", s)).strip()
 
 
@@ -95,10 +102,11 @@ def variants(headword):
     if br:
         head, alt = br.group(1).strip(), br.group(2).strip()
         out.append(norm(head))
-        out.append(norm(alt))
         parts = head.split()
         if parts:                                  # "fill out[in]" -> "fill in"
             out.append(norm(" ".join(parts[:-1] + [alt])))
+        # 대안만 떼어 키로 쓰면 안 된다. "cast a ballot[vote]"가 'vote'라는
+        # 전혀 다른 단어의 예문을 가져가게 된다.
 
     if "," in headword:
         for piece in headword.split(","):
@@ -302,12 +310,37 @@ def merge(source, kind, audio_out=None):
             word["examples"] = [{"en": gen["en"], "ko": gen["ko"], "generated": True}]
         days[day].append(word)
 
+    # CSV에 대응이 없는 블로그 단어는 버리지 않고 그 DAY에 덧붙인다
+    extras = []
+    for e in blog_entries:
+        if e["matched"]:
+            continue
+        wid = f"d{e['day']:02d}-{slug(e['headword'])}"
+        if wid in seen_ids:
+            continue
+        seen_ids.add(wid)
+        gen = generated.get(wid)
+        days[e["day"]].append({
+            "id": wid,
+            "headword": e["headword"],
+            "senses": e["senses"],
+            # 블로그에도 예문이 없으면 만들어 둔 것을 쓴다
+            "examples": e["examples"] or ([{"en": gen["en"], "ko": gen["ko"], "generated": True}]
+                                          if gen else []),
+            "collocations": e["collocations"],
+            "source": "blog",
+            "tier": tiers.get(tier_key(e["day"], e["headword"]), "core"),
+        })
+        extras.append(f"DAY{e['day']:02d} {e['headword']}")
+
     # 모바일 단어장에서 겹치지 않는 것만 '추가' 등급으로 붙인다.
     # 발음이 없으므로 기존 DAY에 섞지 않고 DAY 31부터 따로 둔다.
     known = {norm(w["headword"]) for v in days.values() for w in v}
     extra_titles = {}
     for e in load_extra(known):
-        wid = f"d{e['day']:02d}-{slug(e['headword'])}"
+        # DAY를 id에 넣지 않는다. 추가 등급의 DAY는 목록 내 위치로 정해지므로
+        # 한 단어만 늘거나 줄어도 뒤가 전부 밀려 id가 통째로 바뀐다.
+        wid = f"x-{slug(e['headword'])}"
         if wid in seen_ids:
             continue
         seen_ids.add(wid)
@@ -325,26 +358,6 @@ def merge(source, kind, audio_out=None):
             "rank": e["rank"],
         })
         extra_titles[e["day"]] = True
-
-    # CSV에 대응이 없는 블로그 단어는 버리지 않고 그 DAY에 덧붙인다
-    extras = []
-    for e in blog_entries:
-        if e["matched"]:
-            continue
-        wid = f"d{e['day']:02d}-{slug(e['headword'])}"
-        if wid in seen_ids:
-            continue
-        seen_ids.add(wid)
-        days[e["day"]].append({
-            "id": wid,
-            "headword": e["headword"],
-            "senses": e["senses"],
-            "examples": e["examples"],
-            "collocations": e["collocations"],
-            "source": "blog",
-            "tier": tiers.get(tier_key(e["day"], e["headword"]), "core"),
-        })
-        extras.append(f"DAY{e['day']:02d} {e['headword']}")
 
     blog_titles = {d["day"]: d["title"] for d in blog_data["days"]}
     blog_titles.update({d: f"독종반 추가 어휘 ({d - 30})" for d in extra_titles})
