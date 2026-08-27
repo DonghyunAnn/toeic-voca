@@ -136,7 +136,9 @@ const Store = {
         this.data = {
           ...structuredClone(DEFAULTS),
           ...parsed,
-          settings: { ...DEFAULTS.settings, ...(parsed.settings || {}) },
+          settings: { ...DEFAULTS.settings,
+                      ...(parsed.settings && typeof parsed.settings === 'object'
+                          && !Array.isArray(parsed.settings) ? parsed.settings : {}) },
           words: parsed.words || {},
           days: parsed.days || {},
         };
@@ -435,7 +437,11 @@ function renderHome() {
   $('#stat-total').textContent = total.toLocaleString();
 
   const boxes = [0, 0, 0, 0, 0];
-  for (const r of Object.values(Store.data.words)) boxes[r.box - 1]++;
+  for (const r of Object.values(Store.data.words)) {
+    // 저장소가 손상돼 박스가 범위를 벗어나도 분포가 NaN이 되지 않게 한다
+    const b = Math.min(MAX_BOX, Math.max(1, Number(r.box) || 1));
+    boxes[b - 1]++;
+  }
   $('#boxbar').innerHTML = boxes.map((n, i) =>
     `<div><b>${n}</b><span>박스 ${i + 1}</span></div>`).join('');
 
@@ -513,8 +519,10 @@ function renderStudy() {
     if (s) saveSession();
 
     const day = s && s.dayFilter;
+    const nothing = !s || !s.queue.length;
     $('#study-done-title').textContent =
-      s && s.mode === 'learned' ? '복습 완료'
+      nothing ? '볼 단어가 없습니다'
+      : s.mode === 'learned' ? '복습 완료'
       : day ? `DAY ${String(day).padStart(2, '0')} 완료` : '오늘 학습 완료';
     $('#study-done-sub').textContent = s && s.graded
       ? `${s.graded}번 채점했습니다` +
@@ -522,11 +530,11 @@ function renderStudy() {
       : '오늘 볼 단어가 없습니다. 홈에서 DAY를 누르면 기한과 상관없이 다시 볼 수 있습니다.';
 
     // 바로 다음 DAY로 넘어갈 수 있게 한다. 홈까지 갔다 오지 않아도 된다.
-    const next = day ? State.days.find(d => d.day === day + 1) : null;
+    const next = day && !nothing ? State.days.find(d => d.day === day + 1) : null;
     const nextBtn = $('#study-next-day');
     nextBtn.hidden = !next;
     if (next) nextBtn.textContent = `DAY ${String(next.day).padStart(2, '0')} 시작`;
-    $('#study-again').hidden = !day;
+    $('#study-again').hidden = !day || nothing;
 
     $('#study-progress').style.width = '100%';
     $('#study-counter').textContent = s ? `${s.graded}/${s.queue.length}` : '0/0';
@@ -620,7 +628,17 @@ function prevCard() {
     else delete Store.data.words[id];
     delete s.undo[s.index];
     s.graded = Math.max(0, s.graded - 1);
-    if (s.retries[id]) s.retries[id]--;      // 재출제 횟수도 되돌린다
+
+    // 채점 때 큐 뒤에 다시 넣었던 카드가 있으면 그것도 걷어낸다.
+    // 그러지 않으면 되돌린 뒤에도 중복이 남아 다시 나온다.
+    if (s.retries[id]) {
+      s.retries[id]--;
+      const dup = s.queue.lastIndexOf(s.queue[s.index], s.queue.length - 1);
+      if (dup > s.index) {
+        s.queue.splice(dup, 1);
+        s.relearn = Math.max(0, (s.relearn || 0) - 1);
+      }
+    }
   }
   saveSession();
   renderStudy();
@@ -921,12 +939,22 @@ function importProgress(file) {
   const reader = new FileReader();
   reader.onload = () => {
     try {
-      const parsed = JSON.parse(reader.result);
-      if (!parsed || typeof parsed.words !== 'object') throw new Error('형식이 올바르지 않습니다');
+      let parsed;
+      try {
+        parsed = JSON.parse(reader.result);
+      } catch {
+        throw new Error('JSON 파일이 아닙니다');
+      }
+      if (!parsed || typeof parsed.words !== 'object' || parsed.words === null
+          || Array.isArray(parsed.words)) {
+        throw new Error('이 앱에서 내보낸 파일이 아닙니다');
+      }
       Store.data = {
         ...structuredClone(DEFAULTS),
         ...parsed,
-        settings: { ...DEFAULTS.settings, ...(parsed.settings || {}) },
+        settings: { ...DEFAULTS.settings,
+                    ...(parsed.settings && typeof parsed.settings === 'object'
+                        && !Array.isArray(parsed.settings) ? parsed.settings : {}) },
       };
       Store.save();
       renderAll();
@@ -941,6 +969,7 @@ function importProgress(file) {
 /* ── 라우팅 ───────────────────────────────────────── */
 
 function navigate(view) {
+  if (typeof Sheet !== 'undefined') Sheet.close();
   State.view = view;
   for (const v of $$('.view')) v.classList.toggle('on', v.dataset.view === view);
   for (const b of $$('#tabbar button')) b.classList.toggle('on', b.dataset.nav === view);
