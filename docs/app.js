@@ -3,7 +3,7 @@
 /* ── 상수 ─────────────────────────────────────────── */
 
 const STORAGE_KEY = 'toeic-voca-progress';
-const BOX_INTERVALS = { 1: 1, 2: 2, 3: 4, 4: 7, 5: 15 };  // 박스 -> 며칠 뒤
+const BOX_INTERVALS = { 1: 1, 2: 2, 3: 4, 4: 8, 5: 16 };  // 고전 Leitner (2배씩)
 const MAX_BOX = 5;
 const LIST_PAGE = 80;
 const RELEARN_GAP = 5;   // '모름' 카드를 몇 장 뒤에 다시 넣을지
@@ -252,7 +252,7 @@ const Scheduler = {
   },
 
   grade(id, result) {
-    const due = this.isDue(id);
+    const due = this.isDue(id) || result === 'known';
     const rec = Store.ensure(id);
     const today = todayISO();
 
@@ -261,6 +261,12 @@ const Scheduler = {
       rec.box = 1;
       rec.wrong++;
       rec.due = addDays(today, BOX_INTERVALS[1]);
+    } else if (result === 'known') {
+      // 원래 알던 단어. 한 칸씩 올리며 한 달을 쓰는 대신 바로 마지막 박스로 보낸다.
+      // 완전히 빼지는 않는다. 정말 아는지 한 번은 확인해야 한다.
+      rec.box = MAX_BOX;
+      rec.correct++;
+      rec.due = addDays(today, BOX_INTERVALS[MAX_BOX]);
     } else if (!due) {
       // 기한 전에 미리 본 것. 맞혔다고 간격을 늘리면 박스가 거짓말을 한다.
       // 하루 간격으로 떠올린 것을 근거로 15일 뒤를 장담할 수는 없다.
@@ -540,6 +546,8 @@ function flipCard() {
   const w = s.queue[s.index];
   const early = !Scheduler.isDue(w.id);
   $('#grade-note').hidden = !early;
+  // 이미 마지막 박스에 있으면 '이미 앎'은 의미가 없다
+  $('[data-grade="known"]').disabled = (Store.record(w.id) || {}).box === 5;
   if (Store.settings.autoplay && directionFor(w.id) === 'ko2en') Audio_.play(w.audio);
 }
 

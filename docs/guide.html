@@ -171,12 +171,13 @@ footer a { color:inherit; }
     <div><b>1</b><span>1일 뒤</span></div>
     <div><b>2</b><span>2일 뒤</span></div>
     <div><b>3</b><span>4일 뒤</span></div>
-    <div><b>4</b><span>7일 뒤</span></div>
-    <div><b>5</b><span>15일 뒤</span></div>
+    <div><b>4</b><span>8일 뒤</span></div>
+    <div><b>5</b><span>16일 뒤</span></div>
   </div>
+  <p class="hint" style="margin-top:0">간격이 2배씩 늘어납니다. 고전 Leitner 방식 그대로입니다.</p>
   <p>규칙은 한 줄입니다. <strong>맞히면 다음 상자로 올라가고, 틀리면 1번으로 떨어집니다.</strong></p>
   <p>모르는 단어는 예외입니다. <b>모름</b>을 누르면 상자가 1번으로 떨어지는 동시에 <strong>지금 이 세션에서 몇 장 뒤에 다시 나옵니다.</strong> 될 때까지 그 자리에서 반복하는 편이 자연스럽기 때문입니다.</p>
-  <p>예를 들어 <code>aisle</code>을 오늘 처음 맞히면 2번 상자에 들어가 <b>이틀 뒤</b>에 다시 나옵니다. 그때도 맞히면 3번으로 올라가 <b>나흘 뒤</b>, 또 맞히면 <b>일주일 뒤</b>. 반대로 5번 상자에 있던 단어라도 한 번 틀리면 1번으로 돌아가 <b>내일 다시</b> 나옵니다.</p>
+  <p>예를 들어 <code>aisle</code>을 오늘 처음 맞히면 2번 상자에 들어가 <b>이틀 뒤</b>에 다시 나옵니다. 그때도 맞히면 3번으로 올라가 <b>나흘 뒤</b>, 또 맞히면 <b>여드레 뒤</b>. 이렇게 가면 <strong>30일째에 5번 상자에 도달</strong>합니다. 반대로 5번 상자에 있던 단어라도 한 번 틀리면 1번으로 돌아가 <b>내일 다시</b> 나옵니다.</p>
   <div class="note">
     <b>왜 이렇게 하나요</b>
     아는 단어를 매일 다시 보는 건 시간 낭비이고, 모르는 단어를 일주일 뒤에 보면 이미 잊어버립니다. 상자는 그 사이를 자동으로 맞춰줍니다. 잘 아는 단어일수록 뜸하게, 헷갈리는 단어일수록 자주 나옵니다.
@@ -188,7 +189,7 @@ footer a { color:inherit; }
   <p>대신 <b>설정 → 하루에 배울 새 단어</b>로 새로 꺼내는 양만 조절합니다. 새 단어는 며칠 뒤 복습으로 돌아오므로, 오늘 많이 넣으면 그만큼 나중에 몰립니다.</p>
   <table>
     <tr><th>하루 새 단어</th><th>2주 뒤 하루 복습량</th><th>3,159개 완주</th></tr>
-    <tr><td>10개</td><td>약 33장</td><td>315일</td></tr>
+    <tr><td>10개</td><td>약 30장</td><td>315일</td></tr>
     <tr><td>20개</td><td>약 74장</td><td>157일</td></tr>
     <tr><td>50개</td><td>약 195장</td><td>63일</td></tr>
     <tr><td>100개</td><td>약 372장</td><td>31일</td></tr>
@@ -274,6 +275,12 @@ footer a { color:inherit; }
     <div class="key again"><span class="b">모름</span><span class="d">뜻이 아예 떠오르지 않았다 → 1번 상자로. <b>몇 장 뒤에 이 세션에서 다시 나오고</b>, 내일도 나옵니다.</span></div>
     <div class="key hard"><span class="b">애매</span><span class="d">보고 나서야 &lsquo;아 맞다&rsquo; 했다 → 상자 유지. 같은 간격으로 다시 나옵니다.</span></div>
     <div class="key good"><span class="b">안다</span><span class="d">바로 떠올랐다 → 다음 상자로. 간격이 늘어납니다.</span></div>
+    <div class="key"><span class="b" style="font-size:.8125rem">이미 앎</span><span class="d">원래 알던 단어라 공부할 필요가 없다 → <b>한 번에 5번 상자로</b>. 16일 뒤에 한 번만 확인합니다.</span></div>
+  </div>
+  <div class="note">
+    <b>&lsquo;이미 앎&rsquo;을 아끼지 마세요</b>
+    4,192개 안에는 <code>hospital</code>, <code>restaurant</code>처럼 이미 아는 단어가 꽤 섞여 있습니다. 이것들을 <b>안다</b>로만 넘기면 상자를 한 칸씩 오르느라 <b>30일 동안 네 번</b> 더 봐야 합니다.<br><br>
+    <b>이미 앎</b>으로 한 번에 치우면 그 자리가 모르는 단어로 채워집니다. 짧은 기간에 많이 보려면 이게 가장 큰 차이를 만듭니다. 이미 5번 상자에 있는 단어에서는 버튼이 꺼집니다.
   </div>
   <p>뒷면에는 뜻, 예문과 해석, 그리고 <b>연어</b>가 나옵니다. 연어는 그 단어가 실제로 자주 붙어 쓰이는 표현입니다 — <code>hold a booklet</code>, <code>hold onto a railing</code>처럼요. 시험에서는 단어 하나보다 이 덩어리가 통째로 나옵니다.</p>
   <h3>앞뒤로 오가기</h3>
