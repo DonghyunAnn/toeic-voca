@@ -249,7 +249,6 @@ button { background: none; border: 0; cursor: pointer; }
   color: var(--muted-fg); z-index: 2;
 }
 .speak:active { background: var(--accent); color: var(--fg); }
-.speak.playing { color: var(--fg); }
 .back .head .speak { position: static; width: 1.75rem; height: 1.75rem; margin-left: auto; }
 .back .head .speak .ico { width: 1.0625rem; height: 1.0625rem; }
 .word-item .speak { position: static; width: 1.5rem; height: 1.5rem; flex: none; }
@@ -295,7 +294,7 @@ button { background: none; border: 0; cursor: pointer; }
 
 .empty { text-align: center; padding: 4rem 1rem; }
 .empty-title { font-size: 1.125rem; font-weight: 600; margin-bottom: .375rem; }
-.empty .btn { margin-top: 1.25rem; }
+.empty > .btn { margin-top: 1.25rem; }
 
 /* ── 목록 ─────────────────────────────────────────── */
 
@@ -371,8 +370,6 @@ button { background: none; border: 0; cursor: pointer; }
 }
 .segmented button.on { background: var(--card); color: var(--fg); font-weight: 600; box-shadow: 0 1px 2px rgb(0 0 0 / .06); }
 
-.segmented.compact { margin-top: .75rem; }
-.segmented.compact button { height: 1.75rem; font-size: .75rem; }
 .word-item .tier {
   font-size: .625rem; color: var(--muted-fg);
   border: 1px solid var(--border); border-radius: 999px;

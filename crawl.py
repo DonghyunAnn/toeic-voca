@@ -178,7 +178,7 @@ def parse_entry(line):
 
 
 def stem_of(headword):
-    """연어 판별용 어간. 'arrange' -> 'arran', 'hold' -> 'hold'"""
+    """연어·예문 판별용 어간. 'arrange' -> 'arran', 'hold' -> 'hold'"""
     first = headword.lower().split()[0]
     return first[:max(4, len(first) - 2)]
 
@@ -200,12 +200,74 @@ def is_rich_format(lines):
     return marked >= 10
 
 
-def looks_like_collocation(head_raw, has_pos, current, rich):
+def looks_like_collocation(head_raw, has_pos, current, rich, next_line):
+    """마커 없는 '영어 + 한글' 줄이 연어인지 새 표제어인지 가른다.
+
+    가장 확실한 단서는 다음 줄이다. 표제어 뒤에는 영어 예문이 오고,
+    연어 뒤에는 또 다른 연어나 새 표제어(둘 다 한글을 포함)가 온다.
+    이것 없이 'DAY가 마커를 쓰면 다단어는 연어'로만 판정하면
+    power outage 같은 다단어 표제어를 연어로 삼켜 그 예문까지 잃는다.
+    """
     if current is None or has_pos:
         return False
     if len(head_raw.split()) < 2:
         return False                     # 한 단어짜리는 언제나 새 표제어
+    if next_line is not None and not HANGUL.search(next_line):
+        return False                     # 다음 줄이 영어 문장 = 이 줄은 표제어
     return rich
+
+
+def example_fits(headword, sentence):
+    """이 문장이 이 표제어의 예문으로 보이는가.
+
+    다섯 자 이상인 단어만 따진다. lie/wave/take 같은 짧은 단어는 lying, waving,
+    taking처럼 활용이 심해서 어간으로 걸러내면 멀쩡한 예문을 버리게 된다.
+    긴 단어는 활용해도 앞부분이 남으므로 어간 포함 여부로 판별할 수 있다.
+    """
+    base = re.sub(r"\[.*?\]|\(.*?\)", " ", headword.lower())
+    tokens = [t for t in re.split(r"[^a-z]+", base) if len(t) >= 5]
+    if not tokens:
+        return True                       # 판단이 어려우면 남긴다
+
+    flat = re.sub(r"[^a-z]", "", sentence.lower())
+    for t in tokens:
+        stems = {t, t[:-1] if t.endswith("e") else t}
+        if t.endswith("y"):
+            stems.add(t[:-1])
+        if len(t) > 5 and t[-1] == t[-2]:      # running -> run
+            stems.add(t[:-1])
+        if any(st[:max(4, len(st) - 1)] in flat for st in stems):
+            return True
+    return False
+
+
+def tidy_examples(word):
+    """쪼개진 문장을 잇고 표제어와 무관한 줄을 버린다.
+
+    블로그 본문은 긴 문장을 줄바꿈으로 접어 놓아서 한 문장이 두세 조각으로
+    들어온다("the old iron pipes will be" + "replaced with durable plastic pipes").
+    소문자로 시작하는 조각은 앞줄의 이어짐으로 본다.
+
+    질의응답 DAY는 문답이 두 줄로 오는데, 답변 줄에는 표제어가 없다.
+    그런 줄은 그 단어의 예문이 아니므로 버린다.
+    """
+    exs = word["examples"]
+    if not exs:
+        return
+
+    merged = []
+    for e in exs:
+        if merged and re.match(r"^[a-z]", e["en"]) and not re.match(r"^[AB]\s*:", e["en"]):
+            prev = merged[-1]
+            prev["en"] = prev["en"].rstrip() + " " + e["en"].lstrip()
+            if e["ko"] and not prev["ko"]:
+                prev["ko"] = e["ko"]
+        else:
+            merged.append(e)
+
+    keep = [e for e in merged if example_fits(word["headword"], e["en"])]
+    # 하나도 안 남으면 원래 첫 줄이라도 남긴다
+    word["examples"] = keep or merged[:1]
 
 
 def parse_words(lines, day):
@@ -214,8 +276,9 @@ def parse_words(lines, day):
     current = None
     rich = is_rich_format(lines)
 
-    for line in lines:
+    for idx, line in enumerate(lines):
         has_ko = bool(HANGUL.search(line))
+        next_line = lines[idx + 1] if idx + 1 < len(lines) else None
 
         if not has_ko:
             if current is None:
@@ -245,7 +308,7 @@ def parse_words(lines, day):
             continue
 
         head_raw, senses = entry
-        if looks_like_collocation(head_raw, senses[0]["pos"], current, rich):
+        if looks_like_collocation(head_raw, senses[0]["pos"], current, rich, next_line):
             en, ko = split_bilingual(line)
             current["collocations"].append({"en": en, "ko": ko})
             continue
@@ -259,6 +322,8 @@ def parse_words(lines, day):
         }
         words.append(current)
 
+    for w in words:
+        tidy_examples(w)
     return words, orphans
 
 
@@ -384,6 +449,16 @@ def main():
     if not days:
         print("수집된 데이터 없음. 저장하지 않음.")
         sys.exit(1)
+
+    # 일부 DAY만 수집한 결과로 전체 파일을 덮으면 나머지 DAY가 통째로 사라진다.
+    # 기존 파일이 더 많은 DAY를 갖고 있으면 그쪽을 살려 합친다.
+    if OUT_PATH.exists():
+        old = json.loads(OUT_PATH.read_text(encoding="utf-8")).get("days", [])
+        fresh = {d["day"] for d in days}
+        kept = [d for d in old if d["day"] not in fresh]
+        if kept:
+            print(f"기존 파일의 DAY {len(kept)}개를 유지하고 합칩니다.")
+            days = sorted(days + kept, key=lambda d: d["day"])
 
     payload = {
         "meta": {

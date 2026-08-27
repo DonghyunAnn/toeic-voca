@@ -388,7 +388,7 @@ function inScope(words) {
 
 const TIER_LABEL = { core: '필수', bonus: '만점', extra: '추가' };
 
-const meaningText = w => w.senses.map(s => s.meaning).join('; ');
+const meaningText = w => [...new Set(w.senses.map(s => s.meaning))].join('; ');
 const posText = w => w.senses.map(s => s.pos).filter(Boolean).join(' ');
 
 /** 이 카드를 어느 방향으로 낼지 결정한다. */
@@ -472,10 +472,9 @@ function renderHome() {
   $('#stat-total').textContent = total.toLocaleString();
 
   const boxes = [0, 0, 0, 0, 0];
-  for (const r of Object.values(Store.data.words)) {
-    // 저장소가 손상돼 박스가 범위를 벗어나도 분포가 NaN이 되지 않게 한다
-    const b = Math.min(MAX_BOX, Math.max(1, Number(r.box) || 1));
-    boxes[b - 1]++;
+  for (const w of scoped) {
+    const r = Store.record(w.id);
+    if (r) boxes[clampBox(r.box) - 1]++;   // 통계와 같은 범위를 쓴다
   }
   $('#boxbar').innerHTML = boxes.map((n, i) =>
     `<div><b>${n}</b><span>박스 ${i + 1}</span></div>`).join('');
@@ -627,7 +626,7 @@ function flipCard() {
   const early = !Scheduler.isDue(w.id);
   $('#grade-note').hidden = !early;
   // 이미 마지막 박스에 있으면 '이미 앎'은 의미가 없다
-  $('[data-grade="known"]').disabled = (Store.record(w.id) || {}).box === 5;
+  $('[data-grade="known"]').disabled = Store.record(w.id) && clampBox(Store.record(w.id).box) >= MAX_BOX;
   if (Store.settings.autoplay && directionFor(w.id) === 'ko2en') Audio_.play(w.audio);
 }
 
@@ -811,13 +810,21 @@ function buildQuestion(word, pool) {
   const dir = directionFor(word.id);
   const answer = dir === 'en2ko' ? meaningText(word) : word.headword;
 
-  const sameDay = (State.byDay.get(word.day) || []).filter(w => w.id !== word.id);
+  // 오답 선택지도 지금 범위 안에서만 뽑는다
+  const sameDay = inScope(State.byDay.get(word.day) || []).filter(w => w.id !== word.id);
   const others = shuffle(sameDay.length >= 3 ? sameDay : pool.filter(w => w.id !== word.id));
 
   const seen = new Set([answer]);
+  const meaningSeen = new Set([meaningText(word)]);
   const distractors = [];
   for (const w of others) {
     const t = dir === 'en2ko' ? meaningText(w) : w.headword;
+    // 한->영에서는 뜻이 같은 단어가 섞이면 정답이 둘이 된다
+    if (dir === 'ko2en') {
+      const m = meaningText(w);
+      if (meaningSeen.has(m)) continue;
+      meaningSeen.add(m);
+    }
     if (seen.has(t)) continue;
     seen.add(t);
     distractors.push(t);
@@ -834,7 +841,7 @@ function buildQuestion(word, pool) {
 
 /** 문항 수. 직접 입력한 값이 있으면 그것을, 없으면 고른 버튼을 쓴다. */
 function quizLength(poolSize) {
-  const typed = Number($('#quiz-count').value);
+  const typed = Math.floor(Number($('#quiz-count').value));
   if (Number.isFinite(typed) && typed >= 4) return Math.min(typed, poolSize);
   const preset = Number(($('#quiz-length button.on') || {}).dataset?.len ?? 10);
   return preset > 0 ? Math.min(preset, poolSize) : poolSize;
@@ -1028,7 +1035,7 @@ function importProgress(file) {
 /* ── 라우팅 ───────────────────────────────────────── */
 
 function navigate(view) {
-  if (typeof Sheet !== 'undefined') Sheet.close();
+  Sheet.close();
   State.view = view;
   for (const v of $$('.view')) v.classList.toggle('on', v.dataset.view === view);
   for (const b of $$('#tabbar button')) b.classList.toggle('on', b.dataset.nav === view);
@@ -1053,9 +1060,14 @@ function renderAll() {
  *  바로 초기화해버리면 실수로 진도를 날릴 수 있다. */
 const Sheet = {
   day: null,
+  openedAt: 0,
 
   open(day) {
     this.day = day;
+    // 손을 떼는 순간 브라우저가 mousedown/mouseup/click을 만들어 보내는데,
+    // 그때는 이미 시트가 열려 있어 그 클릭이 시트 버튼 위에 떨어진다.
+    // 스크롤 위치에 따라 '진도 초기화'가 눌려 확인 없이 진도가 날아간다.
+    this.openedAt = Date.now();
     const words = State.byDay.get(day) || [];
     const done = words.filter(w => Store.record(w.id)).length;
     $('#sheet-title').textContent = `DAY ${String(day).padStart(2, '0')}`;
@@ -1070,6 +1082,7 @@ const Sheet = {
   },
 
   run(action) {
+    if (Date.now() - this.openedAt < 500) return;   // 손 떼며 생긴 유령 클릭
     const day = this.day;
     this.close();
     if (!day) return;
@@ -1080,6 +1093,9 @@ const Sheet = {
       return navigate('list');
     }
     if (action === 'reset') {
+      const words = State.byDay.get(day) || [];
+      const done = words.filter(w => Store.record(w.id)).length;
+      if (!confirm(`DAY ${String(day).padStart(2, '0')}의 진도 ${done}개를 지웁니다. 계속할까요?`)) return;
       const n = Store.resetDay(day);
       renderHome();
       toast(`DAY ${String(day).padStart(2, '0')} 진도 ${n}개를 지웠습니다`);
@@ -1115,6 +1131,7 @@ function bindLongPress() {
   }
 
   $('#sheet').addEventListener('click', e => {
+    if (Date.now() - Sheet.openedAt < 500) return;  // 유령 클릭은 닫기도 막는다
     if (e.target.closest('[data-sheet-close]')) return Sheet.close();
     const item = e.target.closest('[data-sheet]');
     if (item) Sheet.run(item.dataset.sheet);

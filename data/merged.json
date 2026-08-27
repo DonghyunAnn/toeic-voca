@@ -6,17 +6,17 @@
   "crawledAt": "2026-08-27",
   "mergedAt": "2026-08-27",
   "dayCount": 40,
-  "wordCount": 4192,
-  "withExample": 4192,
+  "wordCount": 4196,
+  "withExample": 4195,
   "withAudio": 3155,
-  "coreCount": 1666,
+  "coreCount": 1670,
   "extraCount": 1033,
   "sources": {
    "core": "ETS 토익 기출 보카 (공식 교재)",
    "bonus": "ETS 토익 기출 보카 (공식 교재)",
    "extra": "독종반 모바일 단어장"
   },
-  "generatedExamples": 2607
+  "generatedExamples": 2537
  },
  "days": [
   {
@@ -466,22 +466,9 @@
       {
        "en": "A pedestrian bridge overlooks the water",
        "ko": "보도교가 강을 내려다보고 있다"
-      },
-      {
-       "en": "Skysrapers overlook a highway",
-       "ko": "고층 건물이 고속도로를 내려다보고 있다"
-      },
-      {
-       "en": "A moument overlooks a walkaway",
-       "ko": "기념비가 보도를 내려다보고 있다"
       }
      ],
-     "collocations": [
-      {
-       "en": "overlook a canal",
-       "ko": "운하"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-e149d7aa3903aa1d05123498419e10a2593514ad27f14c557362e1e2.mp3",
      "tier": "core"
@@ -2635,6 +2622,29 @@
      "source": "deck",
      "audio": "hypertts-dcdb1700cc023ca184851b5b8532106700fccaaf24c9f0191cd1307e.mp3",
      "tier": "bonus"
+    },
+    {
+     "id": "d01-overlook-a-canal",
+     "headword": "overlook a canal",
+     "senses": [
+      {
+       "pos": null,
+       "meaning": "운하"
+      }
+     ],
+     "examples": [
+      {
+       "en": "Skysrapers overlook a highway",
+       "ko": "고층 건물이 고속도로를 내려다보고 있다"
+      },
+      {
+       "en": "A moument overlooks a walkaway",
+       "ko": "기념비가 보도를 내려다보고 있다"
+      }
+     ],
+     "collocations": [],
+     "source": "blog",
+     "tier": "core"
     }
    ]
   },
@@ -4897,10 +4907,6 @@
       {
        "en": "A: Who is responsible for filing the invoices?",
        "ko": null
-      },
-      {
-       "en": "B: The executive secretary",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -4921,10 +4927,6 @@
       {
        "en": "A: Is technical support available 24 hours a day?",
        "ko": null
-      },
-      {
-       "en": "B: Yes, through our website",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -4944,10 +4946,6 @@
      "examples": [
       {
        "en": "Our utility bill is a lot higher this month, isn't it?",
-       "ko": null
-      },
-      {
-       "en": "The company raised its rates",
        "ko": null
       }
      ],
@@ -4972,10 +4970,6 @@
      "examples": [
       {
        "en": "The tailor repaired the hole in my coat sleeve",
-       "ko": null
-      },
-      {
-       "en": "Hh how much did it cost?",
        "ko": null
       }
      ],
@@ -5025,10 +5019,6 @@
       {
        "en": "What's the status of the recordingcontract?",
        "ko": null
-      },
-      {
-       "en": "I'm still waiting to hear",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -5052,10 +5042,6 @@
      "examples": [
       {
        "en": "Have you signed up to access your medical records online",
-       "ko": null
-      },
-      {
-       "en": "It's not a requirement, does it?",
        "ko": null
       }
      ],
@@ -5081,10 +5067,6 @@
       {
        "en": "Why does the shuttle bus leave so early?",
        "ko": null
-      },
-      {
-       "en": "To avoid the heavy traffic",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -5104,10 +5086,6 @@
      "examples": [
       {
        "en": "You're going to the morning training session today, aren't you?",
-       "ko": null
-      },
-      {
-       "en": "It's mandatory, isn't it?",
        "ko": null
       }
      ],
@@ -5129,10 +5107,6 @@
       {
        "en": "Several of us are trying to organize a book club",
        "ko": null
-      },
-      {
-       "en": "Can anyone join it?",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -5150,10 +5124,6 @@
       }
      ],
      "examples": [
-      {
-       "en": "Can you shorten this letter so it fits on one page?",
-       "ko": null
-      },
       {
        "en": "Okay I'll revise it within the hour",
        "ko": null
@@ -5201,10 +5171,6 @@
       {
        "en": "Can I borrow a sweater?",
        "ko": null
-      },
-      {
-       "en": "I can turn up the heat",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -5228,10 +5194,6 @@
      "examples": [
       {
        "en": "Who's in charge of stocking the supply closet?",
-       "ko": null
-      },
-      {
-       "en": "Oh we take turns",
        "ko": null
       }
      ],
@@ -5257,10 +5219,6 @@
       {
        "en": "When will you hear back about your interview",
        "ko": null
-      },
-      {
-       "en": "In a week or so",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -5278,10 +5236,6 @@
       }
      ],
      "examples": [
-      {
-       "en": "Where should I sign this form?",
-       "ko": null
-      },
       {
        "en": "At the bottom of page seven",
        "ko": null
@@ -5305,10 +5259,6 @@
       {
        "en": "Do you prefer the window or aisle seat?",
        "ko": null
-      },
-      {
-       "en": "Either is fine with me",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -5328,10 +5278,6 @@
      "examples": [
       {
        "en": "has your boss approved your transfer yet?",
-       "ko": null
-      },
-      {
-       "en": "I just put in the request",
        "ko": null
       }
      ],
@@ -5355,11 +5301,7 @@
      ],
      "examples": [
       {
-       "en": "why am I getting two copies of this document",
-       "ko": null
-      },
-      {
-       "en": "because you need one for your files",
+       "en": "why am I getting two copies of this document because you need one for your files",
        "ko": null
       }
      ],
@@ -5385,10 +5327,6 @@
       {
        "en": "Shouldn't we order some more photocopier paper?",
        "ko": null
-      },
-      {
-       "en": "Yes we're running out",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -5407,11 +5345,7 @@
      ],
      "examples": [
       {
-       "en": "Have you reviewed Miss Chen's sales projections or should I go over them?",
-       "ko": null
-      },
-      {
-       "en": "no I'll look at them later",
+       "en": "Have you reviewed Miss Chen's sales projections or should I go over them? no I'll look at them later",
        "ko": null
       }
      ],
@@ -5435,11 +5369,7 @@
      ],
      "examples": [
       {
-       "en": "Did you contact a mechanic",
-       "ko": null
-      },
-      {
-       "en": "yes someone's coming tomorrow",
+       "en": "Did you contact a mechanic yes someone's coming tomorrow",
        "ko": null
       }
      ],
@@ -5463,11 +5393,7 @@
      ],
      "examples": [
       {
-       "en": "you gave the customers the bill didn't",
-       "ko": null
-      },
-      {
-       "en": "you hasn't the payment arrived yet",
+       "en": "you gave the customers the bill didn't you hasn't the payment arrived yet",
        "ko": null
       }
      ],
@@ -5487,11 +5413,7 @@
      ],
      "examples": [
       {
-       "en": "who will be going to the exposition this year",
-       "ko": null
-      },
-      {
-       "en": "several of our colleagues",
+       "en": "who will be going to the exposition this year several of our colleagues",
        "ko": null
       }
      ],
@@ -5515,11 +5437,7 @@
      ],
      "examples": [
       {
-       "en": "Did you submit the expense reports",
-       "ko": null
-      },
-      {
-       "en": "there's a lot of data to review",
+       "en": "Did you submit the expense reports there's a lot of data to review",
        "ko": null
       }
      ],
@@ -5543,11 +5461,7 @@
      ],
      "examples": [
       {
-       "en": "How much does it cost to rent this retail space",
-       "ko": null
-      },
-      {
-       "en": "the fee is two hundred dollars",
+       "en": "How much does it cost to rent this retail space the fee is two hundred dollars",
        "ko": null
       }
      ],
@@ -5591,11 +5505,7 @@
      ],
      "examples": [
       {
-       "en": "you already proofread those rental agreements didn't you?",
-       "ko": null
-      },
-      {
-       "en": "yes and they looked fine",
+       "en": "you already proofread those rental agreements didn't you? yes and they looked fine",
        "ko": null
       }
      ],
@@ -5617,10 +5527,6 @@
       {
        "en": "Who's chairing the committee?",
        "ko": null
-      },
-      {
-       "en": "The marketing directo",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -5639,11 +5545,7 @@
      ],
      "examples": [
       {
-       "en": "Why is the company planning to hire a",
-       "ko": null
-      },
-      {
-       "en": "new receptionist because Carlos is retiring soon",
+       "en": "Why is the company planning to hire a new receptionist because Carlos is retiring soon",
        "ko": null
       }
      ],
@@ -5663,11 +5565,7 @@
      ],
      "examples": [
       {
-       "en": "how long will the outdoor Festival last",
-       "ko": null
-      },
-      {
-       "en": "let's check the flyer",
+       "en": "how long will the outdoor Festival last let's check the flyer",
        "ko": null
       }
      ],
@@ -5687,11 +5585,7 @@
      ],
      "examples": [
       {
-       "en": "how can we meet the project deadline",
-       "ko": null
-      },
-      {
-       "en": "we'll have to work extra hours",
+       "en": "how can we meet the project deadline we'll have to work extra hours",
        "ko": null
       }
      ],
@@ -5711,11 +5605,7 @@
      ],
      "examples": [
       {
-       "en": "Wasn't the office furniture shipped last month?",
-       "ko": null
-      },
-      {
-       "en": "the delivery is being delayed",
+       "en": "Wasn't the office furniture shipped last month? the delivery is being delayed",
        "ko": null
       }
      ],
@@ -5813,10 +5703,6 @@
       {
        "en": "Should I submit my first draft or only the final version",
        "ko": null
-      },
-      {
-       "en": "Send what you have now",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -5834,10 +5720,6 @@
       }
      ],
      "examples": [
-      {
-       "en": "Should I start working on the Danielson project now?",
-       "ko": null
-      },
       {
        "en": "It depends on your other deadlines",
        "ko": null
@@ -5865,10 +5747,6 @@
       {
        "en": "Why has there been a delay in shipping these orders?",
        "ko": null
-      },
-      {
-       "en": "Because we ran out of packing materials",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -5893,10 +5771,6 @@
       {
        "en": "Where can I put these extra cleaning supplies?",
        "ko": null
-      },
-      {
-       "en": "In the storage room is fine",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -5914,10 +5788,6 @@
       }
      ],
      "examples": [
-      {
-       "en": "Do you mind if I leave early today?",
-       "ko": null
-      },
       {
        "en": "Has your report been submitted?",
        "ko": null
@@ -5940,10 +5810,6 @@
      "examples": [
       {
        "en": "Who's going to lead the merger negotiations?",
-       "ko": null
-      },
-      {
-       "en": "John Sanchez is",
        "ko": null
       }
      ],
@@ -6017,10 +5883,6 @@
       {
        "en": "Where should I sign this purchase agreement?",
        "ko": null
-      },
-      {
-       "en": "On the dotted line, please",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -6040,10 +5902,6 @@
      "examples": [
       {
        "en": "Is the Employee Appreciation dinner going to be formal or informal?",
-       "ko": null
-      },
-      {
-       "en": "I was told that we could dress casually",
        "ko": null
       }
      ],
@@ -6065,10 +5923,6 @@
       {
        "en": "When can we get together to start planning the awards banquet?",
        "ko": null
-      },
-      {
-       "en": "Let's meet tomorrow morning",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -6089,10 +5943,6 @@
       {
        "en": "When will the presentation materials be ready?",
        "ko": null
-      },
-      {
-       "en": "I have two slides left to make",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -6112,10 +5962,6 @@
      "examples": [
       {
        "en": "I'd like to cancel my subscription to Lakeline Times",
-       "ko": null
-      },
-      {
-       "en": "Do you have your account number?",
        "ko": null
       }
      ],
@@ -7282,10 +7128,6 @@
       {
        "en": "When are the employee health screenings scheduled?",
        "ko": null
-      },
-      {
-       "en": "Everyone should make an appointment online",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -7310,10 +7152,6 @@
       {
        "en": "We already processed Ms Jackson's order, correct?",
        "ko": null
-      },
-      {
-       "en": "Yes, it shipped this morning",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -7334,10 +7172,6 @@
       {
        "en": "When does the reception start?",
        "ko": null
-      },
-      {
-       "en": "I didn't receive an invitation",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -7355,10 +7189,6 @@
       }
      ],
      "examples": [
-      {
-       "en": "How can we identify the best solution?",
-       "ko": null
-      },
       {
        "en": "We may want to consult some experts",
        "ko": null
@@ -7382,10 +7212,6 @@
       {
        "en": "When will I be reimbursed for my travel expenses?",
        "ko": null
-      },
-      {
-       "en": "Have they been approved?",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -7405,10 +7231,6 @@
      "examples": [
       {
        "en": "This is the most challenging job I've ever had",
-       "ko": null
-      },
-      {
-       "en": "Where did you work before this?",
        "ko": null
       }
      ],
@@ -7456,10 +7278,6 @@
      ],
      "examples": [
       {
-       "en": "When will you start looking for a new apartment?",
-       "ko": null
-      },
-      {
        "en": "My job transfer has been canceled",
        "ko": null
       }
@@ -7482,10 +7300,6 @@
       {
        "en": "When did you send me the invoice?",
        "ko": null
-      },
-      {
-       "en": "Sometime last week",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -7506,10 +7320,6 @@
       {
        "en": "Where would you like to go to celebrate your promotion?",
        "ko": null
-      },
-      {
-       "en": "Let's try the new Japanese restaurant",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -7529,10 +7339,6 @@
      "examples": [
       {
        "en": "Does this insurance cover medical costs abroad?",
-       "ko": null
-      },
-      {
-       "en": "Only for emergencies",
        "ko": null
       }
      ],
@@ -7556,10 +7362,6 @@
      ],
      "examples": [
       {
-       "en": "Where did you file the invoices?",
-       "ko": null
-      },
-      {
        "en": "In the folder labeled \"Expenses\"",
        "ko": null
       }
@@ -7579,10 +7381,6 @@
       }
      ],
      "examples": [
-      {
-       "en": "When were these forms authorized?",
-       "ko": null
-      },
       {
        "en": "Our supervisor will know",
        "ko": null
@@ -7609,10 +7407,6 @@
      "examples": [
       {
        "en": "How comprehensive is the new manual?",
-       "ko": null
-      },
-      {
-       "en": "It's quite thorough",
        "ko": null
       }
      ],
@@ -7664,10 +7458,6 @@
      ],
      "examples": [
       {
-       "en": "Where's the camera on this computer?",
-       "ko": null
-      },
-      {
        "en": "On the top edge of the monitor",
        "ko": null
       }
@@ -7690,10 +7480,6 @@
       {
        "en": "You haven't taken inventory yet, have you?",
        "ko": null
-      },
-      {
-       "en": "Was I supposed to?",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -7713,10 +7499,6 @@
      "examples": [
       {
        "en": "We'll accept a passport or a driver's license for identification",
-       "ko": null
-      },
-      {
-       "en": "I have both of them",
        "ko": null
       }
      ],
@@ -7742,10 +7524,6 @@
       {
        "en": "How many Market surveys were conducted last year?",
        "ko": null
-      },
-      {
-       "en": "More than we expected",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -7763,10 +7541,6 @@
       }
      ],
      "examples": [
-      {
-       "en": "Where should I send a short story I wrote?",
-       "ko": null
-      },
       {
        "en": "I can suggest a few literary magazines",
        "ko": null
@@ -7787,10 +7561,6 @@
       }
      ],
      "examples": [
-      {
-       "en": "Are you using the copier?",
-       "ko": null
-      },
       {
        "en": "You go ahead",
        "ko": null
@@ -7813,10 +7583,6 @@
      "examples": [
       {
        "en": "Don't you and Kirsten belong to the same gym?",
-       "ko": null
-      },
-      {
-       "en": "Yes I always see her there",
        "ko": null
       }
      ],
@@ -7860,11 +7626,7 @@
      ],
      "examples": [
       {
-       "en": "Where can I donate some old office equipment?",
-       "ko": null
-      },
-      {
-       "en": "what kind of equipment is it?",
+       "en": "Where can I donate some old office equipment? what kind of equipment is it?",
        "ko": null
       }
      ],
@@ -7890,10 +7652,6 @@
       {
        "en": "How do I lower the projector screen?",
        "ko": null
-      },
-      {
-       "en": "The control panel's by the door",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -7914,10 +7672,6 @@
       {
        "en": "Where did the company president decide to open a new branch?",
        "ko": null
-      },
-      {
-       "en": "In New Delhi",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -7937,10 +7691,6 @@
      "examples": [
       {
        "en": "You manage this apartment complex, don't you?",
-       "ko": null
-      },
-      {
-       "en": "Yes I have for 12 years",
        "ko": null
       }
      ],
@@ -7986,10 +7736,6 @@
       {
        "en": "The supplier said the cabinets will be delivered late",
        "ko": null
-      },
-      {
-       "en": "That's going to put us behind schedule",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -8009,10 +7755,6 @@
      "examples": [
       {
        "en": "Which one of these mobile phones do you recommend?",
-       "ko": null
-      },
-      {
-       "en": "It depends on your budget",
        "ko": null
       }
      ],
@@ -8037,10 +7779,6 @@
      "examples": [
       {
        "en": "Who authorized that purchase?",
-       "ko": null
-      },
-      {
-       "en": "Someone in the accounting department",
        "ko": null
       }
      ],
@@ -8136,10 +7874,6 @@
      ],
      "examples": [
       {
-       "en": "Who asked you to attend the meeting?",
-       "ko": null
-      },
-      {
        "en": "The personnel director",
        "ko": null
       }
@@ -8160,10 +7894,6 @@
      ],
      "examples": [
       {
-       "en": "Have any bids come in for the construction contract yet?",
-       "ko": null
-      },
-      {
        "en": "Yes and we're ready to accept one",
        "ko": null
       }
@@ -8183,10 +7913,6 @@
       }
      ],
      "examples": [
-      {
-       "en": "This filing system isn't very efficient.",
-       "ko": null
-      },
       {
        "en": "Do you have any ideas to improve it?",
        "ko": null
@@ -8236,10 +7962,6 @@
      ],
      "examples": [
       {
-       "en": "Have you gone to the leadership training yet?",
-       "ko": null
-      },
-      {
        "en": "I didn't know it was required",
        "ko": null
       }
@@ -8262,10 +7984,6 @@
       {
        "en": "Have you renewed the office lease for another year?",
        "ko": null
-      },
-      {
-       "en": "Yes I signed it today",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -8286,10 +8004,6 @@
       {
        "en": "Do you have a copy of the company Personnel directory?",
        "ko": null
-      },
-      {
-       "en": "Yes, but it's out of date",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -8307,10 +8021,6 @@
       }
      ],
      "examples": [
-      {
-       "en": "When will I find out if I got the assignment?",
-       "ko": null
-      },
       {
        "en": "No later than Friday",
        "ko": null
@@ -8336,10 +8046,6 @@
      ],
      "examples": [
       {
-       "en": "Should we go straight to the office or stop by the hotel first?",
-       "ko": null
-      },
-      {
        "en": "Either is fine with me",
        "ko": null
       }
@@ -8362,10 +8068,6 @@
       {
        "en": "Aren't you certified to drive a forklift?",
        "ko": null
-      },
-      {
-       "en": "No, but I'm taking the course soon",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -8386,10 +8088,6 @@
       {
        "en": "How did you find a local distributor?",
        "ko": null
-      },
-      {
-       "en": "I searched online",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -8407,10 +8105,6 @@
       }
      ],
      "examples": [
-      {
-       "en": "Ms. Jones was promoted three times in just two years",
-       "ko": null
-      },
       {
        "en": "She deserves the recognition",
        "ko": null
@@ -8434,10 +8128,6 @@
       {
        "en": "Will our proposal get to the city council on time",
        "ko": null
-      },
-      {
-       "en": "I sent it by overnight mail",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -8455,10 +8145,6 @@
       }
      ],
      "examples": [
-      {
-       "en": "The food here isn't usually this salty",
-       "ko": null
-      },
       {
        "en": "I wonder if there's a new chef",
        "ko": null
@@ -8481,10 +8167,6 @@
      "examples": [
       {
        "en": "Isn't the press conference supposed to be May 6th?",
-       "ko": null
-      },
-      {
-       "en": "No, it's been postponed",
        "ko": null
       }
      ],
@@ -23639,11 +23321,7 @@
      ],
      "examples": [
       {
-       "en": "The use of umbrellas is prohibited in the stadium because they obstruct the",
-       "ko": null
-      },
-      {
-       "en": "view",
+       "en": "The use of umbrellas is prohibited in the stadium because they obstruct the view",
        "ko": "시야를 가리기 때문에 경기장 내에서는 우산 사용이 금지됩니다"
       }
      ],
@@ -34703,11 +34381,7 @@
      ],
      "examples": [
       {
-       "en": "Antonio Mourinho will be giving you some",
-       "ko": null
-      },
-      {
-       "en": "tips on investments",
+       "en": "Antonio Mourinho will be giving you some tips on investments",
        "ko": null
       }
      ],
@@ -38578,11 +38252,7 @@
      ],
      "examples": [
       {
-       "en": "operating instructions are posted above the printer",
-       "ko": null
-      },
-      {
-       "en": "there are different types of language instruction available",
+       "en": "operating instructions are posted above the printer there are different types of language instruction available",
        "ko": null
       }
      ],
@@ -38938,11 +38608,7 @@
      ],
      "examples": [
       {
-       "en": "drivers who Park their vehicles in these zones are subject to fines",
-       "ko": null
-      },
-      {
-       "en": "shuru chocolatary is a renowned manufacturer of Vine chocolates",
+       "en": "drivers who Park their vehicles in these zones are subject to fines shuru chocolatary is a renowned manufacturer of Vine chocolates",
        "ko": null
       }
      ],
@@ -39066,11 +38732,7 @@
      ],
      "examples": [
       {
-       "en": "magali Co and ligman limited have agreed on the terms of their merger",
-       "ko": null
-      },
-      {
-       "en": "the company hires interns for short-term positions",
+       "en": "magali Co and ligman limited have agreed on the terms of their merger the company hires interns for short-term positions",
        "ko": null
       }
      ],
@@ -39362,11 +39024,7 @@
      ],
      "examples": [
       {
-       "en": "appliances used commercially are not eligible for coverage.",
-       "ko": null
-      },
-      {
-       "en": "the tournament received more press coverage than last year's",
+       "en": "appliances used commercially are not eligible for coverage. the tournament received more press coverage than last year's",
        "ko": null
       }
      ],
@@ -39390,11 +39048,7 @@
      ],
      "examples": [
       {
-       "en": "Dr Hopkins will be conducting the study on nutritional supplements",
-       "ko": null
-      },
-      {
-       "en": "many people supplement their diet with multivitamins",
+       "en": "Dr Hopkins will be conducting the study on nutritional supplements many people supplement their diet with multivitamins",
        "ko": null
       }
      ],
@@ -39438,11 +39092,7 @@
      ],
      "examples": [
       {
-       "en": "the seminar provides a practical approach to starting a business",
-       "ko": null
-      },
-      {
-       "en": "interest rates are going down and may approach two percent by next quarter",
+       "en": "the seminar provides a practical approach to starting a business interest rates are going down and may approach two percent by next quarter",
        "ko": null
       }
      ],
@@ -45264,19 +44914,7 @@
      ],
      "examples": [
       {
-       "en": "Mr nipstar confirmed the device was",
-       "ko": null
-      },
-      {
-       "en": "completely functional again",
-       "ko": null
-      },
-      {
-       "en": "the building is both functional and",
-       "ko": null
-      },
-      {
-       "en": "Visually pleasing",
+       "en": "Mr nipstar confirmed the device was completely functional again the building is both functional and",
        "ko": null
       }
      ],
@@ -45296,15 +44934,7 @@
      ],
      "examples": [
       {
-       "en": "the monitor was damaged in",
-       "ko": null
-      },
-      {
-       "en": "shipping because the packaging was not",
-       "ko": null
-      },
-      {
-       "en": "adequate",
+       "en": "the monitor was damaged in shipping because the packaging was not adequate",
        "ko": null
       }
      ],
@@ -45324,11 +44954,7 @@
      ],
      "examples": [
       {
-       "en": "an unattended backpack was found in the",
-       "ko": null
-      },
-      {
-       "en": "empty gym",
+       "en": "an unattended backpack was found in the empty gym",
        "ko": null
       }
      ],
@@ -45348,11 +44974,7 @@
      ],
      "examples": [
       {
-       "en": "an online marketing strategy is vital",
-       "ko": null
-      },
-      {
-       "en": "for survival in a competitive market",
+       "en": "an online marketing strategy is vital for survival in a competitive market",
        "ko": null
       }
      ],
@@ -45392,11 +45014,7 @@
      ],
      "examples": [
       {
-       "en": "a reception for managerial staff will be",
-       "ko": null
-      },
-      {
-       "en": "held on Thursday in the boardroom",
+       "en": "a reception for managerial staff will be held on Thursday in the boardroom",
        "ko": null
       }
      ],
@@ -45416,11 +45034,7 @@
      ],
      "examples": [
       {
-       "en": "too many artificial ingredients are used",
-       "ko": null
-      },
-      {
-       "en": "to make this food product",
+       "en": "too many artificial ingredients are used to make this food product",
        "ko": null
       }
      ],
@@ -45440,11 +45054,7 @@
      ],
      "examples": [
       {
-       "en": "staff members who work with chemicals",
-       "ko": null
-      },
-      {
-       "en": "should wear protective gear",
+       "en": "staff members who work with chemicals should wear protective gear",
        "ko": null
       }
      ],
@@ -45504,11 +45114,7 @@
      ],
      "examples": [
       {
-       "en": "the organization is seeking an",
-       "ko": null
-      },
-      {
-       "en": "experienced economist",
+       "en": "the organization is seeking an experienced economist",
        "ko": null
       }
      ],
@@ -45528,11 +45134,7 @@
      ],
      "examples": [
       {
-       "en": "the advertising campaign has had a",
-       "ko": null
-      },
-      {
-       "en": "noticeable effect on sales",
+       "en": "the advertising campaign has had a noticeable effect on sales",
        "ko": null
       }
      ],
@@ -45552,11 +45154,7 @@
      ],
      "examples": [
       {
-       "en": "the xt-100 is the most sensitive home",
-       "ko": null
-      },
-      {
-       "en": "kitchen scales on the market",
+       "en": "the xt-100 is the most sensitive home kitchen scales on the market",
        "ko": null
       }
      ],
@@ -45576,11 +45174,7 @@
      ],
      "examples": [
       {
-       "en": "earnings were not impressive enough to",
-       "ko": null
-      },
-      {
-       "en": "attract more investors",
+       "en": "earnings were not impressive enough to attract more investors",
        "ko": null
       }
      ],
@@ -45604,19 +45198,7 @@
      ],
      "examples": [
       {
-       "en": "Miss Chu was happy to",
-       "ko": null
-      },
-      {
-       "en": "receive the award for outstanding",
-       "ko": null
-      },
-      {
-       "en": "performance",
-       "ko": null
-      },
-      {
-       "en": "the outstanding balance must be paid promptly",
+       "en": "Miss Chu was happy to receive the award for outstanding performance the outstanding balance must be paid promptly",
        "ko": null
       }
      ],
@@ -45636,15 +45218,7 @@
      ],
      "examples": [
       {
-       "en": "the widespread use of cell",
-       "ko": null
-      },
-      {
-       "en": "phones has changed the way we",
-       "ko": null
-      },
-      {
-       "en": "communicate",
+       "en": "the widespread use of cell phones has changed the way we communicate",
        "ko": null
       }
      ],
@@ -45664,11 +45238,7 @@
      ],
      "examples": [
       {
-       "en": "ensure that the warning lights",
-       "ko": null
-      },
-      {
-       "en": "are clearly visible",
+       "en": "ensure that the warning lights are clearly visible",
        "ko": null
       }
      ],
@@ -45688,11 +45258,7 @@
      ],
      "examples": [
       {
-       "en": "Anna paskovich has been",
-       "ko": null
-      },
-      {
-       "en": "honored as an exceptional writer",
+       "en": "Anna paskovich has been honored as an exceptional writer",
        "ko": null
       }
      ],
@@ -45712,11 +45278,7 @@
      ],
      "examples": [
       {
-       "en": "if you need to update any personal",
-       "ko": null
-      },
-      {
-       "en": "information contact us promptly",
+       "en": "if you need to update any personal information contact us promptly",
        "ko": null
       }
      ],
@@ -45776,11 +45338,7 @@
      ],
      "examples": [
       {
-       "en": "Roloff is eager to learn if a sketch won",
-       "ko": null
-      },
-      {
-       "en": "first place in the contest",
+       "en": "Roloff is eager to learn if a sketch won first place in the contest",
        "ko": null
       }
      ],
@@ -45800,11 +45358,7 @@
      ],
      "examples": [
       {
-       "en": "the equipment has a removable",
-       "ko": null
-      },
-      {
-       "en": "cover for easy cleaning",
+       "en": "the equipment has a removable cover for easy cleaning",
        "ko": null
       }
      ],
@@ -45824,11 +45378,7 @@
      ],
      "examples": [
       {
-       "en": "passionate employees have a positive",
-       "ko": null
-      },
-      {
-       "en": "influence on their colleagues",
+       "en": "passionate employees have a positive influence on their colleagues",
        "ko": null
       }
      ],
@@ -45848,11 +45398,7 @@
      ],
      "examples": [
       {
-       "en": "industry Bankers committed to",
-       "ko": null
-      },
-      {
-       "en": "keeping customer information secure",
+       "en": "industry Bankers committed to keeping customer information secure",
        "ko": null
       }
      ],
@@ -45872,11 +45418,7 @@
      ],
      "examples": [
       {
-       "en": "Mr Gupta preferred the recent",
-       "ko": null
-      },
-      {
-       "en": "conference over previous ones",
+       "en": "Mr Gupta preferred the recent conference over previous ones",
        "ko": null
       }
      ],
@@ -45896,11 +45438,7 @@
      ],
      "examples": [
       {
-       "en": "the sound of construction work is likely",
-       "ko": null
-      },
-      {
-       "en": "to affect customers in nearby shops",
+       "en": "the sound of construction work is likely to affect customers in nearby shops",
        "ko": null
       }
      ],
@@ -45920,15 +45458,7 @@
      ],
      "examples": [
       {
-       "en": "after repeated request by local",
-       "ko": null
-      },
-      {
-       "en": "residents the private library was open",
-       "ko": null
-      },
-      {
-       "en": "to the public",
+       "en": "after repeated request by local residents the private library was open to the public",
        "ko": null
       }
      ],
@@ -46008,11 +45538,7 @@
      ],
      "examples": [
       {
-       "en": "the schedule is tentative and we will",
-       "ko": null
-      },
-      {
-       "en": "keep you posted on any changes",
+       "en": "the schedule is tentative and we will keep you posted on any changes",
        "ko": null
       }
      ],
@@ -46032,11 +45558,7 @@
      ],
      "examples": [
       {
-       "en": "because of my diverse experience I have developed strong skills in financial",
-       "ko": null
-      },
-      {
-       "en": "consulting",
+       "en": "because of my diverse experience I have developed strong skills in financial consulting",
        "ko": null
       }
      ],
@@ -46116,15 +45638,7 @@
      ],
      "examples": [
       {
-       "en": "romanik Motors will build a new Factory",
-       "ko": null
-      },
-      {
-       "en": "near the city's principal business",
-       "ko": null
-      },
-      {
-       "en": "district",
+       "en": "romanik Motors will build a new Factory near the city's principal business district",
        "ko": null
       }
      ],
@@ -46144,11 +45658,7 @@
      ],
      "examples": [
       {
-       "en": "Al firm's annual revenue is equivalent",
-       "ko": null
-      },
-      {
-       "en": "to that of our larger competitors",
+       "en": "Al firm's annual revenue is equivalent to that of our larger competitors",
        "ko": null
       }
      ],
@@ -46168,11 +45678,7 @@
      ],
      "examples": [
       {
-       "en": "action movies are more",
-       "ko": null
-      },
-      {
-       "en": "entertaining than dramas",
+       "en": "action movies are more entertaining than dramas",
        "ko": null
       }
      ],
@@ -46192,11 +45698,7 @@
      ],
      "examples": [
       {
-       "en": "the contents are perishable so they must",
-       "ko": null
-      },
-      {
-       "en": "be delivered promptly",
+       "en": "the contents are perishable so they must be delivered promptly",
        "ko": null
       }
      ],
@@ -46216,11 +45718,7 @@
      ],
      "examples": [
       {
-       "en": "Mr na is regarded as a",
-       "ko": null
-      },
-      {
-       "en": "company's most competent vice president",
+       "en": "Mr na is regarded as a company's most competent vice president",
        "ko": null
       }
      ],
@@ -46240,11 +45738,7 @@
      ],
      "examples": [
       {
-       "en": "it is imperative that the documents be",
-       "ko": null
-      },
-      {
-       "en": "meticulously examined",
+       "en": "it is imperative that the documents be meticulously examined",
        "ko": null
       }
      ],
@@ -46264,11 +45758,7 @@
      ],
      "examples": [
       {
-       "en": "visit the Museum website for coupons",
-       "ko": null
-      },
-      {
-       "en": "redeemable at our souvenir shop",
+       "en": "visit the Museum website for coupons redeemable at our souvenir shop",
        "ko": null
       }
      ],
@@ -47425,11 +46915,7 @@
      ],
      "examples": [
       {
-       "en": "the old iron pipes will be",
-       "ko": null
-      },
-      {
-       "en": "replaced with durable plastic pipes",
+       "en": "the old iron pipes will be replaced with durable plastic pipes",
        "ko": null
       }
      ],
@@ -47449,15 +46935,7 @@
      ],
      "examples": [
       {
-       "en": "with its well-qualified Workforce",
-       "ko": null
-      },
-      {
-       "en": "Huntsville is a promising location for",
-       "ko": null
-      },
-      {
-       "en": "investors",
+       "en": "Huntsville is a promising location for investors",
        "ko": null
       }
      ],
@@ -47537,11 +47015,7 @@
      ],
      "examples": [
       {
-       "en": "I revised the report because the",
-       "ko": null
-      },
-      {
-       "en": "language in it was too repetitive",
+       "en": "I revised the report because the language in it was too repetitive",
        "ko": null
       }
      ],
@@ -47565,11 +47039,7 @@
      ],
      "examples": [
       {
-       "en": "the D40 is no longer being produced and",
-       "ko": null
-      },
-      {
-       "en": "is therefore unavailable",
+       "en": "the D40 is no longer being produced and is therefore unavailable",
        "ko": null
       }
      ],
@@ -47589,11 +47059,7 @@
      ],
      "examples": [
       {
-       "en": "Jr Electronics has enjoyed steady",
-       "ko": null
-      },
-      {
-       "en": "sales since the start of this fiscal year",
+       "en": "Jr Electronics has enjoyed steady sales since the start of this fiscal year",
        "ko": null
       }
      ],
@@ -47613,15 +47079,7 @@
      ],
      "examples": [
       {
-       "en": "word of mouth will be our most effective marketing tool",
-       "ko": null
-      },
-      {
-       "en": "we are raising your salary by 10",
-       "ko": null
-      },
-      {
-       "en": "effective May 1st",
+       "en": "word of mouth will be our most effective marketing tool we are raising your salary by 10 effective May 1st",
        "ko": null
       }
      ],
@@ -47641,11 +47099,7 @@
      ],
      "examples": [
       {
-       "en": "Mr Ford is a probable candidate for the",
-       "ko": null
-      },
-      {
-       "en": "position of department manager",
+       "en": "Mr Ford is a probable candidate for the position of department manager",
        "ko": null
       }
      ],
@@ -47669,11 +47123,7 @@
      ],
      "examples": [
       {
-       "en": "motorists are asked to consider taking",
-       "ko": null
-      },
-      {
-       "en": "alternate routes to avoid downtown",
+       "en": "motorists are asked to consider taking alternate routes to avoid downtown",
        "ko": null
       }
      ],
@@ -47693,11 +47143,7 @@
      ],
      "examples": [
       {
-       "en": "this item is very affordable",
-       "ko": null
-      },
-      {
-       "en": "and available in a wide variety of colors",
+       "en": "this item is very affordable and available in a wide variety of colors",
        "ko": null
       }
      ],
@@ -47717,11 +47163,7 @@
      ],
      "examples": [
       {
-       "en": "contrary to analysts predictions we",
-       "ko": null
-      },
-      {
-       "en": "created a battery that lasts twice as long",
+       "en": "contrary to analysts predictions we created a battery that lasts twice as long",
        "ko": null
       }
      ],
@@ -47781,11 +47223,7 @@
      ],
      "examples": [
       {
-       "en": "our repair technicians",
-       "ko": null
-      },
-      {
-       "en": "complete two weeks of intensive formal training",
+       "en": "our repair technicians complete two weeks of intensive formal training",
        "ko": null
       }
      ],
@@ -47809,19 +47247,7 @@
      ],
      "examples": [
       {
-       "en": "AF Telecom is establishing service in",
-       "ko": null
-      },
-      {
-       "en": "areas previously thought too remote",
-       "ko": null
-      },
-      {
-       "en": "there was a possibility however remote",
-       "ko": null
-      },
-      {
-       "en": "that the merger would not go through",
+       "en": "AF Telecom is establishing service in areas previously thought too remote there was a possibility however remote that the merger would not go through",
        "ko": null
       }
      ],
@@ -47841,11 +47267,7 @@
      ],
      "examples": [
       {
-       "en": "you'll be able to see award-winning",
-       "ko": null
-      },
-      {
-       "en": "shows on channel Plus",
+       "en": "you'll be able to see award-winning shows on channel Plus",
        "ko": null
       }
      ],
@@ -47865,11 +47287,7 @@
      ],
      "examples": [
       {
-       "en": "the mayor's most notable",
-       "ko": null
-      },
-      {
-       "en": "achievement was a reduction in city taxes",
+       "en": "the mayor's most notable achievement was a reduction in city taxes",
        "ko": null
       }
      ],
@@ -47909,15 +47327,7 @@
      ],
      "examples": [
       {
-       "en": "we look forward to establishing a",
-       "ko": null
-      },
-      {
-       "en": "prosperous relationship with you",
-       "ko": null
-      },
-      {
-       "en": "resume",
+       "en": "we look forward to establishing a prosperous relationship with you resume",
        "ko": null
       }
      ],
@@ -47958,11 +47368,7 @@
      ],
      "examples": [
       {
-       "en": "this floor lamp is suitable for both",
-       "ko": null
-      },
-      {
-       "en": "homes and offices",
+       "en": "this floor lamp is suitable for both homes and offices",
        "ko": null
       }
      ],
@@ -47982,11 +47388,7 @@
      ],
      "examples": [
       {
-       "en": "we would be delighted if you",
-       "ko": null
-      },
-      {
-       "en": "would agree to give a talk",
+       "en": "we would be delighted if you would agree to give a talk",
        "ko": null
       }
      ],
@@ -48005,10 +47407,6 @@
       }
      ],
      "examples": [
-      {
-       "en": "Market Solutions is one of",
-       "ko": null
-      },
       {
        "en": "Europe's leading Business magazines",
        "ko": null
@@ -48030,11 +47428,7 @@
      ],
      "examples": [
       {
-       "en": "because this contains confidential",
-       "ko": null
-      },
-      {
-       "en": "information please keep it in a secure location",
+       "en": "because this contains confidential information please keep it in a secure location",
        "ko": null
       }
      ],
@@ -48054,11 +47448,7 @@
      ],
      "examples": [
       {
-       "en": "this is a mandatory training that all",
-       "ko": null
-      },
-      {
-       "en": "managers are expected to complete",
+       "en": "this is a mandatory training that all managers are expected to complete",
        "ko": null
       }
      ],
@@ -48078,11 +47468,7 @@
      ],
      "examples": [
       {
-       "en": "Hatfield Goods returned the defective",
-       "ko": null
-      },
-      {
-       "en": "merchandise to the manufacturer",
+       "en": "Hatfield Goods returned the defective merchandise to the manufacturer",
        "ko": null
       }
      ],
@@ -48102,11 +47488,7 @@
      ],
      "examples": [
       {
-       "en": "the manual for the new computer software",
-       "ko": null
-      },
-      {
-       "en": "is extremely complicated",
+       "en": "the manual for the new computer software is extremely complicated",
        "ko": null
       }
      ],
@@ -48126,11 +47508,7 @@
      ],
      "examples": [
       {
-       "en": "I attribute their success to aggressive",
-       "ko": null
-      },
-      {
-       "en": "marketing tactics",
+       "en": "I attribute their success to aggressive marketing tactics",
        "ko": null
       }
      ],
@@ -48150,11 +47528,7 @@
      ],
      "examples": [
       {
-       "en": "thank you for your financial support",
-       "ko": null
-      },
-      {
-       "en": "over the past year",
+       "en": "thank you for your financial support over the past year",
        "ko": null
       }
      ],
@@ -48174,11 +47548,7 @@
      ],
      "examples": [
       {
-       "en": "new employees are eligible to receive",
-       "ko": null
-      },
-      {
-       "en": "vacation benefits after three months",
+       "en": "new employees are eligible to receive vacation benefits after three months",
        "ko": null
       }
      ],
@@ -48198,15 +47568,7 @@
      ],
      "examples": [
       {
-       "en": "some parents need to be",
-       "ko": null
-      },
-      {
-       "en": "convinced of the importance of physical",
-       "ko": null
-      },
-      {
-       "en": "education",
+       "en": "some parents need to be convinced of the importance of physical education",
        "ko": null
       }
      ],
@@ -48246,11 +47608,7 @@
      ],
      "examples": [
       {
-       "en": "participants will attend separate",
-       "ko": null
-      },
-      {
-       "en": "sessions in designated rooms",
+       "en": "participants will attend separate sessions in designated rooms",
        "ko": null
       }
      ],
@@ -48270,11 +47628,7 @@
      ],
      "examples": [
       {
-       "en": "we will promote your product to",
-       "ko": null
-      },
-      {
-       "en": "prospective customers",
+       "en": "we will promote your product to prospective customers",
        "ko": null
       }
      ],
@@ -48294,11 +47648,7 @@
      ],
      "examples": [
       {
-       "en": "our product developers are set to begin",
-       "ko": null
-      },
-      {
-       "en": "using sustainable methods",
+       "en": "our product developers are set to begin using sustainable methods",
        "ko": null
       }
      ],
@@ -48318,11 +47668,7 @@
      ],
      "examples": [
       {
-       "en": "access to the data is",
-       "ko": null
-      },
-      {
-       "en": "prohibited to unauthorized personnel",
+       "en": "access to the data is prohibited to unauthorized personnel",
        "ko": null
       }
      ],
@@ -48342,11 +47688,7 @@
      ],
      "examples": [
       {
-       "en": "priority will be given to",
-       "ko": null
-      },
-      {
-       "en": "candidates with a relevant background",
+       "en": "priority will be given to candidates with a relevant background",
        "ko": null
       }
      ],
@@ -48366,11 +47708,7 @@
      ],
      "examples": [
       {
-       "en": "due to increased competition",
-       "ko": null
-      },
-      {
-       "en": "the company's sales remains stagnant",
+       "en": "due to increased competition the company's sales remains stagnant",
        "ko": null
       }
      ],
@@ -48390,11 +47728,7 @@
      ],
      "examples": [
       {
-       "en": "the advice is targeted at those who have",
-       "ko": null
-      },
-      {
-       "en": "little disposable income",
+       "en": "the advice is targeted at those who have little disposable income",
        "ko": null
       }
      ],
@@ -48414,11 +47748,7 @@
      ],
      "examples": [
       {
-       "en": "decreases in sales are not necessarily",
-       "ko": null
-      },
-      {
-       "en": "indicative of bad advertising",
+       "en": "decreases in sales are not necessarily indicative of bad advertising",
        "ko": null
       }
      ],
@@ -48438,11 +47768,7 @@
      ],
      "examples": [
       {
-       "en": "Global shipping companies use",
-       "ko": null
-      },
-      {
-       "en": "sophisticated computer systems",
+       "en": "Global shipping companies use sophisticated computer systems",
        "ko": null
       }
      ],
@@ -48482,11 +47808,7 @@
      ],
      "examples": [
       {
-       "en": "the event will feature activities",
-       "ko": null
-      },
-      {
-       "en": "appropriate for the entire family",
+       "en": "the event will feature activities appropriate for the entire family",
        "ko": null
       }
      ],
@@ -48506,11 +47828,7 @@
      ],
      "examples": [
       {
-       "en": "provisional assignments will be emailed",
-       "ko": null
-      },
-      {
-       "en": "to you tomorrow",
+       "en": "provisional assignments will be emailed to you tomorrow",
        "ko": null
       }
      ],
@@ -48530,11 +47848,7 @@
      ],
      "examples": [
       {
-       "en": "holders of delinquent accounts will be",
-       "ko": null
-      },
-      {
-       "en": "charged late payment fees",
+       "en": "holders of delinquent accounts will be charged late payment fees",
        "ko": null
       }
      ],
@@ -48558,11 +47872,7 @@
      ],
      "examples": [
       {
-       "en": "the schedule is subject to change",
-       "ko": null
-      },
-      {
-       "en": "without prior notice",
+       "en": "the schedule is subject to change without prior notice",
        "ko": null
       }
      ],
@@ -48582,11 +47892,7 @@
      ],
      "examples": [
       {
-       "en": "the response to the software allows us",
-       "ko": null
-      },
-      {
-       "en": "to be optimistic about future sales",
+       "en": "the response to the software allows us to be optimistic about future sales",
        "ko": null
       }
      ],
@@ -48608,14 +47914,6 @@
       {
        "en": "relay Street has become a vibrant",
        "ko": null
-      },
-      {
-       "en": "District of eateries shops and",
-       "ko": null
-      },
-      {
-       "en": "entertainment venues",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -48634,11 +47932,7 @@
      ],
      "examples": [
       {
-       "en": "the company has been producing",
-       "ko": null
-      },
-      {
-       "en": "cutting-edge phones with long battery run times",
+       "en": "the company has been producing cutting-edge phones with long battery run times",
        "ko": null
       }
      ],
@@ -48658,11 +47952,7 @@
      ],
      "examples": [
       {
-       "en": "Mr Lau looks forward to meeting the",
-       "ko": null
-      },
-      {
-       "en": "ambitious students at the career day event",
+       "en": "Mr Lau looks forward to meeting the ambitious students at the career day event",
        "ko": null
       }
      ],
@@ -49805,11 +49095,7 @@
      ],
      "examples": [
       {
-       "en": "Travelers using the airport complained",
-       "ko": null
-      },
-      {
-       "en": "that there is an urgent need for more parking",
+       "en": "Travelers using the airport complained that there is an urgent need for more parking",
        "ko": null
       }
      ],
@@ -49853,11 +49139,7 @@
      ],
      "examples": [
       {
-       "en": "a proposal will take a substantial",
-       "ko": null
-      },
-      {
-       "en": "amount of time to produce",
+       "en": "a proposal will take a substantial amount of time to produce",
        "ko": null
       }
      ],
@@ -49877,11 +49159,7 @@
      ],
      "examples": [
       {
-       "en": "the meetings are open to all",
-       "ko": null
-      },
-      {
-       "en": "but pre-registration is necessary",
+       "en": "the meetings are open to all but pre-registration is necessary",
        "ko": null
       }
      ],
@@ -49925,11 +49203,7 @@
      ],
      "examples": [
       {
-       "en": "project leaders are selected based on",
-       "ko": null
-      },
-      {
-       "en": "their expertise in a particular area",
+       "en": "project leaders are selected based on their expertise in a particular area",
        "ko": null
       }
      ],
@@ -49949,15 +49223,7 @@
      ],
      "examples": [
       {
-       "en": "the wellness Workshop serves",
-       "ko": null
-      },
-      {
-       "en": "as a forum for discussing healthful",
-       "ko": null
-      },
-      {
-       "en": "habits",
+       "en": "the wellness Workshop serves as a forum for discussing healthful habits",
        "ko": null
       }
      ],
@@ -49977,15 +49243,7 @@
      ],
      "examples": [
       {
-       "en": "ongoing collaboration between",
-       "ko": null
-      },
-      {
-       "en": "researchers and practitioners is",
-       "ko": null
-      },
-      {
-       "en": "essential",
+       "en": "ongoing collaboration between researchers and practitioners is essential",
        "ko": null
       }
      ],
@@ -50005,11 +49263,7 @@
      ],
      "examples": [
       {
-       "en": "I hope that you found this Workshop",
-       "ko": null
-      },
-      {
-       "en": "informative and useful",
+       "en": "I hope that you found this Workshop informative and useful",
        "ko": null
       }
      ],
@@ -50029,11 +49283,7 @@
      ],
      "examples": [
       {
-       "en": "we will issue policy guidelines that",
-       "ko": null
-      },
-      {
-       "en": "will update our existing policies",
+       "en": "we will issue policy guidelines that will update our existing policies",
        "ko": null
       }
      ],
@@ -50053,15 +49303,7 @@
      ],
      "examples": [
       {
-       "en": "the Manila Center has",
-       "ko": null
-      },
-      {
-       "en": "part-time and temporary employment",
-       "ko": null
-      },
-      {
-       "en": "openings",
+       "en": "the Manila Center has part-time and temporary employment openings",
        "ko": null
       }
      ],
@@ -50081,11 +49323,7 @@
      ],
      "examples": [
       {
-       "en": "the original estimate was",
-       "ko": null
-      },
-      {
-       "en": "revised as a result of a further study",
+       "en": "the original estimate was revised as a result of a further study",
        "ko": null
       }
      ],
@@ -50105,11 +49343,7 @@
      ],
      "examples": [
       {
-       "en": "the new auto Factory is capable of",
-       "ko": null
-      },
-      {
-       "en": "producing 900 cars per day",
+       "en": "the new auto Factory is capable of producing 900 cars per day",
        "ko": null
       }
      ],
@@ -50129,11 +49363,7 @@
      ],
      "examples": [
       {
-       "en": "for more detailed information",
-       "ko": null
-      },
-      {
-       "en": "please contact the Park's office",
+       "en": "for more detailed information please contact the Park's office",
        "ko": null
       }
      ],
@@ -50152,10 +49382,6 @@
       }
      ],
      "examples": [
-      {
-       "en": "during the construction project Some",
-       "ko": null
-      },
       {
        "en": "Noise will be unavoidable",
        "ko": null
@@ -50177,11 +49403,7 @@
      ],
      "examples": [
       {
-       "en": "the warranty does not cover",
-       "ko": null
-      },
-      {
-       "en": "damages resulting from improper use",
+       "en": "the warranty does not cover damages resulting from improper use",
        "ko": null
       }
      ],
@@ -50205,11 +49427,7 @@
      ],
      "examples": [
       {
-       "en": "because I keep a variety of teas in",
-       "ko": null
-      },
-      {
-       "en": "stock I can accommodate bulk orders",
+       "en": "because I keep a variety of teas in stock I can accommodate bulk orders",
        "ko": null
       }
      ],
@@ -50253,10 +49471,6 @@
      ],
      "examples": [
       {
-       "en": "former XV Tech audio engineer John",
-       "ko": null
-      },
-      {
        "en": "Anderson has started an independent firm",
        "ko": null
       }
@@ -50277,11 +49491,7 @@
      ],
      "examples": [
       {
-       "en": "two years of related job experiences",
-       "ko": null
-      },
-      {
-       "en": "required",
+       "en": "two years of related job experiences required",
        "ko": null
       }
      ],
@@ -50301,11 +49511,7 @@
      ],
      "examples": [
       {
-       "en": "it is advisable to dress appropriately",
-       "ko": null
-      },
-      {
-       "en": "when attending a job interview",
+       "en": "it is advisable to dress appropriately when attending a job interview",
        "ko": null
       }
      ],
@@ -50327,10 +49533,6 @@
       {
        "en": "Mr field is an accomplished Master",
        "ko": null
-      },
-      {
-       "en": "Plumber",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -50349,11 +49551,7 @@
      ],
      "examples": [
       {
-       "en": "our Consultants are highly",
-       "ko": null
-      },
-      {
-       "en": "skilled writers specializing in business",
+       "en": "our Consultants are highly skilled writers specializing in business",
        "ko": null
       }
      ],
@@ -50373,11 +49571,7 @@
      ],
      "examples": [
       {
-       "en": "the story seeking ways to be more",
-       "ko": null
-      },
-      {
-       "en": "responsive to its customers",
+       "en": "the story seeking ways to be more responsive to its customers",
        "ko": null
       }
      ],
@@ -50397,11 +49591,7 @@
      ],
      "examples": [
       {
-       "en": "the expansion of the factory",
-       "ko": null
-      },
-      {
-       "en": "had a significant impact on productivity",
+       "en": "the expansion of the factory had a significant impact on productivity",
        "ko": null
       }
      ],
@@ -50421,15 +49611,7 @@
      ],
      "examples": [
       {
-       "en": "Hub design requires that",
-       "ko": null
-      },
-      {
-       "en": "employees possess Advanced technical",
-       "ko": null
-      },
-      {
-       "en": "expertise",
+       "en": "Hub design requires that employees possess Advanced technical expertise",
        "ko": null
       }
      ],
@@ -50453,11 +49635,7 @@
      ],
      "examples": [
       {
-       "en": "a plan to build a processing",
-       "ko": null
-      },
-      {
-       "en": "plant was approved by a narrow margin",
+       "en": "a plan to build a processing plant was approved by a narrow margin",
        "ko": null
       }
      ],
@@ -50477,11 +49655,7 @@
      ],
      "examples": [
       {
-       "en": "staff members who work with chemicals",
-       "ko": null
-      },
-      {
-       "en": "should be cautious",
+       "en": "staff members who work with chemicals should be cautious",
        "ko": null
       }
      ],
@@ -50501,11 +49675,7 @@
      ],
      "examples": [
       {
-       "en": "the foundation prefers that workers",
-       "ko": null
-      },
-      {
-       "en": "native to the region be hired",
+       "en": "the foundation prefers that workers native to the region be hired",
        "ko": null
       }
      ],
@@ -50525,11 +49695,7 @@
      ],
      "examples": [
       {
-       "en": "the mayor welcomes the economic",
-       "ko": null
-      },
-      {
-       "en": "opportunities this project will bring",
+       "en": "the mayor welcomes the economic opportunities this project will bring",
        "ko": null
       }
      ],
@@ -50549,11 +49715,7 @@
      ],
      "examples": [
       {
-       "en": "the journey to mount Rayburn",
-       "ko": null
-      },
-      {
-       "en": "is guaranteed to be memorable",
+       "en": "the journey to mount Rayburn is guaranteed to be memorable",
        "ko": null
       }
      ],
@@ -50573,11 +49735,7 @@
      ],
      "examples": [
       {
-       "en": "to ensure timely delivery",
-       "ko": null
-      },
-      {
-       "en": "reservations must be made in advance",
+       "en": "to ensure timely delivery reservations must be made in advance",
        "ko": null
       }
      ],
@@ -50597,11 +49755,7 @@
      ],
      "examples": [
       {
-       "en": "at least one year of retail experience",
-       "ko": null
-      },
-      {
-       "en": "is preferred",
+       "en": "at least one year of retail experience is preferred",
        "ko": null
       }
      ],
@@ -50621,11 +49775,7 @@
      ],
      "examples": [
       {
-       "en": "the new musical was an outright success",
-       "ko": null
-      },
-      {
-       "en": "when it premiered",
+       "en": "the new musical was an outright success when it premiered",
        "ko": null
       }
      ],
@@ -50645,11 +49795,7 @@
      ],
      "examples": [
       {
-       "en": "established companies can learn from",
-       "ko": null
-      },
-      {
-       "en": "startup businesses",
+       "en": "established companies can learn from startup businesses",
        "ko": null
       }
      ],
@@ -50669,11 +49815,7 @@
      ],
      "examples": [
       {
-       "en": "the administration demonstrated its",
-       "ko": null
-      },
-      {
-       "en": "unwavering commitment to economic reform",
+       "en": "the administration demonstrated its unwavering commitment to economic reform",
        "ko": null
       }
      ],
@@ -50717,11 +49859,7 @@
        "ko": null
       },
       {
-       "en": "Exquisite views of the Leona River can",
-       "ko": null
-      },
-      {
-       "en": "be enjoyed from hiking trails",
+       "en": "Exquisite views of the Leona River can be enjoyed from hiking trails",
        "ko": null
       }
      ],
@@ -50741,11 +49879,7 @@
      ],
      "examples": [
       {
-       "en": "the deluxian Inn is an excellent hotel",
-       "ko": null
-      },
-      {
-       "en": "with impeccable service",
+       "en": "the deluxian Inn is an excellent hotel with impeccable service",
        "ko": null
       }
      ],
@@ -50765,11 +49899,7 @@
      ],
      "examples": [
       {
-       "en": "focus group participants answered",
-       "ko": null
-      },
-      {
-       "en": "preliminary questions over the phone",
+       "en": "focus group participants answered preliminary questions over the phone",
        "ko": null
       }
      ],
@@ -50789,11 +49919,7 @@
      ],
      "examples": [
       {
-       "en": "improvements in technology were followed",
-       "ko": null
-      },
-      {
-       "en": "by proportional gains in production",
+       "en": "improvements in technology were followed by proportional gains in production",
        "ko": null
       }
      ],
@@ -50817,11 +49943,7 @@
      ],
      "examples": [
       {
-       "en": "subsequent to approval of the budget we",
-       "ko": null
-      },
-      {
-       "en": "created a new advertisement",
+       "en": "subsequent to approval of the budget we created a new advertisement",
        "ko": null
       }
      ],
@@ -50861,11 +49983,7 @@
      ],
      "examples": [
       {
-       "en": "the employee will not be paid for more",
-       "ko": null
-      },
-      {
-       "en": "than two consecutive sick days",
+       "en": "the employee will not be paid for more than two consecutive sick days",
        "ko": null
       }
      ],
@@ -50885,11 +50003,7 @@
      ],
      "examples": [
       {
-       "en": "Falco engine parts are put through",
-       "ko": null
-      },
-      {
-       "en": "astringent inspection",
+       "en": "Falco engine parts are put through astringent inspection",
        "ko": null
       }
      ],
@@ -50909,11 +50023,7 @@
      ],
      "examples": [
       {
-       "en": "the hospital is recognized for exemplary",
-       "ko": null
-      },
-      {
-       "en": "patient care",
+       "en": "the hospital is recognized for exemplary patient care",
        "ko": null
       }
      ],
@@ -50953,11 +50063,7 @@
      ],
      "examples": [
       {
-       "en": "Miss Kim has published a controversial",
-       "ko": null
-      },
-      {
-       "en": "book about monetary policy",
+       "en": "Miss Kim has published a controversial book about monetary policy",
        "ko": null
       }
      ],
@@ -50997,11 +50103,7 @@
      ],
      "examples": [
       {
-       "en": "auto manufacturing is the",
-       "ko": null
-      },
-      {
-       "en": "predominant industry in this region",
+       "en": "auto manufacturing is the predominant industry in this region",
        "ko": null
       }
      ],
@@ -51021,11 +50123,7 @@
      ],
      "examples": [
       {
-       "en": "the current board members started their",
-       "ko": null
-      },
-      {
-       "en": "term just two months ago",
+       "en": "the current board members started their term just two months ago",
        "ko": null
       }
      ],
@@ -51045,11 +50143,7 @@
      ],
      "examples": [
       {
-       "en": "attached please find all the paperwork",
-       "ko": null
-      },
-      {
-       "en": "pertinent to your hiring",
+       "en": "attached please find all the paperwork pertinent to your hiring",
        "ko": null
       }
      ],
@@ -51069,11 +50163,7 @@
      ],
      "examples": [
       {
-       "en": "the fomax 2 is durable and resistant to",
-       "ko": null
-      },
-      {
-       "en": "pressure",
+       "en": "the fomax 2 is durable and resistant to pressure",
        "ko": null
       }
      ],
@@ -51113,11 +50203,7 @@
      ],
      "examples": [
       {
-       "en": "the first prize presented was the Kozar",
-       "ko": null
-      },
-      {
-       "en": "award for excellence in educational toydesign",
+       "en": "the first prize presented was the Kozar award for excellence in educational toydesign",
        "ko": null
       }
      ],
@@ -52234,12 +51320,8 @@
      ],
      "examples": [
       {
-       "en": "Be sure the equipment is in place and functioning properly",
+       "en": "Be sure the equipment is in place and functioning properly step 10",
        "ko": "장비가 준비되어 있고 제대로 작동하는지 확인해주세요"
-      },
-      {
-       "en": "step 10",
-       "ko": null
       }
      ],
      "collocations": [],
@@ -55123,11 +54205,7 @@
      ],
      "examples": [
       {
-       "en": "Our offices in Philippines and France, are respectively, 12 and 6 hours ahead of",
-       "ko": null
-      },
-      {
-       "en": "us",
+       "en": "Our offices in Philippines and France, are respectively, 12 and 6 hours ahead of us",
        "ko": null
       }
      ],
@@ -57566,34 +56644,9 @@
       {
        "en": "I heard that your company provides customized service plans",
        "ko": "귀사에서 맞춤형 서비스 플랜을 제공한다고 들었습니다"
-      },
-      {
-       "en": "On July 24th, I placed an online order for three bouquets of pink lilies",
-       "ko": null
-      },
-      {
-       "en": "Most of your order is currently in stock",
-       "ko": "주문품 대부분은 현재 재고가 있습니다"
-      },
-      {
-       "en": "Please be advised that the candles are on back order",
-       "ko": "양초는 재고 부족으로 주문이 밀려있음을 알려드립니다"
       }
      ],
-     "collocations": [
-      {
-       "en": "online order",
-       "ko": "온라인 주문"
-      },
-      {
-       "en": "in stock",
-       "ko": "재고가 있는"
-      },
-      {
-       "en": "back order",
-       "ko": "밀린 주문, 이월 주문"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-a3a1811c5a2adbc02967d1ec7622b3afb3fed0047340d6f89d92cae6.mp3",
      "tier": "core"
@@ -57609,13 +56662,12 @@
      ],
      "examples": [
       {
-       "en": "You can track your online order using the confirmation number below.",
-       "ko": "아래의 확인 번호로 온라인 주문을 조회하실 수 있습니다.",
-       "generated": true
+       "en": "On July 24th, I placed an online order for three bouquets of pink lilies",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-d008b97e9c5f69ec9b2607c74883467b701b18239914082859f63c07.mp3",
      "tier": "core"
     },
@@ -57630,13 +56682,12 @@
      ],
      "examples": [
       {
-       "en": "The replacement filters are currently in stock at our main warehouse.",
-       "ko": "교체용 필터는 현재 저희 중앙 창고에 재고가 있습니다.",
-       "generated": true
+       "en": "Most of your order is currently in stock",
+       "ko": "주문품 대부분은 현재 재고가 있습니다"
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-6ed5516317f526d2b5e204fc9d8f579a880ef5b440153ef512b7f84a.mp3",
      "tier": "core"
     },
@@ -57651,13 +56702,12 @@
      ],
      "examples": [
       {
-       "en": "The office chairs are on back order until the end of March.",
-       "ko": "그 사무용 의자는 3월 말까지 이월 주문 상태입니다.",
-       "generated": true
+       "en": "Please be advised that the candles are on back order",
+       "ko": "양초는 재고 부족으로 주문이 밀려있음을 알려드립니다"
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-d6c63ff469407083237b2caeaefb7d6f4fa616679f7144ef66f70b62.mp3",
      "tier": "core"
     },
@@ -57674,18 +56724,9 @@
       {
        "en": "The amount due is listed as $243",
        "ko": "납기 금액이 243달러로 기재되어 있습니다"
-      },
-      {
-       "en": "Just respond to this e-mail with your price range",
-       "ko": "귀하께서 생각하시는 가격대를 이 이메일로 회신해 주십시오"
       }
      ],
-     "collocations": [
-      {
-       "en": "price range",
-       "ko": "가격폭, 가격대"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-043842e8f96ca55d1acf80c7c383a9b3806c354908dafac85b3d3bef.mp3",
      "tier": "core"
@@ -57701,13 +56742,12 @@
      ],
      "examples": [
       {
-       "en": "Our laptops come in a wide price range to fit every budget.",
-       "ko": "저희 노트북은 모든 예산에 맞도록 폭넓은 가격대로 출시되어 있습니다.",
-       "generated": true
+       "en": "Just respond to this e-mail with your price range",
+       "ko": "귀하께서 생각하시는 가격대를 이 이메일로 회신해 주십시오"
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-dbad41422455667371aea22a67244061b69c3dbf62a0eb6855281ec8.mp3",
      "tier": "core"
     },
@@ -57724,18 +56764,9 @@
       {
        "en": "We have enclosed a prepaid,addressed envelope for your convenience",
        "ko": "귀하의 편위를 위해, 주소가 적힌 선납 봉투를 동봉해드립니다"
-      },
-      {
-       "en": "You reported that an item on your last credit card statement was unfamiliar to you",
-       "ko": "가장 최근에 발급된 신용카드 명세서의 한 항목이 뭔지 모르겠다고 말씀하셨쬬"
       }
      ],
-     "collocations": [
-      {
-       "en": "credit card statement",
-       "ko": "신용카드 명세서"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-7890e6049a268b707b145081931d97421c2fc0e62ee35325958665ee.mp3",
      "tier": "core"
@@ -57751,13 +56782,12 @@
      ],
      "examples": [
       {
-       "en": "Please check your credit card statement for the duplicate charge.",
-       "ko": "중복 청구된 금액이 있는지 신용 카드 명세서를 확인해 주십시오.",
-       "generated": true
+       "en": "You reported that an item on your last credit card statement was unfamiliar to you",
+       "ko": "가장 최근에 발급된 신용카드 명세서의 한 항목이 뭔지 모르겠다고 말씀하셨쬬"
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-e7944e40e955bbd25c273884146321d7037ee2e82430edbcca668ff0.mp3",
      "tier": "core"
     },
@@ -57794,18 +56824,9 @@
       {
        "en": "We have charged the same wholesale prices for our baked goods",
        "ko": "저희는 제과제품의 도매 가격을 동일하게 부과했습니다"
-      },
-      {
-       "en": "Should you need to make alternate payment arrangements, please contact our office manager",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "payment arrangements",
-       "ko": "결제 방식, 지불 약정"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-85af2d67fce9924082c126fe2b3dfba6aecf6b759a653cd09e7f8388.mp3",
      "tier": "core"
@@ -57821,13 +56842,12 @@
      ],
      "examples": [
       {
-       "en": "We can make flexible payment arrangements for orders over five thousand dollars.",
-       "ko": "5천 달러가 넘는 주문에는 유연한 결제 방식을 마련해 드릴 수 있습니다.",
-       "generated": true
+       "en": "Should you need to make alternate payment arrangements, please contact our office manager",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-eb5110b4e44caa091bcffab33f694d058f6ffb500d4906a35c85cccc.mp3",
      "tier": "core"
     },
@@ -58068,26 +57088,9 @@
       {
        "en": "If this issue persists, we may need to schedule a maintenance visit",
        "ko": null
-      },
-      {
-       "en": "Your service fell short of my expectations",
-       "ko": null
-      },
-      {
-       "en": "Please send your item back to us in its original packaging",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "fall short of",
-       "ko": "~에 못 미치다"
-      },
-      {
-       "en": "original packaging",
-       "ko": "원래 포장 상태, 원래 포장"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-74b5ea09ccf45dfeaf34faf1d41c463ba6e92395ab06780fe592e47b.mp3",
      "tier": "core"
@@ -58103,13 +57106,12 @@
      ],
      "examples": [
       {
-       "en": "Third quarter revenues fell short of the targets set in January.",
-       "ko": "3분기 매출은 1월에 세운 목표에 못 미쳤습니다.",
-       "generated": true
+       "en": "Your service fell short of my expectations",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-dc9e386dd1e352b37a4219978369ba2a07994f0b21b5f682891897a1.mp3",
      "tier": "core"
     },
@@ -58124,13 +57126,12 @@
      ],
      "examples": [
       {
-       "en": "Returned items must be sent back in their original packaging.",
-       "ko": "반품 상품은 반드시 원래 포장 상태로 보내 주셔야 합니다.",
-       "generated": true
+       "en": "Please send your item back to us in its original packaging",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-3ac98c0a7a3cee39331e2efc9bd37f335099f2e2dcff835a5e5642ee.mp3",
      "tier": "core"
     },
@@ -58147,18 +57148,9 @@
       {
        "en": "The item must be returned with all its components",
        "ko": null
-      },
-      {
-       "en": "All of our products come with a 30-day money-back guarantee",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "money-back guarantee",
-       "ko": "환불 보증, 환불 보증서"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-ef6cf207bfb774d323d84fc1832424a89471dd671064076e485c9bee.mp3",
      "tier": "core"
@@ -58174,13 +57166,12 @@
      ],
      "examples": [
       {
-       "en": "Every appliance comes with a thirty-day money-back guarantee.",
-       "ko": "모든 가전제품에는 30일 환불 보증이 제공됩니다.",
-       "generated": true
+       "en": "All of our products come with a 30-day money-back guarantee",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-56f50cc1a5f4aaa358b0888b8d08c9aeee0125bd0064d02f1eb92911.mp3",
      "tier": "core"
     },
@@ -58258,50 +57249,9 @@
       {
        "en": "Would you be so kind as to reimburse me for the appropriate amount?",
        "ko": null
-      },
-      {
-       "en": "Please note that all exchanges must be accompanied by proof of purchase",
-       "ko": null
-      },
-      {
-       "en": "I would like to cancel my order and request a full refund",
-       "ko": null
-      },
-      {
-       "en": "Attached please find the relevant application materials",
-       "ko": null
-      },
-      {
-       "en": "The job description said that applicants should have an advanced degree",
-       "ko": null
-      },
-      {
-       "en": "I would be well suited for this role because I am both enthusiastic and friendly",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "proof of purchase",
-       "ko": "구매 증명, 구매증명서"
-      },
-      {
-       "en": "full refund",
-       "ko": "전액환불"
-      },
-      {
-       "en": "application materials",
-       "ko": "지원서류"
-      },
-      {
-       "en": "advanced degree",
-       "ko": "고급 학위 (석사, 박사)"
-      },
-      {
-       "en": "well suited",
-       "ko": "적합한, 잘 어울리는"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-b559179e974a1ba9c3e50f2ff436011918a649b195aef843cc90c65d.mp3",
      "tier": "core"
@@ -58317,13 +57267,12 @@
      ],
      "examples": [
       {
-       "en": "Please bring your receipt as proof of purchase when requesting a refund.",
-       "ko": "환불을 요청하실 때 구매 증명으로 영수증을 지참해 주십시오.",
-       "generated": true
+       "en": "Please note that all exchanges must be accompanied by proof of purchase",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-24143091bb287dcbe1d6e4b9eb2524125485d075a00c0625113362ae.mp3",
      "tier": "core"
     },
@@ -58338,13 +57287,12 @@
      ],
      "examples": [
       {
-       "en": "Customers who cancel before Friday will receive a full refund.",
-       "ko": "금요일 전에 취소하시는 고객께는 전액 환불이 이루어집니다.",
-       "generated": true
+       "en": "I would like to cancel my order and request a full refund",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-242faecda7064fda9360a1f4aec55022a2a7cddc38036a9bb213c20b.mp3",
      "tier": "core"
     },
@@ -58359,13 +57307,12 @@
      ],
      "examples": [
       {
-       "en": "All application materials must reach our office by March fifteenth.",
-       "ko": "모든 지원 서류는 3월 15일까지 저희 사무실에 도착해야 합니다.",
-       "generated": true
+       "en": "Attached please find the relevant application materials",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-b2d40ed71381d7a28f00d4b8861028b21df7ec38ed073b100fa0786b.mp3",
      "tier": "core"
     },
@@ -58380,13 +57327,12 @@
      ],
      "examples": [
       {
-       "en": "Candidates holding an advanced degree in engineering are strongly preferred.",
-       "ko": "공학 분야 고급 학위 소지자를 특히 우대합니다.",
-       "generated": true
+       "en": "The job description said that applicants should have an advanced degree",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-503365b4791016db320a5b618840469f99c5360911a1803affaf7eb3.mp3",
      "tier": "core"
     },
@@ -58401,13 +57347,12 @@
      ],
      "examples": [
       {
-       "en": "Her background in logistics makes her well suited for this position.",
-       "ko": "물류 분야 경력 덕분에 그녀는 이 직책에 매우 적합합니다.",
-       "generated": true
+       "en": "I would be well suited for this role because I am both enthusiastic and friendly",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-b60254c0b12353f2bf036dc0525dcb5b34eb52e6dfda24abddece2e6.mp3",
      "tier": "core"
     },
@@ -58424,42 +57369,9 @@
       {
        "en": "I have been working in this capacity in our Cape Town office for the last five years",
        "ko": null
-      },
-      {
-       "en": "I look forward to hearing from you when you make your final hiring decision",
-       "ko": null
-      },
-      {
-       "en": "I have a friend who I think may be a good fit for this position",
-       "ko": null
-      },
-      {
-       "en": "She has a strong background in fiscal management",
-       "ko": null
-      },
-      {
-       "en": "I particularly value his strong work ethic and excellent communication skills",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "hiring decision",
-       "ko": "채용 결정"
-      },
-      {
-       "en": "good fit",
-       "ko": "적임자, 꼭 맞는 것"
-      },
-      {
-       "en": "strong background",
-       "ko": "막강한 이력, 탄탄한 배경"
-      },
-      {
-       "en": "work ethic",
-       "ko": "직업 윤리"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-537dcd3997928d5cbc9b0ab808ec4048990b58caa1e1eba10dfcf3fa.mp3",
      "tier": "core"
@@ -58475,13 +57387,12 @@
      ],
      "examples": [
       {
-       "en": "The hiring decision will be announced after the second round of interviews.",
-       "ko": "채용 결정은 2차 면접이 끝난 후에 발표될 예정입니다.",
-       "generated": true
+       "en": "I look forward to hearing from you when you make your final hiring decision",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-ff6ab51050b2bda5fb5c0e229a807720be756b2c2b63045723a6c222.mp3",
      "tier": "core"
     },
@@ -58496,13 +57407,12 @@
      ],
      "examples": [
       {
-       "en": "Mr. Ortega seems like a good fit for our marketing team.",
-       "ko": "오르테가 씨는 저희 마케팅 팀에 꼭 맞는 적임자로 보입니다.",
-       "generated": true
+       "en": "I have a friend who I think may be a good fit for this position",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-18074e516173dccada416f048b5482dba43e8282d8843e613b49e2e6.mp3",
      "tier": "core"
     },
@@ -58517,13 +57427,12 @@
      ],
      "examples": [
       {
-       "en": "We seek an analyst with a strong background in financial reporting.",
-       "ko": "재무 보고 분야에 탄탄한 배경을 갖춘 분석가를 찾고 있습니다.",
-       "generated": true
+       "en": "She has a strong background in fiscal management",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-db6e21e9c2d711f2ba051213d6471d6ba43ecb781b213bea29e26dae.mp3",
      "tier": "core"
     },
@@ -58538,13 +57447,12 @@
      ],
      "examples": [
       {
-       "en": "Her excellent work ethic impressed everyone on the interview panel.",
-       "ko": "그녀의 훌륭한 직업 윤리는 면접 위원 모두에게 깊은 인상을 주었습니다.",
-       "generated": true
+       "en": "I particularly value his strong work ethic and excellent communication skills",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-6670a4c1abd0665359e990727138040ab93b912b0259aa5ab51723b3.mp3",
      "tier": "core"
     },
@@ -58601,42 +57509,9 @@
       {
        "en": "Thank you for writing such a glowing referral on my behalf",
        "ko": null
-      },
-      {
-       "en": "On your first day of work, October 3rd, please report to building 14 at 8:45 A.M.",
-       "ko": null
-      },
-      {
-       "en": "Details of your employment agreement have been mailed to you",
-       "ko": null
-      },
-      {
-       "en": "This is a contract position and aside from the initial training session, work will be done remotely",
-       "ko": null
-      },
-      {
-       "en": "You are subject to a 90-day probationary period",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "report to",
-       "ko": "~으로 출근하다, ~으로 출두하다"
-      },
-      {
-       "en": "employment agreement",
-       "ko": "고용 계약, 고용 계약서, 취업 동의서"
-      },
-      {
-       "en": "contract position",
-       "ko": "계약직"
-      },
-      {
-       "en": "probationary period",
-       "ko": "수습 기간, 시험 채용 기간"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-3029256b39d9555f8977e584cd70b54fc84927a633efce462b9fcbd6.mp3",
      "tier": "core"
@@ -58652,13 +57527,12 @@
      ],
      "examples": [
       {
-       "en": "New hires should report to the personnel office on Monday morning.",
-       "ko": "신입 사원은 월요일 오전에 인사부로 출근해야 합니다.",
-       "generated": true
+       "en": "On your first day of work, October 3rd, please report to building 14 at 8:45 A.M.",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-0c4fee169b695af794c47e89b8eced83692f28b92cc60c03d7134603.mp3",
      "tier": "core"
     },
@@ -58673,13 +57547,12 @@
      ],
      "examples": [
       {
-       "en": "Please sign the employment agreement and return it before your start date.",
-       "ko": "고용 계약서에 서명하신 후 근무 시작일 전에 보내 주십시오.",
-       "generated": true
+       "en": "Details of your employment agreement have been mailed to you",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-1efcae5cea5a37f4c3261f30f11aaa07e26e49decd862392f5b9135b.mp3",
      "tier": "core"
     },
@@ -58694,13 +57567,12 @@
      ],
      "examples": [
       {
-       "en": "The opening is a one-year contract position with possible extension.",
-       "ko": "이 자리는 연장 가능성이 있는 1년 계약직입니다.",
-       "generated": true
+       "en": "This is a contract position and aside from the initial training session, work will be done remotely",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-27cdf431a66dea0f10bd2632a6d4dc31c6a2005f14f3fe577fd8cf17.mp3",
      "tier": "core"
     },
@@ -58715,13 +57587,12 @@
      ],
      "examples": [
       {
-       "en": "All new staff complete a three-month probationary period before permanent employment.",
-       "ko": "모든 신입 직원은 정규직 전환 전에 3개월의 수습 기간을 거칩니다.",
-       "generated": true
+       "en": "You are subject to a 90-day probationary period",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-b59ef5ae95f65c473f11320471df6c204281c68390d34aee49fa8fa3.mp3",
      "tier": "core"
     },
@@ -58798,34 +57669,9 @@
       {
        "en": "Thank you for helping me to secure funding for my new business",
        "ko": null
-      },
-      {
-       "en": "I have reviewed your feedback and changed my business plan accordingly",
-       "ko": null
-      },
-      {
-       "en": "I believe this completes the necessary paperwork for my loan application",
-       "ko": null
-      },
-      {
-       "en": "Please confirm that you wish to proceed with this project",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "business plan",
-       "ko": "사업 계획, 사업 계획서"
-      },
-      {
-       "en": "loan application",
-       "ko": "대출 신청서, 대여 신청서, 대출 신청, 대여 신청"
-      },
-      {
-       "en": "proceed with",
-       "ko": "~을 진행하다, 계속해서 하다"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-d2556e36e85cd0f6deb970c1636d35eb6fccb1f21f79fe5fc5b2b995.mp3",
      "tier": "core"
@@ -58841,13 +57687,12 @@
      ],
      "examples": [
       {
-       "en": "The founders presented their business plan to several potential investors.",
-       "ko": "창업자들은 여러 잠재 투자자에게 사업 계획서를 발표했습니다.",
-       "generated": true
+       "en": "I have reviewed your feedback and changed my business plan accordingly",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-d19c6bb401ee6bf81463edcfd03b1df4d497ccd37816b606da627d95.mp3",
      "tier": "core"
     },
@@ -58862,13 +57707,12 @@
      ],
      "examples": [
       {
-       "en": "Your loan application will be reviewed within ten working days.",
-       "ko": "귀하의 대출 신청서는 영업일 기준 10일 이내에 검토될 것입니다.",
-       "generated": true
+       "en": "I believe this completes the necessary paperwork for my loan application",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-4584eb785164a9d8649e9f50f5001ae64f8cb78eb89c1496f4e2dcff.mp3",
      "tier": "core"
     },
@@ -58883,13 +57727,12 @@
      ],
      "examples": [
       {
-       "en": "We will proceed with the renovation as soon as the permits arrive.",
-       "ko": "허가서가 도착하는 대로 보수 공사를 진행하겠습니다.",
-       "generated": true
+       "en": "Please confirm that you wish to proceed with this project",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-ef4bc981fe6e793039e78a10004957a80a0975a83f4ed8797fa940f7.mp3",
      "tier": "core"
     },
@@ -58906,18 +57749,9 @@
       {
        "en": "I have a question about your calculation of the total cost",
        "ko": null
-      },
-      {
-       "en": "I have drawn up the revisions we discussed to the June 5th contract",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "draw up",
-       "ko": "만들다, 작성하다"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-40846644de558bf88e5d05efe186cfddb1b08b197b662a8dc81b20fd.mp3",
      "tier": "core"
@@ -58933,13 +57767,12 @@
      ],
      "examples": [
       {
-       "en": "Our legal team will draw up a new supply contract this week.",
-       "ko": "저희 법무팀이 이번 주에 새 공급 계약서를 작성할 것입니다.",
-       "generated": true
+       "en": "I have drawn up the revisions we discussed to the June 5th contract",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-f9b191b29c63d6d295623b0bcfd80e295668e2acf522ec0422da57cd.mp3",
      "tier": "core"
     },
@@ -58956,18 +57789,9 @@
       {
        "en": "If the document looks acceptable to you, sign and return a copy to me",
        "ko": null
-      },
-      {
-       "en": "Does your quote take into account any permits that would be needed for the job?",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "take into account",
-       "ko": "~을 계산에 넣다, 고려하다, 참작하다"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-c74593e4b11249462a5138d964cfb31373b329ad22a54d73e1db495c.mp3",
      "tier": "core"
@@ -58983,13 +57807,12 @@
      ],
      "examples": [
       {
-       "en": "Managers must take into account employee feedback when revising the schedule.",
-       "ko": "관리자는 일정을 수정할 때 직원들의 의견을 고려해야 합니다.",
-       "generated": true
+       "en": "Does your quote take into account any permits that would be needed for the job?",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-5ac68fdfcbcfc789f396cef36aab5ece1ba149f8f75ed34d23400aae.mp3",
      "tier": "core"
     },
@@ -59086,34 +57909,9 @@
       {
        "en": "Stayman Water Services has been subcontracted to install the water meters",
        "ko": null
-      },
-      {
-       "en": "Thank you for renewing your contract with Liu Web Works",
-       "ko": null
-      },
-      {
-       "en": "We have a proud record of completing projects on time and within budget",
-       "ko": null
-      },
-      {
-       "en": "I am following up on the service proposal I forwarded on 22nd April",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "renew one's contract",
-       "ko": "계약을 갱신하다"
-      },
-      {
-       "en": "within budget",
-       "ko": "예산 범위 내에서"
-      },
-      {
-       "en": "follow up on",
-       "ko": "후속 조치를 하다, 추가로 연락하다"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-5190600a0e6727397ece2bfe976c372a022ae45bc5f294f2533a9369.mp3",
      "tier": "core"
@@ -59129,13 +57927,12 @@
      ],
      "examples": [
       {
-       "en": "Ms. Delgado decided to renew her contract for another two years.",
-       "ko": "델가도 씨는 2년 더 계약을 갱신하기로 결정했습니다.",
-       "generated": true
+       "en": "Thank you for renewing your contract with Liu Web Works",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-2597dad94e39fba5fde0794892871b19685c245169681bb10643faf4.mp3",
      "tier": "core"
     },
@@ -59150,13 +57947,12 @@
      ],
      "examples": [
       {
-       "en": "The design team finished the project on time and within budget.",
-       "ko": "디자인 팀은 예산 범위 내에서 기한에 맞춰 프로젝트를 마쳤습니다.",
-       "generated": true
+       "en": "We have a proud record of completing projects on time and within budget",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-77c1172f1d5125d97127ed26b4b85f964215343b62dd6f3cc55d860a.mp3",
      "tier": "core"
     },
@@ -59171,13 +57967,12 @@
      ],
      "examples": [
       {
-       "en": "I am writing to follow up on our conversation about the lease.",
-       "ko": "임대차 계약에 관한 논의에 후속 조치를 하고자 연락드립니다.",
-       "generated": true
+       "en": "I am following up on the service proposal I forwarded on 22nd April",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-10cf7f85d3de15855b472c5797090aeb7463ae3fbf3a7c93c3617b5a.mp3",
      "tier": "core"
     },
@@ -59254,18 +58049,9 @@
       {
        "en": "Around this time of year, we typically begin arranging our annual company outing",
        "ko": null
-      },
-      {
-       "en": "We hold the fair rain or shine and all vendors must supply their own tenting",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "rain or shine",
-       "ko": "비가 오나 맑으나, 날씨에 관계없이"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-44303cc89de547cffd61701f73feda62b39c7d7c3e6d6ceda086855b.mp3",
      "tier": "core"
@@ -59281,13 +58067,12 @@
      ],
      "examples": [
       {
-       "en": "The company picnic will be held on Saturday, rain or shine.",
-       "ko": "회사 야유회는 날씨에 관계없이 토요일에 열립니다.",
-       "generated": true
+       "en": "We hold the fair rain or shine and all vendors must supply their own tenting",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-45e09815c8172f2cebdafd72e1d6bb38b3fcab79c7b0fac9338ed38d.mp3",
      "tier": "core"
     },
@@ -59464,26 +58249,9 @@
       {
        "en": "Beverages are complementary throughout the duration of the conference",
        "ko": null
-      },
-      {
-       "en": "I noticed that the time slot assigned to Mr. Kanana conflicts with mine",
-       "ko": null
-      },
-      {
-       "en": "Uou can sign up in advance for the VIP banquet which always fills up quickly",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "time slot",
-       "ko": "시간대"
-      },
-      {
-       "en": "fill up",
-       "ko": "자리가 차다"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-0b34d1bd0e96c7877eecde8e52e546f7d00902ee845a1f4fb8ed1f94.mp3",
      "tier": "core"
@@ -59499,13 +58267,12 @@
      ],
      "examples": [
       {
-       "en": "Please choose a time slot for your interview on the online calendar.",
-       "ko": "온라인 일정표에서 면접 시간대를 선택해 주십시오.",
-       "generated": true
+       "en": "I noticed that the time slot assigned to Mr. Kanana conflicts with mine",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-12cf123821d3a1b152e41050a5bf32201b75dba7f1432a60e929542f.mp3",
      "tier": "core"
     },
@@ -59520,13 +58287,12 @@
      ],
      "examples": [
       {
-       "en": "The morning workshops fill up quickly, so please register today.",
-       "ko": "오전 워크숍은 자리가 빨리 차니 오늘 등록해 주십시오.",
-       "generated": true
+       "en": "Uou can sign up in advance for the VIP banquet which always fills up quickly",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-74eb6ec90cd39df897a540697d15e96500fa6579f3a6e32495ed78e1.mp3",
      "tier": "core"
     },
@@ -60768,18 +59534,9 @@
       {
        "en": "One area where we can realize savings is imprinting and copying documents",
        "ko": "문쇄를 인쇄하고 복사하는데 있어 비용 절감을 실천할 수 있습니다"
-      },
-      {
-       "en": "During the power outage, the emergency lighting system will be upgraded",
-       "ko": "정전 동안 비상 조명 시스템이 업그레이드 될것입니다"
       }
      ],
-     "collocations": [
-      {
-       "en": "power outage",
-       "ko": "정전, 송전 정지"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-8f7524f61d60ce03209ed89f8c7a14129792ecfd4f992b49ac75fc99.mp3",
      "tier": "core"
@@ -60795,13 +59552,12 @@
      ],
      "examples": [
       {
-       "en": "A brief power outage will occur during Saturday's scheduled maintenance work.",
-       "ko": "토요일 정기 점검 작업 중에 짧은 정전이 발생할 예정입니다.",
-       "generated": true
+       "en": "During the power outage, the emergency lighting system will be upgraded",
+       "ko": "정전 동안 비상 조명 시스템이 업그레이드 될것입니다"
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-a097d7d88f36eba2c6f7d8b15e7aa0da3956ea6601725a8f2c926f27.mp3",
      "tier": "core"
     },
@@ -60978,18 +59734,9 @@
       {
        "en": "Employees are expected to work on assignments at home",
        "ko": null
-      },
-      {
-       "en": "Managers should note that all end-of-month deadlines remain in effect",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "in effect",
-       "ko": "시행 중인, 발효 중인"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-652fa2691d6d1f6f9f40256a37d31d6299c534b2a3ad11184dbb9be7.mp3",
      "tier": "core"
@@ -61005,13 +59752,12 @@
      ],
      "examples": [
       {
-       "en": "The new parking regulations are now in effect at all branch offices.",
-       "ko": "새 주차 규정이 이제 모든 지점에서 시행 중입니다.",
-       "generated": true
+       "en": "Managers should note that all end-of-month deadlines remain in effect",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-574e0786950891328ce73cb12327f4433cb6386a027414c4ba95a95c.mp3",
      "tier": "core"
     },
@@ -61068,18 +59814,9 @@
       {
        "en": "We have adopted a fingerprint entry system to improve company security",
        "ko": null
-      },
-      {
-       "en": "The revised policy will be implemented on June 15th",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "revised policy",
-       "ko": "개정된 정책"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-937d59a4d6e9574cafbd65ec1b019e07934ba3a5b7feb745e62612e8.mp3",
      "tier": "core"
@@ -61095,13 +59832,12 @@
      ],
      "examples": [
       {
-       "en": "The revised policy on remote work applies to all full-time employees.",
-       "ko": "재택근무에 관한 개정된 정책은 모든 정규직 직원에게 적용됩니다.",
-       "generated": true
+       "en": "The revised policy will be implemented on June 15th",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-cf14d37d93c14f348ee034481b7c6ec107f84ce154916e282fe26409.mp3",
      "tier": "core"
     },
@@ -61182,26 +59918,9 @@
       {
        "en": "A training session will be scheduled to familiarize employees with its key functions",
        "ko": null
-      },
-      {
-       "en": "We have decided to update our dress code here at Merivale Dental",
-       "ko": null
-      },
-      {
-       "en": "All expenses will be paid by the company, provided they have been pre-approved",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "dress code",
-       "ko": "복장 규정"
-      },
-      {
-       "en": "provided (that)",
-       "ko": "만약~이라면, ~이라는 조건 하에"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-fc4b14dec71aeef3e0440bf28a1f3ec4f2c7e53d17ad25797540e3d3.mp3",
      "tier": "core"
@@ -61217,13 +59936,12 @@
      ],
      "examples": [
       {
-       "en": "Employees must follow the dress code when meeting clients on site.",
-       "ko": "직원들은 현장에서 고객을 만날 때 복장 규정을 따라야 합니다.",
-       "generated": true
+       "en": "We have decided to update our dress code here at Merivale Dental",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-bc44022bd8bd335b36536d228811f537339f44f8d7d1cea9d2435c4d.mp3",
      "tier": "core"
     },
@@ -61238,13 +59956,12 @@
      ],
      "examples": [
       {
-       "en": "Refunds are issued provided that the receipt is submitted within thirty days.",
-       "ko": "영수증이 30일 이내에 제출된다면 환불이 처리됩니다.",
-       "generated": true
+       "en": "All expenses will be paid by the company, provided they have been pre-approved",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-a7077d5eee207b3c961004e1d3e52a9bf2310bf5dff5994a1b06835f.mp3",
      "tier": "core"
     },
@@ -61321,34 +60038,9 @@
       {
        "en": "Planned improvements include the refurbishment of our existing pool",
        "ko": null
-      },
-      {
-       "en": "The pilot test will be carried out during the first quarter of the fiscal year",
-       "ko": null
-      },
-      {
-       "en": "Beginning on March 15th, we will be using a new payroll service",
-       "ko": null
-      },
-      {
-       "en": "Pay stubs for payments will no longer be e-mailed",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "pilot test",
-       "ko": "시범 테스트"
-      },
-      {
-       "en": "beginning on",
-       "ko": "~부터, ~일자로"
-      },
-      {
-       "en": "pay stub",
-       "ko": "급여 명세서"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-c11d9b39ac5e0cf6491ac65552994dbd67912d5ed934b89c6372accf.mp3",
      "tier": "core"
@@ -61364,13 +60056,12 @@
      ],
      "examples": [
       {
-       "en": "The pilot test of the new scheduling software begins next Monday.",
-       "ko": "새 일정 관리 소프트웨어의 시범 테스트가 다음 주 월요일에 시작됩니다.",
-       "generated": true
+       "en": "The pilot test will be carried out during the first quarter of the fiscal year",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-1361fbd92de7804174864c28ca003f060dd86e7fdb61db4d3e00da67.mp3",
      "tier": "core"
     },
@@ -61385,13 +60076,12 @@
      ],
      "examples": [
       {
-       "en": "Beginning on July first, the cafeteria will open an hour earlier.",
-       "ko": "7월 1일부터 구내식당이 한 시간 일찍 문을 엽니다.",
-       "generated": true
+       "en": "Beginning on March 15th, we will be using a new payroll service",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-df5c482414c98160ce24cd1f020dc91b3195ba057efc28dfea5da07d.mp3",
      "tier": "core"
     },
@@ -61406,13 +60096,12 @@
      ],
      "examples": [
       {
-       "en": "Please review your pay stub and report any errors to the payroll office.",
-       "ko": "급여 명세서를 확인하시고 오류가 있으면 급여 부서에 알려 주십시오.",
-       "generated": true
+       "en": "Pay stubs for payments will no longer be e-mailed",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-c436cb3b2e7333427436326b44e557f06e2dd41dc84904fde05d82d8.mp3",
      "tier": "core"
     },
@@ -61693,18 +60382,9 @@
       {
        "en": "They have been studying the feasibility of installing noise barriers along the tracks",
        "ko": null
-      },
-      {
-       "en": "Bern Recreation Center is up and running again after renovations to the facility",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "up and running",
-       "ko": "제대로 운영되는, 제대로 작동되는"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-65571da86170147cbfac01ed02b0644f19849909f22b113587bf9758.mp3",
      "tier": "core"
@@ -61720,13 +60400,12 @@
      ],
      "examples": [
       {
-       "en": "The new inventory system should be up and running by Friday afternoon.",
-       "ko": "새 재고 시스템은 금요일 오후까지 제대로 가동될 것입니다.",
-       "generated": true
+       "en": "Bern Recreation Center is up and running again after renovations to the facility",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-bc3818d18e20170abc6d52c72057e21943f07458261e4f6704d1440a.mp3",
      "tier": "core"
     },
@@ -61783,18 +60462,9 @@
       {
        "en": "Ship manufacturing center is undergoing a transformation",
        "ko": null
-      },
-      {
-       "en": "Just in time for the Edinburgh Opera Festival, the city has opened a new park",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "in time for",
-       "ko": "~하는 시기에 맞춰"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-18b5261989d1d3328a10947e22f03591893bfe288012cb49b9e1331c.mp3",
      "tier": "core"
@@ -61810,13 +60480,12 @@
      ],
      "examples": [
       {
-       "en": "The renovated lobby will reopen in time for the annual shareholders meeting.",
-       "ko": "개조된 로비는 연례 주주 총회 시기에 맞춰 다시 문을 엽니다.",
-       "generated": true
+       "en": "Just in time for the Edinburgh Opera Festival, the city has opened a new park",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-5d97367e6bd754e12ac905285e3c2e28af76dbbd5bb0a5eb0e227a20.mp3",
      "tier": "core"
     },
@@ -62001,18 +60670,9 @@
       {
        "en": "Grable's Costumes quickly captured a sizable portion of the costume Market in East Asia",
        "ko": null
-      },
-      {
-       "en": "Over the decades, the company has broadened its customer base",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "customer base",
-       "ko": "고객층, 고객 기반"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-e195c93a82c083afe30c3214de6720aca7394f01ef6c14ab651a9faf.mp3",
      "tier": "core"
@@ -62028,13 +60688,12 @@
      ],
      "examples": [
       {
-       "en": "The company expanded its customer base after launching the mobile application.",
-       "ko": "그 회사는 모바일 애플리케이션을 출시한 후 고객층을 넓혔습니다.",
-       "generated": true
+       "en": "Over the decades, the company has broadened its customer base",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-8872630ad96b19da434963fe4862b585a1799e906062ddb8809dd09e.mp3",
      "tier": "core"
     },
@@ -62071,18 +60730,9 @@
       {
        "en": "A joint venture between SOA group and ROOV LLC was chosen to receive the contract",
        "ko": null
-      },
-      {
-       "en": "Mirren Wear hopes to guarantee steady profit margins",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "profit margin",
-       "ko": "이윤, 차익금"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-b198137e4a142134d609789642909f3b971c11b9479cce432812cb28.mp3",
      "tier": "core"
@@ -62098,13 +60748,12 @@
      ],
      "examples": [
       {
-       "en": "Rising shipping costs have reduced the profit margin on overseas orders.",
-       "ko": "배송비 상승으로 해외 주문의 이윤이 줄었습니다.",
-       "generated": true
+       "en": "Mirren Wear hopes to guarantee steady profit margins",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-d478fb87bd1af785b3083f4adf075c0b7ebf1f80f18053fc529783d8.mp3",
      "tier": "core"
     },
@@ -62139,11 +60788,7 @@
      ],
      "examples": [
       {
-       "en": "The town's small business boom continues, creating new jobs and strengthening",
-       "ko": null
-      },
-      {
-       "en": "local markets",
+       "en": "The town's small business boom continues, creating new jobs and strengthening local markets",
        "ko": null
       }
      ],
@@ -62205,18 +60850,9 @@
       {
        "en": "Company spokesperson Rachel Kurstin attributes the impressive sales to a number of factors",
        "ko": null
-      },
-      {
-       "en": "Simisola Oduya, CEO of Prentica, will step down from her position after eight years",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "step down",
-       "ko": "물러나다, 퇴임하다"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-2433fd8f4366ebc43d3fbb95cc2217de3e7722efe6ca3d5808ee2b2b.mp3",
      "tier": "core"
@@ -62232,13 +60868,12 @@
      ],
      "examples": [
       {
-       "en": "The chief financial officer will step down at the end of March.",
-       "ko": "최고 재무 책임자가 3월 말에 자리에서 물러날 예정입니다.",
-       "generated": true
+       "en": "Simisola Oduya, CEO of Prentica, will step down from her position after eight years",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-25de2ce98488cda8a5a4e5206bd8300691686e8aae27e5fd118e062c.mp3",
      "tier": "core"
     },
@@ -63942,32 +62577,11 @@
      ],
      "examples": [
       {
-       "en": "You can sample the new Malayna, which will be debuting in retail locations next",
-       "ko": null
-      },
-      {
-       "en": "year",
-       "ko": null
-      },
-      {
-       "en": "Orders under $50 will be shipped and a flat rate of $5",
-       "ko": null
-      },
-      {
-       "en": "Baardsen washers are outfitted with water-saving technologies",
+       "en": "You can sample the new Malayna, which will be debuting in retail locations next year",
        "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "flat rate",
-       "ko": "균일가"
-      },
-      {
-       "en": "be outfitted with",
-       "ko": "~이 갖춰져 있다"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-c8f1798b7955d78337b56886e68871c314febdfca0323ea0c5876d42.mp3",
      "tier": "core"
@@ -63983,13 +62597,12 @@
      ],
      "examples": [
       {
-       "en": "The airport shuttle charges a flat rate for every downtown pickup.",
-       "ko": "공항 셔틀은 모든 시내 픽업에 균일 요금을 받습니다.",
-       "generated": true
+       "en": "Orders under $50 will be shipped and a flat rate of $5",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-833360f8d47a69a8881980d041a6d26eec0fb516d34089399c799ba3.mp3",
      "tier": "core"
     },
@@ -64004,13 +62617,12 @@
      ],
      "examples": [
       {
-       "en": "Every meeting room is outfitted with video conferencing equipment.",
-       "ko": "모든 회의실에는 화상 회의 장비가 갖춰져 있습니다.",
-       "generated": true
+       "en": "Baardsen washers are outfitted with water-saving technologies",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-93a31a2797a8d490d4ba4ee91c341c5c50f7bc0f05afdb39da09b502.mp3",
      "tier": "core"
     },
@@ -64131,18 +62743,9 @@
       {
        "en": "We can adapt all menu items to different dietary restrictions",
        "ko": null
-      },
-      {
-       "en": "Should you prefer more casual fare, try our seasonal dishes",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "casual fair",
-       "ko": "일상적인 식사"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-0b2bcd81532105fe0de6d33359acd4111284d90389d93f697e05078d.mp3",
      "tier": "core"
@@ -64221,18 +62824,9 @@
       {
        "en": "The more tickets you buy, the more you save-perfect for charity fund-raisers",
        "ko": null
-      },
-      {
-       "en": "Contact us to achieve your business goals",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "achieve one's goal",
-       "ko": "목표를 달성하다"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-df3a1a99ac6ed5309f5d22dad185dd6b1c0c8943472a8614f9c78b55.mp3",
      "tier": "core"
@@ -64248,13 +62842,12 @@
      ],
      "examples": [
       {
-       "en": "The sales team achieved its goal three weeks before the deadline.",
-       "ko": "영업팀은 마감 3주 전에 목표를 달성했습니다.",
-       "generated": true
+       "en": "Contact us to achieve your business goals",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-e020606e2e84a3f48aee95363d70e036a678b7b3b612c46c49bec624.mp3",
      "tier": "core"
     },
@@ -64431,18 +63024,9 @@
       {
        "en": "Westwood Properties, Inc. has two residential apartment communities",
        "ko": null
-      },
-      {
-       "en": "The company began to take on large commercial construction projects",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "take on",
-       "ko": "~를 맡다"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-230175738e61ad07a8778b602943d0812993d3e32c28133102d8d290.mp3",
      "tier": "core"
@@ -64458,13 +63042,12 @@
      ],
      "examples": [
       {
-       "en": "Mr. Alvarez will take on additional duties while the manager is abroad.",
-       "ko": "알바레즈 씨가 관리자의 해외 체류 기간 동안 추가 업무를 맡을 것입니다.",
-       "generated": true
+       "en": "The company began to take on large commercial construction projects",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-b26e5e18a80811f64aeb338da398fe6745cfcd1b0c1c52d1e955e6ce.mp3",
      "tier": "core"
     },
@@ -64541,18 +63124,9 @@
       {
        "en": "We offer a wonderful work environment and great benefits to our employees",
        "ko": null
-      },
-      {
-       "en": "Candidates must have good interpersonal skills",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "interpersonal skill",
-       "ko": "대인관계 능력"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-65c5836a6e37ddc42269f4a8875c7099b8c989571addacd73905d833.mp3",
      "tier": "core"
@@ -64568,13 +63142,12 @@
      ],
      "examples": [
       {
-       "en": "Strong interpersonal skills are essential for this customer service position.",
-       "ko": "이 고객 서비스 직책에는 뛰어난 대인관계 능력이 필수적입니다.",
-       "generated": true
+       "en": "Candidates must have good interpersonal skills",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-523bfc905eec7aa95efde6f0776f51d393ceae592c3f1f42d1571ce8.mp3",
      "tier": "core"
     },
@@ -64591,18 +63164,9 @@
       {
        "en": "At least one year of experience as a corporate trainer is highly desirable",
        "ko": null
-      },
-      {
-       "en": "Little Seed Publishing has a generous compensation package",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "compensation package (",
-       "ko": "급여와 복리후생을 포함한) 총 보수"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-64ccf3130a8f3b564c9a68f1458ac1de47a9d376162645451c8248a8.mp3",
      "tier": "core"
@@ -64618,13 +63182,12 @@
      ],
      "examples": [
       {
-       "en": "The firm offers a generous compensation package including full health insurance.",
-       "ko": "그 회사는 종합 건강 보험을 포함한 넉넉한 총 보수를 제공합니다.",
-       "generated": true
+       "en": "Little Seed Publishing has a generous compensation package",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-e651f12c0dd7cbd5b7cdcc5222454fcf8e8486412dd04749fef3d05b.mp3",
      "tier": "core"
     },
@@ -64765,18 +63328,9 @@
       {
        "en": "Our luxurious condominiums feature panoramic views of the Singapore skyline",
        "ko": null
-      },
-      {
-       "en": "Responsibilities include opening and processing repair requests from clients",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "responsibilities include",
-       "ko": "업무에는 ~이 포함된다"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-b7d14d88cfd6e59682eb56f685e5b8ccf1b618b1abd1a41dbcef38d2.mp3",
      "tier": "core"
@@ -64875,18 +63429,9 @@
       {
        "en": "The on-premises dining facility will be open tomorrow",
        "ko": null
-      },
-      {
-       "en": "Early departures are subject to full cancellation fees",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "be subject to",
-       "ko": "~의 대상이다"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-580d9858da8ab81931bd3ed22298e27ec58b44505e8f8d51abb6092c.mp3",
      "tier": "core"
@@ -64902,13 +63447,12 @@
      ],
      "examples": [
       {
-       "en": "All listed prices are subject to change without prior notice.",
-       "ko": "표시된 모든 가격은 사전 통보 없이 변경될 수 있습니다.",
-       "generated": true
+       "en": "Early departures are subject to full cancellation fees",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-d93b0ca315d2fa50044d13d669d0ee6ff3f77ec7e522c599ac6fc039.mp3",
      "tier": "core"
     },
@@ -64965,26 +63509,9 @@
       {
        "en": "All nits include up-to-date kitchens and laundry facilities",
        "ko": null
-      },
-      {
-       "en": "Guest rooms are cleaned to accommodate our guests' occupancy schedules",
-       "ko": null
-      },
-      {
-       "en": "Lodging-arrangement requests should be submitted via the online travel request form",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "occupancy schedule",
-       "ko": "숙박 일정"
-      },
-      {
-       "en": "lodging arrangement",
-       "ko": "숙박 준비, 숙박 예약"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-e7b2acb4d4c7dcba048bf8a00ba481864c130bc483d05c9987e7b0c8.mp3",
      "tier": "core"
@@ -65000,13 +63527,12 @@
      ],
      "examples": [
       {
-       "en": "Please confirm the occupancy schedule for the conference guests by Friday.",
-       "ko": "금요일까지 학회 참석자들의 숙박 일정을 확정해 주십시오.",
-       "generated": true
+       "en": "Guest rooms are cleaned to accommodate our guests' occupancy schedules",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-ec19b7cc862cb97ab7da71c1a919e242871a07dbd9a7d9a35ee4c2a6.mp3",
      "tier": "core"
     },
@@ -65021,13 +63547,12 @@
      ],
      "examples": [
       {
-       "en": "Our travel office handles all lodging arrangements for overseas assignments.",
-       "ko": "저희 출장 부서가 해외 파견의 모든 숙박 준비를 담당합니다.",
-       "generated": true
+       "en": "Lodging-arrangement requests should be submitted via the online travel request form",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-6caee3433de2a49839a4d06b982f0d9037158a3937a56951bd689b45.mp3",
      "tier": "core"
     },
@@ -65124,18 +63649,9 @@
       {
        "en": "This challenging hike offers spectacular views",
        "ko": null
-      },
-      {
-       "en": "Hot meals are prepared fresh daily, on board, by trained chefs",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "on board",
-       "ko": "승선한, 탑승한"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-5ca0adaa3567ccffec122721ff8117a17ba965e52f1151e53f4db446.mp3",
      "tier": "core"
@@ -65151,13 +63667,12 @@
      ],
      "examples": [
       {
-       "en": "Passengers on board this flight may use the wireless network free.",
-       "ko": "이 항공편에 탑승한 승객은 무선 인터넷을 무료로 이용할 수 있습니다.",
-       "generated": true
+       "en": "Hot meals are prepared fresh daily, on board, by trained chefs",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-65639656ee16be4e8f65dcfc1dcd80bf578d3aff535c429fe5986225.mp3",
      "tier": "core"
     },
@@ -66258,6 +64773,44 @@
      "source": "deck",
      "audio": "hypertts-a9892ec64ee53af421949b47f4bedb35fd00b0d2b6901576bda2b028.mp3",
      "tier": "bonus"
+    },
+    {
+     "id": "d29-casual-fair",
+     "headword": "casual fair",
+     "senses": [
+      {
+       "pos": null,
+       "meaning": "일상적인 식사"
+      }
+     ],
+     "examples": [
+      {
+       "en": "Should you prefer more casual fare, try our seasonal dishes",
+       "ko": null
+      }
+     ],
+     "collocations": [],
+     "source": "blog",
+     "tier": "core"
+    },
+    {
+     "id": "d29-responsibilities-include",
+     "headword": "responsibilities include",
+     "senses": [
+      {
+       "pos": null,
+       "meaning": "업무에는 ~이 포함된다"
+      }
+     ],
+     "examples": [
+      {
+       "en": "Responsibilities include opening and processing repair requests from clients",
+       "ko": null
+      }
+     ],
+     "collocations": [],
+     "source": "blog",
+     "tier": "core"
     }
    ]
   },
@@ -66323,18 +64876,9 @@
       {
        "en": "The Pondress Corporation has been conducting public opinion polls for more than three decades",
        "ko": "폰드레스 사는 30년 넘게 여론조사를 실시해왔다"
-      },
-      {
-       "en": "To send your information, please complete the electronic form found here",
-       "ko": "정보를 보내려면, 여기에 있는 전자양식을 작성해 주십시오"
       }
      ],
-     "collocations": [
-      {
-       "en": "electronic form",
-       "ko": "온라인 양식"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-f6e183b7755c92c1e40099fe8e0facc5f594227a8d0bf57392d783bf.mp3",
      "tier": "core"
@@ -66350,13 +64894,12 @@
      ],
      "examples": [
       {
-       "en": "Please complete the electronic form before your appointment on Tuesday.",
-       "ko": "화요일 예약 전에 온라인 양식을 작성해 주십시오.",
-       "generated": true
+       "en": "To send your information, please complete the electronic form found here",
+       "ko": "정보를 보내려면, 여기에 있는 전자양식을 작성해 주십시오"
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-4b7de00c0936ea1c9d02d62c5f1f3f21222890972593089c3aa4cdf1.mp3",
      "tier": "core"
     },
@@ -66417,18 +64960,9 @@
       {
        "en": "Complete our online customer survey to be entered into a drawing for a coffee card",
        "ko": "온라인 고객 설문조사를 완료하여 커피 카드 추첨에 응모하세요"
-      },
-      {
-       "en": "If an item is out of place, please notify a staff member",
-       "ko": "물품이 잘못 놓여진 경우 직원에게 알리십시오"
       }
      ],
-     "collocations": [
-      {
-       "en": "out of place",
-       "ko": "잘못 놓인, 부적절한"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-75d997fd2376620bf137d6f1a755c982d9d55cf75ddecd977e694757.mp3",
      "tier": "core"
@@ -66444,13 +64978,12 @@
      ],
      "examples": [
       {
-       "en": "Several files in the cabinet were out of place after the audit.",
-       "ko": "감사가 끝난 뒤 캐비닛의 파일 몇 개가 잘못 놓여 있었습니다.",
-       "generated": true
+       "en": "If an item is out of place, please notify a staff member",
+       "ko": "물품이 잘못 놓여진 경우 직원에게 알리십시오"
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-3f1d045bc5ed198fbe925ad254fe065be0de60eabc31d551c21a0196.mp3",
      "tier": "core"
     },
@@ -66551,18 +65084,9 @@
       {
        "en": "Funds will not be issued to employees without itemized receipts",
        "ko": null
-      },
-      {
-       "en": "Our tracking system indicates that the package arrived on May 10th",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "tracking system",
-       "ko": "추적 시스템"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-4bb8a7479adf9a710e95ab924bb01acfd68c45377e8c53bb143eb6ba.mp3",
      "tier": "core"
@@ -66578,13 +65102,12 @@
      ],
      "examples": [
       {
-       "en": "Our tracking system lets customers follow their shipments in real time.",
-       "ko": "저희 추적 시스템으로 고객은 배송 상황을 실시간으로 확인할 수 있습니다.",
-       "generated": true
+       "en": "Our tracking system indicates that the package arrived on May 10th",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-75dc4a2640166fd2f745de945dafc021f4eb908efcacb4414872d3bf.mp3",
      "tier": "core"
     },
@@ -66665,26 +65188,9 @@
       {
        "en": "Protect yourself from potential hazards and damages",
        "ko": null
-      },
-      {
-       "en": "Sample items can be sent to you upon request",
-       "ko": null
-      },
-      {
-       "en": "Please attend to any personal business during these break times",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "upon request",
-       "ko": "요청 시에"
-      },
-      {
-       "en": "attend to",
-       "ko": "처리하다"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-8b86463a3f53376dd6577d8ab26bbcf6bde69f259128c5582333d10c.mp3",
      "tier": "core"
@@ -66700,13 +65206,12 @@
      ],
      "examples": [
       {
-       "en": "A detailed invoice is available upon request from our billing office.",
-       "ko": "상세 청구서는 요청 시 저희 청구 부서에서 발급해 드립니다.",
-       "generated": true
+       "en": "Sample items can be sent to you upon request",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-6a9184f7aabebe6ebf8f9012b87f8744fdca61f9d06578535415f841.mp3",
      "tier": "core"
     },
@@ -66721,13 +65226,12 @@
      ],
      "examples": [
       {
-       "en": "A technician will attend to your maintenance request within one business day.",
-       "ko": "기술자가 영업일 하루 이내에 귀하의 유지 보수 요청을 처리할 것입니다.",
-       "generated": true
+       "en": "Please attend to any personal business during these break times",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-c70523744254552bb5689589f751f3bcfab3ad78151f677f8bd1f473.mp3",
      "tier": "core"
     },
@@ -66864,18 +65368,9 @@
       {
        "en": "Visitors are warned not to disturb the wildlife",
        "ko": null
-      },
-      {
-       "en": "You can take a boat ride around the nature reserve",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "nature reserve",
-       "ko": "자연 보호구역"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-7dbb757ae19fa9b6189e1e864c3b3b94b055841d9ccab71d46ba1498.mp3",
      "tier": "core"
@@ -66891,13 +65386,12 @@
      ],
      "examples": [
       {
-       "en": "The tour includes a guided walk through the coastal nature reserve.",
-       "ko": "그 투어에는 해안 자연 보호구역을 도는 가이드 산책이 포함됩니다.",
-       "generated": true
+       "en": "You can take a boat ride around the nature reserve",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-b4820244c5c1007024339b3209680403a2d98fad61cb1d3eae2a3b46.mp3",
      "tier": "core"
     },
@@ -67035,18 +65529,9 @@
       {
        "en": "We have offered a variety of sightseeing trips around Western Australia",
        "ko": null
-      },
-      {
-       "en": "Meet our highly qualified travel agents and find out how you can book a trip",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "travel agent",
-       "ko": "여행사 직원"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-656d1ea6dc8b9ed99f22f86e522ca29588b9f7ec5f2b8c2c664b3b92.mp3",
      "tier": "core"
@@ -67062,13 +65547,12 @@
      ],
      "examples": [
       {
-       "en": "Our travel agent will confirm your itinerary by tomorrow morning.",
-       "ko": "저희 여행사 직원이 내일 아침까지 일정을 확정해 드릴 것입니다.",
-       "generated": true
+       "en": "Meet our highly qualified travel agents and find out how you can book a trip",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-a28db86490ef28e6b1be40a570484e064a240946cdcd4ced7b360557.mp3",
      "tier": "core"
     },
@@ -67125,34 +65609,9 @@
       {
        "en": "Meals are included in the ticket price for all passengers",
        "ko": null
-      },
-      {
-       "en": "Print out your boarding pass at any of our check-in kiosks as you enter the terminal",
-       "ko": null
-      },
-      {
-       "en": "Advance reservations are strongly recommended",
-       "ko": null
-      },
-      {
-       "en": "Pilko Car Rental's counter is located next to the baggage claim area",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "boarding pass",
-       "ko": "탑승권"
-      },
-      {
-       "en": "advance reservation",
-       "ko": "사전 예약"
-      },
-      {
-       "en": "baggage claim (",
-       "ko": "공항의) 수하물 찾는 곳"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-27b4c96cb259597dad580efed52b1c29ebaf504b16aec42e8d3025b6.mp3",
      "tier": "core"
@@ -67168,13 +65627,12 @@
      ],
      "examples": [
       {
-       "en": "Please have your boarding pass ready before approaching the departure gate.",
-       "ko": "탑승구에 오시기 전에 탑승권을 미리 준비해 주십시오.",
-       "generated": true
+       "en": "Print out your boarding pass at any of our check-in kiosks as you enter the terminal",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-73941468d62cf79527a206addd82a5d08bb8982d641037e17d650301.mp3",
      "tier": "core"
     },
@@ -67189,13 +65647,12 @@
      ],
      "examples": [
       {
-       "en": "An advance reservation is required for groups of ten or more.",
-       "ko": "10인 이상 단체는 사전 예약이 필요합니다.",
-       "generated": true
+       "en": "Advance reservations are strongly recommended",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-59c846c1fb764bbefbb84e9b52846b59dd20dad633f2e3565d3d94c2.mp3",
      "tier": "core"
     },
@@ -67210,13 +65667,12 @@
      ],
      "examples": [
       {
-       "en": "Passengers may collect their luggage at baggage claim on level one.",
-       "ko": "승객들은 1층 수하물 찾는 곳에서 짐을 찾으실 수 있습니다.",
-       "generated": true
+       "en": "Pilko Car Rental's counter is located next to the baggage claim area",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-f8b90ec6e25963a13b7a67fd41f04cf6f57e68e675d550ce0920af9d.mp3",
      "tier": "core"
     },
@@ -67233,18 +65689,9 @@
       {
        "en": "The rooftop restaurant offers stunning views of the surrounding area",
        "ko": null
-      },
-      {
-       "en": "There are many dining establishments within walking distance of the conference venue",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "dining establishment",
-       "ko": "식당"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-9f3bc2571c0939c86b4c078fbe55e5a7c9e9f6e418ded67c03fee443.mp3",
      "tier": "core"
@@ -67260,13 +65707,12 @@
      ],
      "examples": [
       {
-       "en": "The building houses several dining establishments open until midnight.",
-       "ko": "그 건물에는 자정까지 문을 여는 식당 여러 곳이 있습니다.",
-       "generated": true
+       "en": "There are many dining establishments within walking distance of the conference venue",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-167589c2026c49b6c28c7e1399a92e0ded1cbc5857c26aaf78a0f06c.mp3",
      "tier": "core"
     },
@@ -67323,18 +65769,9 @@
       {
        "en": "Enjoy some of the self-guided walks available throughout the park",
        "ko": null
-      },
-      {
-       "en": "Tourists can get away from the hustle and bustle of the city",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "hustle and bustle",
-       "ko": "혼잡, 번잡함"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-91653841ae49d2100c5af26f8ab899e33ed206394af08a558b32d735.mp3",
      "tier": "core"
@@ -67350,13 +65787,12 @@
      ],
      "examples": [
       {
-       "en": "The resort offers a quiet retreat from the hustle and bustle of the city.",
-       "ko": "그 리조트는 도시의 번잡함에서 벗어난 조용한 휴식처를 제공합니다.",
-       "generated": true
+       "en": "Tourists can get away from the hustle and bustle of the city",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-ccd03f2512d4c5662c630577ae9716bfe2f4dded9322317ab1708c81.mp3",
      "tier": "core"
     },
@@ -67537,18 +65973,9 @@
       {
        "en": "It is the cos tume s and sets that really make this show memorable",
        "ko": null
-      },
-      {
-       "en": "All guests are entitled to a free breakfast including locally grown coffee",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "be entitled to",
-       "ko": "~을 받을 자격이 되다"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-c014af320715c94a2d7bf2b86c8155a1aeb2144c4945bc87fccae0e0.mp3",
      "tier": "core"
@@ -67564,13 +65991,12 @@
      ],
      "examples": [
       {
-       "en": "Full-time employees are entitled to fifteen paid vacation days each year.",
-       "ko": "정규직 직원은 매년 15일의 유급 휴가를 받을 자격이 있습니다.",
-       "generated": true
+       "en": "All guests are entitled to a free breakfast including locally grown coffee",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-824a9227db3fbfbf3ada694f44137934765dfcabdc9e276a1348a84d.mp3",
      "tier": "core"
     },
@@ -67647,18 +66073,9 @@
       {
        "en": "Musical performances will be held on our Atrium stage near the main entrance",
        "ko": null
-      },
-      {
-       "en": "This event will feature an array of food and craft vendors",
-       "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "an array of",
-       "ko": "다양한"
-      }
-     ],
+     "collocations": [],
      "source": "both",
      "audio": "hypertts-dd226d0873520f31a862b98eca9c9568a84484761f849f9877a6e3c6.mp3",
      "tier": "core"
@@ -67674,13 +66091,12 @@
      ],
      "examples": [
       {
-       "en": "The catalog features an array of office supplies at discounted prices.",
-       "ko": "그 카탈로그에는 할인된 가격의 다양한 사무용품이 실려 있습니다.",
-       "generated": true
+       "en": "This event will feature an array of food and craft vendors",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-da28a72114f792f65ed81b1c4008d1d3d64ec83872d0434f19d9ee07.mp3",
      "tier": "core"
     },
@@ -68883,18 +67299,27 @@
        "meaning": "환경 친화적인"
       }
      ],
+     "examples": [],
+     "collocations": [],
+     "source": "blog",
+     "tier": "core"
+    },
+    {
+     "id": "d30-environmentally-friendly",
+     "headword": "environmentally friendly",
+     "senses": [
+      {
+       "pos": null,
+       "meaning": "환경 친화적인"
+      }
+     ],
      "examples": [
       {
        "en": "Visit our Web site for the most environmentally friendly products",
        "ko": null
       }
      ],
-     "collocations": [
-      {
-       "en": "environmentally friendly",
-       "ko": "환경 친화적인"
-      }
-     ],
+     "collocations": [],
      "source": "blog",
      "tier": "core"
     }
