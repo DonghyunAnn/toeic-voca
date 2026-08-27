@@ -322,7 +322,7 @@ def merge(source, kind, audio_out=None):
             "tier": "extra",
             "rank": e["rank"],
         })
-        extra_titles[e["day"]] = "추가 어휘"
+        extra_titles[e["day"]] = True
 
     # CSV에 대응이 없는 블로그 단어는 버리지 않고 그 DAY에 덧붙인다
     extras = []
@@ -345,7 +345,7 @@ def merge(source, kind, audio_out=None):
         extras.append(f"DAY{e['day']:02d} {e['headword']}")
 
     blog_titles = {d["day"]: d["title"] for d in blog_data["days"]}
-    blog_titles.update({d: f"추가 어휘 ({d - 30})" for d in extra_titles})
+    blog_titles.update({d: f"독종반 추가 어휘 ({d - 30})" for d in extra_titles})
     blog_urls = {d["day"]: d["url"] for d in blog_data["days"]}
     total = sum(len(v) for v in days.values())
     with_ex = sum(1 for v in days.values() for w in v if w["examples"])
@@ -368,6 +368,11 @@ def merge(source, kind, audio_out=None):
             "withAudio": with_audio,
             "coreCount": core,
             "extraCount": extra,
+            "sources": {
+                "core": "ETS 토익 기출 보카 (공식 교재)",
+                "bonus": "ETS 토익 기출 보카 (공식 교재)",
+                "extra": "독종반 모바일 단어장",
+            },
             "generatedExamples": gen_used,
         },
         "days": [{

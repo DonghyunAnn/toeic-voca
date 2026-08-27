@@ -115,6 +115,24 @@ python3 merge.py --apkg ...     # 병합할 때 자동으로 들어간다
 블로그 원문에 오타가 있다(`access`↔`excess`, `기어`↔`기여`, `perfrom`). 크롤러는
 원문을 그대로 보존한다.
 
+## 전체 파이프라인
+
+```
+[원본 — data/reference/, git 제외]        [중간 산출물 — data/, git 포함]
+  ETS.apkg   ──apkg.py──────────────────>  deck.json  + docs/audio/*.mp3
+  ETS.xlsx   ──xlsx_tier.py─────────────>  tiers.json
+  네이버 블로그 ──crawl.py────────────────>  words.json
+  모바일.pdf  ──pdf_deck.py──────────────>  extra-voca.json
+  (서브에이전트) ─collect_generated.py───>  generated_examples.json
+                                              │
+                                       merge.py │
+                                              ▼
+                                        merged.json ──> docs/words.json
+```
+
+원본이 없어도 중간 산출물만으로 `python3 merge.py`가 같은 결과를 낸다.
+원본은 지금 쓰지 않는 것을 다시 캘 때만 필요하다.
+
 ## 로컬 실행
 
 ```bash

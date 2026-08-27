@@ -63,9 +63,15 @@ try {
         <p class="hint">틀리면 1번, 맞히면 다음 박스로. 박스가 높을수록 복습 간격이 길어집니다.</p>
       </section>
 
-      <section class="section">
-        <h2 class="section-title">DAY 목록</h2>
+      <section class="section" id="official-group">
+        <h2 class="section-title">DAY 1~30 · ETS 교재</h2>
         <div class="day-grid" id="day-grid"></div>
+      </section>
+
+      <section class="section" id="extra-group">
+        <h2 class="section-title">DAY 31~40 · 추가 어휘</h2>
+        <div class="day-grid" id="day-grid-extra"></div>
+        <p class="hint">DAY를 누르면 기한과 상관없이 그 DAY 전체를 다시 볼 수 있습니다.</p>
       </section>
     </section>
 
@@ -76,8 +82,15 @@ try {
           <svg viewBox="0 0 24 24" class="ico"><path d="M18 6 6 18M6 6l12 12"/></svg>
         </button>
         <div class="progress"><div class="progress-fill" id="study-progress"></div></div>
+        <button class="icon-btn nav-btn" id="study-prev" aria-label="이전 카드">
+          <svg viewBox="0 0 24 24" class="ico"><path d="m15 6-6 6 6 6"/></svg>
+        </button>
         <span class="counter" id="study-counter">0/0</span>
+        <button class="icon-btn nav-btn" id="study-next" aria-label="건너뛰기">
+          <svg viewBox="0 0 24 24" class="ico"><path d="m9 6 6 6-6 6"/></svg>
+        </button>
       </header>
+      <p class="study-scope" id="study-scope"></p>
 
       <div class="card-stage" id="card-stage">
         <article class="flashcard" id="flashcard">

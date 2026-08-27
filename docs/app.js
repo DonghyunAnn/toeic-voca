@@ -212,6 +212,12 @@ const Scheduler = {
     return [...shuffle(due), ...fresh];
   },
 
+  /** DAY를 직접 골랐을 때는 기한을 따지지 않고 전부 본다.
+   *  이미 채점한 단어도 언제든 다시 볼 수 있어야 한다. */
+  everything(dayFilter) {
+    return shuffle(inScope(State.byDay.get(dayFilter) || []));
+  },
+
   counts() {
     const { due, fresh, freshTotal } = this.split();
     return { due: due.length, fresh: fresh.length, freshTotal };
@@ -357,7 +363,8 @@ function renderHome() {
   $('#boxbar').innerHTML = boxes.map((n, i) =>
     `<div><b>${n}</b><span>박스 ${i + 1}</span></div>`).join('');
 
-  $('#day-grid').innerHTML = State.days.map(d => {
+  // DAY 1~30은 공식 교재, 31부터는 다른 단어장이라 눈에 띄게 갈라 보여준다
+  const cell = d => {
     const words = inScope(d.words);
     if (!words.length) return '';
     const done = words.filter(w => Store.record(w.id)).length;
@@ -367,14 +374,24 @@ function renderHome() {
       <span>${done}/${words.length}</span>
       <i class="bar" style="width:${pct}%"></i>
     </button>`;
-  }).join('');
+  };
+  const official = State.days.filter(d => d.day <= 30).map(cell).join('');
+  const extraCells = State.days.filter(d => d.day > 30).map(cell).join('');
+  $('#day-grid').innerHTML = official;
+  $('#day-grid-extra').innerHTML = extraCells;
+  $('#extra-group').hidden = !extraCells;
+  $('#official-group').hidden = !official;
 }
 
 /* ── 학습 (플래시카드) ────────────────────────────── */
 
-function startStudy(dayFilter = null) {
-  const queue = Scheduler.session({ dayFilter });
-  State.study = { queue, index: 0, graded: 0, dayFilter };
+function startStudy(dayFilter = null, mode = 'due') {
+  // 홈의 '오늘 학습 시작'은 기한이 된 것과 새 단어만,
+  // DAY를 직접 고르면 그 DAY 전부를 본다.
+  const queue = mode === 'all' && dayFilter
+    ? Scheduler.everything(dayFilter)
+    : Scheduler.session({ dayFilter });
+  State.study = { queue, index: 0, graded: 0, dayFilter, mode, undo: [] };
   navigate('study');
   renderStudy();
 }
@@ -391,7 +408,7 @@ function renderStudy() {
     done.hidden = false;
     $('#study-done-sub').textContent = s && s.graded
       ? `${s.graded}단어를 봤습니다`
-      : '오늘 볼 단어가 없습니다. DAY를 직접 골라보세요.';
+      : '오늘 볼 단어가 없습니다. 아래 DAY를 누르면 기한과 상관없이 다시 볼 수 있습니다.';
     $('#study-progress').style.width = '100%';
     $('#study-counter').textContent = s ? `${s.graded}/${s.queue.length}` : '0/0';
     return;
@@ -417,6 +434,10 @@ function renderStudy() {
 
   $('#study-counter').textContent = `${s.index + 1}/${s.queue.length}`;
   $('#study-progress').style.width = (s.index / s.queue.length * 100) + '%';
+  $('#study-scope').textContent = s.dayFilter
+    ? `DAY ${String(s.dayFilter).padStart(2, '0')} 전체` : '오늘 학습';
+  $('#study-prev').disabled = s.index === 0;
+  $('#study-next').disabled = s.index >= s.queue.length - 1;
 }
 
 function flipCard() {
@@ -433,8 +454,37 @@ function gradeCard(result) {
   if (!s || s.index >= s.queue.length) return;
   if (!$('#flashcard').classList.contains('flipped')) return;
 
-  Scheduler.grade(s.queue[s.index].id, result);
+  // 되돌릴 수 있도록 채점 전 기록을 남긴다. 없던 단어면 null.
+  const id = s.queue[s.index].id;
+  const before = Store.record(id);
+  s.undo[s.index] = before ? { ...before } : null;
+
+  Scheduler.grade(id, result);
   s.graded++;
+  s.index++;
+  renderStudy();
+}
+
+/** 이전 카드로. 그 카드에 매겼던 채점은 되돌린다. */
+function prevCard() {
+  const s = State.study;
+  if (!s || s.index === 0) return;
+  s.index--;
+  const id = s.queue[s.index].id;
+  if (s.undo[s.index] !== undefined) {
+    if (s.undo[s.index]) Store.data.words[id] = s.undo[s.index];
+    else delete Store.data.words[id];
+    delete s.undo[s.index];
+    s.graded = Math.max(0, s.graded - 1);
+    Store.save();
+  }
+  renderStudy();
+}
+
+/** 채점하지 않고 다음 카드로. 건너뛴 단어는 기록이 남지 않는다. */
+function skipCard() {
+  const s = State.study;
+  if (!s || s.index >= s.queue.length) return;
   s.index++;
   renderStudy();
 }
@@ -484,9 +534,11 @@ function renderList() {
       <div class="row">
         <span class="hw">${escapeHTML(w.headword)}</span>
         ${posText(w) ? `<span class="pos">${escapeHTML(posText(w))}</span>` : ''}
-        <span class="tier" style="margin-left:auto">${TIER_LABEL[w.tier] || '기타'}</span>
-        ${rec ? `<span class="box">박스 ${rec.box}</span>` : ''}
-        ${w.audio ? Audio_.speakerHTML(w.audio) : ''}
+        <span class="tags">
+          <span class="tier">${TIER_LABEL[w.tier] || '기타'}</span>
+          <span class="box">${rec ? '박스 ' + rec.box : ''}</span>
+          <span class="spk">${w.audio ? Audio_.speakerHTML(w.audio) : ''}</span>
+        </span>
       </div>
       <div class="mean">${escapeHTML(meaningText(w))}</div>
       ${ex ? `<div class="ex">${escapeHTML(ex.en)}${ex.generated ? '<span class="gen">생성</span>' : ''}${
@@ -655,7 +707,8 @@ function renderSettings() {
   $('#tier-hint').textContent =
     `필수 ${counts.core.toLocaleString()} → 만점 ${counts.bonus.toLocaleString()} → ` +
     `추가 ${counts.extra.toLocaleString()} 순서로 끝내면 됩니다. ` +
-    '추가 등급은 다른 단어장에서 가져온 것이라 발음이 없습니다.';
+    '필수와 만점은 ETS 공식 교재(DAY 1~30), 추가는 독종반 모바일 단어장(DAY 31~40)에서 ' +
+    '왔습니다. 추가 등급에는 발음이 없습니다.';
   for (const b of $$('#set-autoplay button'))
     b.classList.toggle('on', (b.dataset.autoplay === 'on') === Store.settings.autoplay);
   $('#audio-hint').textContent =
@@ -687,7 +740,8 @@ function renderSettings() {
 
   const bytes = new Blob([localStorage.getItem(STORAGE_KEY) || '']).size;
   $('#info').innerHTML = `
-    <div><dt>출처</dt><dd><a href="${escapeHTML(State.meta.sourceUrl)}" target="_blank" rel="noopener">네이버 블로그</a></dd></div>
+    <div><dt>DAY 1~30</dt><dd>ETS 토익 기출 보카<br><span class="dim">공식 교재 · 예문은 <a href="${escapeHTML(State.meta.sourceUrl)}" target="_blank" rel="noopener">네이버 블로그</a></span></dd></div>
+    <div><dt>DAY 31~40</dt><dd>독종반 모바일 단어장<br><span class="dim">발음 없음</span></dd></div>
     <div><dt>수집일</dt><dd>${escapeHTML(State.meta.crawledAt)}</dd></div>
     <div><dt>예문 보유</dt><dd>${State.meta.withExample.toLocaleString()} / ${State.meta.wordCount.toLocaleString()}</dd></div>
     ${State.meta.generatedExamples ? `<div><dt>생성한 예문</dt><dd>${State.meta.generatedExamples.toLocaleString()}</dd></div>` : ''}
@@ -767,7 +821,7 @@ function bind() {
     if (nav) return navigate(nav.dataset.nav);
 
     const dayCell = e.target.closest('.day-cell');
-    if (dayCell) return startStudy(Number(dayCell.dataset.day));
+    if (dayCell) return startStudy(Number(dayCell.dataset.day), 'all');
 
     const chip = e.target.closest('[data-chip]');
     if (chip) {
@@ -781,6 +835,8 @@ function bind() {
   $('#start-review').onclick = () => startStudy();
   $('#flashcard').onclick = flipCard;
   $('#study-exit').onclick = () => { State.study = null; navigate('home'); };
+  $('#study-prev').onclick = prevCard;
+  $('#study-next').onclick = skipCard;
   $('#grade-bar').onclick = e => {
     const b = e.target.closest('[data-grade]');
     if (b) gradeCard(b.dataset.grade);
@@ -919,6 +975,8 @@ function bind() {
     if (e.key === '1') gradeCard('again');
     if (e.key === '2') gradeCard('hard');
     if (e.key === '3') gradeCard('good');
+    if (e.key === 'ArrowLeft') prevCard();
+    if (e.key === 'ArrowRight') skipCard();
   });
 }
 
