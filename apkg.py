@@ -14,6 +14,7 @@ Anki v3 포맷은 zip 안의 모든 항목이 zstd로 압축되어 있다.
 """
 
 import argparse
+import html
 import io
 import re
 import sqlite3
@@ -107,13 +108,16 @@ def read(apkg_path, audio_out=None):
                 if not day:
                     continue
                 sound = SOUND_RE.search(parts[2])
+                # 필드에 HTML 엔티티가 그대로 들어있다(one&#x27;s). 풀어두지 않으면
+                # 표제어가 깨져 보이고 다른 자료와 매칭도 안 된다.
                 notes.append({
                     "day": int(day.group(1)),
-                    "headword": parts[0].strip(),
-                    "meaning_html": parts[1].strip(),
+                    "headword": html.unescape(parts[0]).strip(),
+                    "meaning_html": html.unescape(parts[1]).strip(),
                     # <br>이 뜻의 경계다. 이것 때문에 CSV보다 정확하게 나눌 수 있다.
                     "senses_raw": [s.strip() for s in
-                                   re.split(r"<br\s*/?>", parts[1], flags=re.I) if s.strip()],
+                                   re.split(r"<br\s*/?>", html.unescape(parts[1]), flags=re.I)
+                                   if s.strip()],
                     "audio": sound.group(1) if sound else None,
                 })
             db.close()

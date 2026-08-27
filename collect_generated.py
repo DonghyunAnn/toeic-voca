@@ -39,7 +39,10 @@ def stem(headword):
 def main():
     merged = json.loads((ROOT / "data" / "merged.json").read_text(encoding="utf-8"))
     words = {w["id"]: w for d in merged["days"] for w in d["words"]}
-    need = {wid for wid, w in words.items() if not w["examples"]}
+    # 이미 생성 예문이 붙어 있는 단어도 '필요' 목록에 남겨둔다. 그러지 않으면
+    # 두 번째 실행에서 지난번 결과를 통째로 버린다.
+    need = {wid for wid, w in words.items()
+            if not w["examples"] or w["examples"][0].get("generated")}
 
     collected, problems = {}, Counter()
     samples = {"missing_word": [], "no_korean": [], "too_short": [], "too_long": []}
@@ -54,6 +57,12 @@ def main():
 
         for row in rows:
             wid, en, ko = row.get("id"), (row.get("en") or "").strip(), (row.get("ko") or "").strip()
+            # 예전에 HTML 엔티티가 그대로 id에 들어간 적이 있다(one&#x27;s -> one-x27-s).
+            # 그때 만든 예문을 버리지 않도록 새 id로 옮겨 붙인다.
+            if wid not in words and "-x27-" in (wid or ""):
+                fixed = wid.replace("-x27-", "-")
+                if fixed in words:
+                    wid = fixed
             if wid not in words:
                 problems["unknown_id"] += 1
                 continue
@@ -91,7 +100,7 @@ def main():
         print("  DAY별:", dict(sorted(by_day.items())))
     extra = set(collected) - need
     if extra:
-        print(f"  이미 예문이 있는데 생성된 것: {len(extra)}개 (버림)")
+        print(f"  교재 예문이 이미 있어 쓰지 않는 것: {len(extra)}개")
         for wid in extra:
             collected.pop(wid, None)
 

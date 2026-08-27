@@ -67,6 +67,7 @@ try {
       <section class="section" id="official-group">
         <h2 class="section-title">DAY 1~30 · ETS 교재</h2>
         <div class="day-grid" id="day-grid"></div>
+        <p class="hint">DAY를 누르면 바로 외우기가 시작됩니다. <b>길게 누르면</b> 훑어보기·초기화를 고를 수 있습니다.</p>
       </section>
 
       <section class="section" id="extra-group">
@@ -350,6 +351,20 @@ try {
     </button>
   </nav>
 
+</div>
+
+<div id="sheet" class="sheet" hidden>
+  <div class="sheet-back" data-sheet-close></div>
+  <div class="sheet-body" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+    <header>
+      <b id="sheet-title"></b>
+      <span id="sheet-sub"></span>
+    </header>
+    <button class="sheet-item" data-sheet="study">외우기</button>
+    <button class="sheet-item" data-sheet="list">목록에서 훑어보기</button>
+    <button class="sheet-item danger" data-sheet="reset">진도 초기화</button>
+    <button class="sheet-item cancel" data-sheet-close>취소</button>
+  </div>
 </div>
 
 <div id="toast" class="toast" hidden></div>

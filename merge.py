@@ -295,9 +295,8 @@ def merge(source, kind, audio_out=None):
         fix = MEANING_FIXES.get((day, headword.lower()))
         if fix:
             word["senses"] = [{"pos": p, "meaning": m} for p, m in fix]
-        tier = tiers.get(tier_key(day, headword))
-        if tier:
-            word["tier"] = tier
+        # 등급을 못 찾아도 비워두지 않는다. 비면 등급 필터에서 통째로 사라진다.
+        word["tier"] = tiers.get(tier_key(day, headword), "core")
         gen = generated.get(wid)
         if gen and not word["examples"]:
             word["examples"] = [{"en": gen["en"], "ko": gen["ko"], "generated": True}]
@@ -312,11 +311,14 @@ def merge(source, kind, audio_out=None):
         if wid in seen_ids:
             continue
         seen_ids.add(wid)
+        gen = generated.get(wid)
         days[e["day"]].append({
             "id": wid,
             "headword": e["headword"],
             "senses": e["senses"],
-            "examples": [],
+            # 이 단어장에는 예문이 없어서 만들어 넣는다
+            "examples": ([{"en": gen["en"], "ko": gen["ko"], "generated": True}]
+                         if gen else []),
             "collocations": [],
             "source": "extra",
             "tier": "extra",

@@ -191,6 +191,19 @@ const Store = {
     this.data = structuredClone(DEFAULTS);
     localStorage.removeItem(STORAGE_KEY);
   },
+
+  /** 한 DAY의 기록만 지운다. 다른 DAY 진도는 건드리지 않는다. */
+  resetDay(day) {
+    const ids = (State.byDay.get(day) || []).map(w => w.id);
+    let n = 0;
+    for (const id of ids) {
+      if (this.data.words[id]) { delete this.data.words[id]; n++; }
+    }
+    delete this.data.days[day];
+    if (this.data.session && this.data.session.dayFilter === day) delete this.data.session;
+    this.save();
+    return n;
+  },
 };
 
 /* ── 스케줄러 (Leitner 5박스) ─────────────────────── */
@@ -928,7 +941,83 @@ function renderAll() {
 
 /* ── 이벤트 ───────────────────────────────────────── */
 
+/** DAY를 길게 누르면 무엇을 할지 고르는 시트를 연다.
+ *  바로 초기화해버리면 실수로 진도를 날릴 수 있다. */
+const Sheet = {
+  day: null,
+
+  open(day) {
+    this.day = day;
+    const words = State.byDay.get(day) || [];
+    const done = words.filter(w => Store.record(w.id)).length;
+    $('#sheet-title').textContent = `DAY ${String(day).padStart(2, '0')}`;
+    $('#sheet-sub').textContent = `${done}/${words.length} 진행`;
+    $('[data-sheet="reset"]').disabled = done === 0;
+    $('#sheet').hidden = false;
+  },
+
+  close() {
+    $('#sheet').hidden = true;
+    this.day = null;
+  },
+
+  run(action) {
+    const day = this.day;
+    this.close();
+    if (!day) return;
+    if (action === 'study') return startStudy(day, 'all');
+    if (action === 'list') {
+      State.list.day = day;
+      State.list.shown = LIST_PAGE;
+      return navigate('list');
+    }
+    if (action === 'reset') {
+      const n = Store.resetDay(day);
+      renderHome();
+      toast(`DAY ${String(day).padStart(2, '0')} 진도 ${n}개를 지웠습니다`);
+    }
+  },
+};
+
+function bindLongPress() {
+  let timer = null, fired = false;
+
+  const start = e => {
+    const cell = e.target.closest('.day-cell');
+    if (!cell) return;
+    fired = false;
+    timer = setTimeout(() => {
+      fired = true;
+      if (navigator.vibrate) navigator.vibrate(12);
+      Sheet.open(Number(cell.dataset.day));
+    }, 500);
+  };
+  const cancel = () => { clearTimeout(timer); timer = null; };
+
+  for (const g of [$('#day-grid'), $('#day-grid-extra')]) {
+    if (!g) continue;
+    g.addEventListener('touchstart', start, { passive: true });
+    g.addEventListener('mousedown', start);
+    for (const ev of ['touchend', 'touchmove', 'touchcancel', 'mouseup', 'mouseleave'])
+      g.addEventListener(ev, cancel, { passive: true });
+    // 시트를 연 뒤에는 학습이 같이 시작되지 않게 클릭을 삼킨다
+    g.addEventListener('click', e => {
+      if (fired) { e.stopPropagation(); e.preventDefault(); fired = false; }
+    }, true);
+  }
+
+  $('#sheet').addEventListener('click', e => {
+    if (e.target.closest('[data-sheet-close]')) return Sheet.close();
+    const item = e.target.closest('[data-sheet]');
+    if (item) Sheet.run(item.dataset.sheet);
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !$('#sheet').hidden) Sheet.close();
+  });
+}
+
 function bind() {
+  bindLongPress();
   // 발음 버튼은 카드 안에 있다. 캡처 단계에서 잡아야 뒤집기보다 먼저 처리된다.
   document.addEventListener('click', e => {
     const speak = e.target.closest('[data-audio]');
