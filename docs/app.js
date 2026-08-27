@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = '451388e2';
+const BUILD = 'b4639883';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -785,8 +785,11 @@ function renderStudy() {
   $('#study-scope').textContent =
     (s.mode === 'weak' ? '자주 틀린 단어'
       : s.mode === 'learned' ? '배운 단어 복습'
-      : s.dayFilter ? `DAY ${String(s.dayFilter).padStart(2, '0')} · ${dayTitle(s.dayFilter)}`
-                    + (s.mode === 'all' ? ' · 전체' : '')
+      // 단원명은 카드 칩에만 둔다. 여기 또 쓰면 DAY로 들어왔을 때 같은 말이
+      // 40px 간격으로 두 번 나오고, 정작 이 줄의 본업인 '몇 장 남음'이 뒤로 밀린다.
+      // 칩은 어느 경로로 들어와도 늘 같은 자리에 있다.
+      : s.dayFilter ? `DAY ${String(s.dayFilter).padStart(2, '0')}`
+                    + (s.mode === 'all' ? ' 전체' : '')
       : '오늘 학습') +
     ` · ${left}장 남음` + (s.relearn ? ` · 다시 낸 카드 ${s.relearn}장` : '');
   $('#study-to-list').hidden = !s.dayFilter;
