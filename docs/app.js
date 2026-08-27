@@ -10,7 +10,7 @@ const AUDIO_DIR = 'audio/';
 
 const DEFAULTS = {
   version: 1,
-  settings: { direction: 'mixed', dailyLimit: 20, onlyWithExample: false, autoplay: false, tier: 'all' },
+  settings: { direction: 'mixed', newPerDay: 20, onlyWithExample: false, autoplay: false, tier: 'all', theme: 'system', quizAffectsBox: false },
   words: {},
   days: {},
 };
@@ -50,6 +50,25 @@ function toast(msg) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => { el.hidden = true; }, 2200);
 }
+
+/* ── 테마 ─────────────────────────────────────────── */
+
+const Theme = {
+  apply(mode) {
+    const root = document.documentElement;
+    if (mode === 'light' || mode === 'dark') root.dataset.theme = mode;
+    else delete root.dataset.theme;
+
+    // 주소창 색도 맞춘다. standalone으로 띄웠을 때 상단 띠에 보인다.
+    const dark = mode === 'dark' ||
+      (mode !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
+    for (const el of $$('meta[name="theme-color"]')) el.remove();
+    const meta = document.createElement('meta');
+    meta.name = 'theme-color';
+    meta.content = dark ? '#09090b' : '#ffffff';
+    document.head.appendChild(meta);
+  },
+};
 
 /* ── 발음 재생 ────────────────────────────────────── */
 
@@ -98,6 +117,7 @@ const Store = {
   data: structuredClone(DEFAULTS),
 
   load() {
+    let migrated = false;
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (raw) {
@@ -110,9 +130,16 @@ const Store = {
           days: parsed.days || {},
         };
       }
+      if (typeof this.data.settings.dailyLimit === 'number') {
+        // 예전에는 복습과 새 단어를 합쳐서 잘랐다. 이제 새 단어만 제한한다.
+        this.data.settings.newPerDay = this.data.settings.dailyLimit;
+        delete this.data.settings.dailyLimit;
+        migrated = true;
+      }
     } catch (e) {
       console.warn('진도를 읽지 못했습니다. 새로 시작합니다.', e);
     }
+    if (migrated) this.save();
     return this.data;
   },
 
@@ -157,8 +184,12 @@ const Store = {
 /* ── 스케줄러 (Leitner 5박스) ─────────────────────── */
 
 const Scheduler = {
-  /** 오늘 복습 대상: 기한이 된 단어 + 아직 안 본 단어를 하루 분량까지. */
-  session({ dayFilter = null, limit = null } = {}) {
+  /** 오늘 볼 단어를 기한이 된 것과 아직 안 본 것으로 나눠 돌려준다.
+   *
+   *  복습은 자르지 않는다. 이미 오늘 보기로 예정된 것들이라 자르면 그대로 밀리고,
+   *  밀린 양이 매일 쌓여 영영 따라잡지 못한다. 제한은 새 단어에만 건다.
+   */
+  split({ dayFilter = null, newCap = null } = {}) {
     const today = todayISO();
     const pool = inScope(dayFilter ? (State.byDay.get(dayFilter) || []) : State.words);
     const due = [], fresh = [];
@@ -168,22 +199,22 @@ const Scheduler = {
       if (!rec) fresh.push(w);
       else if (rec.due <= today) due.push(w);
     }
-    due.sort((a, b) => (Store.record(a.id).due).localeCompare(Store.record(b.id).due));
+    due.sort((a, b) => Store.record(a.id).due.localeCompare(Store.record(b.id).due));
 
-    const cap = limit ?? Store.settings.dailyLimit;
-    const picked = [...shuffle(due), ...fresh];
-    return cap > 0 ? picked.slice(0, cap) : picked;
+    const cap = newCap ?? Store.settings.newPerDay;
+    // 0은 '새 단어 없음', -1은 '제한 없음'. 예전에는 0이 무제한을 뜻했다.
+    const taken = cap < 0 ? fresh : fresh.slice(0, Math.max(0, cap));
+    return { due, fresh: taken, freshTotal: fresh.length };
   },
 
-  dueCount() {
-    const today = todayISO();
-    const pool = inScope(State.words);
-    let n = 0;
-    for (const w of pool) {
-      const rec = Store.record(w.id);
-      if (rec && rec.due <= today) n++;
-    }
-    return n;
+  session(opts = {}) {
+    const { due, fresh } = this.split(opts);
+    return [...shuffle(due), ...fresh];
+  },
+
+  counts() {
+    const { due, fresh, freshTotal } = this.split();
+    return { due: due.length, fresh: fresh.length, freshTotal };
   },
 
   grade(id, result) {
@@ -219,6 +250,7 @@ const State = {
   view: 'home',
   study: null,
   quiz: null,
+  quizDay: 1,
   list: { day: null, tier: 'all', query: '', masked: false, shown: LIST_PAGE },
 };
 
@@ -298,8 +330,7 @@ function renderHome() {
   const total = scoped.length;
   const seen = Object.keys(Store.data.words).length;
   const mastered = Object.values(Store.data.words).filter(r => r.box >= MAX_BOX).length;
-  const due = Scheduler.dueCount();
-  const fresh = Math.max(0, total - seen);
+  const { due, fresh, freshTotal } = Scheduler.counts();
 
   const notes = [];
   if (Store.settings.tier !== 'all') notes.push(TIER_LABEL[Store.settings.tier] + ' 어휘');
@@ -308,10 +339,11 @@ function renderHome() {
     `${State.meta.dayCount}일 · ${total.toLocaleString()}단어` +
     (notes.length ? ` (${notes.join(', ')})` : ` · 예문 ${State.meta.withExample.toLocaleString()}개`);
 
-  $('#due-count').textContent = due || Math.min(fresh, Store.settings.dailyLimit);
-  $('#due-label').textContent = due
-    ? '오늘 복습할 단어'
-    : (fresh ? '새로 배울 단어' : '오늘 할 학습이 없습니다');
+  $('#due-count').textContent = due + fresh;
+  $('#due-label').textContent = (due || fresh)
+    ? (due && fresh ? `복습 ${due} + 새 단어 ${fresh}`
+      : due ? '복습할 단어' : '새로 배울 단어')
+    : (freshTotal ? '오늘 몫은 끝났습니다' : '모든 단어를 학습했습니다');
   $('#start-review').disabled = !(due || fresh);
 
   $('#stat-seen').textContent = seen.toLocaleString();
@@ -473,24 +505,30 @@ function renderList() {
 
 function quizPool() {
   const scope = $('#quiz-scope button.on').dataset.scope;
-  if (scope === 'due') return Scheduler.session({ limit: 0 });
-  if (scope === 'day') return inScope(State.byDay.get(Number($('#quiz-day').value)) || []);
+  if (scope === 'due') return Scheduler.session();
+  if (scope === 'day') return inScope(State.byDay.get(State.quizDay) || []);
   return inScope(State.words);
 }
 
 function renderQuizSetup() {
-  const sel = $('#quiz-day');
-  if (!sel.options.length) {
-    sel.innerHTML = State.days.map(d =>
-      `<option value="${d.day}">DAY ${String(d.day).padStart(2, '0')} — ${escapeHTML(d.title)}</option>`).join('');
-  }
   const scope = $('#quiz-scope button.on').dataset.scope;
-  sel.hidden = scope !== 'day';
+  const chips = $('#quiz-day-chips');
+  chips.hidden = scope !== 'day';
+  if (!chips.hidden) {
+    // 목록 화면과 같은 칩을 쓴다. 네이티브 select는 플랫폼마다 모양이 달라진다.
+    chips.innerHTML = State.days.map(d =>
+      `<button data-quizday="${d.day}"${d.day === State.quizDay ? ' class="on"' : ''}>` +
+      `DAY ${String(d.day).padStart(2, '0')}</button>`).join('');
+    const on = chips.querySelector('button.on');
+    if (on) on.scrollIntoView({ block: 'nearest', inline: 'center' });
+  }
 
   const n = quizPool().length;
-  $('#quiz-avail').textContent = `출제 가능 ${n.toLocaleString()}단어`;
+  const where = scope === 'day' ? `DAY ${String(State.quizDay).padStart(2, '0')}의 ` : '';
+  $('#quiz-avail').textContent = n < 4
+    ? `출제할 단어가 ${n}개뿐입니다. 사지선다라 4개 이상 필요합니다.`
+    : `${where}${n.toLocaleString()}단어에서 출제합니다.`;
   $('#quiz-start').disabled = n < 4;
-  if (n < 4 && n > 0) $('#quiz-avail').textContent += ' — 4단어 이상 필요합니다';
 }
 
 function buildQuestion(word, pool) {
@@ -557,7 +595,8 @@ function answerQuiz(choice) {
   const ok = choice === cur.answer;
   if (ok) q.correct++;
   else q.wrong.push(cur.id);
-  Scheduler.grade(cur.id, ok ? 'good' : 'again');
+  // 사지선다는 찍어도 맞을 수 있어 기본으로는 박스를 건드리지 않는다.
+  if (Store.settings.quizAffectsBox) Scheduler.grade(cur.id, ok ? 'good' : 'again');
 
   for (const btn of $$('button', box)) {
     if (btn.dataset.opt === cur.answer) btn.classList.add('correct');
@@ -580,7 +619,8 @@ function finishQuiz() {
   $('#quiz-run').hidden = true;
   $('#quiz-result').hidden = false;
   $('#quiz-score').textContent = pct;
-  $('#quiz-score-sub').textContent = `${q.questions.length}문항 중 ${q.correct}개 정답`;
+  $('#quiz-score-sub').textContent = `${q.questions.length}문항 중 ${q.correct}개 정답` +
+    (Store.settings.quizAffectsBox ? ' · 박스에 반영됨' : ' · 박스는 그대로');
 
   const wrap = $('#quiz-wrong-wrap');
   wrap.hidden = q.wrong.length === 0;
@@ -596,12 +636,16 @@ function finishQuiz() {
 /* ── 설정 ─────────────────────────────────────────── */
 
 function renderSettings() {
-  const { direction, dailyLimit, onlyWithExample } = Store.settings;
+  const { direction, newPerDay, onlyWithExample } = Store.settings;
   for (const b of $$('#set-direction button')) b.classList.toggle('on', b.dataset.dir === direction);
-  for (const b of $$('#set-limit button')) b.classList.toggle('on', Number(b.dataset.limit) === dailyLimit);
+  for (const b of $$('#set-limit button')) b.classList.toggle('on', Number(b.dataset.limit) === newPerDay);
   for (const b of $$('#set-scope button'))
     b.classList.toggle('on', (b.dataset.scope === 'example') === onlyWithExample);
 
+  for (const b of $$('#set-quizgrade button'))
+    b.classList.toggle('on', (b.dataset.quizgrade === 'on') === !!Store.settings.quizAffectsBox);
+  for (const b of $$('#set-theme button'))
+    b.classList.toggle('on', b.dataset.themeOpt === (Store.settings.theme || 'system'));
   for (const b of $$('#set-tier button'))
     b.classList.toggle('on', b.dataset.tier === Store.settings.tier);
   for (const b of $$('#set-autoplay button'))
@@ -609,6 +653,23 @@ function renderSettings() {
   $('#audio-hint').textContent =
     `${(State.meta.withAudio || 0).toLocaleString()}단어에 발음이 있습니다. ` +
     '들은 발음은 자동으로 저장되고, 내려받아 두면 오프라인에서도 들립니다.';
+
+  const { freshTotal } = Scheduler.counts();
+  if (newPerDay < 0) {
+    $('#limit-hint').textContent =
+      `남은 새 단어 ${freshTotal.toLocaleString()}개를 한 번에 전부 꺼냅니다. ` +
+      '며칠 뒤 복습이 그만큼 몰리니 시험이 코앞일 때만 쓰세요.';
+  } else if (newPerDay === 0) {
+    $('#limit-hint').textContent = '새 단어를 꺼내지 않고 이미 배운 것만 복습합니다.';
+  } else {
+    const days = Math.ceil(freshTotal / newPerDay);
+    // 한 단어가 5번 상자까지 가는 데 평균 다섯 번쯤 나온다고 보고 어림한다
+    const peak = Math.round(newPerDay * 3.7);
+    $('#limit-hint').textContent =
+      `복습은 밀린 만큼 전부 나오고 새 단어만 하루 ${newPerDay}개로 끊습니다. ` +
+      `이 속도면 남은 ${freshTotal.toLocaleString()}개를 ${days}일에 끝내고, ` +
+      `2주 뒤 하루 복습량은 ${peak}장 안팎이 됩니다.`;
+  }
 
   const scoped = inScope(State.words);
   const withEx = scoped.filter(w => w.examples.length).length;
@@ -735,7 +796,12 @@ function bind() {
     for (const x of $$('#quiz-scope button')) x.classList.toggle('on', x === b);
     renderQuizSetup();
   };
-  $('#quiz-day').onchange = renderQuizSetup;
+  $('#quiz-day-chips').onclick = e => {
+    const b = e.target.closest('[data-quizday]');
+    if (!b) return;
+    State.quizDay = Number(b.dataset.quizday);
+    renderQuizSetup();
+  };
   $('#quiz-length').onclick = e => {
     const b = e.target.closest('[data-len]');
     if (b) for (const x of $$('#quiz-length button')) x.classList.toggle('on', x === b);
@@ -754,6 +820,21 @@ function bind() {
     if (!b) return;
     Store.settings.direction = b.dataset.dir;
     Store.save();
+    renderSettings();
+  };
+  $('#set-quizgrade').onclick = e => {
+    const b = e.target.closest('[data-quizgrade]');
+    if (!b) return;
+    Store.settings.quizAffectsBox = b.dataset.quizgrade === 'on';
+    Store.save();
+    renderSettings();
+  };
+  $('#set-theme').onclick = e => {
+    const b = e.target.closest('[data-theme-opt]');
+    if (!b) return;
+    Store.settings.theme = b.dataset.themeOpt;
+    Store.save();
+    Theme.apply(Store.settings.theme);
     renderSettings();
   };
   $('#set-tier').onclick = e => {
@@ -803,7 +884,7 @@ function bind() {
   $('#set-limit').onclick = e => {
     const b = e.target.closest('[data-limit]');
     if (!b) return;
-    Store.settings.dailyLimit = Number(b.dataset.limit);
+    Store.settings.newPerDay = Number(b.dataset.limit);
     Store.save();
     renderSettings();
     renderHome();
@@ -818,6 +899,10 @@ function bind() {
     renderAll();
     toast('진도를 초기화했습니다');
   };
+
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    if ((Store.settings.theme || 'system') === 'system') Theme.apply('system');
+  });
 
   // 데스크톱 단축키
   document.addEventListener('keydown', e => {
@@ -834,6 +919,7 @@ function bind() {
 (async function init() {
   try {
     Store.load();
+    Theme.apply(Store.settings.theme);
     await loadData();
     Store.prune(new Set(State.byId.keys()));
     bind();

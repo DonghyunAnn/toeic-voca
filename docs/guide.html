@@ -7,6 +7,13 @@
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <link rel="icon" href="icons/icon-192.png">
 <title>사용 가이드 · ETS 토익 VOCA</title>
+<script>
+// 앱에서 고른 테마를 그대로 따른다 (같은 출처라 저장소를 공유한다)
+try {
+  var t = (JSON.parse(localStorage.getItem('toeic-voca-progress') || '{}').settings || {}).theme;
+  if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+} catch (e) {}
+</script>
 <style>
 :root {
   --bg:#fff; --fg:#09090b; --card:#fff; --muted:#f4f4f5; --muted-fg:#71717a;
@@ -14,11 +21,16 @@
   --good:#16a34a; --hard:#ca8a04; --again:#dc2626; --radius:.5rem;
 }
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg:#09090b; --fg:#fafafa; --card:#101012; --muted:#1c1c1f; --muted-fg:#a1a1aa;
     --border:#27272a; --primary:#fafafa; --primary-fg:#18181b;
     --good:#22c55e; --hard:#eab308; --again:#ef4444;
   }
+}
+:root[data-theme="dark"] {
+    --bg:#09090b; --fg:#fafafa; --card:#101012; --muted:#1c1c1f; --muted-fg:#a1a1aa;
+    --border:#27272a; --primary:#fafafa; --primary-fg:#18181b;
+    --good:#22c55e; --hard:#eab308; --again:#ef4444;
 }
 * { box-sizing:border-box; margin:0; padding:0; }
 html { -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
@@ -108,6 +120,7 @@ footer a { color:inherit; }
 <nav class="toc">
   <ol>
     <li><a href="#box">박스가 뭔가요</a></li>
+    <li><a href="#theme">화면 테마</a></li>
     <li><a href="#home">홈 화면 읽는 법</a></li>
     <li><a href="#card">플래시카드로 외우기</a></li>
     <li><a href="#tier">필수 어휘와 만점 완성</a></li>
@@ -139,6 +152,23 @@ footer a { color:inherit; }
   </div>
   <p>그래서 홈 화면의 <b>박스 분포</b>는 실력 그래프입니다. 공부를 계속하면 왼쪽(1·2번)이 줄고 오른쪽(4·5번)이 늘어납니다. 5번 상자에 들어간 단어 수가 곧 <b>암기 완료</b>입니다.</p>
   <p>매일 할 일은 하나뿐입니다. <b>홈에서 &lsquo;복습 시작&rsquo;을 누르는 것.</b> 오늘 나와야 할 단어를 앱이 알아서 골라줍니다.</p>
+  <h3>복습은 안 자르고, 새 단어만 끊습니다</h3>
+  <p>기한이 된 복습은 <strong>밀린 만큼 전부</strong> 나옵니다. 자르면 그대로 다음 날로 넘어가고, 밀린 양이 매일 쌓여 영영 따라잡지 못하기 때문입니다.</p>
+  <p>대신 <b>설정 → 하루에 배울 새 단어</b>로 새로 꺼내는 양만 조절합니다. 새 단어는 며칠 뒤 복습으로 돌아오므로, 오늘 많이 넣으면 그만큼 나중에 몰립니다.</p>
+  <table>
+    <tr><th>하루 새 단어</th><th>2주 뒤 하루 복습량</th><th>3,159개 완주</th></tr>
+    <tr><td>10개</td><td>약 33장</td><td>315일</td></tr>
+    <tr><td>20개</td><td>약 74장</td><td>157일</td></tr>
+    <tr><td>50개</td><td>약 195장</td><td>63일</td></tr>
+    <tr><td>100개</td><td>약 372장</td><td>31일</td></tr>
+  </table>
+  <p><b>없음</b>으로 두면 새 단어를 꺼내지 않고 밀린 복습만 처리합니다. 여행이나 바쁜 주간에 쓰면 좋습니다. <b>제한 없음</b>도 있지만 남은 단어를 한꺼번에 꺼내므로 시험이 코앞일 때만 쓰세요.</p>
+</section>
+
+<section id="theme">
+  <h2>화면 테마</h2>
+  <p><b>설정 → 화면 테마</b>에서 고릅니다. <b>시스템</b>은 폰 설정을 그대로 따라가고(밤에 자동으로 어두워집니다), <b>라이트</b>와 <b>다크</b>는 폰 설정과 무관하게 고정됩니다.</p>
+  <p>이 가이드 문서도 같은 설정을 따릅니다.</p>
 </section>
 
 <section id="home">
@@ -151,7 +181,7 @@ footer a { color:inherit; }
   </figure>
   <table>
     <tr><th>영역</th><th>뜻</th></tr>
-    <tr><td>큰 숫자</td><td>오늘 복습할 단어 수. 기한이 된 단어와 아직 안 본 단어를 합쳐 하루 분량만큼 보여줍니다.</td></tr>
+    <tr><td>큰 숫자</td><td>오늘 볼 단어 수. 아래에 <code>복습 120 + 새 단어 20</code>처럼 나뉘어 표시됩니다.</td></tr>
     <tr><td>학습한 단어</td><td>한 번이라도 채점한 단어 수.</td></tr>
     <tr><td>암기 완료</td><td>5번 상자에 도달한 단어 수.</td></tr>
     <tr><td>박스 분포</td><td>상자별 단어 수. 오른쪽이 두꺼워질수록 잘 되고 있는 겁니다.</td></tr>
@@ -241,10 +271,11 @@ footer a { color:inherit; }
     </picture></figure>
   <p>사지선다입니다. <strong>오답 선택지는 같은 DAY의 단어에서 뽑기 때문에</strong> 얼추 비슷한 것들이 나와 은근히 헷갈립니다.</p>
   <ul>
-    <li><b>범위</b> — 오늘 복습분 / 특정 DAY / 전체</li>
+    <li><b>범위</b> — 오늘 복습분 / DAY 선택 / 전체</li>
     <li><b>문항 수</b> — 10, 20, 전체</li>
   </ul>
-  <p>퀴즈 결과도 <strong>상자에 그대로 반영됩니다.</strong> 맞히면 다음 상자로, 틀리면 1번으로. 플래시카드와 같은 기록을 씁니다. 끝나면 점수와 함께 틀린 단어만 모아서 보여줍니다.</p>
+  <p><strong>퀴즈는 상자를 건드리지 않습니다.</strong> 사지선다는 찍어도 넷 중 하나는 맞기 때문에, 운으로 맞힌 단어가 &lsquo;안다&rsquo;로 처리되면 복습 간격이 잘못 늘어납니다. 상자는 플래시카드에서 직접 누른 것만 따릅니다.</p>
+  <p>원한다면 <b>설정 → 퀴즈 결과</b>에서 반영하도록 바꿀 수 있습니다. 끝나면 점수와 함께 틀린 단어만 모아서 보여줍니다.</p>
 </section>
 
 <section id="backup">
