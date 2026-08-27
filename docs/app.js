@@ -353,10 +353,32 @@ const Scheduler = {
     return [...shuffle(due), ...fresh];
   },
 
-  /** DAY를 직접 골랐을 때는 기한을 따지지 않고 전부 본다.
-   *  이미 채점한 단어도 언제든 다시 볼 수 있어야 한다. */
+  /** DAY를 직접 골랐을 때 기한을 따지지 않고 전부 본다.
+   *  길게 눌러 '전체 다시 보기'를 골랐을 때 쓴다. */
   everything(dayFilter) {
     return shuffle(inScope(State.byDay.get(dayFilter) || []));
+  },
+
+  /** DAY를 누르면 나오는 것: 아직 안 본 것과 기한이 된 것.
+   *
+   *  예전에는 무조건 그 DAY 전부를 다시 냈다. 101개 중 87개를 끝내고 다시
+   *  들어가면 처음부터 101장이 나왔다. 어디까지 했는지 알 수 없고,
+   *  남은 14개를 보려면 87장을 넘겨야 했다.
+   *
+   *  다 끝냈고 기한도 안 됐으면 그때는 전부 내준다. 빈 화면보다는 낫다.
+   */
+  dayQueue(dayFilter) {
+    const today = todayISO();
+    const pool = inScope(State.byDay.get(dayFilter) || []);
+    const fresh = [], due = [];
+    for (const w of pool) {
+      const rec = Store.record(w.id);
+      if (!rec) fresh.push(w);
+      else if (rec.due <= today) due.push(w);
+    }
+    if (!fresh.length && !due.length) return shuffle(pool);
+    // 기한이 된 복습을 먼저 털고 새 단어로 넘어간다
+    return [...shuffle(due), ...fresh];
   },
 
   /** 지금까지 한 번이라도 본 단어 전부. 기한은 따지지 않는다.
@@ -512,6 +534,20 @@ function homeStats() {
 
 const TIER_LABEL = { core: '필수', bonus: '만점', extra: '추가' };
 
+/** DAY의 단원명. '동사 (1)'처럼 번호가 붙은 것은 묶을 때 번호를 뗀다. */
+const dayTitle = day => {
+  const d = State.days.find(x => x.day === day);
+  return d ? (d.title || '') : '';
+};
+// 원본 표기가 들쭉날쭉하다. '필수 어휘'와 '필수어휘'가 섞여 있고 ETS 접두어도
+// 붙었다 말았다 한다. 그대로 묶으면 DAY 5·6·7이 세 덩어리로 갈린다.
+const groupTitle = title => (title || '')
+  .replace(/\s*\(\d+\)\s*$/, '')
+  .replace(/^ETS\s+/, '')
+  .replace(/필수\s*어휘/, '필수 어휘')
+  .replace(/\s+/g, ' ')
+  .trim();
+
 const meaningText = w => w.meaning;
 const posText = w => w.pos;
 
@@ -610,7 +646,27 @@ function renderHome() {
       <i class="bar" style="width:${pct}%"></i>
     </button>`;
   };
-  const official = State.days.filter(d => d.day <= 30).map(cell).join('');
+  // 단원명이 같은 DAY끼리 묶어 소제목을 단다. 칸 안에 넣기엔 자리가 없고,
+  // 묶어 놓으면 '11~14는 동사'처럼 한눈에 들어온다.
+  const grouped = days => {
+    const gs = [];
+    for (const d of days) {
+      const t = groupTitle(d.title);
+      const last = gs[gs.length - 1];
+      if (last && last.title === t) last.days.push(d);
+      else gs.push({ title: t, days: [d] });
+    }
+    return gs.map(g => {
+      const cells = g.days.map(cell).join('');
+      if (!cells) return '';
+      const span = g.days.length > 1
+        ? `DAY ${String(g.days[0].day).padStart(2, '0')}~${String(g.days[g.days.length - 1].day).padStart(2, '0')}`
+        : `DAY ${String(g.days[0].day).padStart(2, '0')}`;
+      return `<div class="day-group"><h4>${escapeHTML(g.title)}<span>${span}</span></h4>`
+           + `<div class="day-grid">${cells}</div></div>`;
+    }).join('');
+  };
+  const official = grouped(State.days.filter(d => d.day <= 30));
   const extraCells = State.days.filter(d => d.day > 30).map(cell).join('');
   $('#day-grid').innerHTML = official;
   $('#day-grid-extra').innerHTML = extraCells;
@@ -651,6 +707,7 @@ function startStudy(dayFilter = null, mode = 'due', { resume = true } = {}) {
   const queue = mode === 'weak' ? Scheduler.weak()
     : mode === 'learned' ? Scheduler.learned()
     : mode === 'all' && dayFilter ? Scheduler.everything(dayFilter)
+    : mode === 'day' && dayFilter ? Scheduler.dayQueue(dayFilter)
     : Scheduler.session({ dayFilter });
   State.study = { queue, index: 0, floor: 0, graded: 0, dayFilter, mode, undo: [], retries: {} };
   saveSession();
@@ -739,7 +796,9 @@ function renderStudy() {
   $('#study-scope').textContent =
     (s.mode === 'weak' ? '자주 틀린 단어'
       : s.mode === 'learned' ? '배운 단어 복습'
-      : s.dayFilter ? `DAY ${String(s.dayFilter).padStart(2, '0')} 전체` : '오늘 학습') +
+      : s.dayFilter ? `DAY ${String(s.dayFilter).padStart(2, '0')} · ${dayTitle(s.dayFilter)}`
+                    + (s.mode === 'all' ? ' · 전체' : '')
+      : '오늘 학습') +
     ` · ${left}장 남음` + (s.relearn ? ` · 다시 낸 카드 ${s.relearn}장` : '');
   $('#study-to-list').hidden = !s.dayFilter;
   $('#grade-note').hidden = true;
@@ -1329,7 +1388,7 @@ const Sheet = {
     this.openedAt = Date.now();
     const words = State.byDay.get(day) || [];
     const done = words.filter(w => Store.record(w.id)).length;
-    $('#sheet-title').textContent = `DAY ${String(day).padStart(2, '0')}`;
+    $('#sheet-title').textContent = `DAY ${String(day).padStart(2, '0')} · ${dayTitle(day)}`;
     $('#sheet-sub').textContent = `${done}/${words.length} 진행`;
     $('[data-sheet="reset"]').disabled = done === 0;
     $('#sheet').hidden = false;
@@ -1345,7 +1404,8 @@ const Sheet = {
     const day = this.day;
     this.close();
     if (!day) return;
-    if (action === 'study') return startStudy(day, 'all');
+    if (action === 'study') return startStudy(day, 'day');
+    if (action === 'redo') return startStudy(day, 'all', { resume: false });
     if (action === 'list') {
       State.list.day = day;
       State.list.shown = LIST_PAGE;
@@ -1416,7 +1476,7 @@ function bind() {
     if (nav) return navigate(nav.dataset.nav);
 
     const dayCell = e.target.closest('.day-cell');
-    if (dayCell) return startStudy(Number(dayCell.dataset.day), 'all');
+    if (dayCell) return startStudy(Number(dayCell.dataset.day), 'day');
 
     const chip = e.target.closest('[data-chip]');
     if (chip) {
@@ -1452,14 +1512,14 @@ function bind() {
   };
   $('#study-next-day').onclick = () => {
     const day = State.study && State.study.dayFilter;
-    if (day) startStudy(day + 1, 'all', { resume: false });
+    if (day) startStudy(day + 1, 'day', { resume: false });
   };
   $('#study-again').onclick = () => {
     const day = State.study && State.study.dayFilter;
     if (day) startStudy(day, 'all', { resume: false });
   };
   $('#list-to-study').onclick = () => {
-    if (State.list.day) startStudy(State.list.day, 'all');
+    if (State.list.day) startStudy(State.list.day, 'day');
   };
   $('#grade-bar').onclick = e => {
     const b = e.target.closest('[data-grade]');

@@ -77,13 +77,13 @@ try {
       <section class="section" id="official-group">
         <h2 class="section-title">DAY 1~30 · ETS 교재</h2>
         <div class="day-grid" id="day-grid"></div>
-        <p class="hint">DAY를 누르면 바로 외우기가 시작됩니다. <b>길게 누르면</b> 훑어보기·초기화를 고를 수 있습니다.</p>
+        <p class="hint">DAY를 누르면 <b>아직 안 본 것과 복습할 것</b>부터 나옵니다. <b>길게 누르면</b> 전체 다시 보기·훑어보기·초기화를 고를 수 있습니다.</p>
       </section>
 
       <section class="section" id="extra-group">
         <h2 class="section-title">DAY 31~40 · 추가 어휘</h2>
         <div class="day-grid" id="day-grid-extra"></div>
-        <p class="hint">DAY를 누르면 기한과 상관없이 그 DAY 전체를 다시 볼 수 있습니다.</p>
+        <p class="hint">자주 쓰이는 순서라 DAY 31이 가장 중요합니다. 발음은 없습니다.</p>
       </section>
     </section>
 
@@ -381,7 +381,8 @@ try {
       <b id="sheet-title"></b>
       <span id="sheet-sub"></span>
     </header>
-    <button class="sheet-item" data-sheet="study">외우기</button>
+    <button class="sheet-item" data-sheet="study">이어서 외우기<span>안 본 것과 복습할 것</span></button>
+    <button class="sheet-item" data-sheet="redo">전체 다시 보기<span>이미 외운 것까지 전부</span></button>
     <button class="sheet-item" data-sheet="list">목록에서 훑어보기</button>
     <button class="sheet-item danger" data-sheet="reset">진도 초기화</button>
     <button class="sheet-item cancel" data-sheet-close>취소</button>
