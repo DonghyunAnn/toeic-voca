@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
-"""CSV 원본과 블로그 크롤링 결과를 병합한다.
+"""Anki 덱(또는 CSV)과 블로그 크롤링 결과를 병합한다.
 
-뜻과 품사는 CSV를 따르고, 예문과 연어는 블로그에서 가져온다.
-블로그는 각 DAY의 절반만 게시하므로 CSV 없이는 단어의 절반이 비고,
-CSV에는 예문이 없으므로 블로그 없이는 예문이 전부 빈다.
+뜻과 품사는 덱을 따르고, 예문과 연어는 블로그에서 가져온다.
+블로그는 각 DAY의 절반만 게시하므로 덱 없이는 단어의 절반이 비고,
+덱에는 예문이 없으므로 블로그 없이는 예문이 전부 빈다.
+
+덱(.apkg)이 CSV보다 낫다. 내용은 같지만 뜻 경계가 <br>로 명시되어 있어
+품사 분리를 추측하지 않아도 되고, 단어마다 발음 mp3가 붙어있다.
 
 양쪽 모두 오타가 있어 아래 표로 손으로 교정한다. 퍼지 매칭도 시도해봤지만
 oversea를 overseas로, credit을 creditor로 잘못 잇는 등 위험만 컸다.
 
-    python3 merge.py --csv "~/Downloads/ETS TOEIC VOCA/ETS TOEIC VOCA.csv"
+    python3 merge.py --apkg "~/Downloads/ETS TOEIC VOCA/ETS TOEIC VOCA.apkg"
 """
 
 import argparse
@@ -19,6 +22,7 @@ from collections import defaultdict
 from datetime import date
 from pathlib import Path
 
+import apkg as apkg_reader
 import crawl
 
 ROOT = Path(__file__).parent
@@ -26,6 +30,9 @@ BLOG_JSON = ROOT / "data" / "words.json"
 OUT_JSON = ROOT / "data" / "merged.json"
 
 DAY_RE = re.compile(r"DAY\s*(\d+)", re.I)
+# 덱의 뜻 조각 맨 앞에 붙은 품사. "v. (낙엽 등을) 갈퀴로..." 처럼 괄호가 이어지면
+# crawl.split_senses의 한글-선행 규칙에 걸리지 않으므로 여기서 먼저 떼어낸다.
+LEAD_POS = re.compile(r"^\s*((?:n|v|a|ad|adv|adj|prep|conj|phr|pron|int)\.)\s*")
 
 # 블로그 표제어의 오타 -> CSV의 올바른 표제어. (DAY, 표기) 단위로 지정한다.
 # access와 perspective는 다른 DAY에 진짜 단어로도 나오므로 DAY를 함께 본다.
@@ -97,6 +104,28 @@ def variants(headword):
     return uniq
 
 
+def read_apkg(path, audio_out=None):
+    """[(day, headword, senses, audio)] 를 덱 등장 순서대로."""
+    notes, written = apkg_reader.read(path, audio_out)
+    entries = []
+    for n in notes:
+        headword = CSV_TYPOS.get(n["headword"], n["headword"])
+        senses = []
+        for part in n["senses_raw"]:                 # <br>로 이미 나뉘어 있다
+            text = re.sub(r"<[^>]+>", " ", part).strip()
+            lead = LEAD_POS.match(text)
+            if lead:
+                rest = text[lead.end():].strip()
+                senses.extend(crawl.split_senses(rest, lead.group(1))
+                              or [{"pos": lead.group(1), "meaning": rest}])
+            else:
+                senses.extend(crawl.split_senses(text))
+        if not senses:
+            senses = [{"pos": None, "meaning": re.sub(r"<[^>]+>", " ", n["meaning_html"]).strip()}]
+        entries.append((n["day"], headword, senses, n["audio"]))
+    return entries, written
+
+
 def read_csv(path):
     """[(day, headword, senses)] 를 CSV 등장 순서대로."""
     entries = []
@@ -110,7 +139,7 @@ def read_csv(path):
                 continue
             headword = CSV_TYPOS.get(headword, headword)
             senses = crawl.split_senses(meaning.replace("\n", " ").strip())
-            entries.append((int(m.group(1)), headword, senses))
+            entries.append((int(m.group(1)), headword, senses, None))
     return entries
 
 
@@ -139,9 +168,12 @@ def read_blog():
     return data, index, entries
 
 
-def merge(csv_path):
+def merge(source, kind, audio_out=None):
     blog_data, blog_index, blog_entries = read_blog()
-    csv_entries = read_csv(csv_path)
+    if kind == "apkg":
+        csv_entries, audio_written = read_apkg(source, audio_out)
+    else:
+        csv_entries, audio_written = read_csv(source), 0
 
     def take(day, headword, same_day_only):
         """블로그 항목을 하나 집어 소진 처리한다."""
@@ -157,8 +189,8 @@ def merge(csv_path):
     # DAY가 같은 짝을 전부 먼저 맺고, 남은 것끼리 DAY를 넘어 이어준다.
     # 한 단어가 여러 DAY에 나올 때(crack: DAY5, DAY27) 순서 때문에
     # 엉뚱한 DAY가 예문을 가져가는 것을 막는다.
-    picks = [take(day, hw, True) for day, hw, _ in csv_entries]
-    for i, (day, hw, _) in enumerate(csv_entries):
+    picks = [take(day, hw, True) for day, hw, _, _ in csv_entries]
+    for i, (day, hw, _, _) in enumerate(csv_entries):
         if picks[i] is None:
             picks[i] = take(day, hw, False)
 
@@ -166,20 +198,23 @@ def merge(csv_path):
     seen_ids = set()
     stats = {"dup_id": 0}
 
-    for (day, headword, senses), pick in zip(csv_entries, picks):
+    for (day, headword, senses, audio), pick in zip(csv_entries, picks):
         wid = f"d{day:02d}-{slug(headword)}"
         if wid in seen_ids:
             stats["dup_id"] += 1
             continue
         seen_ids.add(wid)
-        days[day].append({
+        word = {
             "id": wid,
             "headword": headword,
             "senses": senses,
             "examples": pick["examples"] if pick else [],
             "collocations": pick["collocations"] if pick else [],
-            "source": "both" if pick else "csv",
-        })
+            "source": "both" if pick else "deck",
+        }
+        if audio:
+            word["audio"] = audio
+        days[day].append(word)
 
     # CSV에 대응이 없는 블로그 단어는 버리지 않고 그 DAY에 덧붙인다
     extras = []
@@ -204,17 +239,19 @@ def merge(csv_path):
     blog_urls = {d["day"]: d["url"] for d in blog_data["days"]}
     total = sum(len(v) for v in days.values())
     with_ex = sum(1 for v in days.values() for w in v if w["examples"])
+    with_audio = sum(1 for v in days.values() for w in v if w.get("audio"))
 
     payload = {
         "meta": {
             "title": "ETS 토익 VOCA",
             "sourceUrl": blog_data["meta"]["sourceUrl"],
-            "csvSource": Path(csv_path).name,
+            "deckSource": Path(source).name,
             "crawledAt": blog_data["meta"]["crawledAt"],
             "mergedAt": date.today().isoformat(),
             "dayCount": len(days),
             "wordCount": total,
             "withExample": with_ex,
+            "withAudio": with_audio,
         },
         "days": [{
             "day": d,
@@ -224,22 +261,35 @@ def merge(csv_path):
         } for d in sorted(days)],
     }
     stats["extras"] = extras
+    stats["audio_written"] = audio_written
     return payload, stats
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--csv", required=True, help="ETS TOEIC VOCA.csv 경로")
+    src = ap.add_mutually_exclusive_group(required=True)
+    src.add_argument("--apkg", help="ETS TOEIC VOCA.apkg 경로 (권장)")
+    src.add_argument("--csv", help="ETS TOEIC VOCA.csv 경로")
+    ap.add_argument("--audio-out", default=str(ROOT / "docs" / "audio"),
+                    help="발음 mp3를 풀어놓을 폴더 (--apkg 일 때만)")
+    ap.add_argument("--no-audio", action="store_true", help="mp3를 풀지 않음")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--quiet", action="store_true", help="DAY별 표를 생략")
     args = ap.parse_args()
 
-    payload, stats = merge(Path(args.csv).expanduser())
+    kind = "apkg" if args.apkg else "csv"
+    source = Path(args.apkg or args.csv).expanduser()
+    audio_out = None if (args.no_audio or args.dry_run or kind != "apkg") else args.audio_out
+    payload, stats = merge(source, kind, audio_out)
     m = payload["meta"]
 
     print(f"병합 결과: DAY {m['dayCount']}개 / 단어 {m['wordCount']}개")
     print(f"  예문 있음: {m['withExample']} ({m['withExample'] / m['wordCount'] * 100:.1f}%)")
     print(f"  예문 없음: {m['wordCount'] - m['withExample']}")
+    if m.get("withAudio"):
+        print(f"  발음 오디오: {m['withAudio']}")
+    if stats["audio_written"]:
+        print(f"  mp3 기록: {stats['audio_written']}개 -> {audio_out}")
     if stats["dup_id"]:
         print(f"  CSV 내 중복 표제어 건너뜀: {stats['dup_id']}")
     if stats["extras"]:

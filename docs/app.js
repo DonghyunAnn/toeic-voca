@@ -6,10 +6,11 @@ const STORAGE_KEY = 'toeic-voca-progress';
 const BOX_INTERVALS = { 1: 1, 2: 2, 3: 4, 4: 7, 5: 15 };  // 박스 -> 며칠 뒤
 const MAX_BOX = 5;
 const LIST_PAGE = 80;
+const AUDIO_DIR = 'audio/';
 
 const DEFAULTS = {
   version: 1,
-  settings: { direction: 'mixed', dailyLimit: 20, onlyWithExample: false },
+  settings: { direction: 'mixed', dailyLimit: 20, onlyWithExample: false, autoplay: false },
   words: {},
   days: {},
 };
@@ -49,6 +50,47 @@ function toast(msg) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => { el.hidden = true; }, 2200);
 }
+
+/* ── 발음 재생 ────────────────────────────────────── */
+
+const Audio_ = {
+  el: null,
+
+  play(file) {
+    if (!file) return;
+    if (!this.el) this.el = new Audio();
+    this.el.src = AUDIO_DIR + encodeURIComponent(file);
+    // 오프라인이거나 아직 안 받은 파일이면 조용히 넘어간다
+    this.el.play().catch(() => {});
+  },
+
+  speakerHTML(file, cls = 'speak') {
+    if (!file) return '';
+    return `<button class="${cls}" data-audio="${escapeHTML(file)}" aria-label="발음 듣기">
+      <svg viewBox="0 0 24 24" class="ico"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+    </button>`;
+  },
+
+  /** 모든 발음을 서비스워커 캐시에 넣어 비행기 모드에서도 들리게 한다. */
+  async prefetch(onProgress) {
+    const files = [...new Set(State.words.map(w => w.audio).filter(Boolean))];
+    let done = 0, failed = 0;
+    const CONCURRENCY = 8;
+    const queue = files.slice();
+
+    await Promise.all(Array.from({ length: CONCURRENCY }, async () => {
+      while (queue.length) {
+        const f = queue.pop();
+        try {
+          const res = await fetch(AUDIO_DIR + encodeURIComponent(f), { cache: 'force-cache' });
+          if (!res.ok) failed++;
+        } catch { failed++; }
+        onProgress(++done, files.length);
+      }
+    }));
+    return { total: files.length, failed };
+  },
+};
 
 /* ── 저장소 ───────────────────────────────────────── */
 
@@ -235,7 +277,7 @@ function cardBackHTML(w) {
     </div>` : '';
 
   return `
-    <div class="head"><h3>${escapeHTML(w.headword)}</h3></div>
+    <div class="head"><h3>${escapeHTML(w.headword)}</h3>${Audio_.speakerHTML(w.audio)}</div>
     ${sensesHTML(w)}
     ${examples || colloc ? '<div class="divider"></div>' : ''}
     ${examples}${colloc}`;
@@ -325,6 +367,11 @@ function renderStudy() {
   $('#card-front').textContent = dir === 'en2ko' ? w.headword : meaningText(w);
   $('#card-back').innerHTML = cardBackHTML(w);
 
+  const speak = $('#card-speak');
+  speak.hidden = !(dir === 'en2ko' && w.audio);
+  speak.dataset.audio = w.audio || '';
+  if (dir === 'en2ko' && Store.settings.autoplay) Audio_.play(w.audio);
+
   $('#study-counter').textContent = `${s.index + 1}/${s.queue.length}`;
   $('#study-progress').style.width = (s.index / s.queue.length * 100) + '%';
 }
@@ -334,6 +381,8 @@ function flipCard() {
   if (!s || s.index >= s.queue.length) return;
   $('#flashcard').classList.add('flipped');
   $('#grade-bar').hidden = false;
+  const w = s.queue[s.index];
+  if (Store.settings.autoplay && directionFor(w.id) === 'ko2en') Audio_.play(w.audio);
 }
 
 function gradeCard(result) {
@@ -387,6 +436,7 @@ function renderList() {
         <span class="hw">${escapeHTML(w.headword)}</span>
         ${posText(w) ? `<span class="pos">${escapeHTML(posText(w))}</span>` : ''}
         ${rec ? `<span class="box">박스 ${rec.box}</span>` : ''}
+        ${w.audio ? `<span style="margin-left:${rec ? '.25rem' : 'auto'}">${Audio_.speakerHTML(w.audio)}</span>` : ''}
       </div>
       <div class="mean">${escapeHTML(meaningText(w))}</div>
       ${ex ? `<div class="ex">${escapeHTML(ex.en)}${
@@ -538,6 +588,12 @@ function renderSettings() {
   for (const b of $$('#set-scope button'))
     b.classList.toggle('on', (b.dataset.scope === 'example') === onlyWithExample);
 
+  for (const b of $$('#set-autoplay button'))
+    b.classList.toggle('on', (b.dataset.autoplay === 'on') === Store.settings.autoplay);
+  $('#audio-hint').textContent =
+    `${(State.meta.withAudio || 0).toLocaleString()}단어에 발음이 있습니다. ` +
+    '들은 발음은 자동으로 저장되고, 내려받아 두면 오프라인에서도 들립니다.';
+
   const withEx = State.meta.withExample;
   $('#scope-hint').textContent = onlyWithExample
     ? `예문이 있는 ${withEx.toLocaleString()}단어만 출제합니다.`
@@ -548,6 +604,7 @@ function renderSettings() {
     <div><dt>출처</dt><dd><a href="${escapeHTML(State.meta.sourceUrl)}" target="_blank" rel="noopener">네이버 블로그</a></dd></div>
     <div><dt>수집일</dt><dd>${escapeHTML(State.meta.crawledAt)}</dd></div>
     <div><dt>예문 보유</dt><dd>${State.meta.withExample.toLocaleString()} / ${State.meta.wordCount.toLocaleString()}</dd></div>
+    <div><dt>발음 보유</dt><dd>${(State.meta.withAudio || 0).toLocaleString()} / ${State.meta.wordCount.toLocaleString()}</dd></div>
     <div><dt>단어 수</dt><dd>${State.meta.wordCount.toLocaleString()}</dd></div>
     <div><dt>진도 용량</dt><dd>${(bytes / 1024).toFixed(1)} KB</dd></div>`;
 }
@@ -608,6 +665,15 @@ function renderAll() {
 /* ── 이벤트 ───────────────────────────────────────── */
 
 function bind() {
+  // 발음 버튼은 카드 안에 있다. 캡처 단계에서 잡아야 뒤집기보다 먼저 처리된다.
+  document.addEventListener('click', e => {
+    const speak = e.target.closest('[data-audio]');
+    if (!speak) return;
+    e.stopPropagation();
+    e.preventDefault();
+    Audio_.play(speak.dataset.audio);
+  }, true);
+
   document.addEventListener('click', e => {
     const nav = e.target.closest('[data-nav]');
     if (nav) return navigate(nav.dataset.nav);
@@ -670,6 +736,24 @@ function bind() {
     Store.settings.direction = b.dataset.dir;
     Store.save();
     renderSettings();
+  };
+  $('#set-autoplay').onclick = e => {
+    const b = e.target.closest('[data-autoplay]');
+    if (!b) return;
+    Store.settings.autoplay = b.dataset.autoplay === 'on';
+    Store.save();
+    renderSettings();
+  };
+  $('#prefetch-audio').onclick = async e => {
+    const btn = e.currentTarget;
+    btn.disabled = true;
+    const label = btn.textContent;
+    const { total, failed } = await Audio_.prefetch((done, all) => {
+      btn.textContent = `내려받는 중 ${done}/${all}`;
+    });
+    btn.textContent = label;
+    btn.disabled = false;
+    toast(failed ? `${total - failed}개 저장, ${failed}개 실패` : `발음 ${total}개를 저장했습니다`);
   };
   $('#set-scope').onclick = e => {
     const b = e.target.closest('[data-scope]');

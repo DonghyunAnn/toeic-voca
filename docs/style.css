@@ -197,10 +197,23 @@ button { background: none; border: 0; cursor: pointer; }
   font-size: .6875rem; color: var(--muted-fg);
   background: var(--muted); border-radius: 999px; padding: .1875rem .5rem;
 }
+.speak {
+  position: absolute; top: .75rem; right: .875rem;
+  display: grid; place-items: center;
+  width: 2.25rem; height: 2.25rem; border-radius: var(--radius);
+  color: var(--muted-fg); z-index: 2;
+}
+.speak:active { background: var(--accent); color: var(--fg); }
+.speak.playing { color: var(--fg); }
+.back .head .speak { position: static; width: 1.75rem; height: 1.75rem; margin-left: auto; }
+.back .head .speak .ico { width: 1.0625rem; height: 1.0625rem; }
+.word-item .speak { position: static; width: 1.5rem; height: 1.5rem; flex: none; }
+.word-item .speak .ico { width: .9375rem; height: .9375rem; }
+
 .prompt { font-size: 1.75rem; font-weight: 600; letter-spacing: -.02em; word-break: break-word; }
 .tap-hint { position: absolute; bottom: 1.25rem; left: 0; right: 0; text-align: center; }
 
-.back .head { display: flex; align-items: baseline; gap: .5rem; flex-wrap: wrap; margin-bottom: .75rem; }
+.back .head { display: flex; align-items: center; gap: .5rem; margin-bottom: .75rem; }
 .back .head h3 { font-size: 1.375rem; font-weight: 620; letter-spacing: -.02em; }
 .back .pos { font-size: .75rem; color: var(--muted-fg); font-style: italic; }
 .back .meaning { font-size: 1rem; margin-bottom: .25rem; }

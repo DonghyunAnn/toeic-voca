@@ -71,6 +71,9 @@
         <article class="flashcard" id="flashcard">
           <div class="face front">
             <span class="chip" id="card-day"></span>
+            <button class="speak" id="card-speak" hidden aria-label="발음 듣기">
+              <svg viewBox="0 0 24 24" class="ico"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+            </button>
             <p class="prompt" id="card-front"></p>
             <p class="hint tap-hint">탭하면 뜻이 보입니다</p>
           </div>
@@ -203,6 +206,18 @@
           <button data-limit="50">50</button>
         </div>
         <p class="hint">복습할 단어가 많아도 이 개수까지만 출제합니다.</p>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">발음</h2>
+        <div class="segmented" id="set-autoplay">
+          <button data-autoplay="off">수동</button>
+          <button data-autoplay="on">자동 재생</button>
+        </div>
+        <div class="stack" style="margin-top:.5rem">
+          <button class="btn btn-outline btn-block" id="prefetch-audio">오프라인용 발음 내려받기</button>
+        </div>
+        <p class="hint" id="audio-hint"></p>
       </section>
 
       <section class="section">

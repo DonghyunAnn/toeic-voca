@@ -3,24 +3,26 @@
 네이버 블로그에 DAY별로 정리된 ETS 토익 보카를 수집해, 모바일에서 오프라인으로
 쓰는 개인 학습 앱. 서버도 빌드 도구도 의존성도 없다.
 
-**3,159단어 / 30 DAY**, 그중 **1,585개에 예문**.
+**3,159단어 / 30 DAY** — 예문 1,585개, 발음 3,155개.
 
-데이터는 두 곳에서 온다. 뜻과 품사는 CSV 원본, 예문과 연어는 블로그다.
-블로그는 각 DAY의 절반만 게시하고 CSV에는 예문이 없어서, 한쪽만으로는 부족하다.
+데이터는 두 곳에서 온다. 뜻·품사·발음은 Anki 덱(`.apkg`), 예문과 연어는 블로그다.
+블로그는 각 DAY의 절반만 게시하고 덱에는 예문이 없어서, 한쪽만으로는 부족하다.
 대조 과정과 양쪽에서 찾은 오류는 `docs-spec/2026-08-27-csv-cross-check.md`에 있다.
 
 ## 구조
 
 ```
 crawl.py              블로그 수집 (파이썬 표준 라이브러리만)
-merge.py              CSV 원본과 블로그 결과 병합
+apkg.py               Anki 덱에서 단어와 발음 mp3 추출
+merge.py              덱과 블로그 결과 병합
 make_icons.py         PWA 아이콘 생성 (외부 라이브러리 없이 PNG 직접 작성)
 data/words.json       블로그 수집 원본
-data/merged.json      CSV와 병합한 최종 데이터
+data/merged.json      덱과 병합한 최종 데이터
 docs/                 GitHub Pages 서빙 루트
   index.html  style.css  app.js
   words.json          data/words.json 사본
   manifest.json  sw.js  icons/
+  audio/              발음 mp3 3,065개 (24MB)
 docs-spec/            설계 문서와 구현 계획
 ```
 
@@ -35,13 +37,18 @@ python3 crawl.py --dry-run      # 저장하지 않고 결과만 출력
 ## 병합
 
 ```bash
-python3 merge.py --csv "~/Downloads/ETS TOEIC VOCA/ETS TOEIC VOCA.csv"
+python3 merge.py --apkg "~/Downloads/ETS TOEIC VOCA/ETS TOEIC VOCA.apkg"
 cp data/merged.json docs/words.json     # 앱에 반영
 ```
 
-뜻과 품사는 CSV를 따르고 예문은 블로그에서 가져온다. 양쪽 모두 오타가 있어
-`merge.py` 상단의 `BLOG_TYPOS` / `CSV_TYPOS` 표로 손수 교정한다. 퍼지 매칭은
-`oversea`를 `overseas`로 잘못 잇는 등 위험이 커서 쓰지 않는다.
+뜻·품사·발음은 덱을 따르고 예문은 블로그에서 가져온다. `--apkg`는 mp3를
+`docs/audio/`에 함께 푼다(`--no-audio`로 끌 수 있다).
+
+덱 대신 CSV를 써도 되지만(`--csv`) 덱이 낫다. 내용은 같은데 뜻 경계가 `<br>`로
+명시되어 있고 발음이 붙어있다. CSV는 이 덱에서 내보낸 것으로 보인다.
+
+양쪽 모두 오타가 있어 `merge.py` 상단의 `BLOG_TYPOS` / `CSV_TYPOS` 표로 손수
+교정한다. 퍼지 매칭은 `oversea`를 `overseas`로 잘못 잇는 등 위험이 커서 쓰지 않는다.
 
 데이터를 다시 만들면 `sw.js`의 `CACHE` 값을 올린다.
 
@@ -84,8 +91,13 @@ cd docs && python3 -m http.server 8765
 화면은 다섯 개다. 홈(오늘 복습·진도), 학습(플래시카드), 목록(검색·뜻 가리기),
 퀴즈(4지선다), 설정.
 
-단어의 절반에는 예문이 없다(CSV에서만 온 것들). 설정의 **출제 범위**에서
-"예문 있는 것만"을 고르면 1,585단어로 좁혀진다. 출제 방향(영→한 / 한→영 / 혼합)은 플래시카드와 퀴즈에
+단어의 절반에는 예문이 없다(덱에서만 온 것들). 설정의 **출제 범위**에서
+"예문 있는 것만"을 고르면 1,585단어로 좁혀진다.
+
+발음은 카드와 목록의 스피커 버튼으로 듣는다. 설정에서 자동 재생을 켜면
+영→한은 카드가 나올 때, 한→영은 뒤집을 때 재생된다(답이 먼저 새지 않게).
+발음은 서비스워커가 미리 받지 않으므로, 지하철에서 들으려면 설정의
+**오프라인용 발음 내려받기**를 와이파이에서 한 번 눌러둔다. 출제 방향(영→한 / 한→영 / 혼합)은 플래시카드와 퀴즈에
 함께 적용된다. 혼합 모드에서는 단어마다 방향이 고정되어 매번 흔들리지 않는다.
 
 데스크톱 단축키: `Space` 뒤집기, `1` 모름, `2` 애매, `3` 안다.
