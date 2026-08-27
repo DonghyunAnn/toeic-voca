@@ -103,20 +103,61 @@ const Theme = {
 
 const Audio_ = {
   el: null,
+  primed: null,      // 미리 받아둔 파일
+  warned: false,     // '발음을 받아야 한다'는 안내는 한 번만
 
-  play(file) {
-    if (!file) return;
+  _audio() {
     if (!this.el) this.el = new Audio();
-    this.el.src = audioURL(file);
-    // 오프라인이거나 아직 안 받은 파일이면 조용히 넘어간다
-    this.el.play().catch(() => {});
+    return this.el;
+  },
+
+  /** 지금 보고 있는 카드의 발음을 미리 받아 둔다.
+   *  안 받아두면 누른 뒤에야 통신이 시작돼 한참 조용하다. 8KB짜리라 부담도 없다. */
+  prime(file) {
+    if (!file || this.primed === file) return;
+    this.primed = file;
+    const el = this._audio();
+    el.src = audioURL(file);
+    el.load();
+  },
+
+  /** 누른 버튼에 상태를 입혀 준다. 눌렸는지, 받는 중인지, 실패했는지가 보여야 한다. */
+  play(file, btn) {
+    if (!file) return;
+    const el = this._audio();
+    if (this.primed !== file) { this.primed = file; el.src = audioURL(file); }
+
+    const mark = cls => {
+      if (!btn) return;
+      btn.classList.remove('loading', 'playing', 'failed');
+      if (cls) btn.classList.add(cls);
+    };
+    const clear = () => mark(null);
+
+    // 곧바로 나올 만큼 받아졌으면 로딩 표시를 띄우지 않는다 (깜빡임 방지)
+    if (el.readyState < 3) mark('loading');
+
+    el.onplaying = () => mark('playing');
+    el.onended = clear;
+    el.onerror = () => {
+      mark('failed');
+      setTimeout(clear, 1200);
+      if (!this.warned) {
+        this.warned = true;
+        toast('발음을 재생하지 못했습니다. 설정에서 내려받아 두세요');
+      }
+    };
+
+    el.currentTime = 0;
+    el.play().then(() => { if (el.readyState >= 3) mark('playing'); })
+             .catch(() => { mark('failed'); setTimeout(clear, 1200); });
   },
 
   speakerHTML(file, cls = 'speak') {
     if (!file) return '';
-    return `<button class="${cls}" data-audio="${escapeHTML(file)}" aria-label="발음 듣기">
-      <svg viewBox="0 0 24 24" class="ico"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
-    </button>`;
+    return `<button class="${cls}" type="button" data-audio="${escapeHTML(file)}" aria-label="발음 듣기">`
+      + `<svg viewBox="0 0 24 24" class="ico"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>`
+      + `</button>`;
   },
 
   /** 모든 발음을 서비스워커 캐시에 넣어 비행기 모드에서도 들리게 한다. */
@@ -687,7 +728,10 @@ function renderStudy() {
   const speak = $('#card-speak');
   speak.hidden = !(dir === 'en2ko' && w.audio);
   speak.dataset.audio = w.audio || '';
-  if (dir === 'en2ko' && Store.settings.autoplay) Audio_.play(w.audio);
+  speak.classList.remove('loading', 'playing', 'failed');   // 앞 카드 상태를 물려받지 않게
+  // 카드가 뜨면 그 단어 발음을 미리 받아 둔다. 눌렀을 때 바로 나게.
+  Audio_.prime(w.audio);
+  if (dir === 'en2ko' && Store.settings.autoplay) Audio_.play(w.audio, speak);
 
   $('#study-counter').textContent = `${s.index + 1}/${s.queue.length}`;
   $('#study-progress').style.transform = `scaleX(${s.index / s.queue.length})`;
@@ -713,7 +757,7 @@ function flipCard() {
   $('#grade-note').hidden = !early;
   // 이미 마지막 박스에 있으면 '이미 앎'은 의미가 없다
   $('[data-grade="known"]').disabled = Store.record(w.id) && clampBox(Store.record(w.id).box) >= MAX_BOX;
-  if (Store.settings.autoplay && directionFor(w.id) === 'ko2en') Audio_.play(w.audio);
+  if (Store.settings.autoplay && directionFor(w.id) === 'ko2en') Audio_.play(w.audio, $('#card-back .speak'));
 }
 
 function gradeCard(result) {
@@ -779,6 +823,86 @@ function skipCard() {
   s.index++;
   saveSession();
   renderStudy();
+}
+
+/** 카드를 옆으로 밀어 넘긴다.
+ *
+ *  왼쪽으로 밀면 채점 없이 다음 장, 오른쪽으로 밀면 이전 장으로 간다.
+ *  버튼이 화면 위쪽에 있어 한 손으로는 닿기 어렵다.
+ *
+ *  탭(뒤집기)과 세로 스크롤을 건드리면 안 되므로, 처음 몇 픽셀에서 방향을
+ *  정하고 가로로 판정된 것만 가져간다. 한 번 정한 방향은 끝까지 바꾸지 않는다.
+ */
+// 손을 떼면 브라우저가 click을 한 번 더 쏜다. 그대로 두면 밀어 넘긴 직후
+// 카드가 뒤집힌다. 방금 민 적이 있으면 그 click 한 번을 삼킨다.
+let swipedAt = 0;
+const justSwiped = () => Date.now() - swipedAt < 500;
+
+const SWIPE_MIN = 56;      // 이만큼은 밀어야 넘긴다 (스크롤하다 실수로 넘어가지 않게)
+const SWIPE_LOCK = 10;     // 이 거리 안에서 가로/세로를 정한다
+
+function bindSwipe(el) {
+  let x0 = 0, y0 = 0, dx = 0, axis = null, active = false;
+
+  const reset = () => {
+    el.style.transition = '';
+    el.style.transform = '';
+    el.style.opacity = '';
+  };
+
+  el.addEventListener('touchstart', e => {
+    if (e.touches.length !== 1) { active = false; return; }
+    const t = e.touches[0];
+    x0 = t.clientX; y0 = t.clientY; dx = 0; axis = null; active = true;
+    el.style.transition = 'none';
+  }, { passive: true });
+
+  el.addEventListener('touchmove', e => {
+    if (!active || e.touches.length !== 1) return;
+    const t = e.touches[0];
+    dx = t.clientX - x0;
+    const dy = t.clientY - y0;
+
+    if (!axis) {
+      if (Math.abs(dx) < SWIPE_LOCK && Math.abs(dy) < SWIPE_LOCK) return;
+      axis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+    }
+    if (axis !== 'x') return;
+
+    e.preventDefault();                     // 가로로 정해진 뒤에만 스크롤을 막는다
+    swipedAt = Date.now();
+    // 갈 수 없는 쪽은 뻑뻑하게 끌린다. 끝이라는 걸 손으로 알 수 있게.
+    const s = State.study;
+    const blocked = (dx > 0 && s && s.index <= (s.floor || 0)) ||
+                    (dx < 0 && s && s.index >= s.queue.length - 1);
+    const shift = blocked ? dx * 0.25 : dx;
+    el.style.transform = `translateX(${shift}px)`;
+    el.style.opacity = String(Math.max(.45, 1 - Math.abs(shift) / 420));
+  }, { passive: false });
+
+  const finish = () => {
+    if (!active) return;
+    active = false;
+    if (axis === 'x') swipedAt = Date.now();
+    el.style.transition = 'transform .18s ease, opacity .18s ease';
+    if (axis === 'x' && Math.abs(dx) >= SWIPE_MIN) {
+      const back = dx > 0;
+      const s = State.study;
+      const can = back ? s && s.index > (s.floor || 0)
+                       : s && s.index < s.queue.length - 1;
+      if (can) {
+        // 넘어가는 쪽으로 마저 밀어낸 뒤 새 카드를 그린다
+        el.style.transform = `translateX(${back ? 1 : -1}00%)`;
+        el.style.opacity = '0';
+        setTimeout(() => { reset(); back ? prevCard() : skipCard(); }, 120);
+        return;
+      }
+    }
+    reset();
+  };
+
+  el.addEventListener('touchend', finish, { passive: true });
+  el.addEventListener('touchcancel', finish, { passive: true });
 }
 
 /* ── 목록 ─────────────────────────────────────────── */
@@ -1284,7 +1408,7 @@ function bind() {
     if (!speak) return;
     e.stopPropagation();
     e.preventDefault();
-    Audio_.play(speak.dataset.audio);
+    Audio_.play(speak.dataset.audio, speak);
   }, true);
 
   document.addEventListener('click', e => {
@@ -1313,7 +1437,8 @@ function bind() {
     State.list.shown = LIST_PAGE;
     renderList();
   };
-  $('#flashcard').onclick = flipCard;
+  $('#flashcard').onclick = () => { if (!justSwiped()) flipCard(); };
+  bindSwipe($('#flashcard'));
   $('#study-exit').onclick = () => { State.study = null; navigate('home'); };
   $('#study-prev').onclick = prevCard;
   $('#study-next').onclick = skipCard;

@@ -228,6 +228,9 @@ button { background: none; border: 0; cursor: pointer; }
 /* 3D 뒤집기를 쓰지 않는다(display 전환이다). perspective만 남아 있으면
    .card-stage가 평생 별도 레이어로 승격된 채 메모리를 잡는다. */
 .card-stage {}
+/* 세로 스크롤은 브라우저가, 가로는 우리가 가져간다.
+   pan-y가 없으면 옆으로 미는 동작이 스크롤로 먹혀 버린다. */
+.flashcard { touch-action: pan-y; }
 .flashcard {
   position: relative;
   min-height: 19rem;
@@ -248,20 +251,46 @@ button { background: none; border: 0; cursor: pointer; }
   font-size: .6875rem; color: var(--muted-fg);
   background: var(--muted); border-radius: 999px; padding: .1875rem .5rem;
 }
+/* 듣기 버튼.
+ *
+ * 예전에는 테두리도 배경도 없이 아이콘만 있어 버튼으로 보이지 않았고,
+ * 목록에서는 24px이라 손가락으로 정확히 누르기 어려웠다(권장 44px).
+ * 보이는 크기는 그대로 두되 테두리를 주고, 히트 영역만 넓힌다. */
 .speak {
-  position: absolute; top: .75rem; right: .875rem;
+  position: absolute; top: .625rem; right: .75rem;
   display: grid; place-items: center;
-  width: 2.25rem; height: 2.25rem; border-radius: var(--radius);
-  color: var(--muted-fg); z-index: 2;
+  width: 2.5rem; height: 2.5rem; border-radius: 999px;
+  border: 1px solid var(--border); background: var(--card);
+  color: var(--fg); z-index: 2;
+  transition: background .12s, border-color .12s;
 }
-.speak:active { background: var(--accent); color: var(--fg); }
-.back .head .speak { position: static; width: 1.75rem; height: 1.75rem; margin-left: auto; }
+/* 실제로 눌리는 범위를 44px 이상으로 넓힌다. 보이는 원은 그대로다. */
+.speak::after { content: ''; position: absolute; inset: -.25rem; border-radius: inherit; }
+.speak:active { background: var(--accent); border-color: var(--ring); }
+
+/* 받는 중 — 눌렀는데 아무 일도 안 일어나는 것처럼 보이지 않게.
+   깜빡임은 거들 뿐이고, 테두리 색만으로도 상태를 알 수 있게 해둔다.
+   움직임 줄이기를 켠 사람에게는 애니메이션이 통째로 꺼지기 때문이다. */
+.speak.loading { color: var(--muted-fg); border-color: var(--ring); background: var(--muted); }
+.speak.loading .ico { animation: pulse .9s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: .25; } }
+/* 나는 중 */
+.speak.playing { background: var(--primary); border-color: var(--primary); color: var(--primary-fg); }
+/* 실패 — 발음을 아직 안 받았거나 오프라인 */
+.speak.failed { border-color: var(--again); color: var(--again); }
+
+.back .head .speak { position: static; width: 2rem; height: 2rem; margin-left: auto; }
 .back .head .speak .ico { width: 1.0625rem; height: 1.0625rem; }
-.word-item .speak { position: static; width: 1.5rem; height: 1.5rem; flex: none; }
-.word-item .speak .ico { width: .9375rem; height: .9375rem; }
+
+.word-item .speak { position: static; width: 1.875rem; height: 1.875rem; flex: none; }
+.word-item .speak .ico { width: 1rem; height: 1rem; }
+/* 목록은 줄 간격이 좁다. 위아래로만 더 넓혀 옆줄을 침범하지 않게 한다. */
+.word-item .speak::after { inset: -.4375rem -.25rem; }
 
 .prompt { font-size: 1.75rem; font-weight: 600; letter-spacing: -.02em; word-break: break-word; }
-.tap-hint { position: absolute; bottom: 1.25rem; left: 0; right: 0; text-align: center; }
+.tap-hint { position: absolute; bottom: 1.125rem; left: 0; right: 0; text-align: center;
+            line-height: 1.5; }
+.tap-hint .dim { opacity: .6; font-size: .75rem; }
 
 .back .head { display: flex; align-items: center; gap: .5rem; margin-bottom: .75rem; }
 .back .head h3 { font-size: 1.375rem; font-weight: 620; letter-spacing: -.02em; }
@@ -358,7 +387,7 @@ button { background: none; border: 0; cursor: pointer; }
   min-width: 2.75rem; text-align: center;
 }
 .word-item .box:not(:empty) { background: var(--muted); }
-.word-item .spk { width: 1.5rem; display: grid; place-items: center; }
+.word-item .spk { width: 1.875rem; display: grid; place-items: center; }
 .word-item .mean { font-size: .875rem; color: var(--muted-fg); margin-top: .1875rem; }
 .word-item .ex { font-size: .8125rem; margin-top: .5rem; line-height: 1.5; }
 .word-item .ex .ko { color: var(--muted-fg); font-size: .75rem; }
