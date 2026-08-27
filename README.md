@@ -23,7 +23,7 @@
 
 ## 주소
 
-<https://etsvoca.vercel.app>
+<https://toeic-voca-study.vercel.app>
 
 폰 브라우저로 열고 홈 화면에 추가하면 앱처럼 쓸 수 있다. 사용법은 앱 안의
 사용 가이드(홈 우측 상단 물음표)에 있다.
