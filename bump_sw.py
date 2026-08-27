@@ -17,6 +17,7 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent
 DOCS = ROOT / "docs"
 SW = DOCS / "sw.js"
+APP = DOCS / "app.js"
 
 
 def content_hash():
@@ -29,12 +30,36 @@ def content_hash():
     )
     for p in files:
         h.update(str(p.relative_to(DOCS)).encode())
-        h.update(p.read_bytes())
+        data = p.read_bytes()
+        if p == APP:
+            # BUILD 값 자체는 빼고 센다. 넣으면 해시가 자기 자신을 물어
+            # 돌릴 때마다 값이 달라지고 영영 수렴하지 않는다.
+            data = re.sub(rb"const BUILD = '[^']*';", b"const BUILD = '';", data)
+        h.update(data)
     return h.hexdigest()[:8], len(files)
+
+
+def stamp_build(digest):
+    """app.js의 BUILD 상수에도 같은 값을 박는다.
+
+    설정 화면에 이걸 띄운다. 기기가 새 버전을 받았는지 눈으로 확인할 수단이
+    없으면, 고쳤는데도 그대로라는 이야기가 나올 때 원인을 가릴 수가 없다.
+    """
+    src = APP.read_text(encoding="utf-8")
+    m = re.search(r"const BUILD = '([^']*)';", src)
+    if not m:
+        sys.exit("app.js에서 BUILD 상수를 찾지 못했습니다")
+    if m.group(1) == digest:
+        return False
+    APP.write_text(src.replace(f"const BUILD = '{m.group(1)}';",
+                               f"const BUILD = '{digest}';", 1), encoding="utf-8")
+    return True
 
 
 def main():
     digest, n = content_hash()
+    stamp_build(digest)
+
     src = SW.read_text(encoding="utf-8")
     m = re.search(r"const SHELL = '([^']+)';", src)
     if not m:

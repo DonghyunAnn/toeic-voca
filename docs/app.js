@@ -2,6 +2,10 @@
 
 /* ── 상수 ─────────────────────────────────────────── */
 
+// 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
+// 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
+const BUILD = 'de427319';
+
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
 const THEME_KEY = 'toeic-voca-theme';
@@ -1305,7 +1309,8 @@ function renderSettings() {
       const w = rs.reduce((n, r) => n + (r.wrong || 0), 0);
       return c + w ? `<div><dt>채점 정확도</dt><dd>${Math.round(c / (c + w) * 100)}% <span class="dim">(${c.toLocaleString()} / ${(c + w).toLocaleString()})</span></dd></div>` : '';
     })()}
-    <div><dt>진도 용량</dt><dd>${(bytes / 1024).toFixed(1)} KB</dd></div>`;
+    <div><dt>진도 용량</dt><dd>${(bytes / 1024).toFixed(1)} KB</dd></div>
+    <div><dt>앱 버전</dt><dd>${escapeHTML(BUILD)}</dd></div>`;
 }
 
 function exportProgress() {
@@ -1699,6 +1704,40 @@ function bind() {
 
 /* ── 시작 ─────────────────────────────────────────── */
 
+/** 새 버전이 나오면 스스로 갈아입는다.
+ *
+ *  예전에는 등록만 해두고 끝이라 두 번 열어야 새 버전이 보였다. 첫 실행에서
+ *  새 서비스워커가 설치되고, 그 다음 실행에서야 그게 준 파일을 쓰기 때문이다.
+ *  홈 화면에 추가해 쓰면 앱을 껐다 켜는 일 자체가 드물어 더 오래 묵는다.
+ *
+ *  그래서 새 워커가 조종간을 잡는 순간 한 번 새로고침한다. 이미 조종하던
+ *  워커가 있었을 때만이다 — 처음 설치할 때도 이 이벤트가 뜨는데,
+ *  그때 새로고침하면 첫 실행이 공연히 두 번 뜬다.
+ */
+function setupUpdates() {
+  // 처음 설치할 때도 이 이벤트가 한 번 뜬다. 그때 새로고침하면 첫 실행이
+  // 공연히 두 번 뜨므로 넘긴다. 다만 '넘긴다'로 끝내면 안 된다 —
+  // 그 뒤로 오는 진짜 갱신까지 같이 무시하게 된다.
+  let seenController = !!navigator.serviceWorker.controller;
+  let reloading = false;
+
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (!seenController) { seenController = true; return; }   // 첫 장악
+    if (reloading) return;
+    reloading = true;
+    Store.flush();               // 새로고침 전에 진도를 확실히 적어둔다
+    location.reload();
+  });
+
+  navigator.serviceWorker.register('sw.js').then(reg => {
+    // 앱을 며칠씩 안 끄고 두는 경우가 있어 가끔 직접 물어본다
+    setInterval(() => reg.update().catch(() => {}), 30 * 60 * 1000);
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) reg.update().catch(() => {});
+    });
+  }).catch(e => console.warn('SW 등록 실패', e));
+}
+
 (async function init() {
   try {
     Store.load();
@@ -1717,9 +1756,7 @@ function bind() {
     $('#app').hidden = false;
     navigate('home');
 
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js').catch(e => console.warn('SW 등록 실패', e));
-    }
+    if ('serviceWorker' in navigator) setupUpdates();
   } catch (e) {
     $('#loading').innerHTML =
       `<p class="muted" style="padding:2rem;text-align:center">데이터를 불러오지 못했습니다.<br>${escapeHTML(e.message)}</p>`;
