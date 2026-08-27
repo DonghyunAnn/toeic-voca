@@ -31,6 +31,10 @@ OUT_JSON = ROOT / "data" / "merged.json"
 TIERS_JSON = ROOT / "data" / "tiers.json"
 GENERATED_JSON = ROOT / "data" / "generated_examples.json"
 DECK_JSON = ROOT / "data" / "deck.json"
+EXTRA_JSON = ROOT / "data" / "extra-voca.json"
+
+# 추가 등급을 몇 개의 DAY로 나눌지. 기존 DAY 크기(100~138)와 비슷하게 맞춘다.
+EXTRA_DAYS = 10
 
 DAY_RE = re.compile(r"DAY\s*(\d+)", re.I)
 # 덱의 뜻 조각 맨 앞에 붙은 품사. "v. (낙엽 등을) 갈퀴로..." 처럼 괄호가 이어지면
@@ -195,6 +199,32 @@ def load_generated():
     return json.loads(GENERATED_JSON.read_text(encoding="utf-8"))
 
 
+def load_extra(known_keys):
+    """모바일 단어장에서 아직 없는 단어만 '추가' 등급으로 돌려준다.
+
+    PDF는 대략 빈도순이라 번호가 낮을수록 자주 나온다. 그 순서를 지켜
+    DAY로 나누면 중요한 것부터 공부하게 된다. 예문도 발음도 없다.
+    """
+    if not EXTRA_JSON.exists():
+        return []
+    words = json.loads(EXTRA_JSON.read_text(encoding="utf-8"))
+    fresh = [w for w in sorted(words, key=lambda x: x["no"])
+             if norm(w["headword"]) not in known_keys]
+    if not fresh:
+        return []
+
+    per_day = -(-len(fresh) // EXTRA_DAYS)          # 올림
+    out = []
+    for i, w in enumerate(fresh):
+        out.append({
+            "day": 31 + i // per_day,
+            "headword": w["headword"],
+            "senses": w["senses"],
+            "rank": w["no"],
+        })
+    return out
+
+
 def load_tiers():
     """엑셀 교재의 티어(필수 / 토익 만점 완성). 없으면 빈 dict."""
     if not TIERS_JSON.exists():
@@ -273,6 +303,27 @@ def merge(source, kind, audio_out=None):
             word["examples"] = [{"en": gen["en"], "ko": gen["ko"], "generated": True}]
         days[day].append(word)
 
+    # 모바일 단어장에서 겹치지 않는 것만 '추가' 등급으로 붙인다.
+    # 발음이 없으므로 기존 DAY에 섞지 않고 DAY 31부터 따로 둔다.
+    known = {norm(w["headword"]) for v in days.values() for w in v}
+    extra_titles = {}
+    for e in load_extra(known):
+        wid = f"d{e['day']:02d}-{slug(e['headword'])}"
+        if wid in seen_ids:
+            continue
+        seen_ids.add(wid)
+        days[e["day"]].append({
+            "id": wid,
+            "headword": e["headword"],
+            "senses": e["senses"],
+            "examples": [],
+            "collocations": [],
+            "source": "extra",
+            "tier": "extra",
+            "rank": e["rank"],
+        })
+        extra_titles[e["day"]] = "추가 어휘"
+
     # CSV에 대응이 없는 블로그 단어는 버리지 않고 그 DAY에 덧붙인다
     extras = []
     for e in blog_entries:
@@ -294,11 +345,13 @@ def merge(source, kind, audio_out=None):
         extras.append(f"DAY{e['day']:02d} {e['headword']}")
 
     blog_titles = {d["day"]: d["title"] for d in blog_data["days"]}
+    blog_titles.update({d: f"추가 어휘 ({d - 30})" for d in extra_titles})
     blog_urls = {d["day"]: d["url"] for d in blog_data["days"]}
     total = sum(len(v) for v in days.values())
     with_ex = sum(1 for v in days.values() for w in v if w["examples"])
     with_audio = sum(1 for v in days.values() for w in v if w.get("audio"))
     core = sum(1 for v in days.values() for w in v if w.get("tier") == "core")
+    extra = sum(1 for v in days.values() for w in v if w.get("tier") == "extra")
     gen_used = sum(1 for v in days.values() for w in v
                    if w["examples"] and w["examples"][0].get("generated"))
 
@@ -314,6 +367,7 @@ def merge(source, kind, audio_out=None):
             "withExample": with_ex,
             "withAudio": with_audio,
             "coreCount": core,
+            "extraCount": extra,
             "generatedExamples": gen_used,
         },
         "days": [{
@@ -359,7 +413,8 @@ def main():
     if m.get("withAudio"):
         print(f"  발음 오디오: {m['withAudio']}")
     if m.get("coreCount"):
-        print(f"  필수 어휘: {m['coreCount']} / 토익 만점 완성: {m['wordCount'] - m['coreCount']}")
+        bonus = m["wordCount"] - m["coreCount"] - m.get("extraCount", 0)
+        print(f"  필수 {m['coreCount']} / 만점 완성 {bonus} / 추가 {m.get('extraCount', 0)}")
     if m.get("generatedExamples"):
         print(f"  그중 생성한 예문: {m['generatedExamples']}")
     if stats["audio_written"]:

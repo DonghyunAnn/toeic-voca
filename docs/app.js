@@ -281,7 +281,7 @@ function inScope(words) {
     (!onlyWithExample || w.examples.length));
 }
 
-const TIER_LABEL = { core: '필수', bonus: '만점' };
+const TIER_LABEL = { core: '필수', bonus: '만점', extra: '추가' };
 
 const meaningText = w => w.senses.map(s => s.meaning).join('; ');
 const posText = w => w.senses.map(s => s.pos).filter(Boolean).join(' ');
@@ -340,10 +340,12 @@ function renderHome() {
     (notes.length ? ` (${notes.join(', ')})` : ` · 예문 ${State.meta.withExample.toLocaleString()}개`);
 
   $('#due-count').textContent = due + fresh;
+  // 세션은 '복습(기한이 된 것)'과 '새 단어(처음 보는 것)'로 이루어진다.
+  // 둘을 합쳐 부를 때는 '학습'이라고 한다.
   $('#due-label').textContent = (due || fresh)
-    ? (due && fresh ? `복습 ${due} + 새 단어 ${fresh}`
-      : due ? '복습할 단어' : '새로 배울 단어')
-    : (freshTotal ? '오늘 몫은 끝났습니다' : '모든 단어를 학습했습니다');
+    ? (due && fresh ? `복습 ${due}개 + 새 단어 ${fresh}개`
+      : due ? `복습 ${due}개` : `새 단어 ${fresh}개`)
+    : (freshTotal ? '오늘 몫은 끝났습니다' : '모든 단어를 다 봤습니다');
   $('#start-review').disabled = !(due || fresh);
 
   $('#stat-seen').textContent = seen.toLocaleString();
@@ -388,8 +390,8 @@ function renderStudy() {
     bar.hidden = true;
     done.hidden = false;
     $('#study-done-sub').textContent = s && s.graded
-      ? `${s.graded}단어를 학습했습니다`
-      : '복습할 단어가 없습니다. 새 DAY를 골라보세요.';
+      ? `${s.graded}단어를 봤습니다`
+      : '오늘 볼 단어가 없습니다. DAY를 직접 골라보세요.';
     $('#study-progress').style.width = '100%';
     $('#study-counter').textContent = s ? `${s.graded}/${s.queue.length}` : '0/0';
     return;
@@ -648,6 +650,12 @@ function renderSettings() {
     b.classList.toggle('on', b.dataset.themeOpt === (Store.settings.theme || 'system'));
   for (const b of $$('#set-tier button'))
     b.classList.toggle('on', b.dataset.tier === Store.settings.tier);
+  const counts = { core: 0, bonus: 0, extra: 0 };
+  for (const w of State.words) if (counts[w.tier] !== undefined) counts[w.tier]++;
+  $('#tier-hint').textContent =
+    `필수 ${counts.core.toLocaleString()} → 만점 ${counts.bonus.toLocaleString()} → ` +
+    `추가 ${counts.extra.toLocaleString()} 순서로 끝내면 됩니다. ` +
+    '추가 등급은 다른 단어장에서 가져온 것이라 발음이 없습니다.';
   for (const b of $$('#set-autoplay button'))
     b.classList.toggle('on', (b.dataset.autoplay === 'on') === Store.settings.autoplay);
   $('#audio-hint').textContent =
@@ -683,7 +691,7 @@ function renderSettings() {
     <div><dt>수집일</dt><dd>${escapeHTML(State.meta.crawledAt)}</dd></div>
     <div><dt>예문 보유</dt><dd>${State.meta.withExample.toLocaleString()} / ${State.meta.wordCount.toLocaleString()}</dd></div>
     ${State.meta.generatedExamples ? `<div><dt>생성한 예문</dt><dd>${State.meta.generatedExamples.toLocaleString()}</dd></div>` : ''}
-    <div><dt>필수 / 만점완성</dt><dd>${(State.meta.coreCount || 0).toLocaleString()} / ${(State.meta.wordCount - (State.meta.coreCount || 0)).toLocaleString()}</dd></div>
+    <div><dt>필수 / 만점 / 추가</dt><dd>${(State.meta.coreCount || 0).toLocaleString()} / ${(State.meta.wordCount - (State.meta.coreCount || 0) - (State.meta.extraCount || 0)).toLocaleString()} / ${(State.meta.extraCount || 0).toLocaleString()}</dd></div>
     <div><dt>발음 보유</dt><dd>${(State.meta.withAudio || 0).toLocaleString()} / ${State.meta.wordCount.toLocaleString()}</dd></div>
     <div><dt>단어 수</dt><dd>${State.meta.wordCount.toLocaleString()}</dd></div>
     <div><dt>진도 용량</dt><dd>${(bytes / 1024).toFixed(1)} KB</dd></div>`;

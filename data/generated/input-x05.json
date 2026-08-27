@@ -1,0 +1,3033 @@
+{
+ "batch": "x5",
+ "days": [
+  39,
+  40
+ ],
+ "words": [
+  {
+   "id": "d39-glance",
+   "day": 39,
+   "headword": "glance",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "잠깐 훑어보다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "흘긋 쳐다보다"
+    }
+   ],
+   "rank": 1631
+  },
+  {
+   "id": "d39-extent",
+   "day": 39,
+   "headword": "extent",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "범위, 정도"
+    },
+    {
+     "pos": "n.",
+     "meaning": "규모"
+    }
+   ],
+   "rank": 1632
+  },
+  {
+   "id": "d39-abrupt",
+   "day": 39,
+   "headword": "abrupt",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "갑작스러운"
+    },
+    {
+     "pos": "a.",
+     "meaning": "무뚝뚝한, 퉁명스러운"
+    }
+   ],
+   "rank": 1634
+  },
+  {
+   "id": "d39-perfume",
+   "day": 39,
+   "headword": "perfume",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "향수"
+    },
+    {
+     "pos": "n.",
+     "meaning": "향기"
+    }
+   ],
+   "rank": 1635
+  },
+  {
+   "id": "d39-explode",
+   "day": 39,
+   "headword": "explode",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "폭발하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "갑자기 크게 일어나다"
+    }
+   ],
+   "rank": 1636
+  },
+  {
+   "id": "d39-interpret",
+   "day": 39,
+   "headword": "interpret",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "해석하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "설명하다"
+    }
+   ],
+   "rank": 1637
+  },
+  {
+   "id": "d39-possession",
+   "day": 39,
+   "headword": "possession",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "소유, 소유물"
+    },
+    {
+     "pos": "n.",
+     "meaning": "점유"
+    }
+   ],
+   "rank": 1638
+  },
+  {
+   "id": "d39-conquest",
+   "day": 39,
+   "headword": "conquest",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "정복"
+    },
+    {
+     "pos": "n.",
+     "meaning": "승리"
+    }
+   ],
+   "rank": 1640
+  },
+  {
+   "id": "d39-blame",
+   "day": 39,
+   "headword": "blame",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "비난하다, 탓하다"
+    },
+    {
+     "pos": "n.",
+     "meaning": "비난, 책임"
+    }
+   ],
+   "rank": 1641
+  },
+  {
+   "id": "d39-poison",
+   "day": 39,
+   "headword": "poison",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "독"
+    },
+    {
+     "pos": "v.",
+     "meaning": "중독시키다"
+    }
+   ],
+   "rank": 1645
+  },
+  {
+   "id": "d39-upright",
+   "day": 39,
+   "headword": "upright",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "수직의, 똑바로 선"
+    },
+    {
+     "pos": "a.",
+     "meaning": "올바른, 정직한"
+    }
+   ],
+   "rank": 1646
+  },
+  {
+   "id": "d39-wrist",
+   "day": 39,
+   "headword": "wrist",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "팔목"
+    }
+   ],
+   "rank": 1647
+  },
+  {
+   "id": "d39-poverty",
+   "day": 39,
+   "headword": "poverty",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "가난, 빈곤"
+    },
+    {
+     "pos": "n.",
+     "meaning": "결핍, 결여"
+    }
+   ],
+   "rank": 1648
+  },
+  {
+   "id": "d39-amusement",
+   "day": 39,
+   "headword": "amusement",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "즐거움"
+    },
+    {
+     "pos": "n.",
+     "meaning": "오락"
+    }
+   ],
+   "rank": 1649
+  },
+  {
+   "id": "d39-shorten",
+   "day": 39,
+   "headword": "shorten",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "줄이다"
+    }
+   ],
+   "rank": 1650
+  },
+  {
+   "id": "d39-plaster",
+   "day": 39,
+   "headword": "plaster",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "회반죽"
+    },
+    {
+     "pos": "n.",
+     "meaning": "반창고"
+    }
+   ],
+   "rank": 1651
+  },
+  {
+   "id": "d39-earnest",
+   "day": 39,
+   "headword": "earnest",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "진지한, 진정한"
+    },
+    {
+     "pos": "a.",
+     "meaning": "성실한"
+    }
+   ],
+   "rank": 1652
+  },
+  {
+   "id": "d39-conviction",
+   "day": 39,
+   "headword": "conviction",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "신념, 확신"
+    },
+    {
+     "pos": "n.",
+     "meaning": "유죄 판결"
+    }
+   ],
+   "rank": 1655
+  },
+  {
+   "id": "d39-hatred",
+   "day": 39,
+   "headword": "hatred",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "증오"
+    },
+    {
+     "pos": "n.",
+     "meaning": "혐오"
+    }
+   ],
+   "rank": 1656
+  },
+  {
+   "id": "d39-uneasy",
+   "day": 39,
+   "headword": "uneasy",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "불안한"
+    },
+    {
+     "pos": "a.",
+     "meaning": "불편한"
+    }
+   ],
+   "rank": 1657
+  },
+  {
+   "id": "d39-envy",
+   "day": 39,
+   "headword": "envy",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "부러움, 질투"
+    },
+    {
+     "pos": "v.",
+     "meaning": "부러워하다, 질투하다"
+    }
+   ],
+   "rank": 1658
+  },
+  {
+   "id": "d39-swear",
+   "day": 39,
+   "headword": "swear",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "맹세하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "욕설을 하다"
+    }
+   ],
+   "rank": 1659
+  },
+  {
+   "id": "d39-contempt",
+   "day": 39,
+   "headword": "contempt",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "경멸, 무시"
+    }
+   ],
+   "rank": 1660
+  },
+  {
+   "id": "d39-scar",
+   "day": 39,
+   "headword": "scar",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "흉터, 상처"
+    },
+    {
+     "pos": "v.",
+     "meaning": "흉터를 남기다"
+    }
+   ],
+   "rank": 1662
+  },
+  {
+   "id": "d39-coward",
+   "day": 39,
+   "headword": "coward",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "겁쟁이"
+    },
+    {
+     "pos": "n.",
+     "meaning": "겁쟁이"
+    }
+   ],
+   "rank": 1663
+  },
+  {
+   "id": "d39-offspring",
+   "day": 39,
+   "headword": "offspring",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "자손, 후손"
+    },
+    {
+     "pos": "n.",
+     "meaning": "결과물, 산물"
+    }
+   ],
+   "rank": 1664
+  },
+  {
+   "id": "d39-mercy",
+   "day": 39,
+   "headword": "mercy",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "연민, 자비"
+    }
+   ],
+   "rank": 1665
+  },
+  {
+   "id": "d39-hug",
+   "day": 39,
+   "headword": "hug",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "껴안다"
+    },
+    {
+     "pos": "n.",
+     "meaning": "껴안기"
+    }
+   ],
+   "rank": 1666
+  },
+  {
+   "id": "d39-domain",
+   "day": 39,
+   "headword": "domain",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "영역, 분야"
+    },
+    {
+     "pos": "n.",
+     "meaning": "도메인, 인터넷 주소"
+    }
+   ],
+   "rank": 1667
+  },
+  {
+   "id": "d39-alien",
+   "day": 39,
+   "headword": "alien",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "외국인"
+    },
+    {
+     "pos": "n.",
+     "meaning": "외계인"
+    }
+   ],
+   "rank": 1668
+  },
+  {
+   "id": "d39-token",
+   "day": 39,
+   "headword": "token",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "표시, 증표"
+    },
+    {
+     "pos": "n.",
+     "meaning": "기념품"
+    }
+   ],
+   "rank": 1669
+  },
+  {
+   "id": "d39-nasty",
+   "day": 39,
+   "headword": "nasty",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "불쾌한, 고약한"
+    },
+    {
+     "pos": "a.",
+     "meaning": "형편없는"
+    }
+   ],
+   "rank": 1670
+  },
+  {
+   "id": "d39-sober",
+   "day": 39,
+   "headword": "sober",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "술에 취하지 않은"
+    },
+    {
+     "pos": "a.",
+     "meaning": "진지한"
+    }
+   ],
+   "rank": 1671
+  },
+  {
+   "id": "d39-mandate",
+   "day": 39,
+   "headword": "mandate",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "명령, 지시"
+    },
+    {
+     "pos": "v.",
+     "meaning": "권한을 부여하다, 위임하"
+    }
+   ],
+   "rank": 1672
+  },
+  {
+   "id": "d39-fuss",
+   "day": 39,
+   "headword": "fuss",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "쓸데없는 소란"
+    },
+    {
+     "pos": "v.",
+     "meaning": "지나치게 신경 쓰다"
+    }
+   ],
+   "rank": 1673
+  },
+  {
+   "id": "d39-infant",
+   "day": 39,
+   "headword": "infant",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "아기, 영유아"
+    }
+   ],
+   "rank": 1674
+  },
+  {
+   "id": "d39-freelance",
+   "day": 39,
+   "headword": "freelance",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "프리랜서"
+    },
+    {
+     "pos": "v.",
+     "meaning": "프리랜서로 일하다"
+    }
+   ],
+   "rank": 1675
+  },
+  {
+   "id": "d39-naughty",
+   "day": 39,
+   "headword": "naughty",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "말썽꾸러기의, 장난꾸러"
+    }
+   ],
+   "rank": 1676
+  },
+  {
+   "id": "d39-passive",
+   "day": 39,
+   "headword": "passive",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "수동적인, 소극적인"
+    },
+    {
+     "pos": "a.",
+     "meaning": "무저항의, 받아들이는"
+    }
+   ],
+   "rank": 1677
+  },
+  {
+   "id": "d39-intolerable",
+   "day": 39,
+   "headword": "intolerable",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "참을 수 없는"
+    }
+   ],
+   "rank": 1679
+  },
+  {
+   "id": "d39-allege",
+   "day": 39,
+   "headword": "allege",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "주장하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "(특히 법정에서) 혐의를"
+    }
+   ],
+   "rank": 1680
+  },
+  {
+   "id": "d39-momentary",
+   "day": 39,
+   "headword": "momentary",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "순간적인"
+    },
+    {
+     "pos": "a.",
+     "meaning": "일시적인"
+    }
+   ],
+   "rank": 1681
+  },
+  {
+   "id": "d39-deceive",
+   "day": 39,
+   "headword": "deceive",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "속이다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "오해하게 하다"
+    }
+   ],
+   "rank": 1682
+  },
+  {
+   "id": "d39-hospitable",
+   "day": 39,
+   "headword": "hospitable",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "친절한, 환대하는"
+    }
+   ],
+   "rank": 1683
+  },
+  {
+   "id": "d39-quicken",
+   "day": 39,
+   "headword": "quicken",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "속도를 높이다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "활기를 띠게 하다"
+    }
+   ],
+   "rank": 1684
+  },
+  {
+   "id": "d39-temptation",
+   "day": 39,
+   "headword": "temptation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "유혹"
+    },
+    {
+     "pos": "n.",
+     "meaning": "충동"
+    }
+   ],
+   "rank": 1685
+  },
+  {
+   "id": "d39-conditional",
+   "day": 39,
+   "headword": "conditional",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "조건부의, 특정 조건에 따"
+    },
+    {
+     "pos": "a.",
+     "meaning": "~에 달린"
+    }
+   ],
+   "rank": 1688
+  },
+  {
+   "id": "d39-punctual",
+   "day": 39,
+   "headword": "punctual",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "시간을 엄수하는"
+    }
+   ],
+   "rank": 1689
+  },
+  {
+   "id": "d39-imbalance",
+   "day": 39,
+   "headword": "imbalance",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "불균형"
+    }
+   ],
+   "rank": 1690
+  },
+  {
+   "id": "d39-presume",
+   "day": 39,
+   "headword": "presume",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "추정하다, 간주하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "추정하다, 억측하다"
+    }
+   ],
+   "rank": 1691
+  },
+  {
+   "id": "d39-short-cut",
+   "day": 39,
+   "headword": "short-cut",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "지름길, 빠른 길"
+    },
+    {
+     "pos": "v.",
+     "meaning": "지름길로 가다, 쉽게 끝내"
+    }
+   ],
+   "rank": 1692
+  },
+  {
+   "id": "d39-second-hand",
+   "day": 39,
+   "headword": "second-hand",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "중고의"
+    },
+    {
+     "pos": "a.",
+     "meaning": "간접적인"
+    }
+   ],
+   "rank": 1693
+  },
+  {
+   "id": "d39-cholesterol",
+   "day": 39,
+   "headword": "cholesterol",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "콜레스테롤"
+    },
+    {
+     "pos": "n.",
+     "meaning": "혈중 지질"
+    }
+   ],
+   "rank": 1695
+  },
+  {
+   "id": "d39-infection",
+   "day": 39,
+   "headword": "infection",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "감염, 질병"
+    }
+   ],
+   "rank": 1696
+  },
+  {
+   "id": "d39-changeable",
+   "day": 39,
+   "headword": "changeable",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "변하기 쉬운"
+    },
+    {
+     "pos": "a.",
+     "meaning": "교체할 수 있는"
+    }
+   ],
+   "rank": 1697
+  },
+  {
+   "id": "d39-anticipation",
+   "day": 39,
+   "headword": "anticipation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "기대, 예상"
+    },
+    {
+     "pos": "n.",
+     "meaning": "미리 준비함"
+    }
+   ],
+   "rank": 1698
+  },
+  {
+   "id": "d39-rust",
+   "day": 39,
+   "headword": "rust",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "녹"
+    },
+    {
+     "pos": "v.",
+     "meaning": "녹슬다"
+    }
+   ],
+   "rank": 1699
+  },
+  {
+   "id": "d39-bare",
+   "day": 39,
+   "headword": "bare",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "노출된, 맨~"
+    },
+    {
+     "pos": "a.",
+     "meaning": "최소한의"
+    }
+   ],
+   "rank": 1700
+  },
+  {
+   "id": "d39-lust",
+   "day": 39,
+   "headword": "lust",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "강한 욕망, 성적 욕구"
+    },
+    {
+     "pos": "v.",
+     "meaning": "강하게 원하다"
+    }
+   ],
+   "rank": 1701
+  },
+  {
+   "id": "d39-fate",
+   "day": 39,
+   "headword": "fate",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "운명"
+    },
+    {
+     "pos": "n.",
+     "meaning": "결과, 결말"
+    }
+   ],
+   "rank": 1702
+  },
+  {
+   "id": "d39-consulate",
+   "day": 39,
+   "headword": "consulate",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "영사관"
+    },
+    {
+     "pos": "n.",
+     "meaning": "영사의 직책 또는 임기"
+    }
+   ],
+   "rank": 1703
+  },
+  {
+   "id": "d39-ruin",
+   "day": 39,
+   "headword": "ruin",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "폐허, 유적"
+    },
+    {
+     "pos": "v.",
+     "meaning": "파괴하다, 망치다"
+    }
+   ],
+   "rank": 1704
+  },
+  {
+   "id": "d39-destroy",
+   "day": 39,
+   "headword": "destroy",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "파괴하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "완전히 없애다"
+    }
+   ],
+   "rank": 1706
+  },
+  {
+   "id": "d39-breed",
+   "day": 39,
+   "headword": "breed",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "번식하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "양육하다, 기르다"
+    }
+   ],
+   "rank": 1707
+  },
+  {
+   "id": "d39-literally",
+   "day": 39,
+   "headword": "literally",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "문자 그대로"
+    },
+    {
+     "pos": "ad.",
+     "meaning": "과장 없이, 실제로"
+    }
+   ],
+   "rank": 1708
+  },
+  {
+   "id": "d39-vanish",
+   "day": 39,
+   "headword": "vanish",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "사라지다"
+    }
+   ],
+   "rank": 1710
+  },
+  {
+   "id": "d39-sacrifice",
+   "day": 39,
+   "headword": "sacrifice",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "희생, 헌신"
+    },
+    {
+     "pos": "v.",
+     "meaning": "희생하다, 바치다"
+    }
+   ],
+   "rank": 1711
+  },
+  {
+   "id": "d39-period",
+   "day": 39,
+   "headword": "period",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "기간, 시기"
+    },
+    {
+     "pos": "n.",
+     "meaning": "시대, 시기"
+    }
+   ],
+   "rank": 1713
+  },
+  {
+   "id": "d39-rescue",
+   "day": 39,
+   "headword": "rescue",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "구조하다, 구출하다"
+    },
+    {
+     "pos": "n.",
+     "meaning": "구조, 구출"
+    }
+   ],
+   "rank": 1715
+  },
+  {
+   "id": "d39-successive",
+   "day": 39,
+   "headword": "successive",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "연속적인"
+    }
+   ],
+   "rank": 1717
+  },
+  {
+   "id": "d39-fruitful",
+   "day": 39,
+   "headword": "fruitful",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "성과가 있는, 결실 있는"
+    },
+    {
+     "pos": "a.",
+     "meaning": "풍부한, 다산의"
+    }
+   ],
+   "rank": 1719
+  },
+  {
+   "id": "d39-dedicate",
+   "day": 39,
+   "headword": "dedicate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "바치다, 헌신하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "(시간, 노력을) 쏟다"
+    }
+   ],
+   "rank": 1721
+  },
+  {
+   "id": "d39-descend",
+   "day": 39,
+   "headword": "descend",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "내려가다, 하강하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "계통, 혈통에서 내려오다"
+    }
+   ],
+   "rank": 1723
+  },
+  {
+   "id": "d39-therapy",
+   "day": 39,
+   "headword": "therapy",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "치료, 요법"
+    },
+    {
+     "pos": "n.",
+     "meaning": "심리 치료"
+    }
+   ],
+   "rank": 1724
+  },
+  {
+   "id": "d39-ban",
+   "day": 39,
+   "headword": "ban",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "금지하다"
+    },
+    {
+     "pos": "n.",
+     "meaning": "금지"
+    }
+   ],
+   "rank": 1728
+  },
+  {
+   "id": "d39-bankrupt",
+   "day": 39,
+   "headword": "bankrupt",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "파산한"
+    },
+    {
+     "pos": "v.",
+     "meaning": "파산시키다"
+    }
+   ],
+   "rank": 1730
+  },
+  {
+   "id": "d39-overtake",
+   "day": 39,
+   "headword": "overtake",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "앞지르다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "능가하다"
+    }
+   ],
+   "rank": 1731
+  },
+  {
+   "id": "d39-treatment",
+   "day": 39,
+   "headword": "treatment",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "치료"
+    },
+    {
+     "pos": "n.",
+     "meaning": "처우, 대우"
+    }
+   ],
+   "rank": 1732
+  },
+  {
+   "id": "d39-cargo",
+   "day": 39,
+   "headword": "cargo",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "화물, 운송물"
+    },
+    {
+     "pos": "n.",
+     "meaning": "수화물"
+    }
+   ],
+   "rank": 1736
+  },
+  {
+   "id": "d39-intersection",
+   "day": 39,
+   "headword": "intersection",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "교차로, 교차 지점"
+    }
+   ],
+   "rank": 1737
+  },
+  {
+   "id": "d39-union",
+   "day": 39,
+   "headword": "union",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "조합"
+    },
+    {
+     "pos": "n.",
+     "meaning": "연합"
+    }
+   ],
+   "rank": 1744
+  },
+  {
+   "id": "d39-agree",
+   "day": 39,
+   "headword": "agree",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "동의하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "협의하다, 합의하다"
+    }
+   ],
+   "rank": 1762
+  },
+  {
+   "id": "d39-alter",
+   "day": 39,
+   "headword": "alter",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "변경하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "조정하다"
+    }
+   ],
+   "rank": 1768
+  },
+  {
+   "id": "d39-impression",
+   "day": 39,
+   "headword": "impression",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "인상, 느낌"
+    },
+    {
+     "pos": "n.",
+     "meaning": "영향, 충격"
+    }
+   ],
+   "rank": 1772
+  },
+  {
+   "id": "d39-acclaim",
+   "day": 39,
+   "headword": "acclaim",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "공개적으로 칭찬하다, 열"
+    },
+    {
+     "pos": "n.",
+     "meaning": "칭찬, 환호"
+    }
+   ],
+   "rank": 1776
+  },
+  {
+   "id": "d39-deteriorate",
+   "day": 39,
+   "headword": "deteriorate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "악화되다"
+    }
+   ],
+   "rank": 1778
+  },
+  {
+   "id": "d39-memorandum",
+   "day": 39,
+   "headword": "memorandum",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "메모, 회람"
+    },
+    {
+     "pos": "n.",
+     "meaning": "각서, 약정서"
+    }
+   ],
+   "rank": 1785
+  },
+  {
+   "id": "d39-mutual",
+   "day": 39,
+   "headword": "mutual",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "상호적인"
+    },
+    {
+     "pos": "a.",
+     "meaning": "공동의"
+    }
+   ],
+   "rank": 1787
+  },
+  {
+   "id": "d39-insult",
+   "day": 39,
+   "headword": "insult",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "모욕"
+    },
+    {
+     "pos": "v.",
+     "meaning": "모욕하다"
+    }
+   ],
+   "rank": 1789
+  },
+  {
+   "id": "d39-oppressive",
+   "day": 39,
+   "headword": "oppressive",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "억압적인, 압제적인"
+    },
+    {
+     "pos": "a.",
+     "meaning": "답답한, 숨 막히는"
+    }
+   ],
+   "rank": 1791
+  },
+  {
+   "id": "d39-proficient",
+   "day": 39,
+   "headword": "proficient",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "능숙한, 유능한"
+    },
+    {
+     "pos": "a.",
+     "meaning": "뛰어난, 숙달된"
+    }
+   ],
+   "rank": 1793
+  },
+  {
+   "id": "d39-premium",
+   "day": 39,
+   "headword": "premium",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "보험료"
+    },
+    {
+     "pos": "n.",
+     "meaning": "할부 수수료"
+    }
+   ],
+   "rank": 1794
+  },
+  {
+   "id": "d39-inflation",
+   "day": 39,
+   "headword": "inflation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "인플레이션, 물가 상승"
+    }
+   ],
+   "rank": 1797
+  },
+  {
+   "id": "d39-declare",
+   "day": 39,
+   "headword": "declare",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "선언하다, 발표하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "세관 신고하다"
+    }
+   ],
+   "rank": 1799
+  },
+  {
+   "id": "d39-portfolio",
+   "day": 39,
+   "headword": "portfolio",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "포트폴리오, 작품 모음집"
+    },
+    {
+     "pos": "n.",
+     "meaning": "서류첩"
+    }
+   ],
+   "rank": 1803
+  },
+  {
+   "id": "d39-satellite",
+   "day": 39,
+   "headword": "satellite",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "인공위성"
+    },
+    {
+     "pos": "n.",
+     "meaning": "위성 도시"
+    }
+   ],
+   "rank": 1806
+  },
+  {
+   "id": "d39-outfit",
+   "day": 39,
+   "headword": "outfit",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "의상, 복장"
+    },
+    {
+     "pos": "n.",
+     "meaning": "장비, 도구"
+    }
+   ],
+   "rank": 1807
+  },
+  {
+   "id": "d39-gauge",
+   "day": 39,
+   "headword": "gauge",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "계기, 측정기"
+    },
+    {
+     "pos": "v.",
+     "meaning": "측정하다"
+    }
+   ],
+   "rank": 1809
+  },
+  {
+   "id": "d39-considerable",
+   "day": 39,
+   "headword": "considerable",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "상당한"
+    }
+   ],
+   "rank": 1816
+  },
+  {
+   "id": "d39-commodity",
+   "day": 39,
+   "headword": "commodity",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "상품, 생필품"
+    },
+    {
+     "pos": "n.",
+     "meaning": "원자재"
+    }
+   ],
+   "rank": 1819
+  },
+  {
+   "id": "d39-notification",
+   "day": 39,
+   "headword": "notification",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "통지, 알림"
+    }
+   ],
+   "rank": 1820
+  },
+  {
+   "id": "d39-dilute",
+   "day": 39,
+   "headword": "dilute",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "희석하다, 묽게 하다"
+    },
+    {
+     "pos": "a.",
+     "meaning": "묽어진, 희석된"
+    }
+   ],
+   "rank": 1824
+  },
+  {
+   "id": "d39-monopoly",
+   "day": 39,
+   "headword": "monopoly",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "독점"
+    }
+   ],
+   "rank": 1828
+  },
+  {
+   "id": "d39-precipitation",
+   "day": 39,
+   "headword": "precipitation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "강수량"
+    },
+    {
+     "pos": "n.",
+     "meaning": "침전"
+    }
+   ],
+   "rank": 1829
+  },
+  {
+   "id": "d40-drape",
+   "day": 40,
+   "headword": "drape",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "걸치다"
+    },
+    {
+     "pos": "n.",
+     "meaning": "주름, 덮개"
+    }
+   ],
+   "rank": 1830
+  },
+  {
+   "id": "d40-wane",
+   "day": 40,
+   "headword": "wane",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "감소하다, 약해지다"
+    },
+    {
+     "pos": "n.",
+     "meaning": "감소, 쇠퇴"
+    }
+   ],
+   "rank": 1832
+  },
+  {
+   "id": "d40-custody",
+   "day": 40,
+   "headword": "custody",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "양육권"
+    },
+    {
+     "pos": "n.",
+     "meaning": "보호"
+    }
+   ],
+   "rank": 1836
+  },
+  {
+   "id": "d40-sufficiently",
+   "day": 40,
+   "headword": "sufficiently",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "충분히"
+    }
+   ],
+   "rank": 1837
+  },
+  {
+   "id": "d40-particularly",
+   "day": 40,
+   "headword": "particularly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "특히"
+    },
+    {
+     "pos": "ad.",
+     "meaning": "특별히"
+    }
+   ],
+   "rank": 1839
+  },
+  {
+   "id": "d40-remittance",
+   "day": 40,
+   "headword": "remittance",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "송금, 돈을 보내는 행위"
+    },
+    {
+     "pos": "n.",
+     "meaning": "송금액"
+    }
+   ],
+   "rank": 1840
+  },
+  {
+   "id": "d40-compatible",
+   "day": 40,
+   "headword": "compatible",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "호환 가능한"
+    },
+    {
+     "pos": "a.",
+     "meaning": "양립할 수 있는"
+    }
+   ],
+   "rank": 1842
+  },
+  {
+   "id": "d40-irrelevant",
+   "day": 40,
+   "headword": "irrelevant",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "관련 없는"
+    }
+   ],
+   "rank": 1844
+  },
+  {
+   "id": "d40-announcement",
+   "day": 40,
+   "headword": "announcement",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "공지, 발표"
+    },
+    {
+     "pos": "n.",
+     "meaning": "방송, 공고"
+    }
+   ],
+   "rank": 1850
+  },
+  {
+   "id": "d40-gratuity",
+   "day": 40,
+   "headword": "gratuity",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "팁, 봉사료"
+    },
+    {
+     "pos": "n.",
+     "meaning": "퇴직금"
+    }
+   ],
+   "rank": 1852
+  },
+  {
+   "id": "d40-realistically",
+   "day": 40,
+   "headword": "realistically",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "현실적으로"
+    },
+    {
+     "pos": "ad.",
+     "meaning": "실제적으로"
+    }
+   ],
+   "rank": 1854
+  },
+  {
+   "id": "d40-confiscate",
+   "day": 40,
+   "headword": "confiscate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "압수하다, 몰수하다"
+    }
+   ],
+   "rank": 1856
+  },
+  {
+   "id": "d40-procrastinate",
+   "day": 40,
+   "headword": "procrastinate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "미루다, 지연시키다"
+    }
+   ],
+   "rank": 1857
+  },
+  {
+   "id": "d40-normal",
+   "day": 40,
+   "headword": "normal",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "일반적인, 평범한"
+    },
+    {
+     "pos": "n.",
+     "meaning": "정상적인 상태"
+    }
+   ],
+   "rank": 1858
+  },
+  {
+   "id": "d40-concurrently",
+   "day": 40,
+   "headword": "concurrently",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "동시에"
+    }
+   ],
+   "rank": 1865
+  },
+  {
+   "id": "d40-incompetent",
+   "day": 40,
+   "headword": "incompetent",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "무능한, 능력 없는"
+    },
+    {
+     "pos": "n.",
+     "meaning": "무능력한 사람"
+    }
+   ],
+   "rank": 1868
+  },
+  {
+   "id": "d40-proportion",
+   "day": 40,
+   "headword": "proportion",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "비율, 부분"
+    },
+    {
+     "pos": "n.",
+     "meaning": "균형, 비례"
+    }
+   ],
+   "rank": 1876
+  },
+  {
+   "id": "d40-drought",
+   "day": 40,
+   "headword": "drought",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "가뭄"
+    }
+   ],
+   "rank": 1877
+  },
+  {
+   "id": "d40-diminish",
+   "day": 40,
+   "headword": "diminish",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "감소시키다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "감소하다, 줄다"
+    }
+   ],
+   "rank": 1879
+  },
+  {
+   "id": "d40-fuel",
+   "day": 40,
+   "headword": "fuel",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "연료"
+    },
+    {
+     "pos": "v.",
+     "meaning": "활력을 주다, 촉진하다"
+    }
+   ],
+   "rank": 1888
+  },
+  {
+   "id": "d40-speculation",
+   "day": 40,
+   "headword": "speculation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "추측"
+    },
+    {
+     "pos": "n.",
+     "meaning": "투기"
+    }
+   ],
+   "rank": 1894
+  },
+  {
+   "id": "d40-differ",
+   "day": 40,
+   "headword": "differ",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "다르다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "차이가 있다"
+    }
+   ],
+   "rank": 1898
+  },
+  {
+   "id": "d40-embassy",
+   "day": 40,
+   "headword": "embassy",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "대사관"
+    }
+   ],
+   "rank": 1902
+  },
+  {
+   "id": "d40-innate",
+   "day": 40,
+   "headword": "innate",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "타고난, 선천적인"
+    }
+   ],
+   "rank": 1907
+  },
+  {
+   "id": "d40-delicate",
+   "day": 40,
+   "headword": "delicate",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "섬세한, 정교한"
+    },
+    {
+     "pos": "a.",
+     "meaning": "민감한, 취급 주의가 필요"
+    }
+   ],
+   "rank": 1910
+  },
+  {
+   "id": "d40-antibiotic",
+   "day": 40,
+   "headword": "antibiotic",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "항생제"
+    }
+   ],
+   "rank": 1913
+  },
+  {
+   "id": "d40-deplete",
+   "day": 40,
+   "headword": "deplete",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "고갈시키다, 소모하다"
+    }
+   ],
+   "rank": 1916
+  },
+  {
+   "id": "d40-enact",
+   "day": 40,
+   "headword": "enact",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "법을 제정하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "연기하다"
+    }
+   ],
+   "rank": 1919
+  },
+  {
+   "id": "d40-eradicate",
+   "day": 40,
+   "headword": "eradicate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "근절하다, 제거하다"
+    }
+   ],
+   "rank": 1921
+  },
+  {
+   "id": "d40-exploit",
+   "day": 40,
+   "headword": "exploit",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "최대한 활용하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "착취하다"
+    }
+   ],
+   "rank": 1922
+  },
+  {
+   "id": "d40-fraud",
+   "day": 40,
+   "headword": "fraud",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "사기, 기만"
+    },
+    {
+     "pos": "n.",
+     "meaning": "부정 행위"
+    }
+   ],
+   "rank": 1923
+  },
+  {
+   "id": "d40-forbid",
+   "day": 40,
+   "headword": "forbid",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "금지하다, 못하게 하다"
+    }
+   ],
+   "rank": 1924
+  },
+  {
+   "id": "d40-illegible",
+   "day": 40,
+   "headword": "illegible",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "읽기 어려운"
+    }
+   ],
+   "rank": 1926
+  },
+  {
+   "id": "d40-litigation",
+   "day": 40,
+   "headword": "litigation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "소송, 법적 분쟁"
+    },
+    {
+     "pos": "n.",
+     "meaning": "법적 절차"
+    }
+   ],
+   "rank": 1929
+  },
+  {
+   "id": "d40-scent",
+   "day": 40,
+   "headword": "scent",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "향기, 냄새"
+    },
+    {
+     "pos": "v.",
+     "meaning": "냄새를 맡다, 추적하다"
+    }
+   ],
+   "rank": 1933
+  },
+  {
+   "id": "d40-preside",
+   "day": 40,
+   "headword": "preside",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "주재하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "사회를 보다"
+    }
+   ],
+   "rank": 1939
+  },
+  {
+   "id": "d40-apprehensive",
+   "day": 40,
+   "headword": "apprehensive",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "불안해하는, 염려하는"
+    }
+   ],
+   "rank": 1945
+  },
+  {
+   "id": "d40-chronological",
+   "day": 40,
+   "headword": "chronological",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "시간 순서의"
+    }
+   ],
+   "rank": 1950
+  },
+  {
+   "id": "d40-curtail",
+   "day": 40,
+   "headword": "curtail",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "줄이다, 축소하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "제한하다"
+    }
+   ],
+   "rank": 1953
+  },
+  {
+   "id": "d40-embargo",
+   "day": 40,
+   "headword": "embargo",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "무역 금지, 제재"
+    },
+    {
+     "pos": "v.",
+     "meaning": "무역을 금지하다"
+    }
+   ],
+   "rank": 1954
+  },
+  {
+   "id": "d40-sturdy",
+   "day": 40,
+   "headword": "sturdy",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "튼튼한, 견고한"
+    },
+    {
+     "pos": "a.",
+     "meaning": "확고한, 결연한"
+    }
+   ],
+   "rank": 1962
+  },
+  {
+   "id": "d40-stance",
+   "day": 40,
+   "headword": "stance",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "입장, 태도"
+    },
+    {
+     "pos": "n.",
+     "meaning": "자세, 위치"
+    }
+   ],
+   "rank": 1965
+  },
+  {
+   "id": "d40-slowdown",
+   "day": 40,
+   "headword": "slowdown",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "둔화, 감속"
+    }
+   ],
+   "rank": 1967
+  },
+  {
+   "id": "d40-connoisseur",
+   "day": 40,
+   "headword": "connoisseur",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "전문가, 감식가"
+    }
+   ],
+   "rank": 1969
+  },
+  {
+   "id": "d40-ratio",
+   "day": 40,
+   "headword": "ratio",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "비율, 비"
+    }
+   ],
+   "rank": 1971
+  },
+  {
+   "id": "d40-defer",
+   "day": 40,
+   "headword": "defer",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "연기하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "다른 사람에게 맡기다, 따"
+    }
+   ],
+   "rank": 1973
+  },
+  {
+   "id": "d40-flood",
+   "day": 40,
+   "headword": "flood",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "홍수"
+    },
+    {
+     "pos": "v.",
+     "meaning": "범람하다, 가득 차다"
+    }
+   ],
+   "rank": 1974
+  },
+  {
+   "id": "d40-customize",
+   "day": 40,
+   "headword": "customize",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "개인 맞춤화하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "특정 요구에 맞게 조정하"
+    }
+   ],
+   "rank": 1977
+  },
+  {
+   "id": "d40-justify",
+   "day": 40,
+   "headword": "justify",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "정당화하다"
+    }
+   ],
+   "rank": 1979
+  },
+  {
+   "id": "d40-turnover",
+   "day": 40,
+   "headword": "turnover",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "직원 변동률"
+    },
+    {
+     "pos": "n.",
+     "meaning": "매출액"
+    }
+   ],
+   "rank": 1981
+  },
+  {
+   "id": "d40-uphold",
+   "day": 40,
+   "headword": "uphold",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "지지하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "유지하다"
+    }
+   ],
+   "rank": 1982
+  },
+  {
+   "id": "d40-contributor",
+   "day": 40,
+   "headword": "contributor",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "기여자, 공헌자"
+    },
+    {
+     "pos": "n.",
+     "meaning": "기고가"
+    }
+   ],
+   "rank": 1984
+  },
+  {
+   "id": "d40-dividend",
+   "day": 40,
+   "headword": "dividend",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "배당금"
+    },
+    {
+     "pos": "n.",
+     "meaning": "나누어지는 수 (수학적 용"
+    }
+   ],
+   "rank": 1985
+  },
+  {
+   "id": "d40-habitat",
+   "day": 40,
+   "headword": "habitat",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "서식지"
+    },
+    {
+     "pos": "n.",
+     "meaning": "거주지"
+    }
+   ],
+   "rank": 1988
+  },
+  {
+   "id": "d40-insubordinate",
+   "day": 40,
+   "headword": "insubordinate",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "불복종하는, 반항적인"
+    },
+    {
+     "pos": "a.",
+     "meaning": "도전적인"
+    }
+   ],
+   "rank": 1989
+  },
+  {
+   "id": "d40-retaliation",
+   "day": 40,
+   "headword": "retaliation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "복수, 보복"
+    }
+   ],
+   "rank": 1991
+  },
+  {
+   "id": "d40-annulment",
+   "day": 40,
+   "headword": "annulment",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "무효화, 취소"
+    }
+   ],
+   "rank": 1993
+  },
+  {
+   "id": "d40-alumni",
+   "day": 40,
+   "headword": "alumni",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "졸업생, 동문"
+    }
+   ],
+   "rank": 1995
+  },
+  {
+   "id": "d40-eminent",
+   "day": 40,
+   "headword": "eminent",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "저명한, 탁월한"
+    },
+    {
+     "pos": "a.",
+     "meaning": "돌출한, 눈에 띄는"
+    }
+   ],
+   "rank": 1999
+  },
+  {
+   "id": "d40-monetary",
+   "day": 40,
+   "headword": "monetary",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "화폐의, 금전적인"
+    }
+   ],
+   "rank": 2001
+  },
+  {
+   "id": "d40-circumscribe",
+   "day": 40,
+   "headword": "circumscribe",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "제한하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "둘러싸다, 경계짓다"
+    }
+   ],
+   "rank": 2006
+  },
+  {
+   "id": "d40-instantly",
+   "day": 40,
+   "headword": "instantly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "즉시"
+    },
+    {
+     "pos": "ad.",
+     "meaning": "바로, 순간적으로"
+    }
+   ],
+   "rank": 2007
+  },
+  {
+   "id": "d40-fortify",
+   "day": 40,
+   "headword": "fortify",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "강화하다, 튼튼하게 하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "영양가를 높이다"
+    }
+   ],
+   "rank": 2009
+  },
+  {
+   "id": "d40-discharge",
+   "day": 40,
+   "headword": "discharge",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "방출하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "해고하다"
+    }
+   ],
+   "rank": 2010
+  },
+  {
+   "id": "d40-ledger",
+   "day": 40,
+   "headword": "ledger",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "회계 장부, 원장"
+    }
+   ],
+   "rank": 2012
+  },
+  {
+   "id": "d40-bilingual",
+   "day": 40,
+   "headword": "bilingual",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "두 언어를 사용할 수 있는"
+    },
+    {
+     "pos": "n.",
+     "meaning": "이중 언어 사용자"
+    }
+   ],
+   "rank": 2013
+  },
+  {
+   "id": "d40-deadlock",
+   "day": 40,
+   "headword": "deadlock",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "교착 상태, 막다름"
+    }
+   ],
+   "rank": 2018
+  },
+  {
+   "id": "d40-ecology",
+   "day": 40,
+   "headword": "ecology",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "생태학"
+    },
+    {
+     "pos": "n.",
+     "meaning": "생태계"
+    }
+   ],
+   "rank": 2020
+  },
+  {
+   "id": "d40-conform",
+   "day": 40,
+   "headword": "conform",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "따르다, 순응하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "일치하다, 조화되다"
+    }
+   ],
+   "rank": 2023
+  },
+  {
+   "id": "d40-deviate",
+   "day": 40,
+   "headword": "deviate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "벗어나다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "일탈, 탈선"
+    }
+   ],
+   "rank": 2024
+  },
+  {
+   "id": "d40-evidently",
+   "day": 40,
+   "headword": "evidently",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "분명히, 명백히"
+    },
+    {
+     "pos": "ad.",
+     "meaning": "듣기로는, 듣자 하니"
+    }
+   ],
+   "rank": 2025
+  },
+  {
+   "id": "d40-clout",
+   "day": 40,
+   "headword": "clout",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "영향력, 권력"
+    },
+    {
+     "pos": "n.",
+     "meaning": "타격, 강타"
+    }
+   ],
+   "rank": 2028
+  },
+  {
+   "id": "d40-occupation",
+   "day": 40,
+   "headword": "occupation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "직업, 일자리"
+    },
+    {
+     "pos": "n.",
+     "meaning": "점령, 차지"
+    }
+   ],
+   "rank": 2029
+  },
+  {
+   "id": "d40-unstable",
+   "day": 40,
+   "headword": "unstable",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "불안정한"
+    },
+    {
+     "pos": "a.",
+     "meaning": "정신적인 불안정"
+    }
+   ],
+   "rank": 2037
+  },
+  {
+   "id": "d40-constructive",
+   "day": 40,
+   "headword": "constructive",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "건설적인"
+    },
+    {
+     "pos": "a.",
+     "meaning": "발전적인"
+    }
+   ],
+   "rank": 2040
+  },
+  {
+   "id": "d40-sewage",
+   "day": 40,
+   "headword": "sewage",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "하수, 오수"
+    },
+    {
+     "pos": "n.",
+     "meaning": "배수"
+    }
+   ],
+   "rank": 2042
+  },
+  {
+   "id": "d40-dose",
+   "day": 40,
+   "headword": "dose",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "약의 복용량, 1회분"
+    },
+    {
+     "pos": "v.",
+     "meaning": "투여하다, 복용시키다"
+    }
+   ],
+   "rank": 2044
+  },
+  {
+   "id": "d40-abate",
+   "day": 40,
+   "headword": "abate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "감소하다, 약해지다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "완화하다"
+    }
+   ],
+   "rank": 2051
+  },
+  {
+   "id": "d40-screen",
+   "day": 40,
+   "headword": "screen",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "화면, 스크린"
+    },
+    {
+     "pos": "v.",
+     "meaning": "체계적으로 선별하다"
+    }
+   ],
+   "rank": 2055
+  },
+  {
+   "id": "d40-regulate",
+   "day": 40,
+   "headword": "regulate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "규제하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "조절하다"
+    }
+   ],
+   "rank": 2057
+  },
+  {
+   "id": "d40-faction",
+   "day": 40,
+   "headword": "faction",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "소수파, 파벌"
+    }
+   ],
+   "rank": 2058
+  },
+  {
+   "id": "d40-survive",
+   "day": 40,
+   "headword": "survive",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "살아남다, 생존하다"
+    }
+   ],
+   "rank": 2059
+  },
+  {
+   "id": "d40-conservative",
+   "day": 40,
+   "headword": "conservative",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "보수적인, 전통적인"
+    },
+    {
+     "pos": "n.",
+     "meaning": "보수주의자"
+    }
+   ],
+   "rank": 2060
+  },
+  {
+   "id": "d40-burst",
+   "day": 40,
+   "headword": "burst",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "터지다, 폭발하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "갑작스럽게 나타나다"
+    }
+   ],
+   "rank": 2061
+  },
+  {
+   "id": "d40-volume",
+   "day": 40,
+   "headword": "volume",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "부피, 용량"
+    },
+    {
+     "pos": "n.",
+     "meaning": "소리 크기, 음량"
+    }
+   ],
+   "rank": 2062
+  },
+  {
+   "id": "d40-residence",
+   "day": 40,
+   "headword": "residence",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "거주지, 주택"
+    },
+    {
+     "pos": "n.",
+     "meaning": "거주"
+    }
+   ],
+   "rank": 2071
+  },
+  {
+   "id": "d40-include",
+   "day": 40,
+   "headword": "include",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "포함하다, 포함시키다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "넣다"
+    }
+   ],
+   "rank": 2072
+  },
+  {
+   "id": "d40-derive",
+   "day": 40,
+   "headword": "derive",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "얻다, 유래하다"
+    }
+   ],
+   "rank": 2074
+  },
+  {
+   "id": "d40-advertisement",
+   "day": 40,
+   "headword": "advertisement",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "광고"
+    }
+   ],
+   "rank": 2076
+  },
+  {
+   "id": "d40-cash",
+   "day": 40,
+   "headword": "cash",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "현금"
+    },
+    {
+     "pos": "v.",
+     "meaning": "현금으로 바꾸다(환전하"
+    }
+   ],
+   "rank": 2078
+  },
+  {
+   "id": "d40-form",
+   "day": 40,
+   "headword": "form",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "형태"
+    },
+    {
+     "pos": "n.",
+     "meaning": "양식, 서식"
+    }
+   ],
+   "rank": 2081
+  },
+  {
+   "id": "d40-qualification",
+   "day": 40,
+   "headword": "qualification",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "자격"
+    },
+    {
+     "pos": "n.",
+     "meaning": "능력"
+    }
+   ],
+   "rank": 2084
+  },
+  {
+   "id": "d40-demonstrate",
+   "day": 40,
+   "headword": "demonstrate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "보여주다, 시연하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "증명하다"
+    }
+   ],
+   "rank": 2091
+  },
+  {
+   "id": "d40-inquire",
+   "day": 40,
+   "headword": "inquire",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "질문하다"
+    },
+    {
+     "pos": "v.",
+     "meaning": "조사하다"
+    }
+   ],
+   "rank": 2092
+  },
+  {
+   "id": "d40-resignation",
+   "day": 40,
+   "headword": "resignation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "사임, 사직"
+    },
+    {
+     "pos": "n.",
+     "meaning": "체념"
+    }
+   ],
+   "rank": 2093
+  },
+  {
+   "id": "d40-percentage",
+   "day": 40,
+   "headword": "percentage",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "백분율"
+    },
+    {
+     "pos": "n.",
+     "meaning": "비율, 비중"
+    }
+   ],
+   "rank": 2102
+  },
+  {
+   "id": "d40-understanding",
+   "day": 40,
+   "headword": "understanding",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "이해, 이해력"
+    },
+    {
+     "pos": "a.",
+     "meaning": "이해심 있는"
+    }
+   ],
+   "rank": 2103
+  }
+ ]
+}

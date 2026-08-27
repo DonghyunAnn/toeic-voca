@@ -47,12 +47,12 @@ try {
           <span id="due-count">0</span>
           <span class="unit">단어</span>
         </div>
-        <p class="muted" id="due-label">오늘 복습할 단어</p>
-        <button class="btn btn-primary btn-block" id="start-review">복습 시작</button>
+        <p class="muted" id="due-label"></p>
+        <button class="btn btn-primary btn-block" id="start-review">오늘 학습 시작</button>
       </section>
 
       <div class="stat-row">
-        <div class="stat"><b id="stat-seen">0</b><span>학습한 단어</span></div>
+        <div class="stat"><b id="stat-seen">0</b><span>한 번 이상 본 단어</span></div>
         <div class="stat"><b id="stat-mastered">0</b><span>암기 완료</span></div>
         <div class="stat"><b id="stat-total">0</b><span>전체 단어</span></div>
       </div>
@@ -100,7 +100,7 @@ try {
       </div>
 
       <div class="empty" id="study-done" hidden>
-        <p class="empty-title">복습 완료</p>
+        <p class="empty-title">오늘 학습 완료</p>
         <p class="muted" id="study-done-sub"></p>
         <button class="btn btn-outline" data-nav="home">홈으로</button>
       </div>
@@ -122,8 +122,9 @@ try {
 
       <div class="segmented compact" id="list-tier">
         <button data-tier="all">전체</button>
-        <button data-tier="core">필수 어휘</button>
-        <button data-tier="bonus">만점 완성</button>
+        <button data-tier="core">필수</button>
+        <button data-tier="bonus">만점</button>
+        <button data-tier="extra">추가</button>
       </div>
       <div class="chips" id="day-chips"></div>
       <p class="muted list-count" id="list-count"></p>
@@ -140,7 +141,7 @@ try {
         <section class="section">
           <h2 class="section-title">범위</h2>
           <div class="segmented" id="quiz-scope">
-            <button data-scope="due" class="on">오늘 복습분</button>
+            <button data-scope="due" class="on">오늘 학습분</button>
             <button data-scope="day">DAY 선택</button>
             <button data-scope="all">전체</button>
           </div>
@@ -219,10 +220,11 @@ try {
         <h2 class="section-title">단어 등급</h2>
         <div class="segmented" id="set-tier">
           <button data-tier="all">전체</button>
-          <button data-tier="core">필수 어휘</button>
-          <button data-tier="bonus">만점 완성</button>
+          <button data-tier="core">필수</button>
+          <button data-tier="bonus">만점</button>
+          <button data-tier="extra">추가</button>
         </div>
-        <p class="hint">교재의 두 단을 그대로 나눴습니다. 필수 어휘를 먼저 끝내는 것이 순서입니다.</p>
+        <p class="hint" id="tier-hint"></p>
       </section>
 
       <section class="section">
