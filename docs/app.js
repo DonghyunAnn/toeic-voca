@@ -6,7 +6,10 @@ const STORAGE_KEY = 'toeic-voca-progress';
 const BOX_INTERVALS = { 1: 1, 2: 2, 3: 4, 4: 8, 5: 16 };  // 고전 Leitner (2배씩)
 const MAX_BOX = 5;
 const LIST_PAGE = 80;
-const RELEARN_GAP = 5;   // '모름' 카드를 몇 장 뒤에 다시 넣을지
+// 세션 안에서 다시 낼 때의 간격.
+// 모름은 아예 몰랐으니 곧 다시 봐야 재학습이 된다.
+// 애매는 곧 보면 단기기억으로 그냥 맞혀버려서 확인이 안 되므로 더 뒤에 낸다.
+const RELEARN_GAP = { again: 5, hard: 15 };
 const AUDIO_DIR = 'audio/';
 
 const DEFAULTS = {
@@ -504,7 +507,7 @@ function renderStudy() {
       : day ? `DAY ${String(day).padStart(2, '0')} 완료` : '오늘 학습 완료';
     $('#study-done-sub').textContent = s && s.graded
       ? `${s.graded}번 채점했습니다` +
-        (s.relearn ? ` (모르는 단어 ${s.relearn}번 다시 봄)` : '')
+        (s.relearn ? ` (${s.relearn}장은 세션 안에서 다시 냈습니다)` : '')
       : '오늘 볼 단어가 없습니다. 홈에서 DAY를 누르면 기한과 상관없이 다시 볼 수 있습니다.';
 
     // 바로 다음 DAY로 넘어갈 수 있게 한다. 홈까지 갔다 오지 않아도 된다.
@@ -544,7 +547,7 @@ function renderStudy() {
   $('#study-scope').textContent =
     (s.mode === 'learned' ? '배운 단어 복습'
       : s.dayFilter ? `DAY ${String(s.dayFilter).padStart(2, '0')} 전체` : '오늘 학습') +
-    ` · ${left}장 남음` + (s.relearn ? ` · 다시 볼 단어 ${s.relearn}개` : '');
+    ` · ${left}장 남음` + (s.relearn ? ` · 다시 낸 카드 ${s.relearn}장` : '');
   $('#study-to-list').hidden = !s.dayFilter;
   $('#grade-note').hidden = true;
   $('#study-prev').disabled = s.index === 0;
@@ -578,10 +581,10 @@ function gradeCard(result) {
   s.graded++;
   s.index++;
 
-  // 모르는 단어는 내일까지 기다리지 않고 이 세션 안에서 다시 낸다.
-  // 단어장을 볼 때는 될 때까지 그 자리에서 반복하는 게 자연스럽다.
-  if (result === 'again') {
-    const at = Math.min(s.index + RELEARN_GAP, s.queue.length);
+  // 모름과 애매는 내일까지 기다리지 않고 이 세션 안에서 다시 낸다.
+  const gap = RELEARN_GAP[result];
+  if (gap) {
+    const at = Math.min(s.index + gap, s.queue.length);
     s.queue.splice(at, 0, word);
     s.relearn = (s.relearn || 0) + 1;
   }
