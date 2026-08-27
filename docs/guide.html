@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<link rel="icon" href="icons/icon-192.png">
+<title>사용 가이드 · ETS 토익 VOCA</title>
+<style>
+:root {
+  --bg:#fff; --fg:#09090b; --card:#fff; --muted:#f4f4f5; --muted-fg:#71717a;
+  --border:#e4e4e7; --primary:#18181b; --primary-fg:#fafafa;
+  --good:#16a34a; --hard:#ca8a04; --again:#dc2626; --radius:.5rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:#09090b; --fg:#fafafa; --card:#101012; --muted:#1c1c1f; --muted-fg:#a1a1aa;
+    --border:#27272a; --primary:#fafafa; --primary-fg:#18181b;
+    --good:#22c55e; --hard:#eab308; --again:#ef4444;
+  }
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+body {
+  background:var(--bg); color:var(--fg);
+  font:400 15px/1.65 -apple-system, BlinkMacSystemFont, "Pretendard",
+       "Apple SD Gothic Neo", "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+main { max-width:600px; margin:0 auto; padding:max(1.25rem,env(safe-area-inset-top)) 1.25rem 4rem; }
+
+.top { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding-bottom:1.5rem; }
+h1 { font-size:1.5rem; font-weight:650; letter-spacing:-.02em; }
+.back {
+  display:inline-flex; align-items:center; gap:.25rem; flex:none;
+  font-size:.8125rem; color:var(--muted-fg); text-decoration:none;
+  border:1px solid var(--border); border-radius:var(--radius); padding:.375rem .625rem;
+}
+.lead { color:var(--muted-fg); font-size:.9375rem; margin-bottom:2rem; }
+
+nav.toc { background:var(--muted); border-radius:var(--radius); padding:.875rem 1rem; margin-bottom:2.5rem; }
+nav.toc ol { margin:0; padding-left:1.125rem; }
+nav.toc li { font-size:.875rem; margin:.1875rem 0; }
+nav.toc a { color:inherit; text-decoration-color:var(--border); text-underline-offset:2px; }
+
+section { margin-bottom:3rem; scroll-margin-top:1rem; }
+h2 {
+  font-size:1.125rem; font-weight:640; letter-spacing:-.015em;
+  padding-bottom:.5rem; margin-bottom:.875rem; border-bottom:1px solid var(--border);
+}
+h3 { font-size:.9375rem; font-weight:620; margin:1.5rem 0 .5rem; }
+p { margin:.75rem 0; }
+ul, ol { margin:.75rem 0; padding-left:1.25rem; }
+li { margin:.3125rem 0; }
+strong { font-weight:620; }
+code {
+  font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:.85em;
+  background:var(--muted); border-radius:4px; padding:.0625rem .3125rem;
+}
+
+figure { margin:1.25rem 0; }
+figure picture { display:block; }
+figure img {
+  display:block; width:100%; max-width:290px; margin:0 auto;
+  border:1px solid var(--border); border-radius:calc(var(--radius) + 2px);
+}
+figcaption { font-size:.75rem; color:var(--muted-fg); text-align:center; margin-top:.5rem; }
+.pair { display:grid; grid-template-columns:1fr 1fr; gap:.75rem; }
+.pair img { max-width:100%; }
+.pair figure { margin:0; }
+
+table { width:100%; border-collapse:collapse; margin:1rem 0; font-size:.875rem; }
+th, td { text-align:left; padding:.5rem .625rem; border-bottom:1px solid var(--border); vertical-align:top; }
+th { font-weight:600; color:var(--muted-fg); font-size:.8125rem; }
+td:first-child { white-space:nowrap; }
+
+.note {
+  background:var(--muted); border-radius:var(--radius);
+  padding:.875rem 1rem; margin:1.25rem 0; font-size:.875rem;
+}
+.note b { display:block; margin-bottom:.25rem; }
+
+.keys { display:grid; gap:.5rem; margin:1rem 0; }
+.key { display:flex; gap:.75rem; align-items:baseline; border:1px solid var(--border); border-radius:var(--radius); padding:.625rem .75rem; }
+.key .b { font-weight:640; flex:none; width:3rem; font-size:.9375rem; }
+.key.again .b { color:var(--again); } .key.hard .b { color:var(--hard); } .key.good .b { color:var(--good); }
+.key .d { font-size:.8125rem; color:var(--muted-fg); }
+
+.boxes { display:grid; grid-template-columns:repeat(5,1fr); gap:.375rem; margin:1rem 0; text-align:center; }
+.boxes div { background:var(--muted); border-radius:var(--radius); padding:.625rem .25rem; }
+.boxes b { display:block; font-size:.9375rem; }
+.boxes span { font-size:.6875rem; color:var(--muted-fg); }
+
+footer { color:var(--muted-fg); font-size:.8125rem; border-top:1px solid var(--border); padding-top:1.25rem; }
+footer a { color:inherit; }
+</style>
+</head>
+<body>
+<main>
+
+<div class="top">
+  <h1>사용 가이드</h1>
+  <a class="back" href="./">앱으로</a>
+</div>
+<p class="lead">ETS 토익 보카 3,159단어를 폰에서 외우는 앱입니다. 인터넷이 끊겨도 돌아갑니다.</p>
+
+<nav class="toc">
+  <ol>
+    <li><a href="#box">박스가 뭔가요</a></li>
+    <li><a href="#home">홈 화면 읽는 법</a></li>
+    <li><a href="#card">플래시카드로 외우기</a></li>
+    <li><a href="#tier">필수 어휘와 만점 완성</a></li>
+    <li><a href="#example">예문에 붙은 &lsquo;생성&rsquo; 표시</a></li>
+    <li><a href="#audio">발음 듣기와 오프라인 준비</a></li>
+    <li><a href="#list">목록에서 찾아보기</a></li>
+    <li><a href="#quiz">퀴즈로 점검하기</a></li>
+    <li><a href="#backup">진도 백업</a></li>
+    <li><a href="#install">홈 화면에 추가하기</a></li>
+    <li><a href="#data">데이터는 어디서 왔나</a></li>
+  </ol>
+</nav>
+
+<section id="box">
+  <h2>박스가 뭔가요</h2>
+  <p>이 앱의 핵심입니다. <strong>단어마다 1번부터 5번까지 상자가 있고, 상자 번호가 높을수록 다시 물어보는 간격이 길어집니다.</strong></p>
+  <div class="boxes">
+    <div><b>1</b><span>1일 뒤</span></div>
+    <div><b>2</b><span>2일 뒤</span></div>
+    <div><b>3</b><span>4일 뒤</span></div>
+    <div><b>4</b><span>7일 뒤</span></div>
+    <div><b>5</b><span>15일 뒤</span></div>
+  </div>
+  <p>규칙은 한 줄입니다. <strong>맞히면 다음 상자로 올라가고, 틀리면 1번으로 떨어집니다.</strong></p>
+  <p>예를 들어 <code>aisle</code>을 오늘 처음 맞히면 2번 상자에 들어가 <b>이틀 뒤</b>에 다시 나옵니다. 그때도 맞히면 3번으로 올라가 <b>나흘 뒤</b>, 또 맞히면 <b>일주일 뒤</b>. 반대로 5번 상자에 있던 단어라도 한 번 틀리면 1번으로 돌아가 <b>내일 다시</b> 나옵니다.</p>
+  <div class="note">
+    <b>왜 이렇게 하나요</b>
+    아는 단어를 매일 다시 보는 건 시간 낭비이고, 모르는 단어를 일주일 뒤에 보면 이미 잊어버립니다. 상자는 그 사이를 자동으로 맞춰줍니다. 잘 아는 단어일수록 뜸하게, 헷갈리는 단어일수록 자주 나옵니다.
+  </div>
+  <p>그래서 홈 화면의 <b>박스 분포</b>는 실력 그래프입니다. 공부를 계속하면 왼쪽(1·2번)이 줄고 오른쪽(4·5번)이 늘어납니다. 5번 상자에 들어간 단어 수가 곧 <b>암기 완료</b>입니다.</p>
+  <p>매일 할 일은 하나뿐입니다. <b>홈에서 &lsquo;복습 시작&rsquo;을 누르는 것.</b> 오늘 나와야 할 단어를 앱이 알아서 골라줍니다.</p>
+</section>
+
+<section id="home">
+  <h2>홈 화면 읽는 법</h2>
+  <figure>
+    <picture>
+      <source srcset="guide/home-dark.png" media="(prefers-color-scheme: dark)">
+      <img src="guide/home.png" alt="홈 화면">
+    </picture>
+  </figure>
+  <table>
+    <tr><th>영역</th><th>뜻</th></tr>
+    <tr><td>큰 숫자</td><td>오늘 복습할 단어 수. 기한이 된 단어와 아직 안 본 단어를 합쳐 하루 분량만큼 보여줍니다.</td></tr>
+    <tr><td>학습한 단어</td><td>한 번이라도 채점한 단어 수.</td></tr>
+    <tr><td>암기 완료</td><td>5번 상자에 도달한 단어 수.</td></tr>
+    <tr><td>박스 분포</td><td>상자별 단어 수. 오른쪽이 두꺼워질수록 잘 되고 있는 겁니다.</td></tr>
+    <tr><td>DAY 목록</td><td>DAY별 진행률. <code>67/101</code>은 101단어 중 67개를 봤다는 뜻이고, 아래 밑줄이 진행률 막대입니다. <strong>탭하면 그 DAY만 학습</strong>합니다.</td></tr>
+  </table>
+  <div class="note">
+    <b>오늘 할 게 없다고 나오면</b>
+    복습 기한이 안 됐고 새 단어도 다 봤다는 뜻입니다. 그럴 땐 DAY를 직접 눌러서 원하는 날짜를 다시 보면 됩니다.
+  </div>
+</section>
+
+<section id="card">
+  <h2>플래시카드로 외우기</h2>
+  <div class="pair">
+    <figure><picture>
+      <source srcset="guide/card-front-dark.png" media="(prefers-color-scheme: dark)">
+      <img src="guide/card-front.png" alt="카드 앞면">
+    </picture><figcaption>앞면 — 탭하면 뒤집힙니다</figcaption></figure>
+    <figure><picture>
+      <source srcset="guide/card-back-dark.png" media="(prefers-color-scheme: dark)">
+      <img src="guide/card-back.png" alt="카드 뒷면">
+    </picture><figcaption>뒷면 — 뜻·예문·연어</figcaption></figure>
+  </div>
+  <p>카드를 아무 데나 탭하면 뒤집히고, 아래에 버튼 세 개가 나타납니다. <strong>정직하게 누르는 게 중요합니다.</strong> 버튼이 곧 다음 복습일을 정하기 때문입니다.</p>
+  <div class="keys">
+    <div class="key again"><span class="b">모름</span><span class="d">뜻이 아예 떠오르지 않았다 → 1번 상자로. 내일 다시 나옵니다.</span></div>
+    <div class="key hard"><span class="b">애매</span><span class="d">보고 나서야 &lsquo;아 맞다&rsquo; 했다 → 상자 유지. 같은 간격으로 다시 나옵니다.</span></div>
+    <div class="key good"><span class="b">안다</span><span class="d">바로 떠올랐다 → 다음 상자로. 간격이 늘어납니다.</span></div>
+  </div>
+  <p>뒷면에는 뜻, 예문과 해석, 그리고 <b>연어</b>가 나옵니다. 연어는 그 단어가 실제로 자주 붙어 쓰이는 표현입니다 — <code>hold a booklet</code>, <code>hold onto a railing</code>처럼요. 시험에서는 단어 하나보다 이 덩어리가 통째로 나옵니다.</p>
+  <p>PC에서는 <code>Space</code>로 뒤집고 <code>1</code>·<code>2</code>·<code>3</code>으로 채점할 수 있습니다.</p>
+</section>
+
+<section id="tier">
+  <h2>필수 어휘와 만점 완성</h2>
+  <p>교재가 단어를 두 단으로 나눠 놓았고, 앱도 그대로 따릅니다.</p>
+  <table>
+    <tr><th>등급</th><th>단어 수</th><th>성격</th></tr>
+    <tr><td><b>필수 어휘</b></td><td>1,663</td><td>먼저 끝내야 하는 핵심. 예문이 거의 다 있습니다.</td></tr>
+    <tr><td><b>만점 완성</b></td><td>1,496</td><td>점수를 더 올릴 때 보는 보충 어휘.</td></tr>
+  </table>
+  <p><b>설정 → 단어 등급</b>에서 고르면 학습·퀴즈·홈 통계가 전부 그 범위로 좁혀집니다. <strong>필수 어휘부터 끝내는 것이 순서입니다.</strong></p>
+  <p>목록 화면에는 별도의 등급 필터가 따로 있습니다. 공부할 범위와 찾아볼 범위는 다를 수 있어서입니다.</p>
+</section>
+
+<section id="example">
+  <h2>예문에 붙은 &lsquo;생성&rsquo; 표시</h2>
+  <p>예문 옆에 작게 <b>생성</b>이라고 붙어 있으면 <strong>교재 예문이 아니라 만들어 넣은 문장</strong>입니다.</p>
+  <p>교재에는 원래 &lsquo;만점 완성&rsquo; 단어의 예문이 없었습니다. 뜻만 외우는 것보다 문맥이 있는 편이 낫다고 보고 토익 지문에서 쓰일 법한 문장을 만들어 채웠습니다. 1,574개가 여기 해당합니다.</p>
+  <div class="note">
+    <b>표시를 남긴 이유</b>
+    교재에서 온 문장과 만든 문장이 섞이면 어느 쪽이 원본인지 알 수 없게 됩니다. 시험에 그대로 나오는 문장인지 아닌지 구분해서 보시라고 표시를 남겼습니다.
+  </div>
+</section>
+
+<section id="audio">
+  <h2>발음 듣기와 오프라인 준비</h2>
+  <p>카드와 목록의 스피커 아이콘을 누르면 발음이 나옵니다. 3,155단어에 발음이 있습니다.</p>
+  <p><b>설정 → 발음</b>에서 <b>자동 재생</b>을 켜면 알아서 울립니다. 영&rarr;한 문제는 카드가 나올 때, 한&rarr;영 문제는 <b>뒤집은 뒤에</b> 울립니다. 앞면에서 울리면 답이 새기 때문입니다.</p>
+  <div class="note">
+    <b>지하철에서 들으려면 미리 받아두세요</b>
+    발음 파일은 앱 설치 때 함께 받지 않습니다(24MB라 설치가 너무 무거워집니다). 한 번 들은 발음은 자동으로 저장되지만, 안 들어본 단어는 인터넷이 없으면 안 나옵니다.<br><br>
+    와이파이에서 <b>설정 → 오프라인용 발음 내려받기</b>를 한 번 눌러두면 전부 저장됩니다. 몇 분 걸립니다.
+  </div>
+</section>
+
+<section id="list">
+  <h2>목록에서 찾아보기</h2>
+  <figure><picture>
+      <source srcset="guide/list-dark.png" media="(prefers-color-scheme: dark)">
+      <img src="guide/list.png" alt="목록 화면">
+    </picture></figure>
+  <p>외우는 게 아니라 훑어보거나 찾아볼 때 씁니다.</p>
+  <ul>
+    <li><b>검색</b> — 영단어, 한글 뜻, 예문 안의 문장까지 다 걸립니다.</li>
+    <li><b>등급 / DAY 필터</b> — 범위를 좁힙니다.</li>
+    <li><b>뜻 가리기</b> — 뜻에 흐림 처리가 걸립니다. 스스로 테스트할 때 쓰고, 꾹 누르면 잠깐 보입니다.</li>
+    <li><b>박스 배지</b> — 그 단어가 지금 몇 번 상자에 있는지 보여줍니다. 배지가 없으면 아직 한 번도 안 본 단어입니다.</li>
+  </ul>
+</section>
+
+<section id="quiz">
+  <h2>퀴즈로 점검하기</h2>
+  <figure><picture>
+      <source srcset="guide/quiz-dark.png" media="(prefers-color-scheme: dark)">
+      <img src="guide/quiz.png" alt="퀴즈 화면">
+    </picture></figure>
+  <p>사지선다입니다. <strong>오답 선택지는 같은 DAY의 단어에서 뽑기 때문에</strong> 얼추 비슷한 것들이 나와 은근히 헷갈립니다.</p>
+  <ul>
+    <li><b>범위</b> — 오늘 복습분 / 특정 DAY / 전체</li>
+    <li><b>문항 수</b> — 10, 20, 전체</li>
+  </ul>
+  <p>퀴즈 결과도 <strong>상자에 그대로 반영됩니다.</strong> 맞히면 다음 상자로, 틀리면 1번으로. 플래시카드와 같은 기록을 씁니다. 끝나면 점수와 함께 틀린 단어만 모아서 보여줍니다.</p>
+</section>
+
+<section id="backup">
+  <h2>진도 백업</h2>
+  <figure><picture>
+      <source srcset="guide/settings-dark.png" media="(prefers-color-scheme: dark)">
+      <img src="guide/settings.png" alt="설정 화면">
+    </picture></figure>
+  <p>학습 기록은 <strong>이 브라우저 안에만</strong> 저장됩니다. 서버에 올라가지 않습니다. 그래서 좋은 점과 불편한 점이 하나씩 있습니다.</p>
+  <ul>
+    <li><b>좋은 점</b> — 계정도 로그인도 없고, 기록이 밖으로 나가지 않습니다.</li>
+    <li><b>불편한 점</b> — 폰에서 외운 기록이 PC에는 안 보입니다. 기기마다 따로 놉니다.</li>
+  </ul>
+  <p>기기를 옮기거나 백업하려면 <b>설정 → 진도 내보내기</b>로 파일을 뽑고, 다른 기기에서 <b>진도 불러오기</b>로 넣으면 됩니다.</p>
+  <div class="note">
+    <b>기록이 지워지는 경우</b>
+    브라우저 방문 기록을 지울 때 &lsquo;쿠키 및 사이트 데이터&rsquo;까지 함께 지우거나, 시크릿 모드로 열면 날아갑니다. 폰 재부팅이나 앱 종료로는 지워지지 않습니다. 걱정되면 가끔 내보내기를 해두세요.
+  </div>
+</section>
+
+<section id="install">
+  <h2>홈 화면에 추가하기</h2>
+  <p>브라우저로도 쓸 수 있지만, 홈 화면에 추가하면 주소창 없이 앱처럼 열리고 오프라인에서도 돌아갑니다.</p>
+  <table>
+    <tr><td><b>iPhone</b></td><td>Safari에서 열고 아래 <b>공유</b> 버튼 → <b>홈 화면에 추가</b></td></tr>
+    <tr><td><b>Android</b></td><td>Chrome에서 열고 우측 상단 <b>⋮</b> → <b>홈 화면에 추가</b></td></tr>
+  </table>
+  <p>추가한 뒤 한 번 열어두면 단어 데이터가 통째로 저장돼서 비행기 모드에서도 열립니다. 발음까지 필요하면 위의 <a href="#audio">발음 내려받기</a>를 함께 해두세요.</p>
+</section>
+
+<section id="data">
+  <h2>데이터는 어디서 왔나</h2>
+  <table>
+    <tr><th>출처</th><th>가져온 것</th></tr>
+    <tr><td>Anki 덱</td><td>단어 3,155개, 품사와 뜻, 발음 3,155개</td></tr>
+    <tr><td>네이버 블로그</td><td>예문 1,585개와 해석, 연어 89개</td></tr>
+    <tr><td>엑셀 교재</td><td>필수 / 만점 완성 등급 구분</td></tr>
+    <tr><td>직접 생성</td><td>예문이 없던 1,574개 (<b>생성</b> 표시)</td></tr>
+  </table>
+  <p>셋 다 같은 교재라 단어는 일치합니다. 대조하는 과정에서 원본의 오타도 몇 건 잡아 고쳤습니다. <code>defect</code>의 뜻이 &lsquo;결합&rsquo;으로, <code>aptitude</code>가 &lsquo;작성&rsquo;으로 적혀 있던 것 같은 경우입니다.</p>
+</section>
+
+<footer>
+  개인 학습용으로 만든 앱입니다. 데이터 출처는 <a href="https://m.blog.naver.com/PostList.naver?blogId=ms_carrick&categoryNo=28" target="_blank" rel="noopener">네이버 블로그</a>와 시중 교재입니다.
+  <br><br><a href="./">앱으로 돌아가기</a>
+</footer>
+
+</main>
+</body>
+</html>

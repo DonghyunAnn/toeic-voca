@@ -1,6 +1,6 @@
 /* 오프라인 캐시. 셸과 단어 데이터를 설치 시 통째로 받아둔다. */
 
-const CACHE = 'toeic-voca-v4';
+const CACHE = 'toeic-voca-v6';
 const ASSETS = [
   './',
   './index.html',
@@ -8,6 +8,19 @@ const ASSETS = [
   './app.js',
   './words.json',
   './manifest.json',
+  './guide.html',
+  './guide/home.png',
+  './guide/home-dark.png',
+  './guide/card-front.png',
+  './guide/card-front-dark.png',
+  './guide/card-back.png',
+  './guide/card-back-dark.png',
+  './guide/list.png',
+  './guide/list-dark.png',
+  './guide/quiz.png',
+  './guide/quiz-dark.png',
+  './guide/settings.png',
+  './guide/settings-dark.png',
   './icons/icon-192.png',
   './icons/icon-512.png',
 ];

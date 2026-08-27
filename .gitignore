@@ -2,3 +2,10 @@
 __pycache__/
 *.pyc
 .playwright-mcp/
+
+# 원본 교재. data/에 중간 산출물이 있어 재빌드에는 필요 없고,
+# 덱 24MB는 이미 풀어놓은 docs/audio/와 같은 오디오라 저장소만 두 배가 된다.
+data/reference/
+
+# 원본 출처와 압축 비밀번호. 공개 저장소에 올리면 안 된다.
+.sources.md

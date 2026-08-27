@@ -78,12 +78,13 @@ python3 merge.py            # data/deck.json + tiers.json + generated_examples.j
 지금 쓰지 않는 필드를 다시 캐야 할 때(예: 오디오 재추출).
 
 ```bash
-python3 apkg.py "<덱 경로>" --json-out data/deck.json --audio-out docs/audio
-python3 xlsx_tier.py "<엑셀 경로>"
+python3 apkg.py "data/reference/ETS TOEIC VOCA.apkg" --json-out data/deck.json --audio-out docs/audio
+python3 xlsx_tier.py "data/reference/ETS 토익 기출 보카 Day1~30 _protected.xlsx"
 ```
 
-원본 파일 자체는 저장소에 넣지 않는다. 덱 24MB는 이미 풀어놓은 `docs/audio/`와
-내용이 겹쳐서 저장소만 두 배가 된다.
+원본은 `data/reference/`에 두고 git에서는 제외한다(`.gitignore`). 덱 24MB는 이미
+풀어놓은 `docs/audio/`와 같은 오디오라 저장소만 두 배가 되기 때문이다. 저장소를
+다른 기기로 옮길 때 원본은 따로 챙겨야 하지만, 없어도 앱은 그대로 돈다.
 
 ## 예문 생성
 
@@ -166,8 +167,19 @@ PC에는 보이지 않는다. 옮길 때는 설정 → 진도 내보내기 / 불
 브라우저 데이터를 "쿠키 및 사이트 데이터 포함"으로 지우거나 시크릿 모드로 열지
 않는 한 지워지지 않는다.
 
+## 사용 가이드
+
+앱 안에서 홈 우측 상단의 물음표나 설정 → 도움말로 열 수 있다(`docs/guide.html`).
+박스(간격 반복)가 무엇인지, 세 버튼을 어떤 기준으로 누르는지, 등급과 예문 표시가
+무엇을 뜻하는지를 실제 화면과 함께 설명한다. 오프라인에서도 열린다.
+
+스크린샷은 라이트/다크 두 벌을 두고 `<picture>`로 시스템 테마에 맞춰 바꾼다.
+앱 화면이 바뀌면 다시 찍어야 하고, `sw.js`의 `CACHE` 값을 올려야 반영된다.
+
 ## 출처
 
-<https://m.blog.naver.com/PostList.naver?blogId=ms_carrick&categoryNo=28>
+- 블로그: <https://m.blog.naver.com/PostList.naver?blogId=ms_carrick&categoryNo=28>
+- 덱과 교재의 출처, 압축 비밀번호는 `.sources.md`에 적어두었다.
+  이 파일과 `data/reference/`는 `.gitignore`에 있다. 비밀번호가 들어있어서다.
 
 개인 학습용으로만 쓴다.

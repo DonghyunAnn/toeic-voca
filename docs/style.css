@@ -78,6 +78,20 @@ button { background: none; border: 0; cursor: pointer; }
 .page-head h1 { font-size: 1.5rem; font-weight: 650; letter-spacing: -.02em; }
 .page-head .sub { color: var(--muted-fg); font-size: .875rem; margin-top: .125rem; }
 
+.row-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+.row-head .icon-btn { margin-top: .125rem; }
+
+.guide-link {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: .875rem 1rem; background: var(--card);
+  text-decoration: none; color: inherit;
+}
+.guide-link:active { background: var(--accent); }
+.guide-link b { display: block; font-size: .9375rem; font-weight: 600; }
+.guide-link span { font-size: .75rem; color: var(--muted-fg); }
+.guide-link .ico { color: var(--muted-fg); flex: none; }
+
 .section { margin-top: 1.75rem; }
 .section-title {
   font-size: .8125rem; font-weight: 600; color: var(--muted-fg);
