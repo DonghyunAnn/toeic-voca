@@ -54,6 +54,15 @@ NOISE_LINES = {
     "인쇄", "스크랩", "저장", "이전", "다음", "목록", "맨위로",
 }
 
+# 예문 안의 오타. 표제어가 예문에 나오지 않게 되어버린 것만 고친다.
+# 원문을 함부로 손대지 않되, 존재하지 않는 단어이거나 표제어와 어긋난 것은
+# 그대로 두면 그 단어를 배울 수 없다.
+EXAMPLE_TYPOS = [
+    ("poficiency", "proficiency"),          # DAY15 proficiency
+    ("must be totally secured", "must be tightly secured"),   # DAY25 tightly
+    ("would be a valuable contributor", "would be an invaluable contributor"),  # DAY27 invaluable
+]
+
 # 본문 끝에 붙는 제휴 고지·교재 홍보. 해석 자리로 빨려 들어가지 않게 미리 제거한다.
 NOISE_PATTERNS = re.compile(
     r"쿠팡\s*파트너스|수수료를\s*제공|파트너스\s*활동|구매\s*링크|"
@@ -278,6 +287,11 @@ def tidy_examples(word):
                 prev["ko"] = e["ko"]
         else:
             merged.append(e)
+
+    for e in merged:
+        for wrong, right in EXAMPLE_TYPOS:
+            if wrong in e["en"]:
+                e["en"] = e["en"].replace(wrong, right)
 
     keep = [e for e in merged if example_fits(word["headword"], e["en"])]
     # 하나도 안 남으면 원래 첫 줄이라도 남긴다
