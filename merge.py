@@ -99,15 +99,19 @@ def variants(headword):
     """
     out = [norm(headword)]
 
-    br = re.match(r"^(.*?)\s*\[([^\]]+)\]\s*$", headword.strip())
+    # 대괄호 안의 말은 바로 앞 단어를 대신한다. 끝에만 오는 것도 아니다.
+    #   fill out[in]                            -> fill out / fill in
+    #   environmentally[eco] friendly           -> environmentally friendly / eco friendly
+    #   responsibilities[duties/tasks] include  -> responsibilities|duties|tasks include
+    br = re.search(r"\[([^\]]+)\]", headword)
     if br:
-        head, alt = br.group(1).strip(), br.group(2).strip()
-        out.append(norm(head))
-        parts = head.split()
-        if parts:                                  # "fill out[in]" -> "fill in"
-            out.append(norm(" ".join(parts[:-1] + [alt])))
-        # 대안만 떼어 키로 쓰면 안 된다. "cast a ballot[vote]"가 'vote'라는
-        # 전혀 다른 단어의 예문을 가져가게 된다.
+        before, alts, after = headword[:br.start()], br.group(1), headword[br.end():]
+        head_words = before.split()
+        out.append(norm(before + " " + after))          # 대괄호를 통째로 뺀 형태
+        for alt in (a.strip() for a in alts.split("/")):
+            if not alt or not head_words:
+                continue
+            out.append(norm(" ".join(head_words[:-1] + [alt]) + " " + after))
 
     if "," in headword:
         for piece in headword.split(","):

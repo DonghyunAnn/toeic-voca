@@ -6,17 +6,17 @@
   "crawledAt": "2026-08-27",
   "mergedAt": "2026-08-27",
   "dayCount": 40,
-  "wordCount": 4192,
-  "withExample": 4192,
+  "wordCount": 4190,
+  "withExample": 4190,
   "withAudio": 3155,
-  "coreCount": 1667,
+  "coreCount": 1665,
   "extraCount": 1032,
   "sources": {
    "core": "ETS 토익 기출 보카 (공식 교재)",
    "bonus": "ETS 토익 기출 보카 (공식 교재)",
    "extra": "독종반 모바일 단어장"
   },
-  "generatedExamples": 2535
+  "generatedExamples": 2533
  },
  "days": [
   {
@@ -63315,13 +63315,12 @@
      ],
      "examples": [
       {
-       "en": "Responsibilities include managing supplier contracts and preparing monthly budget reports.",
-       "ko": "업무에는 공급업체 계약 관리와 월간 예산 보고서 작성이 포함됩니다.",
-       "generated": true
+       "en": "Responsibilities include opening and processing repair requests from clients",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-46a8727d97dcce02b55b6ab2275bf068d1b8067477819ec333b2a222.mp3",
      "tier": "core"
     },
@@ -64742,25 +64741,6 @@
      "source": "deck",
      "audio": "hypertts-a9892ec64ee53af421949b47f4bedb35fd00b0d2b6901576bda2b028.mp3",
      "tier": "bonus"
-    },
-    {
-     "id": "d29-responsibilities-include",
-     "headword": "responsibilities include",
-     "senses": [
-      {
-       "pos": null,
-       "meaning": "업무에는 ~이 포함된다"
-      }
-     ],
-     "examples": [
-      {
-       "en": "Responsibilities include opening and processing repair requests from clients",
-       "ko": null
-      }
-     ],
-     "collocations": [],
-     "source": "blog",
-     "tier": "core"
     }
    ]
   },
@@ -65436,13 +65416,12 @@
      ],
      "examples": [
       {
-       "en": "All of our packaging materials are environmentally friendly and fully recyclable.",
-       "ko": "저희 포장재는 모두 환경 친화적이며 전부 재활용이 가능합니다.",
-       "generated": true
+       "en": "Visit our Web site for the most environmentally friendly products",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-bb82be55f4c7b6638e699067d9dd7e9aa6a8ee1fd90699b9422a53e8.mp3",
      "tier": "core"
     },
@@ -67254,25 +67233,6 @@
        "en": "Our new packaging is eco-friendly and fully recyclable.",
        "ko": "저희의 새 포장재는 환경 친화적이며 전량 재활용이 가능합니다.",
        "generated": true
-      }
-     ],
-     "collocations": [],
-     "source": "blog",
-     "tier": "core"
-    },
-    {
-     "id": "d30-environmentally-friendly",
-     "headword": "environmentally friendly",
-     "senses": [
-      {
-       "pos": null,
-       "meaning": "환경 친화적인"
-      }
-     ],
-     "examples": [
-      {
-       "en": "Visit our Web site for the most environmentally friendly products",
-       "ko": null
       }
      ],
      "collocations": [],
