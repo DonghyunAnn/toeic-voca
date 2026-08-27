@@ -30,6 +30,7 @@ BLOG_JSON = ROOT / "data" / "words.json"
 OUT_JSON = ROOT / "data" / "merged.json"
 TIERS_JSON = ROOT / "data" / "tiers.json"
 GENERATED_JSON = ROOT / "data" / "generated_examples.json"
+DECK_JSON = ROOT / "data" / "deck.json"
 
 DAY_RE = re.compile(r"DAY\s*(\d+)", re.I)
 # 덱의 뜻 조각 맨 앞에 붙은 품사. "v. (낙엽 등을) 갈퀴로..." 처럼 괄호가 이어지면
@@ -113,9 +114,8 @@ def variants(headword):
     return uniq
 
 
-def read_apkg(path, audio_out=None):
-    """[(day, headword, senses, audio)] 를 덱 등장 순서대로."""
-    notes, written = apkg_reader.read(path, audio_out)
+def notes_to_entries(notes):
+    """덱 노트를 (day, headword, senses, audio) 목록으로 바꾼다."""
     entries = []
     for n in notes:
         headword = CSV_TYPOS.get(n["headword"], n["headword"])
@@ -132,7 +132,18 @@ def read_apkg(path, audio_out=None):
         if not senses:
             senses = [{"pos": None, "meaning": re.sub(r"<[^>]+>", " ", n["meaning_html"]).strip()}]
         entries.append((n["day"], headword, senses, n["audio"]))
-    return entries, written
+    return entries
+
+
+def read_apkg(path, audio_out=None):
+    notes, written = apkg_reader.read(path, audio_out)
+    return notes_to_entries(notes), written
+
+
+def read_deck_json():
+    """원본 덱 없이 저장해둔 노트로 재빌드한다."""
+    notes = json.loads(DECK_JSON.read_text(encoding="utf-8"))
+    return notes_to_entries(notes), 0
 
 
 def read_csv(path):
@@ -207,6 +218,8 @@ def merge(source, kind, audio_out=None):
     generated = load_generated()
     if kind == "apkg":
         csv_entries, audio_written = read_apkg(source, audio_out)
+    elif kind == "deck":
+        csv_entries, audio_written = read_deck_json()
     else:
         csv_entries, audio_written = read_csv(source), 0
 
@@ -317,7 +330,7 @@ def merge(source, kind, audio_out=None):
 
 def main():
     ap = argparse.ArgumentParser()
-    src = ap.add_mutually_exclusive_group(required=True)
+    src = ap.add_mutually_exclusive_group()
     src.add_argument("--apkg", help="ETS TOEIC VOCA.apkg 경로 (권장)")
     src.add_argument("--csv", help="ETS TOEIC VOCA.csv 경로")
     ap.add_argument("--audio-out", default=str(ROOT / "docs" / "audio"),
@@ -327,8 +340,15 @@ def main():
     ap.add_argument("--quiet", action="store_true", help="DAY별 표를 생략")
     args = ap.parse_args()
 
-    kind = "apkg" if args.apkg else "csv"
-    source = Path(args.apkg or args.csv).expanduser()
+    if args.apkg:
+        kind, source = "apkg", Path(args.apkg).expanduser()
+    elif args.csv:
+        kind, source = "csv", Path(args.csv).expanduser()
+    elif DECK_JSON.exists():
+        # 원본을 옮겨두어도 저장소만으로 재빌드된다
+        kind, source = "deck", DECK_JSON
+    else:
+        ap.error("--apkg 나 --csv 를 주거나 data/deck.json 이 있어야 합니다")
     audio_out = None if (args.no_audio or args.dry_run or kind != "apkg") else args.audio_out
     payload, stats = merge(source, kind, audio_out)
     m = payload["meta"]

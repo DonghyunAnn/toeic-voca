@@ -2,7 +2,7 @@
  "meta": {
   "title": "ETS 토익 VOCA",
   "sourceUrl": "https://m.blog.naver.com/PostList.naver?blogId=ms_carrick&categoryNo=28",
-  "deckSource": "ETS TOEIC VOCA.apkg",
+  "deckSource": "deck.json",
   "crawledAt": "2026-08-27",
   "mergedAt": "2026-08-27",
   "dayCount": 30,

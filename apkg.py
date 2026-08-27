@@ -17,6 +17,7 @@ import argparse
 import io
 import re
 import sqlite3
+import pathlib
 import tempfile
 import zipfile
 from pathlib import Path
@@ -141,9 +142,14 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("apkg")
     ap.add_argument("--audio-out", help="mp3를 풀어놓을 폴더")
+    ap.add_argument("--json-out", help="노트를 JSON으로 저장 (덱 없이 재빌드하려면 필요)")
     args = ap.parse_args()
 
     notes, written = read(args.apkg, args.audio_out)
+    if args.json_out:
+        import json
+        pathlib.Path(args.json_out).write_text(
+            json.dumps(notes, ensure_ascii=False, indent=0), encoding="utf-8")
     days = {n["day"] for n in notes}
     multi = sum(1 for n in notes if len(n["senses_raw"]) > 1)
     print(f"노트 {len(notes)}개 / DAY {min(days)}~{max(days)} ({len(days)}개)")
@@ -151,6 +157,8 @@ def main():
     print(f"  오디오 보유: {sum(1 for n in notes if n['audio'])}개")
     if args.audio_out:
         print(f"  mp3 기록: {written}개 -> {args.audio_out}")
+    if args.json_out:
+        print(f"  노트 저장: {args.json_out}")
 
 
 if __name__ == "__main__":

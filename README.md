@@ -28,6 +28,7 @@ collect_generated.py  생성한 예문 취합과 검증
 merge.py              세 자료 병합
 make_icons.py         PWA 아이콘 생성 (외부 라이브러리 없이 PNG 직접 작성)
 data/words.json       블로그 수집 원본
+data/deck.json        덱에서 뽑아둔 노트 (원본 없이 재빌드용)
 data/tiers.json       단어별 티어
 data/generated_examples.json  만들어 넣은 예문
 data/generated/       생성 작업의 입출력 조각
@@ -65,8 +66,24 @@ cp data/merged.json docs/words.json     # 앱에 반영
 표로 손수 교정한다. 퍼지 매칭은 `oversea`를 `overseas`로 잘못 잇는 등 위험이 커서
 쓰지 않는다.
 
-`data/tiers.json`과 `data/generated_examples.json`은 저장소에 들어있으므로
-`merge.py`가 알아서 집어넣는다. 원본 엑셀이 없어도 된다.
+### 원본 없이 재빌드
+
+`data/`에 중간 산출물이 전부 들어있어서 원본 세 개가 없어도 된다.
+
+```bash
+python3 merge.py            # data/deck.json + tiers.json + generated_examples.json 사용
+```
+
+원본으로 만든 결과와 바이트 단위로 같다. 원본이 필요한 경우는 하나뿐이다.
+지금 쓰지 않는 필드를 다시 캐야 할 때(예: 오디오 재추출).
+
+```bash
+python3 apkg.py "<덱 경로>" --json-out data/deck.json --audio-out docs/audio
+python3 xlsx_tier.py "<엑셀 경로>"
+```
+
+원본 파일 자체는 저장소에 넣지 않는다. 덱 24MB는 이미 풀어놓은 `docs/audio/`와
+내용이 겹쳐서 저장소만 두 배가 된다.
 
 ## 예문 생성
 
