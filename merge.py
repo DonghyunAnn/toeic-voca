@@ -28,6 +28,8 @@ import crawl
 ROOT = Path(__file__).parent
 BLOG_JSON = ROOT / "data" / "words.json"
 OUT_JSON = ROOT / "data" / "merged.json"
+TIERS_JSON = ROOT / "data" / "tiers.json"
+GENERATED_JSON = ROOT / "data" / "generated_examples.json"
 
 DAY_RE = re.compile(r"DAY\s*(\d+)", re.I)
 # 덱의 뜻 조각 맨 앞에 붙은 품사. "v. (낙엽 등을) 갈퀴로..." 처럼 괄호가 이어지면
@@ -55,6 +57,13 @@ BLOG_JUNK = {(14, "ppac"), (29, "sffa"), (26, "a as well as b b")}
 
 # CSV 쪽 오타 -> 올바른 표제어.
 CSV_TYPOS = {"appropriated": "appropriate"}
+
+# 덱/CSV의 뜻 오류. (DAY, 표제어) -> [(품사, 뜻)] 로 통째로 갈아끼운다.
+# 원문을 그대로 두면 학습할 때 틀린 뜻을 외우게 되므로 확인된 것만 고친다.
+MEANING_FIXES = {
+    (15, "aptitude"): [("n.", "적성, 소질")],       # 원문 "작성, 소질"
+    (5, "crack"): [("n.", "금, 틈")],               # 원문 품사 자리가 비어 ". 금, 틈"
+}
 
 
 def slug(headword):
@@ -168,8 +177,34 @@ def read_blog():
     return data, index, entries
 
 
+def load_generated():
+    """교재에 예문이 없는 단어를 위해 만든 예문. 없으면 빈 dict."""
+    if not GENERATED_JSON.exists():
+        return {}
+    return json.loads(GENERATED_JSON.read_text(encoding="utf-8"))
+
+
+def load_tiers():
+    """엑셀 교재의 티어(필수 / 토익 만점 완성). 없으면 빈 dict."""
+    if not TIERS_JSON.exists():
+        return {}
+    raw = json.loads(TIERS_JSON.read_text(encoding="utf-8"))
+    out = {}
+    for key, tier in raw.items():
+        day, _, word = key.partition("|")
+        out[(int(day), word)] = tier
+    return out
+
+
+def tier_key(day, headword):
+    s = headword.lower().replace("-", " ").replace("/", " ").replace("'", " ").replace("\u2019", " ")
+    return (day, re.sub(r"\s+", " ", re.sub(r"[^a-z ]", " ", s)).strip())
+
+
 def merge(source, kind, audio_out=None):
     blog_data, blog_index, blog_entries = read_blog()
+    tiers = load_tiers()
+    generated = load_generated()
     if kind == "apkg":
         csv_entries, audio_written = read_apkg(source, audio_out)
     else:
@@ -214,6 +249,15 @@ def merge(source, kind, audio_out=None):
         }
         if audio:
             word["audio"] = audio
+        fix = MEANING_FIXES.get((day, headword.lower()))
+        if fix:
+            word["senses"] = [{"pos": p, "meaning": m} for p, m in fix]
+        tier = tiers.get(tier_key(day, headword))
+        if tier:
+            word["tier"] = tier
+        gen = generated.get(wid)
+        if gen and not word["examples"]:
+            word["examples"] = [{"en": gen["en"], "ko": gen["ko"], "generated": True}]
         days[day].append(word)
 
     # CSV에 대응이 없는 블로그 단어는 버리지 않고 그 DAY에 덧붙인다
@@ -232,6 +276,7 @@ def merge(source, kind, audio_out=None):
             "examples": e["examples"],
             "collocations": e["collocations"],
             "source": "blog",
+            "tier": tiers.get(tier_key(e["day"], e["headword"]), "core"),
         })
         extras.append(f"DAY{e['day']:02d} {e['headword']}")
 
@@ -240,6 +285,9 @@ def merge(source, kind, audio_out=None):
     total = sum(len(v) for v in days.values())
     with_ex = sum(1 for v in days.values() for w in v if w["examples"])
     with_audio = sum(1 for v in days.values() for w in v if w.get("audio"))
+    core = sum(1 for v in days.values() for w in v if w.get("tier") == "core")
+    gen_used = sum(1 for v in days.values() for w in v
+                   if w["examples"] and w["examples"][0].get("generated"))
 
     payload = {
         "meta": {
@@ -252,6 +300,8 @@ def merge(source, kind, audio_out=None):
             "wordCount": total,
             "withExample": with_ex,
             "withAudio": with_audio,
+            "coreCount": core,
+            "generatedExamples": gen_used,
         },
         "days": [{
             "day": d,
@@ -288,6 +338,10 @@ def main():
     print(f"  예문 없음: {m['wordCount'] - m['withExample']}")
     if m.get("withAudio"):
         print(f"  발음 오디오: {m['withAudio']}")
+    if m.get("coreCount"):
+        print(f"  필수 어휘: {m['coreCount']} / 토익 만점 완성: {m['wordCount'] - m['coreCount']}")
+    if m.get("generatedExamples"):
+        print(f"  그중 생성한 예문: {m['generatedExamples']}")
     if stats["audio_written"]:
         print(f"  mp3 기록: {stats['audio_written']}개 -> {audio_out}")
     if stats["dup_id"]:

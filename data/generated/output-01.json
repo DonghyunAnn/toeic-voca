@@ -1,0 +1,812 @@
+[
+  {
+    "id": "d01-aisle",
+    "en": "Please keep the aisle clear while the flight attendants serve refreshments.",
+    "ko": "승무원이 다과를 제공하는 동안 통로를 비워 두시기 바랍니다."
+  },
+  {
+    "id": "d01-lid",
+    "en": "Make sure the lid on each storage container is tightly closed.",
+    "ko": "각 보관 용기의 뚜껑이 단단히 닫혀 있는지 확인해 주십시오."
+  },
+  {
+    "id": "d01-pillow",
+    "en": "Extra pillows are available at the front desk upon request.",
+    "ko": "요청하시면 추가 베개를 프런트 데스크에서 받으실 수 있습니다."
+  },
+  {
+    "id": "d01-wear",
+    "en": "Every technician must wear protective gloves while operating the packaging line.",
+    "ko": "모든 기술자는 포장 라인을 가동하는 동안 보호 장갑을 착용해야 합니다."
+  },
+  {
+    "id": "d01-put-on",
+    "en": "Please put on your safety vest before entering the warehouse floor.",
+    "ko": "창고 작업장에 들어가기 전에 안전 조끼를 입어 주십시오."
+  },
+  {
+    "id": "d01-turn-on",
+    "en": "Please turn on the projector before the client presentation begins.",
+    "ko": "고객 발표가 시작되기 전에 프로젝터를 켜 주십시오."
+  },
+  {
+    "id": "d01-vacuum",
+    "en": "The cleaning crew vacuums the reception area every evening after closing.",
+    "ko": "청소반이 매일 저녁 폐점 후 접수 구역을 진공청소기로 청소합니다."
+  },
+  {
+    "id": "d01-briefcase",
+    "en": "Ms. Delgado left her briefcase in the third-floor conference room.",
+    "ko": "델가도 씨가 3층 회의실에 서류가방을 두고 갔습니다."
+  },
+  {
+    "id": "d01-microphone",
+    "en": "Each panelist will be given a microphone before the discussion starts.",
+    "ko": "토론이 시작되기 전에 각 패널에게 마이크가 지급될 것입니다."
+  },
+  {
+    "id": "d01-be-seated",
+    "en": "Please be seated ten minutes before the awards ceremony begins.",
+    "ko": "시상식이 시작되기 10분 전에 자리에 앉아 주시기 바랍니다."
+  },
+  {
+    "id": "d01-bow",
+    "en": "The performers bowed to the audience after the closing presentation.",
+    "ko": "공연자들이 마무리 발표를 마친 뒤 관객에게 머리 숙여 인사했습니다."
+  },
+  {
+    "id": "d01-laundry",
+    "en": "Guests may drop off their laundry at the service counter daily.",
+    "ko": "투숙객은 매일 서비스 카운터에 세탁물을 맡기실 수 있습니다."
+  },
+  {
+    "id": "d01-jewelry",
+    "en": "Our store is offering a discount on all jewelry through the weekend.",
+    "ko": "저희 매장은 주말까지 모든 보석류를 할인 판매하고 있습니다."
+  },
+  {
+    "id": "d01-shake-hands",
+    "en": "The two directors shook hands after signing the distribution agreement.",
+    "ko": "두 이사가 유통 계약서에 서명한 뒤 악수를 나눴습니다."
+  },
+  {
+    "id": "d01-chop",
+    "en": "The kitchen staff chop fresh vegetables before the lunch service begins.",
+    "ko": "주방 직원들은 점심 영업이 시작되기 전에 신선한 채소를 썹니다."
+  },
+  {
+    "id": "d01-plate",
+    "en": "Please stack the used plates near the cafeteria return window.",
+    "ko": "사용한 접시는 구내식당 반납구 근처에 쌓아 주십시오."
+  },
+  {
+    "id": "d01-weigh",
+    "en": "Our staff will weigh each parcel before calculating the shipping cost.",
+    "ko": "저희 직원이 배송비를 계산하기 전에 각 소포의 무게를 잽니다."
+  },
+  {
+    "id": "d01-shelving-unit",
+    "en": "A new shelving unit was installed in the supply room yesterday.",
+    "ko": "어제 비품실에 새 선반이 설치되었습니다."
+  },
+  {
+    "id": "d01-artwork",
+    "en": "The artwork in the lobby will be replaced early next month.",
+    "ko": "로비에 있는 예술 작품은 다음 달 초에 교체될 예정입니다."
+  },
+  {
+    "id": "d01-mop",
+    "en": "Maintenance workers mop the lobby floors after regular business hours.",
+    "ko": "관리 직원들이 정규 영업시간이 끝난 뒤 로비 바닥을 대걸레로 닦습니다."
+  },
+  {
+    "id": "d01-sculpture",
+    "en": "A bronze sculpture stands at the entrance to the Harbor Center.",
+    "ko": "하버 센터 입구에 청동 조각상이 서 있습니다."
+  },
+  {
+    "id": "d01-necklace",
+    "en": "The jewelry counter is displaying a new necklace collection this week.",
+    "ko": "보석 코너에서 이번 주에 새 목걸이 컬렉션을 전시하고 있습니다."
+  },
+  {
+    "id": "d01-baked-goods",
+    "en": "Our café offers fresh baked goods every morning before eight o'clock.",
+    "ko": "저희 카페는 매일 아침 8시 전에 갓 구운 제빵류를 내놓습니다."
+  },
+  {
+    "id": "d01-button",
+    "en": "Employees should button their uniform jackets before greeting arriving guests.",
+    "ko": "직원들은 도착하는 손님을 맞이하기 전에 유니폼 재킷의 단추를 채워야 합니다."
+  },
+  {
+    "id": "d01-grill",
+    "en": "The restaurant recently replaced the outdoor grill on its rooftop terrace.",
+    "ko": "그 식당은 최근 옥상 테라스의 야외 그릴을 교체했습니다."
+  },
+  {
+    "id": "d01-scrub",
+    "en": "Kitchen staff scrub the countertops thoroughly at the end of each shift.",
+    "ko": "주방 직원들은 각 교대 근무가 끝날 때 조리대를 꼼꼼히 문질러 닦습니다."
+  },
+  {
+    "id": "d01-square",
+    "en": "The renovated lobby features square tables arranged along the east wall.",
+    "ko": "새로 단장한 로비에는 동쪽 벽을 따라 배치된 정사각형 탁자들이 있습니다."
+  },
+  {
+    "id": "d01-illuminate",
+    "en": "Overhead lamps illuminate the display cases in the main showroom.",
+    "ko": "머리 위 조명이 주 전시장의 진열장을 비춥니다."
+  },
+  {
+    "id": "d01-wait-on",
+    "en": "Two experienced servers will wait on the guests at the awards banquet.",
+    "ko": "경력 있는 종업원 두 명이 시상식 만찬에서 손님들의 시중을 들 것입니다."
+  },
+  {
+    "id": "d01-conveyor-belt",
+    "en": "Packages move along the conveyor belt toward the sorting station.",
+    "ko": "소포들이 분류 구역 쪽으로 컨베이어 벨트를 따라 이동합니다."
+  },
+  {
+    "id": "d01-light-bulb",
+    "en": "A technician will replace the light bulbs in the stairwell tomorrow.",
+    "ko": "기술자가 내일 계단실의 전구를 교체할 예정입니다."
+  },
+  {
+    "id": "d01-garment",
+    "en": "Damaged garments may be returned within thirty days with a receipt.",
+    "ko": "손상된 의복은 영수증과 함께 30일 이내에 반품하실 수 있습니다."
+  },
+  {
+    "id": "d01-apron",
+    "en": "All kitchen employees receive two clean aprons at the start of each week.",
+    "ko": "모든 주방 직원은 매주 초에 깨끗한 앞치마 두 벌을 받습니다."
+  },
+  {
+    "id": "d01-carton",
+    "en": "Please label each carton clearly before loading it onto the truck.",
+    "ko": "트럭에 싣기 전에 각 상자에 라벨을 분명히 붙여 주십시오."
+  },
+  {
+    "id": "d01-tap-water",
+    "en": "The building manager confirmed that the tap water is safe to drink.",
+    "ko": "건물 관리자가 수돗물을 마셔도 안전하다고 확인해 주었습니다."
+  },
+  {
+    "id": "d01-stool",
+    "en": "Several stools were placed along the counter in the employee lounge.",
+    "ko": "직원 휴게실 카운터를 따라 등받이 없는 의자 몇 개가 놓였습니다."
+  },
+  {
+    "id": "d01-couch",
+    "en": "A leather couch has been added to the reception area downstairs.",
+    "ko": "아래층 접수 구역에 가죽 소파가 추가되었습니다."
+  },
+  {
+    "id": "d01-auditorium",
+    "en": "The annual shareholders meeting will be held in the main auditorium.",
+    "ko": "연례 주주 총회가 본관 강당에서 열릴 예정입니다."
+  },
+  {
+    "id": "d01-overhead",
+    "en": "Please store your belongings in the overhead compartment before departure.",
+    "ko": "출발 전에 소지품을 머리 위 짐칸에 보관해 주십시오."
+  },
+  {
+    "id": "d01-easel",
+    "en": "The presenter placed the sales chart on an easel beside the podium.",
+    "ko": "발표자가 연단 옆 이젤에 매출 도표를 올려놓았습니다."
+  },
+  {
+    "id": "d01-utensil",
+    "en": "Cooking utensils must be sanitized before the dinner service begins.",
+    "ko": "조리 기구는 저녁 영업이 시작되기 전에 소독되어야 합니다."
+  },
+  {
+    "id": "d01-kettle",
+    "en": "A new electric kettle is available in the third-floor break room.",
+    "ko": "3층 휴게실에 새 전기 주전자가 비치되어 있습니다."
+  },
+  {
+    "id": "d01-corridor",
+    "en": "Please do not leave boxes in the corridor outside the offices.",
+    "ko": "사무실 밖 복도에 상자를 두지 마십시오."
+  },
+  {
+    "id": "d01-fireplace",
+    "en": "The hotel lounge features a stone fireplace and comfortable seating.",
+    "ko": "호텔 라운지에는 돌 벽난로와 편안한 좌석이 갖춰져 있습니다."
+  },
+  {
+    "id": "d01-cash-register",
+    "en": "The cashier will close the cash register at the end of the shift.",
+    "ko": "계산원이 근무 교대가 끝날 때 금전 등록기를 마감할 것입니다."
+  },
+  {
+    "id": "d01-jot-down",
+    "en": "Please jot down the client's contact details during the call.",
+    "ko": "통화 중에 고객의 연락처를 적어 두시기 바랍니다."
+  },
+  {
+    "id": "d01-squeeze",
+    "en": "The staff squeeze fresh oranges for the breakfast buffet every morning.",
+    "ko": "직원들이 매일 아침 조식 뷔페를 위해 신선한 오렌지를 짭니다."
+  },
+  {
+    "id": "d01-scale",
+    "en": "Place the package on the scale before printing a shipping label.",
+    "ko": "배송 라벨을 출력하기 전에 소포를 저울 위에 올려놓으십시오."
+  },
+  {
+    "id": "d01-identical",
+    "en": "Both branch offices submitted identical figures in their quarterly reports.",
+    "ko": "두 지사 모두 분기 보고서에 동일한 수치를 제출했습니다."
+  },
+  {
+    "id": "d01-fluorescent-light",
+    "en": "The fluorescent lights in the warehouse will be upgraded next quarter.",
+    "ko": "창고의 형광등은 다음 분기에 교체될 예정입니다."
+  },
+  {
+    "id": "d01-workbench",
+    "en": "Each technician keeps their tools neatly organized on the workbench.",
+    "ko": "각 기술자는 작업대 위에 공구를 깔끔하게 정리해 둡니다."
+  },
+  {
+    "id": "d01-unzip",
+    "en": "The inspector unzipped the sample case to check its contents.",
+    "ko": "검사관이 내용물을 확인하기 위해 샘플 가방의 지퍼를 열었습니다."
+  },
+  {
+    "id": "d01-screw",
+    "en": "The assembly kit includes extra screws and a set of instructions.",
+    "ko": "조립 키트에는 여분의 나사와 설명서 한 부가 들어 있습니다."
+  },
+  {
+    "id": "d01-rinse",
+    "en": "Please rinse your cups before placing them in the dishwasher.",
+    "ko": "컵을 식기세척기에 넣기 전에 헹궈 주십시오."
+  },
+  {
+    "id": "d02-roof",
+    "en": "The roof of the warehouse will be repaired before the rainy season.",
+    "ko": "창고 지붕은 우기가 시작되기 전에 수리될 예정입니다."
+  },
+  {
+    "id": "d02-balcony",
+    "en": "Every guest room on the upper floors has a private balcony.",
+    "ko": "상층부의 모든 객실에는 전용 발코니가 있습니다."
+  },
+  {
+    "id": "d02-railroad",
+    "en": "Crews will inspect the railroad tracks near the freight terminal tonight.",
+    "ko": "작업반이 오늘 밤 화물 터미널 인근 철로를 점검할 예정입니다."
+  },
+  {
+    "id": "d02-water",
+    "en": "A gardener waters the plants in the atrium twice a week.",
+    "ko": "정원사가 일주일에 두 번 아트리움의 화초에 물을 줍니다."
+  },
+  {
+    "id": "d02-wheel",
+    "en": "One wheel on the delivery cart needs to be replaced immediately.",
+    "ko": "배달용 카트의 바퀴 하나를 즉시 교체해야 합니다."
+  },
+  {
+    "id": "d02-spray",
+    "en": "Workers spray a protective coating on the metal frames each spring.",
+    "ko": "작업자들이 매년 봄 금속 골조에 보호 코팅을 뿌립니다."
+  },
+  {
+    "id": "d02-bin",
+    "en": "Please place all recyclable materials in the blue bin near the exit.",
+    "ko": "모든 재활용품은 출구 근처의 파란색 통에 넣어 주십시오."
+  },
+  {
+    "id": "d02-rope",
+    "en": "The workers secured the equipment with a heavy rope before transport.",
+    "ko": "작업자들이 운송 전에 굵은 밧줄로 장비를 고정했습니다."
+  },
+  {
+    "id": "d02-dig",
+    "en": "The crew is digging near the parking lot to install new pipes.",
+    "ko": "작업반이 새 배관을 설치하려고 주차장 근처의 땅을 파고 있습니다."
+  },
+  {
+    "id": "d02-work-out-exercise",
+    "en": "Employees may work out at the fitness center before their shifts.",
+    "ko": "직원들은 근무 시작 전에 피트니스 센터에서 운동할 수 있습니다."
+  },
+  {
+    "id": "d02-throw-away",
+    "en": "Please do not throw away the packaging until the item is inspected.",
+    "ko": "제품이 검수될 때까지 포장재를 버리지 마십시오."
+  },
+  {
+    "id": "d02-sail",
+    "en": "The cargo ship will sail from the eastern port on Friday morning.",
+    "ko": "그 화물선은 금요일 아침에 동부 항구에서 출항할 예정입니다."
+  },
+  {
+    "id": "d02-pedestrian",
+    "en": "A new crosswalk will improve pedestrian safety outside the office complex.",
+    "ko": "새 횡단보도가 사무 단지 밖 보행자 안전을 향상시킬 것입니다."
+  },
+  {
+    "id": "d02-motorcycle-motorbike",
+    "en": "Our courier service now uses motorcycles for all downtown deliveries.",
+    "ko": "저희 택배 서비스는 이제 모든 도심 배달에 오토바이를 이용합니다."
+  },
+  {
+    "id": "d02-hard-hat",
+    "en": "All personnel must wear a hard hat beyond this checkpoint.",
+    "ko": "모든 인원은 이 지점을 지나면 안전모를 착용해야 합니다."
+  },
+  {
+    "id": "d02-traffic-light",
+    "en": "A new traffic light was installed at the busy intersection last week.",
+    "ko": "지난주 혼잡한 교차로에 새 신호등이 설치되었습니다."
+  },
+  {
+    "id": "d02-cyclist",
+    "en": "The city added a lane for cyclists along the riverside road.",
+    "ko": "시에서 강변 도로를 따라 자전거를 타는 사람들을 위한 차선을 추가했습니다."
+  },
+  {
+    "id": "d02-hike",
+    "en": "Conference attendees may hike the nearby trails on Saturday afternoon.",
+    "ko": "학회 참석자들은 토요일 오후에 인근 산길에서 하이킹을 할 수 있습니다."
+  },
+  {
+    "id": "d02-platform",
+    "en": "Passengers for the express train should wait on platform three.",
+    "ko": "급행열차를 이용하실 승객은 3번 승강장에서 기다리셔야 합니다."
+  },
+  {
+    "id": "d02-pathway",
+    "en": "A paved pathway connects the parking garage to the main lobby.",
+    "ko": "포장된 길이 주차장과 본관 로비를 연결합니다."
+  },
+  {
+    "id": "d02-hammer",
+    "en": "Each toolbox contains a hammer, pliers, and several screwdrivers.",
+    "ko": "각 공구함에는 망치와 펜치, 드라이버 여러 개가 들어 있습니다."
+  },
+  {
+    "id": "d02-twist",
+    "en": "Do not twist the cable when connecting the monitor to the docking station.",
+    "ko": "모니터를 도킹 스테이션에 연결할 때 케이블을 비틀지 마십시오."
+  },
+  {
+    "id": "d02-entryway",
+    "en": "Deliveries should be left at the rear entryway of the building.",
+    "ko": "배송품은 건물 뒤편 출입구에 두셔야 합니다."
+  },
+  {
+    "id": "d02-construction-site",
+    "en": "Visitors are not permitted at the construction site without prior approval.",
+    "ko": "방문객은 사전 승인 없이 공사 현장에 출입할 수 없습니다."
+  },
+  {
+    "id": "d02-lamppost-streetlamp",
+    "en": "Workers are repainting the lampposts along the main shopping street.",
+    "ko": "작업자들이 중심 상점가를 따라 서 있는 가로등을 다시 칠하고 있습니다."
+  },
+  {
+    "id": "d02-runway",
+    "en": "Our flight is waiting on the runway for clearance to depart.",
+    "ko": "저희 항공편은 이륙 허가를 받기 위해 활주로에서 대기하고 있습니다."
+  },
+  {
+    "id": "d02-side-by-side",
+    "en": "The two delivery vans are parked side by side behind the warehouse.",
+    "ko": "배송 차량 두 대가 창고 뒤에 나란히 주차되어 있습니다."
+  },
+  {
+    "id": "d02-scaffolding",
+    "en": "Scaffolding has been set up along the front of the office tower.",
+    "ko": "사무용 빌딩 정면을 따라 비계가 설치되었습니다."
+  },
+  {
+    "id": "d02-shovel",
+    "en": "Two workers are shoveling gravel near the loading area this morning.",
+    "ko": "오늘 아침 작업자 두 명이 하역 구역 근처에서 자갈을 삽으로 퍼내고 있습니다."
+  },
+  {
+    "id": "d02-ramp",
+    "en": "A wheelchair ramp was added to the south entrance last month.",
+    "ko": "지난달 남쪽 입구에 휠체어 경사로가 추가되었습니다."
+  },
+  {
+    "id": "d02-deck",
+    "en": "Passengers may enjoy refreshments on the upper deck during the cruise.",
+    "ko": "승객들은 유람선 여행 중 상갑판에서 다과를 즐기실 수 있습니다."
+  },
+  {
+    "id": "d02-patio",
+    "en": "The restaurant patio is available for private events this summer.",
+    "ko": "그 식당의 테라스는 올여름 개인 행사에 이용하실 수 있습니다."
+  },
+  {
+    "id": "d02-pond",
+    "en": "A small pond sits at the center of the corporate campus.",
+    "ko": "회사 부지 한가운데에 작은 연못이 있습니다."
+  },
+  {
+    "id": "d02-traffic-cone",
+    "en": "Traffic cones mark the closed lanes inside the parking structure.",
+    "ko": "삼각대가 주차 건물 내 폐쇄된 차선을 표시하고 있습니다."
+  },
+  {
+    "id": "d02-erect",
+    "en": "The company will erect a new distribution center by next spring.",
+    "ko": "그 회사는 내년 봄까지 새 물류 센터를 세울 예정입니다."
+  },
+  {
+    "id": "d02-oar",
+    "en": "The rental shop provides oars and life jackets with every boat.",
+    "ko": "대여점은 모든 보트에 노와 구명조끼를 함께 제공합니다."
+  },
+  {
+    "id": "d02-awning",
+    "en": "A striped awning shades the entrance to the corner bakery.",
+    "ko": "줄무늬 차양이 모퉁이 빵집 입구에 그늘을 드리우고 있습니다."
+  },
+  {
+    "id": "d02-stall",
+    "en": "Each vendor must set up a stall before the market opens.",
+    "ko": "각 상인은 시장이 열리기 전에 가판대를 설치해야 합니다."
+  },
+  {
+    "id": "d02-vendor",
+    "en": "Several vendors have applied for booths at the regional trade fair.",
+    "ko": "여러 상인이 지역 무역 박람회의 부스를 신청했습니다."
+  },
+  {
+    "id": "d02-open-air-market",
+    "en": "The open-air market operates every Saturday near the civic center.",
+    "ko": "야외 시장은 매주 토요일 시민 회관 근처에서 운영됩니다."
+  },
+  {
+    "id": "d02-spectator",
+    "en": "Spectators should enter through the north gate to avoid long delays.",
+    "ko": "관중들은 긴 지연을 피하려면 북쪽 문으로 입장하셔야 합니다."
+  },
+  {
+    "id": "d02-march",
+    "en": "The band will march past the reviewing stand at exactly noon.",
+    "ko": "악단이 정오 정각에 사열대를 지나 행진할 것입니다."
+  },
+  {
+    "id": "d02-resurface",
+    "en": "The city plans to resurface the main road before the festival.",
+    "ko": "시는 축제 전에 간선 도로를 재포장할 계획입니다."
+  },
+  {
+    "id": "d02-stadium",
+    "en": "Parking near the stadium will be limited during the championship game.",
+    "ko": "결승 경기 동안 경기장 인근 주차가 제한될 것입니다."
+  },
+  {
+    "id": "d02-prune",
+    "en": "Groundskeepers prune the trees along the walkway every spring.",
+    "ko": "관리인들이 매년 봄 보도를 따라 있는 나무를 가지치기 합니다."
+  },
+  {
+    "id": "d02-debris",
+    "en": "Crews removed the debris from the site after the renovation ended.",
+    "ko": "작업반이 개조 공사가 끝난 뒤 현장에서 잔해를 치웠습니다."
+  },
+  {
+    "id": "d02-barn",
+    "en": "The farm equipment is stored in the barn behind the main office.",
+    "ko": "농기구는 본관 뒤 헛간에 보관되어 있습니다."
+  },
+  {
+    "id": "d02-hedge",
+    "en": "A tall hedge separates the parking lot from the walking path.",
+    "ko": "높은 울타리가 주차장과 산책로를 구분해 줍니다."
+  },
+  {
+    "id": "d02-tear-down",
+    "en": "The owners plan to tear down the old warehouse next year.",
+    "ko": "소유주들은 내년에 낡은 창고를 허물 계획입니다."
+  },
+  {
+    "id": "d02-hay",
+    "en": "Bales of hay are stacked neatly beside the storage shed.",
+    "ko": "건초 더미가 보관 창고 옆에 가지런히 쌓여 있습니다."
+  },
+  {
+    "id": "d02-litter",
+    "en": "Employees are asked to pick up litter around the picnic area.",
+    "ko": "직원들은 야유회 구역 주변의 쓰레기를 주워 달라는 요청을 받았습니다."
+  },
+  {
+    "id": "d02-beam",
+    "en": "Steel beams were delivered to the construction site this morning.",
+    "ko": "오늘 아침 공사 현장에 강철 기둥이 배송되었습니다."
+  },
+  {
+    "id": "d02-vine",
+    "en": "Vines cover the brick wall beside the hotel courtyard.",
+    "ko": "덩굴 식물이 호텔 안뜰 옆 벽돌 벽을 덮고 있습니다."
+  },
+  {
+    "id": "d02-flattened-box",
+    "en": "Please stack the flattened boxes near the recycling bins outside.",
+    "ko": "납작하게 접은 상자는 밖에 있는 재활용 통 근처에 쌓아 주십시오."
+  },
+  {
+    "id": "d03-productive",
+    "en": "The morning session was highly productive and ended ahead of schedule.",
+    "ko": "오전 회의는 매우 생산적이었고 예정보다 일찍 끝났습니다."
+  },
+  {
+    "id": "d03-secretary",
+    "en": "The secretary will forward the revised agenda to all department heads.",
+    "ko": "비서가 수정된 안건을 모든 부서장에게 전달할 것입니다."
+  },
+  {
+    "id": "d03-receptionist",
+    "en": "Please give your name to the receptionist when you arrive.",
+    "ko": "도착하시면 접수 담당자에게 성함을 말씀해 주십시오."
+  },
+  {
+    "id": "d03-storeroom",
+    "en": "Extra printer paper is kept in the storeroom on the second floor.",
+    "ko": "여분의 프린터 용지는 2층 저장실에 보관되어 있습니다."
+  },
+  {
+    "id": "d03-automatic",
+    "en": "The automatic doors at the main entrance will be serviced tomorrow.",
+    "ko": "정문의 자동문이 내일 점검을 받을 예정입니다."
+  },
+  {
+    "id": "d03-import",
+    "en": "Our company imports office furniture from three overseas suppliers.",
+    "ko": "저희 회사는 세 곳의 해외 공급업체에서 사무용 가구를 수입합니다."
+  },
+  {
+    "id": "d03-export",
+    "en": "The plant exports nearly half of its products to European markets.",
+    "ko": "그 공장은 제품의 거의 절반을 유럽 시장에 수출합니다."
+  },
+  {
+    "id": "d03-cafeteria",
+    "en": "The employee cafeteria will close early for a scheduled inspection.",
+    "ko": "직원 구내식당은 예정된 점검으로 일찍 문을 닫을 것입니다."
+  },
+  {
+    "id": "d03-instructor",
+    "en": "The instructor will demonstrate the new software during Friday's workshop.",
+    "ko": "강사가 금요일 워크숍에서 새 소프트웨어를 시연할 것입니다."
+  },
+  {
+    "id": "d03-trainee",
+    "en": "Each trainee must complete the safety module before the first shift.",
+    "ko": "각 훈련생은 첫 근무 전에 안전 교육 과정을 이수해야 합니다."
+  },
+  {
+    "id": "d03-name-tag",
+    "en": "Please wear your name tag throughout the entire orientation session.",
+    "ko": "오리엔테이션 시간 내내 명찰을 착용해 주십시오."
+  },
+  {
+    "id": "d03-blueprint",
+    "en": "The architect revised the blueprints for the second-floor renovation.",
+    "ko": "건축가가 2층 개조 공사를 위한 도면을 수정했습니다."
+  },
+  {
+    "id": "d03-internship",
+    "en": "She completed a six-month internship in the marketing department last year.",
+    "ko": "그녀는 작년에 마케팅 부서에서 6개월간의 인턴 근무를 마쳤습니다."
+  },
+  {
+    "id": "d03-electrician",
+    "en": "An electrician will inspect the wiring in the server room tomorrow.",
+    "ko": "전기 기사가 내일 서버실의 배선을 점검할 예정입니다."
+  },
+  {
+    "id": "d03-laboratory-lab",
+    "en": "Access to the laboratory is restricted to authorized research staff only.",
+    "ko": "실험실 출입은 승인된 연구 직원으로만 제한됩니다."
+  },
+  {
+    "id": "d03-crew",
+    "en": "A maintenance crew will repair the elevator over the weekend.",
+    "ko": "정비 작업반이 주말 동안 승강기를 수리할 것입니다."
+  },
+  {
+    "id": "d03-banner",
+    "en": "A large banner announcing the grand opening hangs above the entrance.",
+    "ko": "개업을 알리는 커다란 현수막이 입구 위에 걸려 있습니다."
+  },
+  {
+    "id": "d03-attorney",
+    "en": "Our attorney reviewed the contract before the board approved it.",
+    "ko": "저희 변호사가 이사회 승인 전에 계약서를 검토했습니다."
+  },
+  {
+    "id": "d03-look-into",
+    "en": "The manager promised to look into the billing error immediately.",
+    "ko": "관리자가 청구 오류를 즉시 조사하겠다고 약속했습니다."
+  },
+  {
+    "id": "d03-staff-employee-lounge",
+    "en": "Coffee and snacks are provided in the staff lounge every afternoon.",
+    "ko": "매일 오후 직원 휴게실에 커피와 간식이 제공됩니다."
+  },
+  {
+    "id": "d03-in-alphabetical-order",
+    "en": "Please file the client records in alphabetical order by company name.",
+    "ko": "고객 기록을 회사명 기준으로 알파벳순으로 정리해 주십시오."
+  },
+  {
+    "id": "d03-business-hours",
+    "en": "Our business hours will be extended during the holiday shopping season.",
+    "ko": "연휴 쇼핑 시즌 동안 저희 영업시간이 연장될 예정입니다."
+  },
+  {
+    "id": "d03-give-a-hand",
+    "en": "Ms. Ortega offered to give me a hand with the presentation materials.",
+    "ko": "오르테가 씨가 발표 자료 준비를 도와주겠다고 했습니다."
+  },
+  {
+    "id": "d03-day-off",
+    "en": "Mr. Okafor has requested a day off next Thursday.",
+    "ko": "오카포 씨가 다음 주 목요일에 휴가를 신청했습니다."
+  },
+  {
+    "id": "d03-well-attended",
+    "en": "The product launch seminar was well attended by regional distributors.",
+    "ko": "제품 출시 세미나는 지역 유통업체들의 참석률이 좋았습니다."
+  },
+  {
+    "id": "d03-sales-associate",
+    "en": "A sales associate will contact you about your recent inquiry.",
+    "ko": "영업 사원이 최근 문의하신 건에 대해 연락드릴 것입니다."
+  },
+  {
+    "id": "d03-face-to-face",
+    "en": "The team prefers a face-to-face meeting for the contract negotiation.",
+    "ko": "팀은 계약 협상을 위해 대면 회의를 선호합니다."
+  },
+  {
+    "id": "d03-loading-dock",
+    "en": "All deliveries must be unloaded at the loading dock before noon.",
+    "ko": "모든 배송품은 정오 전에 하역장에서 내려져야 합니다."
+  },
+  {
+    "id": "d03-outsource",
+    "en": "The firm decided to outsource its payroll processing starting next year.",
+    "ko": "그 회사는 내년부터 급여 처리 업무를 외부에 위탁하기로 결정했습니다."
+  },
+  {
+    "id": "d03-webinar",
+    "en": "Registration for the marketing webinar closes on Friday afternoon.",
+    "ko": "마케팅 웨비나 등록은 금요일 오후에 마감됩니다."
+  },
+  {
+    "id": "d03-itemize",
+    "en": "Please itemize all travel expenses on the reimbursement form.",
+    "ko": "환급 신청서에 모든 출장 경비를 항목별로 적어 주십시오."
+  },
+  {
+    "id": "d03-company-retreat",
+    "en": "The annual company retreat will take place at a lakeside resort.",
+    "ko": "연례 회사 야유회는 호숫가 리조트에서 열릴 예정입니다."
+  },
+  {
+    "id": "d03-credential",
+    "en": "Applicants should submit their professional credentials with the application form.",
+    "ko": "지원자는 지원서와 함께 전문 자격증을 제출해야 합니다."
+  },
+  {
+    "id": "d03-field-of-expertise",
+    "en": "Contract law is not within my field of expertise.",
+    "ko": "계약법은 제 전문 분야가 아닙니다."
+  },
+  {
+    "id": "d03-business-attire",
+    "en": "Business attire is required for the client dinner on Thursday evening.",
+    "ko": "목요일 저녁 고객 만찬에는 비즈니스 정장이 필수입니다."
+  },
+  {
+    "id": "d03-safety-drill",
+    "en": "A safety drill will be conducted in all departments next Wednesday.",
+    "ko": "다음 주 수요일에 전 부서에서 안전 훈련이 실시될 예정입니다."
+  },
+  {
+    "id": "d03-segment",
+    "en": "The final segment of the training covers customer service procedures.",
+    "ko": "교육의 마지막 부분은 고객 서비스 절차를 다룹니다."
+  },
+  {
+    "id": "d03-troubleshoot",
+    "en": "Our technicians can troubleshoot most network issues over the phone.",
+    "ko": "저희 기술자들은 대부분의 네트워크 문제를 전화로 해결할 수 있습니다."
+  },
+  {
+    "id": "d03-diagram",
+    "en": "The manual includes a diagram showing how to assemble the unit.",
+    "ko": "설명서에는 기기 조립 방법을 보여 주는 도표가 포함되어 있습니다."
+  },
+  {
+    "id": "d03-symposium",
+    "en": "The research symposium will be held at the convention center in May.",
+    "ko": "연구 토론회는 5월에 컨벤션 센터에서 열릴 예정입니다."
+  },
+  {
+    "id": "d03-color-scheme",
+    "en": "The design team approved a new color scheme for the packaging.",
+    "ko": "디자인 팀이 포장재의 새로운 배색을 승인했습니다."
+  },
+  {
+    "id": "d03-quarterly-sales",
+    "en": "Quarterly sales rose by twelve percent in the northern region.",
+    "ko": "북부 지역의 분기별 판매량이 12퍼센트 증가했습니다."
+  },
+  {
+    "id": "d03-mechanic",
+    "en": "A mechanic will service the delivery vehicles early next week.",
+    "ko": "정비공이 다음 주 초에 배송 차량을 정비할 것입니다."
+  },
+  {
+    "id": "d03-short-staffed",
+    "en": "The branch has been short-staffed since two employees transferred last month.",
+    "ko": "그 지점은 지난달 직원 두 명이 전근한 이후로 인력이 부족합니다."
+  },
+  {
+    "id": "d03-boardroom",
+    "en": "The quarterly review will be held in the boardroom at ten.",
+    "ko": "분기 검토 회의는 10시에 중역 회의실에서 열립니다."
+  },
+  {
+    "id": "d03-videoconferencing",
+    "en": "New videoconferencing equipment was installed in all of the meeting rooms.",
+    "ko": "모든 회의실에 새 화상 회의 장비가 설치되었습니다."
+  },
+  {
+    "id": "d03-convention",
+    "en": "The industry convention attracts thousands of exhibitors every October.",
+    "ko": "그 업계 총회는 매년 10월 수천 곳의 참가업체를 끌어모읍니다."
+  },
+  {
+    "id": "d03-authorization",
+    "en": "You need written authorization to access the archived personnel files.",
+    "ko": "보관된 인사 파일을 열람하려면 서면 허가가 필요합니다."
+  },
+  {
+    "id": "d03-restricted-area",
+    "en": "Only badged personnel may enter the restricted area on level three.",
+    "ko": "출입증을 소지한 직원만 3층 제한 구역에 들어갈 수 있습니다."
+  },
+  {
+    "id": "d03-quality-control",
+    "en": "Every shipment passes through quality control before it leaves the factory.",
+    "ko": "모든 선적품은 공장을 떠나기 전에 품질 관리를 거칩니다."
+  },
+  {
+    "id": "d03-cubicle",
+    "en": "New employees will be assigned a cubicle on the fourth floor.",
+    "ko": "신입 직원들은 4층에 칸막이 사무실을 배정받을 것입니다."
+  },
+  {
+    "id": "d03-treasurer",
+    "en": "The treasurer presented the annual budget report to the board.",
+    "ko": "회계 담당자가 이사회에 연간 예산 보고서를 발표했습니다."
+  },
+  {
+    "id": "d03-packing-slip",
+    "en": "Please check the packing slip against the items in each carton.",
+    "ko": "각 상자에 든 물품을 운송 전표와 대조해 확인해 주십시오."
+  },
+  {
+    "id": "d03-company-letterhead",
+    "en": "All formal correspondence must be printed on company letterhead.",
+    "ko": "모든 공식 서신은 회사 편지지에 인쇄되어야 합니다."
+  }
+]

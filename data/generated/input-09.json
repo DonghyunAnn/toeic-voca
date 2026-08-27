@@ -1,0 +1,1642 @@
+{
+ "batch": 9,
+ "days": [
+  25,
+  26,
+  27
+ ],
+ "words": [
+  {
+   "id": "d25-actually",
+   "day": 25,
+   "headword": "actually",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "실제로, 사실은"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-lately",
+   "day": 25,
+   "headword": "lately",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "최근에"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-gradually",
+   "day": 25,
+   "headword": "gradually",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "점차, 서서히"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-minimally",
+   "day": 25,
+   "headword": "minimally",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "최소한으로, 미량으로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-hastily",
+   "day": 25,
+   "headword": "hastily",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "급히, 서둘러서"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-correctly",
+   "day": 25,
+   "headword": "correctly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "정확하게, 올바르게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-sharply",
+   "day": 25,
+   "headword": "sharply",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "급격하게, 날카롭게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-roughly",
+   "day": 25,
+   "headword": "roughly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "대략, 거의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-randomly",
+   "day": 25,
+   "headword": "randomly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "무작위로, 임의로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-openly",
+   "day": 25,
+   "headword": "openly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "공개적으로, 공공연히"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-hopefully",
+   "day": 25,
+   "headword": "hopefully",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "바라건대"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-meaningfully",
+   "day": 25,
+   "headword": "meaningfully",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "의미 있게, 의미심장하게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-broadly",
+   "day": 25,
+   "headword": "broadly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "광범위하게, 대체로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-carelessly",
+   "day": 25,
+   "headword": "carelessly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "부주의하게, 경솔하게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-effectively",
+   "day": 25,
+   "headword": "effectively",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "효과적으로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-traditionally",
+   "day": 25,
+   "headword": "traditionally",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "전통적으로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-surprisingly",
+   "day": 25,
+   "headword": "surprisingly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "놀랍게도"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-voluntarily",
+   "day": 25,
+   "headword": "voluntarily",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "자발적으로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-obviously",
+   "day": 25,
+   "headword": "obviously",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "분명히, 명백히"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-regularly",
+   "day": 25,
+   "headword": "regularly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "정기적으로, 규칙적으로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-diligently",
+   "day": 25,
+   "headword": "diligently",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "부지런히"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-collectively",
+   "day": 25,
+   "headword": "collectively",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "전체적으로, 총관하여"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-rightfully",
+   "day": 25,
+   "headword": "rightfully",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "정당하게, 마땅히"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-loyally",
+   "day": 25,
+   "headword": "loyally",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "성실히, 충성스럽게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-sensibly",
+   "day": 25,
+   "headword": "sensibly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "분별 있게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-substantially",
+   "day": 25,
+   "headword": "substantially",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "실질적으로, 상당히"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-significantly",
+   "day": 25,
+   "headword": "significantly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "상당히, 의미 있게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-reluctantly",
+   "day": 25,
+   "headword": "reluctantly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "마지못해"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-persuasively",
+   "day": 25,
+   "headword": "persuasively",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "설득력 있게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-repeatedly",
+   "day": 25,
+   "headword": "repeatedly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "반복적으로, 되풀이하여"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-improperly",
+   "day": 25,
+   "headword": "improperly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "부적절하게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-externally",
+   "day": 25,
+   "headword": "externally",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "외부적으로, 외면적으로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-cautiously",
+   "day": 25,
+   "headword": "cautiously",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "조심스럽게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-convincingly",
+   "day": 25,
+   "headword": "convincingly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "납득이 가도록, 설득력 있게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-utterly",
+   "day": 25,
+   "headword": "utterly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "완전히, 전혀"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-artificially",
+   "day": 25,
+   "headword": "artificially",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "인위적으로, 인공적으로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-deliberately",
+   "day": 25,
+   "headword": "deliberately",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "고의로, 의도적으로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-productively",
+   "day": 25,
+   "headword": "productively",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "생산적으로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-proportionately",
+   "day": 25,
+   "headword": "proportionately",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "비례하여, 균형에 맞게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-indefinitely",
+   "day": 25,
+   "headword": "indefinitely",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "무기한으로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-abruptly",
+   "day": 25,
+   "headword": "abruptly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "불쑥, 갑자기"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-concisely",
+   "day": 25,
+   "headword": "concisely",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "간결하게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-abundantly",
+   "day": 25,
+   "headword": "abundantly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "풍부하게, 많이"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-functionally",
+   "day": 25,
+   "headword": "functionally",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "기능상, 직무상"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-variably",
+   "day": 25,
+   "headword": "variably",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "일정하지 않게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-assertively",
+   "day": 25,
+   "headword": "assertively",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "단호히, 단정적으로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-proficiently",
+   "day": 25,
+   "headword": "proficiently",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "능숙하게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-spontaneously",
+   "day": 25,
+   "headword": "spontaneously",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "자발적으로, 자연스럽게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-conspicuously",
+   "day": 25,
+   "headword": "conspicuously",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "눈에 띄게, 두드러지게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d25-exaggeratedly",
+   "day": 25,
+   "headword": "exaggeratedly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "과장되게, 지나치게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d26-a-as-well-as-b",
+   "day": 26,
+   "headword": "A as well as B",
+   "senses": [
+    {
+     "pos": "prep.",
+     "meaning": "B뿐만 아니라 A도"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-online-order",
+   "day": 27,
+   "headword": "online order",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "온라인 주문"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-in-stock",
+   "day": 27,
+   "headword": "in stock",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "재고가 있는"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-back-order",
+   "day": 27,
+   "headword": "back order",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "밀린 주문, 이월 주문"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-price-range",
+   "day": 27,
+   "headword": "price range",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "가격폭, 가격대"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-credit-card-statement",
+   "day": 27,
+   "headword": "credit card statement",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "신용 카드 명세서"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-payment-arrangements",
+   "day": 27,
+   "headword": "payment arrangements",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "결제 방식, 지불 약정"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-fall-short-of",
+   "day": 27,
+   "headword": "fall short of",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~에 못 미치다"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-original-packaging",
+   "day": 27,
+   "headword": "original packaging",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "원래 포장(상태)"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-money-back-guarantee",
+   "day": 27,
+   "headword": "money-back guarantee",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "환불 보증(서)"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-credit-card",
+   "day": 27,
+   "headword": "credit card",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "입금하다"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-proof-of-purchase",
+   "day": 27,
+   "headword": "proof of purchase",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "구매 증명(서)"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-full-refund",
+   "day": 27,
+   "headword": "full refund",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "전액 환불"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-application-materials",
+   "day": 27,
+   "headword": "application materials",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "지원 서류"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-advanced-degree",
+   "day": 27,
+   "headword": "advanced degree",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "고급 학위(석사, 박사)"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-well-suited",
+   "day": 27,
+   "headword": "well suited",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "적합한, 잘 어울리는"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-hiring-decision",
+   "day": 27,
+   "headword": "hiring decision",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "채용 결정"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-good-fit",
+   "day": 27,
+   "headword": "good fit",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "적임자, 꼭 맞는 것"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-strong-background",
+   "day": 27,
+   "headword": "strong background",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "막강한 이력, 탄탄한 배경"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-work-ethic",
+   "day": 27,
+   "headword": "work ethic",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "직업 윤리"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-report-to",
+   "day": 27,
+   "headword": "report to",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~으로 출근[출두]하다"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-employment-agreement",
+   "day": 27,
+   "headword": "employment agreement",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "고용 계약(서), 취업 동의서"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-contract-position",
+   "day": 27,
+   "headword": "contract position",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "계약직"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-probationary-period",
+   "day": 27,
+   "headword": "probationary period",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "수습 기간, 시험 채용 기간"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-business-plan",
+   "day": 27,
+   "headword": "business plan",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "사업 계획(서)"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-loan-application",
+   "day": 27,
+   "headword": "loan application",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "대출[대여] 신청(서)"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-proceed-with",
+   "day": 27,
+   "headword": "proceed with",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~을 진행하다, 계속해서 하다"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-draw-up",
+   "day": 27,
+   "headword": "draw up",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "만들다, 작성하다"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-take-into-account",
+   "day": 27,
+   "headword": "take into account",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~을 계산에 넣다, 고려[참작]하다"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-renew-one-x27-s-contract",
+   "day": 27,
+   "headword": "renew one&#x27;s contract",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "계약을 갱신하다"
+    }
+   ],
+   "tier": null
+  },
+  {
+   "id": "d27-within-budget",
+   "day": 27,
+   "headword": "within budget",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "예산 범위 내에서"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-follow-up-on",
+   "day": 27,
+   "headword": "follow up on",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "후속 조치를 하다, 추가로 연락하다"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-rain-or-shine",
+   "day": 27,
+   "headword": "rain or shine",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "비가 오나 맑으나, 날씨에 관계 없이"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-time-slot",
+   "day": 27,
+   "headword": "time slot",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "시간대"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-fill-up",
+   "day": 27,
+   "headword": "fill up",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "자리가 차다"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-ambience",
+   "day": 27,
+   "headword": "ambience",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "분위기"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d27-trial-run",
+   "day": 27,
+   "headword": "trial run",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "시운전, 시험 가동"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-product-manual",
+   "day": 27,
+   "headword": "product manual",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "사용설명서"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-fee-waiver",
+   "day": 27,
+   "headword": "fee waiver",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "수수료 면제"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-unused-condition",
+   "day": 27,
+   "headword": "unused condition",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "미사용 상태"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-refund-policy",
+   "day": 27,
+   "headword": "refund policy",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "환불 정책"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-repair-damage",
+   "day": 27,
+   "headword": "repair damage",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "손상을 복구하다, 손해를 메우다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-warranty-service",
+   "day": 27,
+   "headword": "warranty service",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "보증 서비스"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-within-ten-days-of-purchase",
+   "day": 27,
+   "headword": "within ten days of purchase",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "구매 후 10일 이내"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-within-five-business-days",
+   "day": 27,
+   "headword": "within five business days",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "영업일 기준 5일 이내에"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-to-this-end",
+   "day": 27,
+   "headword": "to this end",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "이 목적을 위해"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-inquire-about",
+   "day": 27,
+   "headword": "inquire about",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~에 대해 문의하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-cover-letter",
+   "day": 27,
+   "headword": "cover letter",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "자기소개서"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-length-duration-of-service",
+   "day": 27,
+   "headword": "length[duration] of service",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "근무 기간"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-the-greatest-strength",
+   "day": 27,
+   "headword": "the greatest strength",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "가장 큰 강점"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-official-title",
+   "day": 27,
+   "headword": "official title",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "공식 직함"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-a-warm-reception",
+   "day": 27,
+   "headword": "a warm reception",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "따뜻한 환영[접대]"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-speak-highly-of",
+   "day": 27,
+   "headword": "speak highly of",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~에 대해 높이 평가하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-early-retirement",
+   "day": 27,
+   "headword": "early retirement",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "조기 은퇴"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-farewell-gathering",
+   "day": 27,
+   "headword": "farewell gathering",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "환송 모임"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-official-invitation",
+   "day": 27,
+   "headword": "official invitation",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "공식 초대장"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-shipping-details",
+   "day": 27,
+   "headword": "shipping details",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "배송 정보"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-earlier-than-requested",
+   "day": 27,
+   "headword": "earlier than requested",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "요청한 날짜보다 일찍"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-cost-analysis",
+   "day": 27,
+   "headword": "cost analysis",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "비용 분석"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-in-writing",
+   "day": 27,
+   "headword": "in writing",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "서면으로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-suit-the-needs",
+   "day": 27,
+   "headword": "suit the needs",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "요구를 만족시키다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-expense-report",
+   "day": 27,
+   "headword": "expense report",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "지출 결의서, 경비 보고서"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-exclusive-access",
+   "day": 27,
+   "headword": "exclusive access",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "독점적 이용 권한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-easy-to-follow-instructions",
+   "day": 27,
+   "headword": "easy-to-follow instructions",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "따라 하기 쉬운 설명"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-associated-materials",
+   "day": 27,
+   "headword": "associated materials",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "관련 자료"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-transaction-record",
+   "day": 27,
+   "headword": "transaction record",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "거래 기록"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-authorized-service",
+   "day": 27,
+   "headword": "authorized service",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "공인 서비스 센터"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-replacement-unit",
+   "day": 27,
+   "headword": "replacement unit",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "교체품"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-professional-demeanor",
+   "day": 27,
+   "headword": "professional demeanor",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "전문가다운 품행"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-sincerely-apologize",
+   "day": 27,
+   "headword": "sincerely apologize",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "진심으로 사과하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-be-dissatisfied-with",
+   "day": 27,
+   "headword": "be dissatisfied with",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~에 불만을 느끼다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-as-a-token-of-appreciation",
+   "day": 27,
+   "headword": "as a token of appreciation",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "감사의 표시로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-play-a-pivotal-crucial-role-in",
+   "day": 27,
+   "headword": "play a pivotal[crucial] role in",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~에서 중요한 역할을 하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-curriculum-vitae-cv",
+   "day": 27,
+   "headword": "curriculum vitae(CV)",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "이력서"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-technical-qualification",
+   "day": 27,
+   "headword": "technical qualification",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "기술적 자격"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-employee-retention",
+   "day": 27,
+   "headword": "employee retention",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "직원 보유, 인재 유지"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-relinquish-the-position",
+   "day": 27,
+   "headword": "relinquish the position",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "직위를 포기하다, 사임하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-incidental-expenses",
+   "day": 27,
+   "headword": "incidental expenses",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "부대 비용"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-brand-awareness",
+   "day": 27,
+   "headword": "brand awareness",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "브랜드 인지도"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-scores-of-inquiries",
+   "day": 27,
+   "headword": "scores of inquiries",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "수십 건의 문의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-grow-exponentially",
+   "day": 27,
+   "headword": "grow exponentially",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "기하급수적으로 증가하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-be-of-service-to",
+   "day": 27,
+   "headword": "be of service to",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~에게 도움이 되다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-face-tough-fierce-competitions",
+   "day": 27,
+   "headword": "face tough[fierce] competitions",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "치열한 경쟁에 직면하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-preventive-measures",
+   "day": 27,
+   "headword": "preventive measures",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "예방책"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-alternative-session",
+   "day": 27,
+   "headword": "alternative session",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "대체 세션"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d27-everyday-operations",
+   "day": 27,
+   "headword": "everyday operations",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "일상 업무, 일상 영업 활동"
+    }
+   ],
+   "tier": "bonus"
+  }
+ ]
+}

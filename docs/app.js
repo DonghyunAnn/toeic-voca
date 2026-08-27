@@ -10,7 +10,7 @@ const AUDIO_DIR = 'audio/';
 
 const DEFAULTS = {
   version: 1,
-  settings: { direction: 'mixed', dailyLimit: 20, onlyWithExample: false, autoplay: false },
+  settings: { direction: 'mixed', dailyLimit: 20, onlyWithExample: false, autoplay: false, tier: 'all' },
   words: {},
   days: {},
 };
@@ -160,8 +160,7 @@ const Scheduler = {
   /** 오늘 복습 대상: 기한이 된 단어 + 아직 안 본 단어를 하루 분량까지. */
   session({ dayFilter = null, limit = null } = {}) {
     const today = todayISO();
-    let pool = dayFilter ? (State.byDay.get(dayFilter) || []) : State.words;
-    if (Store.settings.onlyWithExample) pool = pool.filter(w => w.examples.length);
+    const pool = inScope(dayFilter ? (State.byDay.get(dayFilter) || []) : State.words);
     const due = [], fresh = [];
 
     for (const w of pool) {
@@ -178,8 +177,7 @@ const Scheduler = {
 
   dueCount() {
     const today = todayISO();
-    const pool = Store.settings.onlyWithExample
-      ? State.words.filter(w => w.examples.length) : State.words;
+    const pool = inScope(State.words);
     let n = 0;
     for (const w of pool) {
       const rec = Store.record(w.id);
@@ -221,7 +219,7 @@ const State = {
   view: 'home',
   study: null,
   quiz: null,
-  list: { day: null, query: '', masked: false, shown: LIST_PAGE },
+  list: { day: null, tier: 'all', query: '', masked: false, shown: LIST_PAGE },
 };
 
 async function loadData() {
@@ -242,6 +240,16 @@ async function loadData() {
 }
 
 /* ── 표시 헬퍼 ────────────────────────────────────── */
+
+/** 설정(등급, 예문 유무)에 맞는 단어만 남긴다. 학습·퀴즈·통계가 모두 이걸 쓴다. */
+function inScope(words) {
+  const { tier, onlyWithExample } = Store.settings;
+  return words.filter(w =>
+    (tier === 'all' || w.tier === tier) &&
+    (!onlyWithExample || w.examples.length));
+}
+
+const TIER_LABEL = { core: '필수', bonus: '만점' };
 
 const meaningText = w => w.senses.map(s => s.meaning).join('; ');
 const posText = w => w.senses.map(s => s.pos).filter(Boolean).join(' ');
@@ -267,7 +275,7 @@ function sensesHTML(w) {
 function cardBackHTML(w) {
   const examples = w.examples.map(e => `
     <div class="ex">
-      <div class="en">${escapeHTML(e.en)}</div>
+      <div class="en">${escapeHTML(e.en)}${e.generated ? '<span class="gen">생성</span>' : ''}</div>
       ${e.ko ? `<div class="ko">${escapeHTML(e.ko)}</div>` : ''}
     </div>`).join('');
 
@@ -286,17 +294,19 @@ function cardBackHTML(w) {
 /* ── 홈 ───────────────────────────────────────────── */
 
 function renderHome() {
-  const scoped = Store.settings.onlyWithExample
-    ? State.words.filter(w => w.examples.length) : State.words;
+  const scoped = inScope(State.words);
   const total = scoped.length;
   const seen = Object.keys(Store.data.words).length;
   const mastered = Object.values(Store.data.words).filter(r => r.box >= MAX_BOX).length;
   const due = Scheduler.dueCount();
   const fresh = Math.max(0, total - seen);
 
+  const notes = [];
+  if (Store.settings.tier !== 'all') notes.push(TIER_LABEL[Store.settings.tier] + ' 어휘');
+  if (Store.settings.onlyWithExample) notes.push('예문 있는 것만');
   $('#home-sub').textContent =
     `${State.meta.dayCount}일 · ${total.toLocaleString()}단어` +
-    (Store.settings.onlyWithExample ? ' (예문 있는 것만)' : ` · 예문 ${State.meta.withExample.toLocaleString()}개`);
+    (notes.length ? ` (${notes.join(', ')})` : ` · 예문 ${State.meta.withExample.toLocaleString()}개`);
 
   $('#due-count').textContent = due || Math.min(fresh, Store.settings.dailyLimit);
   $('#due-label').textContent = due
@@ -314,8 +324,7 @@ function renderHome() {
     `<div><b>${n}</b><span>박스 ${i + 1}</span></div>`).join('');
 
   $('#day-grid').innerHTML = State.days.map(d => {
-    const words = Store.settings.onlyWithExample
-      ? d.words.filter(w => w.examples.length) : d.words;
+    const words = inScope(d.words);
     if (!words.length) return '';
     const done = words.filter(w => Store.record(w.id)).length;
     const pct = Math.round(done / words.length * 100);
@@ -398,6 +407,10 @@ function gradeCard(result) {
 
 /* ── 목록 ─────────────────────────────────────────── */
 
+function renderListTier() {
+  for (const b of $$('#list-tier button')) b.classList.toggle('on', b.dataset.tier === State.list.tier);
+}
+
 function renderDayChips() {
   const cur = State.list.day;
   $('#day-chips').innerHTML =
@@ -408,9 +421,10 @@ function renderDayChips() {
 }
 
 function filteredWords() {
-  const { day, query } = State.list;
+  const { day, tier, query } = State.list;
   const q = query.trim().toLowerCase();
   let pool = day === null ? State.words : (State.byDay.get(day) || []);
+  if (tier !== 'all') pool = pool.filter(w => w.tier === tier);
   if (!q) return pool;
   return pool.filter(w =>
     w.headword.toLowerCase().includes(q) ||
@@ -422,9 +436,10 @@ function renderList() {
   const words = filteredWords();
   const shown = words.slice(0, State.list.shown);
 
+  const withEx = words.filter(w => w.examples.length).length;
   $('#list-count').textContent =
-    `${words.length.toLocaleString()}단어` +
-    (words.length > shown.length ? ` 중 ${shown.length}개 표시` : '');
+    `${words.length.toLocaleString()}단어 · 예문 ${withEx.toLocaleString()}` +
+    (words.length > shown.length ? ` · ${shown.length}개 표시 중` : '');
 
   const wrap = $('#word-list');
   wrap.classList.toggle('masked', State.list.masked);
@@ -435,11 +450,12 @@ function renderList() {
       <div class="row">
         <span class="hw">${escapeHTML(w.headword)}</span>
         ${posText(w) ? `<span class="pos">${escapeHTML(posText(w))}</span>` : ''}
+        <span class="tier" style="margin-left:auto">${TIER_LABEL[w.tier] || '기타'}</span>
         ${rec ? `<span class="box">박스 ${rec.box}</span>` : ''}
-        ${w.audio ? `<span style="margin-left:${rec ? '.25rem' : 'auto'}">${Audio_.speakerHTML(w.audio)}</span>` : ''}
+        ${w.audio ? Audio_.speakerHTML(w.audio) : ''}
       </div>
       <div class="mean">${escapeHTML(meaningText(w))}</div>
-      ${ex ? `<div class="ex">${escapeHTML(ex.en)}${
+      ${ex ? `<div class="ex">${escapeHTML(ex.en)}${ex.generated ? '<span class="gen">생성</span>' : ''}${
         ex.ko ? `<div class="ko">${escapeHTML(ex.ko)}</div>` : ''}</div>` : ''}
     </div>`;
   }).join('') || '<p class="muted">검색 결과가 없습니다.</p>';
@@ -458,10 +474,8 @@ function renderList() {
 function quizPool() {
   const scope = $('#quiz-scope button.on').dataset.scope;
   if (scope === 'due') return Scheduler.session({ limit: 0 });
-  const only = Store.settings.onlyWithExample;
-  const trim = ws => only ? ws.filter(w => w.examples.length) : ws;
-  if (scope === 'day') return trim(State.byDay.get(Number($('#quiz-day').value)) || []);
-  return trim(State.words);
+  if (scope === 'day') return inScope(State.byDay.get(Number($('#quiz-day').value)) || []);
+  return inScope(State.words);
 }
 
 function renderQuizSetup() {
@@ -588,22 +602,27 @@ function renderSettings() {
   for (const b of $$('#set-scope button'))
     b.classList.toggle('on', (b.dataset.scope === 'example') === onlyWithExample);
 
+  for (const b of $$('#set-tier button'))
+    b.classList.toggle('on', b.dataset.tier === Store.settings.tier);
   for (const b of $$('#set-autoplay button'))
     b.classList.toggle('on', (b.dataset.autoplay === 'on') === Store.settings.autoplay);
   $('#audio-hint').textContent =
     `${(State.meta.withAudio || 0).toLocaleString()}단어에 발음이 있습니다. ` +
     '들은 발음은 자동으로 저장되고, 내려받아 두면 오프라인에서도 들립니다.';
 
-  const withEx = State.meta.withExample;
-  $('#scope-hint').textContent = onlyWithExample
-    ? `예문이 있는 ${withEx.toLocaleString()}단어만 출제합니다.`
-    : `전체 ${State.meta.wordCount.toLocaleString()}단어 중 ${withEx.toLocaleString()}개에 예문이 있습니다.`;
+  const scoped = inScope(State.words);
+  const withEx = scoped.filter(w => w.examples.length).length;
+  $('#scope-hint').textContent =
+    `지금 설정으로 ${scoped.length.toLocaleString()}단어가 출제됩니다` +
+    (onlyWithExample ? '.' : ` (그중 예문 있는 것 ${withEx.toLocaleString()}개).`);
 
   const bytes = new Blob([localStorage.getItem(STORAGE_KEY) || '']).size;
   $('#info').innerHTML = `
     <div><dt>출처</dt><dd><a href="${escapeHTML(State.meta.sourceUrl)}" target="_blank" rel="noopener">네이버 블로그</a></dd></div>
     <div><dt>수집일</dt><dd>${escapeHTML(State.meta.crawledAt)}</dd></div>
     <div><dt>예문 보유</dt><dd>${State.meta.withExample.toLocaleString()} / ${State.meta.wordCount.toLocaleString()}</dd></div>
+    ${State.meta.generatedExamples ? `<div><dt>생성한 예문</dt><dd>${State.meta.generatedExamples.toLocaleString()}</dd></div>` : ''}
+    <div><dt>필수 / 만점완성</dt><dd>${(State.meta.coreCount || 0).toLocaleString()} / ${(State.meta.wordCount - (State.meta.coreCount || 0)).toLocaleString()}</dd></div>
     <div><dt>발음 보유</dt><dd>${(State.meta.withAudio || 0).toLocaleString()} / ${State.meta.wordCount.toLocaleString()}</dd></div>
     <div><dt>단어 수</dt><dd>${State.meta.wordCount.toLocaleString()}</dd></div>
     <div><dt>진도 용량</dt><dd>${(bytes / 1024).toFixed(1)} KB</dd></div>`;
@@ -650,7 +669,7 @@ function navigate(view) {
   window.scrollTo(0, 0);
 
   if (view === 'home') renderHome();
-  if (view === 'list') { renderDayChips(); renderList(); }
+  if (view === 'list') { renderListTier(); renderDayChips(); renderList(); }
   if (view === 'quiz') renderQuizSetup();
   if (view === 'settings') renderSettings();
   if (view === 'study' && !State.study) startStudy();
@@ -736,6 +755,23 @@ function bind() {
     Store.settings.direction = b.dataset.dir;
     Store.save();
     renderSettings();
+  };
+  $('#set-tier').onclick = e => {
+    const b = e.target.closest('[data-tier]');
+    if (!b) return;
+    Store.settings.tier = b.dataset.tier;
+    Store.save();
+    State.study = null;
+    renderSettings();
+    renderHome();
+  };
+  $('#list-tier').onclick = e => {
+    const b = e.target.closest('[data-tier]');
+    if (!b) return;
+    State.list.tier = b.dataset.tier;
+    State.list.shown = LIST_PAGE;
+    renderListTier();
+    renderList();
   };
   $('#set-autoplay').onclick = e => {
     const b = e.target.closest('[data-autoplay]');

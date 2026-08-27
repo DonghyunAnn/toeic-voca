@@ -1,0 +1,757 @@
+[
+  {
+    "id": "d13-tie",
+    "en": "Please tie the shipping labels securely to each package before delivery.",
+    "ko": "배송 전에 각 상자에 운송장을 단단히 묶어 주시기 바랍니다."
+  },
+  {
+    "id": "d13-elect",
+    "en": "The board will elect a new chairperson at next month's general meeting.",
+    "ko": "이사회는 다음 달 정기 총회에서 새 의장을 선출할 예정입니다."
+  },
+  {
+    "id": "d13-weaken",
+    "en": "Repeated delays have weakened customer confidence in our delivery service.",
+    "ko": "반복된 지연이 저희 배송 서비스에 대한 고객 신뢰를 약화시켰습니다."
+  },
+  {
+    "id": "d13-refill",
+    "en": "Staff members may refill their water bottles at the third-floor lounge.",
+    "ko": "직원들은 3층 라운지에서 물병을 다시 채울 수 있습니다."
+  },
+  {
+    "id": "d13-make-clear",
+    "en": "The manager made clear that all invoices must be submitted by Friday.",
+    "ko": "관리자는 모든 청구서를 금요일까지 제출해야 한다는 점을 명확히 했습니다."
+  },
+  {
+    "id": "d13-vacate",
+    "en": "All guests must vacate their rooms by eleven o'clock on checkout day.",
+    "ko": "모든 투숙객은 퇴실 당일 11시까지 객실을 비워야 합니다."
+  },
+  {
+    "id": "d13-show-up",
+    "en": "Only half of the invited vendors showed up at the trade fair.",
+    "ko": "초청된 공급업체 중 절반만이 무역 박람회에 나타났습니다."
+  },
+  {
+    "id": "d13-fail-to",
+    "en": "Employees who fail to submit timesheets on time may face payroll delays.",
+    "ko": "근무 시간표를 제때 제출하지 못한 직원은 급여 지급이 지연될 수 있습니다."
+  },
+  {
+    "id": "d13-uncover",
+    "en": "The internal audit uncovered several irregularities in last quarter's expense reports.",
+    "ko": "내부 감사가 지난 분기 경비 보고서의 여러 부정을 폭로했습니다."
+  },
+  {
+    "id": "d13-try-out",
+    "en": "Our team will try out the new scheduling software for two weeks.",
+    "ko": "저희 팀은 새 일정 관리 소프트웨어를 2주 동안 시험적으로 사용해 볼 것입니다."
+  },
+  {
+    "id": "d13-warn",
+    "en": "The airline warned passengers about possible delays due to severe weather.",
+    "ko": "항공사는 악천후로 인한 지연 가능성을 승객들에게 경고했습니다."
+  },
+  {
+    "id": "d13-finish",
+    "en": "The contractors expect to finish the lobby renovation before the holiday season.",
+    "ko": "시공업체는 연휴 시즌 전에 로비 개조 공사를 끝낼 것으로 예상합니다."
+  },
+  {
+    "id": "d13-do-one-x27-s-best",
+    "en": "Our support agents do their best to resolve every complaint within hours.",
+    "ko": "저희 고객 지원 담당자들은 모든 불만을 몇 시간 안에 해결하려고 최선을 다합니다."
+  },
+  {
+    "id": "d13-obey",
+    "en": "All visitors must obey the safety regulations posted at the factory entrance.",
+    "ko": "모든 방문객은 공장 입구에 게시된 안전 규정을 준수해야 합니다."
+  },
+  {
+    "id": "d13-have-nothing-to-do-with",
+    "en": "The shipping delay had nothing to do with our warehouse staff.",
+    "ko": "이번 배송 지연은 저희 창고 직원들과는 아무 관련이 없었습니다."
+  },
+  {
+    "id": "d13-have-something-to-do-with",
+    "en": "The revised budget has something to do with the recent merger.",
+    "ko": "수정된 예산은 최근 합병과 관련이 있습니다."
+  },
+  {
+    "id": "d13-translate",
+    "en": "Please translate the user manual into three languages before the product launch.",
+    "ko": "제품 출시 전에 사용자 설명서를 세 개 언어로 번역해 주십시오."
+  },
+  {
+    "id": "d13-take-charge-of",
+    "en": "Ms. Chen will take charge of the overseas marketing division next quarter.",
+    "ko": "첸 씨가 다음 분기에 해외 마케팅 부서를 담당하게 됩니다."
+  },
+  {
+    "id": "d13-enable",
+    "en": "The new software enables employees to access files from any branch office.",
+    "ko": "새 소프트웨어는 직원들이 어느 지점에서든 파일에 접근할 수 있게 해 줍니다."
+  },
+  {
+    "id": "d13-hinder",
+    "en": "Heavy snowfall hindered deliveries throughout the northern distribution region this week.",
+    "ko": "폭설이 이번 주 북부 유통 지역 전역의 배송을 방해했습니다."
+  },
+  {
+    "id": "d13-compose",
+    "en": "The assistant composed a formal reply to the client's complaint letter.",
+    "ko": "비서는 고객의 항의 서한에 대한 공식 답장을 작성했습니다."
+  },
+  {
+    "id": "d13-look-into",
+    "en": "Our billing department will look into the error on your invoice.",
+    "ko": "저희 청구 부서에서 귀하의 청구서에 있는 오류를 조사하겠습니다."
+  },
+  {
+    "id": "d13-underestimate",
+    "en": "Management underestimated the cost of relocating the warehouse to the suburbs.",
+    "ko": "경영진은 창고를 교외로 이전하는 비용을 과소평가했습니다."
+  },
+  {
+    "id": "d13-sue",
+    "en": "The firm decided to sue its former supplier for breach of contract.",
+    "ko": "그 회사는 계약 위반을 이유로 이전 공급업체를 고소하기로 결정했습니다."
+  },
+  {
+    "id": "d13-service",
+    "en": "Our technicians service the office copiers every three months at no charge.",
+    "ko": "저희 기술자들이 3개월마다 무료로 사무실 복사기를 수리합니다."
+  },
+  {
+    "id": "d13-outpace",
+    "en": "Online sales have outpaced store revenue for three consecutive quarters.",
+    "ko": "온라인 매출이 3분기 연속으로 매장 수익을 앞질렀습니다."
+  },
+  {
+    "id": "d13-conform-to",
+    "en": "All packaging must conform to the new environmental standards by January.",
+    "ko": "모든 포장재는 1월까지 새 환경 기준을 충족해야 합니다."
+  },
+  {
+    "id": "d13-meditate",
+    "en": "The directors meditated a bold strategy for entering overseas markets.",
+    "ko": "이사들은 해외 시장 진출을 위한 과감한 전략을 꾀했습니다."
+  },
+  {
+    "id": "d13-prop",
+    "en": "Workers propped the loading dock door open with a heavy wooden crate.",
+    "ko": "작업자들이 무거운 나무 상자로 하역장 문을 받쳐 열어 두었습니다."
+  },
+  {
+    "id": "d13-exercise-one-x27-s-right",
+    "en": "Shareholders may exercise their right to vote at the annual general meeting.",
+    "ko": "주주들은 연례 총회에서 투표할 권리를 행사할 수 있습니다."
+  },
+  {
+    "id": "d13-break-ground",
+    "en": "The developer will break ground on the new office tower in April.",
+    "ko": "그 개발사는 4월에 새 사무용 빌딩 공사를 시작할 예정입니다."
+  },
+  {
+    "id": "d13-threaten",
+    "en": "The prolonged strike threatens to disrupt shipments across the entire region.",
+    "ko": "장기화된 파업이 지역 전체의 배송을 중단시킬 것으로 위협하고 있습니다."
+  },
+  {
+    "id": "d13-restructure",
+    "en": "The company plans to restructure its sales department by the end of the year.",
+    "ko": "회사는 연말까지 영업 부서를 재구성할 계획입니다."
+  },
+  {
+    "id": "d13-consolidate",
+    "en": "We will consolidate our three regional offices into a single headquarters.",
+    "ko": "저희는 세 개의 지역 사무소를 하나의 본사로 통합할 것입니다."
+  },
+  {
+    "id": "d13-dwell",
+    "en": "Most of our factory employees dwell within ten kilometers of the plant.",
+    "ko": "저희 공장 직원 대부분은 공장에서 10킬로미터 이내에 거주합니다."
+  },
+  {
+    "id": "d13-succumb-to",
+    "en": "The management refused to succumb to the union's latest wage demands.",
+    "ko": "경영진은 노조의 최근 임금 요구에 굴복하기를 거부했습니다."
+  },
+  {
+    "id": "d13-exemplify",
+    "en": "Ms. Patel's dedication exemplifies the professionalism we expect from every employee.",
+    "ko": "파텔 씨의 헌신은 저희가 모든 직원에게 기대하는 전문성의 좋은 예가 됩니다."
+  },
+  {
+    "id": "d13-captivate",
+    "en": "The keynote speaker captivated the audience with a live product demonstration.",
+    "ko": "기조 연설자는 실시간 제품 시연으로 청중을 사로잡았습니다."
+  },
+  {
+    "id": "d13-fabricate",
+    "en": "An employee was dismissed for fabricating expense receipts over several months.",
+    "ko": "한 직원이 여러 달에 걸쳐 경비 영수증을 날조하여 해고되었습니다."
+  },
+  {
+    "id": "d13-impair",
+    "en": "Frequent server outages have impaired our reputation among corporate clients.",
+    "ko": "잦은 서버 장애가 기업 고객들 사이에서 저희 평판을 손상시켰습니다."
+  },
+  {
+    "id": "d13-come-go-into-effect",
+    "en": "The revised parking policy goes into effect as of next Monday.",
+    "ko": "개정된 주차 정책은 다음 주 월요일부터 효력이 발생합니다."
+  },
+  {
+    "id": "d13-improvise",
+    "en": "The presenter had to improvise when the projector suddenly stopped working.",
+    "ko": "발표자는 프로젝터가 갑자기 작동을 멈추자 즉석에서 발표를 진행해야 했습니다."
+  },
+  {
+    "id": "d13-strew",
+    "en": "Packing materials were strewn across the warehouse floor after the inspection.",
+    "ko": "점검이 끝난 뒤 포장재가 창고 바닥에 흩뿌려져 있었습니다."
+  },
+  {
+    "id": "d13-propel",
+    "en": "Strong overseas demand propelled the company to record annual profits.",
+    "ko": "강력한 해외 수요가 회사를 사상 최대 연간 이익으로 나아가게 했습니다."
+  },
+  {
+    "id": "d13-steer",
+    "en": "Drivers must steer the forklifts carefully in the narrow storage aisles.",
+    "ko": "운전자들은 좁은 창고 통로에서 지게차를 조심스럽게 조종해야 합니다."
+  },
+  {
+    "id": "d13-set-forth",
+    "en": "The contract sets forth the responsibilities of both parties in detail.",
+    "ko": "그 계약서는 양측의 책임을 상세히 제시합니다."
+  },
+  {
+    "id": "d13-demolish",
+    "en": "The city will demolish the old warehouse to build a parking facility.",
+    "ko": "시는 주차 시설을 짓기 위해 낡은 창고를 허물 예정입니다."
+  },
+  {
+    "id": "d13-put-on-hold",
+    "en": "The board put the expansion project on hold until funding is secured.",
+    "ko": "이사회는 자금이 확보될 때까지 확장 프로젝트를 보류했습니다."
+  },
+  {
+    "id": "d13-envision",
+    "en": "Our founder envisions a fully automated distribution center within five years.",
+    "ko": "저희 창립자는 5년 이내에 완전 자동화된 물류 센터를 구상하고 있습니다."
+  },
+  {
+    "id": "d13-lag",
+    "en": "Our regional branch lags behind the others in quarterly sales figures.",
+    "ko": "저희 지역 지점은 분기 매출 실적에서 다른 지점들보다 뒤처져 있습니다."
+  },
+  {
+    "id": "d14-undersell",
+    "en": "The new retailer undersells every competitor in the downtown shopping district.",
+    "ko": "그 신규 소매점은 시내 상권의 모든 경쟁사보다 싸게 팝니다."
+  },
+  {
+    "id": "d14-outsell",
+    "en": "Our compact printers outsold all competing models during the summer promotion.",
+    "ko": "저희 소형 프린터가 여름 판촉 기간에 모든 경쟁 모델보다 많이 팔렸습니다."
+  },
+  {
+    "id": "d14-put-together",
+    "en": "Please put together a summary of the quarterly figures before Thursday.",
+    "ko": "목요일 전까지 분기 실적 요약본을 작성해 주시기 바랍니다."
+  },
+  {
+    "id": "d14-flash",
+    "en": "A red light flashes when the copier is low on toner.",
+    "ko": "복사기의 토너가 부족하면 빨간 불이 깜빡입니다."
+  },
+  {
+    "id": "d14-rebate",
+    "en": "The store rebates twenty dollars to customers who register their appliances online.",
+    "ko": "그 매장은 온라인으로 가전제품을 등록한 고객에게 20달러를 환불해 줍니다."
+  },
+  {
+    "id": "d14-pay-off",
+    "en": "The additional training clearly paid off in higher customer satisfaction scores.",
+    "ko": "추가 교육은 고객 만족도 점수 상승이라는 성과로 분명히 나타났습니다."
+  },
+  {
+    "id": "d14-disagree",
+    "en": "Several board members disagreed about the proposed relocation of headquarters.",
+    "ko": "여러 이사진이 본사 이전 제안을 두고 의견을 달리했습니다."
+  },
+  {
+    "id": "d14-single-out",
+    "en": "The committee singled out two interns for the leadership development program.",
+    "ko": "위원회는 리더십 개발 프로그램에 참여할 인턴 두 명을 선발했습니다."
+  },
+  {
+    "id": "d14-vaccinate",
+    "en": "The clinic will vaccinate all employees free of charge next Wednesday.",
+    "ko": "그 병원은 다음 주 수요일에 모든 직원에게 무료로 예방 접종을 해 줍니다."
+  },
+  {
+    "id": "d14-treat",
+    "en": "The company doctor treats minor injuries at the on-site medical office.",
+    "ko": "회사 주치의가 사내 의무실에서 경미한 부상을 치료합니다."
+  },
+  {
+    "id": "d14-support",
+    "en": "Most department heads support the revised flexible working hours policy.",
+    "ko": "대부분의 부서장이 개정된 탄력 근무 시간 정책을 지지합니다."
+  },
+  {
+    "id": "d14-illustrate",
+    "en": "The chart illustrates how production costs have risen since last year.",
+    "ko": "그 도표는 작년 이후 생산 비용이 어떻게 상승했는지를 설명합니다."
+  },
+  {
+    "id": "d14-sign-up",
+    "en": "Employees may sign up for the safety workshop on the company intranet.",
+    "ko": "직원들은 사내 인트라넷에서 안전 워크숍에 등록할 수 있습니다."
+  },
+  {
+    "id": "d14-defeat",
+    "en": "Our bid defeated three rival proposals for the municipal transit contract.",
+    "ko": "저희 입찰이 시 교통 계약을 두고 경쟁한 세 개의 제안을 물리쳤습니다."
+  },
+  {
+    "id": "d14-stream",
+    "en": "The company will stream the annual shareholders meeting live online.",
+    "ko": "회사는 연례 주주 총회를 온라인으로 실시간 전송할 예정입니다."
+  },
+  {
+    "id": "d14-bury",
+    "en": "Crews buried the new fiber optic cables beneath the employee parking lot.",
+    "ko": "작업반이 새 광케이블을 직원 주차장 아래에 묻었습니다."
+  },
+  {
+    "id": "d14-recite",
+    "en": "The trainee recited the company's safety pledge at the orientation ceremony.",
+    "ko": "수습 사원이 오리엔테이션 행사에서 회사의 안전 서약을 암송했습니다."
+  },
+  {
+    "id": "d14-turn-around",
+    "en": "The new marketing director turned the struggling branch around within a year.",
+    "ko": "새 마케팅 이사가 1년 만에 부진하던 지점을 호전시켰습니다."
+  },
+  {
+    "id": "d14-downsize",
+    "en": "The manufacturer plans to downsize its workforce by ten percent.",
+    "ko": "그 제조사는 인력을 10퍼센트 줄일 계획입니다."
+  },
+  {
+    "id": "d14-depict",
+    "en": "The brochure depicts the resort's conference facilities in considerable detail.",
+    "ko": "그 안내 책자는 리조트의 회의 시설을 상당히 자세하게 묘사합니다."
+  },
+  {
+    "id": "d14-turn-to",
+    "en": "Many small firms turn to consultants for advice on tax filings.",
+    "ko": "많은 소규모 기업이 세무 신고 조언을 얻기 위해 컨설턴트에게 의지합니다."
+  },
+  {
+    "id": "d14-devote",
+    "en": "She has devoted twenty years to improving workplace safety standards.",
+    "ko": "그녀는 직장 안전 기준을 개선하는 데 20년을 바쳤습니다."
+  },
+  {
+    "id": "d14-infect",
+    "en": "A single unverified attachment can infect the entire company network.",
+    "ko": "확인되지 않은 첨부 파일 하나가 회사 전체 네트워크를 감염시킬 수 있습니다."
+  },
+  {
+    "id": "d14-telecommute",
+    "en": "Employees may telecommute two days a week with their supervisor's approval.",
+    "ko": "직원들은 상사의 승인을 받아 주 이틀 재택 근무를 할 수 있습니다."
+  },
+  {
+    "id": "d14-transform",
+    "en": "The renovation transformed the empty warehouse into a modern conference center.",
+    "ko": "개조 공사가 비어 있던 창고를 현대적인 회의 센터로 변형시켰습니다."
+  },
+  {
+    "id": "d14-dispatch",
+    "en": "We dispatch all online orders within two business days of purchase.",
+    "ko": "저희는 모든 온라인 주문을 구매 후 영업일 기준 이틀 내에 발송합니다."
+  },
+  {
+    "id": "d14-overestimate",
+    "en": "Analysts overestimated demand for the new tablet during the holiday season.",
+    "ko": "분석가들은 연휴 기간 신형 태블릿의 수요를 과대평가했습니다."
+  },
+  {
+    "id": "d14-commend",
+    "en": "The director commended the team for completing the audit ahead of schedule.",
+    "ko": "이사는 예정보다 일찍 감사를 마친 팀을 칭찬했습니다."
+  },
+  {
+    "id": "d14-compensate",
+    "en": "The airline will compensate passengers whose luggage was delayed overnight.",
+    "ko": "항공사는 수하물이 하룻밤 지연된 승객들에게 보상할 것입니다."
+  },
+  {
+    "id": "d14-undercharge",
+    "en": "The clerk accidentally undercharged the customer for the extended warranty.",
+    "ko": "직원이 실수로 고객에게 연장 보증 요금을 덜 받았습니다."
+  },
+  {
+    "id": "d14-confine",
+    "en": "Please confine your remarks to the agenda items listed for today.",
+    "ko": "오늘 상정된 안건에만 발언을 한정해 주시기 바랍니다."
+  },
+  {
+    "id": "d14-constitute",
+    "en": "Overseas orders now constitute nearly half of our annual revenue.",
+    "ko": "해외 주문이 이제 저희 연간 매출의 거의 절반을 구성합니다."
+  },
+  {
+    "id": "d14-allot",
+    "en": "The organizers allotted fifteen minutes to each presenter at the seminar.",
+    "ko": "주최 측은 세미나에서 각 발표자에게 15분씩 할당했습니다."
+  },
+  {
+    "id": "d14-inaugurate",
+    "en": "The mayor will inaugurate the new commuter rail line next month.",
+    "ko": "시장은 다음 달에 새 통근 철도 노선을 개시할 예정입니다."
+  },
+  {
+    "id": "d14-incorporate",
+    "en": "We incorporated customer feedback into the latest version of our mobile app.",
+    "ko": "저희는 고객 의견을 모바일 앱 최신 버전에 통합했습니다."
+  },
+  {
+    "id": "d14-embark-on-upon",
+    "en": "The firm will embark on a major expansion into overseas markets.",
+    "ko": "그 회사는 해외 시장으로의 대규모 확장에 착수할 것입니다."
+  },
+  {
+    "id": "d14-induce",
+    "en": "The discount campaign induced a sharp increase in weekend store traffic.",
+    "ko": "할인 행사가 주말 매장 방문객의 급격한 증가를 유발했습니다."
+  },
+  {
+    "id": "d14-cease",
+    "en": "The factory will cease production of the older model in September.",
+    "ko": "그 공장은 9월에 구형 모델의 생산을 중지할 것입니다."
+  },
+  {
+    "id": "d14-refurbish",
+    "en": "The hotel refurbished its lobby and banquet hall over the winter.",
+    "ko": "그 호텔은 겨울 동안 로비와 연회장을 재단장했습니다."
+  },
+  {
+    "id": "d14-disperse",
+    "en": "The crowd dispersed quickly after the product launch event ended.",
+    "ko": "제품 출시 행사가 끝나자 사람들이 빠르게 흩어졌습니다."
+  },
+  {
+    "id": "d14-stipulate",
+    "en": "The lease stipulates that tenants must provide sixty days of notice.",
+    "ko": "임대 계약서는 세입자가 60일 전에 통보해야 한다고 명시합니다."
+  },
+  {
+    "id": "d14-rectify",
+    "en": "Our accounting team will rectify the billing error within three business days.",
+    "ko": "저희 회계팀이 영업일 기준 사흘 안에 청구 오류를 바로잡겠습니다."
+  },
+  {
+    "id": "d14-rave",
+    "en": "Reviewers raved about the ergonomic design of our latest office chair.",
+    "ko": "평론가들은 저희 최신 사무용 의자의 인체공학적 디자인을 격찬했습니다."
+  },
+  {
+    "id": "d14-empower",
+    "en": "The policy empowers branch managers to approve refunds under fifty dollars.",
+    "ko": "그 정책은 지점장에게 50달러 미만의 환불을 승인할 권한을 부여합니다."
+  },
+  {
+    "id": "d14-intrigue",
+    "en": "The proposal intrigued investors who had previously declined similar offers.",
+    "ko": "그 제안은 이전에 비슷한 제의를 거절했던 투자자들의 흥미를 돋우었습니다."
+  },
+  {
+    "id": "d14-allure",
+    "en": "Generous signing bonuses allured experienced engineers away from rival firms.",
+    "ko": "후한 계약 보너스가 경쟁사의 숙련된 엔지니어들을 꾀어 냈습니다."
+  },
+  {
+    "id": "d14-characterize",
+    "en": "Analysts characterized the merger as the largest deal in the industry.",
+    "ko": "분석가들은 그 합병을 업계 최대 규모의 거래로 기술했습니다."
+  },
+  {
+    "id": "d14-preclude",
+    "en": "Strict security procedures preclude unauthorized access to the research laboratory.",
+    "ko": "엄격한 보안 절차가 연구실에 대한 무단 출입을 방지합니다."
+  },
+  {
+    "id": "d14-attest",
+    "en": "Numerous customer testimonials attest to the durability of our products.",
+    "ko": "수많은 고객 후기가 저희 제품의 내구성을 증명합니다."
+  },
+  {
+    "id": "d14-liquidate",
+    "en": "The struggling retailer decided to liquidate its remaining inventory this month.",
+    "ko": "경영난을 겪는 소매업체는 이번 달에 남은 재고를 청산하기로 결정했습니다."
+  },
+  {
+    "id": "d15-aid",
+    "en": "The government offered financial aid to businesses affected by the flooding.",
+    "ko": "정부는 홍수 피해를 입은 기업들에 재정 지원을 제공했습니다."
+  },
+  {
+    "id": "d15-disapproval",
+    "en": "Several shareholders expressed strong disapproval of the proposed executive bonuses.",
+    "ko": "몇몇 주주가 제안된 임원 상여금에 강한 반대를 표명했습니다."
+  },
+  {
+    "id": "d15-graduation",
+    "en": "Applicants must submit proof of graduation along with the completed application form.",
+    "ko": "지원자는 작성한 지원서와 함께 졸업 증명 서류를 제출해야 합니다."
+  },
+  {
+    "id": "d15-auction",
+    "en": "The company will sell its used office furniture at a public auction.",
+    "ko": "회사는 사용하던 사무용 가구를 공개 경매에서 판매할 예정입니다."
+  },
+  {
+    "id": "d15-checkup",
+    "en": "All delivery vehicles receive a safety checkup every three months.",
+    "ko": "모든 배송 차량은 3개월마다 안전 점검을 받습니다."
+  },
+  {
+    "id": "d15-guidelines",
+    "en": "Please review the new expense reimbursement guidelines before submitting your report.",
+    "ko": "보고서를 제출하기 전에 새 경비 환급 지침을 검토해 주십시오."
+  },
+  {
+    "id": "d15-behavior",
+    "en": "The handbook clearly describes what behavior is expected of all employees.",
+    "ko": "직원 안내서는 모든 직원에게 기대되는 행동을 명확히 설명합니다."
+  },
+  {
+    "id": "d15-contents",
+    "en": "Please check the contents of the package against the enclosed invoice.",
+    "ko": "동봉된 송장과 대조하여 소포의 내용물을 확인해 주시기 바랍니다."
+  },
+  {
+    "id": "d15-society",
+    "en": "Ms. Lopez joined the regional accounting society shortly after her promotion.",
+    "ko": "로페즈 씨는 승진 직후 지역 회계 협회에 가입했습니다."
+  },
+  {
+    "id": "d15-invention",
+    "en": "The engineer patented her invention before presenting it at the trade show.",
+    "ko": "그 엔지니어는 무역 박람회에서 발표하기 전에 자신의 발명품을 특허 등록했습니다."
+  },
+  {
+    "id": "d15-government",
+    "en": "The government announced new tax incentives for small manufacturing companies.",
+    "ko": "정부는 소규모 제조업체를 위한 새로운 세금 혜택을 발표했습니다."
+  },
+  {
+    "id": "d15-principle",
+    "en": "Our hiring process follows the principle of equal opportunity for every applicant.",
+    "ko": "저희 채용 절차는 모든 지원자에게 동등한 기회를 준다는 원칙을 따릅니다."
+  },
+  {
+    "id": "d15-factor",
+    "en": "Location was the deciding factor in choosing the new distribution center.",
+    "ko": "위치가 새 물류 센터를 선정하는 데 결정적인 요인이었습니다."
+  },
+  {
+    "id": "d15-loss",
+    "en": "The firm reported a significant loss in the third quarter.",
+    "ko": "그 회사는 3분기에 상당한 손실을 보고했습니다."
+  },
+  {
+    "id": "d15-listing",
+    "en": "A complete listing of available positions appears on our careers page.",
+    "ko": "지원 가능한 직책의 전체 목록이 저희 채용 페이지에 게시되어 있습니다."
+  },
+  {
+    "id": "d15-decade",
+    "en": "Our factory has operated at this location for more than a decade.",
+    "ko": "저희 공장은 이 자리에서 10년 넘게 운영되어 왔습니다."
+  },
+  {
+    "id": "d15-profession",
+    "en": "Accounting remains a profession with steady demand across most industries.",
+    "ko": "회계는 대부분의 업계에서 꾸준한 수요가 있는 직업입니다."
+  },
+  {
+    "id": "d15-abuse",
+    "en": "Any abuse of company credit cards will result in immediate disciplinary action.",
+    "ko": "법인 카드의 어떠한 남용도 즉각적인 징계 조치로 이어집니다."
+  },
+  {
+    "id": "d15-lawsuit",
+    "en": "The supplier filed a lawsuit over the unpaid shipping fees.",
+    "ko": "공급업체가 미지급 운송비를 두고 소송을 제기했습니다."
+  },
+  {
+    "id": "d15-journalist",
+    "en": "A journalist from a business magazine requested an interview with our president.",
+    "ko": "한 경제 잡지 기자가 저희 사장과의 인터뷰를 요청했습니다."
+  },
+  {
+    "id": "d15-pharmacy",
+    "en": "The pharmacy on the ground floor stays open until nine every weekday.",
+    "ko": "1층 약국은 평일마다 9시까지 문을 엽니다."
+  },
+  {
+    "id": "d15-mission",
+    "en": "Our mission is to deliver reliable service to every customer worldwide.",
+    "ko": "저희의 사명은 전 세계 모든 고객에게 신뢰할 수 있는 서비스를 제공하는 것입니다."
+  },
+  {
+    "id": "d15-public-holiday",
+    "en": "The office will remain closed on Monday because of a public holiday.",
+    "ko": "공휴일이기 때문에 사무실은 월요일에 문을 닫습니다."
+  },
+  {
+    "id": "d15-administrator",
+    "en": "The hospital administrator approved additional funding for new medical equipment.",
+    "ko": "병원 행정관이 새 의료 장비를 위한 추가 예산을 승인했습니다."
+  },
+  {
+    "id": "d15-outlook",
+    "en": "The economic outlook for the shipping industry remains cautiously positive.",
+    "ko": "해운 업계의 경제 전망은 조심스럽게 긍정적입니다."
+  },
+  {
+    "id": "d15-diploma",
+    "en": "Candidates should attach a copy of their diploma to the application.",
+    "ko": "지원자는 지원서에 졸업장 사본을 첨부해야 합니다."
+  },
+  {
+    "id": "d15-prerequisite",
+    "en": "Three years of sales experience is a prerequisite for this position.",
+    "ko": "3년의 영업 경력이 이 직책의 필수 조건입니다."
+  },
+  {
+    "id": "d15-aptitude",
+    "en": "New applicants must take an aptitude test during the second interview round.",
+    "ko": "신규 지원자는 2차 면접에서 소질을 평가하는 적성 검사를 받아야 합니다."
+  },
+  {
+    "id": "d15-oversight",
+    "en": "Due to an oversight, the shipment was sent to the wrong branch.",
+    "ko": "실수로 인해 그 화물이 잘못된 지점으로 발송되었습니다."
+  },
+  {
+    "id": "d15-distraction",
+    "en": "Please silence your phones to avoid distractions during the training session.",
+    "ko": "교육 중 방해가 되는 요소를 없애기 위해 휴대전화를 무음으로 해 주십시오."
+  },
+  {
+    "id": "d15-command",
+    "en": "Staff must respond promptly to any command given during the evacuation drill.",
+    "ko": "직원들은 대피 훈련 중 내려지는 어떤 명령에도 신속히 따라야 합니다."
+  },
+  {
+    "id": "d15-drawback",
+    "en": "The only drawback of the new software is its high monthly fee.",
+    "ko": "새 소프트웨어의 유일한 결점은 높은 월 사용료입니다."
+  },
+  {
+    "id": "d15-probationer",
+    "en": "Each probationer receives a performance review after three months of employment.",
+    "ko": "각 수습 직원은 근무 3개월 후에 인사 평가를 받습니다."
+  },
+  {
+    "id": "d15-strife",
+    "en": "Labor strife at the plant has delayed several major shipments.",
+    "ko": "공장의 노사 갈등으로 여러 주요 화물 발송이 지연되었습니다."
+  },
+  {
+    "id": "d15-infringement",
+    "en": "The company sued a competitor for infringement of its packaging patent.",
+    "ko": "그 회사는 포장 특허 침해를 이유로 경쟁사를 고소했습니다."
+  },
+  {
+    "id": "d15-gross-income",
+    "en": "Applicants must report their annual gross income on the loan form.",
+    "ko": "신청자는 대출 신청서에 연간 총소득을 기재해야 합니다."
+  },
+  {
+    "id": "d15-deviation",
+    "en": "Any deviation from the approved budget requires written approval from the finance team.",
+    "ko": "승인된 예산에서 벗어나는 경우에는 재무팀의 서면 승인이 필요합니다."
+  },
+  {
+    "id": "d15-increment",
+    "en": "Employees receive a salary increment after each successful annual performance review.",
+    "ko": "직원들은 연례 인사 평가를 통과할 때마다 급여 증액을 받습니다."
+  },
+  {
+    "id": "d15-replica",
+    "en": "The museum shop sells replicas of the artifacts currently on display.",
+    "ko": "박물관 기념품점은 현재 전시 중인 유물의 복제품을 판매합니다."
+  },
+  {
+    "id": "d15-proponent",
+    "en": "The finance director is a strong proponent of the flexible schedule policy.",
+    "ko": "재무 이사는 탄력 근무제 정책의 강력한 지지자입니다."
+  },
+  {
+    "id": "d15-declaration",
+    "en": "The chairman's declaration of a merger surprised employees at the annual meeting.",
+    "ko": "회장의 합병 선언은 연례 총회에서 직원들을 놀라게 했습니다."
+  },
+  {
+    "id": "d15-depiction",
+    "en": "The catalog offers a detailed depiction of each furniture model.",
+    "ko": "그 카탈로그는 각 가구 모델에 대한 상세한 묘사를 제공합니다."
+  },
+  {
+    "id": "d15-ballot",
+    "en": "Please place your completed ballot in the box near the entrance.",
+    "ko": "기입을 마친 투표 용지를 입구 옆 상자에 넣어 주십시오."
+  },
+  {
+    "id": "d15-residue",
+    "en": "Technicians must remove any chemical residue before restarting the production line.",
+    "ko": "기술자들은 생산 라인을 재가동하기 전에 화학 잔류물을 모두 제거해야 합니다."
+  },
+  {
+    "id": "d15-bond",
+    "en": "Regular team dinners help strengthen the bond among department members.",
+    "ko": "정기적인 팀 회식은 부서원들 간의 유대를 강화하는 데 도움이 됩니다."
+  },
+  {
+    "id": "d15-forerunner",
+    "en": "Rising raw material prices are often a forerunner of higher retail costs.",
+    "ko": "원자재 가격 상승은 흔히 소매 가격 인상의 전조입니다."
+  },
+  {
+    "id": "d15-accordance",
+    "en": "All packaging is labeled in accordance with the latest safety regulations.",
+    "ko": "모든 포장에는 최신 안전 규정에 일치하도록 표시가 부착되어 있습니다."
+  },
+  {
+    "id": "d15-ridership",
+    "en": "Subway ridership has increased steadily since the new line opened.",
+    "ko": "새 노선이 개통된 이후 지하철 이용자 수가 꾸준히 증가했습니다."
+  },
+  {
+    "id": "d15-discrepancy",
+    "en": "Our accountant found a discrepancy between the invoice and the receipt.",
+    "ko": "저희 회계 담당자가 송장과 영수증 사이의 불일치를 발견했습니다."
+  },
+  {
+    "id": "d15-aspiration",
+    "en": "The internship program supports young employees with strong leadership aspirations.",
+    "ko": "인턴십 프로그램은 리더십에 대한 강한 포부를 지닌 젊은 직원들을 지원합니다."
+  },
+  {
+    "id": "d15-labor-dispute",
+    "en": "The labor dispute was resolved after two weeks of intensive negotiations.",
+    "ko": "노동 쟁의는 2주간의 집중 협상 끝에 해결되었습니다."
+  }
+]

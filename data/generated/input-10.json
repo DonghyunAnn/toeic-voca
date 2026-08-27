@@ -1,0 +1,2302 @@
+{
+ "batch": 10,
+ "days": [
+  28,
+  29,
+  30
+ ],
+ "words": [
+  {
+   "id": "d28-power-outage",
+   "day": 28,
+   "headword": "power outage",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "정전, 송전 정지"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d28-in-effect",
+   "day": 28,
+   "headword": "in effect",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "시행[발효] 중인"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d28-revised-policy",
+   "day": 28,
+   "headword": "revised policy",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "개정된 정책"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d28-dress-code",
+   "day": 28,
+   "headword": "dress code",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "복장 규정"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d28-provided-that",
+   "day": 28,
+   "headword": "provided (that)",
+   "senses": [
+    {
+     "pos": "conj.",
+     "meaning": "만약 ~이라면, ~이라는 조건 하에"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d28-pilot-test",
+   "day": 28,
+   "headword": "pilot test",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "시범 테스트"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d28-beginning-on",
+   "day": 28,
+   "headword": "beginning (on)",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~부터, ~일자로"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d28-pay-stub",
+   "day": 28,
+   "headword": "pay stub",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "급여 명세서"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d28-up-and-running",
+   "day": 28,
+   "headword": "up and running",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "제대로 운영[작동]되는"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d28-in-time-for",
+   "day": 28,
+   "headword": "in time for",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~하는 시기에 맞춰"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d28-customer-base",
+   "day": 28,
+   "headword": "customer base",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "고객층, 고객 기반"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d28-profit-margin",
+   "day": 28,
+   "headword": "profit margin",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "이윤, 차익금"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d28-step-down",
+   "day": 28,
+   "headword": "step down",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "물러나다, 퇴임하다"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d28-upcoming-event",
+   "day": 28,
+   "headword": "upcoming event",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "다가오는 행사"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-tear-down",
+   "day": 28,
+   "headword": "tear down",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "철거하다(=demolish)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-company-policy",
+   "day": 28,
+   "headword": "company policy",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "사내 규정"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-attendance-record",
+   "day": 28,
+   "headword": "attendance record",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "출석 기록"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-operating-fund",
+   "day": 28,
+   "headword": "operating fund",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "운영 자금"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-brief-summary",
+   "day": 28,
+   "headword": "brief summary",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "간단한 요약"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-sort-out",
+   "day": 28,
+   "headword": "sort out",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "분류하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-on-duty",
+   "day": 28,
+   "headword": "on duty",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "근무 중인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-fall-behind",
+   "day": 28,
+   "headword": "fall behind",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "뒤쳐지다, 늦어지다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-take-effect",
+   "day": 28,
+   "headword": "take effect",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "시행되다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-withdraw-the-proposal",
+   "day": 28,
+   "headword": "withdraw the proposal",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "제안을 철회하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-start-up-company",
+   "day": 28,
+   "headword": "start-up company",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "창업 기업, 신생 기업"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-be-credited-with",
+   "day": 28,
+   "headword": "be credited with",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~으로 인정 받다, 명성을 얻다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-be-bound-to",
+   "day": 28,
+   "headword": "be bound to",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~하기 마련이다, ~할 의무가 있다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-motivate",
+   "day": 28,
+   "headword": "motivate",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "동기를 부여하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-meet-the-customer-demand",
+   "day": 28,
+   "headword": "meet the customer demand",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "소비자 수요를 충족시키다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-extend-the-service",
+   "day": 28,
+   "headword": "extend the service",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "서비스를 확대하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-in-phases",
+   "day": 28,
+   "headword": "in phases",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "단계적으로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-a-wealth-of-information",
+   "day": 28,
+   "headword": "a wealth of information",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "풍부한 정보"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-winning-entry",
+   "day": 28,
+   "headword": "winning entry",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "수상작"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-rain-date",
+   "day": 28,
+   "headword": "rain date",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "행사 당일 우천 시 변경일"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-mark-a-change",
+   "day": 28,
+   "headword": "mark a change",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "변화의 한 획을 긋다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-level-off",
+   "day": 28,
+   "headword": "level off",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "변동이 없다, 안정되다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-quarterly-report",
+   "day": 28,
+   "headword": "quarterly report",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "분기 보고서"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-job-cutback",
+   "day": 28,
+   "headword": "job cutback",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "인력 감축"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-on-site-inspection",
+   "day": 28,
+   "headword": "on-site inspection",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "현장 점검"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-overtime-allowance",
+   "day": 28,
+   "headword": "overtime allowance",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "초과 근무 수당"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-temporary-security-badge",
+   "day": 28,
+   "headword": "temporary security badge",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "임시 보안 신분증"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-deliberate-planning",
+   "day": 28,
+   "headword": "deliberate planning",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "신중한 계획"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-financial-grants",
+   "day": 28,
+   "headword": "financial grants",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "재정 보조금"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-generate-more-revenue",
+   "day": 28,
+   "headword": "generate more revenue",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "더 많은 수익을 창출하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-smooth-transition",
+   "day": 28,
+   "headword": "smooth transition",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "순조로운 전환"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-business-strategy",
+   "day": 28,
+   "headword": "business strategy",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "사업 전략"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-lucrative-business",
+   "day": 28,
+   "headword": "lucrative business",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "수익성 있는 사업"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-attribute-one-x27-s-success-to",
+   "day": 28,
+   "headword": "attribute one&#x27;s success to",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "성공을 ~덕으로 돌리다"
+    }
+   ],
+   "tier": null
+  },
+  {
+   "id": "d28-good-judgement",
+   "day": 28,
+   "headword": "good judgement",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "뛰어난 판단력"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-file-for-bankruptcy",
+   "day": 28,
+   "headword": "file for bankruptcy",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "파산 신청을 하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-coincide-with",
+   "day": 28,
+   "headword": "coincide with",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~와 일치하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-fully-functional",
+   "day": 28,
+   "headword": "fully functional",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "제 기능을 다하는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-periodical",
+   "day": 28,
+   "headword": "periodical",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "정기 간행물"
+    },
+    {
+     "pos": "a.",
+     "meaning": "주기적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-online-archive",
+   "day": 28,
+   "headword": "online archive",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "온라인 자료실"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-permanent-exhibit",
+   "day": 28,
+   "headword": "permanent exhibit",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "상설 전시"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-original-submission",
+   "day": 28,
+   "headword": "original submission",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "독창적인 출품작"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-conform-to-the-guideline",
+   "day": 28,
+   "headword": "conform to the guideline",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "지침에 일치시키다, 지침을 따르다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-cast-a-ballot-vote",
+   "day": 28,
+   "headword": "cast a ballot[vote]",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "투표를 하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-financial-setback",
+   "day": 28,
+   "headword": "financial setback",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "재정 악화"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-adverse-effect",
+   "day": 28,
+   "headword": "adverse effect",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "역효과, 부작용"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-accrue",
+   "day": 28,
+   "headword": "accrue",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "증가하다, 축적하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-pioneer",
+   "day": 28,
+   "headword": "pioneer",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "개척자, 개척하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d28-company-x27-s-ailing-fortunes",
+   "day": 28,
+   "headword": "company&#x27;s ailing fortunes",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "기우는 회사 상황"
+    }
+   ],
+   "tier": null
+  },
+  {
+   "id": "d29-flat-rate",
+   "day": 29,
+   "headword": "flat rate",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "균일가"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d29-be-outfitted-with",
+   "day": 29,
+   "headword": "be outfitted with",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~이 갖춰져 있다"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d29-casual-fare",
+   "day": 29,
+   "headword": "casual fare",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "일상적인 식사"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d29-achieve-one-x27-s-goal",
+   "day": 29,
+   "headword": "achieve one&#x27;s goal",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "목표를 달성하다"
+    }
+   ],
+   "tier": null
+  },
+  {
+   "id": "d29-take-on",
+   "day": 29,
+   "headword": "take on",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~을 맡다"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d29-interpersonal-skill",
+   "day": 29,
+   "headword": "interpersonal skill",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "대인관계 능력"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d29-compensation-package",
+   "day": 29,
+   "headword": "compensation package",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "(급여와 복리후생을 포함한) 총 보수"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d29-responsibilities-duties-tasks-include",
+   "day": 29,
+   "headword": "responsibilities[duties/tasks] include",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "업무에는 ~이 포함된다"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d29-be-subject-to",
+   "day": 29,
+   "headword": "be subject to",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~의 대상이다"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d29-occupancy-schedule",
+   "day": 29,
+   "headword": "occupancy schedule",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "숙박 일정"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d29-lodging-arrangement",
+   "day": 29,
+   "headword": "lodging arrangement",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "숙박 준비, 숙박 예약"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d29-on-board",
+   "day": 29,
+   "headword": "on board",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "승선한, 탑승한"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d29-local-ingredient",
+   "day": 29,
+   "headword": "local ingredient",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "지역에서 생산되는 재료"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-individually-packaged",
+   "day": 29,
+   "headword": "individually packaged",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "개별 포장된"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-one-serving",
+   "day": 29,
+   "headword": "one serving",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "1인분"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-signature-dish",
+   "day": 29,
+   "headword": "signature dish",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "대표 요리"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-year-round",
+   "day": 29,
+   "headword": "year-round",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "일년 내내 계속되는"
+    },
+    {
+     "pos": "ad.",
+     "meaning": "연중"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-membership-benefit",
+   "day": 29,
+   "headword": "membership benefit",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "멤버십 혜택"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-special-deal-offer",
+   "day": 29,
+   "headword": "special deal[offer]",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "특가 상품"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-standard-rate",
+   "day": 29,
+   "headword": "standard rate",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "표준 요금"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-markdown",
+   "day": 29,
+   "headword": "markdown",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "가격 인하"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-clearance-sale",
+   "day": 29,
+   "headword": "clearance sale",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "재고 정리 세일"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-giveaway",
+   "day": 29,
+   "headword": "giveaway",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "경품, 증정품"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-competitively-priced",
+   "day": 29,
+   "headword": "competitively priced",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "경쟁력 있는 가격의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-put-run-place-an-ad",
+   "day": 29,
+   "headword": "put[run/place] an ad",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "광고를 내다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-a-show-of-gratitude",
+   "day": 29,
+   "headword": "a show of gratitude",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "감사의 표시"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-promotional-code",
+   "day": 29,
+   "headword": "promotional code",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "쿠폰 번호, 할인코드"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-job-posting",
+   "day": 29,
+   "headword": "job posting",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "채용 공고"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-on-the-job-experience",
+   "day": 29,
+   "headword": "on-the-job experience",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "실무 경력"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-salary-expectation",
+   "day": 29,
+   "headword": "salary expectation",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "원하는 급여 조건"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-pride-oneself-on",
+   "day": 29,
+   "headword": "pride oneself on",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~에 대해 스스로 자랑스럽게 여기다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-furnished-unit",
+   "day": 29,
+   "headword": "furnished unit",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "가구가 비치된 집"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-landlord",
+   "day": 29,
+   "headword": "landlord",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "집주인, 건물주"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-prime-location",
+   "day": 29,
+   "headword": "prime location",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "좋은 입지[위치]"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-within-walking-distance",
+   "day": 29,
+   "headword": "within walking distance",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "걸어갈 만한 거리에"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-commercial-district",
+   "day": 29,
+   "headword": "commercial district",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "상업 지구"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-peak-season",
+   "day": 29,
+   "headword": "peak season",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "성수기(↔ off season 비수기)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-compatibility",
+   "day": 29,
+   "headword": "compatibility",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "호환(성)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-capitalize",
+   "day": 29,
+   "headword": "capitalize",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "이용하다, 기회로 삼다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-staple-food",
+   "day": 29,
+   "headword": "staple food",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "주식"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-spice",
+   "day": 29,
+   "headword": "spice",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "양념, 향신료"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-charity-ball",
+   "day": 29,
+   "headword": "charity ball",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "자선 무도회"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-scale-back",
+   "day": 29,
+   "headword": "scale back",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "축소하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-high-end",
+   "day": 29,
+   "headword": "high-end",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "고급의, 가장 정교한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-alert",
+   "day": 29,
+   "headword": "alert",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "경고하다, 알려주다"
+    },
+    {
+     "pos": "a.",
+     "meaning": "기민한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-retail-price",
+   "day": 29,
+   "headword": "retail price",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "소매 가격"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-up-front",
+   "day": 29,
+   "headword": "up front",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "사전에, 미리"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-active-status",
+   "day": 29,
+   "headword": "active status",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "활성 상태(회원 가입 상태)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-associate-level-membership",
+   "day": 29,
+   "headword": "associate-level membership",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "준회원"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-placement-agency",
+   "day": 29,
+   "headword": "placement agency",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "직업 소개소"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-credential",
+   "day": 29,
+   "headword": "credential",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "자격 (증명서)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-flextime",
+   "day": 29,
+   "headword": "flextime",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "근무 시간 자유 선택제"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-classified-ad",
+   "day": 29,
+   "headword": "classified ad",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "항목별 광고, 구인 광고"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-brokerage",
+   "day": 29,
+   "headword": "brokerage",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "중개(업), 중개 수수료"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-down-payment",
+   "day": 29,
+   "headword": "down payment",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "계약금, 첫 납입금"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-inhabitant",
+   "day": 29,
+   "headword": "inhabitant",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "주민, 거주자"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-property-values",
+   "day": 29,
+   "headword": "property values",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "부동산 가치"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-rural-communities",
+   "day": 29,
+   "headword": "rural communities",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "농촌"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-ground-breaking-ceremony",
+   "day": 29,
+   "headword": "ground-breaking ceremony",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "기공식"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-inaugural-issue",
+   "day": 29,
+   "headword": "inaugural issue",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "창간호"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-voyage",
+   "day": 29,
+   "headword": "voyage",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "항해, 여행"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d29-currency-exchange-rates",
+   "day": 29,
+   "headword": "currency exchange rates",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "환율"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-electronic-form",
+   "day": 30,
+   "headword": "electronic form",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "온라인 양식"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d30-out-of-place",
+   "day": 30,
+   "headword": "out of place",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "잘못 놓인, 부적절한"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d30-tracking-system",
+   "day": 30,
+   "headword": "tracking system",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "추적 시스템"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d30-upon-request",
+   "day": 30,
+   "headword": "upon request",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "요청 시에"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d30-attend-to",
+   "day": 30,
+   "headword": "attend to",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "처리하다"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d30-nature-reserve",
+   "day": 30,
+   "headword": "nature reserve",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "자연 보호구역"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d30-environmentally-eco-friendly",
+   "day": 30,
+   "headword": "environmentally[eco] friendly",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "환경 친화적인"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d30-travel-agent",
+   "day": 30,
+   "headword": "travel agent",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "여행사 직원"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d30-boarding-pass",
+   "day": 30,
+   "headword": "boarding pass",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "탑승권"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d30-advance-reservation",
+   "day": 30,
+   "headword": "advance reservation",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "사전 예약"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d30-baggage-claim",
+   "day": 30,
+   "headword": "baggage claim",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "(공항의) 수하물 찾는 곳"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d30-dining-establishment",
+   "day": 30,
+   "headword": "dining establishment",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "식당"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d30-hustle-and-bustle",
+   "day": 30,
+   "headword": "hustle and bustle",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "혼잡, 번잡함"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d30-be-entitled-to",
+   "day": 30,
+   "headword": "be entitled to",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~을 받을 자격이 되다"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d30-an-array-of",
+   "day": 30,
+   "headword": "an array of",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "다양한"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d30-unit-price",
+   "day": 30,
+   "headword": "unit price",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "단가"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-item-description",
+   "day": 30,
+   "headword": "item description",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "품목 명세(서)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-drop-off-date",
+   "day": 30,
+   "headword": "drop-off date",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "맡긴 날짜"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-fix-the-problem",
+   "day": 30,
+   "headword": "fix the problem",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "문제를 해결하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-call-for-assistance",
+   "day": 30,
+   "headword": "call for assistance",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "전화로 도움을 요청하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-existing-facilities",
+   "day": 30,
+   "headword": "existing facilities",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "기존 시설"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-prompt-attention-to",
+   "day": 30,
+   "headword": "prompt attention to",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~에 대한 즉각적인 관심"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-workplace-condition",
+   "day": 30,
+   "headword": "workplace condition",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "작업장 조건, 작업장 환경"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-on-track",
+   "day": 30,
+   "headword": "on track",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "제대로 진행되고 있는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-estimated-date",
+   "day": 30,
+   "headword": "estimated date",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "추정 날짜"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-solar-energy",
+   "day": 30,
+   "headword": "solar energy",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "태양열 에너지"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-water-saving",
+   "day": 30,
+   "headword": "water-saving",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "절수형의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-urban-development",
+   "day": 30,
+   "headword": "urban development",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "도시 개발"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-climate-change",
+   "day": 30,
+   "headword": "climate change",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "기후 변화"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-domestic-flight",
+   "day": 30,
+   "headword": "domestic flight",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "(항공) 국내선"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-stopover",
+   "day": 30,
+   "headword": "stopover",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "경유, 단기간 체류"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-overhead-compartment",
+   "day": 30,
+   "headword": "overhead compartment",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "머리 위 짐칸"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-frequent-flyer",
+   "day": 30,
+   "headword": "frequent flyer",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "자주 여행하는 고객"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-tourist-attraction",
+   "day": 30,
+   "headword": "tourist attraction",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "관광 명소"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-must-see",
+   "day": 30,
+   "headword": "must-see",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "꼭 보아야 할 것"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-ruins",
+   "day": 30,
+   "headword": "ruins",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "폐허, 유적"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-in-recognition-of",
+   "day": 30,
+   "headword": "in recognition of",
+   "senses": [
+    {
+     "pos": "prep.",
+     "meaning": "~을 인정하여"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-seating-plan",
+   "day": 30,
+   "headword": "seating plan",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "좌석 배치도"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-conclusion",
+   "day": 30,
+   "headword": "conclusion",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "결말, 종결"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-parking-attendant",
+   "day": 30,
+   "headword": "parking attendant",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "주차 요원"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-monetary-donation",
+   "day": 30,
+   "headword": "monetary donation",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "금전적 기부"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-pros-and-cons",
+   "day": 30,
+   "headword": "pros and cons",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "장단점, 찬반양론"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-breakage",
+   "day": 30,
+   "headword": "breakage",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "파손, 손상"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-collapse",
+   "day": 30,
+   "headword": "collapse",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "무너지다, 무너짐, 붕괴"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-wear-and-tear",
+   "day": 30,
+   "headword": "wear and tear",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "마모, 손상"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-specifics",
+   "day": 30,
+   "headword": "specifics",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "시방서(공사 순서를 적은 문서)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-adaptability",
+   "day": 30,
+   "headword": "adaptability",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "적합성, 적응성"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-emission",
+   "day": 30,
+   "headword": "emission",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "(열, 가스 등의) 배출(물)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-extinction",
+   "day": 30,
+   "headword": "extinction",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "멸종, 소멸, 끄기"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-scarcity",
+   "day": 30,
+   "headword": "scarcity",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "부족, 결핍"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-purify",
+   "day": 30,
+   "headword": "purify",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "정화하다, 불순물을 제거하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-devastate",
+   "day": 30,
+   "headword": "devastate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "황폐하게 하다, 파괴하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-energy-conservation",
+   "day": 30,
+   "headword": "energy conservation",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "에너지 절약"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-natural-habitats",
+   "day": 30,
+   "headword": "natural habitats",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "자연 서식지"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-depletion",
+   "day": 30,
+   "headword": "depletion",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "고갈, 소모"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-criteria",
+   "day": 30,
+   "headword": "criteria",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "기준, 척도, 표준"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-endangered-species",
+   "day": 30,
+   "headword": "endangered species",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "멸종 위기에 처한 종(種)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-contamination",
+   "day": 30,
+   "headword": "contamination",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "오염"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-pollutant",
+   "day": 30,
+   "headword": "pollutant",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "오염 물질"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-fossil-fuel",
+   "day": 30,
+   "headword": "fossil fuel",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "화석 연료"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-sojourn",
+   "day": 30,
+   "headword": "sojourn",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "체류, 머무름"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-censorship",
+   "day": 30,
+   "headword": "censorship",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "검열(제도)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-tactics",
+   "day": 30,
+   "headword": "tactics",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "전략"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-premiere",
+   "day": 30,
+   "headword": "premiere",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "개봉, 초연"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d30-sequel-to",
+   "day": 30,
+   "headword": "sequel to",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~의 속편"
+    }
+   ],
+   "tier": "bonus"
+  }
+ ]
+}

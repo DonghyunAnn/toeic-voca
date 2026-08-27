@@ -1,0 +1,1994 @@
+{
+ "batch": 2,
+ "days": [
+  4,
+  5,
+  6
+ ],
+ "words": [
+  {
+   "id": "d04-lost-and-found",
+   "day": 4,
+   "headword": "lost and found",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "유실물 보관소"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-medication",
+   "day": 4,
+   "headword": "medication",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "약"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-messy",
+   "day": 4,
+   "headword": "messy",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "지저분한, 엉망인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-advanced",
+   "day": 4,
+   "headword": "advanced",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "고급의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-fiction",
+   "day": 4,
+   "headword": "fiction",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "소설"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-salon",
+   "day": 4,
+   "headword": "salon",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "상점, 살롱"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-highway",
+   "day": 4,
+   "headword": "highway",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "고속도로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-cashier",
+   "day": 4,
+   "headword": "cashier",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "출납원, 계산원"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-as-long-as",
+   "day": 4,
+   "headword": "as long as",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~하는 한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-upstairs",
+   "day": 4,
+   "headword": "upstairs",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "위층에서"
+    },
+    {
+     "pos": "a.",
+     "meaning": "위층의"
+    },
+    {
+     "pos": "n.",
+     "meaning": "위층"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-librarian",
+   "day": 4,
+   "headword": "librarian",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "도서관 사서"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-one-way-ticket",
+   "day": 4,
+   "headword": "one-way ticket",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "편도 승차권"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-round-trip-ticket",
+   "day": 4,
+   "headword": "round-trip ticket",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "왕복 승차권"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-initial",
+   "day": 4,
+   "headword": "initial",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "처음의"
+    },
+    {
+     "pos": "n.",
+     "meaning": "이름의 첫 글자"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-gift-certification",
+   "day": 4,
+   "headword": "gift certification",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "상품권"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-envelope",
+   "day": 4,
+   "headword": "envelope",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "봉투"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-city-town-hall",
+   "day": 4,
+   "headword": "city[town] hall",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "시청"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-casual",
+   "day": 4,
+   "headword": "casual",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "격식을 차리지 않는, 가벼운"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-national-holiday",
+   "day": 4,
+   "headword": "national holiday",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "국경일"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-stuck-in-traffic",
+   "day": 4,
+   "headword": "stuck in traffic",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "교통 체증에 갇힌"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-stationery",
+   "day": 4,
+   "headword": "stationery",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "문구류"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-waterproof",
+   "day": 4,
+   "headword": "waterproof",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "방수의"
+    },
+    {
+     "pos": "n.",
+     "meaning": "방수복"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-recyclable",
+   "day": 4,
+   "headword": "recyclable",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "재활용이 가능한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-garage",
+   "day": 4,
+   "headword": "garage",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "차고, 주차장"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-dozens-of",
+   "day": 4,
+   "headword": "dozens of",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "수십 개의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-complex",
+   "day": 4,
+   "headword": "complex",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "복합 단지"
+    },
+    {
+     "pos": "a.",
+     "meaning": "복잡한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-instant",
+   "day": 4,
+   "headword": "instant",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "즉각적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-screening",
+   "day": 4,
+   "headword": "screening",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "상영, 검사[심사]"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-editorial",
+   "day": 4,
+   "headword": "editorial",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "편집의"
+    },
+    {
+     "pos": "n.",
+     "meaning": "사설"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-drain",
+   "day": 4,
+   "headword": "drain",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "배수하다, 배수(관)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-dairy-product",
+   "day": 4,
+   "headword": "dairy product",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "유제품"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-halfway-through",
+   "day": 4,
+   "headword": "halfway through",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~의 중간[가운데쯤]에"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-heat-resistant",
+   "day": 4,
+   "headword": "heat-resistant",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "내열성의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-currency-exchange",
+   "day": 4,
+   "headword": "currency exchange",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "환전"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-prior-engagement",
+   "day": 4,
+   "headword": "prior engagement",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "선약"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-scheduling-conflict",
+   "day": 4,
+   "headword": "scheduling conflict",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "일정 충돌"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-boulevard",
+   "day": 4,
+   "headword": "boulevard",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "도로, 대로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-paperback",
+   "day": 4,
+   "headword": "paperback",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "종이 표지로 된 책"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-high-definition",
+   "day": 4,
+   "headword": "high-definition",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "고화질의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-leftover",
+   "day": 4,
+   "headword": "leftover",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "남은 음식"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-postage",
+   "day": 4,
+   "headword": "postage",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "우편 요금"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-fade",
+   "day": 4,
+   "headword": "fade",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "희미해지다, 바래다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-carrier",
+   "day": 4,
+   "headword": "carrier",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "항공사"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-hardware-store",
+   "day": 4,
+   "headword": "hardware store",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "철물점"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-choir",
+   "day": 4,
+   "headword": "choir",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "합창단"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-take-turns",
+   "day": 4,
+   "headword": "take turns",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "교대로 하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-caterer",
+   "day": 4,
+   "headword": "caterer",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "음식 조달 업체"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-faucet",
+   "day": 4,
+   "headword": "faucet",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "수도꼭지"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-square-meter",
+   "day": 4,
+   "headword": "square meter",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "제곱미터"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-billboard",
+   "day": 4,
+   "headword": "billboard",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "옥외 광고판"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-botanical-garden",
+   "day": 4,
+   "headword": "botanical garden",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "식물원"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-basement",
+   "day": 4,
+   "headword": "basement",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "지하실"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-interest-free-loan",
+   "day": 4,
+   "headword": "interest-free loan",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "무이자 대출"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d04-cabin",
+   "day": 4,
+   "headword": "cabin",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "객실, 오두막집"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-revolutionary",
+   "day": 5,
+   "headword": "revolutionary",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "혁신적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-out-of-order",
+   "day": 5,
+   "headword": "out of order",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "고장 난"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-glassware",
+   "day": 5,
+   "headword": "glassware",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "유리 제품"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-combination",
+   "day": 5,
+   "headword": "combination",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "조합, 결합(물)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-waitstaff",
+   "day": 5,
+   "headword": "waitstaff",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "종업원"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-replacement-part",
+   "day": 5,
+   "headword": "replacement part",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "교체 부품"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-stand-out",
+   "day": 5,
+   "headword": "stand out",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "눈에 띄다, 두드러지다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-take-the-measurement",
+   "day": 5,
+   "headword": "take the measurement",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "치수를 재다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-frustrating",
+   "day": 5,
+   "headword": "frustrating",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "불만스러운"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-vertical",
+   "day": 5,
+   "headword": "vertical",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "수직의, 세로의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-pale",
+   "day": 5,
+   "headword": "pale",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "옅은, 연한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-texture",
+   "day": 5,
+   "headword": "texture",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "질감"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-crack",
+   "day": 5,
+   "headword": "crack",
+   "senses": [
+    {
+     "pos": null,
+     "meaning": ". 금, 틈"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-solid-color",
+   "day": 5,
+   "headword": "solid color",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "단색"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-striped-pattern",
+   "day": 5,
+   "headword": "striped pattern",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "줄무늬"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-elegant",
+   "day": 5,
+   "headword": "elegant",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "우아한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-strap",
+   "day": 5,
+   "headword": "strap",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "끈"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-lightweight",
+   "day": 5,
+   "headword": "lightweight",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "가벼운, 경량의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-remodeling",
+   "day": 5,
+   "headword": "remodeling",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "주택 개조, 리모델링"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-inn",
+   "day": 5,
+   "headword": "inn",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "(작은) 호텔"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-wing",
+   "day": 5,
+   "headword": "wing",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "부속 건물, 별관"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-soundproof",
+   "day": 5,
+   "headword": "soundproof",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "방음 장치가 된"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-out-of-date",
+   "day": 5,
+   "headword": "out-of-date",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "구식의, 낡은"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-surface",
+   "day": 5,
+   "headword": "surface",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "표면"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-flooring",
+   "day": 5,
+   "headword": "flooring",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "바닥재"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-statue",
+   "day": 5,
+   "headword": "statue",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "조각상"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-ballroom",
+   "day": 5,
+   "headword": "ballroom",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "연회장"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-assorted",
+   "day": 5,
+   "headword": "assorted",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "갖은, 갖가지의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-desperate",
+   "day": 5,
+   "headword": "desperate",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "간절히 필요로 하는[원하는]"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-by-any-chance",
+   "day": 5,
+   "headword": "by any chance",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "혹시라도"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-in-installments",
+   "day": 5,
+   "headword": "in installments",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "할부로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-determine-the-cause",
+   "day": 5,
+   "headword": "determine the cause",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "원인을 알아내다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-template",
+   "day": 5,
+   "headword": "template",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "견본"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-counselor",
+   "day": 5,
+   "headword": "counselor",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "상담사"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-errand",
+   "day": 5,
+   "headword": "errand",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "심부름"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-just-so-you-know",
+   "day": 5,
+   "headword": "just so you know",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "참고로 말하자면"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-navigate",
+   "day": 5,
+   "headword": "navigate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "(인터넷, 웹사이트를) 돌아다니다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-centerpiece",
+   "day": 5,
+   "headword": "centerpiece",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "(테이블 등의) 중앙부 장식"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-glitch",
+   "day": 5,
+   "headword": "glitch",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "작은 문제[결함]"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-wardrobe",
+   "day": 5,
+   "headword": "wardrobe",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "의상, 옷장"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-lumber",
+   "day": 5,
+   "headword": "lumber",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "목재"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-upholstery",
+   "day": 5,
+   "headword": "upholstery",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "(소파 등의) 덮개[커버]"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-ergonomic",
+   "day": 5,
+   "headword": "ergonomic",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "인체 공학적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-furnace",
+   "day": 5,
+   "headword": "furnace",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "보일러"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-hinge",
+   "day": 5,
+   "headword": "hinge",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "경첩"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-eatery",
+   "day": 5,
+   "headword": "eatery",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "식당"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-diagnose",
+   "day": 5,
+   "headword": "diagnose",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "진단하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-geometric",
+   "day": 5,
+   "headword": "geometric",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "기하학적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-redo",
+   "day": 5,
+   "headword": "redo",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "다시 하다, 개조하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-housekeeping",
+   "day": 5,
+   "headword": "housekeeping",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "시설 관리과"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-janitor",
+   "day": 5,
+   "headword": "janitor",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "수위, 관리인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-park-ranger",
+   "day": 5,
+   "headword": "park ranger",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "공원 경비원"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-perimeter",
+   "day": 5,
+   "headword": "perimeter",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "주위[주변], 둘레"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d05-pavilion",
+   "day": 5,
+   "headword": "pavilion",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "가설 건물, 부속 건물"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-upset",
+   "day": 6,
+   "headword": "upset",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "언짢은"
+    },
+    {
+     "pos": "v.",
+     "meaning": "속상하게 하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-customer-service",
+   "day": 6,
+   "headword": "customer service",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "고객 서비스(부)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-half-off",
+   "day": 6,
+   "headword": "half-off",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "반값의, 50% 할인의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-appreciate",
+   "day": 6,
+   "headword": "appreciate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "감사하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-get-the-money-back",
+   "day": 6,
+   "headword": "get the money back",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "환불 받다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-relationship",
+   "day": 6,
+   "headword": "relationship",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "관계"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-shame",
+   "day": 6,
+   "headword": "shame",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "애석한[안타까운]일"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-value",
+   "day": 6,
+   "headword": "value",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "가치"
+    },
+    {
+     "pos": "v.",
+     "meaning": "소중하게 여기다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-pay-the-difference",
+   "day": 6,
+   "headword": "pay the difference",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "차액을 지불하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-carry",
+   "day": 6,
+   "headword": "carry",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "(가게에서 품목을)취급하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-space",
+   "day": 6,
+   "headword": "space",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "공간, 자리"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-kiosk",
+   "day": 6,
+   "headword": "kiosk",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "키오스크, 간이 매장"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-cookware",
+   "day": 6,
+   "headword": "cookware",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "취사도구"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-checkout-counter",
+   "day": 6,
+   "headword": "checkout counter",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "계산대"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-shape",
+   "day": 6,
+   "headword": "shape",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "모양, 형태"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-grocery",
+   "day": 6,
+   "headword": "grocery",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "식료품"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-cosmetics",
+   "day": 6,
+   "headword": "cosmetics",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "화장품"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-go-with",
+   "day": 6,
+   "headword": "go with",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "고르다, 선택하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-ground-floor",
+   "day": 6,
+   "headword": "ground floor",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "1층"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-leave-for-the-day",
+   "day": 6,
+   "headword": "leave for the day",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "퇴근하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-project",
+   "day": 6,
+   "headword": "project",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "프로젝트, 과제"
+    },
+    {
+     "pos": "v.",
+     "meaning": "예상하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-broken",
+   "day": 6,
+   "headword": "broken",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "고장 난"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-incorrect",
+   "day": 6,
+   "headword": "incorrect",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "부정확한, 맞지 않는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-printout",
+   "day": 6,
+   "headword": "printout",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "출력(물)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-calculate",
+   "day": 6,
+   "headword": "calculate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "계산하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-assignment",
+   "day": 6,
+   "headword": "assignment",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "임무, 배정"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-overtime-pay",
+   "day": 6,
+   "headword": "overtime pay",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "초과 근무 수당"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-tracking-number",
+   "day": 6,
+   "headword": "tracking number",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "배송 조회 번호"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-overbooked",
+   "day": 6,
+   "headword": "overbooked",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "초과 예약된"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-tricky",
+   "day": 6,
+   "headword": "tricky",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "까다로운"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-confusion",
+   "day": 6,
+   "headword": "confusion",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "혼란, 혼동"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-resolution",
+   "day": 6,
+   "headword": "resolution",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "해상도"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-loyalty-program",
+   "day": 6,
+   "headword": "loyalty program",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "고객 보상 제도"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-top-notch",
+   "day": 6,
+   "headword": "top-notch",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "최고의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-order-fulfillment",
+   "day": 6,
+   "headword": "order-fulfillment",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "주문 이행[처리]"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-interpreter",
+   "day": 6,
+   "headword": "interpreter",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "통역사"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-hectic",
+   "day": 6,
+   "headword": "hectic",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "정신없이 바쁜, 빡빡한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-blurry",
+   "day": 6,
+   "headword": "blurry",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "흐릿한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-distributor",
+   "day": 6,
+   "headword": "distributor",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "유통업자"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-detach",
+   "day": 6,
+   "headword": "detach",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "떼다, 분리시키다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-swipe",
+   "day": 6,
+   "headword": "swipe",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "(신용카드를) 긁다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-tailor",
+   "day": 6,
+   "headword": "tailor",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "재단사"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-a-bunch-of",
+   "day": 6,
+   "headword": "a bunch of",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "다수의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-fragrance",
+   "day": 6,
+   "headword": "fragrance",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "향수"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-swamped",
+   "day": 6,
+   "headword": "swamped",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "눈코 뜰 새 없이 바쁜"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-log",
+   "day": 6,
+   "headword": "log",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "일지[기록]"
+    },
+    {
+     "pos": "v.",
+     "meaning": "일지에 기록하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-extension",
+   "day": 6,
+   "headword": "extension",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "내선 번호"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-profit-margin",
+   "day": 6,
+   "headword": "profit margin",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "수익률"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-performance-evaluation",
+   "day": 6,
+   "headword": "performance evaluation",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "업무 평가"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-circulate",
+   "day": 6,
+   "headword": "circulate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "(회람을) 돌리다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-by-the-end-of-the-day",
+   "day": 6,
+   "headword": "by the end of the day",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "퇴근 전까지"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-lay-off",
+   "day": 6,
+   "headword": "lay off",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "해고하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-recurring",
+   "day": 6,
+   "headword": "recurring",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "되풀이하여 발생하는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d06-computation",
+   "day": 6,
+   "headword": "computation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "계산"
+    }
+   ],
+   "tier": "bonus"
+  }
+ ]
+}

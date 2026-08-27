@@ -1,0 +1,1842 @@
+{
+ "batch": 7,
+ "days": [
+  19,
+  20,
+  21
+ ],
+ "words": [
+  {
+   "id": "d19-r-sum",
+   "day": 19,
+   "headword": "résumé",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "이력서"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d19-bargain",
+   "day": 19,
+   "headword": "bargain",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "싼 물건, 좋은 조건의 거래"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-accessories",
+   "day": 19,
+   "headword": "accessories",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "부대용품, 부속물"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-outerwear",
+   "day": 19,
+   "headword": "outerwear",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "겉옷, 외투"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-handbook",
+   "day": 19,
+   "headword": "handbook",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "안내서, 참고서"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-difference",
+   "day": 19,
+   "headword": "difference",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "차이, 차액"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-apology",
+   "day": 19,
+   "headword": "apology",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "사과"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-interviewer",
+   "day": 19,
+   "headword": "interviewer",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "면접관"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-ownership",
+   "day": 19,
+   "headword": "ownership",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "소유(권)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-disease",
+   "day": 19,
+   "headword": "disease",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "질병"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-remedy",
+   "day": 19,
+   "headword": "remedy",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "치료(법)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-patient",
+   "day": 19,
+   "headword": "patient",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "환자"
+    },
+    {
+     "pos": "a.",
+     "meaning": "참을성 있는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-healthcare",
+   "day": 19,
+   "headword": "healthcare",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "건강 관리, 보건 의료"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-division",
+   "day": 19,
+   "headword": "division",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "부서"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-tutorial",
+   "day": 19,
+   "headword": "tutorial",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "교육 자료, 개별 지도"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-base",
+   "day": 19,
+   "headword": "base",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "기반, 토대"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-readership",
+   "day": 19,
+   "headword": "readership",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "독자(수), 독자층"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-kickoff",
+   "day": 19,
+   "headword": "kickoff",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "시작, 개시"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-discovery",
+   "day": 19,
+   "headword": "discovery",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "발견"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-context",
+   "day": 19,
+   "headword": "context",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "문맥, (사건 등의) 정황, 배경"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-finalist",
+   "day": 19,
+   "headword": "finalist",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "결승 진출자"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-currency",
+   "day": 19,
+   "headword": "currency",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "통화, 화폐"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-retirement",
+   "day": 19,
+   "headword": "retirement",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "퇴직, 은퇴"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-celebration",
+   "day": 19,
+   "headword": "celebration",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "축하"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-firm",
+   "day": 19,
+   "headword": "firm",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "회사"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-patron",
+   "day": 19,
+   "headword": "patron",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "고객, 이용자"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-earnings",
+   "day": 19,
+   "headword": "earnings",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "수익"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-tenure",
+   "day": 19,
+   "headword": "tenure",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "재임 기간, 보유 기간"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-queue",
+   "day": 19,
+   "headword": "queue",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "줄"
+    },
+    {
+     "pos": "v.",
+     "meaning": "줄 서게 하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-obstacle",
+   "day": 19,
+   "headword": "obstacle",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "장애물"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-associate",
+   "day": 19,
+   "headword": "associate",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "동료"
+    },
+    {
+     "pos": "v.",
+     "meaning": "제휴하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-surcharge",
+   "day": 19,
+   "headword": "surcharge",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "추가 요금"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-disturbance",
+   "day": 19,
+   "headword": "disturbance",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "방해, 혼란"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-dismissal",
+   "day": 19,
+   "headword": "dismissal",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "해고"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-conglomerate",
+   "day": 19,
+   "headword": "conglomerate",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "거대 복합 기업"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-logistics",
+   "day": 19,
+   "headword": "logistics",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "물류, 사업의 세부 계획"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-complication",
+   "day": 19,
+   "headword": "complication",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "복잡하게 만드는 요인, 합병증"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-prevention",
+   "day": 19,
+   "headword": "prevention",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "예방"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-veterinarian",
+   "day": 19,
+   "headword": "veterinarian",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "수의사"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-circumstance",
+   "day": 19,
+   "headword": "circumstance",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "상황, 정황"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-proceedings",
+   "day": 19,
+   "headword": "proceedings",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "회의록(=minutes)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-breakthrough",
+   "day": 19,
+   "headword": "breakthrough",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "획기적 발전, 돌파구"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-inception",
+   "day": 19,
+   "headword": "inception",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "시작, 개시, 발단"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-milestone",
+   "day": 19,
+   "headword": "milestone",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "획기적 사건"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-proliferation",
+   "day": 19,
+   "headword": "proliferation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "확산"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-compilation",
+   "day": 19,
+   "headword": "compilation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "편집, 편찬(물)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-perception",
+   "day": 19,
+   "headword": "perception",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "자각, 인식, 이해"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-circulation",
+   "day": 19,
+   "headword": "circulation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "유통, 판매 부수"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-upswing",
+   "day": 19,
+   "headword": "upswing",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "호전, 상승"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-hypothesis",
+   "day": 19,
+   "headword": "hypothesis",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "가설"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d19-legislation",
+   "day": 19,
+   "headword": "legislation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "법률, 법안"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-identical",
+   "day": 20,
+   "headword": "identical",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "똑같은, 동일한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-steep",
+   "day": 20,
+   "headword": "steep",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "가파른, 급격한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-vacant",
+   "day": 20,
+   "headword": "vacant",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "공석의, 비어 있는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-modest",
+   "day": 20,
+   "headword": "modest",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "겸손한, 적당한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-useful",
+   "day": 20,
+   "headword": "useful",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "유용한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-respected",
+   "day": 20,
+   "headword": "respected",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "훌륭한, 평판 있는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-lively",
+   "day": 20,
+   "headword": "lively",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "활기찬, 활발한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-vague",
+   "day": 20,
+   "headword": "vague",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "애매한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-harmful",
+   "day": 20,
+   "headword": "harmful",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "해로운, 유해한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-curious",
+   "day": 20,
+   "headword": "curious",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "호기심이 있는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-dissatisfied",
+   "day": 20,
+   "headword": "dissatisfied",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "불만스러운"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-external",
+   "day": 20,
+   "headword": "external",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "외부의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-wasteful",
+   "day": 20,
+   "headword": "wasteful",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "낭비의, 헛된"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-realistic",
+   "day": 20,
+   "headword": "realistic",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "현실적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-passionate",
+   "day": 20,
+   "headword": "passionate",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "열정적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-active",
+   "day": 20,
+   "headword": "active",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "활동적인, 적극적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-lengthy",
+   "day": 20,
+   "headword": "lengthy",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "장황한, 긴"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-sudden",
+   "day": 20,
+   "headword": "sudden",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "갑작스러운"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-doubtful",
+   "day": 20,
+   "headword": "doubtful",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "의심스러운, 확신이 없는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-fluent",
+   "day": 20,
+   "headword": "fluent",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "유창한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-international",
+   "day": 20,
+   "headword": "international",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "국제적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-entry-level",
+   "day": 20,
+   "headword": "entry-level",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "입문의, 초보자용의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-recreational",
+   "day": 20,
+   "headword": "recreational",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "오락의, 레크리에이션의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-patient",
+   "day": 20,
+   "headword": "patient",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "참을성 있는, 인내하는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-confused",
+   "day": 20,
+   "headword": "confused",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "당황한, 어리둥절한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-unclaimed",
+   "day": 20,
+   "headword": "unclaimed",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "주인이 나서지 않는"
+    },
+    {
+     "pos": null,
+     "meaning": "청구하는 사람이 없는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-bilateral",
+   "day": 20,
+   "headword": "bilateral",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "양자의, 쌍방의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-probationary",
+   "day": 20,
+   "headword": "probationary",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "견습 기간 중인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-elaborate",
+   "day": 20,
+   "headword": "elaborate",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "정교한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-eventful",
+   "day": 20,
+   "headword": "eventful",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "다사다난한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-intermittent",
+   "day": 20,
+   "headword": "intermittent",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "간헐적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-enlightening",
+   "day": 20,
+   "headword": "enlightening",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "계몽적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-tedious",
+   "day": 20,
+   "headword": "tedious",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "지루한, 싫증 나는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-thrifty",
+   "day": 20,
+   "headword": "thrifty",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "검소한, 절약하는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-coherent",
+   "day": 20,
+   "headword": "coherent",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "(이야기 등이) 일관성 있는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-philanthropic",
+   "day": 20,
+   "headword": "philanthropic",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "박애(주의)의, 인정 많은"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-robust",
+   "day": 20,
+   "headword": "robust",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "튼튼한, 강건한, 확고한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-reciprocal",
+   "day": 20,
+   "headword": "reciprocal",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "상호간의, 서로의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-conventional",
+   "day": 20,
+   "headword": "conventional",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "전통적인, 관습적인, 형식적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-noteworthy",
+   "day": 20,
+   "headword": "noteworthy",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "주목할 만한, 현저한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-argumentative",
+   "day": 20,
+   "headword": "argumentative",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "논쟁적인, 토론하기를 좋아하는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-tolerant",
+   "day": 20,
+   "headword": "tolerant",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "관대한, 인내하는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-utmost",
+   "day": 20,
+   "headword": "utmost",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "최대한의, 극도의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-harsh",
+   "day": 20,
+   "headword": "harsh",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "거친, 가혹한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-reversible",
+   "day": 20,
+   "headword": "reversible",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "뒤집을 수 있는"
+    },
+    {
+     "pos": null,
+     "meaning": "(↔ irreversible 되돌릴 수 없는)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-concentrated",
+   "day": 20,
+   "headword": "concentrated",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "집중적인, 농축된"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-fundamental",
+   "day": 20,
+   "headword": "fundamental",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "기본적인, 필수의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-incidental",
+   "day": 20,
+   "headword": "incidental",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "부차적인, 우발적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-gradual",
+   "day": 20,
+   "headword": "gradual",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "점진적인, 단계적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d20-firsthand",
+   "day": 20,
+   "headword": "firsthand",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "직접의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-favorite",
+   "day": 21,
+   "headword": "favorite",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "마음에 드는, 매우 좋아하는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-closed",
+   "day": 21,
+   "headword": "closed",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "닫힌, 폐쇄된"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-enjoyable",
+   "day": 21,
+   "headword": "enjoyable",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "즐거운, 유쾌한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-excited",
+   "day": 21,
+   "headword": "excited",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "들뜬, 흥분한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-short",
+   "day": 21,
+   "headword": "short",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "부족한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-enormous",
+   "day": 21,
+   "headword": "enormous",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "거대한, 엄청난"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-elementary",
+   "day": 21,
+   "headword": "elementary",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "초급의, 입문의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-valued",
+   "day": 21,
+   "headword": "valued",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "소중한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-gifted",
+   "day": 21,
+   "headword": "gifted",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "재능이 있는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-wooden",
+   "day": 21,
+   "headword": "wooden",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "나무의, 나무로 만든"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-modern",
+   "day": 21,
+   "headword": "modern",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "현대의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-different",
+   "day": 21,
+   "headword": "different",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "다른"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-stunning",
+   "day": 21,
+   "headword": "stunning",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "근사한, 놀랄 만큼 아름다운"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-daily",
+   "day": 21,
+   "headword": "daily",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "매일의, 일상적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-user-friendly",
+   "day": 21,
+   "headword": "user-friendly",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "다루기 쉬운"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-foreseeable",
+   "day": 21,
+   "headword": "foreseeable",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "미리 알 수 있는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-latter",
+   "day": 21,
+   "headword": "latter",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "후반의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-imaginary",
+   "day": 21,
+   "headword": "imaginary",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "상상의, 가상의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-imaginative",
+   "day": 21,
+   "headword": "imaginative",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "상상력이 풍부한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-further",
+   "day": 21,
+   "headword": "further",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "더 이상의, 추가의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-time-consuming",
+   "day": 21,
+   "headword": "time-consuming",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "많은 시간을 요하는, 시간이 걸리는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-obvious",
+   "day": 21,
+   "headword": "obvious",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "명백한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-corporate",
+   "day": 21,
+   "headword": "corporate",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "기업의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-dietary",
+   "day": 21,
+   "headword": "dietary",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "식사의, 식이 요법의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-neutral",
+   "day": 21,
+   "headword": "neutral",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "중립적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-imminent",
+   "day": 21,
+   "headword": "imminent",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "임박한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-mundane",
+   "day": 21,
+   "headword": "mundane",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "평범한, 일상적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-custodial",
+   "day": 21,
+   "headword": "custodial",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "보관의, 관리인의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-on-call",
+   "day": 21,
+   "headword": "on-call",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "대기 중인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-unbiased",
+   "day": 21,
+   "headword": "unbiased",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "편견 없는, 선입견 없는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-marginal",
+   "day": 21,
+   "headword": "marginal",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "주변적인, 중요하지 않은"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-definitive",
+   "day": 21,
+   "headword": "definitive",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "확정적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-shallow",
+   "day": 21,
+   "headword": "shallow",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "얕은, 피상적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-profound",
+   "day": 21,
+   "headword": "profound",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "깊은, 심오한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-solitary",
+   "day": 21,
+   "headword": "solitary",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "혼자의, 유일한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-exhaustive",
+   "day": 21,
+   "headword": "exhaustive",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "철저한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-sheer",
+   "day": 21,
+   "headword": "sheer",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "순전한, 완전한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-confirmative",
+   "day": 21,
+   "headword": "confirmative",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "확증적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-clerical",
+   "day": 21,
+   "headword": "clerical",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "사무직의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-pending",
+   "day": 21,
+   "headword": "pending",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "임박한, 미결인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-contemporary",
+   "day": 21,
+   "headword": "contemporary",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "현대의, 동시대에 일어나는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-transparent",
+   "day": 21,
+   "headword": "transparent",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "투명한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-nominal",
+   "day": 21,
+   "headword": "nominal",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "명목상의, 유명무실한, 아주 적은"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-rugged",
+   "day": 21,
+   "headword": "rugged",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "울퉁불퉁한, 튼튼한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-indigenous",
+   "day": 21,
+   "headword": "indigenous",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "토착의, 고유한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-susceptible",
+   "day": 21,
+   "headword": "susceptible",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "영향 받기 쉬운, 민감한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-high-profile",
+   "day": 21,
+   "headword": "high-profile",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "세간의 이목을 끄는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-succinct",
+   "day": 21,
+   "headword": "succinct",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "간결한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-perpetual",
+   "day": 21,
+   "headword": "perpetual",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "끊임없는, 영원한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d21-premature",
+   "day": 21,
+   "headword": "premature",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "시기상조의, 너무 이른"
+    }
+   ],
+   "tier": "bonus"
+  }
+ ]
+}

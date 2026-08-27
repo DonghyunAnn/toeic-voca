@@ -1,0 +1,1982 @@
+{
+ "batch": 3,
+ "days": [
+  7,
+  8,
+  9
+ ],
+ "words": [
+  {
+   "id": "d07-yearly",
+   "day": 7,
+   "headword": "yearly",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "해마다[매년]있는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-debate",
+   "day": 7,
+   "headword": "debate",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "토론"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-huge",
+   "day": 7,
+   "headword": "huge",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "엄청난, 거대한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-company-outing",
+   "day": 7,
+   "headword": "company outing",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "회사 야유회"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-panelist",
+   "day": 7,
+   "headword": "panelist",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "토론자"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-forum",
+   "day": 7,
+   "headword": "forum",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "포럼, 토론회"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-audiovisual-equipment",
+   "day": 7,
+   "headword": "audiovisual equipment",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "시청각 장비"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-coordinator",
+   "day": 7,
+   "headword": "coordinator",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "책임자, 코디네이터"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-fill-up-quickly",
+   "day": 7,
+   "headword": "fill up quickly",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "자리가 빨리 차다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-carpool",
+   "day": 7,
+   "headword": "carpool",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "카풀[승용차 함께 타기]을 하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-parking-pass",
+   "day": 7,
+   "headword": "parking pass",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "주차권"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-donor",
+   "day": 7,
+   "headword": "donor",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "기부자"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-mentor",
+   "day": 7,
+   "headword": "mentor",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "멘토"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-flexible-working-hours",
+   "day": 7,
+   "headword": "flexible working hours",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "탄력 근무제"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-foresee",
+   "day": 7,
+   "headword": "foresee",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "예견하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-waive-a-fee",
+   "day": 7,
+   "headword": "waive a fee",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "수수료를 면제하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-cancellation-fee",
+   "day": 7,
+   "headword": "cancellation fee",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "취소 수수료"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-traditional",
+   "day": 7,
+   "headword": "traditional",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "전통적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-hire",
+   "day": 7,
+   "headword": "hire",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "신입 사원"
+    },
+    {
+     "pos": "v.",
+     "meaning": "고용하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-introduce",
+   "day": 7,
+   "headword": "introduce",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "소개하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-personality",
+   "day": 7,
+   "headword": "personality",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "성격"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-leadership",
+   "day": 7,
+   "headword": "leadership",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "리더십, 지도력"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-devoted",
+   "day": 7,
+   "headword": "devoted",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "헌신[전념]하는, ~을 다루는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-human-resources-department",
+   "day": 7,
+   "headword": "human resources department",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "인사부"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-publicity-department",
+   "day": 7,
+   "headword": "publicity department",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "홍보부"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-accounting-department",
+   "day": 7,
+   "headword": "accounting department",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "회계부"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-payroll-department",
+   "day": 7,
+   "headword": "payroll department",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "경리부"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-turnout",
+   "day": 7,
+   "headword": "turnout",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "참석자 수"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-semiannual",
+   "day": 7,
+   "headword": "semiannual",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "반년마다의, 한 해 두번의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-be-rained-out",
+   "day": 7,
+   "headword": "be rained out",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "비가 와서 중지되다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-tuition",
+   "day": 7,
+   "headword": "tuition",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "수업료"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-sponsor",
+   "day": 7,
+   "headword": "sponsor",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "후원자"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-socialize-with",
+   "day": 7,
+   "headword": "socialize with",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "(사람들과) 어울리다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-publicist",
+   "day": 7,
+   "headword": "publicist",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "홍보 담당자"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-around-the-clock",
+   "day": 7,
+   "headword": "around the clock",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "24시간 내내"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-reconvene",
+   "day": 7,
+   "headword": "reconvene",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "다시 모이다[소집되다]"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-wire",
+   "day": 7,
+   "headword": "wire",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "송금하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-philanthropy",
+   "day": 7,
+   "headword": "philanthropy",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "자선 활동"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-secure-funds-grants",
+   "day": 7,
+   "headword": "secure funds[grants]",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "자금[보조금]을 확보하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-protocol",
+   "day": 7,
+   "headword": "protocol",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "규약"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-cause",
+   "day": 7,
+   "headword": "cause",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "대의명분"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-convince",
+   "day": 7,
+   "headword": "convince",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "납득시키다, 설득하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-transferable",
+   "day": 7,
+   "headword": "transferable",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "양도 가능한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-allowance",
+   "day": 7,
+   "headword": "allowance",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "수당"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-bookkeeping",
+   "day": 7,
+   "headword": "bookkeeping",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "(회계) 장부 기장"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-stellar",
+   "day": 7,
+   "headword": "stellar",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "뛰어난"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-seasoned",
+   "day": 7,
+   "headword": "seasoned",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "경험 많은, 노련한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-graciously",
+   "day": 7,
+   "headword": "graciously",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "고맙게도"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-capability",
+   "day": 7,
+   "headword": "capability",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "능력, 역량"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-tribute",
+   "day": 7,
+   "headword": "tribute",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "감사[찬사]의 표시"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-recruiter",
+   "day": 7,
+   "headword": "recruiter",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "채용 담당자"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-cv",
+   "day": 7,
+   "headword": "CV",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "이력서"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-pool",
+   "day": 7,
+   "headword": "pool",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "이용 가능 인력"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d07-chief-executive-officer",
+   "day": 7,
+   "headword": "chief executive officer",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "CEO, 최고 경영자"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-lack",
+   "day": 8,
+   "headword": "lack",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "부족"
+    },
+    {
+     "pos": "v.",
+     "meaning": "부족하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-usage",
+   "day": 8,
+   "headword": "usage",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "사용(량)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-pass-on",
+   "day": 8,
+   "headword": "pass on",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "전달하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-power-outage",
+   "day": 8,
+   "headword": "power outage",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "정전"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-shut-down",
+   "day": 8,
+   "headword": "shut down",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "(운행 등을) 정지시키다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-completion",
+   "day": 8,
+   "headword": "completion",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "완료, 완성"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-remotely",
+   "day": 8,
+   "headword": "remotely",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "원격으로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-gathering",
+   "day": 8,
+   "headword": "gathering",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "모임"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-in-the-meantime",
+   "day": 8,
+   "headword": "in the meantime",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "그동안에"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-entire",
+   "day": 8,
+   "headword": "entire",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "전체의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-distract",
+   "day": 8,
+   "headword": "distract",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "산만하게 하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-publicize",
+   "day": 8,
+   "headword": "publicize",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "알리다, 광고하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-shoot",
+   "day": 8,
+   "headword": "shoot",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "촬영"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-rotate",
+   "day": 8,
+   "headword": "rotate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "회전하다, 교대로 하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-double-check",
+   "day": 8,
+   "headword": "double-check",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "재확인하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-introductory-class",
+   "day": 8,
+   "headword": "introductory class",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "입문반"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-at-all-times",
+   "day": 8,
+   "headword": "at all times",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "항상"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-guidance",
+   "day": 8,
+   "headword": "guidance",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "지침[안내]"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-teleconference",
+   "day": 8,
+   "headword": "teleconference",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "(원격) 화상 회의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-fastest-growing",
+   "day": 8,
+   "headword": "fastest-growing",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "급부상하는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-input",
+   "day": 8,
+   "headword": "input",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "의견"
+    },
+    {
+     "pos": "v.",
+     "meaning": "입력하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-output",
+   "day": 8,
+   "headword": "output",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "생산량"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-rewarding",
+   "day": 8,
+   "headword": "rewarding",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "보람 있는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-aspect",
+   "day": 8,
+   "headword": "aspect",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "측면, 양상"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-foundation",
+   "day": 8,
+   "headword": "foundation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "재단, 협회"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-fill-in-for",
+   "day": 8,
+   "headword": "fill in for",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~을 대신하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-wrap-up",
+   "day": 8,
+   "headword": "wrap up",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "(회의 등을) 마무리 짓다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-unveil",
+   "day": 8,
+   "headword": "unveil",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "(새로운 상품 등을) 발표하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-deter",
+   "day": 8,
+   "headword": "deter",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "단념시키다, 그만두게 하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-in-effect",
+   "day": 8,
+   "headword": "in effect",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "시행 중인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-hassle",
+   "day": 8,
+   "headword": "hassle",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "성가신 일[상황]"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-heads-up",
+   "day": 8,
+   "headword": "heads-up",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "알림, 경고"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-disposal",
+   "day": 8,
+   "headword": "disposal",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "처리, 처분"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-patience",
+   "day": 8,
+   "headword": "patience",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "인내심"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-reissue",
+   "day": 8,
+   "headword": "reissue",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "재발급하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-apprenticeship",
+   "day": 8,
+   "headword": "apprenticeship",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "수습 기간, 수습직"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-disruptive",
+   "day": 8,
+   "headword": "disruptive",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "지장을 주는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-editor-in-chief",
+   "day": 8,
+   "headword": "editor in chief",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "편집장"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-discard",
+   "day": 8,
+   "headword": "discard",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "버리다, 폐기하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-delectable",
+   "day": 8,
+   "headword": "delectable",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "아주 맛있는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-baggage-carousel",
+   "day": 8,
+   "headword": "baggage carousel",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "(공항의) 수하물 컨베이어 벨트"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-nature-preserve",
+   "day": 8,
+   "headword": "nature preserve",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "자연 보호 구역"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-conductor",
+   "day": 8,
+   "headword": "conductor",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "안내원, 차장"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-as-a-courtesy",
+   "day": 8,
+   "headword": "as a courtesy",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "예의상, 호의로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-to-that-end",
+   "day": 8,
+   "headword": "to that end",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "그러한 목적을 위해"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-identify",
+   "day": 8,
+   "headword": "identify",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "확인하다[알아보다]"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-breakdown",
+   "day": 8,
+   "headword": "breakdown",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "명세(서)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-pilot",
+   "day": 8,
+   "headword": "pilot",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "시험 사용하다"
+    },
+    {
+     "pos": "n.",
+     "meaning": "시험 방송"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-crucial",
+   "day": 8,
+   "headword": "crucial",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "중대한, 결정적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-consistent",
+   "day": 8,
+   "headword": "consistent",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "일관된, 변함없는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-time-slot",
+   "day": 8,
+   "headword": "time slot",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "시간대"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-focus-group",
+   "day": 8,
+   "headword": "focus group",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "표적 집단"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-clientele",
+   "day": 8,
+   "headword": "clientele",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "고객층"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d08-take-into-consideration",
+   "day": 8,
+   "headword": "take into consideration",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~을 고려하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-interested",
+   "day": 9,
+   "headword": "interested",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "관심 있는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-ad-advertisement",
+   "day": 9,
+   "headword": "ad(=advertisement)",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "광고"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-relative",
+   "day": 9,
+   "headword": "relative",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "친척, 가족"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-no-longer",
+   "day": 9,
+   "headword": "no longer",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "더 이상 ~이 아닌"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-reach",
+   "day": 9,
+   "headword": "reach",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "연락하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-call-back",
+   "day": 9,
+   "headword": "call back",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "다시 전화하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-seem-like",
+   "day": 9,
+   "headword": "seem like",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~인 것 같다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-anyway",
+   "day": 9,
+   "headword": "anyway",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "그건 그렇고"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-specify",
+   "day": 9,
+   "headword": "specify",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "명시하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-handy",
+   "day": 9,
+   "headword": "handy",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "유용한, 편리한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-handheld",
+   "day": 9,
+   "headword": "handheld",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "손에 들고 쓰는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-organic",
+   "day": 9,
+   "headword": "organic",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "유기농의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-world-renowned",
+   "day": 9,
+   "headword": "world-renowned",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "세계적으로 유명한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-adjustable",
+   "day": 9,
+   "headword": "adjustable",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "조절[조정] 가능한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-invent",
+   "day": 9,
+   "headword": "invent",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "발명하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-scratch",
+   "day": 9,
+   "headword": "scratch",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "긁다"
+    },
+    {
+     "pos": "n.",
+     "meaning": "긁힌 자국"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-easy-to-assemble",
+   "day": 9,
+   "headword": "easy to assemble",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "조립하기 쉬운"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-hourly",
+   "day": 9,
+   "headword": "hourly",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "1시간마다의, 시간당"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-rainstorm",
+   "day": 9,
+   "headword": "rainstorm",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "폭풍우"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-debut",
+   "day": 9,
+   "headword": "debut",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "데뷔"
+    },
+    {
+     "pos": "v.",
+     "meaning": "데뷔하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-tournament",
+   "day": 9,
+   "headword": "tournament",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "토너먼트, 시합"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-massive",
+   "day": 9,
+   "headword": "massive",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "거대한, 엄청나게 큰"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-record-high",
+   "day": 9,
+   "headword": "record high",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "사상 최고의"
+    },
+    {
+     "pos": "n.",
+     "meaning": "최고 기록"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-partner-with",
+   "day": 9,
+   "headword": "partner with",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "~와 협력하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-traffic-flow",
+   "day": 9,
+   "headword": "traffic flow",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "교통 흐름"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-election",
+   "day": 9,
+   "headword": "election",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "선거"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-commercial-break",
+   "day": 9,
+   "headword": "commercial break",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "광고 시간"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-relief",
+   "day": 9,
+   "headword": "relief",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "안도, 안심"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-acquaintance",
+   "day": 9,
+   "headword": "acquaintance",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "지인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-relay-a-message",
+   "day": 9,
+   "headword": "relay a message",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "메시지를 전달하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-transfer-a-call",
+   "day": 9,
+   "headword": "transfer a call",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "전화를 연결해 주다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-run-into-a-problem",
+   "day": 9,
+   "headword": "run into a problem",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "문제가 생기다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-stumble-on",
+   "day": 9,
+   "headword": "stumble on",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "우연히 발견하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-word-of-mouth",
+   "day": 9,
+   "headword": "word-of-mouth",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "구두의, 입소문의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-stay-on-the-line",
+   "day": 9,
+   "headword": "stay on the line",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "수화기를 들고 기다리다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-counteroffer",
+   "day": 9,
+   "headword": "counteroffer",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "대안"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-biodegradable",
+   "day": 9,
+   "headword": "biodegradable",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "자연 분해되는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-patented",
+   "day": 9,
+   "headword": "patented",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "특허 받은"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-water-resistant",
+   "day": 9,
+   "headword": "water-resistant",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "방수의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-top-of-the-line",
+   "day": 9,
+   "headword": "top-of-the-line",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "최고급의, 최신식의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-solar-panel",
+   "day": 9,
+   "headword": "solar panel",
+   "senses": [
+    {
+     "pos": "phr.",
+     "meaning": "태양 전지판"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-one-of-a-kind",
+   "day": 9,
+   "headword": "one-of-a-kind",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "특별한, 둘도 없는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-footwear",
+   "day": 9,
+   "headword": "footwear",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "신발"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-discomfort",
+   "day": 9,
+   "headword": "discomfort",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "불편"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-durability",
+   "day": 9,
+   "headword": "durability",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "내구성"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-simulate",
+   "day": 9,
+   "headword": "simulate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "모방하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-beautify",
+   "day": 9,
+   "headword": "beautify",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "아름답게 하다, 꾸미다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-backup",
+   "day": 9,
+   "headword": "backup",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "(차량의) 정체, 지원"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-emerging",
+   "day": 9,
+   "headword": "emerging",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "신흥의, 부상하는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-untimely",
+   "day": 9,
+   "headword": "untimely",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "때 이른, 시기상조의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-federal",
+   "day": 9,
+   "headword": "federal",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "연방의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-controversy",
+   "day": 9,
+   "headword": "controversy",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "논란"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-autobiography",
+   "day": 9,
+   "headword": "autobiography",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "자서전"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d09-proprietor",
+   "day": 9,
+   "headword": "proprietor",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "소유주"
+    }
+   ],
+   "tier": "bonus"
+  }
+ ]
+}

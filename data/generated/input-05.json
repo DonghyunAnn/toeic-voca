@@ -1,0 +1,1838 @@
+{
+ "batch": 5,
+ "days": [
+  13,
+  14,
+  15
+ ],
+ "words": [
+  {
+   "id": "d13-tie",
+   "day": 13,
+   "headword": "tie",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "묶다, 매다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-elect",
+   "day": 13,
+   "headword": "elect",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "선출하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-weaken",
+   "day": 13,
+   "headword": "weaken",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "약화시키다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-refill",
+   "day": 13,
+   "headword": "refill",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "다시 채우다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-make-clear",
+   "day": 13,
+   "headword": "make clear",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "명료하게 하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-vacate",
+   "day": 13,
+   "headword": "vacate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "비우다, 떠나다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-show-up",
+   "day": 13,
+   "headword": "show up",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "나타나다, 돋보이게 하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-fail-to",
+   "day": 13,
+   "headword": "fail to부정사",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "~을 못하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-uncover",
+   "day": 13,
+   "headword": "uncover",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "털어놓다, 폭로하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-try-out",
+   "day": 13,
+   "headword": "try out",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "시험적으로 사용해 보다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-warn",
+   "day": 13,
+   "headword": "warn",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "경고하다, 주의 주다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-finish",
+   "day": 13,
+   "headword": "finish",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "끝내다, 완성하다, 마무리하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-do-one-x27-s-best",
+   "day": 13,
+   "headword": "do one&#x27;s best",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "최선을 다하다"
+    }
+   ],
+   "tier": null
+  },
+  {
+   "id": "d13-obey",
+   "day": 13,
+   "headword": "obey",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "복종하다, 따르다, 준수하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-have-nothing-to-do-with",
+   "day": 13,
+   "headword": "have nothing to do with",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "~와 관련이 없다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-have-something-to-do-with",
+   "day": 13,
+   "headword": "have something to do with",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "~와 관련이 있다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-translate",
+   "day": 13,
+   "headword": "translate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "번역하다, 알기 쉽게 설명하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-take-charge-of",
+   "day": 13,
+   "headword": "take charge of",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "~을 담당하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-enable",
+   "day": 13,
+   "headword": "enable",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "가능[용이]하게 하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-hinder",
+   "day": 13,
+   "headword": "hinder",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "방해하다, 가로막다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-compose",
+   "day": 13,
+   "headword": "compose",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "작곡하다, 작성하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-look-into",
+   "day": 13,
+   "headword": "look into",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "~을 조사하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-underestimate",
+   "day": 13,
+   "headword": "underestimate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "과소평가하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-sue",
+   "day": 13,
+   "headword": "sue",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "고소하다, 소송을 제기하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-service",
+   "day": 13,
+   "headword": "service",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "수리하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-outpace",
+   "day": 13,
+   "headword": "outpace",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "앞지르다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-conform-to",
+   "day": 13,
+   "headword": "conform to",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "~을 따르다, 충족시키다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-meditate",
+   "day": 13,
+   "headword": "meditate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "꾀하다, 계획하다, 묵상하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-prop",
+   "day": 13,
+   "headword": "prop",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "지지하다, 기대다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-exercise-one-x27-s-right",
+   "day": 13,
+   "headword": "exercise one&#x27;s right",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "권리를 행사하다"
+    }
+   ],
+   "tier": null
+  },
+  {
+   "id": "d13-break-ground",
+   "day": 13,
+   "headword": "break ground",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "(건물 따위의) 공사를 시작하다"
+    },
+    {
+     "pos": null,
+     "meaning": "착공[가공]하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-threaten",
+   "day": 13,
+   "headword": "threaten",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "위협하다, (나쁜 일이) 닥칠 듯하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-restructure",
+   "day": 13,
+   "headword": "restructure",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "재구성하다, 구조조정을 하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-consolidate",
+   "day": 13,
+   "headword": "consolidate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "통합하다, 강화하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-dwell",
+   "day": 13,
+   "headword": "dwell",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "살다, 거주하다(=inhabit, live)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-succumb-to",
+   "day": 13,
+   "headword": "succumb to",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "~에 굴복하다, 복종하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-exemplify",
+   "day": 13,
+   "headword": "exemplify",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "예증하다, 좋은 예가 되다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-captivate",
+   "day": 13,
+   "headword": "captivate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "사로잡다, 매혹하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-fabricate",
+   "day": 13,
+   "headword": "fabricate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "날조하다, 조작하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-impair",
+   "day": 13,
+   "headword": "impair",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "손상시키다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-come-go-into-effect",
+   "day": 13,
+   "headword": "come[go] into effect",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "효력이 발생되다, 실시되다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-improvise",
+   "day": 13,
+   "headword": "improvise",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "즉석에서 하다, 즉흥적으로 하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-strew",
+   "day": 13,
+   "headword": "strew",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "뿌리다, 흩뿌리다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-propel",
+   "day": 13,
+   "headword": "propel",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "나아가게 하다, 추진하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-steer",
+   "day": 13,
+   "headword": "steer",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "조종[운전]하다"
+    },
+    {
+     "pos": null,
+     "meaning": "(일정 방향으로) 나아가게 하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-set-forth",
+   "day": 13,
+   "headword": "set forth",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "출발하다, 제시하다, 설명하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-demolish",
+   "day": 13,
+   "headword": "demolish",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "파괴하다, 허물다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-put-on-hold",
+   "day": 13,
+   "headword": "put on hold",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "보류하다, 연기하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-envision",
+   "day": 13,
+   "headword": "envision",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "구상하다, 마음속에 그리다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d13-lag",
+   "day": 13,
+   "headword": "lag",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "처지다, 뒤떨어지다, 낙후되다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-undersell",
+   "day": 14,
+   "headword": "undersell",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "~보다 싸게 팔다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-outsell",
+   "day": 14,
+   "headword": "outsell",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "~보다 많이[빨리, 비싸게] 팔다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-put-together",
+   "day": 14,
+   "headword": "put together",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "(모아서) 만들다, 작성하다, 조립하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-flash",
+   "day": 14,
+   "headword": "flash",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "깜빡이다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-rebate",
+   "day": 14,
+   "headword": "rebate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "환불해 주다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-pay-off",
+   "day": 14,
+   "headword": "pay off",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "성과가 나다, (빚을) 전액 갚다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-disagree",
+   "day": 14,
+   "headword": "disagree",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "의견을 달리하다, 일치하지 않다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-single-out",
+   "day": 14,
+   "headword": "single out",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "선발하다, 발탁하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-vaccinate",
+   "day": 14,
+   "headword": "vaccinate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "예방 접종하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-treat",
+   "day": 14,
+   "headword": "treat",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "치료하다, 처치하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-support",
+   "day": 14,
+   "headword": "support",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "지지하다, 지탱하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-illustrate",
+   "day": 14,
+   "headword": "illustrate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "설명하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-sign-up",
+   "day": 14,
+   "headword": "sign up",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "등록하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-defeat",
+   "day": 14,
+   "headword": "defeat",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "패배시키다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-stream",
+   "day": 14,
+   "headword": "stream",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "연속적으로 전송하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-bury",
+   "day": 14,
+   "headword": "bury",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "매장하다, 묻다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-recite",
+   "day": 14,
+   "headword": "recite",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "낭송하다, 암송하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-turn-around",
+   "day": 14,
+   "headword": "turn around",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "호전되다, 호전시키다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-downsize",
+   "day": 14,
+   "headword": "downsize",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "줄이다, 구조조정하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-depict",
+   "day": 14,
+   "headword": "depict",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "묘사하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-turn-to",
+   "day": 14,
+   "headword": "turn to",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "~에게 의지하다, ~을 참조하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-devote",
+   "day": 14,
+   "headword": "devote",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "바치다, 헌신하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-infect",
+   "day": 14,
+   "headword": "infect",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "감염시키다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-telecommute",
+   "day": 14,
+   "headword": "telecommute",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "재택 근무하다(=work from home)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-transform",
+   "day": 14,
+   "headword": "transform",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "변형시키다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-dispatch",
+   "day": 14,
+   "headword": "dispatch",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "발송하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-overestimate",
+   "day": 14,
+   "headword": "overestimate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "과대 평가하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-commend",
+   "day": 14,
+   "headword": "commend",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "칭찬하다, 기리다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-compensate",
+   "day": 14,
+   "headword": "compensate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "보상하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-undercharge",
+   "day": 14,
+   "headword": "undercharge",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "과소 청구하다, (요금 등을) 덜 받다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-confine",
+   "day": 14,
+   "headword": "confine",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "가두다, 한정시키다, 제한하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-constitute",
+   "day": 14,
+   "headword": "constitute",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "구성하다, ~와 다름없다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-allot",
+   "day": 14,
+   "headword": "allot",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "할당하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-inaugurate",
+   "day": 14,
+   "headword": "inaugurate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "개시하다, 취임시키다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-incorporate",
+   "day": 14,
+   "headword": "incorporate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "통합하다, 포함하다, 편입하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-embark-on-upon",
+   "day": 14,
+   "headword": "embark on[upon]",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "(사업 등에) 착수하다, 시작하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-induce",
+   "day": 14,
+   "headword": "induce",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "유발하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-cease",
+   "day": 14,
+   "headword": "cease",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "그치다, 그만두다, 중지하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-refurbish",
+   "day": 14,
+   "headword": "refurbish",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "재단장하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-disperse",
+   "day": 14,
+   "headword": "disperse",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "흩어지다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-stipulate",
+   "day": 14,
+   "headword": "stipulate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "명시하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-rectify",
+   "day": 14,
+   "headword": "rectify",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "바로잡다, 해결하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-rave",
+   "day": 14,
+   "headword": "rave",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "격찬하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-empower",
+   "day": 14,
+   "headword": "empower",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "권한을 부여하다, 권력을 위임하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-intrigue",
+   "day": 14,
+   "headword": "intrigue",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "흥미를 돋우다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-allure",
+   "day": 14,
+   "headword": "allure",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "꾀다, 유혹하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-characterize",
+   "day": 14,
+   "headword": "characterize",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "기술[묘사]하다, 특징짓다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-preclude",
+   "day": 14,
+   "headword": "preclude",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "(미리) 방지하다, 가로막다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-attest",
+   "day": 14,
+   "headword": "attest",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "증명하다, 입증하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d14-liquidate",
+   "day": 14,
+   "headword": "liquidate",
+   "senses": [
+    {
+     "pos": "v.",
+     "meaning": "청산하다, 정리하다, 현금화하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-aid",
+   "day": 15,
+   "headword": "aid",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "지원, 원조"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-disapproval",
+   "day": 15,
+   "headword": "disapproval",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "반대"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-graduation",
+   "day": 15,
+   "headword": "graduation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "졸업"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-auction",
+   "day": 15,
+   "headword": "auction",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "경매"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-checkup",
+   "day": 15,
+   "headword": "checkup",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "점검, 검사"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-guidelines",
+   "day": 15,
+   "headword": "guidelines",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "지침"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-behavior",
+   "day": 15,
+   "headword": "behavior",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "행위, 행동"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-contents",
+   "day": 15,
+   "headword": "contents",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "내용물"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-society",
+   "day": 15,
+   "headword": "society",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "사회, 협회"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-invention",
+   "day": 15,
+   "headword": "invention",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "발명(품)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-government",
+   "day": 15,
+   "headword": "government",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "정부"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-principle",
+   "day": 15,
+   "headword": "principle",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "원리, 원칙, 주의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-factor",
+   "day": 15,
+   "headword": "factor",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "요소, 요인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-loss",
+   "day": 15,
+   "headword": "loss",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "손실(물), 손해"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-listing",
+   "day": 15,
+   "headword": "listing",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "표, 목록, 명단"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-decade",
+   "day": 15,
+   "headword": "decade",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "10년"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-profession",
+   "day": 15,
+   "headword": "profession",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "직업"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-abuse",
+   "day": 15,
+   "headword": "abuse",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "남용"
+    },
+    {
+     "pos": "v.",
+     "meaning": "남용하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-lawsuit",
+   "day": 15,
+   "headword": "lawsuit",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "소송, 고소"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-journalist",
+   "day": 15,
+   "headword": "journalist",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "기자, 언론인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-pharmacy",
+   "day": 15,
+   "headword": "pharmacy",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "약국"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-mission",
+   "day": 15,
+   "headword": "mission",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "임무, 사명"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-public-holiday",
+   "day": 15,
+   "headword": "public holiday",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "공휴일"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-administrator",
+   "day": 15,
+   "headword": "administrator",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "행정관, 사무관"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-outlook",
+   "day": 15,
+   "headword": "outlook",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "전망, 견해"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-diploma",
+   "day": 15,
+   "headword": "diploma",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "졸업장, 학위 증서"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-prerequisite",
+   "day": 15,
+   "headword": "prerequisite",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "필수 조건, 전제 조건"
+    },
+    {
+     "pos": "a.",
+     "meaning": "필수적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-aptitude",
+   "day": 15,
+   "headword": "aptitude",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "작성, 소질"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-oversight",
+   "day": 15,
+   "headword": "oversight",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "실수, 부주의, 간과"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-distraction",
+   "day": 15,
+   "headword": "distraction",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "마음을 산만하게 하는 것, 방해물"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-command",
+   "day": 15,
+   "headword": "command",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "명령, 지휘, (언어의) 구사 능력"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-drawback",
+   "day": 15,
+   "headword": "drawback",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "결점, 장애"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-probationer",
+   "day": 15,
+   "headword": "probationer",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "견습생, 수습 직원"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-strife",
+   "day": 15,
+   "headword": "strife",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "갈등, 불화"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-infringement",
+   "day": 15,
+   "headword": "infringement",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "침해"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-gross-income",
+   "day": 15,
+   "headword": "gross income",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "총소득, 총수입"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-deviation",
+   "day": 15,
+   "headword": "deviation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "벗어남, 탈선"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-increment",
+   "day": 15,
+   "headword": "increment",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "증가, 증대"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-replica",
+   "day": 15,
+   "headword": "replica",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "복제품"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-proponent",
+   "day": 15,
+   "headword": "proponent",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "지지자, 옹호자"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-declaration",
+   "day": 15,
+   "headword": "declaration",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "선언, 발표"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-depiction",
+   "day": 15,
+   "headword": "depiction",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "묘사, 서술"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-ballot",
+   "day": 15,
+   "headword": "ballot",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "투표 용지, 투표권, 비밀 투표"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-residue",
+   "day": 15,
+   "headword": "residue",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "나머지, 잔류물"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-bond",
+   "day": 15,
+   "headword": "bond",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "유대, 채권"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-forerunner",
+   "day": 15,
+   "headword": "forerunner",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "전조, 선구자"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-accordance",
+   "day": 15,
+   "headword": "accordance",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "일치, 조화"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-ridership",
+   "day": 15,
+   "headword": "ridership",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "(대중교통) 이용자(수), 승차율"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-discrepancy",
+   "day": 15,
+   "headword": "discrepancy",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "불일치"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-aspiration",
+   "day": 15,
+   "headword": "aspiration",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "열망, 포부"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d15-labor-dispute",
+   "day": 15,
+   "headword": "labor dispute",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "노동 쟁의"
+    }
+   ],
+   "tier": "bonus"
+  }
+ ]
+}

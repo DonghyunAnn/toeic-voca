@@ -1,0 +1,1886 @@
+{
+ "batch": 8,
+ "days": [
+  22,
+  23,
+  24
+ ],
+ "words": [
+  {
+   "id": "d22-updated",
+   "day": 22,
+   "headword": "updated",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "최신의, 갱신된"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d22-upscale",
+   "day": 22,
+   "headword": "upscale",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "부유층의, 평균 이상의"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d22-major",
+   "day": 22,
+   "headword": "major",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "주요한, 중대한"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d22-fortunate",
+   "day": 22,
+   "headword": "fortunate",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "운이 좋은"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-intermediate",
+   "day": 22,
+   "headword": "intermediate",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "중급의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-plentiful",
+   "day": 22,
+   "headword": "plentiful",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "풍부한, 충분한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-conclusive",
+   "day": 22,
+   "headword": "conclusive",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "결정적인, 확실한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-surrounding",
+   "day": 22,
+   "headword": "surrounding",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "주위의, 주변의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-several",
+   "day": 22,
+   "headword": "several",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "몇몇의, 여러 가지의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-vivid",
+   "day": 22,
+   "headword": "vivid",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "뚜렷한, 선명한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-welcome",
+   "day": 22,
+   "headword": "welcome",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "환영 받는, 반가운"
+    },
+    {
+     "pos": null,
+     "meaning": "마음대로 할 수 있는(to)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-restless",
+   "day": 22,
+   "headword": "restless",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "불안정한, 멈추지 않는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-unforeseen",
+   "day": 22,
+   "headword": "unforeseen",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "예측하지 못한, 뜻밖의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-undeniable",
+   "day": 22,
+   "headword": "undeniable",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "부인할 수 없는, 불가피한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-educated",
+   "day": 22,
+   "headword": "educated",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "교육 받은"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-adaptable",
+   "day": 22,
+   "headword": "adaptable",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "적응할 수 있는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-questionable",
+   "day": 22,
+   "headword": "questionable",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "의심스러운, 의문의 여지가 있는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-numerical",
+   "day": 22,
+   "headword": "numerical",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "수의, 숫자상의, 숫자로 나타낸"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-commonplace",
+   "day": 22,
+   "headword": "commonplace",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "평범한, 진부한"
+    },
+    {
+     "pos": "n.",
+     "meaning": "평범한 것"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-elderly",
+   "day": 22,
+   "headword": "elderly",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "나이 든"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-hearty",
+   "day": 22,
+   "headword": "hearty",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "마음으로부터의, 성심성의의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-well-prepared",
+   "day": 22,
+   "headword": "well-prepared",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "잘 준비된"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-secondhand",
+   "day": 22,
+   "headword": "secondhand",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "중고의, 간접적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-disturbing",
+   "day": 22,
+   "headword": "disturbing",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "어지럽히는, 교란시키는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-anxious",
+   "day": 22,
+   "headword": "anxious",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "걱정하는, 불안한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-immobile",
+   "day": 22,
+   "headword": "immobile",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "움직일 수 없는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-live",
+   "day": 22,
+   "headword": "live",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "살아 있는, 생방송의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-ancient",
+   "day": 22,
+   "headword": "ancient",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "고대의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-arbitrary",
+   "day": 22,
+   "headword": "arbitrary",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "임의의, 독단적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-immense",
+   "day": 22,
+   "headword": "immense",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "거대한, 막대한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-hostile",
+   "day": 22,
+   "headword": "hostile",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "적대적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-commendable",
+   "day": 22,
+   "headword": "commendable",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "칭찬할 만한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-resilient",
+   "day": 22,
+   "headword": "resilient",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "탄력 있는, 되돌아가는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-scarce",
+   "day": 22,
+   "headword": "scarce",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "부족한, 불충분한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-sporadic",
+   "day": 22,
+   "headword": "sporadic",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "산발적으로 일어나는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-savvy",
+   "day": 22,
+   "headword": "savvy",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "잘 아는, 박식한"
+    },
+    {
+     "pos": "n.",
+     "meaning": "지식, 상식"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-palpable",
+   "day": 22,
+   "headword": "palpable",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "감지할 수 있는, 명백한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-bountiful",
+   "day": 22,
+   "headword": "bountiful",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "풍부한, 관대한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-unbeatable",
+   "day": 22,
+   "headword": "unbeatable",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "무적의, 타의 추종을 불허하는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-rigid",
+   "day": 22,
+   "headword": "rigid",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "엄격한, 견고한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-steadfast",
+   "day": 22,
+   "headword": "steadfast",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "확고한, 불변의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-candid",
+   "day": 22,
+   "headword": "candid",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "솔직한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-mounting",
+   "day": 22,
+   "headword": "mounting",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "증가하는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-neglectful",
+   "day": 22,
+   "headword": "neglectful",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "부주의한, 태만한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-bewildering",
+   "day": 22,
+   "headword": "bewildering",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "당혹하게 만드는"
+    },
+    {
+     "pos": null,
+     "meaning": "갈피를 못 잡게 하는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-complacent",
+   "day": 22,
+   "headword": "complacent",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "자기만족적인, 현실에 안주하는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-attainable",
+   "day": 22,
+   "headword": "attainable",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "달성할 수 있는, 획득할 수 있는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-wary",
+   "day": 22,
+   "headword": "wary",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "주의 깊은, 신중한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-subtle",
+   "day": 22,
+   "headword": "subtle",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "미묘한, 예리한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-leisurely",
+   "day": 22,
+   "headword": "leisurely",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "느긋한, 여유 있는"
+    },
+    {
+     "pos": "ad.",
+     "meaning": "느긋하게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-lax",
+   "day": 22,
+   "headword": "lax",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "느슨한, 해이한, 모호한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-lingering",
+   "day": 22,
+   "headword": "lingering",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "질질 끄는, 오래가는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d22-edible",
+   "day": 22,
+   "headword": "edible",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "먹을 수 있는"
+    },
+    {
+     "pos": "n.",
+     "meaning": "식품"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-vast",
+   "day": 23,
+   "headword": "vast",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "방대한, 광대한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-faithful",
+   "day": 23,
+   "headword": "faithful",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "충실한, 신의 있는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-former",
+   "day": 23,
+   "headword": "former",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "예전의, 전자의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-unknown",
+   "day": 23,
+   "headword": "unknown",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "알려지지 않은, 무명의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-absolute",
+   "day": 23,
+   "headword": "absolute",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "완전한, 확실한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-entire",
+   "day": 23,
+   "headword": "entire",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "전체의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-prompt",
+   "day": 23,
+   "headword": "prompt",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "즉각적인, 신속한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-energetic",
+   "day": 23,
+   "headword": "energetic",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "힘이 넘치는, 원기 왕성한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-unlikely",
+   "day": 23,
+   "headword": "unlikely",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "~할 것 같지 않은, 있을 법하지 않은"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-well-suited",
+   "day": 23,
+   "headword": "well-suited",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "적절한, 잘 어울리는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-industrious",
+   "day": 23,
+   "headword": "industrious",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "근면한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-trustworthy",
+   "day": 23,
+   "headword": "trustworthy",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "믿을 수 있는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-flawless",
+   "day": 23,
+   "headword": "flawless",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "결점이 없는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-influential",
+   "day": 23,
+   "headword": "influential",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "영향력 있는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-reusable",
+   "day": 23,
+   "headword": "reusable",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "재사용할 수 있는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-orderly",
+   "day": 23,
+   "headword": "orderly",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "정돈된, 질서 있는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-amusing",
+   "day": 23,
+   "headword": "amusing",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "즐거운, 재미있는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-equal",
+   "day": 23,
+   "headword": "equal",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "동일한, 동등한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-safe",
+   "day": 23,
+   "headword": "safe",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "안전한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-typical",
+   "day": 23,
+   "headword": "typical",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "전형적인, 대표적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-official",
+   "day": 23,
+   "headword": "official",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "공식적인, 공인된"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-specific",
+   "day": 23,
+   "headword": "specific",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "구체적인, 특정한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-polite",
+   "day": 23,
+   "headword": "polite",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "예의 바른"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-frequent",
+   "day": 23,
+   "headword": "frequent",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "잦은, 빈번한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-respected",
+   "day": 23,
+   "headword": "respected",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "존경 받는, 평판 높은"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-complex",
+   "day": 23,
+   "headword": "complex",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "복잡한, 복합의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-factual",
+   "day": 23,
+   "headword": "factual",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "사실의, 사실에 입각한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-dependent",
+   "day": 23,
+   "headword": "dependent",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "의존하는, 의존적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-insightful",
+   "day": 23,
+   "headword": "insightful",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "통찰력 있는, 영감 있는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-restful",
+   "day": 23,
+   "headword": "restful",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "평안을 주는, 평온한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-tender",
+   "day": 23,
+   "headword": "tender",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "부드러운"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-eventual",
+   "day": 23,
+   "headword": "eventual",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "궁극적인, 최후의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-assertive",
+   "day": 23,
+   "headword": "assertive",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "자기 주장이 강한, 독단적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-exaggerated",
+   "day": 23,
+   "headword": "exaggerated",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "과장된, 과대한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-dominant",
+   "day": 23,
+   "headword": "dominant",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "지배적인, 우세한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-lavish",
+   "day": 23,
+   "headword": "lavish",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "풍성한, 호화로운"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-exotic",
+   "day": 23,
+   "headword": "exotic",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "이국적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-genuine",
+   "day": 23,
+   "headword": "genuine",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "진짜의, 진품의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-in-depth",
+   "day": 23,
+   "headword": "in-depth",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "심층적인, 깊이 있는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-instrumental",
+   "day": 23,
+   "headword": "instrumental",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "유익한, 도움이 되는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-distinctive",
+   "day": 23,
+   "headword": "distinctive",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "뚜렷이 구별되는, 독특한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-unrivaled",
+   "day": 23,
+   "headword": "unrivaled",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "경쟁자가 없는, 비길 데 없는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-succeeding",
+   "day": 23,
+   "headword": "succeeding",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "이어지는, 계속되는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-excessive",
+   "day": 23,
+   "headword": "excessive",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "과도한, 지나친"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-dense",
+   "day": 23,
+   "headword": "dense",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "밀집한, 고밀도의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-inevitable",
+   "day": 23,
+   "headword": "inevitable",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "불가피한, 피할 수 없는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-integral",
+   "day": 23,
+   "headword": "integral",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "필수의, 통합의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-transferable",
+   "day": 23,
+   "headword": "transferable",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "이동[양도] 가능한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-prominent",
+   "day": 23,
+   "headword": "prominent",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "두드러진, 탁월한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d23-supplementary",
+   "day": 23,
+   "headword": "supplementary",
+   "senses": [
+    {
+     "pos": "a.",
+     "meaning": "보충의, 추가의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-recently",
+   "day": 24,
+   "headword": "recently",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "최근에"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d24-greatly",
+   "day": 24,
+   "headword": "greatly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "매우, 심히, 위대하게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-neatly",
+   "day": 24,
+   "headword": "neatly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "단정하게, 깔끔하게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-generally",
+   "day": 24,
+   "headword": "generally",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "일반적으로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-surely",
+   "day": 24,
+   "headword": "surely",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "확실히, 틀림없이"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-fully",
+   "day": 24,
+   "headword": "fully",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "완전히, 충분히"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-severely",
+   "day": 24,
+   "headword": "severely",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "심하게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-seriously",
+   "day": 24,
+   "headword": "seriously",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "심각하게, 진지하게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-poorly",
+   "day": 24,
+   "headword": "poorly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "저조하게, 형편없이"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-simply",
+   "day": 24,
+   "headword": "simply",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "간단히"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-conversely",
+   "day": 24,
+   "headword": "conversely",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "반대로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-somewhat",
+   "day": 24,
+   "headword": "somewhat",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "다소, 좀"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-rightly",
+   "day": 24,
+   "headword": "rightly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "정확하게, 당연히, 마땅하게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-respectfully",
+   "day": 24,
+   "headword": "respectfully",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "공손하게, 정중하게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-astonishingly",
+   "day": 24,
+   "headword": "astonishingly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "놀랍게도"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-badly",
+   "day": 24,
+   "headword": "badly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "몹시, 심하게, 부당하게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-heavily",
+   "day": 24,
+   "headword": "heavily",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "몹시, 심하게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-still",
+   "day": 24,
+   "headword": "still",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "여전히, 그럼에도 불구하게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-regrettably",
+   "day": 24,
+   "headword": "regrettably",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "유감스럽게도"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-luxuriously",
+   "day": 24,
+   "headword": "luxuriously",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "사치스럽게, 방탕하게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-loudly",
+   "day": 24,
+   "headword": "loudly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "큰 소리로, 소란스럽게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-proudly",
+   "day": 24,
+   "headword": "proudly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "자랑스럽게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-overhead",
+   "day": 24,
+   "headword": "overhead",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "머리 위에"
+    },
+    {
+     "pos": "a.",
+     "meaning": "머리 위를 지나는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-meanwhile",
+   "day": 24,
+   "headword": "meanwhile",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "그동안에, 한편"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-fortunately",
+   "day": 24,
+   "headword": "fortunately",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "다행히도, 운 좋게도"
+    },
+    {
+     "pos": null,
+     "meaning": "(↔ unfortunately 유감스럽게도)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-vastly",
+   "day": 24,
+   "headword": "vastly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "대단히, 막대하게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-agreeably",
+   "day": 24,
+   "headword": "agreeably",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "기분 좋게, 유쾌하게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-ethically",
+   "day": 24,
+   "headword": "ethically",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "윤리적으로, 도덕적으로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-unbearably",
+   "day": 24,
+   "headword": "unbearably",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "참을 수 없게, 견딜 수 없게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-undoubtedly",
+   "day": 24,
+   "headword": "undoubtedly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "의심할 여지 없이, 틀림없이"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-cordially",
+   "day": 24,
+   "headword": "cordially",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "진심으로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-discreetly",
+   "day": 24,
+   "headword": "discreetly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "분별 있게, 사려 깊게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-inherently",
+   "day": 24,
+   "headword": "inherently",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "본질적으로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-inevitably",
+   "day": 24,
+   "headword": "inevitably",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "필연적으로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-coincidentally",
+   "day": 24,
+   "headword": "coincidentally",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "우연히, 동시 발생적으로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-boldly",
+   "day": 24,
+   "headword": "boldly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "대담하게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-loosely",
+   "day": 24,
+   "headword": "loosely",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "느슨하게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-readily",
+   "day": 24,
+   "headword": "readily",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "즉시, 손쉽게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-swiftly",
+   "day": 24,
+   "headword": "swiftly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "빨리, 신속히"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-in-common",
+   "day": 24,
+   "headword": "in common",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "공통으로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-legally",
+   "day": 24,
+   "headword": "legally",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "법률적으로, 합법적으로"
+    },
+    {
+     "pos": null,
+     "meaning": "(↔ illegally 불법적으로)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-technically",
+   "day": 24,
+   "headword": "technically",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "기술적으로, 전문적으로"
+    },
+    {
+     "pos": null,
+     "meaning": "엄밀히 말하면"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-involuntarily",
+   "day": 24,
+   "headword": "involuntarily",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "본의 아니게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-sparsely",
+   "day": 24,
+   "headword": "sparsely",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "희박하게, 드문드문하게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-decidedly",
+   "day": 24,
+   "headword": "decidedly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "결정적으로, 명백하게"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-allegedly",
+   "day": 24,
+   "headword": "allegedly",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "주장하는 바에 따르면"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-namely",
+   "day": 24,
+   "headword": "namely",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "즉, 다시 말하면"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-presumably",
+   "day": 24,
+   "headword": "presumably",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "아마, 추측컨대"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-intentionally",
+   "day": 24,
+   "headword": "intentionally",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "고의로, 의도적으로"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d24-indeed",
+   "day": 24,
+   "headword": "indeed",
+   "senses": [
+    {
+     "pos": "ad.",
+     "meaning": "사실은, 정말로"
+    }
+   ],
+   "tier": "bonus"
+  }
+ ]
+}

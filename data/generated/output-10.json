@@ -1,0 +1,952 @@
+[
+  {
+    "id": "d28-power-outage",
+    "en": "A brief power outage will occur during Saturday's scheduled maintenance work.",
+    "ko": "토요일 정기 점검 작업 중에 짧은 정전이 발생할 예정입니다."
+  },
+  {
+    "id": "d28-in-effect",
+    "en": "The new parking regulations are now in effect at all branch offices.",
+    "ko": "새 주차 규정이 이제 모든 지점에서 시행 중입니다."
+  },
+  {
+    "id": "d28-revised-policy",
+    "en": "The revised policy on remote work applies to all full-time employees.",
+    "ko": "재택근무에 관한 개정된 정책은 모든 정규직 직원에게 적용됩니다."
+  },
+  {
+    "id": "d28-dress-code",
+    "en": "Employees must follow the dress code when meeting clients on site.",
+    "ko": "직원들은 현장에서 고객을 만날 때 복장 규정을 따라야 합니다."
+  },
+  {
+    "id": "d28-provided-that",
+    "en": "Refunds are issued provided that the receipt is submitted within thirty days.",
+    "ko": "영수증이 30일 이내에 제출된다면 환불이 처리됩니다."
+  },
+  {
+    "id": "d28-pilot-test",
+    "en": "The pilot test of the new scheduling software begins next Monday.",
+    "ko": "새 일정 관리 소프트웨어의 시범 테스트가 다음 주 월요일에 시작됩니다."
+  },
+  {
+    "id": "d28-beginning-on",
+    "en": "Beginning on July first, the cafeteria will open an hour earlier.",
+    "ko": "7월 1일부터 구내식당이 한 시간 일찍 문을 엽니다."
+  },
+  {
+    "id": "d28-pay-stub",
+    "en": "Please review your pay stub and report any errors to the payroll office.",
+    "ko": "급여 명세서를 확인하시고 오류가 있으면 급여 부서에 알려 주십시오."
+  },
+  {
+    "id": "d28-up-and-running",
+    "en": "The new inventory system should be up and running by Friday afternoon.",
+    "ko": "새 재고 시스템은 금요일 오후까지 제대로 가동될 것입니다."
+  },
+  {
+    "id": "d28-in-time-for",
+    "en": "The renovated lobby will reopen in time for the annual shareholders meeting.",
+    "ko": "개조된 로비는 연례 주주 총회 시기에 맞춰 다시 문을 엽니다."
+  },
+  {
+    "id": "d28-customer-base",
+    "en": "The company expanded its customer base after launching the mobile application.",
+    "ko": "그 회사는 모바일 애플리케이션을 출시한 후 고객층을 넓혔습니다."
+  },
+  {
+    "id": "d28-profit-margin",
+    "en": "Rising shipping costs have reduced the profit margin on overseas orders.",
+    "ko": "배송비 상승으로 해외 주문의 이윤이 줄었습니다."
+  },
+  {
+    "id": "d28-step-down",
+    "en": "The chief financial officer will step down at the end of March.",
+    "ko": "최고 재무 책임자가 3월 말에 자리에서 물러날 예정입니다."
+  },
+  {
+    "id": "d28-upcoming-event",
+    "en": "Details about the upcoming event are posted on the company intranet.",
+    "ko": "다가오는 행사에 대한 세부 사항이 사내 인트라넷에 게시되어 있습니다."
+  },
+  {
+    "id": "d28-tear-down",
+    "en": "The city plans to tear down the old warehouse next spring.",
+    "ko": "시는 내년 봄에 낡은 창고를 철거할 계획입니다."
+  },
+  {
+    "id": "d28-company-policy",
+    "en": "Company policy requires written approval for any business trip abroad.",
+    "ko": "사내 규정상 모든 해외 출장에는 서면 승인이 필요합니다."
+  },
+  {
+    "id": "d28-attendance-record",
+    "en": "Supervisors should submit the monthly attendance record to human resources by Friday.",
+    "ko": "관리자들은 월간 출석 기록을 금요일까지 인사부에 제출해야 합니다."
+  },
+  {
+    "id": "d28-operating-fund",
+    "en": "The board approved additional operating funds for the regional distribution center.",
+    "ko": "이사회는 지역 물류 센터를 위한 추가 운영 자금을 승인했습니다."
+  },
+  {
+    "id": "d28-brief-summary",
+    "en": "Please attach a brief summary of the survey results to your report.",
+    "ko": "보고서에 설문 결과의 간단한 요약을 첨부해 주십시오."
+  },
+  {
+    "id": "d28-sort-out",
+    "en": "Interns will sort out the application forms by department this afternoon.",
+    "ko": "인턴들이 오늘 오후에 지원서를 부서별로 분류할 것입니다."
+  },
+  {
+    "id": "d28-on-duty",
+    "en": "A security guard is on duty at the main entrance all night.",
+    "ko": "경비원 한 명이 밤새 정문에서 근무합니다."
+  },
+  {
+    "id": "d28-fall-behind",
+    "en": "The construction crew fell behind schedule because of the heavy rain.",
+    "ko": "폭우 때문에 공사 인력이 일정보다 뒤처졌습니다."
+  },
+  {
+    "id": "d28-take-effect",
+    "en": "The updated safety regulations will take effect on the first of October.",
+    "ko": "개정된 안전 규정은 10월 1일에 시행됩니다."
+  },
+  {
+    "id": "d28-withdraw-the-proposal",
+    "en": "The contractor decided to withdraw the proposal after reviewing the budget.",
+    "ko": "그 계약업체는 예산을 검토한 후 제안을 철회하기로 했습니다."
+  },
+  {
+    "id": "d28-start-up-company",
+    "en": "The start-up company doubled its staff within its first two years.",
+    "ko": "그 신생 기업은 첫 2년 안에 직원 수를 두 배로 늘렸습니다."
+  },
+  {
+    "id": "d28-be-credited-with",
+    "en": "Ms. Chen is credited with turning the department into a profitable division.",
+    "ko": "첸 씨는 그 부서를 수익성 있는 사업부로 바꾼 공로를 인정받고 있습니다."
+  },
+  {
+    "id": "d28-be-bound-to",
+    "en": "Minor delays are bound to occur when several suppliers are involved.",
+    "ko": "여러 공급업체가 관여하면 사소한 지연은 생기기 마련입니다."
+  },
+  {
+    "id": "d28-motivate",
+    "en": "The new bonus program is designed to motivate the sales staff.",
+    "ko": "새 상여금 제도는 영업 직원들에게 동기를 부여하기 위해 마련되었습니다."
+  },
+  {
+    "id": "d28-meet-the-customer-demand",
+    "en": "The factory added a night shift to meet the customer demand.",
+    "ko": "그 공장은 소비자 수요를 충족시키기 위해 야간 근무조를 추가했습니다."
+  },
+  {
+    "id": "d28-extend-the-service",
+    "en": "The carrier will extend the service to three more cities next quarter.",
+    "ko": "그 운송사는 다음 분기에 세 개 도시로 서비스를 확대할 것입니다."
+  },
+  {
+    "id": "d28-in-phases",
+    "en": "The office relocation will be carried out in phases over six weeks.",
+    "ko": "사무실 이전은 6주에 걸쳐 단계적으로 진행될 것입니다."
+  },
+  {
+    "id": "d28-a-wealth-of-information",
+    "en": "The orientation packet contains a wealth of information for new hires.",
+    "ko": "오리엔테이션 자료집에는 신입 사원을 위한 풍부한 정보가 담겨 있습니다."
+  },
+  {
+    "id": "d28-winning-entry",
+    "en": "The winning entry in the design contest will be displayed in the lobby.",
+    "ko": "디자인 공모전 수상작은 로비에 전시될 예정입니다."
+  },
+  {
+    "id": "d28-rain-date",
+    "en": "The rain date for the company picnic is Saturday, June fifteenth.",
+    "ko": "사내 야유회의 우천 시 예비일은 6월 15일 토요일입니다."
+  },
+  {
+    "id": "d28-mark-a-change",
+    "en": "The merger marks a change in the firm's long-term growth strategy.",
+    "ko": "이번 합병은 회사의 장기 성장 전략에 변화의 한 획을 긋습니다."
+  },
+  {
+    "id": "d28-level-off",
+    "en": "Fuel prices have leveled off since the beginning of this quarter.",
+    "ko": "연료 가격은 이번 분기 초부터 변동 없이 안정되어 있습니다."
+  },
+  {
+    "id": "d28-quarterly-report",
+    "en": "The quarterly report will be distributed to all department heads on Thursday.",
+    "ko": "분기 보고서는 목요일에 모든 부서장에게 배포될 것입니다."
+  },
+  {
+    "id": "d28-job-cutback",
+    "en": "The firm announced job cutbacks at two of its regional plants.",
+    "ko": "그 회사는 지역 공장 두 곳에서 인력 감축을 발표했습니다."
+  },
+  {
+    "id": "d28-on-site-inspection",
+    "en": "An on-site inspection of the new facility is scheduled for Tuesday.",
+    "ko": "새 시설에 대한 현장 점검이 화요일로 예정되어 있습니다."
+  },
+  {
+    "id": "d28-overtime-allowance",
+    "en": "Employees who work weekends will receive an overtime allowance each month.",
+    "ko": "주말에 근무하는 직원들은 매달 초과 근무 수당을 받게 됩니다."
+  },
+  {
+    "id": "d28-temporary-security-badge",
+    "en": "Visitors must wear a temporary security badge while inside the building.",
+    "ko": "방문객은 건물 내에 있는 동안 임시 보안 신분증을 착용해야 합니다."
+  },
+  {
+    "id": "d28-deliberate-planning",
+    "en": "Deliberate planning helped the team complete the merger without major disruptions.",
+    "ko": "신중한 계획 덕분에 팀은 큰 차질 없이 합병을 마쳤습니다."
+  },
+  {
+    "id": "d28-financial-grants",
+    "en": "The foundation offers financial grants to small businesses in rural areas.",
+    "ko": "그 재단은 농촌 지역의 소규모 사업체에 재정 보조금을 제공합니다."
+  },
+  {
+    "id": "d28-generate-more-revenue",
+    "en": "The updated pricing plan is expected to generate more revenue next year.",
+    "ko": "개정된 가격 정책은 내년에 더 많은 수익을 창출할 것으로 예상됩니다."
+  },
+  {
+    "id": "d28-smooth-transition",
+    "en": "Training sessions will ensure a smooth transition to the new billing system.",
+    "ko": "교육 과정은 새 청구 시스템으로의 순조로운 전환을 보장할 것입니다."
+  },
+  {
+    "id": "d28-business-strategy",
+    "en": "The directors will review the company's business strategy at the annual retreat.",
+    "ko": "이사들은 연례 워크숍에서 회사의 사업 전략을 검토할 것입니다."
+  },
+  {
+    "id": "d28-lucrative-business",
+    "en": "Corporate catering has become a lucrative business for the downtown restaurant.",
+    "ko": "기업 케이터링은 그 시내 식당에게 수익성 있는 사업이 되었습니다."
+  },
+  {
+    "id": "d28-attribute-one-x27-s-success-to",
+    "en": "The founder attributes her success to a dedicated and experienced staff.",
+    "ko": "그 창립자는 자신의 성공을 헌신적이고 경험 많은 직원들 덕으로 돌립니다."
+  },
+  {
+    "id": "d28-good-judgement",
+    "en": "The manager showed good judgement in postponing the product launch.",
+    "ko": "그 관리자는 제품 출시를 연기하는 데 뛰어난 판단력을 보였습니다."
+  },
+  {
+    "id": "d28-file-for-bankruptcy",
+    "en": "The supplier filed for bankruptcy after losing its largest contract.",
+    "ko": "그 공급업체는 최대 계약을 잃은 후 파산 신청을 했습니다."
+  },
+  {
+    "id": "d28-coincide-with",
+    "en": "The grand opening will coincide with the city's annual food festival.",
+    "ko": "개장 행사는 시의 연례 음식 축제 기간과 일치합니다."
+  },
+  {
+    "id": "d28-fully-functional",
+    "en": "The updated website will be fully functional by the end of the week.",
+    "ko": "개편된 웹사이트는 이번 주말까지 완전히 제 기능을 하게 됩니다."
+  },
+  {
+    "id": "d28-periodical",
+    "en": "The library subscribes to more than forty business periodicals each year.",
+    "ko": "그 도서관은 매년 40종이 넘는 경제 정기 간행물을 구독합니다."
+  },
+  {
+    "id": "d28-online-archive",
+    "en": "Past newsletters are available in the online archive on our website.",
+    "ko": "지난 소식지는 저희 웹사이트의 온라인 자료실에서 보실 수 있습니다."
+  },
+  {
+    "id": "d28-permanent-exhibit",
+    "en": "The museum's permanent exhibit on regional industry reopens next month.",
+    "ko": "그 박물관의 지역 산업 상설 전시가 다음 달에 다시 열립니다."
+  },
+  {
+    "id": "d28-original-submission",
+    "en": "The judges praised the original submission from a first-time contestant.",
+    "ko": "심사위원들은 첫 출전자의 독창적인 출품작을 칭찬했습니다."
+  },
+  {
+    "id": "d28-conform-to-the-guideline",
+    "en": "All advertisements must conform to the guidelines set by the agency.",
+    "ko": "모든 광고는 대행사가 정한 지침을 따라야 합니다."
+  },
+  {
+    "id": "d28-cast-a-ballot-vote",
+    "en": "Members may cast a ballot for the board election until Friday noon.",
+    "ko": "회원들은 금요일 정오까지 이사 선거 투표를 할 수 있습니다."
+  },
+  {
+    "id": "d28-financial-setback",
+    "en": "The restaurant chain recovered quickly from last year's financial setback.",
+    "ko": "그 식당 체인은 작년의 재정 악화에서 빠르게 회복했습니다."
+  },
+  {
+    "id": "d28-adverse-effect",
+    "en": "The sudden price increase had an adverse effect on holiday sales.",
+    "ko": "갑작스러운 가격 인상은 연휴 매출에 역효과를 냈습니다."
+  },
+  {
+    "id": "d28-accrue",
+    "en": "Interest accrues on the account balance at the end of each month.",
+    "ko": "매월 말에 계좌 잔액에 이자가 쌓입니다."
+  },
+  {
+    "id": "d28-pioneer",
+    "en": "The firm was a pioneer in online grocery delivery services.",
+    "ko": "그 회사는 온라인 식료품 배송 서비스의 개척자였습니다."
+  },
+  {
+    "id": "d28-company-x27-s-ailing-fortunes",
+    "en": "The new director was hired to reverse the company's ailing fortunes.",
+    "ko": "신임 이사는 기울어 가는 회사 상황을 되돌리기 위해 영입되었습니다."
+  },
+  {
+    "id": "d29-flat-rate",
+    "en": "The airport shuttle charges a flat rate for every downtown pickup.",
+    "ko": "공항 셔틀은 모든 시내 픽업에 균일 요금을 받습니다."
+  },
+  {
+    "id": "d29-be-outfitted-with",
+    "en": "Every meeting room is outfitted with video conferencing equipment.",
+    "ko": "모든 회의실에는 화상 회의 장비가 갖춰져 있습니다."
+  },
+  {
+    "id": "d29-casual-fare",
+    "en": "The hotel lounge serves casual fare throughout the afternoon.",
+    "ko": "호텔 라운지는 오후 내내 간단한 일상 식사를 제공합니다."
+  },
+  {
+    "id": "d29-achieve-one-x27-s-goal",
+    "en": "The sales team achieved its goal three weeks before the deadline.",
+    "ko": "영업팀은 마감 3주 전에 목표를 달성했습니다."
+  },
+  {
+    "id": "d29-take-on",
+    "en": "Mr. Alvarez will take on additional duties while the manager is abroad.",
+    "ko": "알바레즈 씨가 관리자의 해외 체류 기간 동안 추가 업무를 맡을 것입니다."
+  },
+  {
+    "id": "d29-interpersonal-skill",
+    "en": "Strong interpersonal skills are essential for this customer service position.",
+    "ko": "이 고객 서비스 직책에는 뛰어난 대인관계 능력이 필수적입니다."
+  },
+  {
+    "id": "d29-compensation-package",
+    "en": "The firm offers a generous compensation package including full health insurance.",
+    "ko": "그 회사는 종합 건강 보험을 포함한 넉넉한 총 보수를 제공합니다."
+  },
+  {
+    "id": "d29-responsibilities-duties-tasks-include",
+    "en": "Responsibilities include managing supplier contracts and preparing monthly budget reports.",
+    "ko": "업무에는 공급업체 계약 관리와 월간 예산 보고서 작성이 포함됩니다."
+  },
+  {
+    "id": "d29-be-subject-to",
+    "en": "All listed prices are subject to change without prior notice.",
+    "ko": "표시된 모든 가격은 사전 통보 없이 변경될 수 있습니다."
+  },
+  {
+    "id": "d29-occupancy-schedule",
+    "en": "Please confirm the occupancy schedule for the conference guests by Friday.",
+    "ko": "금요일까지 학회 참석자들의 숙박 일정을 확정해 주십시오."
+  },
+  {
+    "id": "d29-lodging-arrangement",
+    "en": "Our travel office handles all lodging arrangements for overseas assignments.",
+    "ko": "저희 출장 부서가 해외 파견의 모든 숙박 준비를 담당합니다."
+  },
+  {
+    "id": "d29-on-board",
+    "en": "Passengers on board this flight may use the wireless network free.",
+    "ko": "이 항공편에 탑승한 승객은 무선 인터넷을 무료로 이용할 수 있습니다."
+  },
+  {
+    "id": "d29-local-ingredient",
+    "en": "Our chefs prepare every dish with fresh local ingredients.",
+    "ko": "저희 요리사들은 신선한 지역 재료로 모든 요리를 만듭니다."
+  },
+  {
+    "id": "d29-individually-packaged",
+    "en": "The snacks are individually packaged for guests attending the morning seminar.",
+    "ko": "간식은 오전 세미나 참석자들을 위해 개별 포장되어 있습니다."
+  },
+  {
+    "id": "d29-one-serving",
+    "en": "Each container holds one serving of soup and a small salad.",
+    "ko": "각 용기에는 수프 1인분과 작은 샐러드가 들어 있습니다."
+  },
+  {
+    "id": "d29-signature-dish",
+    "en": "The restaurant's signature dish is grilled salmon with seasonal vegetables.",
+    "ko": "그 식당의 대표 요리는 제철 채소를 곁들인 구운 연어입니다."
+  },
+  {
+    "id": "d29-year-round",
+    "en": "The resort offers year-round discounts to corporate members.",
+    "ko": "그 리조트는 기업 회원에게 연중 상시 할인을 제공합니다."
+  },
+  {
+    "id": "d29-membership-benefit",
+    "en": "Membership benefits include free parking and early access to seasonal sales.",
+    "ko": "멤버십 혜택에는 무료 주차와 시즌 세일 우선 이용이 포함됩니다."
+  },
+  {
+    "id": "d29-special-deal-offer",
+    "en": "Ask our staff about the special deal on annual maintenance contracts.",
+    "ko": "연간 유지 보수 계약 특가 상품에 대해 저희 직원에게 문의하십시오."
+  },
+  {
+    "id": "d29-standard-rate",
+    "en": "The standard rate for a single room includes breakfast and parking.",
+    "ko": "1인실 표준 요금에는 조식과 주차가 포함됩니다."
+  },
+  {
+    "id": "d29-markdown",
+    "en": "The store announced a further markdown on all winter merchandise.",
+    "ko": "그 매장은 모든 겨울 상품에 대한 추가 가격 인하를 발표했습니다."
+  },
+  {
+    "id": "d29-clearance-sale",
+    "en": "Our annual clearance sale begins Monday and runs through the weekend.",
+    "ko": "저희 연례 재고 정리 세일은 월요일에 시작해 주말까지 계속됩니다."
+  },
+  {
+    "id": "d29-giveaway",
+    "en": "Visitors to our booth will receive a free giveaway at registration.",
+    "ko": "저희 부스를 방문하시는 분들은 등록 시 무료 증정품을 받으십니다."
+  },
+  {
+    "id": "d29-competitively-priced",
+    "en": "Our office furniture is competitively priced and delivered within three days.",
+    "ko": "저희 사무용 가구는 경쟁력 있는 가격이며 3일 이내에 배송됩니다."
+  },
+  {
+    "id": "d29-put-run-place-an-ad",
+    "en": "The bakery placed an ad in the local business directory.",
+    "ko": "그 제과점은 지역 업체 안내책자에 광고를 냈습니다."
+  },
+  {
+    "id": "d29-a-show-of-gratitude",
+    "en": "As a show of gratitude, we are offering loyal customers an extra discount.",
+    "ko": "감사의 표시로 단골 고객께 추가 할인을 제공해 드립니다."
+  },
+  {
+    "id": "d29-promotional-code",
+    "en": "Enter the promotional code at checkout to receive twenty percent off.",
+    "ko": "결제 시 할인코드를 입력하시면 20퍼센트 할인을 받으실 수 있습니다."
+  },
+  {
+    "id": "d29-job-posting",
+    "en": "The job posting for the marketing coordinator closes on Friday evening.",
+    "ko": "마케팅 코디네이터 채용 공고는 금요일 저녁에 마감됩니다."
+  },
+  {
+    "id": "d29-on-the-job-experience",
+    "en": "Applicants need at least three years of on-the-job experience in logistics.",
+    "ko": "지원자는 물류 분야에서 최소 3년의 실무 경력이 필요합니다."
+  },
+  {
+    "id": "d29-salary-expectation",
+    "en": "Please include your salary expectations in the attached cover letter.",
+    "ko": "첨부하는 자기소개서에 희망 급여 조건을 기재해 주십시오."
+  },
+  {
+    "id": "d29-pride-oneself-on",
+    "en": "Our agency prides itself on answering every inquiry within two hours.",
+    "ko": "저희 대행사는 모든 문의에 두 시간 내로 답변하는 것을 자랑스럽게 여깁니다."
+  },
+  {
+    "id": "d29-furnished-unit",
+    "en": "The building offers furnished units available for short-term corporate leases.",
+    "ko": "그 건물은 단기 법인 임대가 가능한 가구 비치형 세대를 제공합니다."
+  },
+  {
+    "id": "d29-landlord",
+    "en": "Tenants should notify the landlord before making any changes to the office.",
+    "ko": "임차인은 사무실을 변경하기 전에 건물주에게 알려야 합니다."
+  },
+  {
+    "id": "d29-prime-location",
+    "en": "The new branch occupies a prime location near the central train station.",
+    "ko": "새 지점은 중앙역 근처의 좋은 입지에 자리 잡고 있습니다."
+  },
+  {
+    "id": "d29-within-walking-distance",
+    "en": "The conference hotel is within walking distance of the exhibition hall.",
+    "ko": "학회 호텔은 전시장에서 걸어갈 만한 거리에 있습니다."
+  },
+  {
+    "id": "d29-commercial-district",
+    "en": "Several new restaurants have opened in the downtown commercial district.",
+    "ko": "시내 상업 지구에 새 식당 여러 곳이 문을 열었습니다."
+  },
+  {
+    "id": "d29-peak-season",
+    "en": "Room rates increase considerably during the summer peak season.",
+    "ko": "여름 성수기에는 객실 요금이 상당히 오릅니다."
+  },
+  {
+    "id": "d29-compatibility",
+    "en": "Please check the compatibility of the printer with your operating system.",
+    "ko": "프린터와 사용 중인 운영 체제의 호환성을 확인해 주십시오."
+  },
+  {
+    "id": "d29-capitalize",
+    "en": "The firm capitalized on growing demand for eco-friendly packaging materials.",
+    "ko": "그 회사는 친환경 포장재에 대한 수요 증가를 기회로 활용했습니다."
+  },
+  {
+    "id": "d29-staple-food",
+    "en": "The supplier delivers rice and other staple foods to local hotels.",
+    "ko": "그 공급업체는 지역 호텔에 쌀과 기타 주식용 식품을 배송합니다."
+  },
+  {
+    "id": "d29-spice",
+    "en": "The market sells imported spices at wholesale prices to restaurants.",
+    "ko": "그 시장은 식당에 수입 향신료를 도매가로 판매합니다."
+  },
+  {
+    "id": "d29-charity-ball",
+    "en": "Tickets for the annual charity ball are available at the front desk.",
+    "ko": "연례 자선 무도회 입장권은 안내 데스크에서 구입하실 수 있습니다."
+  },
+  {
+    "id": "d29-scale-back",
+    "en": "Management decided to scale back production at the eastern plant.",
+    "ko": "경영진은 동부 공장의 생산을 축소하기로 결정했습니다."
+  },
+  {
+    "id": "d29-high-end",
+    "en": "The store specializes in high-end kitchen appliances for commercial use.",
+    "ko": "그 매장은 업소용 고급 주방 가전을 전문으로 취급합니다."
+  },
+  {
+    "id": "d29-alert",
+    "en": "The system will alert managers whenever inventory falls below the minimum.",
+    "ko": "재고가 최소치 아래로 떨어질 때마다 시스템이 관리자에게 알려 줍니다."
+  },
+  {
+    "id": "d29-retail-price",
+    "en": "The suggested retail price of the new model is under two hundred dollars.",
+    "ko": "새 모델의 권장 소매 가격은 200달러 미만입니다."
+  },
+  {
+    "id": "d29-up-front",
+    "en": "Tenants must pay two months of rent up front.",
+    "ko": "임차인은 두 달 치 임대료를 미리 지불해야 합니다."
+  },
+  {
+    "id": "d29-active-status",
+    "en": "Your account will remain in active status as long as dues are paid.",
+    "ko": "회비를 납부하시는 한 계정은 활성 상태로 유지됩니다."
+  },
+  {
+    "id": "d29-associate-level-membership",
+    "en": "An associate-level membership includes library access and monthly seminars.",
+    "ko": "준회원 자격에는 도서관 이용과 월례 세미나 참가가 포함됩니다."
+  },
+  {
+    "id": "d29-placement-agency",
+    "en": "A local placement agency helped the firm hire six temporary workers.",
+    "ko": "지역 직업 소개소가 그 회사의 임시직 6명 채용을 도왔습니다."
+  },
+  {
+    "id": "d29-credential",
+    "en": "Applicants should send their credentials to the human resources department.",
+    "ko": "지원자들은 자격 증명서를 인사부로 보내야 합니다."
+  },
+  {
+    "id": "d29-flextime",
+    "en": "The company introduced flextime to help employees manage their schedules.",
+    "ko": "그 회사는 직원들의 일정 관리를 돕기 위해 근무 시간 자유 선택제를 도입했습니다."
+  },
+  {
+    "id": "d29-classified-ad",
+    "en": "The manager posted a classified ad for a part-time warehouse assistant.",
+    "ko": "관리자는 시간제 창고 보조 직원을 구하는 구인 광고를 냈습니다."
+  },
+  {
+    "id": "d29-brokerage",
+    "en": "The brokerage charges a small fee for each completed transaction.",
+    "ko": "그 중개업체는 완료된 거래마다 소액의 중개 수수료를 부과합니다."
+  },
+  {
+    "id": "d29-down-payment",
+    "en": "A ten percent down payment is required to reserve the property.",
+    "ko": "그 부동산을 예약하려면 10퍼센트의 계약금이 필요합니다."
+  },
+  {
+    "id": "d29-inhabitant",
+    "en": "Local inhabitants were invited to comment on the waterfront development plan.",
+    "ko": "지역 주민들은 수변 개발 계획에 의견을 제시하도록 초청되었습니다."
+  },
+  {
+    "id": "d29-property-values",
+    "en": "Property values near the new subway line have risen sharply.",
+    "ko": "새 지하철 노선 인근의 부동산 가치가 크게 상승했습니다."
+  },
+  {
+    "id": "d29-rural-communities",
+    "en": "The grant program supports small businesses in rural communities.",
+    "ko": "그 보조금 사업은 농촌 지역의 소규모 사업체를 지원합니다."
+  },
+  {
+    "id": "d29-ground-breaking-ceremony",
+    "en": "The ground-breaking ceremony for the new terminal begins at ten o'clock.",
+    "ko": "새 터미널 기공식은 10시에 시작합니다."
+  },
+  {
+    "id": "d29-inaugural-issue",
+    "en": "The inaugural issue of our travel magazine features regional resorts.",
+    "ko": "저희 여행 잡지 창간호는 지역 리조트를 특집으로 다룹니다."
+  },
+  {
+    "id": "d29-voyage",
+    "en": "The cruise line offers a two-week voyage along the northern coast.",
+    "ko": "그 크루즈 회사는 북부 해안을 따라가는 2주간의 항해를 제공합니다."
+  },
+  {
+    "id": "d29-currency-exchange-rates",
+    "en": "Current currency exchange rates are posted near the hotel front desk.",
+    "ko": "현재 환율은 호텔 프런트 데스크 근처에 게시되어 있습니다."
+  },
+  {
+    "id": "d30-electronic-form",
+    "en": "Please complete the electronic form before your appointment on Tuesday.",
+    "ko": "화요일 예약 전에 온라인 양식을 작성해 주십시오."
+  },
+  {
+    "id": "d30-out-of-place",
+    "en": "Several files in the cabinet were out of place after the audit.",
+    "ko": "감사가 끝난 뒤 캐비닛의 파일 몇 개가 잘못 놓여 있었습니다."
+  },
+  {
+    "id": "d30-tracking-system",
+    "en": "Our tracking system lets customers follow their shipments in real time.",
+    "ko": "저희 추적 시스템으로 고객은 배송 상황을 실시간으로 확인할 수 있습니다."
+  },
+  {
+    "id": "d30-upon-request",
+    "en": "A detailed invoice is available upon request from our billing office.",
+    "ko": "상세 청구서는 요청 시 저희 청구 부서에서 발급해 드립니다."
+  },
+  {
+    "id": "d30-attend-to",
+    "en": "A technician will attend to your maintenance request within one business day.",
+    "ko": "기술자가 영업일 하루 이내에 귀하의 유지 보수 요청을 처리할 것입니다."
+  },
+  {
+    "id": "d30-nature-reserve",
+    "en": "The tour includes a guided walk through the coastal nature reserve.",
+    "ko": "그 투어에는 해안 자연 보호구역을 도는 가이드 산책이 포함됩니다."
+  },
+  {
+    "id": "d30-environmentally-eco-friendly",
+    "en": "All of our packaging materials are environmentally friendly and fully recyclable.",
+    "ko": "저희 포장재는 모두 환경 친화적이며 전부 재활용이 가능합니다."
+  },
+  {
+    "id": "d30-travel-agent",
+    "en": "Our travel agent will confirm your itinerary by tomorrow morning.",
+    "ko": "저희 여행사 직원이 내일 아침까지 일정을 확정해 드릴 것입니다."
+  },
+  {
+    "id": "d30-boarding-pass",
+    "en": "Please have your boarding pass ready before approaching the departure gate.",
+    "ko": "탑승구에 오시기 전에 탑승권을 미리 준비해 주십시오."
+  },
+  {
+    "id": "d30-advance-reservation",
+    "en": "An advance reservation is required for groups of ten or more.",
+    "ko": "10인 이상 단체는 사전 예약이 필요합니다."
+  },
+  {
+    "id": "d30-baggage-claim",
+    "en": "Passengers may collect their luggage at baggage claim on level one.",
+    "ko": "승객들은 1층 수하물 찾는 곳에서 짐을 찾으실 수 있습니다."
+  },
+  {
+    "id": "d30-dining-establishment",
+    "en": "The building houses several dining establishments open until midnight.",
+    "ko": "그 건물에는 자정까지 문을 여는 식당 여러 곳이 있습니다."
+  },
+  {
+    "id": "d30-hustle-and-bustle",
+    "en": "The resort offers a quiet retreat from the hustle and bustle of the city.",
+    "ko": "그 리조트는 도시의 번잡함에서 벗어난 조용한 휴식처를 제공합니다."
+  },
+  {
+    "id": "d30-be-entitled-to",
+    "en": "Full-time employees are entitled to fifteen paid vacation days each year.",
+    "ko": "정규직 직원은 매년 15일의 유급 휴가를 받을 자격이 있습니다."
+  },
+  {
+    "id": "d30-an-array-of",
+    "en": "The catalog features an array of office supplies at discounted prices.",
+    "ko": "그 카탈로그에는 할인된 가격의 다양한 사무용품이 실려 있습니다."
+  },
+  {
+    "id": "d30-unit-price",
+    "en": "The unit price drops significantly for orders of one hundred or more.",
+    "ko": "100개 이상 주문하시면 단가가 크게 낮아집니다."
+  },
+  {
+    "id": "d30-item-description",
+    "en": "Please check the item description carefully before submitting your order.",
+    "ko": "주문서를 제출하기 전에 품목 명세를 꼼꼼히 확인해 주십시오."
+  },
+  {
+    "id": "d30-drop-off-date",
+    "en": "The receipt shows the drop-off date and the estimated pickup time.",
+    "ko": "영수증에는 맡긴 날짜와 예상 수령 시간이 나와 있습니다."
+  },
+  {
+    "id": "d30-fix-the-problem",
+    "en": "Our technicians will fix the problem with your account this afternoon.",
+    "ko": "저희 기술진이 오늘 오후에 귀하의 계정 문제를 해결하겠습니다."
+  },
+  {
+    "id": "d30-call-for-assistance",
+    "en": "Please call for assistance if the payment page does not load.",
+    "ko": "결제 페이지가 열리지 않으면 전화로 도움을 요청해 주십시오."
+  },
+  {
+    "id": "d30-existing-facilities",
+    "en": "The budget covers repairs to existing facilities at the distribution center.",
+    "ko": "그 예산은 물류 센터 기존 시설의 보수 비용을 포함합니다."
+  },
+  {
+    "id": "d30-prompt-attention-to",
+    "en": "We appreciate your prompt attention to this billing matter.",
+    "ko": "이 청구 건에 즉각적인 관심을 기울여 주셔서 감사합니다."
+  },
+  {
+    "id": "d30-workplace-condition",
+    "en": "The survey asks employees to rate workplace conditions at each branch.",
+    "ko": "그 설문은 직원들에게 각 지점의 작업장 환경을 평가하도록 요청합니다."
+  },
+  {
+    "id": "d30-on-track",
+    "en": "The renovation project is on track to finish before the holidays.",
+    "ko": "개조 공사는 연휴 전에 끝나도록 제대로 진행되고 있습니다."
+  },
+  {
+    "id": "d30-estimated-date",
+    "en": "The estimated date of delivery appears at the top of your invoice.",
+    "ko": "예상 배송 날짜는 청구서 상단에 표시되어 있습니다."
+  },
+  {
+    "id": "d30-solar-energy",
+    "en": "The new warehouse runs mostly on solar energy from rooftop panels.",
+    "ko": "새 창고는 대부분 옥상 패널에서 얻은 태양열 에너지로 운영됩니다."
+  },
+  {
+    "id": "d30-water-saving",
+    "en": "All restrooms have been fitted with water-saving fixtures this year.",
+    "ko": "올해 모든 화장실에 절수형 설비가 설치되었습니다."
+  },
+  {
+    "id": "d30-urban-development",
+    "en": "The council approved an urban development plan for the waterfront area.",
+    "ko": "의회는 수변 지역에 대한 도시 개발 계획을 승인했습니다."
+  },
+  {
+    "id": "d30-climate-change",
+    "en": "The seminar examines how climate change affects global shipping routes.",
+    "ko": "그 세미나는 기후 변화가 세계 해운 항로에 미치는 영향을 살펴봅니다."
+  },
+  {
+    "id": "d30-domestic-flight",
+    "en": "All domestic flights depart from the newly renovated south terminal.",
+    "ko": "모든 국내선 항공편은 새로 개조된 남쪽 터미널에서 출발합니다."
+  },
+  {
+    "id": "d30-stopover",
+    "en": "The itinerary includes a short stopover before the final connecting flight.",
+    "ko": "그 일정에는 마지막 연결 항공편 전에 짧은 경유가 포함되어 있습니다."
+  },
+  {
+    "id": "d30-overhead-compartment",
+    "en": "Please store your carry-on bags in the overhead compartment.",
+    "ko": "기내 휴대 수하물은 머리 위 짐칸에 보관해 주십시오."
+  },
+  {
+    "id": "d30-frequent-flyer",
+    "en": "Frequent flyers may board early and check one extra bag.",
+    "ko": "자주 여행하시는 고객은 우선 탑승하고 수하물 하나를 추가로 부칠 수 있습니다."
+  },
+  {
+    "id": "d30-tourist-attraction",
+    "en": "The historic harbor remains the region's most popular tourist attraction.",
+    "ko": "그 유서 깊은 항구는 그 지역에서 가장 인기 있는 관광 명소입니다."
+  },
+  {
+    "id": "d30-must-see",
+    "en": "The rooftop garden is a must-see for visitors to the center.",
+    "ko": "옥상 정원은 센터를 찾는 방문객이 꼭 보아야 할 곳입니다."
+  },
+  {
+    "id": "d30-ruins",
+    "en": "The afternoon tour visits the ancient ruins just outside the city.",
+    "ko": "오후 투어는 도시 바로 외곽의 고대 유적을 방문합니다."
+  },
+  {
+    "id": "d30-in-recognition-of",
+    "en": "The award was presented in recognition of thirty years of service.",
+    "ko": "그 상은 30년간의 근속을 인정하여 수여되었습니다."
+  },
+  {
+    "id": "d30-seating-plan",
+    "en": "The seating plan for the awards dinner is posted near the entrance.",
+    "ko": "시상식 만찬 좌석 배치도가 입구 근처에 게시되어 있습니다."
+  },
+  {
+    "id": "d30-conclusion",
+    "en": "Refreshments will be served at the conclusion of the training session.",
+    "ko": "교육 과정이 끝날 때 다과가 제공됩니다."
+  },
+  {
+    "id": "d30-parking-attendant",
+    "en": "A parking attendant will direct guests to the visitor lot.",
+    "ko": "주차 요원이 방문객들을 방문자 주차장으로 안내할 것입니다."
+  },
+  {
+    "id": "d30-monetary-donation",
+    "en": "The foundation accepts monetary donations through its secure website.",
+    "ko": "그 재단은 보안 웹사이트를 통해 금전적 기부를 받습니다."
+  },
+  {
+    "id": "d30-pros-and-cons",
+    "en": "The report outlines the pros and cons of relocating the head office.",
+    "ko": "그 보고서는 본사 이전의 장단점을 설명합니다."
+  },
+  {
+    "id": "d30-breakage",
+    "en": "The insurance policy covers breakage during shipping and handling.",
+    "ko": "그 보험은 운송 및 취급 중의 파손을 보장합니다."
+  },
+  {
+    "id": "d30-collapse",
+    "en": "Engineers inspected the warehouse roof after the partial collapse last week.",
+    "ko": "기술자들이 지난주 부분 붕괴 이후 창고 지붕을 점검했습니다."
+  },
+  {
+    "id": "d30-wear-and-tear",
+    "en": "The lease does not charge tenants for normal wear and tear.",
+    "ko": "그 임대 계약은 정상적인 마모에 대해 임차인에게 비용을 청구하지 않습니다."
+  },
+  {
+    "id": "d30-specifics",
+    "en": "The contractor reviewed the specifics before starting work on the lobby.",
+    "ko": "그 계약업체는 로비 공사를 시작하기 전에 시방서를 검토했습니다."
+  },
+  {
+    "id": "d30-adaptability",
+    "en": "The software's adaptability makes it suitable for offices of any size.",
+    "ko": "그 소프트웨어의 적응성 덕분에 어떤 규모의 사무실에도 적합합니다."
+  },
+  {
+    "id": "d30-emission",
+    "en": "The plant has reduced its carbon emissions by fifteen percent.",
+    "ko": "그 공장은 탄소 배출량을 15퍼센트 줄였습니다."
+  },
+  {
+    "id": "d30-extinction",
+    "en": "The documentary explains how habitat loss leads to species extinction.",
+    "ko": "그 다큐멘터리는 서식지 감소가 어떻게 종의 멸종으로 이어지는지 설명합니다."
+  },
+  {
+    "id": "d30-scarcity",
+    "en": "The scarcity of raw materials has delayed several production orders.",
+    "ko": "원자재 부족으로 여러 생산 주문이 지연되었습니다."
+  },
+  {
+    "id": "d30-purify",
+    "en": "The new filters purify the water used throughout the factory.",
+    "ko": "새 필터가 공장 전역에서 사용되는 물을 정화합니다."
+  },
+  {
+    "id": "d30-devastate",
+    "en": "The storm devastated farmland across the northern shipping region.",
+    "ko": "그 폭풍은 북부 운송 지역 전역의 농지를 황폐하게 만들었습니다."
+  },
+  {
+    "id": "d30-energy-conservation",
+    "en": "The building manager posted energy conservation tips in every break room.",
+    "ko": "건물 관리인이 모든 휴게실에 에너지 절약 요령을 게시했습니다."
+  },
+  {
+    "id": "d30-natural-habitats",
+    "en": "The project aims to protect natural habitats near the construction site.",
+    "ko": "그 사업은 공사 현장 인근의 자연 서식지를 보호하는 것을 목표로 합니다."
+  },
+  {
+    "id": "d30-depletion",
+    "en": "The report warns about the depletion of regional water supplies.",
+    "ko": "그 보고서는 지역 수자원의 고갈에 대해 경고합니다."
+  },
+  {
+    "id": "d30-criteria",
+    "en": "Applications will be evaluated according to the criteria listed below.",
+    "ko": "지원서는 아래에 나열된 기준에 따라 평가될 것입니다."
+  },
+  {
+    "id": "d30-endangered-species",
+    "en": "The park charges a small fee to fund endangered species research.",
+    "ko": "그 공원은 멸종 위기종 연구 자금을 위해 소액의 요금을 받습니다."
+  },
+  {
+    "id": "d30-contamination",
+    "en": "Inspectors found no contamination in the samples from the packaging plant.",
+    "ko": "조사관들은 포장 공장에서 채취한 시료에서 오염을 발견하지 못했습니다."
+  },
+  {
+    "id": "d30-pollutant",
+    "en": "The new filters remove most pollutants from the factory's exhaust.",
+    "ko": "새 필터는 공장 배기가스에서 대부분의 오염 물질을 제거합니다."
+  },
+  {
+    "id": "d30-fossil-fuel",
+    "en": "The company plans to reduce its reliance on fossil fuels next decade.",
+    "ko": "그 회사는 다음 십 년 동안 화석 연료 의존도를 줄일 계획입니다."
+  },
+  {
+    "id": "d30-sojourn",
+    "en": "Ms. Patel's brief sojourn at the branch office lasted only two weeks.",
+    "ko": "파텔 씨의 지사 체류는 단 2주에 그쳤습니다."
+  },
+  {
+    "id": "d30-censorship",
+    "en": "The panel will discuss censorship in international advertising campaigns.",
+    "ko": "그 토론단은 국제 광고 캠페인에서의 검열에 대해 논의할 것입니다."
+  },
+  {
+    "id": "d30-tactics",
+    "en": "The workshop covers negotiation tactics for purchasing managers.",
+    "ko": "그 워크숍은 구매 관리자를 위한 협상 전략을 다룹니다."
+  },
+  {
+    "id": "d30-premiere",
+    "en": "Tickets for the film's premiere sold out within two hours.",
+    "ko": "그 영화 개봉 시사회 표는 두 시간 만에 매진되었습니다."
+  },
+  {
+    "id": "d30-sequel-to",
+    "en": "The studio announced a sequel to last summer's most popular documentary.",
+    "ko": "그 스튜디오는 지난여름 가장 인기 있었던 다큐멘터리의 속편을 발표했습니다."
+  }
+]

@@ -1,0 +1,757 @@
+[
+ {
+  "id": "d19-r-sum",
+  "en": "Please submit your résumé and cover letter to the hiring manager by Friday.",
+  "ko": "금요일까지 이력서와 자기소개서를 채용 담당자에게 제출해 주시기 바랍니다."
+ },
+ {
+  "id": "d19-bargain",
+  "en": "The clearance rack offers real bargains on last season's office chairs.",
+  "ko": "정리 판매대에서는 지난 시즌 사무용 의자를 아주 싼 값에 살 수 있습니다."
+ },
+ {
+  "id": "d19-accessories",
+  "en": "All camera accessories are sold separately at the electronics counter downstairs.",
+  "ko": "모든 카메라 부속품은 아래층 전자제품 코너에서 별도로 판매됩니다."
+ },
+ {
+  "id": "d19-outerwear",
+  "en": "Winter outerwear is now thirty percent off at the Grandview Department Store.",
+  "ko": "겨울 겉옷이 현재 그랜드뷰 백화점에서 30퍼센트 할인 중입니다."
+ },
+ {
+  "id": "d19-handbook",
+  "en": "New hires should review the employee handbook before their first training session.",
+  "ko": "신입 사원은 첫 교육 시간 전에 직원 안내서를 검토해야 합니다."
+ },
+ {
+  "id": "d19-difference",
+  "en": "There is a noticeable difference between the two quotes from our suppliers.",
+  "ko": "두 공급업체가 제시한 견적 사이에는 눈에 띄는 차이가 있습니다."
+ },
+ {
+  "id": "d19-apology",
+  "en": "The airline issued a formal apology for the long departure delay.",
+  "ko": "항공사는 긴 출발 지연에 대해 공식적으로 사과했습니다."
+ },
+ {
+  "id": "d19-interviewer",
+  "en": "The interviewer will ask about your previous experience in customer service.",
+  "ko": "면접관이 고객 서비스 분야의 이전 경력에 대해 질문할 것입니다."
+ },
+ {
+  "id": "d19-ownership",
+  "en": "Ownership of the warehouse will transfer to Alpine Logistics next quarter.",
+  "ko": "그 창고의 소유권은 다음 분기에 알파인 로지스틱스로 이전됩니다."
+ },
+ {
+  "id": "d19-disease",
+  "en": "The clinic offers free screenings for common heart disease every Tuesday.",
+  "ko": "그 병원은 매주 화요일 흔한 심장 질병에 대한 무료 검진을 제공합니다."
+ },
+ {
+  "id": "d19-remedy",
+  "en": "The pharmacist recommended a simple remedy for seasonal allergy symptoms.",
+  "ko": "약사는 계절성 알레르기 증상에 대한 간단한 치료법을 추천했습니다."
+ },
+ {
+  "id": "d19-patient",
+  "en": "Each patient must complete the medical form before seeing the doctor.",
+  "ko": "모든 환자는 진료를 받기 전에 의료 서식을 작성해야 합니다."
+ },
+ {
+  "id": "d19-healthcare",
+  "en": "Our company provides comprehensive healthcare benefits to all full-time employees.",
+  "ko": "저희 회사는 모든 정규직 직원에게 포괄적인 건강 관리 혜택을 제공합니다."
+ },
+ {
+  "id": "d19-division",
+  "en": "The marketing division will move to the fourth floor next month.",
+  "ko": "마케팅 부서는 다음 달에 4층으로 이전할 예정입니다."
+ },
+ {
+  "id": "d19-tutorial",
+  "en": "A short video tutorial explains how to use the new scheduling software.",
+  "ko": "짧은 동영상 교육 자료가 새 일정 관리 소프트웨어의 사용법을 설명해 줍니다."
+ },
+ {
+  "id": "d19-base",
+  "en": "The merger gave the firm a stronger base for regional expansion.",
+  "ko": "합병으로 그 회사는 지역 확장을 위한 더 탄탄한 기반을 갖추게 되었습니다."
+ },
+ {
+  "id": "d19-readership",
+  "en": "The magazine has expanded its readership among young business professionals.",
+  "ko": "그 잡지는 젊은 직장인들 사이에서 독자층을 넓혔습니다."
+ },
+ {
+  "id": "d19-kickoff",
+  "en": "The project kickoff meeting is scheduled for nine on Monday morning.",
+  "ko": "프로젝트 착수 회의는 월요일 오전 9시로 예정되어 있습니다."
+ },
+ {
+  "id": "d19-discovery",
+  "en": "The research team announced the discovery of a more efficient production method.",
+  "ko": "연구팀은 더 효율적인 생산 방식의 발견을 발표했습니다."
+ },
+ {
+  "id": "d19-context",
+  "en": "The report explains the budget cuts in the context of falling sales.",
+  "ko": "그 보고서는 매출 하락이라는 정황 속에서 예산 삭감을 설명합니다."
+ },
+ {
+  "id": "d19-finalist",
+  "en": "Each finalist will present a proposal to the review panel on Thursday.",
+  "ko": "각 결승 진출자는 목요일에 심사단 앞에서 제안서를 발표하게 됩니다."
+ },
+ {
+  "id": "d19-currency",
+  "en": "The hotel front desk can exchange foreign currency until eight tonight.",
+  "ko": "호텔 프런트에서는 오늘 밤 8시까지 외국 통화를 환전할 수 있습니다."
+ },
+ {
+  "id": "d19-retirement",
+  "en": "Ms. Chen announced her retirement after twenty years with the company.",
+  "ko": "첸 씨는 회사에서 20년간 근무한 후 퇴직을 발표했습니다."
+ },
+ {
+  "id": "d19-celebration",
+  "en": "The anniversary celebration will be held in the main lobby Friday evening.",
+  "ko": "창립 기념 축하 행사가 금요일 저녁 중앙 로비에서 열릴 예정입니다."
+ },
+ {
+  "id": "d19-firm",
+  "en": "The accounting firm has opened a second branch near the airport.",
+  "ko": "그 회계 회사는 공항 근처에 두 번째 지점을 열었습니다."
+ },
+ {
+  "id": "d19-patron",
+  "en": "Patrons of the library may borrow up to ten items at once.",
+  "ko": "도서관 이용자는 한 번에 최대 열 권까지 대출할 수 있습니다."
+ },
+ {
+  "id": "d19-earnings",
+  "en": "Quarterly earnings exceeded the forecast thanks to strong overseas demand.",
+  "ko": "해외 수요 호조 덕분에 분기 수익이 예상치를 넘어섰습니다."
+ },
+ {
+  "id": "d19-tenure",
+  "en": "During his tenure as director, the department doubled its annual revenue.",
+  "ko": "이사로 재임하는 동안 그 부서는 연간 매출을 두 배로 늘렸습니다."
+ },
+ {
+  "id": "d19-queue",
+  "en": "Please form a queue at the counter for express check-in.",
+  "ko": "빠른 체크인을 위해 카운터 앞에 줄을 서 주시기 바랍니다."
+ },
+ {
+  "id": "d19-obstacle",
+  "en": "Limited funding remains the biggest obstacle to launching the pilot program.",
+  "ko": "제한된 자금이 시범 프로그램 시작의 가장 큰 장애물로 남아 있습니다."
+ },
+ {
+  "id": "d19-associate",
+  "en": "Please forward the revised contract to your associate in the legal team.",
+  "ko": "수정된 계약서를 법무팀 동료에게 전달해 주시기 바랍니다."
+ },
+ {
+  "id": "d19-surcharge",
+  "en": "A small surcharge applies to all deliveries outside the metropolitan area.",
+  "ko": "수도권 밖으로 나가는 모든 배송에는 소액의 추가 요금이 부과됩니다."
+ },
+ {
+  "id": "d19-disturbance",
+  "en": "We apologize for the disturbance caused by the ongoing lobby renovation.",
+  "ko": "진행 중인 로비 보수 공사로 인한 방해에 대해 사과드립니다."
+ },
+ {
+  "id": "d19-dismissal",
+  "en": "The manual outlines the procedures for written warnings and eventual dismissal.",
+  "ko": "그 지침서는 서면 경고와 최종 해고에 이르는 절차를 설명합니다."
+ },
+ {
+  "id": "d19-conglomerate",
+  "en": "A global conglomerate has acquired our largest competitor in the region.",
+  "ko": "한 세계적인 거대 복합 기업이 지역 내 최대 경쟁사를 인수했습니다."
+ },
+ {
+  "id": "d19-logistics",
+  "en": "The logistics team will handle shipping arrangements for the trade fair.",
+  "ko": "물류팀이 무역 박람회의 운송 준비를 담당할 예정입니다."
+ },
+ {
+  "id": "d19-complication",
+  "en": "An unexpected complication delayed the installation of the new office server.",
+  "ko": "예기치 못한 복잡한 문제가 새 사무실 서버 설치를 지연시켰습니다."
+ },
+ {
+  "id": "d19-prevention",
+  "en": "The safety officer will lead a workshop on accident prevention Wednesday.",
+  "ko": "안전 담당자가 수요일에 사고 예방에 관한 워크숍을 진행할 예정입니다."
+ },
+ {
+  "id": "d19-veterinarian",
+  "en": "The veterinarian at our clinic is available for appointments every weekday.",
+  "ko": "저희 병원의 수의사는 평일마다 진료 예약이 가능합니다."
+ },
+ {
+  "id": "d19-circumstance",
+  "en": "Under no circumstance should visitors enter the restricted storage area.",
+  "ko": "어떠한 상황에서도 방문객은 출입 제한 보관 구역에 들어가서는 안 됩니다."
+ },
+ {
+  "id": "d19-proceedings",
+  "en": "The proceedings of last week's board meeting have been distributed electronically.",
+  "ko": "지난주 이사회의 회의록이 전자 문서로 배포되었습니다."
+ },
+ {
+  "id": "d19-breakthrough",
+  "en": "The laboratory's latest breakthrough could reduce manufacturing costs by half.",
+  "ko": "연구소의 최근 획기적인 발전은 제조 비용을 절반으로 줄일 수 있습니다."
+ },
+ {
+  "id": "d19-inception",
+  "en": "Since its inception, the foundation has funded over two hundred scholarships.",
+  "ko": "설립 이후 그 재단은 200개가 넘는 장학금을 지원해 왔습니다."
+ },
+ {
+  "id": "d19-milestone",
+  "en": "Reaching one million subscribers is a major milestone for our platform.",
+  "ko": "구독자 100만 명 달성은 저희 플랫폼의 중요한 획기적 사건입니다."
+ },
+ {
+  "id": "d19-proliferation",
+  "en": "The proliferation of mobile payment apps has changed consumer spending habits.",
+  "ko": "모바일 결제 앱의 확산이 소비자의 지출 습관을 바꾸어 놓았습니다."
+ },
+ {
+  "id": "d19-compilation",
+  "en": "The compilation of the survey results will take about two more weeks.",
+  "ko": "설문 결과의 편집 작업은 약 2주가 더 걸릴 예정입니다."
+ },
+ {
+  "id": "d19-perception",
+  "en": "The campaign aims to improve public perception of our customer service.",
+  "ko": "이번 캠페인은 저희 고객 서비스에 대한 대중의 인식을 개선하는 것을 목표로 합니다."
+ },
+ {
+  "id": "d19-circulation",
+  "en": "The newspaper's circulation has risen steadily since the redesign last spring.",
+  "ko": "그 신문의 판매 부수는 지난봄 개편 이후 꾸준히 늘었습니다."
+ },
+ {
+  "id": "d19-upswing",
+  "en": "Retail sales showed a strong upswing during the holiday shopping season.",
+  "ko": "소매 매출은 연말 쇼핑 시즌 동안 뚜렷한 상승세를 보였습니다."
+ },
+ {
+  "id": "d19-hypothesis",
+  "en": "The research team tested the hypothesis that shorter meetings improve productivity.",
+  "ko": "연구팀은 짧은 회의가 생산성을 높인다는 가설을 검증했습니다."
+ },
+ {
+  "id": "d19-legislation",
+  "en": "New legislation requires employers to provide additional parental leave.",
+  "ko": "새 법률은 고용주가 추가 육아 휴직을 제공하도록 요구합니다."
+ },
+ {
+  "id": "d20-identical",
+  "en": "Both branches follow identical procedures for processing customer refund requests.",
+  "ko": "두 지점은 고객 환불 요청 처리에 대해 똑같은 절차를 따릅니다."
+ },
+ {
+  "id": "d20-steep",
+  "en": "The company reported a steep decline in overseas orders last quarter.",
+  "ko": "그 회사는 지난 분기 해외 주문의 급격한 감소를 보고했습니다."
+ },
+ {
+  "id": "d20-vacant",
+  "en": "The position of regional supervisor has been vacant since early March.",
+  "ko": "지역 관리자 자리는 3월 초부터 공석입니다."
+ },
+ {
+  "id": "d20-modest",
+  "en": "The department requested a modest increase in its annual advertising budget.",
+  "ko": "그 부서는 연간 광고 예산의 적당한 증액을 요청했습니다."
+ },
+ {
+  "id": "d20-useful",
+  "en": "The orientation packet contains useful information about parking and building access.",
+  "ko": "오리엔테이션 자료집에는 주차와 건물 출입에 관한 유용한 정보가 들어 있습니다."
+ },
+ {
+  "id": "d20-respected",
+  "en": "Ms. Alvarez is a widely respected consultant in the shipping industry.",
+  "ko": "알바레즈 씨는 해운 업계에서 널리 평판이 좋은 컨설턴트입니다."
+ },
+ {
+  "id": "d20-lively",
+  "en": "The trade show opened with a lively discussion among industry leaders.",
+  "ko": "무역 박람회는 업계 리더들의 활기찬 토론으로 시작되었습니다."
+ },
+ {
+  "id": "d20-vague",
+  "en": "The client's instructions were too vague to begin the design work.",
+  "ko": "고객의 지시가 너무 애매해서 디자인 작업을 시작할 수 없었습니다."
+ },
+ {
+  "id": "d20-harmful",
+  "en": "The new packaging contains no chemicals harmful to the environment.",
+  "ko": "새 포장재에는 환경에 해로운 화학 물질이 들어 있지 않습니다."
+ },
+ {
+  "id": "d20-curious",
+  "en": "Many visitors were curious about the factory's new automated assembly line.",
+  "ko": "많은 방문객이 공장의 새 자동 조립 라인에 호기심을 보였습니다."
+ },
+ {
+  "id": "d20-dissatisfied",
+  "en": "Customers dissatisfied with the product may request a full refund.",
+  "ko": "제품에 불만스러워하는 고객은 전액 환불을 요청하실 수 있습니다."
+ },
+ {
+  "id": "d20-external",
+  "en": "An external auditor will review our financial records next week.",
+  "ko": "외부 감사인이 다음 주에 저희 재무 기록을 검토할 예정입니다."
+ },
+ {
+  "id": "d20-wasteful",
+  "en": "Printing every report is wasteful and raises our monthly supply costs.",
+  "ko": "모든 보고서를 인쇄하는 것은 낭비이며 월 소모품 비용을 높입니다."
+ },
+ {
+  "id": "d20-realistic",
+  "en": "Please set a realistic deadline before assigning the project to contractors.",
+  "ko": "계약업체에 프로젝트를 맡기기 전에 현실적인 마감일을 정해 주십시오."
+ },
+ {
+  "id": "d20-passionate",
+  "en": "Our new sales director is passionate about improving client relationships.",
+  "ko": "저희 신임 영업 이사는 고객 관계 개선에 열정적입니다."
+ },
+ {
+  "id": "d20-active",
+  "en": "All staff members took an active role in the fundraising campaign.",
+  "ko": "모든 직원이 모금 캠페인에서 적극적인 역할을 맡았습니다."
+ },
+ {
+  "id": "d20-lengthy",
+  "en": "The manager shortened the lengthy report before sending it to headquarters.",
+  "ko": "관리자는 본사에 보내기 전에 장황한 보고서를 줄였습니다."
+ },
+ {
+  "id": "d20-sudden",
+  "en": "A sudden power outage interrupted the video conference this morning.",
+  "ko": "갑작스러운 정전이 오늘 아침 화상 회의를 중단시켰습니다."
+ },
+ {
+  "id": "d20-doubtful",
+  "en": "It is doubtful that the shipment will arrive before the holiday.",
+  "ko": "그 화물이 휴일 전에 도착할지는 의심스럽습니다."
+ },
+ {
+  "id": "d20-fluent",
+  "en": "Applicants must be fluent in at least two languages for this position.",
+  "ko": "지원자는 이 직책을 위해 최소 두 개 언어에 유창해야 합니다."
+ },
+ {
+  "id": "d20-international",
+  "en": "The firm plans to expand into international markets by next year.",
+  "ko": "그 회사는 내년까지 국제 시장으로 진출할 계획입니다."
+ },
+ {
+  "id": "d20-entry-level",
+  "en": "We are hiring three entry-level analysts for the research department.",
+  "ko": "저희는 리서치 부서에 입문 단계의 분석가 세 명을 채용하고 있습니다."
+ },
+ {
+  "id": "d20-recreational",
+  "en": "The resort offers various recreational facilities for business travelers and families.",
+  "ko": "그 리조트는 출장객과 가족을 위한 다양한 오락 시설을 제공합니다."
+ },
+ {
+  "id": "d20-patient",
+  "en": "Thank you for being patient while we upgrade our billing system.",
+  "ko": "저희가 청구 시스템을 개선하는 동안 참을성 있게 기다려 주셔서 감사합니다."
+ },
+ {
+  "id": "d20-confused",
+  "en": "Several employees were confused by the revised expense reporting guidelines.",
+  "ko": "여러 직원이 개정된 경비 보고 지침 때문에 당황했습니다."
+ },
+ {
+  "id": "d20-unclaimed",
+  "en": "Unclaimed luggage will be moved to the airport storage office tonight.",
+  "ko": "주인이 나서지 않은 수하물은 오늘 밤 공항 보관소로 옮겨집니다."
+ },
+ {
+  "id": "d20-bilateral",
+  "en": "The two firms signed a bilateral agreement on technology sharing.",
+  "ko": "두 회사는 기술 공유에 관한 양자 협정을 체결했습니다."
+ },
+ {
+  "id": "d20-probationary",
+  "en": "New employees receive full benefits after the three-month probationary period.",
+  "ko": "신입 사원은 3개월의 견습 기간이 끝난 후 모든 복리후생을 받습니다."
+ },
+ {
+  "id": "d20-elaborate",
+  "en": "The architect presented an elaborate model of the proposed convention center.",
+  "ko": "건축가는 제안된 컨벤션 센터의 정교한 모형을 발표했습니다."
+ },
+ {
+  "id": "d20-eventful",
+  "en": "It has been an eventful year for our overseas branch offices.",
+  "ko": "저희 해외 지사들에게는 다사다난한 한 해였습니다."
+ },
+ {
+  "id": "d20-intermittent",
+  "en": "Intermittent network problems have slowed order processing all week.",
+  "ko": "간헐적인 네트워크 문제로 이번 주 내내 주문 처리가 지연되었습니다."
+ },
+ {
+  "id": "d20-enlightening",
+  "en": "The keynote speech was both entertaining and enlightening for the audience.",
+  "ko": "기조연설은 청중에게 재미있으면서도 계몽적인 내용이었습니다."
+ },
+ {
+  "id": "d20-tedious",
+  "en": "Automating the tedious data entry has saved our team many hours.",
+  "ko": "지루한 데이터 입력 작업을 자동화하여 팀은 많은 시간을 절약했습니다."
+ },
+ {
+  "id": "d20-thrifty",
+  "en": "Thrifty shoppers appreciate the store's weekly discount coupons and seasonal sales.",
+  "ko": "절약하는 쇼핑객들은 그 상점의 주간 할인 쿠폰과 계절 세일을 반깁니다."
+ },
+ {
+  "id": "d20-coherent",
+  "en": "The committee asked for a coherent explanation of the budget changes.",
+  "ko": "위원회는 예산 변경에 대한 일관성 있는 설명을 요청했습니다."
+ },
+ {
+  "id": "d20-philanthropic",
+  "en": "The chairman is known for his philanthropic support of local schools.",
+  "ko": "회장은 지역 학교에 대한 박애주의적 후원으로 잘 알려져 있습니다."
+ },
+ {
+  "id": "d20-robust",
+  "en": "The warehouse uses robust shelving designed to hold heavy equipment.",
+  "ko": "그 창고는 무거운 장비를 견디도록 설계된 튼튼한 선반을 사용합니다."
+ },
+ {
+  "id": "d20-reciprocal",
+  "en": "The two airlines established a reciprocal arrangement for frequent flyer points.",
+  "ko": "두 항공사는 상용 고객 마일리지에 대해 상호 협정을 맺었습니다."
+ },
+ {
+  "id": "d20-conventional",
+  "en": "Many buyers still prefer conventional advertising over online promotions.",
+  "ko": "많은 구매자들이 여전히 온라인 홍보보다 전통적인 광고를 선호합니다."
+ },
+ {
+  "id": "d20-noteworthy",
+  "en": "The annual report highlights several noteworthy achievements from the past year.",
+  "ko": "연례 보고서는 지난 한 해의 주목할 만한 성과 몇 가지를 강조합니다."
+ },
+ {
+  "id": "d20-argumentative",
+  "en": "The mediator asked the argumentative participants to remain calm and respectful.",
+  "ko": "중재자는 논쟁적인 참가자들에게 침착하고 정중한 태도를 유지해 달라고 요청했습니다."
+ },
+ {
+  "id": "d20-tolerant",
+  "en": "Supervisors should be tolerant of minor errors during the training period.",
+  "ko": "관리자들은 교육 기간 중의 사소한 실수에 관대해야 합니다."
+ },
+ {
+  "id": "d20-utmost",
+  "en": "Our staff handles every customer complaint with the utmost care.",
+  "ko": "저희 직원들은 모든 고객 불만을 최대한의 정성으로 처리합니다."
+ },
+ {
+  "id": "d20-harsh",
+  "en": "The coating protects the machinery from harsh outdoor weather conditions.",
+  "ko": "그 코팅은 기계를 가혹한 실외 기상 조건으로부터 보호합니다."
+ },
+ {
+  "id": "d20-reversible",
+  "en": "The store's reversible jackets are popular with frequent business travelers.",
+  "ko": "그 상점의 뒤집어 입을 수 있는 재킷은 출장이 잦은 사람들에게 인기가 있습니다."
+ },
+ {
+  "id": "d20-concentrated",
+  "en": "The workshop offers concentrated training in negotiation over two full days.",
+  "ko": "그 워크숍은 이틀 동안 협상에 관한 집중적인 교육을 제공합니다."
+ },
+ {
+  "id": "d20-fundamental",
+  "en": "Clear communication is fundamental to successful teamwork in every department.",
+  "ko": "명확한 소통은 모든 부서의 성공적인 팀워크에 기본적으로 필요합니다."
+ },
+ {
+  "id": "d20-incidental",
+  "en": "Please keep receipts for incidental expenses during your business trip.",
+  "ko": "출장 중 발생한 부차적인 비용의 영수증을 보관해 주시기 바랍니다."
+ },
+ {
+  "id": "d20-gradual",
+  "en": "The company expects a gradual recovery in demand over six months.",
+  "ko": "회사는 6개월에 걸쳐 수요가 점진적으로 회복될 것으로 예상합니다."
+ },
+ {
+  "id": "d20-firsthand",
+  "en": "Our interns gain firsthand experience in daily warehouse operations.",
+  "ko": "저희 인턴들은 일상적인 창고 운영을 직접 경험하게 됩니다."
+ },
+ {
+  "id": "d21-favorite",
+  "en": "The rooftop café is a favorite lunch spot among our employees.",
+  "ko": "옥상 카페는 저희 직원들이 매우 좋아하는 점심 장소입니다."
+ },
+ {
+  "id": "d21-closed",
+  "en": "The east entrance will remain closed during the parking lot repairs.",
+  "ko": "동쪽 출입구는 주차장 보수 공사 동안 폐쇄된 상태로 유지됩니다."
+ },
+ {
+  "id": "d21-enjoyable",
+  "en": "We hope you had an enjoyable stay at the Riverside Hotel.",
+  "ko": "리버사이드 호텔에서 즐거운 숙박을 하셨기를 바랍니다."
+ },
+ {
+  "id": "d21-excited",
+  "en": "The staff is excited about the opening of the downtown branch.",
+  "ko": "직원들은 시내 지점 개점에 들떠 있습니다."
+ },
+ {
+  "id": "d21-short",
+  "en": "We are short two servers for tonight's banquet in the ballroom.",
+  "ko": "오늘 밤 연회장에서 열리는 만찬에 서빙 직원이 두 명 부족합니다."
+ },
+ {
+  "id": "d21-enormous",
+  "en": "The convention drew an enormous crowd of buyers from across the country.",
+  "ko": "그 박람회는 전국에서 온 엄청난 수의 바이어를 끌어모았습니다."
+ },
+ {
+  "id": "d21-elementary",
+  "en": "The course covers elementary accounting skills for new office assistants.",
+  "ko": "그 강좌는 신입 사무 보조원을 위한 초급 회계 기술을 다룹니다."
+ },
+ {
+  "id": "d21-valued",
+  "en": "As a valued customer, you will receive early access to our sales.",
+  "ko": "소중한 고객으로서 귀하는 저희 할인 행사에 먼저 참여하실 수 있습니다."
+ },
+ {
+  "id": "d21-gifted",
+  "en": "The agency recruits gifted designers from art schools every spring.",
+  "ko": "그 대행사는 매년 봄 미술 학교에서 재능 있는 디자이너를 채용합니다."
+ },
+ {
+  "id": "d21-wooden",
+  "en": "The lobby features wooden furniture handcrafted by a local workshop.",
+  "ko": "로비에는 지역 공방에서 직접 만든 나무 가구가 놓여 있습니다."
+ },
+ {
+  "id": "d21-modern",
+  "en": "The office building offers modern facilities and convenient subway access.",
+  "ko": "그 사무용 건물은 현대적인 시설과 편리한 지하철 접근성을 제공합니다."
+ },
+ {
+  "id": "d21-different",
+  "en": "Each department follows a different procedure for approving travel expenses.",
+  "ko": "각 부서는 출장비 승인에 대해 서로 다른 절차를 따릅니다."
+ },
+ {
+  "id": "d21-stunning",
+  "en": "The renovated conference room offers a stunning view of the harbor.",
+  "ko": "새로 단장한 회의실에서는 항구의 근사한 전망을 볼 수 있습니다."
+ },
+ {
+  "id": "d21-daily",
+  "en": "The supervisor reviews daily sales reports before the morning briefing.",
+  "ko": "관리자는 아침 브리핑 전에 매일의 판매 보고서를 검토합니다."
+ },
+ {
+  "id": "d21-user-friendly",
+  "en": "Our updated booking system is far more user-friendly than the previous version.",
+  "ko": "저희의 새 예약 시스템은 이전 버전보다 훨씬 다루기 쉽습니다."
+ },
+ {
+  "id": "d21-foreseeable",
+  "en": "Shipping rates will remain unchanged for the foreseeable future.",
+  "ko": "예측 가능한 가까운 미래에는 운송 요금이 변동 없이 유지될 것입니다."
+ },
+ {
+  "id": "d21-latter",
+  "en": "Construction of the new terminal will finish in the latter half of next year.",
+  "ko": "새 터미널 공사는 내년 후반기에 완료될 예정입니다."
+ },
+ {
+  "id": "d21-imaginary",
+  "en": "The training uses an imaginary client to practice negotiation techniques.",
+  "ko": "그 교육은 협상 기법을 연습하기 위해 가상의 고객을 활용합니다."
+ },
+ {
+  "id": "d21-imaginative",
+  "en": "The agency is known for imaginative advertising campaigns and bold designs.",
+  "ko": "그 대행사는 상상력이 풍부한 광고 캠페인과 대담한 디자인으로 유명합니다."
+ },
+ {
+  "id": "d21-further",
+  "en": "Please contact the personnel office for further details about the benefits.",
+  "ko": "복리후생에 관한 추가 정보는 인사부로 문의해 주시기 바랍니다."
+ },
+ {
+  "id": "d21-time-consuming",
+  "en": "Manual inventory counting is far too time-consuming for our small staff.",
+  "ko": "수작업 재고 조사는 저희 소수 인원에게 지나치게 시간이 많이 걸립니다."
+ },
+ {
+  "id": "d21-obvious",
+  "en": "It is obvious that the new layout has improved workplace efficiency.",
+  "ko": "새 배치가 업무 효율을 높였다는 점은 명백합니다."
+ },
+ {
+  "id": "d21-corporate",
+  "en": "All employees must follow the corporate policy on data security.",
+  "ko": "모든 직원은 데이터 보안에 관한 기업 방침을 따라야 합니다."
+ },
+ {
+  "id": "d21-dietary",
+  "en": "Please inform the caterer of any dietary restrictions before the banquet.",
+  "ko": "연회 전에 식이 제한 사항이 있으면 출장 요리 업체에 알려 주시기 바랍니다."
+ },
+ {
+  "id": "d21-neutral",
+  "en": "The mediator remained neutral throughout the contract negotiation last week.",
+  "ko": "중재자는 지난주 계약 협상 내내 중립적인 입장을 유지했습니다."
+ },
+ {
+  "id": "d21-imminent",
+  "en": "An announcement about the merger appears imminent according to industry analysts.",
+  "ko": "업계 분석가들에 따르면 합병에 관한 발표가 임박한 것으로 보입니다."
+ },
+ {
+  "id": "d21-mundane",
+  "en": "The software handles mundane tasks so staff can focus on clients.",
+  "ko": "그 소프트웨어가 일상적인 업무를 처리해 직원들이 고객에게 집중할 수 있습니다."
+ },
+ {
+  "id": "d21-custodial",
+  "en": "The custodial staff cleans the meeting rooms after every evening event.",
+  "ko": "관리 직원들이 저녁 행사가 끝날 때마다 회의실을 청소합니다."
+ },
+ {
+  "id": "d21-on-call",
+  "en": "An on-call technician is available for emergency repairs every weekend.",
+  "ko": "주말마다 긴급 수리를 위해 대기 중인 기술자가 있습니다."
+ },
+ {
+  "id": "d21-unbiased",
+  "en": "The survey provides an unbiased assessment of customer satisfaction levels.",
+  "ko": "그 설문은 고객 만족도에 대한 편견 없는 평가를 제공합니다."
+ },
+ {
+  "id": "d21-marginal",
+  "en": "The changes had only a marginal effect on total production costs.",
+  "ko": "그 변경 사항은 총 생산 비용에 중요하지 않은 영향만 미쳤습니다."
+ },
+ {
+  "id": "d21-definitive",
+  "en": "We expect a definitive answer from the supplier by Thursday afternoon.",
+  "ko": "저희는 목요일 오후까지 공급업체로부터 확정적인 답변을 받을 것으로 예상합니다."
+ },
+ {
+  "id": "d21-shallow",
+  "en": "The consultant's analysis was too shallow to support such a decision.",
+  "ko": "그 컨설턴트의 분석은 그런 결정을 뒷받침하기에 너무 피상적이었습니다."
+ },
+ {
+  "id": "d21-profound",
+  "en": "Automation has had a profound impact on our warehouse operations.",
+  "ko": "자동화는 저희 창고 운영에 깊은 영향을 미쳤습니다."
+ },
+ {
+  "id": "d21-solitary",
+  "en": "A solitary complaint prompted a full review of the packaging process.",
+  "ko": "단 한 건의 불만이 포장 공정 전체에 대한 점검을 촉발했습니다."
+ },
+ {
+  "id": "d21-exhaustive",
+  "en": "The auditors conducted an exhaustive review of last year's expense records.",
+  "ko": "감사관들은 작년 경비 기록에 대해 철저한 검토를 실시했습니다."
+ },
+ {
+  "id": "d21-sheer",
+  "en": "The sheer volume of applications delayed the hiring process by weeks.",
+  "ko": "순전히 지원서의 양이 많아 채용 과정이 몇 주 지연되었습니다."
+ },
+ {
+  "id": "d21-confirmative",
+  "en": "The laboratory sent confirmative results supporting the product safety report.",
+  "ko": "연구소는 제품 안전 보고서를 뒷받침하는 확증적인 결과를 보내왔습니다."
+ },
+ {
+  "id": "d21-clerical",
+  "en": "The position involves clerical duties such as filing and scheduling appointments.",
+  "ko": "그 직책은 서류 정리와 일정 관리 같은 사무직 업무를 포함합니다."
+ },
+ {
+  "id": "d21-pending",
+  "en": "Your reimbursement request is still pending approval from the finance department.",
+  "ko": "귀하의 환급 요청은 아직 재무부의 승인을 기다리는 미결 상태입니다."
+ },
+ {
+  "id": "d21-contemporary",
+  "en": "The gallery downstairs displays contemporary artwork by regional designers.",
+  "ko": "아래층 갤러리는 지역 디자이너들의 현대 미술 작품을 전시합니다."
+ },
+ {
+  "id": "d21-transparent",
+  "en": "The company uses transparent packaging so customers can inspect the contents.",
+  "ko": "그 회사는 고객이 내용물을 확인할 수 있도록 투명한 포장재를 사용합니다."
+ },
+ {
+  "id": "d21-nominal",
+  "en": "Members may reserve the meeting room for a nominal fee.",
+  "ko": "회원은 아주 적은 요금으로 회의실을 예약할 수 있습니다."
+ },
+ {
+  "id": "d21-rugged",
+  "en": "These rugged laptops are designed for use at outdoor construction sites.",
+  "ko": "이 튼튼한 노트북은 야외 건설 현장에서 사용하도록 설계되었습니다."
+ },
+ {
+  "id": "d21-indigenous",
+  "en": "The resort's menu features indigenous ingredients from nearby farms and forests.",
+  "ko": "그 리조트의 메뉴는 인근 농장과 숲에서 나는 토착 식재료를 활용합니다."
+ },
+ {
+  "id": "d21-susceptible",
+  "en": "Electronic components are susceptible to damage from humidity during long storage.",
+  "ko": "전자 부품은 장기 보관 중 습기로 인한 손상에 영향을 받기 쉽습니다."
+ },
+ {
+  "id": "d21-high-profile",
+  "en": "The firm recently won a high-profile contract with a national retailer.",
+  "ko": "그 회사는 최근 전국 소매업체와 세간의 이목을 끄는 계약을 따냈습니다."
+ },
+ {
+  "id": "d21-succinct",
+  "en": "Please prepare a succinct summary of the quarterly figures for investors.",
+  "ko": "투자자들을 위해 분기 실적의 간결한 요약본을 준비해 주시기 바랍니다."
+ },
+ {
+  "id": "d21-perpetual",
+  "en": "Perpetual delays at the port have frustrated several of our clients.",
+  "ko": "항구에서의 끊임없는 지연이 저희 고객 여러 명을 실망시켰습니다."
+ },
+ {
+  "id": "d21-premature",
+  "en": "Announcing the merger now would be premature without formal board approval.",
+  "ko": "이사회의 공식 승인 없이 지금 합병을 발표하는 것은 시기상조일 것입니다."
+ }
+]

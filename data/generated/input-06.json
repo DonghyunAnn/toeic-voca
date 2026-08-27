@@ -1,0 +1,1918 @@
+{
+ "batch": 6,
+ "days": [
+  16,
+  17,
+  18
+ ],
+ "words": [
+  {
+   "id": "d16-category",
+   "day": 16,
+   "headword": "category",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "범주, 구분"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-barrier",
+   "day": 16,
+   "headword": "barrier",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "장애(물), 장벽"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-attitude",
+   "day": 16,
+   "headword": "attitude",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "태도"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-corporation",
+   "day": 16,
+   "headword": "corporation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "기업"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-profile",
+   "day": 16,
+   "headword": "profile",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "개요, 인지도"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-vegetarian",
+   "day": 16,
+   "headword": "vegetarian",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "채식주의자"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-postage",
+   "day": 16,
+   "headword": "postage",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "우편 요금"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-mood",
+   "day": 16,
+   "headword": "mood",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "기분, 분위기"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-tradition",
+   "day": 16,
+   "headword": "tradition",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "전통"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-marketplace",
+   "day": 16,
+   "headword": "marketplace",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "시장"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-prize",
+   "day": 16,
+   "headword": "prize",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "상"
+    },
+    {
+     "pos": "v.",
+     "meaning": "소중히 여기다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-workshop",
+   "day": 16,
+   "headword": "workshop",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "워크숍, 연수회"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-beginning",
+   "day": 16,
+   "headword": "beginning",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "시작, 근원"
+    },
+    {
+     "pos": "a.",
+     "meaning": "기초적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-adventure",
+   "day": 16,
+   "headword": "adventure",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "모험"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-failure",
+   "day": 16,
+   "headword": "failure",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "(기계 따위의) 고장, 파손, 실패"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-excellence",
+   "day": 16,
+   "headword": "excellence",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "우수, 탁월성"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-bank-account",
+   "day": 16,
+   "headword": "bank account",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "은행 계좌"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-senior",
+   "day": 16,
+   "headword": "senior",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "상급자"
+    },
+    {
+     "pos": "a.",
+     "meaning": "상위의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-symptom",
+   "day": 16,
+   "headword": "symptom",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "증상"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-instrument",
+   "day": 16,
+   "headword": "instrument",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "기구, 악기"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-portrait",
+   "day": 16,
+   "headword": "portrait",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "초상화, 인물 사진, 서술"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-lawyer",
+   "day": 16,
+   "headword": "lawyer",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "변호사"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-violation",
+   "day": 16,
+   "headword": "violation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "위반, 위배"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-fabric",
+   "day": 16,
+   "headword": "fabric",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "직물, 옷감"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-working-conditions",
+   "day": 16,
+   "headword": "working conditions",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "작업 조건"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-creditor",
+   "day": 16,
+   "headword": "creditor",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "채권자"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-shelter",
+   "day": 16,
+   "headword": "shelter",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "보호 시설, 피난처"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-usher",
+   "day": 16,
+   "headword": "usher",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "(극장 등의) 안내원, 수위"
+    },
+    {
+     "pos": "v.",
+     "meaning": "안내하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-affiliation",
+   "day": 16,
+   "headword": "affiliation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "제휴, 자회사"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-financial-history",
+   "day": 16,
+   "headword": "financial history",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "신용 거래 실적"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-rally",
+   "day": 16,
+   "headword": "rally",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "경주, 집회"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-standing-room",
+   "day": 16,
+   "headword": "standing room",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "입석"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-precedent",
+   "day": 16,
+   "headword": "precedent",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "전례, 선례"
+    },
+    {
+     "pos": "a.",
+     "meaning": "앞의, 선행하는"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-rebound",
+   "day": 16,
+   "headword": "rebound",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "(시세 등의) 반등, 회복"
+    },
+    {
+     "pos": "v.",
+     "meaning": "반등하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-scoop",
+   "day": 16,
+   "headword": "scoop",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "주걱, 특종"
+    },
+    {
+     "pos": "v.",
+     "meaning": "푸다, 퍼내다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-repository",
+   "day": 16,
+   "headword": "repository",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "저장소, 창고"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-outlet",
+   "day": 16,
+   "headword": "outlet",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "판매 대리점, 소매점, 콘센트, 배출구"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-intervention",
+   "day": 16,
+   "headword": "intervention",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "중재, 간섭"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-curb",
+   "day": 16,
+   "headword": "curb",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "억제, 제한"
+    },
+    {
+     "pos": "v.",
+     "meaning": "억제하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-enactment",
+   "day": 16,
+   "headword": "enactment",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "입법, 제정, 법률(조항)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-immensity",
+   "day": 16,
+   "headword": "immensity",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "거대, 광대함"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-retrieval",
+   "day": 16,
+   "headword": "retrieval",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "회복, 복구, 만회"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-safeguard",
+   "day": 16,
+   "headword": "safeguard",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "보호 수단, 예방 수단"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-goodwill",
+   "day": 16,
+   "headword": "goodwill",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "호의, 선의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-privatization",
+   "day": 16,
+   "headword": "privatization",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "민영화, 사유화"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-achiever",
+   "day": 16,
+   "headword": "achiever",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "크게 성공한 사람, 공을 세운 사람"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-incline",
+   "day": 16,
+   "headword": "incline",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "경사(면) v. ~할 마음이 들게 하다(to do)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-severance-pay",
+   "day": 16,
+   "headword": "severance pay",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "퇴직금"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-consignment",
+   "day": 16,
+   "headword": "consignment",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "탁송(품), 배송"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d16-petition",
+   "day": 16,
+   "headword": "petition",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "탄원서, (법원에 대한) 신청(서)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-role",
+   "day": 17,
+   "headword": "role",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "역할, 임무"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-control",
+   "day": 17,
+   "headword": "control",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "통제, 관리"
+    },
+    {
+     "pos": "v.",
+     "meaning": "통제하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-pension",
+   "day": 17,
+   "headword": "pension",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "연금"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-height",
+   "day": 17,
+   "headword": "height",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "높이, 고도"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-physician",
+   "day": 17,
+   "headword": "physician",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "의사, 내과 의사"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-refusal",
+   "day": 17,
+   "headword": "refusal",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "거절, 거부"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-attorney",
+   "day": 17,
+   "headword": "attorney",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "변호사"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-labor-cost",
+   "day": 17,
+   "headword": "labor cost",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "인건비"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-paycheck",
+   "day": 17,
+   "headword": "paycheck",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "급료, 급료 지불 수표"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-salary-review",
+   "day": 17,
+   "headword": "salary review",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "급여 수준 검토"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-opponent",
+   "day": 17,
+   "headword": "opponent",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "상대, 적수, 반대자"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-dress",
+   "day": 17,
+   "headword": "dress",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "의복"
+    },
+    {
+     "pos": "v.",
+     "meaning": "옷을 입다[입히다]"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-tax",
+   "day": 17,
+   "headword": "tax",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "세금"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-panic",
+   "day": 17,
+   "headword": "panic",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "당황 공황 상태"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-luxury",
+   "day": 17,
+   "headword": "luxury",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "사치(품)"
+    },
+    {
+     "pos": "a.",
+     "meaning": "사치스러운"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-model",
+   "day": 17,
+   "headword": "model",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "원형, 본보기"
+    },
+    {
+     "pos": "v.",
+     "meaning": "모형을 만들다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-pace",
+   "day": 17,
+   "headword": "pace",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "(활동·변화 등의) 속도, 템포"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-doubt",
+   "day": 17,
+   "headword": "doubt",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "의심, 의구심"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-basis",
+   "day": 17,
+   "headword": "basis",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "기초, 토대, 원리"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-planning",
+   "day": 17,
+   "headword": "planning",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "계획 입안[수립, 집행]"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-situation",
+   "day": 17,
+   "headword": "situation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "상황, 위치"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-emergency",
+   "day": 17,
+   "headword": "emergency",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "비상(사태)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-novel",
+   "day": 17,
+   "headword": "novel",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "소설"
+    },
+    {
+     "pos": "a.",
+     "meaning": "새로운"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-photographer",
+   "day": 17,
+   "headword": "photographer",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "사진가"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-depot",
+   "day": 17,
+   "headword": "depot",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "보관소, 저장소, 창고"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-predecessor",
+   "day": 17,
+   "headword": "predecessor",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "전임자"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-reinforcement",
+   "day": 17,
+   "headword": "reinforcement",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "보강, 강화"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-arbitration",
+   "day": 17,
+   "headword": "arbitration",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "중재, 조정"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-counterpart",
+   "day": 17,
+   "headword": "counterpart",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "상대, 대응물"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-default",
+   "day": 17,
+   "headword": "default",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "불이행, 태만"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-nuisance",
+   "day": 17,
+   "headword": "nuisance",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "성가신 존재, 골칫거리"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-blemish",
+   "day": 17,
+   "headword": "blemish",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "결점, 흠"
+    },
+    {
+     "pos": "v.",
+     "meaning": "흠을 내다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-dignitary",
+   "day": 17,
+   "headword": "dignitary",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "고위 인사"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-moderator",
+   "day": 17,
+   "headword": "moderator",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "사회자, 중재자"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-correlation",
+   "day": 17,
+   "headword": "correlation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "상호 관계, 상관 관계"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-forgery",
+   "day": 17,
+   "headword": "forgery",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "위조(물)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-cultivation",
+   "day": 17,
+   "headword": "cultivation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "경작, 재배, 배양, (관계) 구축"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-inconsistency",
+   "day": 17,
+   "headword": "inconsistency",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "불일치"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-confiscation",
+   "day": 17,
+   "headword": "confiscation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "몰수, 압수(품)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-policyholder",
+   "day": 17,
+   "headword": "policyholder",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "보험 계약자"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-barter",
+   "day": 17,
+   "headword": "barter",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "물물 교환"
+    },
+    {
+     "pos": "v.",
+     "meaning": "물물 교환하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-aviation",
+   "day": 17,
+   "headword": "aviation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "비행, 항공기 산업"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-peddler",
+   "day": 17,
+   "headword": "peddler",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "행상인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-outreach",
+   "day": 17,
+   "headword": "outreach",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "도달, 봉사활동"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-liquidity",
+   "day": 17,
+   "headword": "liquidity",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "(자산의) 유동성, 환금"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-fa-ade",
+   "day": 17,
+   "headword": "façade",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "(건물의) 정면, 전면"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-synthesis",
+   "day": 17,
+   "headword": "synthesis",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "종합, 통합, 합성"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-flock",
+   "day": 17,
+   "headword": "flock",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "떼, 무리"
+    },
+    {
+     "pos": "v.",
+     "meaning": "떼를 짓다, 모이다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-redemption",
+   "day": 17,
+   "headword": "redemption",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "변제, 상환"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d17-composition",
+   "day": 17,
+   "headword": "composition",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "구성"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-requirement",
+   "day": 18,
+   "headword": "requirement",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "필요조건, 요건"
+    }
+   ],
+   "tier": "core"
+  },
+  {
+   "id": "d18-visitor",
+   "day": 18,
+   "headword": "visitor",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "손님, 방문객"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-technique",
+   "day": 18,
+   "headword": "technique",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "기술, 기법"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-digit",
+   "day": 18,
+   "headword": "digit",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "숫자"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-sector",
+   "day": 18,
+   "headword": "sector",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "부문, 구역"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-trade",
+   "day": 18,
+   "headword": "trade",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "무역"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-scholar",
+   "day": 18,
+   "headword": "scholar",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "학자"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-mechanic",
+   "day": 18,
+   "headword": "mechanic",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "수리공, 정비사"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-liquid",
+   "day": 18,
+   "headword": "liquid",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "액체"
+    },
+    {
+     "pos": "a.",
+     "meaning": "액체의, 유동적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-merit",
+   "day": 18,
+   "headword": "merit",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "장점"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-boardroom",
+   "day": 18,
+   "headword": "boardroom",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "회의실"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-passion",
+   "day": 18,
+   "headword": "passion",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "열정"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-time-off",
+   "day": 18,
+   "headword": "time-off",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "결근, 휴식"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-disaster",
+   "day": 18,
+   "headword": "disaster",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "재난, 재해"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-merchant",
+   "day": 18,
+   "headword": "merchant",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "상인"
+    },
+    {
+     "pos": "a.",
+     "meaning": "상업의, 무역의"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-experiment",
+   "day": 18,
+   "headword": "experiment",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "실험"
+    },
+    {
+     "pos": "v.",
+     "meaning": "실험하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-electronics",
+   "day": 18,
+   "headword": "electronics",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "전자 공학, 전자 제품"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-iron",
+   "day": 18,
+   "headword": "iron",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "다리미, 철"
+    },
+    {
+     "pos": "v.",
+     "meaning": "다리미질하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-range",
+   "day": 18,
+   "headword": "range",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "범위, 다양성"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-statistics",
+   "day": 18,
+   "headword": "statistics",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "통계학"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-fever",
+   "day": 18,
+   "headword": "fever",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "열정"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-shareholder",
+   "day": 18,
+   "headword": "shareholder",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "주주"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-transition",
+   "day": 18,
+   "headword": "transition",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "변화, 이행, 추이"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-edge",
+   "day": 18,
+   "headword": "edge",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "가장자리, 우위, 유리함"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-opposition",
+   "day": 18,
+   "headword": "opposition",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "반대(측)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-contestant",
+   "day": 18,
+   "headword": "contestant",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "출전자, 경쟁자"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-inclination",
+   "day": 18,
+   "headword": "inclination",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "경향, 성향"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-momentum",
+   "day": 18,
+   "headword": "momentum",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "탄력, 추진력, 여세"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-infusion",
+   "day": 18,
+   "headword": "infusion",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "주입, 혼합물"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-memorial",
+   "day": 18,
+   "headword": "memorial",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "기념물, 기념관"
+    },
+    {
+     "pos": "a.",
+     "meaning": "기념하기 위한"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-allotment",
+   "day": 18,
+   "headword": "allotment",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "할당, 분배"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-procurement",
+   "day": 18,
+   "headword": "procurement",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "획득, 입수, 조달"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-concierge",
+   "day": 18,
+   "headword": "concierge",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "안내인, 관리인, 수위"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-jeopardy",
+   "day": 18,
+   "headword": "jeopardy",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "위험"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-collateral",
+   "day": 18,
+   "headword": "collateral",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "담보물"
+    },
+    {
+     "pos": "a.",
+     "meaning": "부수적인"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-stagehand",
+   "day": 18,
+   "headword": "stagehand",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "무대 담당자"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-conjunction",
+   "day": 18,
+   "headword": "conjunction",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "연합, 공동"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-flair",
+   "day": 18,
+   "headword": "flair",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "재능, 솜씨"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-bookkeeper",
+   "day": 18,
+   "headword": "bookkeeper",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "회계 장부 담당자, 경리 사원"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-persistence",
+   "day": 18,
+   "headword": "persistence",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "지속, 고집"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-detector",
+   "day": 18,
+   "headword": "detector",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "발견자, 탐지기"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-concession",
+   "day": 18,
+   "headword": "concession",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "양보, 구내 매점"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-halt",
+   "day": 18,
+   "headword": "halt",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "중단, 멈춤"
+    },
+    {
+     "pos": "v.",
+     "meaning": "멈추다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-hurdle",
+   "day": 18,
+   "headword": "hurdle",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "장애(물), 곤란한 문제"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-reproduction",
+   "day": 18,
+   "headword": "reproduction",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "재생, 복제(품)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-fraction",
+   "day": 18,
+   "headword": "fraction",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "(전체에 대해) 일부, 작은 부분"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-excavation",
+   "day": 18,
+   "headword": "excavation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "발굴, 발굴품(-s)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-citation",
+   "day": 18,
+   "headword": "citation",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "인용(구), 표창(장)"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-strike",
+   "day": 18,
+   "headword": "strike",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "파업"
+    },
+    {
+     "pos": "v.",
+     "meaning": "파업하다, 치다, 공격하다"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-remnant",
+   "day": 18,
+   "headword": "remnant",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "나머지, 잔여, 유물"
+    }
+   ],
+   "tier": "bonus"
+  },
+  {
+   "id": "d18-influx",
+   "day": 18,
+   "headword": "influx",
+   "senses": [
+    {
+     "pos": "n.",
+     "meaning": "유입, 밀려듦"
+    }
+   ],
+   "tier": "bonus"
+  }
+ ]
+}
