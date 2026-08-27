@@ -10,6 +10,7 @@
 """
 
 import hashlib
+import json
 import pathlib
 import re
 import sys
@@ -18,6 +19,7 @@ ROOT = pathlib.Path(__file__).resolve().parent
 DOCS = ROOT / "docs"
 SW = DOCS / "sw.js"
 APP = DOCS / "app.js"
+VERSION = DOCS / "version.json"
 
 
 def content_hash():
@@ -31,6 +33,8 @@ def content_hash():
     for p in files:
         h.update(str(p.relative_to(DOCS)).encode())
         data = p.read_bytes()
+        if p == VERSION:
+            continue        # 해시 결과를 담는 파일이라 넣으면 순환한다
         if p == APP:
             # BUILD 값 자체는 빼고 센다. 넣으면 해시가 자기 자신을 물어
             # 돌릴 때마다 값이 달라지고 영영 수렴하지 않는다.
@@ -59,6 +63,9 @@ def stamp_build(digest):
 def main():
     digest, n = content_hash()
     stamp_build(digest)
+
+    # 캐시를 타지 않는 버전표. 앱이 자기가 낡았는지 직접 확인하는 데 쓴다.
+    VERSION.write_text(json.dumps({"build": digest}) + "\n", encoding="utf-8")
 
     src = SW.read_text(encoding="utf-8")
     m = re.search(r"const SHELL = '([^']+)';", src)

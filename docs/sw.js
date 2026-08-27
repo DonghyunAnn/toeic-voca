@@ -5,7 +5,7 @@
  * 하나로 합쳐두면 앱을 고칠 때마다 발음이 날아가 셀룰러로 다시 받게 된다.
  */
 
-const SHELL = 'toeic-voca-de427319';
+const SHELL = 'toeic-voca-84af5254';
 const AUDIO = 'toeic-voca-audio';       // 버전을 붙이지 않는다. 지우면 안 되니까.
 
 /* 이게 없으면 앱이 아예 안 뜬다. 하나라도 실패하면 설치를 실패시킨다. */
@@ -56,6 +56,17 @@ self.addEventListener('fetch', e => {
   const req = e.request;
   if (req.method !== 'GET') return;
   if (new URL(req.url).origin !== self.location.origin) return;
+
+  // 버전표만은 절대 캐시하지 않고 그때그때 물어본다.
+  // 이게 없으면 앱이 자기가 낡았다는 사실을 알 방법이 없다. 브라우저가
+  // sw.js 갱신을 확인해 주기를 기다리는 수밖에 없는데, 홈 화면에 추가해
+  // 쓰는 앱에서는 그게 며칠씩 안 일어나기도 한다.
+  if (new URL(req.url).pathname.endsWith('/version.json')) {
+    e.respondWith(fetch(req, { cache: 'no-store' }).catch(() => new Response('{}', {
+      headers: { 'Content-Type': 'application/json' },
+    })));
+    return;
+  }
 
   e.respondWith((async () => {
     const hit = await caches.match(req, { ignoreSearch: true });

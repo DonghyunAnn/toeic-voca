@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = 'de427319';
+const BUILD = '84af5254';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -1733,9 +1733,39 @@ function setupUpdates() {
     // 앱을 며칠씩 안 끄고 두는 경우가 있어 가끔 직접 물어본다
     setInterval(() => reg.update().catch(() => {}), 30 * 60 * 1000);
     document.addEventListener('visibilitychange', () => {
-      if (!document.hidden) reg.update().catch(() => {});
+      if (!document.hidden) { reg.update().catch(() => {}); checkVersion(); }
     });
   }).catch(e => console.warn('SW 등록 실패', e));
+
+  checkVersion();
+}
+
+/** 서버에 지금 몇 번인지 직접 물어보고, 낡았으면 스스로 갈아엎는다.
+ *
+ *  위의 reg.update()는 브라우저가 sw.js를 다시 받아 볼 마음이 있어야 듣는다.
+ *  홈 화면에 추가해 쓰는 앱에서는 그게 며칠씩 안 일어나기도 하고, 그러면
+ *  고쳐서 배포해도 기기에는 영영 닿지 않는다. 실제로 그런 일이 있었다.
+ *
+ *  그래서 캐시를 타지 않는 작은 파일 하나를 따로 두고 직접 비교한다.
+ *  다르면 서비스워커와 캐시를 통째로 버리고 새로 받는다. 진도는 별도
+ *  저장소에 있어 지워지지 않지만, 그래도 먼저 확실히 적어 둔다.
+ */
+async function checkVersion() {
+  if (sessionStorage.getItem('toeic-voca-healing')) return;   // 한 번만
+  try {
+    const res = await fetch('version.json', { cache: 'no-store' });
+    if (!res.ok) return;
+    const { build } = await res.json();
+    if (!build || build === BUILD) return;
+
+    sessionStorage.setItem('toeic-voca-healing', build);
+    Store.flush();
+    for (const r of await navigator.serviceWorker.getRegistrations()) await r.unregister();
+    for (const k of await caches.keys()) await caches.delete(k);
+    location.reload();
+  } catch (e) {
+    // 오프라인이면 그냥 넘어간다. 다음에 연결됐을 때 다시 본다.
+  }
 }
 
 (async function init() {
