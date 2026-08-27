@@ -3,6 +3,8 @@
 /* ── 상수 ─────────────────────────────────────────── */
 
 const STORAGE_KEY = 'toeic-voca-progress';
+const SESSION_KEY = 'toeic-voca-session';
+const THEME_KEY = 'toeic-voca-theme';
 // 상자별 복습 간격(일). 원본 Leitner는 칸 너비(1·2·5·8·14cm)로 정했고,
 // 널리 쓰이는 변형은 1·2·4·7·14다. 그 사이값을 쓴다.
 const BOX_INTERVALS = { 1: 1, 2: 2, 3: 4, 4: 9, 5: 14 };
@@ -17,6 +19,9 @@ const RELEARN_GAP = { again: 5, hard: 15 };
 // 더 반복하는 것보다 내일 다시 보는 편이 낫다.
 const RELEARN_MAX = { again: 3, hard: 1 };
 const AUDIO_DIR = 'audio/';
+// 발음 파일명은 해시 앞 16자리만 쓴다. 원래 이름(69자)을 3,155개 단어에
+// 그대로 실으면 압축해도 84KB인데, 해시는 난수라 압축이 먹지 않는다.
+const audioURL = f => AUDIO_DIR + f + '.mp3';
 
 const DEFAULTS = {
   version: 1,
@@ -40,6 +45,13 @@ function addDays(iso, n) {
   const d = new Date(iso + 'T00:00:00');
   d.setDate(d.getDate() + n);
   return d.toLocaleDateString('sv-SE');
+}
+
+/** 연달아 들어오는 입력은 마지막 것만 처리한다.
+ *  한글은 자모마다 input이 튀어 '관리'만 쳐도 대여섯 번 들어온다. */
+function debounce(fn, ms) {
+  let t;
+  return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); };
 }
 
 function shuffle(arr) {
@@ -72,6 +84,9 @@ const Theme = {
     const root = document.documentElement;
     if (mode === 'light' || mode === 'dark') root.dataset.theme = mode;
     else delete root.dataset.theme;
+    // 테마만 따로 적어 둔다. 첫 화면을 그리기 전에 읽어야 깜빡임이 없는데,
+    // 진도 뭉치(400KB) 안에 들어 있으면 그걸 통째로 파싱해야 한다.
+    try { localStorage.setItem(THEME_KEY, mode); } catch (e) {}
 
     // 주소창 색도 맞춘다. standalone으로 띄웠을 때 상단 띠에 보인다.
     const dark = mode === 'dark' ||
@@ -92,7 +107,7 @@ const Audio_ = {
   play(file) {
     if (!file) return;
     if (!this.el) this.el = new Audio();
-    this.el.src = AUDIO_DIR + encodeURIComponent(file);
+    this.el.src = audioURL(file);
     // 오프라인이거나 아직 안 받은 파일이면 조용히 넘어간다
     this.el.play().catch(() => {});
   },
@@ -115,7 +130,7 @@ const Audio_ = {
       while (queue.length) {
         const f = queue.pop();
         try {
-          const res = await fetch(AUDIO_DIR + encodeURIComponent(f), { cache: 'force-cache' });
+          const res = await fetch(audioURL(f), { cache: 'force-cache' });
           if (!res.ok) failed++;
         } catch { failed++; }
         onProgress(++done, files.length);
@@ -129,11 +144,13 @@ const Audio_ = {
 
 const Store = {
   data: structuredClone(DEFAULTS),
+  bytes: 0,
 
   load() {
     let migrated = false;
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
+      this.bytes = raw ? raw.length : 0;
       if (raw) {
         const parsed = JSON.parse(raw);
         this.data = {
@@ -146,6 +163,10 @@ const Store = {
           days: parsed.days || {},
         };
       }
+      // 이어보기는 따로 담아 두었다 (본 진도와 함께 쓰면 카드마다 62KB가 더 붙는다)
+      const rawSession = localStorage.getItem(SESSION_KEY);
+      if (rawSession) this.data.session = JSON.parse(rawSession);
+
       const t = this.data.settings.tier;
       if (typeof t === 'string') {
         // 예전에는 등급을 하나만 고를 수 있었다. 이제 여러 개를 겹쳐 고른다.
@@ -181,9 +202,30 @@ const Store = {
     return dropped;
   },
 
+  /* 진도 저장.
+   *
+   * 채점 한 번에 400KB를 통째로 직렬화해 동기로 디스크에 쓰면, 카드를 넘길
+   * 때마다 화면이 한두 프레임씩 멎는다. 진도가 쌓일수록 심해진다.
+   * 그래서 실제 쓰기는 잠깐 미뤄 몰아서 하고, 앱이 가려지는 순간 반드시 비운다.
+   */
+  _timer: null,
+
   save() {
+    if (this._timer) return;
+    this._timer = setTimeout(() => this.flush(), 500);
+  },
+
+  flush() {
+    if (this._timer) { clearTimeout(this._timer); this._timer = null; }
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(this.data));
+      // 이어보기(session)는 따로 담는다. 큐의 id 4,190개가 본 진도에 섞이면
+      // 카드를 넘길 때마다 그만큼을 같이 쓰게 된다.
+      const { session, ...rest } = this.data;
+      const blob = JSON.stringify(rest);
+      this.bytes = blob.length;
+      localStorage.setItem(STORAGE_KEY, blob);
+      if (session) localStorage.setItem(SESSION_KEY, JSON.stringify(session));
+      else localStorage.removeItem(SESSION_KEY);
     } catch (e) {
       toast('저장 공간이 부족합니다');
       console.error(e);
@@ -208,7 +250,8 @@ const Store = {
     const keep = { ...this.data.settings };
     this.data = structuredClone(DEFAULTS);
     this.data.settings = keep;
-    this.save();
+    try { localStorage.removeItem(SESSION_KEY); } catch (e) {}
+    this.flush();
   },
 
   /** 한 DAY의 기록만 지운다. 다른 DAY 진도는 건드리지 않는다. */
@@ -220,7 +263,7 @@ const Store = {
     }
     delete this.data.days[day];
     if (this.data.session && this.data.session.dayFilter === day) delete this.data.session;
-    this.save();
+    this.flush();
     return n;
   },
 };
@@ -243,7 +286,12 @@ const Scheduler = {
       if (!rec) fresh.push(w);
       else if (rec.due <= today) due.push(w);
     }
-    due.sort((a, b) => Store.record(a.id).due.localeCompare(Store.record(b.id).due));
+    // YYYY-MM-DD는 사전순이 곧 날짜순이다. localeCompare는 비교마다 Intl을
+    // 부르느라 8배 느리고, 여기서는 아무것도 더 해주지 않는다.
+    due.sort((a, b) => {
+      const x = Store.record(a.id).due, y = Store.record(b.id).due;
+      return x < y ? -1 : x > y ? 1 : 0;
+    });
 
     const cap = newCap ?? Store.settings.newPerDay;
     // 0은 '새 단어 없음', -1은 '제한 없음'. 예전에는 0이 무제한을 뜻했다.
@@ -268,10 +316,6 @@ const Scheduler = {
     return shuffle(inScope(State.words).filter(w => Store.record(w.id)));
   },
 
-  learnedCount() {
-    return inScope(State.words).filter(w => Store.record(w.id)).length;
-  },
-
   /** 한 번이라도 틀린 단어. 많이 틀린 것부터 내보낸다. */
   weak() {
     return inScope(State.words)
@@ -280,15 +324,6 @@ const Scheduler = {
         const ra = Store.record(a.id), rb = Store.record(b.id);
         return (rb.wrong - ra.wrong) || (ra.correct - rb.correct);
       });
-  },
-
-  weakCount() {
-    return inScope(State.words).filter(w => (Store.record(w.id) || {}).wrong > 0).length;
-  },
-
-  counts() {
-    const { due, fresh, freshTotal } = this.split();
-    return { due: due.length, fresh: fresh.length, freshTotal };
   },
 
   /** 기한이 됐는지. 아직 한 번도 안 본 단어는 항상 기한으로 본다. */
@@ -360,7 +395,9 @@ const State = {
 };
 
 async function loadData() {
-  const res = await fetch('words.json', { cache: 'no-cache' });
+  // 신선도는 서비스워커가 버전으로 관리한다. no-cache를 주면 실행할 때마다
+  // 쓸데없이 통신을 깨워 조건부 요청을 한 번 더 보낸다.
+  const res = await fetch('words.json');
   if (!res.ok) throw new Error('words.json 로드 실패: ' + res.status);
   const json = await res.json();
 
@@ -370,6 +407,12 @@ async function loadData() {
     State.byDay.set(day.day, day.words);
     for (const w of day.words) {
       w.day = day.day;
+      // 뜻·품사·검색어를 여기서 한 번 만들어 둔다. 예전에는 화면을 그릴 때마다
+      // 단어마다 Set과 배열을 새로 만들어, 검색어 한 글자에 2만 번씩 할당했다.
+      w.meaning = [...new Set(w.senses.map(s => s.meaning))].join('; ');
+      w.pos = w.senses.map(s => s.pos).filter(Boolean).join(' ');
+      w.q = (w.headword + ' ' + w.meaning + ' ' +
+             w.examples.map(e => e.en).join(' ')).toLowerCase();
       State.words.push(w);
       State.byId.set(w.id, w);
     }
@@ -379,6 +422,11 @@ async function loadData() {
 /* ── 표시 헬퍼 ────────────────────────────────────── */
 
 /** 설정(등급, 예문 유무)에 맞는 단어만 남긴다. 학습·퀴즈·통계가 모두 이걸 쓴다. */
+function inScopeWord(w) {
+  const { tiers, onlyWithExample } = Store.settings;
+  return tiers.includes(w.tier) && (!onlyWithExample || w.examples.length);
+}
+
 function inScope(words) {
   const { tiers, onlyWithExample } = Store.settings;
   return words.filter(w =>
@@ -386,10 +434,37 @@ function inScope(words) {
     (!onlyWithExample || w.examples.length));
 }
 
+/** 홈에 필요한 숫자를 한 번에 센다.
+ *
+ *  예전에는 전체·본 것·외운 것·틀린 것·기한·박스 분포를 각각 세느라
+ *  4,190개를 아홉 번 훑고 그때마다 배열을 새로 만들었다. 홈을 누를 때마다,
+ *  설정을 건드릴 때마다 그게 다 돌았다. 한 바퀴면 충분하다.
+ */
+function homeStats() {
+  const today = todayISO();
+  const boxes = [0, 0, 0, 0, 0];
+  let total = 0, seen = 0, mastered = 0, weak = 0, due = 0, freshTotal = 0;
+  for (const w of State.words) {
+    if (!inScopeWord(w)) continue;
+    total++;
+    const r = Store.record(w.id);
+    if (!r) { freshTotal++; continue; }
+    seen++;
+    const b = clampBox(r.box);
+    boxes[b - 1]++;
+    if (b >= MAX_BOX) mastered++;
+    if (r.wrong > 0) weak++;
+    if (r.due <= today) due++;
+  }
+  const cap = Store.settings.newPerDay;
+  const fresh = cap < 0 ? freshTotal : Math.min(freshTotal, Math.max(0, cap));
+  return { total, seen, mastered, weak, due, fresh, freshTotal, boxes };
+}
+
 const TIER_LABEL = { core: '필수', bonus: '만점', extra: '추가' };
 
-const meaningText = w => [...new Set(w.senses.map(s => s.meaning))].join('; ');
-const posText = w => w.senses.map(s => s.pos).filter(Boolean).join(' ');
+const meaningText = w => w.meaning;
+const posText = w => w.pos;
 
 /** 이 카드를 어느 방향으로 낼지 결정한다. */
 function directionFor(id) {
@@ -431,14 +506,10 @@ function cardBackHTML(w) {
 /* ── 홈 ───────────────────────────────────────────── */
 
 function renderHome() {
-  const scoped = inScope(State.words);
-  const total = scoped.length;
   // 통계도 지금 범위 안에서만 센다. 전체를 세면 '본 단어 3,000 / 전체 1,666'처럼
   // 앞뒤가 안 맞는 숫자가 나온다.
-  const seen = scoped.filter(w => Store.record(w.id)).length;
-  const mastered = scoped.filter(w => clampBox((Store.record(w.id) || {}).box) >= MAX_BOX
-                                      && Store.record(w.id)).length;
-  const { due, fresh, freshTotal } = Scheduler.counts();
+  const st = homeStats();
+  const { total, seen, mastered, due, fresh, freshTotal, boxes } = st;
 
   const notes = [];
   const picked = Store.settings.tiers;
@@ -457,12 +528,12 @@ function renderHome() {
     : (freshTotal ? '오늘 몫은 끝났습니다' : '모든 단어를 다 봤습니다');
   $('#start-review').disabled = !(due || fresh);
 
-  const learned = Scheduler.learnedCount();
+  const learned = seen;
   const reviewBtn = $('#review-learned');
   reviewBtn.hidden = learned === 0;
   reviewBtn.textContent = `배운 단어 (${learned.toLocaleString()})`;
 
-  const weak = Scheduler.weakCount();
+  const weak = st.weak;
   const weakBtn = $('#review-weak');
   weakBtn.hidden = weak === 0;
   weakBtn.textContent = `틀린 단어 (${weak.toLocaleString()})`;
@@ -471,23 +542,22 @@ function renderHome() {
   $('#stat-mastered').textContent = mastered.toLocaleString();
   $('#stat-total').textContent = total.toLocaleString();
 
-  const boxes = [0, 0, 0, 0, 0];
-  for (const w of scoped) {
-    const r = Store.record(w.id);
-    if (r) boxes[clampBox(r.box) - 1]++;   // 통계와 같은 범위를 쓴다
-  }
   $('#boxbar').innerHTML = boxes.map((n, i) =>
     `<div><b>${n}</b><span>박스 ${i + 1}</span></div>`).join('');
 
   // DAY 1~30은 공식 교재, 31부터는 다른 단어장이라 눈에 띄게 갈라 보여준다
   const cell = d => {
-    const words = inScope(d.words);
-    if (!words.length) return '';
-    const done = words.filter(w => Store.record(w.id)).length;
-    const pct = Math.round(done / words.length * 100);
+    let n = 0, done = 0;
+    for (const w of d.words) {
+      if (!inScopeWord(w)) continue;
+      n++;
+      if (Store.record(w.id)) done++;
+    }
+    if (!n) return '';
+    const pct = Math.round(done / n * 100);
     return `<button class="day-cell${pct === 100 ? ' done' : ''}" data-day="${d.day}">
       <b>${String(d.day).padStart(2, '0')}</b>
-      <span>${done}/${words.length}</span>
+      <span>${done}/${n}</span>
       <i class="bar" style="width:${pct}%"></i>
     </button>`;
   };
@@ -542,8 +612,10 @@ function saveSession() {
   if (!s || s.index >= s.queue.length) {
     delete Store.data.session;
   } else {
+    // 큐는 세션 내내 그대로다. id 목록을 카드마다 다시 만들 이유가 없다.
+    s.ids = s.ids || s.queue.map(w => w.id);
     Store.data.session = { date: todayISO(), dayFilter: s.dayFilter, mode: s.mode,
-                           index: s.index, graded: s.graded, ids: s.queue.map(w => w.id) };
+                           index: s.index, graded: s.graded, ids: s.ids };
   }
   Store.save();
 }
@@ -604,7 +676,7 @@ function renderStudy() {
   if (dir === 'en2ko' && Store.settings.autoplay) Audio_.play(w.audio);
 
   $('#study-counter').textContent = `${s.index + 1}/${s.queue.length}`;
-  $('#study-progress').style.width = (s.index / s.queue.length * 100) + '%';
+  $('#study-progress').style.transform = `scaleX(${s.index / s.queue.length})`;
   const left = s.queue.length - s.index;
   $('#study-scope').textContent =
     (s.mode === 'weak' ? '자주 틀린 단어'
@@ -718,20 +790,14 @@ function filteredWords() {
   if (tiers.length < 3) pool = pool.filter(w => tiers.includes(w.tier));
   if (State.list.weakOnly) pool = pool.filter(w => (Store.record(w.id) || {}).wrong > 0);
   if (!q) return pool;
-  return pool.filter(w =>
-    w.headword.toLowerCase().includes(q) ||
-    meaningText(w).toLowerCase().includes(q) ||
-    w.examples.some(e => e.en.toLowerCase().includes(q)));
+  return pool.filter(w => w.q.includes(q));
 }
 
 function renderList() {
   const words = filteredWords();
   const shown = words.slice(0, State.list.shown);
 
-  const withEx = words.filter(w => w.examples.length).length;
-  $('#list-count').textContent =
-    `${words.length.toLocaleString()}단어 · 예문 ${withEx.toLocaleString()}` +
-    (words.length > shown.length ? ` · ${shown.length}개 표시 중` : '');
+  renderListCount(words);
 
   const toStudy = $('#list-to-study');
   toStudy.hidden = State.list.day === null;
@@ -741,33 +807,57 @@ function renderList() {
 
   const wrap = $('#word-list');
   wrap.classList.toggle('masked', State.list.masked);
-  wrap.innerHTML = shown.map(w => {
-    const rec = Store.record(w.id);
-    const ex = w.examples[0];
-    return `<div class="word-item">
-      <div class="row">
-        <span class="hw">${escapeHTML(w.headword)}</span>
-        ${posText(w) ? `<span class="pos">${escapeHTML(posText(w))}</span>` : ''}
-        <span class="tags">
-          <span class="tier">${TIER_LABEL[w.tier] || '기타'}</span>
-          <span class="miss">${rec && rec.wrong ? '✕' + rec.wrong : ''}</span>
-          <span class="box">${rec ? '박스 ' + rec.box : ''}</span>
-          <span class="spk">${w.audio ? Audio_.speakerHTML(w.audio) : ''}</span>
-        </span>
-      </div>
-      <div class="mean">${escapeHTML(meaningText(w))}</div>
-      ${ex ? `<div class="ex">${escapeHTML(ex.en)}${ex.generated ? '<span class="gen">생성</span>' : ''}${
-        ex.ko ? `<div class="ko">${escapeHTML(ex.ko)}</div>` : ''}</div>` : ''}
-    </div>`;
-  }).join('') || '<p class="muted">검색 결과가 없습니다.</p>';
+  wrap.innerHTML = shown.map(rowHTML).join('') || '<p class="muted">검색 결과가 없습니다.</p>';
+  appendMore(wrap, words);
+}
 
-  if (words.length > shown.length) {
-    const more = document.createElement('button');
-    more.className = 'btn btn-outline btn-block';
-    more.textContent = '더 보기';
-    more.onclick = () => { State.list.shown += LIST_PAGE; renderList(); };
-    wrap.appendChild(more);
-  }
+/** 목록 한 줄. 들여쓰기를 넣지 않는다 — 줄마다 공백 텍스트 노드가 열 몇 개씩
+ *  생기는데, 4,190줄이면 그것만으로 수만 개다. */
+function rowHTML(w) {
+  const rec = Store.record(w.id);
+  const ex = w.examples[0];
+  const pos = posText(w);
+  return `<div class="word-item"><div class="row">`
+    + `<span class="hw">${escapeHTML(w.headword)}</span>`
+    + (pos ? `<span class="pos">${escapeHTML(pos)}</span>` : '')
+    + `<span class="tags">`
+    + `<span class="tier">${TIER_LABEL[w.tier] || '기타'}</span>`
+    + `<span class="miss">${rec && rec.wrong ? '✕' + rec.wrong : ''}</span>`
+    + `<span class="box">${rec ? '박스 ' + rec.box : ''}</span>`
+    + `<span class="spk">${w.audio ? Audio_.speakerHTML(w.audio) : ''}</span>`
+    + `</span></div>`
+    + `<div class="mean">${escapeHTML(meaningText(w))}</div>`
+    + (ex ? `<div class="ex">${escapeHTML(ex.en)}${ex.generated ? '<span class="gen">생성</span>' : ''}`
+          + (ex.ko ? `<div class="ko">${escapeHTML(ex.ko)}</div>` : '') + `</div>` : '')
+    + `</div>`;
+}
+
+/** '더 보기'는 새로 나올 몫만 뒤에 붙인다.
+ *  예전에는 목록 전체를 다시 그려서, 800개쯤 펼친 뒤에는 한 번 누를 때마다
+ *  4,800개 노드를 부수고 다시 만들었다. 스크롤 위치도 함께 날아갔다. */
+function appendMore(wrap, words) {
+  if (words.length <= State.list.shown) return;
+  const more = document.createElement('button');
+  more.className = 'btn btn-outline btn-block';
+  more.textContent = '더 보기';
+  more.onclick = () => {
+    const from = State.list.shown;
+    State.list.shown += LIST_PAGE;
+    const rest = filteredWords();
+    more.remove();
+    wrap.insertAdjacentHTML('beforeend',
+      rest.slice(from, State.list.shown).map(rowHTML).join(''));
+    appendMore(wrap, rest);
+    renderListCount(rest);
+  };
+  wrap.appendChild(more);
+}
+
+function renderListCount(words) {
+  const withEx = words.reduce((n, w) => n + (w.examples.length ? 1 : 0), 0);
+  $('#list-count').textContent =
+    `${words.length.toLocaleString()}단어 · 예문 ${withEx.toLocaleString()}` +
+    (words.length > State.list.shown ? ` · ${State.list.shown}개 표시 중` : '');
 }
 
 /* ── 퀴즈 ─────────────────────────────────────────── */
@@ -806,12 +896,18 @@ function renderQuizSetup() {
   $('#quiz-start').disabled = n < 4;
 }
 
-function buildQuestion(word, pool) {
+function buildQuestion(word, pool, dayCache) {
   const dir = directionFor(word.id);
   const answer = dir === 'en2ko' ? meaningText(word) : word.headword;
 
-  // 오답 선택지도 지금 범위 안에서만 뽑는다
-  const sameDay = inScope(State.byDay.get(word.day) || []).filter(w => w.id !== word.id);
+  // 오답 선택지도 지금 범위 안에서만 뽑는다.
+  // 같은 DAY는 문항마다 다시 거를 필요가 없어 한 번 걸러 두고 쓴다.
+  let scoped = dayCache && dayCache.get(word.day);
+  if (!scoped) {
+    scoped = inScope(State.byDay.get(word.day) || []);
+    if (dayCache) dayCache.set(word.day, scoped);
+  }
+  const sameDay = scoped.filter(w => w.id !== word.id);
   const others = shuffle(sameDay.length >= 3 ? sameDay : pool.filter(w => w.id !== word.id));
 
   const seen = new Set([answer]);
@@ -851,9 +947,11 @@ function startQuiz() {
   const pool = quizPool();
   const picked = shuffle(pool).slice(0, quizLength(pool.length));
 
+  // 문항은 화면에 낼 때 만든다. 전체(4,190문항)를 고르면 시작 버튼을 누른 뒤
+  // 몇 초간 화면이 굳었다 — 아무도 안 볼 문항까지 미리 다 만들었기 때문이다.
   State.quiz = {
-    questions: picked.map(w => buildQuestion(w, pool)),
-    index: 0, correct: 0, wrong: [],
+    picked, pool, dayCache: new Map(), questions: [],
+    total: picked.length, index: 0, correct: 0, wrong: [],
   };
   $('#quiz-setup').hidden = true;
   $('#quiz-result').hidden = true;
@@ -863,10 +961,11 @@ function startQuiz() {
 
 function renderQuiz() {
   const q = State.quiz;
-  const cur = q.questions[q.index];
+  const cur = q.questions[q.index] ||
+    (q.questions[q.index] = buildQuestion(q.picked[q.index], q.pool, q.dayCache));
 
-  $('#quiz-counter').textContent = `${q.index + 1}/${q.questions.length}`;
-  $('#quiz-progress').style.width = (q.index / q.questions.length * 100) + '%';
+  $('#quiz-counter').textContent = `${q.index + 1}/${q.total}`;
+  $('#quiz-progress').style.transform = `scaleX(${q.index / q.total})`;
   $('#quiz-question').textContent = cur.prompt;
   $('#quiz-next').hidden = true;
 
@@ -893,23 +992,23 @@ function answerQuiz(choice) {
     else if (btn.dataset.opt === choice) btn.classList.add('wrong');
   }
   $('#quiz-next').hidden = false;
-  $('#quiz-next').textContent = q.index + 1 >= q.questions.length ? '결과 보기' : '다음';
+  $('#quiz-next').textContent = q.index + 1 >= q.total ? '결과 보기' : '다음';
 }
 
 function nextQuiz() {
   const q = State.quiz;
   q.index++;
-  if (q.index >= q.questions.length) return finishQuiz();
+  if (q.index >= q.total) return finishQuiz();
   renderQuiz();
 }
 
 function finishQuiz() {
   const q = State.quiz;
-  const pct = Math.round(q.correct / q.questions.length * 100);
+  const pct = Math.round(q.correct / q.total * 100);
   $('#quiz-run').hidden = true;
   $('#quiz-result').hidden = false;
   $('#quiz-score').textContent = pct;
-  $('#quiz-score-sub').textContent = `${q.questions.length}문항 중 ${q.correct}개 정답` +
+  $('#quiz-score-sub').textContent = `${q.total}문항 중 ${q.correct}개 정답` +
     (Store.settings.quizAffectsBox ? ' · 박스에 반영됨' : ' · 박스는 그대로');
 
   const wrap = $('#quiz-wrong-wrap');
@@ -924,6 +1023,16 @@ function finishQuiz() {
 }
 
 /* ── 설정 ─────────────────────────────────────────── */
+
+/** 등급별 단어 수는 변하지 않는다. 설정을 열 때마다 4,190개를 다시 셀 이유가 없다. */
+let _tierCounts = null;
+function tierCounts() {
+  if (!_tierCounts) {
+    _tierCounts = { core: 0, bonus: 0, extra: 0 };
+    for (const w of State.words) if (_tierCounts[w.tier] !== undefined) _tierCounts[w.tier]++;
+  }
+  return _tierCounts;
+}
 
 function renderSettings() {
   const { direction, newPerDay, onlyWithExample } = Store.settings;
@@ -944,8 +1053,7 @@ function renderSettings() {
     b.classList.toggle('on', b.dataset.themeOpt === (Store.settings.theme || 'system'));
   for (const b of $$('#set-tier button'))
     b.classList.toggle('on', Store.settings.tiers.includes(b.dataset.tier));
-  const counts = { core: 0, bonus: 0, extra: 0 };
-  for (const w of State.words) if (counts[w.tier] !== undefined) counts[w.tier]++;
+  const counts = tierCounts();
   $('#tier-hint').textContent =
     `필수 ${counts.core.toLocaleString()} → 만점 ${counts.bonus.toLocaleString()} → ` +
     `추가 ${counts.extra.toLocaleString()} 순서로 끝내면 됩니다. ` +
@@ -957,7 +1065,8 @@ function renderSettings() {
     `${(State.meta.withAudio || 0).toLocaleString()}단어에 발음이 있습니다. ` +
     '들은 발음은 자동으로 저장되고, 내려받아 두면 오프라인에서도 들립니다.';
 
-  const { freshTotal } = Scheduler.counts();
+  // homeStats가 이미 한 바퀴로 세어 준다. split()을 또 돌려 정렬까지 할 일이 아니다.
+  const { freshTotal } = homeStats();
   $('#new-count-max').textContent = freshTotal ? `1 ~ ${freshTotal.toLocaleString()}` : '';
   if (newPerDay < 0) {
     $('#limit-hint').textContent =
@@ -981,7 +1090,9 @@ function renderSettings() {
     `지금 설정으로 ${scoped.length.toLocaleString()}단어가 출제됩니다` +
     (onlyWithExample ? '.' : ` (그중 예문 있는 것 ${withEx.toLocaleString()}개).`);
 
-  const bytes = new Blob([localStorage.getItem(STORAGE_KEY) || '']).size;
+  // 저장할 때 재둔 값을 쓴다. 예전에는 설정을 열 때마다 400KB를 동기로 읽어
+  // Blob까지 만들었다 — 글자 하나 칠 때마다.
+  const bytes = Store.bytes;
   $('#info').innerHTML = `
     <div><dt>DAY 1~30</dt><dd>ETS 토익 기출 보카<br><span class="dim">공식 교재 · 예문은 <a href="${escapeHTML(State.meta.sourceUrl)}" target="_blank" rel="noopener">네이버 블로그</a></span></dd></div>
     <div><dt>DAY 31~40</dt><dd>독종반 모바일 단어장<br><span class="dim">발음 없음</span></dd></div>
@@ -1026,10 +1137,13 @@ function importProgress(file) {
         throw new Error('이 앱에서 내보낸 파일이 아닙니다');
       }
       localStorage.setItem(STORAGE_KEY, JSON.stringify(parsed));
+      // 이어보기는 별도 키에 있다. 지우지 않으면 불러온 진도 위에 남의 세션이 얹힌다.
+      localStorage.removeItem(SESSION_KEY);
+      State.study = null;
       Store.load();                              // 마이그레이션을 그대로 태운다
       Store.prune(new Set(State.byId.keys()));   // 없어진 단어의 기록을 정리한다
       Theme.apply(Store.settings.theme);
-      Store.save();
+      Store.flush();                             // 불러오기는 미루지 않고 바로 쓴다
       renderAll();
       toast(`${Object.keys(Store.data.words).length}단어의 진도를 불러왔습니다`);
     } catch (e) {
@@ -1213,10 +1327,11 @@ function bind() {
     if (b) gradeCard(b.dataset.grade);
   };
 
+  const searchLater = debounce(renderList, 150);
   $('#search').addEventListener('input', e => {
     State.list.query = e.target.value;
     State.list.shown = LIST_PAGE;
-    renderList();
+    searchLater();
   });
   $('#toggle-mask').onclick = e => {
     State.list.masked = !State.list.masked;
@@ -1245,9 +1360,10 @@ function bind() {
     $('#quiz-count').value = '';        // 버튼을 고르면 직접 입력은 비운다
     renderQuizSetup();
   };
+  const quizCountLater = debounce(renderQuizSetup, 250);
   $('#quiz-count').addEventListener('input', () => {
     for (const x of $$('#quiz-length button')) x.classList.remove('on');
-    renderQuizSetup();
+    quizCountLater();
   });
   $('#quiz-start').onclick = startQuiz;
   $('#quiz-next').onclick = nextQuiz;
@@ -1345,13 +1461,15 @@ function bind() {
     renderSettings();
     renderHome();
   };
+  // 화면 다시 그리기는 미룬다. '150'을 치면 1, 15, 150 세 번이 들어오는데
+  // 그때마다 설정과 홈을 통째로 다시 그릴 이유가 없다.
+  const newCountLater = debounce(() => { renderSettings(); renderHome(); }, 250);
   $('#new-count').addEventListener('input', e => {
     const v = Math.floor(Number(e.target.value));
     if (!Number.isFinite(v) || v < 1) return;      // 비우는 중이면 건드리지 않는다
     Store.settings.newPerDay = v;
     Store.save();
-    renderSettings();
-    renderHome();
+    newCountLater();
   });
   $('#export').onclick = exportProgress;
   $('#import').onclick = () => $('#import-file').click();
@@ -1389,6 +1507,13 @@ function bind() {
     await loadData();
     Store.prune(new Set(State.byId.keys()));
     bind();
+    // 저장을 미뤄 두는 대신, 앱이 가려지거나 닫히는 순간에는 반드시 비운다.
+    // 폰에서는 홈 버튼을 누르면 그대로 종료될 수 있어 pagehide가 마지막 기회다.
+    addEventListener('pagehide', () => Store.flush());
+    addEventListener('freeze', () => Store.flush());
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) Store.flush();
+    });
     $('#loading').hidden = true;
     $('#app').hidden = false;
     navigate('home');

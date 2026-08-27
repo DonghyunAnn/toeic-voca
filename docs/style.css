@@ -59,6 +59,8 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
+/* 안드로이드 기본 회색 상자가 직접 만든 :active와 겹쳐 두 번 번쩍인다 */
+html { -webkit-tap-highlight-color: transparent; }
 
 /* display 값을 지정한 요소도 hidden 속성을 따르게 한다 */
 [hidden] { display: none !important; }
@@ -203,7 +205,7 @@ button { background: none; border: 0; cursor: pointer; }
 .day-cell span { font-size: .625rem; color: var(--muted-fg); }
 .day-cell .bar {
   position: absolute; left: 0; bottom: 0; height: 2px; background: var(--fg);
-  transition: width .3s;
+ 
 }
 .day-cell.done { background: var(--muted); }
 
@@ -214,14 +216,18 @@ button { background: none; border: 0; cursor: pointer; }
 .nav-btn .ico { width: 1.0625rem; height: 1.0625rem; }
 .nav-btn[disabled] { opacity: .3; pointer-events: none; }
 .progress { flex: 1; height: 4px; background: var(--muted); border-radius: 999px; overflow: hidden; }
-.progress-fill { height: 100%; width: 0; background: var(--fg); transition: width .25s; }
+/* width를 애니메이션하면 프레임마다 레이아웃이 돈다. transform은 합성만 한다. */
+.progress-fill { height: 100%; width: 100%; background: var(--fg);
+                 transform: scaleX(0); transform-origin: left; transition: transform .25s; }
 .counter { font-size: .75rem; color: var(--muted-fg); font-variant-numeric: tabular-nums; flex: none; }
 
 .scope-row { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin: -.5rem 0 .75rem; }
 .study-scope { font-size: .75rem; color: var(--muted-fg); }
 .list-head { display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding-bottom: .5rem; }
 .done-actions { margin-top: 1.5rem; width: 100%; max-width: 18rem; margin-left: auto; margin-right: auto; }
-.card-stage { perspective: 1200px; }
+/* 3D 뒤집기를 쓰지 않는다(display 전환이다). perspective만 남아 있으면
+   .card-stage가 평생 별도 레이어로 승격된 채 메모리를 잡는다. */
+.card-stage {}
 .flashcard {
   position: relative;
   min-height: 19rem;
@@ -283,6 +289,12 @@ button { background: none; border: 0; cursor: pointer; }
 
 .grade-note { font-size: .6875rem; color: var(--muted-fg); text-align: center; margin-top: .875rem; }
 .grade-note b { color: var(--fg); font-weight: 600; }
+/* 카드를 뒤집으면 채점 줄이 새로 생겨 화면이 밀린다. 손가락이 이미 움직이는
+   중이라 엉뚱한 버튼을 누르게 되고, 그 채점은 복습 일정에 그대로 남는다.
+   자리를 미리 잡아 두고 보이기만 감춘다. */
+.grade-bar[hidden] { display: grid !important; visibility: hidden; pointer-events: none; }
+.grade-note[hidden] { display: block !important; visibility: hidden; }
+
 .grade-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: .375rem; margin-top: 1rem; }
 .btn-grade.known { color: var(--muted-fg); font-size: .8125rem; }
 .btn-grade[disabled] { opacity: .35; }
@@ -311,9 +323,14 @@ button { background: none; border: 0; cursor: pointer; }
 
 .chips {
   display: flex; gap: .375rem; overflow-x: auto; padding: .75rem 0 .5rem;
-  scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  /* 칩 줄 끝에서 계속 밀면 문서로 넘어가 브라우저 뒤로가기가 걸린다 */
+  overscroll-behavior-x: contain;
 }
 .chips::-webkit-scrollbar { display: none; }
+/* 기본 하이라이트를 껐으니 직접 :active가 없던 것들에 눌린 표시를 준다 */
+.tabbar button:active, .chips button:active,
+.toggles button:active, .segmented button:active { opacity: .6; }
 .chips button {
   flex: none; font-size: .75rem; padding: .3125rem .625rem;
   border: 1px solid var(--border); border-radius: 999px; color: var(--muted-fg);
@@ -322,6 +339,9 @@ button { background: none; border: 0; cursor: pointer; }
 
 .list-count { font-size: .75rem; }
 .word-list { display: grid; gap: .5rem; }
+/* 화면 밖의 줄은 배치·그리기·히트테스트를 건너뛴다.
+   '더 보기'로 수백 줄을 펼쳐도 스크롤 비용이 보이는 만큼으로 묶인다. */
+.word-item { content-visibility: auto; contain-intrinsic-size: auto 78px; }
 .word-item {
   border: 1px solid var(--border); border-radius: var(--radius);
   padding: .75rem .875rem; background: var(--card);
@@ -342,8 +362,10 @@ button { background: none; border: 0; cursor: pointer; }
 .word-item .mean { font-size: .875rem; color: var(--muted-fg); margin-top: .1875rem; }
 .word-item .ex { font-size: .8125rem; margin-top: .5rem; line-height: 1.5; }
 .word-item .ex .ko { color: var(--muted-fg); font-size: .75rem; }
-.masked .mean { filter: blur(5px); transition: filter .12s; }
-.masked .mean:active { filter: none; }
+/* filter는 줄마다 별도 렌더 표면을 만들어 스크롤할 때마다 다시 굽는다.
+   text-shadow는 원래 타일에 그대로 그려진다. */
+.masked .mean { color: transparent; text-shadow: 0 0 7px var(--muted-fg); }
+.masked .mean:active { color: var(--muted-fg); text-shadow: none; }
 
 /* ── 퀴즈 ─────────────────────────────────────────── */
 
@@ -421,8 +443,9 @@ button { background: none; border: 0; cursor: pointer; }
   display: grid; grid-template-columns: repeat(5, 1fr);
   height: calc(var(--tabbar-h) + env(safe-area-inset-bottom));
   padding-bottom: env(safe-area-inset-bottom);
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter: saturate(180%) blur(12px);
+  /* 예전에는 반투명 + backdrop-filter였다. 88%나 불투명한 배경을 얻자고
+     스크롤하는 내내 GPU가 뒤 화면을 흐리게 다시 그렸다. 배터리만 먹는다. */
+  background: var(--bg);
   border-top: 1px solid var(--border);
 }
 .tabbar button {
@@ -443,7 +466,9 @@ button { background: none; border: 0; cursor: pointer; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
 /* DAY를 길게 눌렀을 때 뜨는 선택 시트. 네이티브 confirm보다 무엇을 할지 분명하다. */
-.sheet { position: fixed; inset: 0; z-index: 40; display: flex; align-items: flex-end; }
+/* touch-action: none이 없으면 시트 위에서 끈 손가락이 뒤 화면을 스크롤한다 */
+.sheet { position: fixed; inset: 0; z-index: 40; display: flex; align-items: flex-end;
+         touch-action: none; }
 .sheet-back { position: absolute; inset: 0; background: rgb(0 0 0 / .4); animation: fade .15s ease; }
 .sheet-body {
   position: relative; width: 100%; max-width: 560px; margin: 0 auto;
@@ -477,5 +502,6 @@ button { background: none; border: 0; cursor: pointer; }
 @keyframes rise { from { opacity: 0; transform: translate(-50%, 6px); } }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; }
+  /* 스피너까지 멈추면 로딩 중인지 고장인지 알 수가 없다 */
+  *:not(.spinner), *::before, *::after { animation: none !important; transition: none !important; }
 }

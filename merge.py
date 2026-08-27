@@ -458,7 +458,10 @@ def main():
     if args.dry_run:
         print("\n--dry-run: 저장하지 않음")
         return
-    OUT_JSON.write_text(json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")
+    # 앱이 받는 파일이다. 들여쓰기를 넣으면 그것만 660KB고, 압축 후에도 23KB를
+    # 더 쓴다. 사람이 읽을 일이 있으면 python3 -m json.tool로 보면 된다.
+    OUT_JSON.write_text(json.dumps(payload, ensure_ascii=False,
+                                   separators=(",", ":")), encoding="utf-8")
     print(f"\n저장: {OUT_JSON}  ({OUT_JSON.stat().st_size // 1024}KB)")
 
 

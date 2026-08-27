@@ -132,7 +132,8 @@ def main():
         # 조각 파일을 옮겨두고 실행하면 기존 예문 수천 개가 통째로 날아간다
         print("\n수집된 예문이 없습니다. 기존 파일을 그대로 둡니다.")
         sys.exit(1)
-    OUT.write_text(json.dumps(collected, ensure_ascii=False, indent=1), encoding="utf-8")
+    OUT.write_text(json.dumps(collected, ensure_ascii=False,
+                                separators=(",", ":")), encoding="utf-8")
     print(f"\n저장: {OUT} ({len(collected)}개)")
 
 

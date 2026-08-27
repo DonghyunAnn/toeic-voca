@@ -83,6 +83,22 @@ def _media_names(blob):
     return names
 
 
+AUDIO_RE = re.compile(r"^hypertts-([0-9a-f]{16})[0-9a-f]*\.mp3$")
+
+
+def short_audio(name):
+    """덱의 mp3 이름을 짧게 줄인다.
+
+    원래 이름은 hypertts- + 64자리 해시 + .mp3 로 69자다. 이걸 3,155개 단어에
+    그대로 실으면 압축해도 84KB인데, 해시는 난수라 압축이 전혀 안 먹는다.
+    앞 16자리만 써도 3,065개가 충돌 없이 구분된다(64비트).
+    """
+    if not name:
+        return None
+    m = AUDIO_RE.match(name)
+    return m.group(1) if m else None
+
+
 def read(apkg_path, audio_out=None):
     """(notes, media_written)를 돌려준다.
 
@@ -118,7 +134,7 @@ def read(apkg_path, audio_out=None):
                     "senses_raw": [s.strip() for s in
                                    re.split(r"<br\s*/?>", html.unescape(parts[1]), flags=re.I)
                                    if s.strip()],
-                    "audio": sound.group(1) if sound else None,
+                    "audio": short_audio(sound.group(1)) if sound else None,
                 })
             db.close()
         finally:
@@ -130,13 +146,17 @@ def read(apkg_path, audio_out=None):
             names = _media_names(_unzstd(z.read("media")))
             existing = {p.name for p in out.glob("*.mp3")}
             for idx, name in enumerate(names):
-                if name in existing:
+                short = short_audio(name)
+                if short is None:
+                    continue
+                fname = short + ".mp3"
+                if fname in existing:
                     continue
                 try:
                     data = _unzstd(z.read(str(idx)))
                 except KeyError:
                     continue
-                (out / name).write_bytes(data)
+                (out / fname).write_bytes(data)
                 written += 1
 
     return notes, written
