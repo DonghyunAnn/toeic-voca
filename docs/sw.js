@@ -1,6 +1,6 @@
 /* 오프라인 캐시. 셸과 단어 데이터를 설치 시 통째로 받아둔다. */
 
-const CACHE = 'toeic-voca-v58';
+const CACHE = 'toeic-voca-v59';
 const ASSETS = [
   './',
   './index.html',
@@ -21,8 +21,6 @@ const ASSETS = [
   './guide/quiz-dark.png',
   './guide/settings.png',
   './guide/settings-dark.png',
-  './guide/sheet.png',
-  './guide/sheet-dark.png',
   './icons/icon-192.png',
   './icons/icon-512.png',
 ];
