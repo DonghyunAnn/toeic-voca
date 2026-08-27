@@ -11,7 +11,7 @@ const AUDIO_DIR = 'audio/';
 
 const DEFAULTS = {
   version: 1,
-  settings: { direction: 'mixed', newPerDay: 20, onlyWithExample: false, autoplay: false, tier: 'all', theme: 'system', quizAffectsBox: false },
+  settings: { direction: 'mixed', newPerDay: 20, onlyWithExample: false, autoplay: false, tiers: ['core', 'bonus', 'extra'], theme: 'system', quizAffectsBox: false },
   words: {},
   days: {},
   session: null,
@@ -131,6 +131,16 @@ const Store = {
           words: parsed.words || {},
           days: parsed.days || {},
         };
+      }
+      const t = this.data.settings.tier;
+      if (typeof t === 'string') {
+        // 예전에는 등급을 하나만 고를 수 있었다. 이제 여러 개를 겹쳐 고른다.
+        this.data.settings.tiers = t === 'all' ? ['core', 'bonus', 'extra'] : [t];
+        delete this.data.settings.tier;
+        migrated = true;
+      }
+      if (!Array.isArray(this.data.settings.tiers) || !this.data.settings.tiers.length) {
+        this.data.settings.tiers = ['core', 'bonus', 'extra'];
       }
       if (typeof this.data.settings.dailyLimit === 'number') {
         // 예전에는 복습과 새 단어를 합쳐서 잘랐다. 이제 새 단어만 제한한다.
@@ -285,7 +295,7 @@ const State = {
   study: null,
   quiz: null,
   quizDay: 1,
-  list: { day: null, tier: 'all', query: '', masked: false, shown: LIST_PAGE },
+  list: { day: null, tiers: ['core', 'bonus', 'extra'], query: '', masked: false, shown: LIST_PAGE },
 };
 
 async function loadData() {
@@ -309,9 +319,9 @@ async function loadData() {
 
 /** 설정(등급, 예문 유무)에 맞는 단어만 남긴다. 학습·퀴즈·통계가 모두 이걸 쓴다. */
 function inScope(words) {
-  const { tier, onlyWithExample } = Store.settings;
+  const { tiers, onlyWithExample } = Store.settings;
   return words.filter(w =>
-    (tier === 'all' || w.tier === tier) &&
+    tiers.includes(w.tier) &&
     (!onlyWithExample || w.examples.length));
 }
 
@@ -367,7 +377,8 @@ function renderHome() {
   const { due, fresh, freshTotal } = Scheduler.counts();
 
   const notes = [];
-  if (Store.settings.tier !== 'all') notes.push(TIER_LABEL[Store.settings.tier] + ' 어휘');
+  const picked = Store.settings.tiers;
+  if (picked.length < 3) notes.push(picked.map(t => TIER_LABEL[t]).join('+') + ' 어휘');
   if (Store.settings.onlyWithExample) notes.push('예문 있는 것만');
   $('#home-sub').textContent =
     `${State.meta.dayCount}일 · ${total.toLocaleString()}단어` +
@@ -586,7 +597,8 @@ function skipCard() {
 /* ── 목록 ─────────────────────────────────────────── */
 
 function renderListTier() {
-  for (const b of $$('#list-tier button')) b.classList.toggle('on', b.dataset.tier === State.list.tier);
+  for (const b of $$('#list-tier button'))
+    b.classList.toggle('on', State.list.tiers.includes(b.dataset.tier));
 }
 
 function renderDayChips() {
@@ -599,10 +611,10 @@ function renderDayChips() {
 }
 
 function filteredWords() {
-  const { day, tier, query } = State.list;
+  const { day, tiers, query } = State.list;
   const q = query.trim().toLowerCase();
   let pool = day === null ? State.words : (State.byDay.get(day) || []);
-  if (tier !== 'all') pool = pool.filter(w => w.tier === tier);
+  if (tiers.length < 3) pool = pool.filter(w => tiers.includes(w.tier));
   if (!q) return pool;
   return pool.filter(w =>
     w.headword.toLowerCase().includes(q) ||
@@ -803,7 +815,7 @@ function renderSettings() {
   for (const b of $$('#set-theme button'))
     b.classList.toggle('on', b.dataset.themeOpt === (Store.settings.theme || 'system'));
   for (const b of $$('#set-tier button'))
-    b.classList.toggle('on', b.dataset.tier === Store.settings.tier);
+    b.classList.toggle('on', Store.settings.tiers.includes(b.dataset.tier));
   const counts = { core: 0, bonus: 0, extra: 0 };
   for (const w of State.words) if (counts[w.tier] !== undefined) counts[w.tier]++;
   $('#tier-hint').textContent =
@@ -944,7 +956,7 @@ function bind() {
     const day = State.study && State.study.dayFilter;
     if (!day) return;
     State.list.day = day;
-    State.list.tier = 'all';
+    State.list.tiers = ['core', 'bonus', 'extra'];
     State.list.shown = LIST_PAGE;
     navigate('list');
   };
@@ -1026,7 +1038,12 @@ function bind() {
   $('#set-tier').onclick = e => {
     const b = e.target.closest('[data-tier]');
     if (!b) return;
-    Store.settings.tier = b.dataset.tier;
+    const cur = Store.settings.tiers;
+    const next = cur.includes(b.dataset.tier)
+      ? cur.filter(t => t !== b.dataset.tier)
+      : [...cur, b.dataset.tier];
+    if (!next.length) return;            // 하나는 남겨둔다
+    Store.settings.tiers = next;
     Store.save();
     State.study = null;
     renderSettings();
@@ -1035,7 +1052,12 @@ function bind() {
   $('#list-tier').onclick = e => {
     const b = e.target.closest('[data-tier]');
     if (!b) return;
-    State.list.tier = b.dataset.tier;
+    const cur = State.list.tiers;
+    const next = cur.includes(b.dataset.tier)
+      ? cur.filter(t => t !== b.dataset.tier)
+      : [...cur, b.dataset.tier];
+    if (!next.length) return;
+    State.list.tiers = next;
     State.list.shown = LIST_PAGE;
     renderListTier();
     renderList();
