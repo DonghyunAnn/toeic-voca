@@ -249,10 +249,21 @@ button { background: none; border: 0; cursor: pointer; }
 .flashcard:not(.flipped) .front { display: flex; align-items: center; justify-content: center; text-align: center; }
 .flashcard.flipped .back { display: flex; }
 
+/* DAY 번호는 알약으로, 단원명은 그 옆에 눕힌다.
+   위쪽 범위줄은 '오늘 학습'처럼 여러 DAY가 섞이면 단원명을 못 붙이는데,
+   카드는 단어 하나짜리라 언제나 붙일 수 있다. */
 .chip {
-  position: absolute; top: 1rem; left: 1.25rem;
+  position: absolute; top: 1rem; left: 1.25rem; right: 3.75rem;
+  display: flex; align-items: center; gap: .375rem;
   font-size: .6875rem; color: var(--muted-fg);
+}
+.chip b {
+  flex: none; font-weight: 500;
   background: var(--muted); border-radius: 999px; padding: .1875rem .5rem;
+}
+.chip i {
+  font-style: normal; min-width: 0;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 /* 듣기 버튼.
  *

@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = '03c92cf2';
+const BUILD = '451388e2';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -764,7 +764,10 @@ function renderStudy() {
   bar.hidden = true;
 
   const dir = directionFor(w.id);
-  $('#card-day').textContent = `DAY ${String(w.day).padStart(2, '0')}`;
+  // 칩에 단원명까지 담는다. 위쪽 범위줄은 '오늘 학습'처럼 여러 DAY가 섞이면
+  // 단원명을 못 붙이는데, 카드는 단어 하나짜리라 언제나 붙일 수 있다.
+  $('#card-day').innerHTML = `<b>DAY ${String(w.day).padStart(2, '0')}</b>`
+    + `<i>${escapeHTML(dayTitle(w.day))}</i>`;
   $('#card-front').textContent = dir === 'en2ko' ? w.headword : meaningText(w);
   $('#card-back').innerHTML = cardBackHTML(w);
 
