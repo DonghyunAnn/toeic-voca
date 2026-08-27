@@ -6,17 +6,17 @@
   "crawledAt": "2026-08-27",
   "mergedAt": "2026-08-27",
   "dayCount": 40,
-  "wordCount": 4194,
-  "withExample": 4194,
+  "wordCount": 4192,
+  "withExample": 4192,
   "withAudio": 3155,
-  "coreCount": 1669,
+  "coreCount": 1667,
   "extraCount": 1032,
   "sources": {
    "core": "ETS 토익 기출 보카 (공식 교재)",
    "bonus": "ETS 토익 기출 보카 (공식 교재)",
    "extra": "독종반 모바일 단어장"
   },
-  "generatedExamples": 2536
+  "generatedExamples": 2535
  },
  "days": [
   {
@@ -466,9 +466,22 @@
       {
        "en": "A pedestrian bridge overlooks the water",
        "ko": "보도교가 강을 내려다보고 있다"
+      },
+      {
+       "en": "Skysrapers overlook a highway",
+       "ko": "고층 건물이 고속도로를 내려다보고 있다"
+      },
+      {
+       "en": "A moument overlooks a walkaway",
+       "ko": "기념비가 보도를 내려다보고 있다"
       }
      ],
-     "collocations": [],
+     "collocations": [
+      {
+       "en": "overlook a canal",
+       "ko": "운하"
+      }
+     ],
      "source": "both",
      "audio": "hypertts-e149d7aa3903aa1d05123498419e10a2593514ad27f14c557362e1e2.mp3",
      "tier": "core"
@@ -2622,29 +2635,6 @@
      "source": "deck",
      "audio": "hypertts-dcdb1700cc023ca184851b5b8532106700fccaaf24c9f0191cd1307e.mp3",
      "tier": "bonus"
-    },
-    {
-     "id": "d01-overlook-a-canal",
-     "headword": "overlook a canal",
-     "senses": [
-      {
-       "pos": null,
-       "meaning": "운하"
-      }
-     ],
-     "examples": [
-      {
-       "en": "Skysrapers overlook a highway",
-       "ko": "고층 건물이 고속도로를 내려다보고 있다"
-      },
-      {
-       "en": "A moument overlooks a walkaway",
-       "ko": "기념비가 보도를 내려다보고 있다"
-      }
-     ],
-     "collocations": [],
-     "source": "blog",
-     "tier": "core"
     }
    ]
   },
@@ -62741,13 +62731,12 @@
      ],
      "examples": [
       {
-       "en": "The hotel lounge serves casual fare throughout the afternoon.",
-       "ko": "호텔 라운지는 오후 내내 간단한 일상 식사를 제공합니다.",
-       "generated": true
+       "en": "Should you prefer more casual fare, try our seasonal dishes",
+       "ko": null
       }
      ],
      "collocations": [],
-     "source": "deck",
+     "source": "both",
      "audio": "hypertts-b5af962e88d923b4e1e077787a8c0230766ace80ab0b17c68fbd010a.mp3",
      "tier": "core"
     },
@@ -64753,25 +64742,6 @@
      "source": "deck",
      "audio": "hypertts-a9892ec64ee53af421949b47f4bedb35fd00b0d2b6901576bda2b028.mp3",
      "tier": "bonus"
-    },
-    {
-     "id": "d29-casual-fair",
-     "headword": "casual fair",
-     "senses": [
-      {
-       "pos": null,
-       "meaning": "일상적인 식사"
-      }
-     ],
-     "examples": [
-      {
-       "en": "Should you prefer more casual fare, try our seasonal dishes",
-       "ko": null
-      }
-     ],
-     "collocations": [],
-     "source": "blog",
-     "tier": "core"
     },
     {
      "id": "d29-responsibilities-include",

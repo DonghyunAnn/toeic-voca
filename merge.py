@@ -56,6 +56,7 @@ BLOG_TYPOS = {
     (22, "perspective"): "prospective",  # 뜻이 "장래의" -> prospective의 오기
     (27, "crank"): "crack",            # 예문이 "several small cracks"
     (29, "round trip"): "round-trip",
+    (29, "casual fair"): "casual fare",
 }
 
 # 예문에서 잘려 나온 조각이 표제어로 잡힌 것들. 단어가 아니다.

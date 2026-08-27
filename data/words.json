@@ -4,7 +4,7 @@
   "sourceUrl": "https://m.blog.naver.com/PostList.naver?blogId=ms_carrick&categoryNo=28",
   "crawledAt": "2026-08-27",
   "dayCount": 30,
-  "wordCount": 1665
+  "wordCount": 1664
  },
  "days": [
   {
@@ -416,20 +416,7 @@
       {
        "en": "A pedestrian bridge overlooks the water",
        "ko": "보도교가 강을 내려다보고 있다"
-      }
-     ],
-     "collocations": []
-    },
-    {
-     "id": "d01-015",
-     "headword": "overlook a canal",
-     "senses": [
-      {
-       "pos": null,
-       "meaning": "운하"
-      }
-     ],
-     "examples": [
+      },
       {
        "en": "Skysrapers overlook a highway",
        "ko": "고층 건물이 고속도로를 내려다보고 있다"
@@ -439,10 +426,15 @@
        "ko": "기념비가 보도를 내려다보고 있다"
       }
      ],
-     "collocations": []
+     "collocations": [
+      {
+       "en": "overlook a canal",
+       "ko": "운하"
+      }
+     ]
     },
     {
-     "id": "d01-016",
+     "id": "d01-015",
      "headword": "carry",
      "senses": [
       {
@@ -472,7 +464,7 @@
      ]
     },
     {
-     "id": "d01-017",
+     "id": "d01-016",
      "headword": "fill",
      "senses": [
       {
@@ -502,7 +494,7 @@
      ]
     },
     {
-     "id": "d01-018",
+     "id": "d01-017",
      "headword": "inspect",
      "senses": [
       {
@@ -528,7 +520,7 @@
      ]
     },
     {
-     "id": "d01-019",
+     "id": "d01-018",
      "headword": "trim",
      "senses": [
       {
@@ -554,7 +546,7 @@
      ]
     },
     {
-     "id": "d01-020",
+     "id": "d01-019",
      "headword": "(re)pave",
      "senses": [
       {
@@ -584,7 +576,7 @@
      ]
     },
     {
-     "id": "d01-021",
+     "id": "d01-020",
      "headword": "assemble",
      "senses": [
       {
@@ -605,7 +597,7 @@
      "collocations": []
     },
     {
-     "id": "d01-022",
+     "id": "d01-021",
      "headword": "float",
      "senses": [
       {
@@ -635,7 +627,7 @@
      ]
     },
     {
-     "id": "d01-023",
+     "id": "d01-022",
      "headword": "mow",
      "senses": [
       {
@@ -661,7 +653,7 @@
      ]
     },
     {
-     "id": "d01-024",
+     "id": "d01-023",
      "headword": "perform",
      "senses": [
       {
@@ -687,7 +679,7 @@
      ]
     },
     {
-     "id": "d01-025",
+     "id": "d01-024",
      "headword": "transport",
      "senses": [
       {
@@ -713,7 +705,7 @@
      ]
     },
     {
-     "id": "d01-026",
+     "id": "d01-025",
      "headword": "pour",
      "senses": [
       {
@@ -743,7 +735,7 @@
      ]
     },
     {
-     "id": "d01-027",
+     "id": "d01-026",
      "headword": "shade",
      "senses": [
       {
@@ -768,7 +760,7 @@
      "collocations": []
     },
     {
-     "id": "d01-028",
+     "id": "d01-027",
      "headword": "surround",
      "senses": [
       {
@@ -798,7 +790,7 @@
      ]
     },
     {
-     "id": "d01-029",
+     "id": "d01-028",
      "headword": "tow",
      "senses": [
       {
@@ -820,7 +812,7 @@
      ]
     },
     {
-     "id": "d01-030",
+     "id": "d01-029",
      "headword": "greet",
      "senses": [
       {
@@ -842,7 +834,7 @@
      ]
     },
     {
-     "id": "d01-031",
+     "id": "d01-030",
      "headword": "rake",
      "senses": [
       {
@@ -867,7 +859,7 @@
      "collocations": []
     },
     {
-     "id": "d01-032",
+     "id": "d01-031",
      "headword": "place",
      "senses": [
       {
@@ -897,7 +889,7 @@
      ]
     },
     {
-     "id": "d01-033",
+     "id": "d01-032",
      "headword": "face",
      "senses": [
       {
@@ -922,7 +914,7 @@
      "collocations": []
     },
     {
-     "id": "d01-034",
+     "id": "d01-033",
      "headword": "line",
      "senses": [
       {
@@ -947,7 +939,7 @@
      "collocations": []
     },
     {
-     "id": "d01-035",
+     "id": "d01-034",
      "headword": "plug in",
      "senses": [
       {
@@ -973,7 +965,7 @@
      ]
     },
     {
-     "id": "d01-036",
+     "id": "d01-035",
      "headword": "cross",
      "senses": [
       {
@@ -999,7 +991,7 @@
      ]
     },
     {
-     "id": "d01-037",
+     "id": "d01-036",
      "headword": "hang",
      "senses": [
       {
@@ -1025,7 +1017,7 @@
      ]
     },
     {
-     "id": "d01-038",
+     "id": "d01-037",
      "headword": "distribute",
      "senses": [
       {
@@ -1051,7 +1043,7 @@
      ]
     },
     {
-     "id": "d01-039",
+     "id": "d01-038",
      "headword": "fold",
      "senses": [
       {
@@ -1081,7 +1073,7 @@
      ]
     },
     {
-     "id": "d01-040",
+     "id": "d01-039",
      "headword": "reflect",
      "senses": [
       {
@@ -1103,7 +1095,7 @@
      ]
     },
     {
-     "id": "d01-041",
+     "id": "d01-040",
      "headword": "address",
      "senses": [
       {
@@ -1133,7 +1125,7 @@
      ]
     },
     {
-     "id": "d01-042",
+     "id": "d01-041",
      "headword": "plant",
      "senses": [
       {
@@ -1163,7 +1155,7 @@
      ]
     },
     {
-     "id": "d01-043",
+     "id": "d01-042",
      "headword": "file",
      "senses": [
       {
@@ -1197,7 +1189,7 @@
      ]
     },
     {
-     "id": "d01-044",
+     "id": "d01-043",
      "headword": "operate",
      "senses": [
       {
@@ -1227,7 +1219,7 @@
      ]
     },
     {
-     "id": "d01-045",
+     "id": "d01-044",
      "headword": "stack",
      "senses": [
       {
@@ -1257,7 +1249,7 @@
      ]
     },
     {
-     "id": "d01-046",
+     "id": "d01-045",
      "headword": "clap",
      "senses": [
       {
@@ -1283,7 +1275,7 @@
      ]
     },
     {
-     "id": "d01-047",
+     "id": "d01-046",
      "headword": "kneel",
      "senses": [
       {
@@ -1309,7 +1301,7 @@
      ]
     },
     {
-     "id": "d01-048",
+     "id": "d01-047",
      "headword": "stroll",
      "senses": [
       {

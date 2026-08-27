@@ -178,9 +178,13 @@ def parse_entry(line):
 
 
 def stem_of(headword):
-    """연어·예문 판별용 어간. 'arrange' -> 'arran', 'hold' -> 'hold'"""
-    first = headword.lower().split()[0]
-    return first[:max(4, len(first) - 2)]
+    """연어·예문 판별용 어간. 'arrange' -> 'arran', '(re)pave' -> 'pave'"""
+    clean = re.sub(r"\(.*?\)|\[.*?\]", "", headword.lower()).strip()
+    parts = clean.split()
+    if not parts:
+        return ""
+    first = re.sub(r"[^a-z]", "", parts[0])
+    return first[:max(4, len(first) - 2)] if first else ""
 
 
 def split_bilingual(line):
@@ -212,6 +216,16 @@ def looks_like_collocation(head_raw, has_pos, current, rich, next_line):
         return False
     if len(head_raw.split()) < 2:
         return False                     # 한 단어짜리는 언제나 새 표제어
+
+    # 표제어의 어간을 품고 있으면 그 단어의 연어다. 블로그가 연어와 예문을
+    # 번갈아 적는 곳이 있어서(overlook a canal 다음에 또 예문) 다음 줄만
+    # 봐서는 갈리지 않는다.
+    # 어간이 짧으면 쓰지 않는다. 전치사 편은 in favor of, in honor of처럼
+    # 첫 단어가 같은 표제어가 줄줄이 이어져서 'in'만으로 판단하면 다 삼킨다.
+    stem = stem_of(current["headword"])
+    if len(stem) >= 4 and stem in re.sub(r"[^a-z]", "", head_raw.lower()):
+        return True
+
     if next_line is not None and not HANGUL.search(next_line):
         return False                     # 다음 줄이 영어 문장 = 이 줄은 표제어
     return rich
