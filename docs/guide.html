@@ -92,6 +92,10 @@ td:first-child { white-space:nowrap; }
   padding:.875rem 1rem; margin:1.25rem 0; font-size:.875rem;
 }
 .note b { display:block; margin-bottom:.25rem; }
+.terms dl { margin:.75rem 0; display:grid; gap:.375rem; }
+.terms dl div { display:flex; gap:.75rem; align-items:baseline; }
+.terms dt { font-weight:620; flex:none; min-width:4rem; }
+.terms dd { margin:0; color:var(--muted-fg); }
 
 .keys { display:grid; gap:.5rem; margin:1rem 0; }
 .key { display:flex; gap:.75rem; align-items:baseline; border:1px solid var(--border); border-radius:var(--radius); padding:.625rem .75rem; }
@@ -117,13 +121,14 @@ footer a { color:inherit; }
 </div>
 <p class="lead">토익 단어 4,192개를 폰에서 외우는 앱입니다. 인터넷이 끊겨도 돌아갑니다.</p>
 
-<div class="note">
-  <b>말부터 정리하고 갑니다</b>
-  <b style="font-weight:620;display:inline">학습</b>은 오늘 할 일 전체를 뜻합니다.
-  그 안에 두 종류가 들어갑니다. <b style="font-weight:620;display:inline">복습</b>은
-  전에 채점했고 다시 볼 때가 된 단어, <b style="font-weight:620;display:inline">새 단어</b>는
-  아직 한 번도 채점하지 않은 단어입니다.<br><br>
-  홈의 <code>복습 120개 + 새 단어 20개</code>가 그 두 가지입니다. 합쳐서 140개가 오늘 학습량입니다.
+<div class="note terms">
+  <b>이 앱에서 쓰는 세 단어</b>
+  <dl>
+    <div><dt>학습</dt><dd>오늘 할 일 전체. 아래 둘을 합친 것입니다.</dd></div>
+    <div><dt>복습</dt><dd>전에 채점했고 다시 볼 때가 된 단어.</dd></div>
+    <div><dt>새 단어</dt><dd>아직 한 번도 채점하지 않은 단어.</dd></div>
+  </dl>
+  홈에 <code>복습 120개 + 새 단어 20개</code>라고 뜨면, 합쳐서 140개가 오늘 학습량입니다.
 </div>
 
 <section id="install">
