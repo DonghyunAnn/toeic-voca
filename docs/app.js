@@ -3,7 +3,9 @@
 /* ── 상수 ─────────────────────────────────────────── */
 
 const STORAGE_KEY = 'toeic-voca-progress';
-const BOX_INTERVALS = { 1: 1, 2: 2, 3: 4, 4: 8, 5: 16 };  // 고전 Leitner (2배씩)
+// 상자별 복습 간격(일). 원본 Leitner는 칸 너비(1·2·5·8·14cm)로 정했고,
+// 널리 쓰이는 변형은 1·2·4·7·14다. 그 사이값을 쓴다.
+const BOX_INTERVALS = { 1: 1, 2: 2, 3: 4, 4: 9, 5: 14 };
 const MAX_BOX = 5;
 const LIST_PAGE = 80;
 // 세션 안에서 다시 낼 때의 간격.
