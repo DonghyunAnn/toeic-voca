@@ -928,7 +928,13 @@ function finishQuiz() {
 function renderSettings() {
   const { direction, newPerDay, onlyWithExample } = Store.settings;
   for (const b of $$('#set-direction button')) b.classList.toggle('on', b.dataset.dir === direction);
-  for (const b of $$('#set-limit button')) b.classList.toggle('on', Number(b.dataset.limit) === newPerDay);
+  // 프리셋에 없는 값은 직접 입력 칸에 담는다
+  const presets = $$('#set-limit button').map(b => Number(b.dataset.limit));
+  const custom = !presets.includes(newPerDay);
+  for (const b of $$('#set-limit button'))
+    b.classList.toggle('on', !custom && Number(b.dataset.limit) === newPerDay);
+  const nc = $('#new-count');
+  if (document.activeElement !== nc) nc.value = custom ? String(newPerDay) : '';
   for (const b of $$('#set-scope button'))
     b.classList.toggle('on', (b.dataset.scope === 'example') === onlyWithExample);
 
@@ -952,6 +958,7 @@ function renderSettings() {
     '들은 발음은 자동으로 저장되고, 내려받아 두면 오프라인에서도 들립니다.';
 
   const { freshTotal } = Scheduler.counts();
+  $('#new-count-max').textContent = freshTotal ? `1 ~ ${freshTotal.toLocaleString()}` : '';
   if (newPerDay < 0) {
     $('#limit-hint').textContent =
       `남은 새 단어 ${freshTotal.toLocaleString()}개를 한 번에 전부 꺼냅니다. ` +
@@ -959,7 +966,7 @@ function renderSettings() {
   } else if (newPerDay === 0) {
     $('#limit-hint').textContent = '새 단어를 꺼내지 않고 이미 배운 것만 복습합니다.';
   } else {
-    const days = Math.ceil(freshTotal / newPerDay);
+    const days = Math.max(1, Math.ceil(freshTotal / newPerDay));
     // 한 단어가 5번 상자까지 가는 데 평균 다섯 번쯤 나온다고 보고 어림한다
     const peak = Math.round(newPerDay * 3.7);
     $('#limit-hint').textContent =
@@ -1333,10 +1340,19 @@ function bind() {
     const b = e.target.closest('[data-limit]');
     if (!b) return;
     Store.settings.newPerDay = Number(b.dataset.limit);
+    $('#new-count').value = '';
     Store.save();
     renderSettings();
     renderHome();
   };
+  $('#new-count').addEventListener('input', e => {
+    const v = Math.floor(Number(e.target.value));
+    if (!Number.isFinite(v) || v < 1) return;      // 비우는 중이면 건드리지 않는다
+    Store.settings.newPerDay = v;
+    Store.save();
+    renderSettings();
+    renderHome();
+  });
   $('#export').onclick = exportProgress;
   $('#import').onclick = () => $('#import-file').click();
   $('#import-file').onchange = e => { if (e.target.files[0]) importProgress(e.target.files[0]); };

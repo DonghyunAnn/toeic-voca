@@ -49,7 +49,12 @@ h1 { font-size:1.5rem; font-weight:650; letter-spacing:-.02em; }
   font-size:.8125rem; color:var(--muted-fg); text-decoration:none;
   border:1px solid var(--border); border-radius:var(--radius); padding:.375rem .625rem;
 }
-.lead { color:var(--muted-fg); font-size:.9375rem; margin-bottom:2rem; }
+.lead { color:var(--muted-fg); font-size:.9375rem; margin-bottom:.75rem; }
+.lead b { color:var(--fg); font-weight:620; }
+.lead-table { width:100%; border-collapse:collapse; margin:1.25rem 0 2rem; font-size:.8125rem; }
+.lead-table td { padding:.4375rem .625rem; border-bottom:1px solid var(--border); }
+.lead-table td:first-child { white-space:nowrap; color:var(--fg); }
+.lead-table td:last-child { color:var(--muted-fg); }
 
 nav.toc { background:var(--muted); border-radius:var(--radius); padding:.875rem 1rem; margin-bottom:2.5rem; }
 nav.toc ol { margin:0; padding-left:1.125rem; }
@@ -92,10 +97,6 @@ td:first-child { white-space:nowrap; }
   padding:.875rem 1rem; margin:1.25rem 0; font-size:.875rem;
 }
 .note b { display:block; margin-bottom:.25rem; }
-.terms dl { margin:.75rem 0; display:grid; gap:.375rem; }
-.terms dl div { display:flex; gap:.75rem; align-items:baseline; }
-.terms dt { font-weight:620; flex:none; min-width:4rem; }
-.terms dd { margin:0; color:var(--muted-fg); }
 
 .keys { display:grid; gap:.5rem; margin:1rem 0; }
 .key { display:flex; gap:.75rem; align-items:baseline; border:1px solid var(--border); border-radius:var(--radius); padding:.625rem .75rem; }
@@ -119,17 +120,14 @@ footer a { color:inherit; }
   <h1>사용 가이드</h1>
   <a class="back" href="./">앱으로</a>
 </div>
-<p class="lead">토익 단어 4,194개를 폰에서 외우는 앱입니다. 모든 단어에 예문이 있고, 인터넷이 끊겨도 돌아갑니다.</p>
-
-<div class="note terms">
-  <b>이 앱에서 쓰는 세 단어</b>
-  <dl>
-    <div><dt>학습</dt><dd>오늘 할 일 전체. 아래 둘을 합친 것입니다.</dd></div>
-    <div><dt>복습</dt><dd>전에 채점했고 다시 볼 때가 된 단어.</dd></div>
-    <div><dt>새 단어</dt><dd>아직 한 번도 채점하지 않은 단어.</dd></div>
-  </dl>
-  홈에 <code>복습 120개 + 새 단어 20개</code>라고 뜨면, 합쳐서 140개가 오늘 학습량입니다.
-</div>
+<p class="lead"><b>ETS 토익 기출 보카</b>(공식 교재)의 DAY 1~30을 그대로 옮긴 앱입니다.
+교재의 <b>필수 어휘</b>와 <b>토익 만점 완성</b> 두 단을 나눈 구성까지 그대로 따르고,
+거기에 다른 단어장에서 겹치지 않는 어휘를 <b>추가</b>로 얹었습니다.</p>
+<p class="lead">모든 단어에 예문이 있고, 인터넷이 끊겨도 돌아갑니다.</p>
+<table class="lead-table">
+  <tr><td><b>DAY 1~30</b></td><td>ETS 토익 기출 보카 · 필수 1,665 + 만점 1,493</td></tr>
+  <tr><td><b>DAY 31~40</b></td><td>추가 어휘 1,032 (독종반 모바일 단어장)</td></tr>
+</table>
 
 <section id="install">
   <h2>먼저, 앱처럼 쓰기</h2>
@@ -148,7 +146,6 @@ footer a { color:inherit; }
 
 <nav class="toc">
   <ol>
-    <li><a href="#install">앱처럼 쓰기 (먼저 하세요)</a></li>
     <li><a href="#box">박스가 뭔가요</a></li>
     <li><a href="#flow">이렇게 쓰면 됩니다</a></li>
     <li><a href="#theme">화면 테마</a></li>
@@ -195,7 +192,7 @@ footer a { color:inherit; }
   <p>그래서 홈 화면의 <b>박스 분포</b>는 실력 그래프입니다. 공부를 계속하면 왼쪽(1·2번)이 줄고 오른쪽(4·5번)이 늘어납니다. 5번 상자에 들어간 단어 수가 곧 <b>암기 완료</b>입니다.</p>
   <p>매일 할 일은 하나뿐입니다. <b>홈에서 &lsquo;오늘 학습 시작&rsquo;을 누르는 것.</b> 오늘 나와야 할 단어를 앱이 알아서 골라줍니다.</p>
   <h3>복습은 안 자르고, 새 단어만 끊습니다</h3>
-  <p>여기서 <b>복습</b>과 <b>새 단어</b>가 다르게 취급됩니다. 기한이 된 복습은 <strong>밀린 만큼 전부</strong> 나옵니다. 자르면 그대로 다음 날로 넘어가고, 밀린 양이 매일 쌓여 영영 따라잡지 못하기 때문입니다.</p>
+  <p>홈에 <code>복습 84개 + 새 단어 20개</code>처럼 뜨는데, <b>복습</b>은 전에 채점했고 다시 볼 때가 된 단어, <b>새 단어</b>는 아직 한 번도 채점하지 않은 단어입니다. 둘은 다르게 취급됩니다. 기한이 된 복습은 <strong>밀린 만큼 전부</strong> 나옵니다. 자르면 그대로 다음 날로 넘어가고, 밀린 양이 매일 쌓여 영영 따라잡지 못하기 때문입니다.</p>
   <p>대신 <b>설정 → 하루에 배울 새 단어</b>로 새로 꺼내는 양만 조절합니다. 새 단어는 며칠 뒤 복습으로 돌아오므로, 오늘 많이 넣으면 그만큼 나중에 몰립니다.</p>
   <table>
     <tr><th>하루 새 단어</th><th>2주 뒤 하루 복습량</th><th>3,159개 완주</th></tr>
@@ -204,7 +201,7 @@ footer a { color:inherit; }
     <tr><td>50개</td><td>약 195장</td><td>63일</td></tr>
     <tr><td>100개</td><td>약 372장</td><td>31일</td></tr>
   </table>
-  <p>기본값은 <b>제한 없음</b>입니다. 짧은 기간에 많이 보는 것이 목적이라면 이쪽이 맞습니다. 대신 며칠 뒤 복습이 몰리니, 벅차다 싶으면 숫자를 골라 속도를 줄이세요. <b>없음</b>으로 두면 새 단어를 꺼내지 않고 밀린 복습만 처리합니다.</p>
+  <p>프리셋(없음 / 20 / 50 / 100 / 제한 없음) 말고 <b>직접 지정</b>에 숫자를 넣어도 됩니다. 하루 150개, 200개도 됩니다. 기본값은 <b>제한 없음</b>입니다. 짧은 기간에 많이 보는 것이 목적이라면 이쪽이 맞습니다. 대신 며칠 뒤 복습이 몰리니, 벅차다 싶으면 숫자를 골라 속도를 줄이세요. <b>없음</b>으로 두면 새 단어를 꺼내지 않고 밀린 복습만 처리합니다.</p>
 </section>
 
 <section id="flow">
@@ -385,7 +382,7 @@ footer a { color:inherit; }
   <p>사지선다입니다. <strong>오답 선택지는 같은 DAY의 단어에서 뽑기 때문에</strong> 얼추 비슷한 것들이 나와 은근히 헷갈립니다.</p>
   <ul>
     <li><b>범위</b> — 오늘 학습분 / DAY 선택 / 전체</li>
-    <li><b>문항 수</b> — 10 / 20 / 50 / 전체 중에 고르거나, <b>직접 지정</b>에 숫자를 넣습니다(최소 4).</li>
+    <li><b>문항 수</b> — 10 / 20 / 50 / 전체 중에 고르거나 <b>직접 지정</b>에 숫자를 넣습니다(최소 4).</li>
   </ul>
   <p><strong>퀴즈는 상자를 건드리지 않습니다.</strong> 사지선다는 찍어도 넷 중 하나는 맞기 때문에, 운으로 맞힌 단어가 &lsquo;안다&rsquo;로 처리되면 복습 간격이 잘못 늘어납니다. 상자는 플래시카드에서 직접 누른 것만 따릅니다.</p>
   <p>원한다면 <b>설정 → 퀴즈 결과</b>에서 반영하도록 바꿀 수 있습니다. 끝나면 점수와 함께 틀린 단어만 모아서 보여줍니다.</p>

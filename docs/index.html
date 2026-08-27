@@ -276,11 +276,15 @@ try {
         <h2 class="section-title">하루에 배울 새 단어</h2>
         <div class="segmented" id="set-limit">
           <button data-limit="0">없음</button>
-          <button data-limit="10">10</button>
           <button data-limit="20">20</button>
-          <button data-limit="30">30</button>
           <button data-limit="50">50</button>
+          <button data-limit="100">100</button>
           <button data-limit="-1">제한 없음</button>
+        </div>
+        <div class="count-row">
+          <label for="new-count">직접 지정</label>
+          <input type="number" id="new-count" min="1" step="1" inputmode="numeric" placeholder="예: 150">
+          <span id="new-count-max"></span>
         </div>
         <p class="hint" id="limit-hint"></p>
       </section>
