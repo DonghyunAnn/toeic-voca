@@ -9,7 +9,7 @@ const LIST_PAGE = 80;
 
 const DEFAULTS = {
   version: 1,
-  settings: { direction: 'mixed', dailyLimit: 20 },
+  settings: { direction: 'mixed', dailyLimit: 20, onlyWithExample: false },
   words: {},
   days: {},
 };
@@ -74,6 +74,16 @@ const Store = {
     return this.data;
   },
 
+  /** 단어 데이터가 바뀌어 없어진 id의 기록을 정리한다. */
+  prune(validIds) {
+    let dropped = 0;
+    for (const id of Object.keys(this.data.words)) {
+      if (!validIds.has(id)) { delete this.data.words[id]; dropped++; }
+    }
+    if (dropped) this.save();
+    return dropped;
+  },
+
   save() {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(this.data));
@@ -108,7 +118,8 @@ const Scheduler = {
   /** 오늘 복습 대상: 기한이 된 단어 + 아직 안 본 단어를 하루 분량까지. */
   session({ dayFilter = null, limit = null } = {}) {
     const today = todayISO();
-    const pool = dayFilter ? (State.byDay.get(dayFilter) || []) : State.words;
+    let pool = dayFilter ? (State.byDay.get(dayFilter) || []) : State.words;
+    if (Store.settings.onlyWithExample) pool = pool.filter(w => w.examples.length);
     const due = [], fresh = [];
 
     for (const w of pool) {
@@ -125,8 +136,10 @@ const Scheduler = {
 
   dueCount() {
     const today = todayISO();
+    const pool = Store.settings.onlyWithExample
+      ? State.words.filter(w => w.examples.length) : State.words;
     let n = 0;
-    for (const w of State.words) {
+    for (const w of pool) {
       const rec = Store.record(w.id);
       if (rec && rec.due <= today) n++;
     }
@@ -231,14 +244,17 @@ function cardBackHTML(w) {
 /* ── 홈 ───────────────────────────────────────────── */
 
 function renderHome() {
-  const total = State.words.length;
+  const scoped = Store.settings.onlyWithExample
+    ? State.words.filter(w => w.examples.length) : State.words;
+  const total = scoped.length;
   const seen = Object.keys(Store.data.words).length;
   const mastered = Object.values(Store.data.words).filter(r => r.box >= MAX_BOX).length;
   const due = Scheduler.dueCount();
-  const fresh = total - seen;
+  const fresh = Math.max(0, total - seen);
 
   $('#home-sub').textContent =
-    `${State.meta.dayCount}일 · ${total.toLocaleString()}단어 · 수집 ${State.meta.crawledAt}`;
+    `${State.meta.dayCount}일 · ${total.toLocaleString()}단어` +
+    (Store.settings.onlyWithExample ? ' (예문 있는 것만)' : ` · 예문 ${State.meta.withExample.toLocaleString()}개`);
 
   $('#due-count').textContent = due || Math.min(fresh, Store.settings.dailyLimit);
   $('#due-label').textContent = due
@@ -256,7 +272,9 @@ function renderHome() {
     `<div><b>${n}</b><span>박스 ${i + 1}</span></div>`).join('');
 
   $('#day-grid').innerHTML = State.days.map(d => {
-    const words = d.words;
+    const words = Store.settings.onlyWithExample
+      ? d.words.filter(w => w.examples.length) : d.words;
+    if (!words.length) return '';
     const done = words.filter(w => Store.record(w.id)).length;
     const pct = Math.round(done / words.length * 100);
     return `<button class="day-cell${pct === 100 ? ' done' : ''}" data-day="${d.day}">
@@ -390,8 +408,10 @@ function renderList() {
 function quizPool() {
   const scope = $('#quiz-scope button.on').dataset.scope;
   if (scope === 'due') return Scheduler.session({ limit: 0 });
-  if (scope === 'day') return State.byDay.get(Number($('#quiz-day').value)) || [];
-  return State.words;
+  const only = Store.settings.onlyWithExample;
+  const trim = ws => only ? ws.filter(w => w.examples.length) : ws;
+  if (scope === 'day') return trim(State.byDay.get(Number($('#quiz-day').value)) || []);
+  return trim(State.words);
 }
 
 function renderQuizSetup() {
@@ -512,14 +532,22 @@ function finishQuiz() {
 /* ── 설정 ─────────────────────────────────────────── */
 
 function renderSettings() {
-  const { direction, dailyLimit } = Store.settings;
+  const { direction, dailyLimit, onlyWithExample } = Store.settings;
   for (const b of $$('#set-direction button')) b.classList.toggle('on', b.dataset.dir === direction);
   for (const b of $$('#set-limit button')) b.classList.toggle('on', Number(b.dataset.limit) === dailyLimit);
+  for (const b of $$('#set-scope button'))
+    b.classList.toggle('on', (b.dataset.scope === 'example') === onlyWithExample);
+
+  const withEx = State.meta.withExample;
+  $('#scope-hint').textContent = onlyWithExample
+    ? `예문이 있는 ${withEx.toLocaleString()}단어만 출제합니다.`
+    : `전체 ${State.meta.wordCount.toLocaleString()}단어 중 ${withEx.toLocaleString()}개에 예문이 있습니다.`;
 
   const bytes = new Blob([localStorage.getItem(STORAGE_KEY) || '']).size;
   $('#info').innerHTML = `
     <div><dt>출처</dt><dd><a href="${escapeHTML(State.meta.sourceUrl)}" target="_blank" rel="noopener">네이버 블로그</a></dd></div>
     <div><dt>수집일</dt><dd>${escapeHTML(State.meta.crawledAt)}</dd></div>
+    <div><dt>예문 보유</dt><dd>${State.meta.withExample.toLocaleString()} / ${State.meta.wordCount.toLocaleString()}</dd></div>
     <div><dt>단어 수</dt><dd>${State.meta.wordCount.toLocaleString()}</dd></div>
     <div><dt>진도 용량</dt><dd>${(bytes / 1024).toFixed(1)} KB</dd></div>`;
 }
@@ -643,6 +671,15 @@ function bind() {
     Store.save();
     renderSettings();
   };
+  $('#set-scope').onclick = e => {
+    const b = e.target.closest('[data-scope]');
+    if (!b) return;
+    Store.settings.onlyWithExample = b.dataset.scope === 'example';
+    Store.save();
+    State.study = null;
+    renderSettings();
+    renderHome();
+  };
   $('#set-limit').onclick = e => {
     const b = e.target.closest('[data-limit]');
     if (!b) return;
@@ -678,6 +715,7 @@ function bind() {
   try {
     Store.load();
     await loadData();
+    Store.prune(new Set(State.byId.keys()));
     bind();
     $('#loading').hidden = true;
     $('#app').hidden = false;
