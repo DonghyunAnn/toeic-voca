@@ -6,6 +6,7 @@ const STORAGE_KEY = 'toeic-voca-progress';
 const BOX_INTERVALS = { 1: 1, 2: 2, 3: 4, 4: 7, 5: 15 };  // 박스 -> 며칠 뒤
 const MAX_BOX = 5;
 const LIST_PAGE = 80;
+const RELEARN_GAP = 5;   // '모름' 카드를 몇 장 뒤에 다시 넣을지
 const AUDIO_DIR = 'audio/';
 
 const DEFAULTS = {
@@ -13,6 +14,7 @@ const DEFAULTS = {
   settings: { direction: 'mixed', newPerDay: 20, onlyWithExample: false, autoplay: false, tier: 'all', theme: 'system', quizAffectsBox: false },
   words: {},
   days: {},
+  session: null,
 };
 
 /* ── 유틸 ─────────────────────────────────────────── */
@@ -385,15 +387,41 @@ function renderHome() {
 
 /* ── 학습 (플래시카드) ────────────────────────────── */
 
-function startStudy(dayFilter = null, mode = 'due') {
+function startStudy(dayFilter = null, mode = 'due', { resume = true } = {}) {
   // 홈의 '오늘 학습 시작'은 기한이 된 것과 새 단어만,
   // DAY를 직접 고르면 그 DAY 전부를 본다.
+  const saved = Store.data.session;
+  if (resume && saved && saved.dayFilter === dayFilter && saved.mode === mode
+      && saved.ids && saved.index > 0 && saved.index < saved.ids.length) {
+    // 중간에 나갔던 세션을 이어서 연다
+    const queue = saved.ids.map(id => State.byId.get(id)).filter(Boolean);
+    if (queue.length) {
+      State.study = { queue, index: Math.min(saved.index, queue.length - 1),
+                      graded: saved.graded || 0, dayFilter, mode, undo: [], resumed: true };
+      navigate('study');
+      return renderStudy();
+    }
+  }
+
   const queue = mode === 'all' && dayFilter
     ? Scheduler.everything(dayFilter)
     : Scheduler.session({ dayFilter });
   State.study = { queue, index: 0, graded: 0, dayFilter, mode, undo: [] };
+  saveSession();
   navigate('study');
   renderStudy();
+}
+
+/** 중간에 나가도 이어서 볼 수 있도록 위치를 남긴다. */
+function saveSession() {
+  const s = State.study;
+  if (!s || s.index >= s.queue.length) {
+    delete Store.data.session;
+  } else {
+    Store.data.session = { dayFilter: s.dayFilter, mode: s.mode, index: s.index,
+                           graded: s.graded, ids: s.queue.map(w => w.id) };
+  }
+  Store.save();
 }
 
 function renderStudy() {
@@ -406,13 +434,28 @@ function renderStudy() {
     stage.hidden = true;
     bar.hidden = true;
     done.hidden = false;
+    $('.scope-row').hidden = true;
+    if (s) saveSession();
+
+    const day = s && s.dayFilter;
+    $('#study-done-title').textContent = day ? `DAY ${String(day).padStart(2, '0')} 완료` : '오늘 학습 완료';
     $('#study-done-sub').textContent = s && s.graded
-      ? `${s.graded}단어를 봤습니다`
-      : '오늘 볼 단어가 없습니다. 아래 DAY를 누르면 기한과 상관없이 다시 볼 수 있습니다.';
+      ? `${s.graded}번 채점했습니다` +
+        (s.relearn ? ` (모르는 단어 ${s.relearn}번 다시 봄)` : '')
+      : '오늘 볼 단어가 없습니다. 홈에서 DAY를 누르면 기한과 상관없이 다시 볼 수 있습니다.';
+
+    // 바로 다음 DAY로 넘어갈 수 있게 한다. 홈까지 갔다 오지 않아도 된다.
+    const next = day ? State.days.find(d => d.day === day + 1) : null;
+    const nextBtn = $('#study-next-day');
+    nextBtn.hidden = !next;
+    if (next) nextBtn.textContent = `DAY ${String(next.day).padStart(2, '0')} 시작`;
+    $('#study-again').hidden = !day;
+
     $('#study-progress').style.width = '100%';
     $('#study-counter').textContent = s ? `${s.graded}/${s.queue.length}` : '0/0';
     return;
   }
+  $('.scope-row').hidden = false;
 
   stage.hidden = false;
   done.hidden = true;
@@ -434,8 +477,11 @@ function renderStudy() {
 
   $('#study-counter').textContent = `${s.index + 1}/${s.queue.length}`;
   $('#study-progress').style.width = (s.index / s.queue.length * 100) + '%';
-  $('#study-scope').textContent = s.dayFilter
-    ? `DAY ${String(s.dayFilter).padStart(2, '0')} 전체` : '오늘 학습';
+  const left = s.queue.length - s.index;
+  $('#study-scope').textContent =
+    (s.dayFilter ? `DAY ${String(s.dayFilter).padStart(2, '0')} 전체` : '오늘 학습') +
+    ` · ${left}장 남음` + (s.relearn ? ` · 다시 볼 단어 ${s.relearn}개` : '');
+  $('#study-to-list').hidden = !s.dayFilter;
   $('#study-prev').disabled = s.index === 0;
   $('#study-next').disabled = s.index >= s.queue.length - 1;
 }
@@ -455,13 +501,23 @@ function gradeCard(result) {
   if (!$('#flashcard').classList.contains('flipped')) return;
 
   // 되돌릴 수 있도록 채점 전 기록을 남긴다. 없던 단어면 null.
-  const id = s.queue[s.index].id;
-  const before = Store.record(id);
+  const word = s.queue[s.index];
+  const before = Store.record(word.id);
   s.undo[s.index] = before ? { ...before } : null;
 
-  Scheduler.grade(id, result);
+  Scheduler.grade(word.id, result);
   s.graded++;
   s.index++;
+
+  // 모르는 단어는 내일까지 기다리지 않고 이 세션 안에서 다시 낸다.
+  // 단어장을 볼 때는 될 때까지 그 자리에서 반복하는 게 자연스럽다.
+  if (result === 'again') {
+    const at = Math.min(s.index + RELEARN_GAP, s.queue.length);
+    s.queue.splice(at, 0, word);
+    s.relearn = (s.relearn || 0) + 1;
+  }
+
+  saveSession();
   renderStudy();
 }
 
@@ -476,8 +532,8 @@ function prevCard() {
     else delete Store.data.words[id];
     delete s.undo[s.index];
     s.graded = Math.max(0, s.graded - 1);
-    Store.save();
   }
+  saveSession();
   renderStudy();
 }
 
@@ -486,6 +542,7 @@ function skipCard() {
   const s = State.study;
   if (!s || s.index >= s.queue.length) return;
   s.index++;
+  saveSession();
   renderStudy();
 }
 
@@ -524,6 +581,12 @@ function renderList() {
   $('#list-count').textContent =
     `${words.length.toLocaleString()}단어 · 예문 ${withEx.toLocaleString()}` +
     (words.length > shown.length ? ` · ${shown.length}개 표시 중` : '');
+
+  const toStudy = $('#list-to-study');
+  toStudy.hidden = State.list.day === null;
+  if (State.list.day !== null) {
+    toStudy.textContent = `DAY ${String(State.list.day).padStart(2, '0')} 외우기`;
+  }
 
   const wrap = $('#word-list');
   wrap.classList.toggle('masked', State.list.masked);
@@ -837,6 +900,25 @@ function bind() {
   $('#study-exit').onclick = () => { State.study = null; navigate('home'); };
   $('#study-prev').onclick = prevCard;
   $('#study-next').onclick = skipCard;
+  $('#study-to-list').onclick = () => {
+    const day = State.study && State.study.dayFilter;
+    if (!day) return;
+    State.list.day = day;
+    State.list.tier = 'all';
+    State.list.shown = LIST_PAGE;
+    navigate('list');
+  };
+  $('#study-next-day').onclick = () => {
+    const day = State.study && State.study.dayFilter;
+    if (day) startStudy(day + 1, 'all', { resume: false });
+  };
+  $('#study-again').onclick = () => {
+    const day = State.study && State.study.dayFilter;
+    if (day) startStudy(day, 'all', { resume: false });
+  };
+  $('#list-to-study').onclick = () => {
+    if (State.list.day) startStudy(State.list.day, 'all');
+  };
   $('#grade-bar').onclick = e => {
     const b = e.target.closest('[data-grade]');
     if (b) gradeCard(b.dataset.grade);

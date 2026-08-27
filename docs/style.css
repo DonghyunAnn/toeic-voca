@@ -211,7 +211,10 @@ button { background: none; border: 0; cursor: pointer; }
 .progress-fill { height: 100%; width: 0; background: var(--fg); transition: width .25s; }
 .counter { font-size: .75rem; color: var(--muted-fg); font-variant-numeric: tabular-nums; flex: none; }
 
-.study-scope { font-size: .75rem; color: var(--muted-fg); margin: -.5rem 0 .75rem; }
+.scope-row { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin: -.5rem 0 .75rem; }
+.study-scope { font-size: .75rem; color: var(--muted-fg); }
+.list-head { display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding-bottom: .5rem; }
+.done-actions { margin-top: 1.5rem; width: 100%; max-width: 18rem; margin-left: auto; margin-right: auto; }
 .card-stage { perspective: 1200px; }
 .flashcard {
   position: relative;
@@ -307,7 +310,7 @@ button { background: none; border: 0; cursor: pointer; }
 }
 .chips button.on { background: var(--primary); color: var(--primary-fg); border-color: var(--primary); }
 
-.list-count { font-size: .75rem; padding-bottom: .5rem; }
+.list-count { font-size: .75rem; }
 .word-list { display: grid; gap: .5rem; }
 .word-item {
   border: 1px solid var(--border); border-radius: var(--radius);

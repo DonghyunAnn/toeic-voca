@@ -90,7 +90,10 @@ try {
           <svg viewBox="0 0 24 24" class="ico"><path d="m9 6 6 6-6 6"/></svg>
         </button>
       </header>
-      <p class="study-scope" id="study-scope"></p>
+      <div class="scope-row">
+        <p class="study-scope" id="study-scope"></p>
+        <button class="btn btn-outline btn-sm" id="study-to-list" hidden>목록으로 훑기</button>
+      </div>
 
       <div class="card-stage" id="card-stage">
         <article class="flashcard" id="flashcard">
@@ -113,9 +116,13 @@ try {
       </div>
 
       <div class="empty" id="study-done" hidden>
-        <p class="empty-title">오늘 학습 완료</p>
+        <p class="empty-title" id="study-done-title">오늘 학습 완료</p>
         <p class="muted" id="study-done-sub"></p>
-        <button class="btn btn-outline" data-nav="home">홈으로</button>
+        <div class="stack done-actions">
+          <button class="btn btn-primary btn-block" id="study-next-day" hidden></button>
+          <button class="btn btn-outline btn-block" id="study-again" hidden>이 DAY 다시 보기</button>
+          <button class="btn btn-outline btn-block" data-nav="home">홈으로</button>
+        </div>
       </div>
     </section>
 
@@ -140,7 +147,10 @@ try {
         <button data-tier="extra">추가</button>
       </div>
       <div class="chips" id="day-chips"></div>
-      <p class="muted list-count" id="list-count"></p>
+      <div class="list-head">
+        <p class="muted list-count" id="list-count"></p>
+        <button class="btn btn-outline btn-sm" id="list-to-study" hidden>이 DAY 외우기</button>
+      </div>
       <div id="word-list" class="word-list"></div>
     </section>
 
