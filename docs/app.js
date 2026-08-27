@@ -12,6 +12,10 @@ const LIST_PAGE = 80;
 // 모름은 아예 몰랐으니 곧 다시 봐야 재학습이 된다.
 // 애매는 곧 보면 단기기억으로 그냥 맞혀버려서 확인이 안 되므로 더 뒤에 낸다.
 const RELEARN_GAP = { again: 5, hard: 15 };
+// 한 세션에서 같은 단어를 다시 낼 최대 횟수. 없으면 모름을 계속 누를 때
+// 큐가 끝없이 늘어나 세션이 끝나지 않는다. 한 세션에서 세 번을 틀렸다면
+// 더 반복하는 것보다 내일 다시 보는 편이 낫다.
+const RELEARN_MAX = { again: 3, hard: 1 };
 const AUDIO_DIR = 'audio/';
 
 const DEFAULTS = {
@@ -287,7 +291,11 @@ const Scheduler = {
       rec.due = addDays(today, BOX_INTERVALS[MAX_BOX]);
     } else if (!due) {
       // 기한 전에 미리 본 것. 맞혔다고 간격을 늘리면 박스가 거짓말을 한다.
-      // 하루 간격으로 떠올린 것을 근거로 15일 뒤를 장담할 수는 없다.
+      // 하루 간격으로 떠올린 것을 근거로 2주 뒤를 장담할 수는 없다.
+      //
+      // 세션 안에서 다시 낸 카드도 여기로 온다. 모름을 누른 순간 기한이 내일로
+      // 잡히므로, 몇 장 뒤에 다시 만나 안다를 눌러도 박스가 오르지 않는다.
+      // 방금 본 것을 단기기억으로 맞힌 것이지 외운 것이 아니기 때문이다.
       rec.correct++;
     } else if (result === 'hard') {
       rec.box = Math.max(1, rec.box);
@@ -463,7 +471,8 @@ function startStudy(dayFilter = null, mode = 'due', { resume = true } = {}) {
     const queue = saved.ids.map(id => State.byId.get(id)).filter(Boolean);
     if (queue.length) {
       State.study = { queue, index: Math.min(saved.index, queue.length - 1),
-                      graded: saved.graded || 0, dayFilter, mode, undo: [], resumed: true };
+                      graded: saved.graded || 0, dayFilter, mode,
+                      undo: [], retries: {}, resumed: true };
       navigate('study');
       return renderStudy();
     }
@@ -472,7 +481,7 @@ function startStudy(dayFilter = null, mode = 'due', { resume = true } = {}) {
   const queue = mode === 'learned' ? Scheduler.learned()
     : mode === 'all' && dayFilter ? Scheduler.everything(dayFilter)
     : Scheduler.session({ dayFilter });
-  State.study = { queue, index: 0, graded: 0, dayFilter, mode, undo: [] };
+  State.study = { queue, index: 0, graded: 0, dayFilter, mode, undo: [], retries: {} };
   saveSession();
   navigate('study');
   renderStudy();
@@ -584,11 +593,16 @@ function gradeCard(result) {
   s.index++;
 
   // 모름과 애매는 내일까지 기다리지 않고 이 세션 안에서 다시 낸다.
+  // 다만 정해진 횟수까지만이다. 그 뒤로는 내일 몫으로 넘긴다.
   const gap = RELEARN_GAP[result];
-  if (gap) {
+  const seen = s.retries[word.id] || 0;
+  if (gap && seen < RELEARN_MAX[result]) {
+    s.retries[word.id] = seen + 1;
     const at = Math.min(s.index + gap, s.queue.length);
     s.queue.splice(at, 0, word);
     s.relearn = (s.relearn || 0) + 1;
+  } else if (gap) {
+    toast(`${word.headword} — 오늘은 여기까지, 내일 다시 나옵니다`);
   }
 
   saveSession();
@@ -606,6 +620,7 @@ function prevCard() {
     else delete Store.data.words[id];
     delete s.undo[s.index];
     s.graded = Math.max(0, s.graded - 1);
+    if (s.retries[id]) s.retries[id]--;      // 재출제 횟수도 되돌린다
   }
   saveSession();
   renderStudy();
