@@ -204,19 +204,27 @@ const Store = {
 
   /* 진도 저장.
    *
-   * 채점 한 번에 400KB를 통째로 직렬화해 동기로 디스크에 쓰면, 카드를 넘길
-   * 때마다 화면이 한두 프레임씩 멎는다. 진도가 쌓일수록 심해진다.
-   * 그래서 실제 쓰기는 잠깐 미뤄 몰아서 하고, 앱이 가려지는 순간 반드시 비운다.
+   * 카드 한 장을 채점하면 grade()와 saveSession()이 각각 저장을 부른다.
+   * 예전에는 그때마다 400KB를 통째로 직렬화해 두 번 썼다. 그래서 한 번
+   * 500ms 미뤘다가 몰아 쓰게 바꿨는데, 그 사이에 앱이 꺼지면 그 채점이
+   * 통째로 날아갔다. 폰에서는 앱 전환기로 밀어 없앨 때 pagehide도
+   * visibilitychange도 안 뜨는 경우가 흔하다. 진도를 잃는 것보다는
+   * 몇 밀리초 느린 편이 낫다.
+   *
+   * 그래서 지금은 미루지 않는다. 대신 같은 처리 안에서 여러 번 불러도
+   * 마이크로태스크로 묶어 한 번만 쓴다. 마이크로태스크는 그 처리가 끝나기
+   * 전에 반드시 실행되므로, 브라우저가 중간에 페이지를 죽일 틈이 없다.
    */
-  _timer: null,
+  _pending: false,
 
   save() {
-    if (this._timer) return;
-    this._timer = setTimeout(() => this.flush(), 500);
+    if (this._pending) return;
+    this._pending = true;
+    queueMicrotask(() => this.flush());
   },
 
   flush() {
-    if (this._timer) { clearTimeout(this._timer); this._timer = null; }
+    this._pending = false;
     try {
       // 이어보기(session)는 따로 담는다. 큐의 id 4,190개가 본 진도에 섞이면
       // 카드를 넘길 때마다 그만큼을 같이 쓰게 된다.
