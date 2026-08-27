@@ -49,7 +49,10 @@ try {
         </div>
         <p class="muted" id="due-label"></p>
         <button class="btn btn-primary btn-block" id="start-review">오늘 학습 시작</button>
-        <button class="btn btn-outline btn-block review-learned" id="review-learned" hidden></button>
+        <div class="review-row">
+          <button class="btn btn-outline btn-block" id="review-learned" hidden></button>
+          <button class="btn btn-outline btn-block" id="review-weak" hidden></button>
+        </div>
       </section>
 
       <div class="stat-row">
@@ -136,12 +139,13 @@ try {
         <h1>단어 목록</h1>
       </header>
 
+      <div class="search">
+        <svg viewBox="0 0 24 24" class="ico"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="search" placeholder="단어 또는 뜻 검색" autocomplete="off">
+      </div>
       <div class="toolbar">
-        <div class="search">
-          <svg viewBox="0 0 24 24" class="ico"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          <input type="search" id="search" placeholder="단어 또는 뜻 검색" autocomplete="off">
-        </div>
         <button class="btn btn-outline btn-sm" id="toggle-mask" aria-pressed="false">뜻 가리기</button>
+        <button class="btn btn-outline btn-sm" id="toggle-weak" aria-pressed="false">틀린 것만</button>
       </div>
 
       <div class="toggles compact" id="list-tier">
@@ -180,7 +184,13 @@ try {
           <div class="segmented" id="quiz-length">
             <button data-len="10" class="on">10</button>
             <button data-len="20">20</button>
+            <button data-len="50">50</button>
             <button data-len="0">전체</button>
+          </div>
+          <div class="count-row">
+            <label for="quiz-count">직접 지정</label>
+            <input type="number" id="quiz-count" min="4" step="1" inputmode="numeric" placeholder="예: 35">
+            <span id="quiz-count-max"></span>
           </div>
         </section>
 
