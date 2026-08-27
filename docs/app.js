@@ -596,9 +596,12 @@ function startStudy(dayFilter = null, mode = 'due', { resume = true } = {}) {
         .filter(id => !State.byId.has(id)).length;
       const index = Math.max(0, Math.min(saved.index - missingBefore, queue.length));
       // 이어본 세션에는 되돌릴 기록이 없다. 그 아래로는 못 내려가게 막는다.
+      // 다시 낸 카드 수와 재출제 횟수도 되살린다. 없으면 '왜 103장이지?'가
+      // 되고, 재출제 한도(모름 3번·애매 1번)도 리셋돼 무한히 다시 나온다.
       State.study = { queue, index, floor: index,
                       graded: saved.graded || 0, dayFilter, mode,
-                      undo: [], retries: {} };
+                      relearn: saved.relearn || 0,
+                      undo: [], retries: { ...(saved.retries || {}) } };
       navigate('study');
       return renderStudy();
     }
@@ -620,10 +623,13 @@ function saveSession() {
   if (!s || s.index >= s.queue.length) {
     delete Store.data.session;
   } else {
-    // 큐는 세션 내내 그대로다. id 목록을 카드마다 다시 만들 이유가 없다.
-    s.ids = s.ids || s.queue.map(w => w.id);
+    // 큐는 고정이 아니다. 모름·애매를 누르면 그 카드가 뒤에 다시 끼워지고,
+    // 되돌리면 빠진다. 한 번 만든 id 목록을 재사용했더니 다시 볼 카드가
+    // 저장에서 통째로 누락돼, 껐다 켜면 그 단어들이 사라졌다.
     Store.data.session = { date: todayISO(), dayFilter: s.dayFilter, mode: s.mode,
-                           index: s.index, graded: s.graded, ids: s.ids };
+                           index: s.index, graded: s.graded,
+                           relearn: s.relearn || 0, retries: s.retries || {},
+                           ids: s.queue.map(w => w.id) };
   }
   Store.save();
 }
