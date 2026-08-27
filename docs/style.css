@@ -196,18 +196,6 @@ button { background: none; border: 0; cursor: pointer; }
 
 .day-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: .5rem; }
 
-/* 단원 묶음.
-   칸 안에 단원명을 넣을 자리가 없어 묶음 위에 단다. 다만 한 묶음이 한 줄을
-   통째로 쓰면(전치사 26처럼 하루짜리도 있다) 홈이 두 배로 길어진다.
-   묶음을 내용만큼만 차지하게 두고 줄을 나눠 쓰게 한다. */
-#day-grid { display: flex; flex-wrap: wrap; gap: .75rem .625rem; }
-.day-group h4 {
-  display: flex; align-items: baseline; gap: .3125rem; margin-bottom: .3125rem;
-  font-size: .75rem; font-weight: 600; color: var(--fg); white-space: nowrap;
-}
-.day-group h4 span { font-size: .625rem; font-weight: 400; color: var(--muted-fg); }
-.day-group .day-grid { display: flex; gap: .5rem; }
-.day-group .day-cell { width: 3.875rem; }
 /* 시트 항목의 부연 설명 */
 .sheet-item span { display: block; margin-top: .125rem; font-size: .75rem; color: var(--muted-fg); font-weight: 400; }
 .day-cell {

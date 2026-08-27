@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = '84af5254';
+const BUILD = '03c92cf2';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -650,27 +650,9 @@ function renderHome() {
       <i class="bar" style="width:${pct}%"></i>
     </button>`;
   };
-  // 단원명이 같은 DAY끼리 묶어 소제목을 단다. 칸 안에 넣기엔 자리가 없고,
-  // 묶어 놓으면 '11~14는 동사'처럼 한눈에 들어온다.
-  const grouped = days => {
-    const gs = [];
-    for (const d of days) {
-      const t = groupTitle(d.title);
-      const last = gs[gs.length - 1];
-      if (last && last.title === t) last.days.push(d);
-      else gs.push({ title: t, days: [d] });
-    }
-    return gs.map(g => {
-      const cells = g.days.map(cell).join('');
-      if (!cells) return '';
-      const span = g.days.length > 1
-        ? `DAY ${String(g.days[0].day).padStart(2, '0')}~${String(g.days[g.days.length - 1].day).padStart(2, '0')}`
-        : `DAY ${String(g.days[0].day).padStart(2, '0')}`;
-      return `<div class="day-group"><h4>${escapeHTML(g.title)}<span>${span}</span></h4>`
-           + `<div class="day-grid">${cells}</div></div>`;
-    }).join('');
-  };
-  const official = grouped(State.days.filter(d => d.day <= 30));
+  // 칸을 단원별로 묶어 봤는데 5열 정렬이 깨져 오히려 읽기 나빴다.
+  // 단원명은 DAY를 눌렀을 때(학습 화면·시트·목록)와 사용 가이드에서 본다.
+  const official = State.days.filter(d => d.day <= 30).map(cell).join('');
   const extraCells = State.days.filter(d => d.day > 30).map(cell).join('');
   $('#day-grid').innerHTML = official;
   $('#day-grid-extra').innerHTML = extraCells;
@@ -1056,7 +1038,10 @@ function appendMore(wrap, words) {
 
 function renderListCount(words) {
   const withEx = words.reduce((n, w) => n + (w.examples.length ? 1 : 0), 0);
-  $('#list-count').textContent =
+  // DAY를 골랐으면 단원명을 앞에 붙인다. 홈 칸에는 넣을 자리가 없어
+  // 어느 단원인지 알 수 있는 자리가 여기와 학습 화면뿐이다.
+  const head = State.list.day !== null ? `${dayTitle(State.list.day)} · ` : '';
+  $('#list-count').textContent = head +
     `${words.length.toLocaleString()}단어 · 예문 ${withEx.toLocaleString()}` +
     (words.length > State.list.shown ? ` · ${State.list.shown}개 표시 중` : '');
 }
