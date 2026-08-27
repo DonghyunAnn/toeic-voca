@@ -220,25 +220,51 @@ const Scheduler = {
     return shuffle(inScope(State.byDay.get(dayFilter) || []));
   },
 
+  /** 지금까지 한 번이라도 본 단어 전부. 기한은 따지지 않는다.
+   *  DAY 3까지 떼고 바로 훑고 싶을 때 쓴다. */
+  learned() {
+    return shuffle(inScope(State.words).filter(w => Store.record(w.id)));
+  },
+
+  learnedCount() {
+    return inScope(State.words).filter(w => Store.record(w.id)).length;
+  },
+
   counts() {
     const { due, fresh, freshTotal } = this.split();
     return { due: due.length, fresh: fresh.length, freshTotal };
   },
 
+  /** 기한이 됐는지. 아직 한 번도 안 본 단어는 항상 기한으로 본다. */
+  isDue(id) {
+    const rec = Store.record(id);
+    return !rec || !rec.lastSeen || rec.due <= todayISO();
+  },
+
   grade(id, result) {
+    const due = this.isDue(id);
     const rec = Store.ensure(id);
+    const today = todayISO();
+
     if (result === 'again') {
+      // 틀린 것은 기한과 무관하게 반영한다. 모른다는 건 진짜 모르는 것이다.
       rec.box = 1;
       rec.wrong++;
+      rec.due = addDays(today, BOX_INTERVALS[1]);
+    } else if (!due) {
+      // 기한 전에 미리 본 것. 맞혔다고 간격을 늘리면 박스가 거짓말을 한다.
+      // 하루 간격으로 떠올린 것을 근거로 15일 뒤를 장담할 수는 없다.
+      rec.correct++;
     } else if (result === 'hard') {
       rec.box = Math.max(1, rec.box);
       rec.correct++;
+      rec.due = addDays(today, BOX_INTERVALS[rec.box]);
     } else {
       rec.box = Math.min(MAX_BOX, rec.box + 1);
       rec.correct++;
+      rec.due = addDays(today, BOX_INTERVALS[rec.box]);
     }
-    rec.lastSeen = todayISO();
-    rec.due = addDays(todayISO(), BOX_INTERVALS[rec.box]);
+    rec.lastSeen = today;
 
     const day = Number(id.slice(1, 3));
     Store.data.days[day] = { lastStudied: todayISO() };
@@ -356,6 +382,11 @@ function renderHome() {
     : (freshTotal ? '오늘 몫은 끝났습니다' : '모든 단어를 다 봤습니다');
   $('#start-review').disabled = !(due || fresh);
 
+  const learned = Scheduler.learnedCount();
+  const reviewBtn = $('#review-learned');
+  reviewBtn.hidden = learned === 0;
+  reviewBtn.textContent = `배운 단어 복습 (${learned.toLocaleString()}개)`;
+
   $('#stat-seen').textContent = seen.toLocaleString();
   $('#stat-mastered').textContent = mastered.toLocaleString();
   $('#stat-total').textContent = total.toLocaleString();
@@ -403,8 +434,8 @@ function startStudy(dayFilter = null, mode = 'due', { resume = true } = {}) {
     }
   }
 
-  const queue = mode === 'all' && dayFilter
-    ? Scheduler.everything(dayFilter)
+  const queue = mode === 'learned' ? Scheduler.learned()
+    : mode === 'all' && dayFilter ? Scheduler.everything(dayFilter)
     : Scheduler.session({ dayFilter });
   State.study = { queue, index: 0, graded: 0, dayFilter, mode, undo: [] };
   saveSession();
@@ -438,7 +469,9 @@ function renderStudy() {
     if (s) saveSession();
 
     const day = s && s.dayFilter;
-    $('#study-done-title').textContent = day ? `DAY ${String(day).padStart(2, '0')} 완료` : '오늘 학습 완료';
+    $('#study-done-title').textContent =
+      s && s.mode === 'learned' ? '복습 완료'
+      : day ? `DAY ${String(day).padStart(2, '0')} 완료` : '오늘 학습 완료';
     $('#study-done-sub').textContent = s && s.graded
       ? `${s.graded}번 채점했습니다` +
         (s.relearn ? ` (모르는 단어 ${s.relearn}번 다시 봄)` : '')
@@ -479,9 +512,11 @@ function renderStudy() {
   $('#study-progress').style.width = (s.index / s.queue.length * 100) + '%';
   const left = s.queue.length - s.index;
   $('#study-scope').textContent =
-    (s.dayFilter ? `DAY ${String(s.dayFilter).padStart(2, '0')} 전체` : '오늘 학습') +
+    (s.mode === 'learned' ? '배운 단어 복습'
+      : s.dayFilter ? `DAY ${String(s.dayFilter).padStart(2, '0')} 전체` : '오늘 학습') +
     ` · ${left}장 남음` + (s.relearn ? ` · 다시 볼 단어 ${s.relearn}개` : '');
   $('#study-to-list').hidden = !s.dayFilter;
+  $('#grade-note').hidden = true;
   $('#study-prev').disabled = s.index === 0;
   $('#study-next').disabled = s.index >= s.queue.length - 1;
 }
@@ -492,6 +527,8 @@ function flipCard() {
   $('#flashcard').classList.add('flipped');
   $('#grade-bar').hidden = false;
   const w = s.queue[s.index];
+  const early = !Scheduler.isDue(w.id);
+  $('#grade-note').hidden = !early;
   if (Store.settings.autoplay && directionFor(w.id) === 'ko2en') Audio_.play(w.audio);
 }
 
@@ -623,6 +660,7 @@ function renderList() {
 function quizPool() {
   const scope = $('#quiz-scope button.on').dataset.scope;
   if (scope === 'due') return Scheduler.session();
+  if (scope === 'learned') return Scheduler.learned();
   if (scope === 'day') return inScope(State.byDay.get(State.quizDay) || []);
   return inScope(State.words);
 }
@@ -641,7 +679,8 @@ function renderQuizSetup() {
   }
 
   const n = quizPool().length;
-  const where = scope === 'day' ? `DAY ${String(State.quizDay).padStart(2, '0')}의 ` : '';
+  const where = scope === 'day' ? `DAY ${String(State.quizDay).padStart(2, '0')}의 `
+    : scope === 'learned' ? '배운 ' : '';
   $('#quiz-avail').textContent = n < 4
     ? `출제할 단어가 ${n}개뿐입니다. 사지선다라 4개 이상 필요합니다.`
     : `${where}${n.toLocaleString()}단어에서 출제합니다.`;
@@ -896,6 +935,7 @@ function bind() {
   });
 
   $('#start-review').onclick = () => startStudy();
+  $('#review-learned').onclick = () => startStudy(null, 'learned', { resume: false });
   $('#flashcard').onclick = flipCard;
   $('#study-exit').onclick = () => { State.study = null; navigate('home'); };
   $('#study-prev').onclick = prevCard;

@@ -170,6 +170,7 @@ button { background: none; border: 0; cursor: pointer; }
 .review-count .unit { font-size: .9375rem; color: var(--muted-fg); }
 .review-card .muted { margin: .125rem 0 1.125rem; }
 
+.review-learned { margin-top: .5rem; }
 .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; margin-top: .75rem; }
 .stat {
   background: var(--muted); border-radius: var(--radius);
@@ -276,6 +277,8 @@ button { background: none; border: 0; cursor: pointer; }
 }
 .back .colloc b { color: var(--fg); font-weight: 550; }
 
+.grade-note { font-size: .6875rem; color: var(--muted-fg); text-align: center; margin-top: .875rem; }
+.grade-note b { color: var(--fg); font-weight: 600; }
 .grade-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; margin-top: 1rem; }
 .btn-grade { border: 1px solid var(--border); background: var(--card); height: 3rem; }
 .btn-grade.again { color: var(--again); }

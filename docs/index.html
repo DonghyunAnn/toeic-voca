@@ -49,6 +49,7 @@ try {
         </div>
         <p class="muted" id="due-label"></p>
         <button class="btn btn-primary btn-block" id="start-review">오늘 학습 시작</button>
+        <button class="btn btn-outline btn-block review-learned" id="review-learned" hidden></button>
       </section>
 
       <div class="stat-row">
@@ -109,6 +110,7 @@ try {
         </article>
       </div>
 
+      <p class="grade-note" id="grade-note" hidden>기한 전이라 <b>안다·애매</b>는 박스를 올리지 않습니다. <b>모름</b>은 반영됩니다.</p>
       <div class="grade-bar" id="grade-bar" hidden>
         <button class="btn btn-grade again" data-grade="again">모름</button>
         <button class="btn btn-grade hard"  data-grade="hard">애매</button>
@@ -165,6 +167,7 @@ try {
           <h2 class="section-title">범위</h2>
           <div class="segmented" id="quiz-scope">
             <button data-scope="due" class="on">오늘 학습분</button>
+            <button data-scope="learned">배운 것</button>
             <button data-scope="day">DAY 선택</button>
             <button data-scope="all">전체</button>
           </div>
