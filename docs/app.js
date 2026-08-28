@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = '87d12cc5';
+const BUILD = '43548a50';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -589,7 +589,10 @@ function cardBackHTML(w) {
   const examples = w.examples.map(e => `
     <div class="ex">
       <div class="en">${escapeHTML(e.en)}${e.generated ? '<span class="gen">생성</span>' : ''}</div>
-      ${e.ko ? `<div class="ko">${escapeHTML(e.ko)}</div>` : ''}
+      ${e.ko ? `<div class="ko">${escapeHTML(e.ko)}${
+        // 영어는 원문 그대로고 해석만 우리가 붙인 경우. 예문 자체를 만든
+        // '생성'과는 다르므로 구분해서 표시한다.
+        !e.generated && e.koGen ? '<span class="gen">해석</span>' : ''}</div>` : ''}
     </div>`).join('');
 
   const colloc = w.collocations.length ? `

@@ -67,6 +67,35 @@ CSV_TYPOS = {"appropriated": "appropriate"}
 
 # 덱/CSV의 뜻 오류. (DAY, 표제어) -> [(품사, 뜻)] 로 통째로 갈아끼운다.
 # 원문을 그대로 두면 학습할 때 틀린 뜻을 외우게 되므로 확인된 것만 고친다.
+# 블로그 원문의 예문 전사 오류. 받아쓰기나 OCR로 옮긴 흔적이 남아 있다.
+# 두 문장이 마침표 없이 붙거나, 낱말이 비슷한 소리로 바뀌거나, %가 사라졌다.
+# 키는 (day, headword.lower()), 값은 그 단어의 예문 영어 문장 목록.
+# 빈 목록이면 예문을 통째로 지운다.
+EXAMPLE_FIXES = {
+    # 표제어만 덩그러니 남았다. 같은 단어에 온전한 예문이 따로 있다.
+    (23, "exquisite"): ["Exquisite views of the Leona River can be enjoyed from hiking trails"],
+    # 두 문장이 붙었다. 뒤엣것은 '~부로 효력이 발생하는' 쪽 뜻이라 살려서 나눈다.
+    (22, "effective"): ["Word of mouth will be our most effective marketing tool",
+                        "We are raising your salary by 10% effective May 1st"],
+    (22, "remote"): ["AF Telecom is establishing service in areas previously thought too remote",
+                     "There was a possibility, however remote, that the merger would not go through"],
+    (21, "outstanding"): ["Miss Chu was happy to receive the award for outstanding performance",
+                          "The outstanding balance must be paid promptly"],
+    # 뒤 문장이 잘린 채 붙어 있었다. 온전한 앞 문장만 남긴다.
+    (21, "functional"): ["Mr. Nipstar confirmed the device was completely functional again"],
+    # 소리가 비슷한 낱말로 잘못 옮겨졌다
+    (22, "straightforward"): ["Gave straightforward responses to all my questions"],
+    (23, "responsive"): ["The store is seeking ways to be more responsive to its customers"],
+    (23, "stringent"): ["Falco engine parts are put through a stringent inspection"],
+    (25, "completely"): ["Tickets for the Autumn banquet are completely sold out"],
+    (21, "knowledgeable"): ["Call Sendswhile Incorporated today to speak with a knowledgeable consultant"],
+    (19, "clearance"): ["The clearance sale will start Friday and last for just three weeks"],
+    # 문장 끝에 붙은 군더더기
+    (22, "prosperous"): ["We look forward to establishing a prosperous relationship with you"],
+    # 퍼센트 기호가 사라졌다
+    (19, "summary"): ["Our third-quarter sales summary showed a 10% increase"],
+}
+
 MEANING_FIXES = {
     (15, "aptitude"): [("n.", "적성, 소질")],       # 원문 "작성, 소질"
     (5, "crack"): [("n.", "금, 틈")],               # 원문 품사 자리가 비어 ". 금, 틈"
@@ -314,6 +343,10 @@ def merge(source, kind, audio_out=None):
         fix = MEANING_FIXES.get((day, headword.lower()))
         if fix:
             word["senses"] = [{"pos": p, "meaning": m} for p, m in fix]
+        exfix = EXAMPLE_FIXES.get((day, headword.lower()))
+        if exfix is not None:
+            keep = {e["en"]: e for e in word["examples"]}
+            word["examples"] = [keep.get(en, {"en": en, "ko": None}) | {"en": en} for en in exfix]
         # 등급을 못 찾아도 비워두지 않는다. 비면 등급 필터에서 통째로 사라진다.
         word["tier"] = tiers.get(tier_key(day, headword), "core")
         gen = generated.get(wid)
