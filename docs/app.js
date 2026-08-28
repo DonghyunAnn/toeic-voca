@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = 'cfc6d71c';
+const BUILD = 'c6c83ac4';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -29,7 +29,10 @@ const audioURL = f => AUDIO_DIR + f + '.mp3';
 
 const DEFAULTS = {
   version: 1,
-  settings: { direction: 'mixed', newPerDay: -1, onlyWithExample: false, autoplay: false, tiers: ['core', 'bonus', 'extra'], theme: 'system', quizAffectsBox: false },
+  // 처음 켰을 때의 값. 영->한으로 시작하고 등급은 교재(필수·만점)까지만 켠다.
+  // 추가 어휘는 교재를 뗀 뒤에 켜는 것이라 기본으로 섞지 않는다.
+  settings: { direction: 'en2ko', newPerDay: -1, onlyWithExample: false, autoplay: false,
+              tiers: ['core', 'bonus'], theme: 'system', quizAffectsBox: false },
   words: {},
   days: {},
   session: null,
@@ -220,7 +223,8 @@ const Store = {
         migrated = true;
       }
       if (!Array.isArray(this.data.settings.tiers) || !this.data.settings.tiers.length) {
-        this.data.settings.tiers = ['core', 'bonus', 'extra'];
+        // 저장소가 깨졌을 때의 복구. 기본값을 그대로 쓴다.
+        this.data.settings.tiers = [...DEFAULTS.settings.tiers];
       }
       if (typeof this.data.settings.dailyLimit === 'number') {
         // 예전에는 복습과 새 단어를 합쳐서 잘랐다. 이제 새 단어만 제한한다.
