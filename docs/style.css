@@ -179,20 +179,36 @@ button { background: none; border: 0; cursor: pointer; }
 .review-row .btn { flex: 1; }
 .word-item .miss { font-size: .625rem; color: var(--again); flex: none; }
 .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; margin-top: .75rem; }
+/* 통계와 박스 칸은 누르면 그 단어들의 목록이 열린다.
+   숫자만 보이고 무슨 단어인지 알 수 없으면 분포를 봐도 할 일이 없다. */
 .stat {
   background: var(--muted); border-radius: var(--radius);
   padding: .75rem .5rem; text-align: center;
+  border: 0; color: inherit; font: inherit;
 }
 .stat b { display: block; font-size: 1.125rem; font-weight: 650; letter-spacing: -.02em; }
 .stat span { font-size: .6875rem; color: var(--muted-fg); }
+.stat:active { background: var(--accent); }
 
 .boxbar { display: flex; gap: .25rem; }
-.boxbar > div {
+.boxbar > button {
   flex: 1; border-radius: calc(var(--radius) - 2px);
   background: var(--muted); padding: .5rem .25rem; text-align: center;
+  border: 0; color: inherit; font: inherit;
 }
 .boxbar b { display: block; font-size: .9375rem; font-weight: 620; }
 .boxbar span { font-size: .625rem; color: var(--muted-fg); }
+.boxbar > button:active { background: var(--accent); }
+.boxbar > button:disabled { opacity: .5; }
+
+/* 목록에 걸린 필터. 왜 목록이 짧은지 알 수 있어야 하고, 한 번에 풀 수 있어야 한다. */
+.stage-tag {
+  display: inline-flex; align-items: center; gap: .375rem;
+  margin-top: .625rem; padding: .3125rem .5rem .3125rem .625rem;
+  border: 1px solid var(--border); border-radius: 999px;
+  background: var(--muted); color: var(--fg); font-size: .75rem;
+}
+.stage-tag:active { background: var(--accent); }
 
 .day-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: .5rem; }
 

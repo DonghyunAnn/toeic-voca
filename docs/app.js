@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = 'b4639883';
+const BUILD = '0e9a858c';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -466,7 +466,9 @@ const State = {
   study: null,
   quiz: null,
   quizDay: 1,
-  list: { day: null, tiers: ['core', 'bonus', 'extra'], query: '', masked: false, weakOnly: false, shown: LIST_PAGE },
+  // stage: null(전체) | 1~5(그 박스) | 'new'(아직 안 봄) | 'seen'(한 번 이상 봄)
+  list: { day: null, tiers: ['core', 'bonus', 'extra'], query: '', masked: false, weakOnly: false,
+          stage: null, shown: LIST_PAGE },
 };
 
 async function loadData() {
@@ -537,6 +539,12 @@ function homeStats() {
 }
 
 const TIER_LABEL = { core: '필수', bonus: '만점', extra: '추가' };
+
+const stageLabel = st =>
+  st === null ? '' :
+  st === 'new' ? '아직 안 본 단어' :
+  st === 'seen' ? '한 번 이상 본 단어' :
+  st === MAX_BOX ? `박스 ${st} · 암기 완료` : `박스 ${st}`;
 
 /** DAY의 단원명. '동사 (1)'처럼 번호가 붙은 것은 묶을 때 번호를 뗀다. */
 const dayTitle = day => {
@@ -631,8 +639,10 @@ function renderHome() {
   $('#stat-mastered').textContent = mastered.toLocaleString();
   $('#stat-total').textContent = total.toLocaleString();
 
+  // 각 칸을 눌러 그 단계의 단어를 바로 볼 수 있게 한다.
+  // 숫자만 보이고 어떤 단어인지 알 수 없으면 분포를 봐도 할 일이 없다.
   $('#boxbar').innerHTML = boxes.map((n, i) =>
-    `<div><b>${n}</b><span>박스 ${i + 1}</span></div>`).join('');
+    `<button data-stage="${i + 1}"${n ? '' : ' disabled'}><b>${n}</b><span>박스 ${i + 1}</span></button>`).join('');
 
   // DAY 1~30은 공식 교재, 31부터는 다른 단어장이라 눈에 띄게 갈라 보여준다
   const cell = d => {
@@ -978,6 +988,15 @@ function filteredWords() {
   let pool = day === null ? State.words : (State.byDay.get(day) || []);
   if (tiers.length < 3) pool = pool.filter(w => tiers.includes(w.tier));
   if (State.list.weakOnly) pool = pool.filter(w => (Store.record(w.id) || {}).wrong > 0);
+  const st = State.list.stage;
+  if (st !== null) {
+    pool = pool.filter(w => {
+      const rec = Store.record(w.id);
+      if (st === 'new') return !rec;
+      if (st === 'seen') return !!rec;
+      return rec && clampBox(rec.box) === st;
+    });
+  }
   if (!q) return pool;
   return pool.filter(w => w.q.includes(q));
 }
@@ -1042,6 +1061,18 @@ function appendMore(wrap, words) {
   wrap.appendChild(more);
 }
 
+/** 홈에서 어떤 단계를 눌렀을 때 그 단어들을 목록으로 연다. */
+function openStage(stage) {
+  State.list.stage = stage;
+  State.list.day = null;
+  State.list.query = '';
+  State.list.weakOnly = false;
+  State.list.shown = LIST_PAGE;
+  const box = $('#search');
+  if (box) box.value = '';
+  navigate('list');
+}
+
 function renderListCount(words) {
   const withEx = words.reduce((n, w) => n + (w.examples.length ? 1 : 0), 0);
   // DAY를 골랐으면 단원명을 앞에 붙인다. 홈 칸에는 넣을 자리가 없어
@@ -1050,6 +1081,11 @@ function renderListCount(words) {
   $('#list-count').textContent = head +
     `${words.length.toLocaleString()}단어 · 예문 ${withEx.toLocaleString()}` +
     (words.length > State.list.shown ? ` · ${State.list.shown}개 표시 중` : '');
+
+  // 홈에서 넘어온 필터는 눈에 보여야 한다. 안 그러면 왜 목록이 짧은지 모른다.
+  const tag = $('#list-stage');
+  tag.hidden = State.list.stage === null;
+  if (State.list.stage !== null) tag.firstChild.textContent = stageLabel(State.list.stage);
 }
 
 /* ── 퀴즈 ─────────────────────────────────────────── */
@@ -1485,6 +1521,8 @@ function bind() {
 
   $('#start-review').onclick = () => startStudy();
   $('#review-learned').onclick = () => startStudy(null, 'learned', { resume: false });
+  // 외우지 않고 훑어만 보고 싶을 때가 있다
+  $('#review-learned').oncontextmenu = e => { e.preventDefault(); openStage('seen'); };
   $('#review-weak').onclick = () => startStudy(null, 'weak', { resume: false });
   $('#toggle-weak').onclick = e => {
     State.list.weakOnly = !State.list.weakOnly;
@@ -1517,6 +1555,21 @@ function bind() {
   $('#list-to-study').onclick = () => {
     if (State.list.day) startStudy(State.list.day, 'day');
   };
+  // 홈의 박스 칸과 통계 칸을 누르면 그 단어들을 목록으로 연다
+  for (const sel of ['#boxbar', '#home-stats']) {
+    $(sel).addEventListener('click', e => {
+      const b = e.target.closest('[data-stage]');
+      if (!b || b.disabled) return;
+      const v = b.dataset.stage;
+      openStage(v === 'all' ? null : (v === 'seen' || v === 'new') ? v : Number(v));
+    });
+  }
+  $('#list-stage').onclick = () => {
+    State.list.stage = null;
+    State.list.shown = LIST_PAGE;
+    renderList();
+  };
+
   $('#grade-bar').onclick = e => {
     const b = e.target.closest('[data-grade]');
     if (b) gradeCard(b.dataset.grade);
