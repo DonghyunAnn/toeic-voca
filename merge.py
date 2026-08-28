@@ -67,6 +67,22 @@ CSV_TYPOS = {"appropriated": "appropriate"}
 
 # 덱/CSV의 뜻 오류. (DAY, 표제어) -> [(품사, 뜻)] 로 통째로 갈아끼운다.
 # 원문을 그대로 두면 학습할 때 틀린 뜻을 외우게 되므로 확인된 것만 고친다.
+# 같은 단어가 두 번 들어간 자리. 블로그가 줄임형을 따로 적었거나 덱이
+# 표제어를 잘못 옮긴 탓이다. 교재 등급표(엑셀)에 없는 쪽을 지우고 예문만 옮긴다.
+#   버릴 id -> (남길 id, 남길 표제어 또는 None)
+DUPLICATE_MERGES = {
+    # 블로그가 DAY18에 require를 또 적었다. 교재에는 requirement만 있고,
+    # 뜻 자리에는 '동사'라는 품사 이름이 새어 들어와 있었다.
+    # 예문은 requirements 이야기라 requirement로 옮긴다.
+    "d18-require": ("d18-requirement", None),
+    # 덱이 'credit card'에 'v. 입금하다'를 달아 놨다. 명사구가 입금할 수는 없다.
+    # 옆줄 'credit card statement'에 오염된 것으로 보인다. 블로그가 적은
+    # credit이 맞다. 발음은 버린다 - 'credit card'라고 읽어 주기 때문이다.
+    "d27-credit-card": ("d27-credit", None),
+    # 블로그가 줄임형을 따로 적었다. 교재는 대괄호 형태 하나뿐이다.
+    "d30-eco-friendly": ("d30-environmentally-eco-friendly", None),
+}
+
 # 블로그 원문의 예문 전사 오류. 받아쓰기나 OCR로 옮긴 흔적이 남아 있다.
 # 두 문장이 마침표 없이 붙거나, 낱말이 비슷한 소리로 바뀌거나, %가 사라졌다.
 # 키는 (day, headword.lower()), 값은 그 단어의 예문 영어 문장 목록.

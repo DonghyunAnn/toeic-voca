@@ -6,17 +6,18 @@
   "crawledAt": "2026-08-27",
   "mergedAt": "2026-08-27",
   "dayCount": 40,
-  "wordCount": 4190,
-  "withExample": 4190,
-  "withAudio": 3155,
-  "coreCount": 1665,
+  "wordCount": 4187,
+  "withExample": 4187,
+  "withAudio": 3154,
+  "coreCount": 1662,
   "extraCount": 1032,
   "sources": {
    "core": "ETS 토익 기출 보카 (공식 교재)",
    "bonus": "ETS 토익 기출 보카 (공식 교재)",
    "extra": "독종반 모바일 단어장"
   },
-  "generatedExamples": 2533
+  "generatedExamples": 2533,
+  "translatedExamples": 1442
  },
  "days": [
   {
@@ -38771,6 +38772,11 @@
        "en": "A valid driver's license is a requirement for all delivery positions.",
        "ko": "유효한 운전면허증은 모든 배송직의 필수 요건입니다.",
        "generated": true
+      },
+      {
+       "en": "The four other companies could not meet our pricing requirements",
+       "ko": "다른 네 회사는 우리의 가격 요건을 충족하지 못했다",
+       "koGen": true
       }
      ],
      "collocations": [],
@@ -41016,30 +41022,6 @@
      "source": "deck",
      "audio": "hypertts-3cb2abd91723cd6d821ce81a14d37519386ef0afe200308cd1fb2a5a.mp3",
      "tier": "bonus"
-    },
-    {
-     "id": "d18-require",
-     "headword": "require",
-     "senses": [
-      {
-       "pos": null,
-       "meaning": "요구하다"
-      },
-      {
-       "pos": "v.",
-       "meaning": "동사"
-      }
-     ],
-     "examples": [
-      {
-       "en": "The four other companies could not meet our pricing requirements",
-       "ko": "다른 네 회사는 우리의 가격 요건을 충족하지 못했다",
-       "koGen": true
-      }
-     ],
-     "collocations": [],
-     "source": "blog",
-     "tier": "core"
     }
    ]
   },
@@ -58355,27 +58337,6 @@
      "tier": "core"
     },
     {
-     "id": "d27-credit-card",
-     "headword": "credit card",
-     "senses": [
-      {
-       "pos": "v.",
-       "meaning": "입금하다"
-      }
-     ],
-     "examples": [
-      {
-       "en": "We will credit your card for the full amount within five days.",
-       "ko": "저희가 5일 이내에 전액을 고객님 카드로 입금해 드리겠습니다.",
-       "generated": true
-      }
-     ],
-     "collocations": [],
-     "source": "deck",
-     "audio": "hypertts-388a00574461ac0fbc02448ddb9f662acfddc7926b1b2049402ee462.mp3",
-     "tier": "core"
-    },
-    {
      "id": "d27-repayment",
      "headword": "repayment",
      "senses": [
@@ -60657,11 +60618,17 @@
        "en": "Both amounts have been credited to your account",
        "ko": "두 금액 모두 귀하의 계좌에 입금되었다",
        "koGen": true
+      },
+      {
+       "en": "We will credit your card for the full amount within five days.",
+       "ko": "저희가 5일 이내에 전액을 고객님 카드로 입금해 드리겠습니다.",
+       "generated": true
       }
      ],
      "collocations": [],
      "source": "blog",
-     "tier": "core"
+     "tier": "core",
+     "audio": null
     }
    ]
   },
@@ -66831,6 +66798,11 @@
        "en": "Visit our Web site for the most environmentally friendly products",
        "ko": "가장 환경 친화적인 제품을 보시려면 저희 웹사이트를 방문하세요",
        "koGen": true
+      },
+      {
+       "en": "Our new packaging is eco-friendly and fully recyclable.",
+       "ko": "저희의 새 포장재는 환경 친화적이며 전량 재활용이 가능합니다.",
+       "generated": true
       }
      ],
      "collocations": [],
@@ -68668,26 +68640,6 @@
      "source": "deck",
      "audio": "hypertts-347a41bd02773912ce6071585fdc90d0ff3808fefa8cf6950d2bc98c.mp3",
      "tier": "bonus"
-    },
-    {
-     "id": "d30-eco-friendly",
-     "headword": "eco-friendly",
-     "senses": [
-      {
-       "pos": null,
-       "meaning": "환경 친화적인"
-      }
-     ],
-     "examples": [
-      {
-       "en": "Our new packaging is eco-friendly and fully recyclable.",
-       "ko": "저희의 새 포장재는 환경 친화적이며 전량 재활용이 가능합니다.",
-       "generated": true
-      }
-     ],
-     "collocations": [],
-     "source": "blog",
-     "tier": "core"
     }
    ]
   },
