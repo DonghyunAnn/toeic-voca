@@ -158,8 +158,8 @@ footer a { color:inherit; }
   <table>
     <tr><th>버튼</th><th>나오는 것</th></tr>
     <tr><td><b>오늘 학습 시작</b></td><td>기한이 된 복습 + 오늘 몫의 새 단어</td></tr>
-    <tr><td><b>배운 단어</b></td><td>지금까지 본 단어 전부</td></tr>
-    <tr><td><b>틀린 단어</b></td><td>틀린 적 있는 단어, 많이 틀린 순</td></tr>
+    <tr><td><b>본 단어</b></td><td>지금까지 한 번이라도 채점한 단어 전부</td></tr>
+    <tr><td><b>안 떠오른 단어</b></td><td>모름을 누른 적 있는 단어, 많이 누른 순</td></tr>
     <tr><td><b>DAY 칸</b></td><td>그 DAY에서 <b>아직 안 본 것과 복습할 것</b></td></tr>
   </table>
   <p>101개 중 87개를 끝냈으면 DAY를 눌렀을 때 남은 14개만 나옵니다.
@@ -202,7 +202,7 @@ footer a { color:inherit; }
   <p>계속 맞히면 보름째 5번 상자에 닿습니다. 홈의 <b>박스 분포</b>에서 오른쪽이 두꺼워지면 잘 되고 있는 것이고,
   1번이 안 줄면 새 단어를 너무 많이 넣고 있다는 뜻입니다.</p>
   <p><b>박스 칸을 누르면</b> 그 상자에 든 단어가 목록으로 열립니다. 위의
-  <b>한 번 이상 본 단어</b>·<b>암기 완료</b> 칸도 마찬가지입니다. 목록에 뜬
+  <b>본 단어</b>·<b>암기 완료</b> 칸도 마찬가지입니다. 목록에 뜬
   <b>박스 3 ×</b> 같은 표를 누르면 필터가 풀립니다.</p>
   <div class="note">
     <b>상자가 오르지 않는 경우</b>
@@ -267,8 +267,14 @@ footer a { color:inherit; }
     <figure><picture><source srcset="guide/list-dark.png" media="(prefers-color-scheme: dark)"><img src="guide/list.png" alt="목록"></picture><figcaption>목록</figcaption></figure>
     <figure><picture><source srcset="guide/quiz-dark.png" media="(prefers-color-scheme: dark)"><img src="guide/quiz.png" alt="퀴즈"></picture><figcaption>퀴즈</figcaption></figure>
   </div>
-  <p><b>목록</b> — 검색(영단어·뜻·예문), 등급·DAY 필터, 뜻 가리기, 틀린 것만.
+  <p><b>목록</b> — 검색(영단어·뜻·예문), 등급·DAY 필터, 뜻 가리기, 안 떠오른 것만.
   각 단어에 박스 번호와 <span style="color:var(--again)">✕2</span> 같은 오답 횟수가 붙습니다.</p>
+  <div class="note">
+    <b>&lsquo;틀린&rsquo;은 퀴즈에만 씁니다</b>
+    플래시카드에는 채점기가 없습니다. 뒤집었더니 안 떠올라서 본인이 모름이라고
+    신고하는 것뿐이라, 틀릴 일이 없습니다. 그래서 <b>안 떠오른 단어</b>라고 부릅니다.
+    진짜 오답은 사지선다인 퀴즈에만 있고, 거기서는 <b>틀린 단어</b>라고 씁니다.
+  </div>
   <p><b>퀴즈</b> — 사지선다. 범위는 오늘 학습분 / 배운 것 / DAY / 전체, 문항 수도 직접 지정합니다.
   결과는 박스에 반영되지 않습니다(<b>설정 → 퀴즈 결과</b>에서 변경 가능).</p>
 </section>

@@ -1,0 +1,1082 @@
+[
+ {
+  "k": "d04-wonder#0",
+  "hw": "wonder",
+  "mean": "궁금해하다",
+  "en": "I wonder if there's a new chef"
+ },
+ {
+  "k": "d04-be-supposed-to#0",
+  "hw": "be supposed to",
+  "mean": "~하기로 되어 있다",
+  "en": "Isn't the press conference supposed to be May 6th?"
+ },
+ {
+  "k": "d05-option#0",
+  "hw": "option",
+  "mean": "선택(사항)",
+  "en": "Oh I'm sorry, I must have clicked that option by mistake"
+ },
+ {
+  "k": "d05-replace#0",
+  "hw": "replace",
+  "mean": "교체하다",
+  "en": "That part can't be fixed, so I have to replace it"
+ },
+ {
+  "k": "d05-not-until#0",
+  "hw": "not until ~",
+  "mean": "~가 되어야 가능하다",
+  "en": "our meeting's not until next week"
+ },
+ {
+  "k": "d05-issue#0",
+  "hw": "issue",
+  "mean": "발급하다, 발행하다; (잡지 등의) 호, 문제, 쟁점",
+  "en": "There's no fee for a new badge, and I can actually issue one for you now"
+ },
+ {
+  "k": "d05-issue#1",
+  "hw": "issue",
+  "mean": "발급하다, 발행하다; (잡지 등의) 호, 문제, 쟁점",
+  "en": "The pictures of the next issue of the community newsletter"
+ },
+ {
+  "k": "d05-issue#2",
+  "hw": "issue",
+  "mean": "발급하다, 발행하다; (잡지 등의) 호, 문제, 쟁점",
+  "en": "We had a technical issue earlier today, but it's fixed now"
+ },
+ {
+  "k": "d05-promotion#0",
+  "hw": "promotion",
+  "mean": "승진, 판촉 행사, 홍보",
+  "en": "Congratulations on your promotion, Dan!"
+ },
+ {
+  "k": "d05-promotion#1",
+  "hw": "promotion",
+  "mean": "승진, 판촉 행사, 홍보",
+  "en": "Do you have any promotions or discount offers available right now?"
+ },
+ {
+  "k": "d05-shift#0",
+  "hw": "shift",
+  "mean": "교대 근무, 변화; 옮기다, 이동하다",
+  "en": "Would you be interested in working a couple of extra shifts each week?"
+ },
+ {
+  "k": "d05-shift#1",
+  "hw": "shift",
+  "mean": "교대 근무, 변화; 옮기다, 이동하다",
+  "en": "If you can, shift your travel to off-peak times."
+ },
+ {
+  "k": "d05-opening#0",
+  "hw": "opening",
+  "mean": "(일자리) 공석, 개장, 개시",
+  "en": "What about announcing the job opening at the staff meeting next week?"
+ },
+ {
+  "k": "d05-opening#1",
+  "hw": "opening",
+  "mean": "(일자리) 공석, 개장, 개시",
+  "en": "We'll be offering special discounts on our opening day"
+ },
+ {
+  "k": "d05-impressed#0",
+  "hw": "impressed",
+  "mean": "깊은 인상을 받은, 감동받은",
+  "en": "we're impressed with your qualifications"
+ },
+ {
+  "k": "d05-brainstorm#0",
+  "hw": "brainstorm",
+  "mean": "아이디어를 생각해 내다, 브레인스토밍하다",
+  "en": "I'd like to start brainstorming about our next perfume"
+ },
+ {
+  "k": "d05-feedback#0",
+  "hw": "feedback",
+  "mean": "의견, 반응, 피드백",
+  "en": "I'll be sure to give him that feedback when I see him tomorrow"
+ },
+ {
+  "k": "d05-confirm#0",
+  "hw": "confirm",
+  "mean": "확인하다, 확정하다",
+  "en": "We still have to call and confirm the hotel booking for our clients"
+ },
+ {
+  "k": "d05-domestic#0",
+  "hw": "domestic",
+  "mean": "국내의, 국산의, 가정의",
+  "en": "I see frequent International and domestic travel in the job requirements"
+ },
+ {
+  "k": "d05-warranty#0",
+  "hw": "warranty",
+  "mean": "보증(서)",
+  "en": "If you bought it more than a year ago, it's not going to be covered by the warranty"
+ },
+ {
+  "k": "d05-cover#0",
+  "hw": "cover",
+  "mean": "충당하다, 다루다, 보장[보상]하다, 대신하다",
+  "en": "We'll cover your travel and accommodation expenses, of course"
+ },
+ {
+  "k": "d05-cover#1",
+  "hw": "cover",
+  "mean": "충당하다, 다루다, 보장[보상]하다, 대신하다",
+  "en": "I've covered everything from local politics to athletic events"
+ },
+ {
+  "k": "d05-cover#2",
+  "hw": "cover",
+  "mean": "충당하다, 다루다, 보장[보상]하다, 대신하다",
+  "en": "Unfortunately, our warranty only covers defective parts"
+ },
+ {
+  "k": "d05-cover#3",
+  "hw": "cover",
+  "mean": "충당하다, 다루다, 보장[보상]하다, 대신하다",
+  "en": "Would you be able to come in and cover for me, by any chance?"
+ },
+ {
+  "k": "d05-upcoming#0",
+  "hw": "upcoming",
+  "mean": "다가오는, 곧 있을",
+  "en": "I need to place a catering order for an upcoming party at work"
+ },
+ {
+  "k": "d05-select#0",
+  "hw": "select",
+  "mean": "고르다, 선정하다; 선택된",
+  "en": "Could you help me select some paint?"
+ },
+ {
+  "k": "d05-install#0",
+  "hw": "install",
+  "mean": "설치하다",
+  "en": "Our office installed new software last month"
+ },
+ {
+  "k": "d05-community#0",
+  "hw": "community",
+  "mean": "지역 사회, 공동체",
+  "en": "I know your bookstore is already well-known in the community"
+ },
+ {
+  "k": "d05-timeline#0",
+  "hw": "timeline",
+  "mean": "스케줄, 일정",
+  "en": "I'd like to discuss the timeline for the move"
+ },
+ {
+  "k": "d05-publish#0",
+  "hw": "publish",
+  "mean": "출판하다, 발행[발표]하다",
+  "en": "I especially enjoyed sharing passages from the book I recently published"
+ },
+ {
+  "k": "d05-locate#0",
+  "hw": "locate",
+  "mean": "찾다, 위치시키다",
+  "en": "I'm trying to locate the folder where we usually keep job applicant's resumes"
+ },
+ {
+  "k": "d05-locate#1",
+  "hw": "locate",
+  "mean": "찾다, 위치시키다",
+  "en": "This brochure shows what's located on each floor"
+ },
+ {
+  "k": "d05-contractor#0",
+  "hw": "contractor",
+  "mean": "계약자, 하청[도급] 업자",
+  "en": "I suppose we could hire a contractor to help with the work"
+ },
+ {
+  "k": "d05-reject#0",
+  "hw": "reject",
+  "mean": "거부하다, 거절하다",
+  "en": "When I tried to log onto my computer, my password was rejected"
+ },
+ {
+  "k": "d05-check-out#0",
+  "hw": "check out",
+  "mean": "대출하다, 퇴실하다, 확인하다, 계산하다",
+  "en": "I'd like to sign up for a library card so that I can check out books"
+ },
+ {
+  "k": "d05-check-out#1",
+  "hw": "check out",
+  "mean": "대출하다, 퇴실하다, 확인하다, 계산하다",
+  "en": "I'm supposed to check out from the hotel tomorrow morning"
+ },
+ {
+  "k": "d05-check-out#2",
+  "hw": "check out",
+  "mean": "대출하다, 퇴실하다, 확인하다, 계산하다",
+  "en": "I recommend that you check out our Web site"
+ },
+ {
+  "k": "d05-check-out#3",
+  "hw": "check out",
+  "mean": "대출하다, 퇴실하다, 확인하다, 계산하다",
+  "en": "If you're ready to check out, I can help you with register two"
+ },
+ {
+  "k": "d05-extra#0",
+  "hw": "extra",
+  "mean": "추가의; 추가되는 것; 추가로",
+  "en": "we always need extra help during the summer months"
+ },
+ {
+  "k": "d05-extra#1",
+  "hw": "extra",
+  "mean": "추가의; 추가되는 것; 추가로",
+  "en": "I paid extra for the extended warranty"
+ },
+ {
+  "k": "d05-payroll#0",
+  "hw": "payroll",
+  "mean": "급여 총액, 급여 지불 명부",
+  "en": "I'll take you upstairs to the payroll department"
+ },
+ {
+  "k": "d05-apologize#0",
+  "hw": "apologize",
+  "mean": "사과하다",
+  "en": "I apologize I must have read my schedule incorrectly"
+ },
+ {
+  "k": "d05-assembly#0",
+  "hw": "assembly",
+  "mean": "조립",
+  "en": "I've planned for you to give them a tour of the assembly line on Tuesday"
+ },
+ {
+  "k": "d05-plumber#0",
+  "hw": "plumber",
+  "mean": "배관공",
+  "en": "The plumber can probably come later today"
+ },
+ {
+  "k": "d05-reservation#0",
+  "hw": "reservation",
+  "mean": "예약",
+  "en": "I have a reservation for a rental truck and I'm here to pick it up"
+ },
+ {
+  "k": "d05-footage#0",
+  "hw": "footage",
+  "mean": "자료 화면, 특정 장면",
+  "en": "Have you edited the film footage for that frozen food commercial yet?"
+ },
+ {
+  "k": "d05-experience#0",
+  "hw": "experience",
+  "mean": "경력, 경험; 경험하다",
+  "en": "He doesn't have experience preparing all the dinner entrees yet"
+ },
+ {
+  "k": "d05-facility#0",
+  "hw": "facility",
+  "mean": "시설, 기관",
+  "en": "We're moving into a new facility next week"
+ },
+ {
+  "k": "d05-loan#0",
+  "hw": "loan",
+  "mean": "대출(금); 빌려주다",
+  "en": "All our copies are out on loan right now"
+ },
+ {
+  "k": "d05-spot#0",
+  "hw": "spot",
+  "mean": "장소, 자리, 얼룩; 찾다, 발견하다",
+  "en": "I should have chosen a less popular spot"
+ },
+ {
+  "k": "d05-recipe#0",
+  "hw": "recipe",
+  "mean": "조리[요리]법",
+  "en": "My recipes are exceptionally easy to make"
+ },
+ {
+  "k": "d05-stop-by#0",
+  "hw": "stop by",
+  "mean": "들르다",
+  "en": "Do you think we have time to stop by the bank?"
+ },
+ {
+  "k": "d05-prescription#0",
+  "hw": "prescription",
+  "mean": "처방(전), 처방약",
+  "en": "This prescription expired a few days ago"
+ },
+ {
+  "k": "d05-put-together#0",
+  "hw": "put together",
+  "mean": "준비하다, 만들다, 조립하다",
+  "en": "I'll put together a cost estimate this afternoon"
+ },
+ {
+  "k": "d05-spacious#0",
+  "hw": "spacious",
+  "mean": "넓은",
+  "en": "The rooms here are spacious and airy"
+ },
+ {
+  "k": "d05-potential#0",
+  "hw": "potential",
+  "mean": "잠재의; 가능성",
+  "en": "We don't want to lose any potential future customers"
+ },
+ {
+  "k": "d05-improvement#0",
+  "hw": "improvement",
+  "mean": "개선, 향상",
+  "en": "Our bank offers different types of financing for home improvement work"
+ },
+ {
+  "k": "d05-lease#0",
+  "hw": "lease",
+  "mean": "임대차(계약); 임대하다",
+  "en": "I just stopped by to let you know I won't be renewing my lease"
+ },
+ {
+  "k": "d05-raise#0",
+  "hw": "raise",
+  "mean": "올리다, 모으다, 제기하다; 인상",
+  "en": "Did they raise their prices again?"
+ },
+ {
+  "k": "d05-overseas#0",
+  "hw": "overseas",
+  "mean": "해외의; 해외에",
+  "en": "I'm traveling overseas on holiday next month"
+ },
+ {
+  "k": "d05-account#0",
+  "hw": "account",
+  "mean": "계정, 계좌, 설명; 설명하다",
+  "en": "I just checked the account balance an hour ago"
+ },
+ {
+  "k": "d06-annual#0",
+  "hw": "annual",
+  "mean": "연례의",
+  "en": "We're planning our annual awards banquet for June for about 100 guests"
+ },
+ {
+  "k": "d06-promote#0",
+  "hw": "promote",
+  "mean": "홍보하다, 승진시키다",
+  "en": "I want to find a way to promote our travel company's bus tours"
+ },
+ {
+  "k": "d06-promote#1",
+  "hw": "promote",
+  "mean": "홍보하다, 승진시키다",
+  "en": "My co-worker was just promoted to Senior Vice President of our company"
+ },
+ {
+  "k": "d06-postpone#0",
+  "hw": "postpone",
+  "mean": "미루다, 연기하다",
+  "en": "We may be able to postpone the release date for another month"
+ },
+ {
+  "k": "d06-deal#0",
+  "hw": "deal",
+  "mean": "상대하다, 다루다(with); 거래, 대우",
+  "en": "Our staff is already busy dealing with an increase in maintenance requests"
+ },
+ {
+  "k": "d06-deal#1",
+  "hw": "deal",
+  "mean": "상대하다, 다루다(with); 거래, 대우",
+  "en": "We can hopefully finalize the deal during lunch"
+ },
+ {
+  "k": "d06-hands-on#0",
+  "hw": "hands-on",
+  "mean": "직접 해보는[실천하는]",
+  "en": "I'm interested in getting some hands-on experience"
+ },
+ {
+  "k": "d06-in-advance#0",
+  "hw": "in advance",
+  "mean": "미리, 전치사",
+  "en": "How far in advance should I place the order?"
+ },
+ {
+  "k": "d06-budget#0",
+  "hw": "budget",
+  "mean": "예산; 예산을 세우다; 저가의, 저렴한",
+  "en": "I suggest revisiting your projected budget"
+ },
+ {
+  "k": "d06-cut-back#0",
+  "hw": "cut back",
+  "mean": "줄이다, 삭감하다",
+  "en": "You may have to cut back on your exercise"
+ },
+ {
+  "k": "d06-qualified#0",
+  "hw": "qualified",
+  "mean": "자격이 있는",
+  "en": "I'm worried that I'm not really qualified"
+ },
+ {
+  "k": "d06-neighborhood#0",
+  "hw": "neighborhood",
+  "mean": "근처, 구역, 이웃",
+  "en": "I just moved to this neighborhood so I'm not very familiar with the area"
+ },
+ {
+  "k": "d06-away#0",
+  "hw": "away",
+  "mean": "자리에 없는, 부재중인; 떨어져",
+  "en": "Her partner Dr.Garcia is away on a business trip"
+ },
+ {
+  "k": "d06-away#1",
+  "hw": "away",
+  "mean": "자리에 없는, 부재중인; 떨어져",
+  "en": "We do have a partner hotel about 20 minutes away"
+ },
+ {
+  "k": "d06-correct#0",
+  "hw": "correct",
+  "mean": "고치다; 맞는, 정확한",
+  "en": "I'll correct the information in our database"
+ },
+ {
+  "k": "d06-specialize#0",
+  "hw": "specialize",
+  "mean": "전문으로 하다, 전공하다(in)",
+  "en": "We have a sales representative who specializes in commercial vehicles"
+ },
+ {
+  "k": "d06-inconvenience#0",
+  "hw": "inconvenience",
+  "mean": "불편; 불편하게 하다",
+  "en": "To apologize for the inconvenience, we'll take 25 off your bill"
+ },
+ {
+  "k": "d06-reasonable#0",
+  "hw": "reasonable",
+  "mean": "합리적인, (가격이) 적당한, 비싸지 않은",
+  "en": "They serve delicious Indian food and the prices are very reasonable"
+ },
+ {
+  "k": "d06-turn-out#0",
+  "hw": "turn out",
+  "mean": "~으로 판명되다, 밝혀지다",
+  "en": "This turned out to be a great location for the new grocery store"
+ },
+ {
+  "k": "d06-advantage#0",
+  "hw": "advantage",
+  "mean": "이점, 혜택",
+  "en": "The biggest advantage of this new model is its engine it delivers exceptional fuel efficiency"
+ },
+ {
+  "k": "d06-own#0",
+  "hw": "own",
+  "mean": "소유하다; (소유격 뒤에서 강조) 자신의",
+  "en": "I own a small store that sells musical instruments"
+ },
+ {
+  "k": "d06-workload#0",
+  "hw": "workload",
+  "mean": "업무량, 작업량",
+  "en": "Please choose your team members by Friday, so I can adjust their workloads"
+ },
+ {
+  "k": "d06-overtime#0",
+  "hw": "overtime",
+  "mean": "초과 근무; 규정 시간 외에; 초과 근무의",
+  "en": "I'm going to go ahead and schedule some people to work overtime"
+ },
+ {
+  "k": "d06-misplace#0",
+  "hw": "misplace",
+  "mean": "(물건 등을) 둔 곳을 잊어버리다",
+  "en": "I'm a member here, but I've misplaced my card"
+ },
+ {
+  "k": "d06-application#0",
+  "hw": "application",
+  "mean": "지원[신청](서), 앱",
+  "en": "All you need to do is fill out this application form"
+ },
+ {
+  "k": "d06-connect#0",
+  "hw": "connect",
+  "mean": "연결하다, 연락하다",
+  "en": "In that case, I'll connect you to Dr.Kim's office"
+ },
+ {
+  "k": "d06-policy#0",
+  "hw": "policy",
+  "mean": "정책, 방침",
+  "en": "There's been a policy change and the receipts from trips can be submitted electronically"
+ },
+ {
+  "k": "d06-spreadsheet#0",
+  "hw": "spreadsheet",
+  "mean": "스프레드시트, 데이터 문서",
+  "en": "I can check a spreadsheet to see the status of all the items that are in use"
+ },
+ {
+  "k": "d06-hand-out#0",
+  "hw": "hand out",
+  "mean": "유인물, 배포 자료",
+  "en": "I just noticed a mistake in the training handout"
+ },
+ {
+  "k": "d06-accommodate#0",
+  "hw": "accommodate",
+  "mean": "수용하다, 숙박시키다",
+  "en": "We recently remodeled our Ballroom to accommodate a crowd at size"
+ },
+ {
+  "k": "d06-rent#0",
+  "hw": "rent",
+  "mean": "임대하다; 임대(료)",
+  "en": "If you're still interested in it, I'd be willing to reduce the rent for you"
+ },
+ {
+  "k": "d06-crowded#0",
+  "hw": "crowded",
+  "mean": "혼잡한, 붐비는",
+  "en": "The side entrance is pretty small and it gets crowded there at peak hours"
+ },
+ {
+  "k": "d06-see-if#0",
+  "hw": "see if",
+  "mean": "~인지 알아보다",
+  "en": "I'm calling to see if I can get an appointment for a haircut tomorrow"
+ },
+ {
+  "k": "d06-release#0",
+  "hw": "release",
+  "mean": "출시하다, 공개하다; 출시, 발매",
+  "en": "Do you know why the new computer games won't be released to the market until January?"
+ },
+ {
+  "k": "d06-expense#0",
+  "hw": "expense",
+  "mean": "비용, 경비",
+  "en": "Could you send me some information about your total expenses?"
+ },
+ {
+  "k": "d06-set-aside#0",
+  "hw": "set aside",
+  "mean": "따로 챙겨 두다",
+  "en": "I'll make sure book is signed by chef David and set aside for you"
+ },
+ {
+  "k": "d06-background#0",
+  "hw": "background",
+  "mean": "배경, 경력",
+  "en": "Please tell us a little bit about your work background"
+ },
+ {
+  "k": "d06-bring-up#0",
+  "hw": "bring up",
+  "mean": "화재를 꺼내다, (화면에) 띄우다",
+  "en": "We can bring up scheduling at the staff meeting on Friday"
+ },
+ {
+  "k": "d06-evaluation#0",
+  "hw": "evaluation",
+  "mean": "평가",
+  "en": "It was three months before I had my first evaluation"
+ },
+ {
+  "k": "d06-floor-plan#0",
+  "hw": "floor plan",
+  "mean": "(건물의) 평면도",
+  "en": "Could I get a copy of the floor plan to look at before we meet?"
+ },
+ {
+  "k": "d06-regional#0",
+  "hw": "regional",
+  "mean": "지역의",
+  "en": "This year we plan to open 12 regional Offices in Canada, South America, and Europe"
+ },
+ {
+  "k": "d06-block#0",
+  "hw": "block",
+  "mean": "막다, 차단하다; 블록, 구역",
+  "en": "Why is this street blocked?"
+ },
+ {
+  "k": "d06-block#1",
+  "hw": "block",
+  "mean": "막다, 차단하다; 블록, 구역",
+  "en": "I'm just so glad to have a library right down the block"
+ },
+ {
+  "k": "d06-suspend#0",
+  "hw": "suspend",
+  "mean": "중단하다, 유보하다",
+  "en": "The train service may be suspended tomorrow"
+ },
+ {
+  "k": "d06-defect#0",
+  "hw": "defect",
+  "mean": "결함",
+  "en": "Because of the software's defects, we can't use it for hours at a time"
+ },
+ {
+  "k": "d06-injure#0",
+  "hw": "injure",
+  "mean": "부상을 입히다, 손상시키다",
+  "en": "I love aerobic exercise, but I don't want to get injured"
+ },
+ {
+  "k": "d06-public#0",
+  "hw": "public",
+  "mean": "대중; 공공의",
+  "en": "And when do you think the fabric will be available to the public?"
+ },
+ {
+  "k": "d06-landscaping#0",
+  "hw": "landscaping",
+  "mean": "조경",
+  "en": "My landscaping business is getting pretty busy"
+ },
+ {
+  "k": "d06-fill-out-in#0",
+  "hw": "fill out[in]",
+  "mean": "작성하다, 기입하다",
+  "en": "I was told to come 15 minutes early to fill out medical forms"
+ },
+ {
+  "k": "d06-damaged#0",
+  "hw": "damaged",
+  "mean": "손상된, 피해를 입은",
+  "en": "I'm here to fix some damaged floor tiles"
+ },
+ {
+  "k": "d06-in-time#0",
+  "hw": "in time",
+  "mean": "[늦지 않게] 시간 맞춰",
+  "en": "We'll be just in time to get to the employee training session"
+ },
+ {
+  "k": "d07-permit#0",
+  "hw": "permit",
+  "mean": "허가(증); 허용[허락]하다",
+  "en": "We're going to have to wait until all the permits are approved"
+ },
+ {
+  "k": "d07-attend#0",
+  "hw": "attend",
+  "mean": "참가하다, 참석하다",
+  "en": "I'm planning to attend the company health fair on Monday"
+ },
+ {
+  "k": "d07-estimate#0",
+  "hw": "estimate",
+  "mean": "견적(서), 추정치; 추정하다",
+  "en": "I'll put together a cost estimate this afternoon"
+ },
+ {
+  "k": "d07-flexible#0",
+  "hw": "flexible",
+  "mean": "융통성 있는, 유연한, 조율이 가능한",
+  "en": "Will I always be working the same days or is the schedule flexible?"
+ },
+ {
+  "k": "d07-sold-out#0",
+  "hw": "sold out",
+  "mean": "매진된, 품절된",
+  "en": "I noticed that we've sold out of a lot of sizes in this style"
+ },
+ {
+  "k": "d07-fee#0",
+  "hw": "fee",
+  "mean": "요금, 수수료",
+  "en": "In exchange, we could offer them a reduced rental fee"
+ },
+ {
+  "k": "d07-refundable#0",
+  "hw": "refundable",
+  "mean": "환불 가능한",
+  "en": "I'd suggest you buy a refundable ticket"
+ },
+ {
+  "k": "d07-official#0",
+  "hw": "official",
+  "mean": "공식적인; 공무원, 임원",
+  "en": "The official announcement will be made at next Friday's meeting"
+ },
+ {
+  "k": "d07-electronically#0",
+  "hw": "electronically",
+  "mean": "컴퓨터로, 인터넷을 이용하여",
+  "en": "We actually don't accept applications electronically for this type of loan."
+ },
+ {
+  "k": "d07-a-couple-of#0",
+  "hw": "a couple of",
+  "mean": "둘의, 몇몇의",
+  "en": "I'd like to return a lamp I bought here a couple of weeks ago"
+ },
+ {
+  "k": "d07-payment#0",
+  "hw": "payment",
+  "mean": "납입(금), 지불(금), 결제",
+  "en": "You should go to our Web site and register for the automatic payment plan"
+ },
+ {
+  "k": "d07-influence#0",
+  "hw": "influence",
+  "mean": "영향을 주다; 영향",
+  "en": "Most of my paintings in this gallery were influenced by my visit there"
+ },
+ {
+  "k": "d07-charity#0",
+  "hw": "charity",
+  "mean": "자선, 자비",
+  "en": "I'm coordinating a charity auction for my company"
+ },
+ {
+  "k": "d07-property#0",
+  "hw": "property",
+  "mean": "부동산, 소유물, 재산",
+  "en": "I'd really like to put this property on the market in the beginning of April"
+ },
+ {
+  "k": "d07-leak#0",
+  "hw": "leak",
+  "mean": "누수, 새어 나옴; 세다, 누출하다",
+  "en": "I should be able to look at the lake right before lunchtime"
+ },
+ {
+  "k": "d07-management#0",
+  "hw": "management",
+  "mean": "경영진, 경영, 관리",
+  "en": "I heard that management is hiring more people in accounting"
+ },
+ {
+  "k": "d07-management#1",
+  "hw": "management",
+  "mean": "경영진, 경영, 관리",
+  "en": "I've read so many of his articles on risk management"
+ },
+ {
+  "k": "d07-apply#0",
+  "hw": "apply",
+  "mean": "지원하다, 신청하다",
+  "en": "I recently moved here, and I'd like to apply for a library card"
+ },
+ {
+  "k": "d07-last-minute#0",
+  "hw": "last-minute",
+  "mean": "막바지의, 막판의",
+  "en": "There was a last-minute change and we had to move the performance to The Cove Theater"
+ },
+ {
+  "k": "d07-collection#0",
+  "hw": "collection",
+  "mean": "소장품, 수집품",
+  "en": "It's famous for its collection of 20th century paintings"
+ },
+ {
+  "k": "d07-maintenance#0",
+  "hw": "maintenance",
+  "mean": "정비, 유지(관리), 보수",
+  "en": "I've received a lot of maintenance requests from tenants lately about their appliances"
+ },
+ {
+  "k": "d07-originally#0",
+  "hw": "originally",
+  "mean": "원래, 처음에",
+  "en": "Their price is a little more than we had originally expected"
+ },
+ {
+  "k": "d07-progress#0",
+  "hw": "progress",
+  "mean": "진행, 진전, 진척; 나아가다, 진척하다",
+  "en": "What progress has been made in finding new employees?"
+ },
+ {
+  "k": "d07-keep-up-with#0",
+  "hw": "keep up with",
+  "mean": "뒤처지지 않고 따라가다",
+  "en": "I'm concerned that we won't be able to keep up with the demand over the holidays"
+ },
+ {
+  "k": "d07-cancel#0",
+  "hw": "cancel",
+  "mean": "취소하다",
+  "en": "If someone cancels and an appointment opens up, I could contact you"
+ },
+ {
+  "k": "d07-discontinue#0",
+  "hw": "discontinue",
+  "mean": "(생산·정기 행사 등을) 중단하다",
+  "en": "I'm sorry, that particular model was recently discontinued"
+ },
+ {
+  "k": "d07-luncheon#0",
+  "hw": "luncheon",
+  "mean": "오찬",
+  "en": "I'm organizing a luncheon for an employee who's retiring from my company"
+ },
+ {
+  "k": "d07-be-about-to#0",
+  "hw": "be about to",
+  "mean": "막~하려고 하다",
+  "en": "I'm about to leave for the trade show"
+ },
+ {
+  "k": "d07-edition#0",
+  "hw": "edition",
+  "mean": "(간행물의) 판, 호",
+  "en": "Did you notice that patterns a limited edition?"
+ },
+ {
+  "k": "d07-missing#0",
+  "hw": "missing",
+  "mean": "없어진, 분실된, 빠진",
+  "en": "Some of the charts and graphs are missing"
+ },
+ {
+  "k": "d07-deposit#0",
+  "hw": "deposit",
+  "mean": "예금하다, 예치하다; 계약금, 보증금",
+  "en": "I'd like to deposit my paycheck into my savings account"
+ },
+ {
+  "k": "d07-deposit#1",
+  "hw": "deposit",
+  "mean": "예금하다, 예치하다; 계약금, 보증금",
+  "en": "I can give you the money for the security deposit today"
+ },
+ {
+  "k": "d07-draw-up#0",
+  "hw": "draw up",
+  "mean": "(문서 등을) 작성하다, 짜다",
+  "en": "I can draw up some design options for the flower beds"
+ },
+ {
+  "k": "d07-layout#0",
+  "hw": "layout",
+  "mean": "배치(도), 배정",
+  "en": "I'm going to start planning our store layout for the season"
+ },
+ {
+  "k": "d07-terrific#0",
+  "hw": "terrific",
+  "mean": "훌륭한, 멋진",
+  "en": "I've heard our Boston office is a terrific place to work"
+ },
+ {
+  "k": "d07-brief#0",
+  "hw": "brief",
+  "mean": "간단한, 짧은; ~에게 알려주다[보고하다]",
+  "en": "Would you mind writing a brief review for the client feedback page of my Web site?"
+ },
+ {
+  "k": "d07-detail#0",
+  "hw": "detail",
+  "mean": "세부사항; 상세히 알리다",
+  "en": "Are you available for a video conference next week to discuss the details?"
+ },
+ {
+  "k": "d07-internal#0",
+  "hw": "internal",
+  "mean": "내부의",
+  "en": "The resumes are all posted on our company's internal web site"
+ },
+ {
+  "k": "d07-mix-up#0",
+  "hw": "mix-up",
+  "mean": "혼동, 착오; 잘못 알다, 혼동하다",
+  "en": "I apologize I'm sure there was a mix-up at layout"
+ },
+ {
+  "k": "d07-shred#0",
+  "hw": "shred",
+  "mean": "파쇄하다",
+  "en": "We collect the documents and shredthem right on-site"
+ },
+ {
+  "k": "d07-catering#0",
+  "hw": "catering",
+  "mean": "출장 요리, 음식 공급(업)",
+  "en": "It must have taken a lot of effort to organize all the catering and decorations"
+ },
+ {
+  "k": "d07-malfunctioning#0",
+  "hw": "malfunctioning",
+  "mean": "오작동하는",
+  "en": "A buzzing sound usually means the fan is malfunctioning"
+ },
+ {
+  "k": "d07-overcharge#0",
+  "hw": "overcharge",
+  "mean": "과다 청구하다",
+  "en": "I realized that I'd been overcharged so I'm back today with my receipt to clear things up"
+ },
+ {
+  "k": "d07-routine#0",
+  "hw": "routine",
+  "mean": "일상적인, 정기적인; 판에 박힌 일, 일과",
+  "en": "I had a routine test done last week and I'd like a printout for my records"
+ },
+ {
+  "k": "d07-routine#1",
+  "hw": "routine",
+  "mean": "일상적인, 정기적인; 판에 박힌 일, 일과",
+  "en": "Now I just have to get back into a work routine"
+ },
+ {
+  "k": "d07-athletic#0",
+  "hw": "athletic",
+  "mean": "운동 경기의, 체육의",
+  "en": "I've covered everything from local politics to athletic events"
+ },
+ {
+  "k": "d07-attract#0",
+  "hw": "attract",
+  "mean": "(마음을) 끌다, 끌어 모으다",
+  "en": "To attract more customers, we're going to host a small Talent contest in September"
+ },
+ {
+  "k": "d07-out-of-town#0",
+  "hw": "out of town",
+  "mean": "타지역에 있는, 출장 중인",
+  "en": "I have to go out of town for a business meeting tomorrow morning"
+ },
+ {
+  "k": "d07-register#0",
+  "hw": "register",
+  "mean": "등록하다; 금전 등록기",
+  "en": "I want to register, but your web site is down again"
+ },
+ {
+  "k": "d07-register#1",
+  "hw": "register",
+  "mean": "등록하다; 금전 등록기",
+  "en": "Follow me to the register and I'll ring up your purchase"
+ },
+ {
+  "k": "d07-rush#0",
+  "hw": "rush",
+  "mean": "혼잡, 분주함, 서두름; 서두르다",
+  "en": "we plan to go a little early, to beat the lunch rush"
+ },
+ {
+  "k": "d07-manufacturer#0",
+  "hw": "manufacturer",
+  "mean": "제조업체, 제조회사",
+  "en": "I can order Handles in that color especially for you from the manufacturer"
+ },
+ {
+  "k": "d07-negotiate#0",
+  "hw": "negotiate",
+  "mean": "협상하다, 타결하다",
+  "en": "I hope we can negotiate a good package to ensure our drivers"
+ },
+ {
+  "k": "d07-tenant#0",
+  "hw": "tenant",
+  "mean": "세입자",
+  "en": "There's a laundry room on the first floor just for tenants"
+ },
+ {
+  "k": "d08-award#0",
+  "hw": "award",
+  "mean": "상; 수여하다, 주다",
+  "en": "The library has recently been awarded a large grant"
+ },
+ {
+  "k": "d08-feature#0",
+  "hw": "feature",
+  "mean": "특징으로 삼다; 기능, 특징, 특집 기사",
+  "en": "This exhibit features life-size statues made of glass"
+ },
+ {
+  "k": "d08-souvenir#0",
+  "hw": "souvenir",
+  "mean": "기념품",
+  "en": "the shirts are a great souvenir of today's wonderful performances"
+ },
+ {
+  "k": "d08-broadcast#0",
+  "hw": "broadcast",
+  "mean": "방송; 방송하다",
+  "en": "We're going to show you a news broadcast that will last a half hour"
+ },
+ {
+  "k": "d08-representative-rep#0",
+  "hw": "representative(=rep)",
+  "mean": "직원, 대표자; 대표하는",
+  "en": "Please hold to be connected with a customer service representative"
+ },
+ {
+  "k": "d08-demonstration#0",
+  "hw": "demonstration",
+  "mean": "시연, 설명",
+  "en": "You'll be participating in demonstrations and workshops promoting our many chemical products"
+ },
+ {
+  "k": "d08-culinary#0",
+  "hw": "culinary",
+  "mean": "요리의",
+  "en": "You can sample a variety of healthy snacks made in our brand new culinary arts facility"
+ },
+ {
+  "k": "d08-hesitate#0",
+  "hw": "hesitate",
+  "mean": "주저하다, 망설이다",
+  "en": "If you have any questions during our tour, please don't hesitate to ask"
+ },
+ {
+  "k": "d08-reward#0",
+  "hw": "reward",
+  "mean": "보상 v. ~에 보답하다, 상을 주다",
+  "en": "If our shoe sales are higher than other store branches ,we'll all receive cash rewards"
+ },
+ {
+  "k": "d08-alternative#0",
+  "hw": "alternative",
+  "mean": "대안, 대체; 대안의",
+  "en": "We can discuss some alternatives in next week's meeting"
+ },
+ {
+  "k": "d08-attendee#0",
+  "hw": "attendee",
+  "mean": "참석자",
+  "en": "Attendees have until noon to check in"
+ },
+ {
+  "k": "d08-proceed#0",
+  "hw": "proceed",
+  "mean": "~로 향하다 (to), 진행하다(with)",
+  "en": "Please proceed to a checkout counter immediately to complete your purchase"
+ },
+ {
+  "k": "d08-proceed#1",
+  "hw": "proceed",
+  "mean": "~로 향하다 (to), 진행하다(with)",
+  "en": "We can proceed with the training when we get back"
+ },
+ {
+  "k": "d08-patron#0",
+  "hw": "patron",
+  "mean": "후원자, 고객",
+  "en": "Patrons can now access the library's catalog and their accounts online"
+ }
+]

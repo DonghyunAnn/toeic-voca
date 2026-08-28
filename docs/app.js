@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = '0e9a858c';
+const BUILD = '87d12cc5';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -391,7 +391,11 @@ const Scheduler = {
     return shuffle(inScope(State.words).filter(w => Store.record(w.id)));
   },
 
-  /** 한 번이라도 틀린 단어. 많이 틀린 것부터 내보낸다. */
+  /** 모름을 누른 적 있는 단어. 많이 누른 것부터 내보낸다.
+   *
+   *  '틀린 단어'라고 부르지 않는다. 플래시카드에는 채점기가 없어 틀릴 일이
+   *  없다. 뒤집었더니 안 떠올라서 본인이 모름이라고 신고한 것뿐이다.
+   *  진짜 오답은 사지선다인 퀴즈에만 있다. */
   weak() {
     return inScope(State.words)
       .filter(w => (Store.record(w.id) || {}).wrong > 0)
@@ -416,7 +420,7 @@ const Scheduler = {
     rec.box = clampBox(rec.box);
 
     if (result === 'again') {
-      // 틀린 것은 기한과 무관하게 반영한다. 모른다는 건 진짜 모르는 것이다.
+      // 모름은 기한과 무관하게 반영한다. 모른다는 건 진짜 모르는 것이다.
       rec.box = 1;
       rec.wrong++;
       rec.due = addDays(today, BOX_INTERVALS[1]);
@@ -543,7 +547,7 @@ const TIER_LABEL = { core: '필수', bonus: '만점', extra: '추가' };
 const stageLabel = st =>
   st === null ? '' :
   st === 'new' ? '아직 안 본 단어' :
-  st === 'seen' ? '한 번 이상 본 단어' :
+  st === 'seen' ? '본 단어' :
   st === MAX_BOX ? `박스 ${st} · 암기 완료` : `박스 ${st}`;
 
 /** DAY의 단원명. '동사 (1)'처럼 번호가 붙은 것은 묶을 때 번호를 뗀다. */
@@ -628,12 +632,14 @@ function renderHome() {
   const learned = seen;
   const reviewBtn = $('#review-learned');
   reviewBtn.hidden = learned === 0;
-  reviewBtn.textContent = `배운 단어 (${learned.toLocaleString()})`;
+  // 아래 통계 칸과 같은 집합이라 같은 이름을 쓴다. '배운'은 다 외웠다는
+  // 뉘앙스인데 실제로는 한 번 채점했다는 뜻뿐이다.
+  reviewBtn.textContent = `본 단어 (${learned.toLocaleString()})`;
 
   const weak = st.weak;
   const weakBtn = $('#review-weak');
   weakBtn.hidden = weak === 0;
-  weakBtn.textContent = `틀린 단어 (${weak.toLocaleString()})`;
+  weakBtn.textContent = `안 떠오른 단어 (${weak.toLocaleString()})`;
 
   $('#stat-seen').textContent = seen.toLocaleString();
   $('#stat-mastered').textContent = mastered.toLocaleString();
@@ -793,8 +799,8 @@ function renderStudy() {
   $('#study-progress').style.transform = `scaleX(${s.index / s.queue.length})`;
   const left = s.queue.length - s.index;
   $('#study-scope').textContent =
-    (s.mode === 'weak' ? '자주 틀린 단어'
-      : s.mode === 'learned' ? '배운 단어 복습'
+    (s.mode === 'weak' ? '자주 안 떠오른 단어'
+      : s.mode === 'learned' ? '본 단어 복습'
       // 단원명은 카드 칩에만 둔다. 여기 또 쓰면 DAY로 들어왔을 때 같은 말이
       // 40px 간격으로 두 번 나오고, 정작 이 줄의 본업인 '몇 장 남음'이 뒤로 밀린다.
       // 칩은 어느 경로로 들어와도 늘 같은 자리에 있다.
@@ -1030,7 +1036,8 @@ function rowHTML(w) {
     + (pos ? `<span class="pos">${escapeHTML(pos)}</span>` : '')
     + `<span class="tags">`
     + `<span class="tier">${TIER_LABEL[w.tier] || '기타'}</span>`
-    + `<span class="miss">${rec && rec.wrong ? '✕' + rec.wrong : ''}</span>`
+    // ✕는 오답 기호다. 여기 숫자는 모름을 몇 번 눌렀나이지 오답 횟수가 아니다.
+    + `<span class="miss">${rec && rec.wrong ? '모름 ' + rec.wrong : ''}</span>`
     + `<span class="box">${rec ? '박스 ' + rec.box : ''}</span>`
     + `<span class="spk">${w.audio ? Audio_.speakerHTML(w.audio) : ''}</span>`
     + `</span></div>`

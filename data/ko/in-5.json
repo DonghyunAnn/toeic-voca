@@ -1,0 +1,1082 @@
+[
+ {
+  "k": "d18-directory#0",
+  "hw": "directory",
+  "mean": "주소록, 전화번호부, 안내 책자",
+  "en": "please confirm that your office phone number as listed in the directory is correct"
+ },
+ {
+  "k": "d18-consultant#0",
+  "hw": "consultant",
+  "mean": "고문, 컨설턴트",
+  "en": "hiring a logistics consultant has resulted in Faster distribution of goods to our stores"
+ },
+ {
+  "k": "d18-certification#0",
+  "hw": "certification",
+  "mean": "증명, 증명서",
+  "en": "environmental inspectors must renew their certification yearly"
+ },
+ {
+  "k": "d18-consensus#0",
+  "hw": "consensus",
+  "mean": "일치된 의견, 합의",
+  "en": "the general consensus is that the economy will improve this year"
+ },
+ {
+  "k": "d18-require#0",
+  "hw": "require",
+  "mean": "요구하다; 동사",
+  "en": "The four other companies could not meet our pricing requirements"
+ },
+ {
+  "k": "d19-advance#0",
+  "hw": "advance",
+  "mean": "발전, 진보; 사전의, 미리 하는; 향상시키다, 승진시키다",
+  "en": "Our magazine features new advances in medical research"
+ },
+ {
+  "k": "d19-advance#1",
+  "hw": "advance",
+  "mean": "발전, 진보; 사전의, 미리 하는; 향상시키다, 승진시키다",
+  "en": "If you cannot keep your appointment, please povide advance notice"
+ },
+ {
+  "k": "d19-advance#2",
+  "hw": "advance",
+  "mean": "발전, 진보; 사전의, 미리 하는; 향상시키다, 승진시키다",
+  "en": "The park is an active space designed to advance physical activity"
+ },
+ {
+  "k": "d19-function#0",
+  "hw": "function",
+  "mean": "기능; 기능하다; 행사, 연회",
+  "en": "Select the power-saver function when the copier is not in use"
+ },
+ {
+  "k": "d19-function#1",
+  "hw": "function",
+  "mean": "기능; 기능하다; 행사, 연회",
+  "en": "The entertainment complex is available for private functions every weekend"
+ },
+ {
+  "k": "d19-matter#0",
+  "hw": "matter",
+  "mean": "문제, 일",
+  "en": "Taylor Moran's books always become bestsellers regardless of the subject matter"
+ },
+ {
+  "k": "d19-increase#0",
+  "hw": "increase",
+  "mean": "증가, 상승; 증가하다, 올리다",
+  "en": "Thanks to an increase in sales, every employee gets a year-end bonus"
+ },
+ {
+  "k": "d19-increase#1",
+  "hw": "increase",
+  "mean": "증가, 상승; 증가하다, 올리다",
+  "en": "Due to the rise in food costs, we have increased our prices"
+ },
+ {
+  "k": "d19-certificate#0",
+  "hw": "certificate",
+  "mean": "증명서, 증서",
+  "en": "The winner will receive a gift card and a certificate of achievement"
+ },
+ {
+  "k": "d19-variety#0",
+  "hw": "variety",
+  "mean": "다양(성), 종류",
+  "en": "The mall will include specialty stores and a variety of food vendors"
+ },
+ {
+  "k": "d19-care#0",
+  "hw": "care",
+  "mean": "주의, 걱정; 걱정하다",
+  "en": "These two chemicals should be handled with care"
+ },
+ {
+  "k": "d19-concentration#0",
+  "hw": "concentration",
+  "mean": "집중, 농도",
+  "en": "Multitasking affects workers' concentration and productivity"
+ },
+ {
+  "k": "d19-accommodation#0",
+  "hw": "accommodation",
+  "mean": "숙박 시설",
+  "en": "The Pines Resort offers a range of superb accommodations"
+ },
+ {
+  "k": "d19-entry#0",
+  "hw": "entry",
+  "mean": "출품작, 참가자, 입장",
+  "en": "Only one entry per contestant will be accepted"
+ },
+ {
+  "k": "d19-standard#0",
+  "hw": "standard",
+  "mean": "기준, 표준",
+  "en": "The engineers comply with international standards"
+ },
+ {
+  "k": "d19-statement#0",
+  "hw": "statement",
+  "mean": "성명서, 명세서",
+  "en": "Ms. Kano has scheduled a time to issue the press statement"
+ },
+ {
+  "k": "d19-discussion#0",
+  "hw": "discussion",
+  "mean": "논의, 토론",
+  "en": "The last topic of discussion will be the licensing of a new franchise"
+ },
+ {
+  "k": "d19-component#0",
+  "hw": "component",
+  "mean": "부품, (구성) 요소",
+  "en": "The electronic components do not meet the quality requirements"
+ },
+ {
+  "k": "d19-appearance#0",
+  "hw": "appearance",
+  "mean": "외관, 외모; 나타남, 출현",
+  "en": "Simonte Corporation plans to change the appearance of its Web site"
+ },
+ {
+  "k": "d19-appearance#1",
+  "hw": "appearance",
+  "mean": "외관, 외모; 나타남, 출현",
+  "en": "We will host events like author appearances and book signings"
+ },
+ {
+  "k": "d19-position#0",
+  "hw": "position",
+  "mean": "직책, 입장, 위치; 위치시키다",
+  "en": "It can be difficult to find qualified candidates for a position"
+ },
+ {
+  "k": "d19-position#1",
+  "hw": "position",
+  "mean": "직책, 입장, 위치; 위치시키다",
+  "en": "We will position our product as the world's premiere refrigerator"
+ },
+ {
+  "k": "d19-appreciation#0",
+  "hw": "appreciation",
+  "mean": "감사, 감상",
+  "en": "Plymont University expressed its appreciation to all sponsors"
+ },
+ {
+  "k": "d19-exception#0",
+  "hw": "exception",
+  "mean": "예외",
+  "en": "No exceptions will be made to this safety regulation"
+ },
+ {
+  "k": "d19-rate#0",
+  "hw": "rate",
+  "mean": "비율, 요금, 가격",
+  "en": "Given the current rate of oil production, fuel prices are expected to rise"
+ },
+ {
+  "k": "d19-rate#1",
+  "hw": "rate",
+  "mean": "비율, 요금, 가격",
+  "en": "Wingstar Airlines continue to offer discounted rates to passengers"
+ },
+ {
+  "k": "d19-executive#0",
+  "hw": "executive",
+  "mean": "간부, 임원, 중역; 경영의",
+  "en": "Orvale's schools mentors are retired executives with a wealth of expertise"
+ },
+ {
+  "k": "d19-resume#0",
+  "hw": "résumé",
+  "mean": "이력서",
+  "en": "All applications must include a resume and proof of degree"
+ },
+ {
+  "k": "d19-accomplishment#0",
+  "hw": "accomplishment",
+  "mean": "성취, 업적, 완수",
+  "en": "Winning the publishing award is her most prominent accomplishment"
+ },
+ {
+  "k": "d19-architect#0",
+  "hw": "architect",
+  "mean": "건축가",
+  "en": "The new park was designed by Brazilian architect Rafael Pasoa"
+ },
+ {
+  "k": "d19-conference#0",
+  "hw": "conference",
+  "mean": "회의, 총회",
+  "en": "Ms. Tsuri attended the press conference on environmental policy"
+ },
+ {
+  "k": "d19-average#0",
+  "hw": "average",
+  "mean": "평균(치); 평균의, 평범한",
+  "en": "All the machines mentioned on the Web page are faster than average"
+ },
+ {
+  "k": "d19-indicator#0",
+  "hw": "indicator",
+  "mean": "지표, 지수",
+  "en": "We use three indicators of laboratory accuracy to ensure consistent results"
+ },
+ {
+  "k": "d19-accounting#0",
+  "hw": "accounting",
+  "mean": "회계(학)",
+  "en": "The accounting office just released the annual budget update"
+ },
+ {
+  "k": "d19-clearance#0",
+  "hw": "clearance",
+  "mean": "(재고) 정리, 허가, 인가",
+  "en": "Before clearance sale will start Friday and last for just three weeks"
+ },
+ {
+  "k": "d19-selection#0",
+  "hw": "selection",
+  "mean": "선발, 선택",
+  "en": "Please come and preview our large selection of beautiful furniture"
+ },
+ {
+  "k": "d19-manuscript#0",
+  "hw": "manuscript",
+  "mean": "원고",
+  "en": "We do not accept manuscripts that have previously appeared in print"
+ },
+ {
+  "k": "d19-expansion#0",
+  "hw": "expansion",
+  "mean": "확장, 확대",
+  "en": "The expansion of the rail system is good news for the community"
+ },
+ {
+  "k": "d19-reference#0",
+  "hw": "reference",
+  "mean": "추천인, 신원 보증인, 추천서; 참고, 참조",
+  "en": "Mr. Ashburton has been highly recommended by his references"
+ },
+ {
+  "k": "d19-reference#1",
+  "hw": "reference",
+  "mean": "추천인, 신원 보증인, 추천서; 참고, 참조",
+  "en": "A train schedule is enclosed for your reference"
+ },
+ {
+  "k": "d19-labor#0",
+  "hw": "labor",
+  "mean": "노동(력); 일하다",
+  "en": "This warranty covers the cost of parts and labor only"
+ },
+ {
+  "k": "d19-storage#0",
+  "hw": "storage",
+  "mean": "저장, 보관",
+  "en": "A large block of rooms will be designated for storage"
+ },
+ {
+  "k": "d19-installment#0",
+  "hw": "installment",
+  "mean": "할부(금)",
+  "en": "I paid $30,000 up front and the rest on installments"
+ },
+ {
+  "k": "d19-effect#0",
+  "hw": "effect",
+  "mean": "영향, 효력, 효과",
+  "en": "The mild weather has a clear effect on agricultural productivity"
+ },
+ {
+  "k": "d19-wage#0",
+  "hw": "wage",
+  "mean": "급여, 임금",
+  "en": "The starting wage is $7.50 per hour on weekdays"
+ },
+ {
+  "k": "d19-summary#0",
+  "hw": "summary",
+  "mean": "요약, 개요",
+  "en": "Our third-quarter sales summary showed a 10 increase"
+ },
+ {
+  "k": "d19-insurance#0",
+  "hw": "insurance",
+  "mean": "보험(금)",
+  "en": "We offer a base salary with medical and dental insurance benefits"
+ },
+ {
+  "k": "d19-capacity#0",
+  "hw": "capacity",
+  "mean": "용량, 수용력",
+  "en": "The software company is increasing its production capacity"
+ },
+ {
+  "k": "d19-minutes#0",
+  "hw": "minutes",
+  "mean": "회의록",
+  "en": "The committee's suggestions have been noted in the meeting minutes"
+ },
+ {
+  "k": "d19-obligation#0",
+  "hw": "obligation",
+  "mean": "의무, 책임",
+  "en": "You're under no obligation to purchase our service"
+ },
+ {
+  "k": "d19-quote#0",
+  "hw": "quote",
+  "mean": "견적(액), 인용; 견적을 내다, 인용하다",
+  "en": "The contractor will soon give us a quote for the renovation project"
+ },
+ {
+  "k": "d19-quote#1",
+  "hw": "quote",
+  "mean": "견적(액), 인용; 견적을 내다, 인용하다",
+  "en": "The chairman quoted Shakespeare during his retirement speech"
+ },
+ {
+  "k": "d19-patent#0",
+  "hw": "patent",
+  "mean": "특허(권); 특허권이 있는; 특허를 얻다",
+  "en": "A law firm intends to hire three new patent lawyers"
+ },
+ {
+  "k": "d19-precaution#0",
+  "hw": "precaution",
+  "mean": "예방 조치, 예방책",
+  "en": "Please familiarize yourselves with the safety precautions"
+ },
+ {
+  "k": "d19-implication#0",
+  "hw": "implication",
+  "mean": "암시, 시사, 영향",
+  "en": "This report analyzes the implications of the survey results"
+ },
+ {
+  "k": "d19-documentation#0",
+  "hw": "documentation",
+  "mean": "증거 서류",
+  "en": "JHB Bank cannot process a loan application without the proper documentation"
+ },
+ {
+  "k": "d19-hospitality#0",
+  "hw": "hospitality",
+  "mean": "서비스업, 환대, 친절",
+  "en": "The hospitality team should expect thenew client at four o'clock"
+ },
+ {
+  "k": "d19-setback#0",
+  "hw": "setback",
+  "mean": "차질, 역행, 퇴보",
+  "en": "Despite a recent setback, the road repaving project is on schedule"
+ },
+ {
+  "k": "d19-presence#0",
+  "hw": "presence",
+  "mean": "존재(감), 입지",
+  "en": "One way to reach an international market is by having a presence on the internet"
+ },
+ {
+  "k": "d19-entrepreneur#0",
+  "hw": "entrepreneur",
+  "mean": "기업가",
+  "en": "New entrepreneurs find it expensive to operate stores in the city area"
+ },
+ {
+  "k": "d19-comparison#0",
+  "hw": "comparison",
+  "mean": "비교",
+  "en": "The director has requested a comparison of the costs of short and long-term rental agreements"
+ },
+ {
+  "k": "d19-donation#0",
+  "hw": "donation",
+  "mean": "기부, 기증",
+  "en": "The theater used a generous donation to purchase seats"
+ },
+ {
+  "k": "d20-permanent#0",
+  "hw": "permanent",
+  "mean": "영구적인, 상설의, 상임의",
+  "en": "We expect the project to create 700 permanent full-time jobs"
+ },
+ {
+  "k": "d20-competitive#0",
+  "hw": "competitive",
+  "mean": "(품질, 가격 따위가) 경쟁력 있는; (가격이) 저렴한, 경쟁의",
+  "en": "The job offers a competitive salary and great career potential"
+ },
+ {
+  "k": "d20-profitable#0",
+  "hw": "profitable",
+  "mean": "수익성 있는",
+  "en": "The two companies work together on a highly profitable project"
+ },
+ {
+  "k": "d20-attentive#0",
+  "hw": "attentive",
+  "mean": "주의를 기울이는, 신경을 쓰는",
+  "en": "Assembly-line workers are less attentive during overtime shifts"
+ },
+ {
+  "k": "d20-creative#0",
+  "hw": "creative",
+  "mean": "창의적인",
+  "en": "The creative image on the magazine cover is credited to Mono images"
+ },
+ {
+  "k": "d20-superior#0",
+  "hw": "superior",
+  "mean": "우수한, 상급의",
+  "en": "The current electricity system is superior to the previous one"
+ },
+ {
+  "k": "d20-costly#0",
+  "hw": "costly",
+  "mean": "비용이 많이 드는, 비싼",
+  "en": "Hiring outside analysts would be too costly"
+ },
+ {
+  "k": "d20-associated#0",
+  "hw": "associated",
+  "mean": "관련된, 연합된",
+  "en": "Mr. Park was closely associated with the company's competitors"
+ },
+ {
+  "k": "d20-incorrect#0",
+  "hw": "incorrect",
+  "mean": "부정확한",
+  "en": "The package is labeled with an incorrect weight"
+ },
+ {
+  "k": "d20-extensive#0",
+  "hw": "extensive",
+  "mean": "광범위한, 폭넓은",
+  "en": "Employees on international assignment receive extensive support"
+ },
+ {
+  "k": "d20-rare#0",
+  "hw": "rare",
+  "mean": "드문, 희귀한",
+  "en": "The store specializes in rare books and is open on Saturdays only"
+ },
+ {
+  "k": "d20-initial#0",
+  "hw": "initial",
+  "mean": "초기의, 처음의",
+  "en": "We received your registration form and initial deposit of $125"
+ },
+ {
+  "k": "d20-fragile#0",
+  "hw": "fragile",
+  "mean": "깨지기 쉬운, 파손되기 쉬운",
+  "en": "JMO Transport provides a special handling for fragile and bulk items"
+ },
+ {
+  "k": "d20-multiple#0",
+  "hw": "multiple",
+  "mean": "다수의, 다양한",
+  "en": "Mr. DeLeon has designed multiple training programs for runners"
+ },
+ {
+  "k": "d20-beneficial#0",
+  "hw": "beneficial",
+  "mean": "유익한, 이로운",
+  "en": "It is known that moderate exercise is beneficial to the heart"
+ },
+ {
+  "k": "d20-constant#0",
+  "hw": "constant",
+  "mean": "지속적인, 끊임없는",
+  "en": "Photographs can deteriorate if they are in constant contact with glass"
+ },
+ {
+  "k": "d20-numerous#0",
+  "hw": "numerous",
+  "mean": "많은",
+  "en": "After her retirement, Lillian will be missed by numerous colleagues"
+ },
+ {
+  "k": "d20-reluctant#0",
+  "hw": "reluctant",
+  "mean": "꺼리는, 주저하는",
+  "en": "The CEO is reluctant to make new investments since he feels insecure about the economy"
+ },
+ {
+  "k": "d20-introductory#0",
+  "hw": "introductory",
+  "mean": "서두의, 입문의, 발매 특가의",
+  "en": "Peterson's Garden will hold introductory sessions on gardening basics"
+ },
+ {
+  "k": "d20-ongoing#0",
+  "hw": "ongoing",
+  "mean": "진행 중인, 계속되는",
+  "en": "The Aiyana Trust seeks an assistant to aid our scientists with ongoing studies"
+ },
+ {
+  "k": "d20-tailored#0",
+  "hw": "tailored",
+  "mean": "맞춤의, 주문제작의",
+  "en": "Our services are individually tailored to meet your financial situation"
+ },
+ {
+  "k": "d20-unexpected#0",
+  "hw": "unexpected",
+  "mean": "예상치 못한, 뜻밖의",
+  "en": "Due to unexpected system failures, the workshop was postponed"
+ },
+ {
+  "k": "d20-risky#0",
+  "hw": "risky",
+  "mean": "위험한",
+  "en": "Investing in as many properties as possible can be risky"
+ },
+ {
+  "k": "d20-reliable#0",
+  "hw": "reliable",
+  "mean": "신뢰할 수 있는, 믿을 만한",
+  "en": "These pipelines will ensure a safe and reliable gas system"
+ },
+ {
+  "k": "d20-overdue#0",
+  "hw": "overdue",
+  "mean": "(지불, 반환 등의) 기한이 지난, 연체된",
+  "en": "Any delay in payment of fees will resultin an overdue charge"
+ },
+ {
+  "k": "d20-efficient#0",
+  "hw": "efficient",
+  "mean": "효율적인, 능률적인",
+  "en": "The mechanics became more efficient using the new technology"
+ },
+ {
+  "k": "d20-courteous#0",
+  "hw": "courteous",
+  "mean": "예의 바른, 공손한",
+  "en": "The service was excellent and the staff were courteous and warm"
+ },
+ {
+  "k": "d20-ideal#0",
+  "hw": "ideal",
+  "mean": "이상적인",
+  "en": "Dungo Hall is ideal for formal occasions and corporate events"
+ },
+ {
+  "k": "d20-stable#0",
+  "hw": "stable",
+  "mean": "안정적인",
+  "en": "Food prices have remained stable despite lower harvests"
+ },
+ {
+  "k": "d20-satisfactory#0",
+  "hw": "satisfactory",
+  "mean": "만족스러운",
+  "en": "The sales director praised Ms. Pelma for her satisfactory results"
+ },
+ {
+  "k": "d20-automated#0",
+  "hw": "automated",
+  "mean": "자동화된, 자동의",
+  "en": "I left a message on the automated recording system"
+ },
+ {
+  "k": "d20-willing#0",
+  "hw": "willing",
+  "mean": "기꺼이 ~하는, 적극적인",
+  "en": "Michelle Parks is always willing to help her coworkers"
+ },
+ {
+  "k": "d20-persuasive#0",
+  "hw": "persuasive",
+  "mean": "설득력 있는",
+  "en": "Mr. Cho's workshop will focus on building persuasive speaking skills"
+ },
+ {
+  "k": "d20-commercial#0",
+  "hw": "commercial",
+  "mean": "상업의, 상업적인; 광고",
+  "en": "Rent for commercial space has begun to rise in Arcadia"
+ },
+ {
+  "k": "d20-conscious#0",
+  "hw": "conscious",
+  "mean": "알고 있는, 인식하고 있는",
+  "en": "Residents are conscious of the lack of facilities for the elderly"
+ },
+ {
+  "k": "d20-exclusive#0",
+  "hw": "exclusive",
+  "mean": "독점적인, 배타적인",
+  "en": "The tennis courts are for the exclusive use of Greenport residents"
+ },
+ {
+  "k": "d20-unprecedented#0",
+  "hw": "unprecedented",
+  "mean": "전례 없는",
+  "en": "Horizon Stadium recorded unprecedented revenues from ticket sales"
+ },
+ {
+  "k": "d20-prevalent#0",
+  "hw": "prevalent",
+  "mean": "널리 퍼진, 일반적인",
+  "en": "Mobile phones have become prevalent in all advanced countries"
+ },
+ {
+  "k": "d20-demanding#0",
+  "hw": "demanding",
+  "mean": "힘든, 버거운, 요구가 많은",
+  "en": "The 'Super Workout' exercise class is too demanding for beginners"
+ },
+ {
+  "k": "d20-optimal#0",
+  "hw": "optimal",
+  "mean": "최적의, 최선의",
+  "en": "The filter should be cleaned once a month for optimal performance"
+ },
+ {
+  "k": "d20-receptive#0",
+  "hw": "receptive",
+  "mean": "받아들이는, 수용하는",
+  "en": "Ms. Cohen is receptive to the idea of investing in a new company"
+ },
+ {
+  "k": "d20-discretionary#0",
+  "hw": "discretionary",
+  "mean": "자유 재량의, 임의로 선택할 수 있는",
+  "en": "People now have more discretionary funds at their disposal"
+ },
+ {
+  "k": "d20-exempt#0",
+  "hw": "exempt",
+  "mean": "(의무, 책임 따위에서) 면제된; 면제하다",
+  "en": "Any domestic order valued at $200 or more is exempt from delivery charges"
+ },
+ {
+  "k": "d20-considerate#0",
+  "hw": "considerate",
+  "mean": "배려하는, 이해심 있는",
+  "en": "Please be considerate of others when talking on mobile phones"
+ },
+ {
+  "k": "d20-adjacent#0",
+  "hw": "adjacent",
+  "mean": "인접한, 이웃한",
+  "en": "The bank decided to acquire the property adjacent to their main branch"
+ },
+ {
+  "k": "d20-authentic#0",
+  "hw": "authentic",
+  "mean": "진품인, 진정한",
+  "en": "Students are attending the exhibition because it features authentic dinosaur bones"
+ },
+ {
+  "k": "d20-dedicated#0",
+  "hw": "dedicated",
+  "mean": "헌신적인, 몰두하는",
+  "en": "Marcell Inc., is dedicated to meeting workplace safety needs"
+ },
+ {
+  "k": "d20-predictable#0",
+  "hw": "predictable",
+  "mean": "예측 가능한, 예측할 수 있는",
+  "en": "Critics of the movie with Michelle Zhao have called the palot too predictable"
+ },
+ {
+  "k": "d20-accountable#0",
+  "hw": "accountable",
+  "mean": "책임이 있는",
+  "en": "All workers will be held accountable for any inaccurate information in their reports"
+ },
+ {
+  "k": "d20-inclement#0",
+  "hw": "inclement",
+  "mean": "(날씨가) 궂은, 악천후의",
+  "en": "The company had to close three times due to inclement weather"
+ },
+ {
+  "k": "d20-obsolete#0",
+  "hw": "obsolete",
+  "mean": "시대에 뒤진, 구식의, 쓸모 없어진",
+  "en": "A new discovery rendered their working model obsolete"
+ },
+ {
+  "k": "d20-fabulous#0",
+  "hw": "fabulous",
+  "mean": "아주 멋진, 엄청난",
+  "en": "You will have a fabulous time at Wildwood National Park"
+ },
+ {
+  "k": "d20-rewarding#0",
+  "hw": "rewarding",
+  "mean": "보람 있는",
+  "en": "Strenuous but rewarding, this trail offers sweeping views of the distant mountains"
+ },
+ {
+  "k": "d20-affected#0",
+  "hw": "affected",
+  "mean": "영향을 받는, 해당되는",
+  "en": "Affected employees will need to box up all their office items by 3 P.M."
+ },
+ {
+  "k": "d20-automotive#0",
+  "hw": "automotive",
+  "mean": "자동차의",
+  "en": "We use the best automotive cleaning products and tools for your vehicles"
+ },
+ {
+  "k": "d20-confusing#0",
+  "hw": "confusing",
+  "mean": "혼란을 주는",
+  "en": "The menu options are confusing, so setup is not straightforward"
+ },
+ {
+  "k": "d20-well-received#0",
+  "hw": "well received",
+  "mean": "평이 좋은, 좋은 반응을 얻는",
+  "en": "The early photos have been well received among gallery visitors"
+ },
+ {
+  "k": "d21-additional#0",
+  "hw": "additional",
+  "mean": "추가의, 부가적인",
+  "en": "the company is willing to hire additional staff to complete our order"
+ },
+ {
+  "k": "d21-regular#0",
+  "hw": "regular",
+  "mean": "정기적인, 규칙적인, 보통의",
+  "en": "we can provide service on a regular basis or on call"
+ },
+ {
+  "k": "d21-due#0",
+  "hw": "due",
+  "mean": "(제출, 반환 등의) 기한이 된; 요금, 회비",
+  "en": "the proposal for the parking garage was due yesterday"
+ },
+ {
+  "k": "d21-sufficient#0",
+  "hw": "sufficient",
+  "mean": "(수나 양이) 충분한",
+  "en": "the apartments contain sufficient space for a family of four"
+ },
+ {
+  "k": "d21-professional#0",
+  "hw": "professional",
+  "mean": "전문적인, 직업의; 전문가",
+  "en": "managers will be required to attend the professional development seminar"
+ },
+ {
+  "k": "d21-functional#0",
+  "hw": "functional",
+  "mean": "작동하는, 기능적인, 편리한",
+  "en": "Mr nipstar confirmed the device was completely functional again the building is both functional and"
+ },
+ {
+  "k": "d21-adequate#0",
+  "hw": "adequate",
+  "mean": "적절한, 제대로 된",
+  "en": "the monitor was damaged in shipping because the packaging was not adequate"
+ },
+ {
+  "k": "d21-unattended#0",
+  "hw": "unattended",
+  "mean": "방치된, 내버려 둔",
+  "en": "an unattended backpack was found in the empty gym"
+ },
+ {
+  "k": "d21-vital#0",
+  "hw": "vital",
+  "mean": "필수적인, 아주 중요한",
+  "en": "an online marketing strategy is vital for survival in a competitive market"
+ },
+ {
+  "k": "d21-unlimited#0",
+  "hw": "unlimited",
+  "mean": "무제한의",
+  "en": "your subscription allows you unlimited access to articles on our website"
+ },
+ {
+  "k": "d21-managerial#0",
+  "hw": "managerial",
+  "mean": "관리(자)의, 경영(자)의",
+  "en": "a reception for managerial staff will be held on Thursday in the boardroom"
+ },
+ {
+  "k": "d21-artificial#0",
+  "hw": "artificial",
+  "mean": "인공의, 인위적인",
+  "en": "too many artificial ingredients are used to make this food product"
+ },
+ {
+  "k": "d21-protective#0",
+  "hw": "protective",
+  "mean": "보호하는, 보호용의, 방어하는",
+  "en": "staff members who work with chemicals should wear protective gear"
+ },
+ {
+  "k": "d21-steady#0",
+  "hw": "steady",
+  "mean": "안정된, 꾸준한",
+  "en": "the price of fuel continues its steady rise for the 10th week in a row"
+ },
+ {
+  "k": "d21-sizable#0",
+  "hw": "sizable",
+  "mean": "상당한 크기의, 꽤 큰",
+  "en": "the warehouse provides storage for a sizable amount of merchandise"
+ },
+ {
+  "k": "d21-experienced#0",
+  "hw": "experienced",
+  "mean": "경험이 있는, 숙련된, 능숙한",
+  "en": "the organization is seeking an experienced economist"
+ },
+ {
+  "k": "d21-noticeable#0",
+  "hw": "noticeable",
+  "mean": "뚜렷한, 분명한",
+  "en": "the advertising campaign has had a noticeable effect on sales"
+ },
+ {
+  "k": "d21-sensitive#0",
+  "hw": "sensitive",
+  "mean": "민감한, 예민한",
+  "en": "the xt-100 is the most sensitive home kitchen scales on the market"
+ },
+ {
+  "k": "d21-impressive#0",
+  "hw": "impressive",
+  "mean": "인상적인, 감동적인",
+  "en": "earnings were not impressive enough to attract more investors"
+ },
+ {
+  "k": "d21-outstanding#0",
+  "hw": "outstanding",
+  "mean": "탁월한, 뛰어난; 미지불된, 미결제된",
+  "en": "Miss Chu was happy to receive the award for outstanding performance the outstanding balance must be paid promptly"
+ },
+ {
+  "k": "d21-widespread#0",
+  "hw": "widespread",
+  "mean": "널리 퍼진, 광범위한",
+  "en": "the widespread use of cell phones has changed the way we communicate"
+ },
+ {
+  "k": "d21-visible#0",
+  "hw": "visible",
+  "mean": "(눈에) 보이는, 뚜렷한",
+  "en": "ensure that the warning lights are clearly visible"
+ },
+ {
+  "k": "d21-exceptional#0",
+  "hw": "exceptional",
+  "mean": "뛰어난, 예외적인",
+  "en": "Anna paskovich has been honored as an exceptional writer"
+ },
+ {
+  "k": "d21-personal#0",
+  "hw": "personal",
+  "mean": "개인의, 사적인",
+  "en": "if you need to update any personal information contact us promptly"
+ },
+ {
+  "k": "d21-superb#0",
+  "hw": "superb",
+  "mean": "최고의, 뛰어난",
+  "en": "Fred's superb attention to detail is his best attribute"
+ },
+ {
+  "k": "d21-enclosed#0",
+  "hw": "enclosed",
+  "mean": "동봉된",
+  "en": "please take a moment to fill out the enclosed form and mail it to us"
+ },
+ {
+  "k": "d21-eager#0",
+  "hw": "eager",
+  "mean": "열망하는",
+  "en": "Roloff is eager to learn if a sketch won first place in the contest"
+ },
+ {
+  "k": "d21-removable#0",
+  "hw": "removable",
+  "mean": "제거할 수 있는, 뗄 수 있는",
+  "en": "the equipment has a removable cover for easy cleaning"
+ },
+ {
+  "k": "d21-positive#0",
+  "hw": "positive",
+  "mean": "긍정적인, 명확한, 분명한",
+  "en": "passionate employees have a positive influence on their colleagues"
+ },
+ {
+  "k": "d21-committed#0",
+  "hw": "committed",
+  "mean": "헌신하는, 전념하는",
+  "en": "industry Bankers committed to keeping customer information secure"
+ },
+ {
+  "k": "d21-previous#0",
+  "hw": "previous",
+  "mean": "이전의",
+  "en": "Mr Gupta preferred the recent conference over previous ones"
+ },
+ {
+  "k": "d21-likely#0",
+  "hw": "likely",
+  "mean": "~할 것 같은",
+  "en": "the sound of construction work is likely to affect customers in nearby shops"
+ },
+ {
+  "k": "d21-repeated#0",
+  "hw": "repeated",
+  "mean": "반복되는, 거듭되는",
+  "en": "after repeated request by local residents the private library was open to the public"
+ },
+ {
+  "k": "d21-valid#0",
+  "hw": "valid",
+  "mean": "(티켓, 방법 따위가) 유효한, 정당한, 타당한",
+  "en": "each applicant must have a valid driver's license"
+ },
+ {
+  "k": "d21-abundant#0",
+  "hw": "abundant",
+  "mean": "충분한, 넘치는",
+  "en": "there was abundant evidence to support the theory"
+ },
+ {
+  "k": "d21-rigorous#0",
+  "hw": "rigorous",
+  "mean": "엄격한, 정밀한",
+  "en": "our products meet rigorous technical specifications"
+ },
+ {
+  "k": "d21-tentative#0",
+  "hw": "tentative",
+  "mean": "임시의, 잠정적인",
+  "en": "the schedule is tentative and we will keep you posted on any changes"
+ },
+ {
+  "k": "d21-diverse#0",
+  "hw": "diverse",
+  "mean": "다양한",
+  "en": "because of my diverse experience I have developed strong skills in financial consulting"
+ },
+ {
+  "k": "d21-ample#0",
+  "hw": "ample",
+  "mean": "충분한, 풍부한",
+  "en": "the building offers ample room to allow for staff expansion"
+ },
+ {
+  "k": "d21-lucrative#0",
+  "hw": "lucrative",
+  "mean": "수익성이 좋은, 고수익의",
+  "en": "the new incentive plan will prove to be very lucrative for some employees"
+ },
+ {
+  "k": "d21-knowledgeable#0",
+  "hw": "knowledgeable",
+  "mean": "아는 것이 많은, 박식한",
+  "en": "Cole sends while Incorporated today to speak with a knowledgeable consultant"
+ },
+ {
+  "k": "d21-principal#0",
+  "hw": "principal",
+  "mean": "주요한, 주된",
+  "en": "romanik Motors will build a new Factory near the city's principal business district"
+ },
+ {
+  "k": "d21-equivalent#0",
+  "hw": "equivalent",
+  "mean": "동일한, 상응하는",
+  "en": "Al firm's annual revenue is equivalent to that of our larger competitors"
+ },
+ {
+  "k": "d21-entertaining#0",
+  "hw": "entertaining",
+  "mean": "즐거운, 재미있는",
+  "en": "action movies are more entertaining than dramas"
+ },
+ {
+  "k": "d21-perishable#0",
+  "hw": "perishable",
+  "mean": "부패하기 쉬운",
+  "en": "the contents are perishable so they must be delivered promptly"
+ },
+ {
+  "k": "d21-competent#0",
+  "hw": "competent",
+  "mean": "유능한, 적격인, (능력이) 충분한",
+  "en": "Mr na is regarded as a company's most competent vice president"
+ },
+ {
+  "k": "d21-imperative#0",
+  "hw": "imperative",
+  "mean": "필수적인, 반드시 해야 하는",
+  "en": "it is imperative that the documents be meticulously examined"
+ },
+ {
+  "k": "d21-redeemable#0",
+  "hw": "redeemable",
+  "mean": "(현금이나 상품과) 교환할 수 있는",
+  "en": "visit the Museum website for coupons redeemable at our souvenir shop"
+ },
+ {
+  "k": "d21-skeptical#0",
+  "hw": "skeptical",
+  "mean": "회의적인, 의심 많은",
+  "en": "while initially skeptical about the idea Mr Roy eventually agreed"
+ },
+ {
+  "k": "d21-comparable#0",
+  "hw": "comparable",
+  "mean": "필적하는, 비길 만한, 동종의",
+  "en": "the two companies provide comparable employee benefits"
+ },
+ {
+  "k": "d21-versatile#0",
+  "hw": "versatile",
+  "mean": "(도구 등이) 용도가 많은, 다목적의, (사람이) 다재다능한",
+  "en": "Plastic is a versatile construction material"
+ },
+ {
+  "k": "d22-critical#0",
+  "hw": "critical",
+  "mean": "중요한, 결정적인",
+  "en": "we will begin installation of critical updates on all computers"
+ },
+ {
+  "k": "d22-durable#0",
+  "hw": "durable",
+  "mean": "내구성이 좋은, 튼튼한",
+  "en": "the old iron pipes will be replaced with durable plastic pipes"
+ },
+ {
+  "k": "d22-promising#0",
+  "hw": "promising",
+  "mean": "유망한, 기대되는",
+  "en": "Huntsville is a promising location for investors"
+ },
+ {
+  "k": "d22-accustomed#0",
+  "hw": "accustomed",
+  "mean": "익숙한",
+  "en": "New employees are not accustomed to a new environment"
+ },
+ {
+  "k": "d22-aware#0",
+  "hw": "aware",
+  "mean": "알고 있는",
+  "en": "we are aware that our warranty expired a year ago"
+ }
+]
