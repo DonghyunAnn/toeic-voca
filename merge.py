@@ -67,6 +67,15 @@ CSV_TYPOS = {"appropriated": "appropriate"}
 
 # 덱/CSV의 뜻 오류. (DAY, 표제어) -> [(품사, 뜻)] 로 통째로 갈아끼운다.
 # 원문을 그대로 두면 학습할 때 틀린 뜻을 외우게 되므로 확인된 것만 고친다.
+# 연어의 전사 오타. 낱말 단위로 그대로 바꾼다.
+# 전부 DAY 1에 몰려 있다 - 블로그 저자가 처음에 손으로 옮기다 굳어진 자리로 보인다.
+COLLOCATION_TYPOS = {
+    "acrhway": "archway",
+    "lable": "label",
+    "perfrom": "perform",
+    "wearhouse": "warehouse",
+}
+
 # 같은 단어가 두 번 들어간 자리. 블로그가 줄임형을 따로 적었거나 덱이
 # 표제어를 잘못 옮긴 탓이다. 교재 등급표(엑셀)에 없는 쪽을 지우고 예문만 옮긴다.
 #   버릴 id -> (남길 id, 남길 표제어 또는 None)
@@ -359,6 +368,10 @@ def merge(source, kind, audio_out=None):
         fix = MEANING_FIXES.get((day, headword.lower()))
         if fix:
             word["senses"] = [{"pos": p, "meaning": m} for p, m in fix]
+        for col in word["collocations"]:
+            col["en"] = re.sub(
+                r"\b(" + "|".join(COLLOCATION_TYPOS) + r")\b",
+                lambda m: COLLOCATION_TYPOS[m.group(1).lower()], col["en"], flags=re.I)
         exfix = EXAMPLE_FIXES.get((day, headword.lower()))
         if exfix is not None:
             keep = {e["en"]: e for e in word["examples"]}

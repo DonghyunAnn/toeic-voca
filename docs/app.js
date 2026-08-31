@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = 'e514c16b';
+const BUILD = 'efdffae4';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -1198,8 +1198,11 @@ function renderList() {
  *  생기는데, 4,190줄이면 그것만으로 수만 개다. */
 function rowHTML(w) {
   const rec = Store.record(w.id);
-  const ex = w.examples[0];
   const pos = posText(w);
+  // 예문이 둘이면 둘 다 보여준다. 뜻이 여러 개인 단어는 예문마다 뜻이 달라서
+  // 첫 줄만 보이면 나머지 뜻은 예문 없이 외우게 된다 (pass = 지나가다 / 건네다).
+  // 4,187개 중 108개뿐이라 목록이 길어지지도 않는다.
+  const shown = w.examples.slice(0, 2);
   return `<div class="word-item"><div class="row">`
     + `<span class="hw">${escapeHTML(w.headword)}</span>`
     + (pos ? `<span class="pos">${escapeHTML(pos)}</span>` : '')
@@ -1211,8 +1214,9 @@ function rowHTML(w) {
     + `<span class="spk">${Audio_.speakerHTML(w.audio, 'speak', w.headword)}</span>`
     + `</span></div>`
     + `<div class="mean">${escapeHTML(meaningText(w))}</div>`
-    + (ex ? `<div class="ex">${escapeHTML(ex.en)}${ex.generated ? '<span class="gen">생성</span>' : ''}`
-          + (ex.ko ? `<div class="ko">${escapeHTML(ex.ko)}</div>` : '') + `</div>` : '')
+    + shown.map(ex =>
+        `<div class="ex">${escapeHTML(ex.en)}${ex.generated ? '<span class="gen">생성</span>' : ''}`
+        + (ex.ko ? `<div class="ko">${escapeHTML(ex.ko)}</div>` : '') + `</div>`).join('')
     + `</div>`;
 }
 
