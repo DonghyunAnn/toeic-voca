@@ -186,6 +186,14 @@ button { background: none; border: 0; cursor: pointer; }
 }
 .exam-line b { font-weight: 650; }
 .exam-line .dim { color: var(--muted-fg); }
+.today-line {
+  margin-top: .5rem; padding: .625rem .75rem;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  font-size: .8125rem; color: var(--fg); line-height: 1.5;
+}
+.today-line b { font-weight: 650; }
+.today-line .dim { color: var(--muted-fg); }
+
 .sub-label { margin: .875rem 0 .375rem; font-size: .8125rem; color: var(--muted-fg); }
 
 .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; margin-top: .75rem; }

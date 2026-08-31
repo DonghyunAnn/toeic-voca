@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = '96e01c09';
+const BUILD = 'f647fac3';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -36,6 +36,9 @@ const DEFAULTS = {
               quizType: 'meaning', examDate: '', targetPasses: 4, voiceMode: 'file' },
   words: {},
   days: {},
+  // 날짜별 학습량. {"2026-08-31": {n: 채점 수, f: 처음 본 단어 수}}
+  // 계획이 '하루 127개'라고 말해도 실제로 몇 개 했는지 알 수가 없었다.
+  log: {},
   session: null,
 };
 
@@ -322,6 +325,7 @@ const Store = {
                           && !Array.isArray(parsed.settings) ? parsed.settings : {}) },
           words: parsed.words || {},
           days: parsed.days || {},
+          log: parsed.log || {},
         };
       }
       // 이어보기는 따로 담아 두었다 (본 진도와 함께 쓰면 카드마다 62KB가 더 붙는다)
@@ -406,6 +410,31 @@ const Store = {
 
   record(id) {
     return this.data.words[id] || null;
+  },
+
+  /** 그날 몇 개를 채점했고 그중 몇 개가 처음 보는 단어였는지 센다.
+   *  계획(하루 몇 개)과 실제를 나란히 놓으려면 이 숫자가 있어야 한다. */
+  log(date, fresh) {
+    const day = this.data.log[date] || (this.data.log[date] = { n: 0, f: 0 });
+    day.n++;
+    if (fresh) day.f++;
+    // 반년치만 남긴다. 그 이상은 볼 일이 없고 저장만 늘린다.
+    const keys = Object.keys(this.data.log);
+    if (keys.length > 200) {
+      for (const k of keys.sort().slice(0, keys.length - 180)) delete this.data.log[k];
+    }
+  },
+
+  /** 최근 며칠간의 기록. 오늘부터 거슬러 올라간다. */
+  recent(days) {
+    const out = [];
+    const base = new Date(todayISO() + 'T00:00:00');
+    for (let i = 0; i < days; i++) {
+      const d = new Date(base.getFullYear(), base.getMonth(), base.getDate() - i);
+      const iso = d.toLocaleDateString('sv-SE');
+      out.push({ date: iso, ...(this.data.log[iso] || { n: 0, f: 0 }) });
+    }
+    return out;
   },
 
   ensure(id) {
@@ -530,8 +559,10 @@ const Scheduler = {
 
   grade(id, result) {
     const due = this.isDue(id) || result === 'known';
+    const fresh = !Store.record(id);        // ensure 전에 봐야 처음인지 안다
     const rec = Store.ensure(id);
     const today = todayISO();
+    Store.log(today, fresh);
     // 저장소가 손상돼 box가 숫자가 아니면 BOX_INTERVALS[NaN]이 undefined가 되고
     // due가 "Invalid Date"로 굳는다. 그러면 그 단어는 영영 기한이 오지 않는다.
     rec.box = clampBox(rec.box);
@@ -630,6 +661,32 @@ function inScope(words) {
   return words.filter(w =>
     tiers.includes(w.tier) &&
     (!onlyWithExample || w.examples.length));
+}
+
+/** 오늘 얼마나 했는지, 요즘 어느 정도 속도인지.
+ *
+ *  계획만 있고 실적이 없으면 밀리고 있는지 알 수가 없다. 오늘 개수와
+ *  최근 이레의 하루 평균을 나란히 둔다. 시험일이 있으면 목표와 견준다.
+ */
+function renderTodayLine(freshLeft) {
+  const el = $('#today-line');
+  const week = Store.recent(7);
+  const today = week[0];
+  const done = week.reduce((a, d) => a + d.n, 0);
+  if (!done) { el.hidden = true; return; }     // 한 번도 안 했으면 빈 줄을 두지 않는다
+
+  el.hidden = false;
+  const avg = Math.round(done / 7);
+  const plan = examPlan(freshLeft);
+  const goal = plan && plan.perDay;
+
+  let head = `오늘 <b>${today.n.toLocaleString()}개</b>`;
+  if (today.f) head += ` <span class="dim">(새 단어 ${today.f.toLocaleString()})</span>`;
+  if (goal) {
+    const pct = Math.min(100, Math.round(today.f / goal * 100));
+    head += ` <span class="dim">· 오늘 몫 ${goal.toLocaleString()}개 중 ${pct}%</span>`;
+  }
+  el.innerHTML = head + ` <span class="dim">· 최근 이레 하루 평균 ${avg.toLocaleString()}개</span>`;
 }
 
 /** 시험일을 넣어 두었으면 남은 날과 하루 몫을 알려 준다.
@@ -795,6 +852,7 @@ function renderHome() {
     : (freshTotal ? '오늘 몫은 끝났습니다' : '모든 단어를 다 봤습니다');
 
   renderExamLine(freshTotal);
+  renderTodayLine(freshTotal);
   $('#start-review').disabled = !(due || fresh);
 
   const learned = seen;
@@ -1587,6 +1645,13 @@ function renderSettings() {
   const passes = Math.min(6, Math.max(1, Store.settings.targetPasses || 4));
   for (const b of $$('#set-passes button')) b.classList.toggle('on', Number(b.dataset.passes) === passes);
   const plan = examPlan(freshTotal);
+  // 계획이 낸 숫자를 하루 몫에 바로 넣는다. 예전에는 홈에서 '하루 127개'를
+  // 읽고 여기에 직접 127을 쳐 넣어야 했다.
+  const applyBtn = $('#apply-plan');
+  const rec = plan && plan.perDay;
+  applyBtn.hidden = !rec || rec === newPerDay;
+  if (!applyBtn.hidden) applyBtn.textContent = `하루 몫을 ${rec.toLocaleString()}개로 맞추기`;
+
   $('#exam-hint').textContent = !plan
     ? '시험 날짜를 넣으면 남은 단어를 며칠에 나눠 볼지 역산해 알려 줍니다. 안 넣어도 됩니다.'
     : plan.perDay
@@ -2113,6 +2178,16 @@ function bind() {
     renderSettings();
     renderHome();
   };
+  $('#apply-plan').onclick = () => {
+    const plan = examPlan(homeStats().freshTotal);
+    if (!plan || !plan.perDay) return;
+    Store.settings.newPerDay = plan.perDay;
+    Store.save();
+    renderSettings();
+    renderHome();
+    toast(`하루 새 단어를 ${plan.perDay.toLocaleString()}개로 맞췄습니다`);
+  };
+
   $('#set-passes').onclick = e => {
     const b = e.target.closest('[data-passes]');
     if (!b) return;
