@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = '879f5574';
+const BUILD = 'fba7c22e';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -1556,8 +1556,6 @@ function renderSettings() {
   // homeStats가 이미 한 바퀴로 세어 준다. split()을 또 돌려 정렬까지 할 일이 아니다.
   const { freshTotal } = homeStats();
 
-  const examEl = $('#exam-date');
-  if (document.activeElement !== examEl) examEl.value = Store.settings.examDate || '';
   $('#exam-clear').hidden = !Store.settings.examDate;
 
   // 우리 칸에 날짜를 한국식으로 적는다. 네이티브 입력은 그 위에 투명하게 덮여 있다.
@@ -1687,6 +1685,111 @@ function importProgress(file) {
   };
   reader.readAsText(file);
 }
+
+/** 달력.
+ *
+ *  브라우저 기본 달력은 파란 선택, 위아래 화살표, '삭제/오늘' 링크까지
+ *  플랫폼 것이라 앱과 그림체가 달랐다. 앱을 shadcn 기준으로 맞춰 놨으니
+ *  달력도 같은 규칙으로 그린다 - 검은 사각 선택, 흐린 요일 머리글,
+ *  월·연 드롭다운, 양쪽 끝 화살표.
+ */
+const Calendar = {
+  el: null,
+  view: null,        // 지금 보고 있는 달 (Date, 1일로 맞춰 둠)
+  value: null,       // 고른 날짜 (YYYY-MM-DD)
+  onPick: null,
+
+  open(value, onPick) {
+    this.el = $('#calendar');
+    this.value = value || null;
+    this.onPick = onPick;
+    const base = value ? new Date(value + 'T00:00:00') : new Date();
+    this.view = new Date(base.getFullYear(), base.getMonth(), 1);
+    this.el.hidden = false;
+    this.render();
+    // 바깥을 누르면 닫는다. 여는 클릭이 그대로 이어져 닫히지 않게 다음 틱부터.
+    setTimeout(() => {
+      document.addEventListener('pointerdown', this._outside, true);
+      document.addEventListener('keydown', this._esc, true);
+    }, 0);
+  },
+
+  close() {
+    if (!this.el) return;
+    this.el.hidden = true;
+    this.el.innerHTML = '';
+    document.removeEventListener('pointerdown', this._outside, true);
+    document.removeEventListener('keydown', this._esc, true);
+  },
+
+  _outside: e => {
+    const c = $('#calendar');
+    if (!c || c.hidden) return;
+    if (c.contains(e.target) || e.target.closest('#exam-date')) return;
+    Calendar.close();
+  },
+
+  _esc: e => { if (e.key === 'Escape') Calendar.close(); },
+
+  shift(months) {
+    this.view = new Date(this.view.getFullYear(), this.view.getMonth() + months, 1);
+    this.render();
+  },
+
+  render() {
+    const y = this.view.getFullYear(), m = this.view.getMonth();
+    const today = todayISO();
+    const first = new Date(y, m, 1);
+    const start = new Date(y, m, 1 - first.getDay());     // 그 주 일요일부터
+    const iso = d => d.toLocaleDateString('sv-SE');
+
+    // 6주 x 7일. 달마다 줄 수가 달라지면 칸이 들썩인다.
+    let cells = '';
+    for (let i = 0; i < 42; i++) {
+      const d = new Date(start.getFullYear(), start.getMonth(), start.getDate() + i);
+      const s = iso(d);
+      const cls = ['cal-day'];
+      if (d.getMonth() !== m) cls.push('out');
+      if (s === today) cls.push('today');
+      if (s === this.value) cls.push('on');
+      cells += `<button type="button" class="${cls.join(' ')}" data-date="${s}">${d.getDate()}</button>`;
+    }
+
+    // 연도는 올해를 가운데 두고 앞뒤로 조금씩
+    const thisYear = new Date().getFullYear();
+    const years = [];
+    for (let i = thisYear - 1; i <= thisYear + 5; i++) years.push(i);
+    if (!years.includes(y)) years.push(y), years.sort((a, b) => a - b);
+
+    this.el.innerHTML = `
+      <div class="cal-head">
+        <button type="button" class="cal-nav" data-shift="-1" aria-label="이전 달">
+          <svg viewBox="0 0 24 24" class="ico"><path d="m15 6-6 6 6 6"/></svg>
+        </button>
+        <div class="cal-pick">
+          <label class="cal-sel">
+            <span>${m + 1}월</span>
+            <svg viewBox="0 0 24 24" class="ico"><path d="m6 9 6 6 6-6"/></svg>
+            <select data-cal="month">${
+              Array.from({ length: 12 }, (_, i) =>
+                `<option value="${i}"${i === m ? ' selected' : ''}>${i + 1}월</option>`).join('')}</select>
+          </label>
+          <label class="cal-sel">
+            <span>${y}</span>
+            <svg viewBox="0 0 24 24" class="ico"><path d="m6 9 6 6 6-6"/></svg>
+            <select data-cal="year">${
+              years.map(v => `<option value="${v}"${v === y ? ' selected' : ''}>${v}</option>`).join('')}</select>
+          </label>
+        </div>
+        <button type="button" class="cal-nav" data-shift="1" aria-label="다음 달">
+          <svg viewBox="0 0 24 24" class="ico"><path d="m9 6 6 6-6 6"/></svg>
+        </button>
+      </div>
+      <div class="cal-week">${['일','월','화','수','목','금','토']
+        .map(d => `<span>${d}</span>`).join('')}</div>
+      <div class="cal-grid">${cells}</div>`;
+  },
+};
 
 /* ── 라우팅 ───────────────────────────────────────── */
 
@@ -1929,13 +2032,34 @@ function bind() {
     renderSettings();
   };
 
-  $('#exam-date').addEventListener('change', e => {
-    Store.settings.examDate = e.target.value || '';
-    Store.save();
-    renderSettings();
-    renderHome();
+  $('#exam-date').onclick = () => {
+    if (!$('#calendar').hidden) return Calendar.close();
+    Calendar.open(Store.settings.examDate, iso => {
+      Store.settings.examDate = iso;
+      Store.save();
+      Calendar.close();
+      renderSettings();
+      renderHome();
+    });
+  };
+  $('#calendar').addEventListener('click', e => {
+    const day = e.target.closest('[data-date]');
+    if (day) return Calendar.onPick(day.dataset.date);
+    const nav = e.target.closest('[data-shift]');
+    if (nav) return Calendar.shift(Number(nav.dataset.shift));
+  });
+  $('#calendar').addEventListener('change', e => {
+    const sel = e.target.closest('[data-cal]');
+    if (!sel) return;
+    const v = Number(sel.value);
+    const d = Calendar.view;
+    Calendar.view = sel.dataset.cal === 'month'
+      ? new Date(d.getFullYear(), v, 1)
+      : new Date(v, d.getMonth(), 1);
+    Calendar.render();
   });
   $('#exam-clear').onclick = () => {
+    Calendar.close();
     Store.settings.examDate = '';
     Store.save();
     renderSettings();

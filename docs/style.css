@@ -492,17 +492,15 @@ button { background: none; border: 0; cursor: pointer; }
 .count-row span { font-size: .75rem; color: var(--muted-fg); }
 
 /* 날짜 고르기.
-   input[type=date]를 그대로 두면 브라우저가 제 모양대로 그린다 - 모서리도
-   글꼴도 달력 아이콘도 우리 것이 아니고, 좁으면 '2026. v'처럼 잘린다.
-   그래서 우리 모양의 칸을 그리고 진짜 입력은 그 위에 투명하게 덮는다.
-   피커 자체는 네이티브를 그대로 쓴다 - 폰에서는 그게 제일 낫다. */
+   브라우저 기본 달력은 파란 선택에 위아래 화살표, '삭제/오늘' 링크까지
+   플랫폼 것이라 앱과 그림체가 달랐다. 칸도 달력도 우리가 그린다. */
 .date-row { display: flex; align-items: center; gap: .5rem; margin-top: .625rem; }
 .date-field {
-  position: relative; flex: 1; min-width: 0;
+  flex: 1; min-width: 0;
   display: flex; align-items: center; gap: .5rem;
   height: 2.5rem; padding: 0 .875rem;
   border: 1px solid var(--border); border-radius: var(--radius);
-  background: var(--card); font-size: .875rem;
+  background: var(--card); color: var(--fg); font-size: .875rem; text-align: left;
 }
 .date-field .ico { width: 1rem; height: 1rem; color: var(--muted-fg); flex: none; }
 .date-field > span:first-of-type {
@@ -511,16 +509,52 @@ button { background: none; border: 0; cursor: pointer; }
 .date-field.empty > span:first-of-type { color: var(--muted-fg); }
 .date-field .dday { flex: none; font-size: .75rem; font-weight: 600; color: var(--muted-fg); }
 .date-field:active { background: var(--accent); }
-/* 진짜 입력은 칸 전체를 덮되 보이지 않는다. 탭하면 네이티브 피커가 뜬다. */
-.date-field input[type="date"] {
+
+/* 달력 */
+.cal {
+  margin-top: .5rem; padding: .75rem;
+  border: 1px solid var(--border); border-radius: calc(var(--radius) + 4px);
+  background: var(--card);
+  box-shadow: 0 4px 16px rgb(0 0 0 / .06), 0 1px 2px rgb(0 0 0 / .04);
+}
+.cal-head { display: flex; align-items: center; gap: .25rem; margin-bottom: .5rem; }
+.cal-nav {
+  flex: none; display: grid; place-items: center;
+  width: 2rem; height: 2rem; border-radius: var(--radius);
+  color: var(--fg); background: none;
+}
+.cal-nav .ico { width: 1rem; height: 1rem; }
+.cal-nav:active { background: var(--accent); }
+.cal-pick { flex: 1; display: flex; justify-content: center; gap: .375rem; }
+/* 월·연 드롭다운. 네이티브 select를 투명하게 덮어 목록만 빌려 쓴다. */
+.cal-sel {
+  position: relative; display: inline-flex; align-items: center; gap: .1875rem;
+  padding: .25rem .375rem; border-radius: var(--radius);
+  font-size: .875rem; font-weight: 550;
+}
+.cal-sel:active { background: var(--accent); }
+.cal-sel .ico { width: .875rem; height: .875rem; color: var(--muted-fg); }
+.cal-sel select {
   position: absolute; inset: 0; width: 100%; height: 100%;
   opacity: 0; border: 0; background: none;
   -webkit-appearance: none; appearance: none;
 }
-.date-field input[type="date"]::-webkit-calendar-picker-indicator {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  opacity: 0; cursor: pointer;
+.cal-week, .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); }
+.cal-week span {
+  height: 1.75rem; display: grid; place-items: center;
+  font-size: .75rem; color: var(--muted-fg);
 }
+.cal-grid { gap: .125rem; }
+.cal-day {
+  height: 2.25rem; border-radius: var(--radius);
+  font-size: .875rem; color: var(--fg); background: none;
+}
+.cal-day.out { color: var(--muted-fg); opacity: .55; }
+.cal-day:active { background: var(--accent); }
+/* 오늘은 흐린 바탕, 고른 날은 꽉 찬 검정 */
+.cal-day.today { background: var(--muted); }
+.cal-day.on { background: var(--primary); color: var(--primary-fg); font-weight: 600; }
+.cal-day.on:active { background: var(--primary); }
 
 .quiz-avail { margin: 1.75rem 0 .625rem; font-size: .8125rem; }
 #quiz-day-chips { padding-top: .5rem; }
