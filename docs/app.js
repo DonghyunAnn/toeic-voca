@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = '1acffeb4';
+const BUILD = '96e01c09';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -1448,12 +1448,8 @@ function renderQuiz() {
   const qEl = $('#quiz-question');
   qEl.textContent = cur.prompt;
   qEl.classList.toggle('cloze', !!cur.cloze);
-  // 해석은 답을 고른 뒤에 편다. 먼저 보여 주면 답을 알려 주는 셈이고,
-  // 실제 시험지에도 해석은 없다.
-  const subEl = $('#quiz-sub');
-  subEl.hidden = true;
-  subEl.classList.remove('open');
-  subEl.textContent = '';
+  // 해석은 답을 고른 뒤에 정답 칸 안에서 편다. 먼저 보여 주면 답을
+  // 알려 주는 셈이고, 실제 시험지에도 해석은 없다.
   $('#quiz-next').hidden = true;
 
   const box = $('#quiz-options');
@@ -1478,13 +1474,17 @@ function answerQuiz(choice) {
     if (btn.dataset.opt === cur.answer) btn.classList.add('correct');
     else if (btn.dataset.opt === choice) btn.classList.add('wrong');
   }
-  // 이제 해석을 펴 준다. 틀렸으면 왜 틀렸는지 문장에서 확인해야 한다.
-  const subEl = $('#quiz-sub');
+  // 해석은 정답 칸 안에서 편다. 따로 상자를 두면 화면이 한 번 더 밀리고,
+  // 정답과 해석이 떨어져 있어 무엇의 해석인지 한 번 더 생각해야 한다.
   if (cur.sub) {
-    subEl.textContent = cur.sub;
-    subEl.hidden = false;
-    // 다음 프레임에 클래스를 붙여야 높이 전환이 걸린다
-    requestAnimationFrame(() => subEl.classList.add('open'));
+    const right = $$('button', box).find(b => b.dataset.opt === cur.answer);
+    if (right) {
+      const ko = document.createElement('span');
+      ko.className = 'opt-ko';
+      ko.textContent = cur.sub;
+      right.appendChild(ko);
+      requestAnimationFrame(() => ko.classList.add('open'));
+    }
   }
 
   $('#quiz-next').hidden = false;
