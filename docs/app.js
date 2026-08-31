@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = 'ddb64eb3';
+const BUILD = 'a1d965e7';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -258,12 +258,22 @@ const Speech = {
   /* macOS·iOS에는 Albert, Bad News, Bubbles 같은 효과음 목소리가 en-US로
      등록돼 있다. 알파벳순 첫 번째를 집으면 Albert가 걸려 단어를 로봇처럼
      읽는다. 실제로 그랬다. 그래서 순서를 정해 고른다. */
+  /** 목소리 목록은 늦게 채워진다. 한 번 비었을 때의 결과를 캐시해 두면
+   *  나중에 목록이 와도 영영 '없음'으로 남는다. 목록이 바뀌면 다시 고른다. */
+  watch() {
+    if (this._watching || !this.supported()) return;
+    this._watching = true;
+    speechSynthesis.addEventListener('voiceschanged', () => { this.voice = undefined; });
+  },
+
   pick() {
-    if (this.voice !== undefined) return this.voice;
+    this.watch();
     const all = speechSynthesis.getVoices();
-    if (!all.length) return undefined;      // 아직 안 불러왔다. 다음에 다시.
+    if (!all.length) { this.voice = undefined; return undefined; }   // 아직 안 왔다
+    if (this.voice !== undefined) return this.voice;
     const en = all.filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
-    if (!en.length) { this.voice = null; return null; }
+    // 영어가 하나도 없으면 목록이 덜 온 것일 수 있다. 캐시하지 않고 다음에 다시 본다.
+    if (!en.length) return null;
 
     // 플랫폼마다 이름이 다르다. 기본 읽기 음성으로 쓰이는 것들.
     const GOOD = /^(samantha|alex|google us english|google uk english|microsoft (zira|aria|david|guy)|karen|daniel|moira|tessa|siri)/i;
@@ -289,16 +299,42 @@ const Speech = {
   warned: false,
 
   /** iOS는 첫 발화가 반드시 사용자 손짓 안에서 일어나야 한다. 그 전에
-   *  아무것도 안 시켜 두면 나중에 눌러도 조용하다. 빈 문장을 한 번 흘려
-   *  엔진을 깨워 둔다. */
+   *  아무것도 안 시켜 두면 나중에 눌러도 조용하다.
+   *
+   *  소리 없는 mp3를 한 번 틀어 오디오 세션도 함께 깨운다. 단어 발음(mp3)은
+   *  나는데 내장 음성만 안 나는 기기가 있어서다 - 둘이 다른 통로를 쓴다. */
   prime() {
     if (this.primed || !this.supported()) return;
     this.primed = true;
+    try {
+      // 44바이트짜리 무음 wav. 오디오 세션을 여는 용도로만 쓴다.
+      const a = new Audio('data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAgD4AAAB9AAACABAAZGF0YQAAAAA=');
+      a.volume = 0;
+      a.play().catch(() => {});
+    } catch (e) {}
     try {
       const u = new SpeechSynthesisUtterance(' ');
       u.volume = 0;
       speechSynthesis.speak(u);
     } catch (e) {}
+  },
+
+  /** 왜 조용한지 알아야 고칠 수 있다. 설정에서 이걸 보여 준다. */
+  probe() {
+    const standalone = matchMedia('(display-mode: standalone)').matches
+      || navigator.standalone === true;
+    const voices = this.supported() ? speechSynthesis.getVoices() : [];
+    const en = voices.filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
+    const v = this.pick();
+    return {
+      지원: this.supported(),
+      홈화면앱: standalone,
+      목소리: voices.length,
+      영어목소리: en.length,
+      고른것: v ? `${v.name} (${v.lang})` : '없음',
+      말하는중: this.supported() ? speechSynthesis.speaking : false,
+      멈춤: this.supported() ? speechSynthesis.paused : false,
+    };
   },
 
   speak(text, btn) {
@@ -2233,6 +2269,20 @@ function bind() {
     $('#quiz-count').value = '';        // 버튼을 고르면 직접 입력은 비운다
     renderQuizSetup();
   };
+  $('#voice-test').onclick = () => {
+    Speech.prime();
+    const p = Speech.probe();
+    const lines = [
+      `내장 음성 ${p.지원 ? '지원함' : '지원 안 함'}`,
+      `${p.홈화면앱 ? '홈 화면 앱' : '브라우저'}에서 실행 중`,
+      `영어 목소리 ${p.영어목소리}개 · ${p.고른것}`,
+    ];
+    $('#voice-report').textContent = lines.join(' · ');
+    $('#voice-report').hidden = false;
+    Speech.warned = false;
+    Speech.speak('This is a test sentence for the pronunciation check.', $('#voice-test'));
+  };
+
   $('#set-voice').onclick = e => {
     const b = e.target.closest('[data-voice]');
     if (!b) return;
@@ -2522,6 +2572,8 @@ async function checkVersion() {
     // iOS는 첫 발화가 사용자 손짓 안에서 일어나야 한다. 아무 데나 한 번
     // 닿는 순간 엔진을 깨워 둔다.
     addEventListener('pointerdown', () => Speech.prime(), { once: true, passive: true });
+    Speech.watch();
+    Speech.pick();          // 목록을 미리 당겨 둔다 (iOS는 처음 부를 때 채워진다)
     // 저장을 미뤄 두는 대신, 앱이 가려지거나 닫히는 순간에는 반드시 비운다.
     // 폰에서는 홈 버튼을 누르면 그대로 종료될 수 있어 pagehide가 마지막 기회다.
     addEventListener('pagehide', () => Store.flush());
