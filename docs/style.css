@@ -491,6 +491,37 @@ button { background: none; border: 0; cursor: pointer; }
 .count-row input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 .count-row span { font-size: .75rem; color: var(--muted-fg); }
 
+/* 날짜 고르기.
+   input[type=date]를 그대로 두면 브라우저가 제 모양대로 그린다 - 모서리도
+   글꼴도 달력 아이콘도 우리 것이 아니고, 좁으면 '2026. v'처럼 잘린다.
+   그래서 우리 모양의 칸을 그리고 진짜 입력은 그 위에 투명하게 덮는다.
+   피커 자체는 네이티브를 그대로 쓴다 - 폰에서는 그게 제일 낫다. */
+.date-row { display: flex; align-items: center; gap: .5rem; margin-top: .625rem; }
+.date-field {
+  position: relative; flex: 1; min-width: 0;
+  display: flex; align-items: center; gap: .5rem;
+  height: 2.5rem; padding: 0 .875rem;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--card); font-size: .875rem;
+}
+.date-field .ico { width: 1rem; height: 1rem; color: var(--muted-fg); flex: none; }
+.date-field > span:first-of-type {
+  flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.date-field.empty > span:first-of-type { color: var(--muted-fg); }
+.date-field .dday { flex: none; font-size: .75rem; font-weight: 600; color: var(--muted-fg); }
+.date-field:active { background: var(--accent); }
+/* 진짜 입력은 칸 전체를 덮되 보이지 않는다. 탭하면 네이티브 피커가 뜬다. */
+.date-field input[type="date"] {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  opacity: 0; border: 0; background: none;
+  -webkit-appearance: none; appearance: none;
+}
+.date-field input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  opacity: 0; cursor: pointer;
+}
+
 .quiz-avail { margin: 1.75rem 0 .625rem; font-size: .8125rem; }
 #quiz-day-chips { padding-top: .5rem; }
 

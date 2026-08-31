@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = 'e7621b66';
+const BUILD = '879f5574';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -1559,6 +1559,18 @@ function renderSettings() {
   const examEl = $('#exam-date');
   if (document.activeElement !== examEl) examEl.value = Store.settings.examDate || '';
   $('#exam-clear').hidden = !Store.settings.examDate;
+
+  // 우리 칸에 날짜를 한국식으로 적는다. 네이티브 입력은 그 위에 투명하게 덮여 있다.
+  const iso = Store.settings.examDate;
+  const field = $('.date-field');
+  const left = daysToExam();
+  field.classList.toggle('empty', !iso);
+  $('#exam-date-text').textContent = iso
+    ? new Date(iso + 'T00:00:00').toLocaleDateString('ko-KR',
+        { year: 'numeric', month: 'long', day: 'numeric', weekday: 'short' })
+    : '날짜 선택';
+  $('#exam-dday').textContent = left === null ? ''
+    : left > 0 ? `D-${left}` : left === 0 ? 'D-DAY' : `D+${-left}`;
   const passes = Math.min(6, Math.max(1, Store.settings.targetPasses || 4));
   for (const b of $$('#set-passes button')) b.classList.toggle('on', Number(b.dataset.passes) === passes);
   const plan = examPlan(freshTotal);
