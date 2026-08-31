@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = 'fba7c22e';
+const BUILD = 'b6587207';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -1731,6 +1731,24 @@ const Calendar = {
 
   _esc: e => { if (e.key === 'Escape') Calendar.close(); },
 
+  /** 월·연 목록을 연다. 네이티브 select를 쓰면 플랫폼이 제 크기로 띄워
+   *  달력과 비율이 안 맞았다. 우리가 그린 목록을 대신 띄운다. */
+  toggleMenu(which) {
+    const menus = $$('.cal-menu', this.el);
+    for (const menu of menus) {
+      const mine = menu.dataset.for === which;
+      menu.hidden = !mine || !menu.hidden;
+      if (mine && !menu.hidden) {
+        const on = menu.querySelector('.cal-opt.on');
+        if (on) on.scrollIntoView({ block: 'center' });
+      }
+    }
+  },
+
+  closeMenus() {
+    for (const menu of $$('.cal-menu', this.el)) menu.hidden = true;
+  },
+
   shift(months) {
     this.view = new Date(this.view.getFullYear(), this.view.getMonth() + months, 1);
     this.render();
@@ -1767,19 +1785,23 @@ const Calendar = {
           <svg viewBox="0 0 24 24" class="ico"><path d="m15 6-6 6 6 6"/></svg>
         </button>
         <div class="cal-pick">
-          <label class="cal-sel">
-            <span>${m + 1}월</span>
-            <svg viewBox="0 0 24 24" class="ico"><path d="m6 9 6 6 6-6"/></svg>
-            <select data-cal="month">${
+          <div class="cal-sel-wrap">
+            <button type="button" class="cal-sel" data-menu="month">
+              <span>${m + 1}월</span>
+              <svg viewBox="0 0 24 24" class="ico"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="cal-menu" data-for="month" hidden>${
               Array.from({ length: 12 }, (_, i) =>
-                `<option value="${i}"${i === m ? ' selected' : ''}>${i + 1}월</option>`).join('')}</select>
-          </label>
-          <label class="cal-sel">
-            <span>${y}</span>
-            <svg viewBox="0 0 24 24" class="ico"><path d="m6 9 6 6 6-6"/></svg>
-            <select data-cal="year">${
-              years.map(v => `<option value="${v}"${v === y ? ' selected' : ''}>${v}</option>`).join('')}</select>
-          </label>
+                `<button type="button" class="cal-opt${i === m ? ' on' : ''}" data-set-month="${i}">${i + 1}월</button>`).join('')}</div>
+          </div>
+          <div class="cal-sel-wrap">
+            <button type="button" class="cal-sel" data-menu="year">
+              <span>${y}</span>
+              <svg viewBox="0 0 24 24" class="ico"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="cal-menu" data-for="year" hidden>${
+              years.map(v => `<button type="button" class="cal-opt${v === y ? ' on' : ''}" data-set-year="${v}">${v}</button>`).join('')}</div>
+          </div>
         </div>
         <button type="button" class="cal-nav" data-shift="1" aria-label="다음 달">
           <svg viewBox="0 0 24 24" class="ico"><path d="m9 6 6 6-6 6"/></svg>
@@ -2043,20 +2065,27 @@ function bind() {
     });
   };
   $('#calendar').addEventListener('click', e => {
+    const menuBtn = e.target.closest('[data-menu]');
+    if (menuBtn) return Calendar.toggleMenu(menuBtn.dataset.menu);
+
+    const mo = e.target.closest('[data-set-month]');
+    if (mo) {
+      const d = Calendar.view;
+      Calendar.view = new Date(d.getFullYear(), Number(mo.dataset.setMonth), 1);
+      return Calendar.render();
+    }
+    const yr = e.target.closest('[data-set-year]');
+    if (yr) {
+      const d = Calendar.view;
+      Calendar.view = new Date(Number(yr.dataset.setYear), d.getMonth(), 1);
+      return Calendar.render();
+    }
+
+    Calendar.closeMenus();          // 목록 밖을 눌렀으면 닫는다
     const day = e.target.closest('[data-date]');
     if (day) return Calendar.onPick(day.dataset.date);
     const nav = e.target.closest('[data-shift]');
     if (nav) return Calendar.shift(Number(nav.dataset.shift));
-  });
-  $('#calendar').addEventListener('change', e => {
-    const sel = e.target.closest('[data-cal]');
-    if (!sel) return;
-    const v = Number(sel.value);
-    const d = Calendar.view;
-    Calendar.view = sel.dataset.cal === 'month'
-      ? new Date(d.getFullYear(), v, 1)
-      : new Date(v, d.getMonth(), 1);
-    Calendar.render();
   });
   $('#exam-clear').onclick = () => {
     Calendar.close();
