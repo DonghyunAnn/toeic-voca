@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = 'ec8dc3fb';
+const BUILD = 'f4d3d31b';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -1284,26 +1284,57 @@ function renderQuizSetup() {
  *  토익 Part 5가 정확히 이 모양이다. 뜻만 맞히면 'hold = 들다'는 알아도
  *  "A man is ___ a piece of wood"에서는 못 고른다.
  *
- *  표제어가 그대로 있지는 않다. hold -> holding, pass -> passing처럼 변형돼
- *  있어서 앞부분만 보고 찾는다. 여러 단어짜리 표제어(take off)는 첫 단어를
- *  기준으로 잡고 뒤는 그대로 둔다.
+ *  표제어가 문장에 그대로 있지는 않다. hold -> holding처럼 변형돼 있어서
+ *  낱말마다 어간까지만 보고 찾는다. 구는 통째로 가려야 답이 말이 된다 -
+ *  'in advance'에서 advance만 지우면 "How far in ___"가 되어 이상하다.
  *
  *  못 찾으면 null. 그런 단어는 뜻 맞히기로 낸다.
  */
 function clozeFrom(word) {
-  const first = (word.headword.match(/[A-Za-z][A-Za-z'-]*/) || [])[0];
-  if (!first || first.length < 3) return null;
-  // 어간만 남긴다. hold->hol, arrange->arran (굴절돼도 앞부분은 남는다)
-  const stem = first.slice(0, Math.max(3, first.length - 3));
-  const re = new RegExp('\\b' + stem.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + "[A-Za-z'-]*", 'i');
-  for (const e of word.examples) {
-    const m = e.en.match(re);
-    if (!m) continue;
-    // 너무 짧게 남은 문장은 문제가 안 된다
-    if (e.en.split(/\s+/).length < 4) continue;
-    return { sentence: e.en.replace(re, '______'), ko: e.ko || '', hit: m[0] };
+  for (const form of clozeForms(word.headword)) {
+    const re = phraseRegex(form);
+    if (!re) continue;
+    for (const e of word.examples) {
+      const m = e.en.match(re);
+      if (!m) continue;
+      if (e.en.split(/\s+/).length < 4) continue;   // 조각난 문장은 문제가 안 된다
+      return { sentence: e.en.replace(re, '______'), ko: e.ko || '', hit: m[0] };
+    }
   }
   return null;
+}
+
+/** 표제어에서 찾아볼 형태들. 대괄호는 앞말을 갈아 끼우는 표기다.
+ *  environmentally[eco] friendly -> environmentally friendly / eco friendly */
+function clozeForms(headword) {
+  const out = [];
+  const bracket = headword.match(/^(.*?)(\S+)\[([^\]]+)\](.*)$/);
+  if (bracket) {
+    const [, head, word, alt, tail] = bracket;
+    out.push((head + word + tail).trim(), (head + alt + tail).trim());
+  } else {
+    out.push(headword);
+  }
+  // fail to부정사처럼 한글이 섞인 것은 영어 부분만 쓴다
+  return out.map(f => (f.match(/[A-Za-z][A-Za-z'()\- ]*/) || [''])[0].trim()).filter(Boolean);
+}
+
+/** 구를 통째로 잡는 정규식. 낱말마다 어간까지만 보고 변형을 허용한다. */
+function phraseRegex(form) {
+  const words = form.replace(/[()]/g, '').split(/[\s-]+/).filter(Boolean);
+  if (!words.length) return null;
+  // 내용어(3자 이상)가 하나도 없으면 포기한다. of, to 같은 것만으로는 못 찾는다.
+  if (!words.some(w => w.length >= 3)) return null;
+  const parts = words.map(w => {
+    const esc = t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    // 짧은 기능어는 그대로, 긴 낱말은 앞부분만 보고 변형을 허용한다
+    return w.length < 3 ? esc(w) : esc(w.slice(0, Math.max(3, w.length - 3))) + "[A-Za-z']*";
+  });
+  try {
+    return new RegExp('\\b' + parts.join("[\\s-]+") + "(?![A-Za-z'])", 'i');
+  } catch (e) {
+    return null;
+  }
 }
 
 function buildQuestion(word, pool, dayCache) {
