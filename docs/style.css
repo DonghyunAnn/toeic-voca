@@ -636,6 +636,13 @@ button { background: none; border: 0; cursor: pointer; }
 }
 /* 빈칸 문제는 문장이라 길다. 뜻 한 단어일 때보다 작고 왼쪽 정렬로 둔다. */
 .quiz-question.cloze { font-size: 1.125rem; text-align: left; line-height: 1.5; }
+/* 답을 고르면 빈칸이 실제 형태로 되돌아온다. 선택지는 원형이라
+   문장에 들어간 꼴(engaged)을 함께 보여 줘야 어떻게 쓰는지 익힌다. */
+.quiz-question mark {
+  background: none; color: var(--good); font-weight: 700;
+  border-bottom: 2px solid var(--good); padding-bottom: 1px;
+}
+
 /* 해석은 답을 고른 뒤 정답 칸 '안에서' 편다. 따로 상자를 두면 화면이
    한 번 더 밀리고, 정답과 해석이 떨어져 무엇의 해석인지 헷갈린다. */
 .opt-ko {

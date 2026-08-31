@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = 'cf96d8fa';
+const BUILD = '75b2468d';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -1425,14 +1425,26 @@ function renderQuizSetup() {
  *  못 찾으면 null. 그런 단어는 뜻 맞히기로 낸다.
  */
 function clozeFrom(word) {
-  for (const form of clozeForms(word.headword)) {
-    const re = phraseRegex(form);
-    if (!re) continue;
-    for (const e of word.examples) {
-      const m = e.en.match(re);
-      if (!m) continue;
-      if (e.en.split(/\s+/).length < 4) continue;   // 조각난 문장은 문제가 안 된다
-      return { sentence: e.en.replace(re, '______'), ko: e.ko || '', hit: m[0] };
+  // 표제어가 그대로 나오는 예문을 먼저 찾는다. 그런 문장은 선택지를 그대로
+  // 끼워 넣어도 말이 된다. 변형된 것밖에 없으면(engage -> engaged) 그것도
+  // 쓰되, 답을 맞힌 뒤에 실제 형태를 보여 준다.
+  for (const strict of [true, false]) {
+    for (const form of clozeForms(word.headword)) {
+      const re = phraseRegex(form, strict);
+      if (!re) continue;
+      for (const e of word.examples) {
+        if (e.en.split(/\s+/).length < 4) continue;   // 조각난 문장은 문제가 안 된다
+        const m = e.en.match(re);
+        if (!m) continue;
+        return {
+          sentence: e.en.replace(re, '______'),
+          ko: e.ko || '',
+          hit: m[0],
+          full: e.en,
+          // 원형이 그대로 있었으면 답을 끼워 넣어도 문장이 맞는다
+          exact: strict,
+        };
+      }
     }
   }
   return null;
@@ -1453,14 +1465,16 @@ function clozeForms(headword) {
   return out.map(f => (f.match(/[A-Za-z][A-Za-z'()\- ]*/) || [''])[0].trim()).filter(Boolean);
 }
 
-/** 구를 통째로 잡는 정규식. 낱말마다 어간까지만 보고 변형을 허용한다. */
-function phraseRegex(form) {
+/** 구를 통째로 잡는 정규식.
+ *  strict면 표제어 그대로만, 아니면 낱말마다 어간까지만 보고 변형을 허용한다. */
+function phraseRegex(form, strict) {
   const words = form.replace(/[()]/g, '').split(/[\s-]+/).filter(Boolean);
   if (!words.length) return null;
   // 내용어(3자 이상)가 하나도 없으면 포기한다. of, to 같은 것만으로는 못 찾는다.
   if (!words.some(w => w.length >= 3)) return null;
   const parts = words.map(w => {
     const esc = t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    if (strict) return esc(w);
     // 짧은 기능어는 그대로, 긴 낱말은 앞부분만 보고 변형을 허용한다
     return w.length < 3 ? esc(w) : esc(w.slice(0, Math.max(3, w.length - 3))) + "[A-Za-z']*";
   });
@@ -1511,6 +1525,9 @@ function buildQuestion(word, pool, dayCache) {
     prompt: cloze ? cloze.sentence : (dir === 'en2ko' ? word.headword : meaningText(word)),
     sub: cloze ? cloze.ko : '',
     cloze: !!cloze,
+    full: cloze ? cloze.full : '',
+    hit: cloze ? cloze.hit : '',
+    exact: cloze ? cloze.exact : true,
     answer,
     options: shuffle([answer, ...distractors]),
   };
@@ -1576,6 +1593,19 @@ function answerQuiz(choice) {
     if (btn.dataset.opt === cur.answer) btn.classList.add('correct');
     else if (btn.dataset.opt === choice) btn.classList.add('wrong');
   }
+  // 빈칸을 실제 형태로 되돌려 준다. 선택지는 원형이라(engage), 문장에
+  // 들어간 형태가 다르면(engaged) 그대로 끼워 넣었을 때 말이 안 된다.
+  // 답을 고른 뒤 원문을 보여 주면 어떤 꼴로 쓰는지까지 같이 익힌다.
+  if (cur.cloze && cur.full) {
+    const qEl = $('#quiz-question');
+    qEl.textContent = '';
+    const i = cur.full.indexOf(cur.hit);
+    qEl.append(cur.full.slice(0, i));
+    const mark = document.createElement('mark');
+    mark.textContent = cur.hit;
+    qEl.append(mark, cur.full.slice(i + cur.hit.length));
+  }
+
   // 해석은 정답 칸 안에서 편다. 따로 상자를 두면 화면이 한 번 더 밀리고,
   // 정답과 해석이 떨어져 있어 무엇의 해석인지 한 번 더 생각해야 한다.
   if (cur.sub) {
