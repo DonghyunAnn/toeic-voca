@@ -194,6 +194,54 @@ button { background: none; border: 0; cursor: pointer; }
 .today-line b { font-weight: 650; }
 .today-line .dim { color: var(--muted-fg); }
 
+/* 최근 2주 학습량. 막대 아래층이 새 단어, 위층이 복습이다. */
+.chart {
+  margin-top: .5rem; padding: .75rem .75rem .5rem;
+  border: 1px solid var(--border); border-radius: var(--radius);
+}
+.chart-plot {
+  position: relative; display: flex; align-items: flex-end; gap: .1875rem;
+  height: 4.5rem;
+}
+.chart .bar {
+  position: relative; flex: 1; min-width: 0;
+  display: flex; flex-direction: column; justify-content: flex-end; align-items: stretch;
+  height: 100%;
+}
+/* i는 그날 총량, 그 안의 b가 새 단어 몫 */
+.chart .bar i {
+  display: block; min-height: 2px; border-radius: 2px;
+  background: var(--border); position: relative;
+}
+.chart .bar i b {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  border-radius: 2px; background: var(--muted-fg);
+}
+.chart .bar.today i b { background: var(--primary); }
+.chart .bar.today i { background: var(--accent); }
+.chart .bar span {
+  margin-top: .25rem; text-align: center;
+  font-size: .5625rem; color: var(--muted-fg); line-height: 1;
+}
+.chart .bar.today span { color: var(--fg); font-weight: 600; }
+/* 하루 몫 선 */
+.chart .goal {
+  position: absolute; left: 0; right: 0; height: 0;
+  border-top: 1px dashed var(--muted-fg); opacity: .7; pointer-events: none;
+}
+.chart .goal span {
+  position: absolute; right: 0; top: -.75rem;
+  font-size: .5625rem; color: var(--muted-fg); background: var(--bg); padding: 0 .125rem;
+}
+.chart-key {
+  display: flex; align-items: center; gap: .25rem; margin-top: .5rem;
+  font-size: .625rem; color: var(--muted-fg);
+}
+.chart-key span { width: .5rem; height: .5rem; border-radius: 2px; }
+.chart-key .k-f { background: var(--muted-fg); }
+.chart-key .k-n { background: var(--border); margin-left: .5rem; }
+.chart-key .k-g { width: .625rem; height: 0; border-top: 1px dashed var(--muted-fg); margin-left: .5rem; }
+
 .sub-label { margin: .875rem 0 .375rem; font-size: .8125rem; color: var(--muted-fg); }
 
 .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; margin-top: .75rem; }

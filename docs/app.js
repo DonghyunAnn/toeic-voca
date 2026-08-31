@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = 'f647fac3';
+const BUILD = 'cf96d8fa';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -663,6 +663,49 @@ function inScope(words) {
     (!onlyWithExample || w.examples.length));
 }
 
+/** 최근 2주 학습량.
+ *
+ *  숫자 한 줄로는 '꾸준히 했는지 몰아서 했는지'가 안 보인다. 막대로 보면
+ *  빈 날이 어디였는지 한눈에 들어온다.
+ *
+ *  막대는 두 층이다. 아래가 새 단어, 위가 복습. 복습은 내가 정하는 게
+ *  아니라 기한이 정해 주는 것이라, 둘을 섞어 놓으면 '오늘 열심히 했다'가
+ *  새 단어를 많이 봤다는 뜻인지 복습이 몰린 날인지 알 수 없다.
+ */
+const CHART_DAYS = 14;
+
+function renderChart(freshLeft) {
+  const el = $('#chart');
+  const days = Store.recent(CHART_DAYS).reverse();      // 왼쪽이 옛날
+  const max = Math.max(...days.map(d => d.n));
+  if (!max) { el.hidden = true; return; }
+  el.hidden = false;
+
+  const plan = examPlan(freshLeft);
+  const goal = plan && plan.perDay;
+  // 목표선이 막대 위로 한참 솟으면 막대가 다 눌린다. 화면 안에 있을 때만 긋는다.
+  const top = goal && goal <= max * 1.6 ? Math.max(max, goal) : max;
+
+  const bars = days.map((d, i) => {
+    const isToday = i === days.length - 1;
+    const h = d.n / top * 100;
+    const fh = d.n ? d.f / d.n * 100 : 0;               // 막대 안에서 새 단어가 차지하는 몫
+    const label = Number(d.date.slice(8, 10));
+    return `<div class="bar${isToday ? ' today' : ''}" title="${d.date} · ${d.n}개">`
+      + `<i style="height:${h.toFixed(1)}%"><b style="height:${fh.toFixed(1)}%"></b></i>`
+      + `<span>${label}</span></div>`;
+  }).join('');
+
+  const line = goal && goal <= top
+    ? `<div class="goal" style="bottom:${(goal / top * 100).toFixed(1)}%">`
+      + `<span>${goal.toLocaleString()}</span></div>` : '';
+
+  el.innerHTML = `<div class="chart-plot">${line}${bars}</div>`
+    + `<div class="chart-key"><span class="k-f"></span>새 단어`
+    + `<span class="k-n"></span>복습`
+    + (goal ? `<span class="k-g"></span>하루 몫` : '') + `</div>`;
+}
+
 /** 오늘 얼마나 했는지, 요즘 어느 정도 속도인지.
  *
  *  계획만 있고 실적이 없으면 밀리고 있는지 알 수가 없다. 오늘 개수와
@@ -853,6 +896,7 @@ function renderHome() {
 
   renderExamLine(freshTotal);
   renderTodayLine(freshTotal);
+  renderChart(freshTotal);
   $('#start-review').disabled = !(due || fresh);
 
   const learned = seen;
