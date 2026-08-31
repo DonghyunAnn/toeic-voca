@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = 'f4d3d31b';
+const BUILD = 'e7621b66';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -33,7 +33,7 @@ const DEFAULTS = {
   // 추가 어휘는 교재를 뗀 뒤에 켜는 것이라 기본으로 섞지 않는다.
   settings: { direction: 'en2ko', newPerDay: -1, onlyWithExample: false, autoplay: false,
               tiers: ['core', 'bonus'], theme: 'system', quizAffectsBox: false,
-              quizType: 'meaning', examDate: '', targetPasses: 4 },
+              quizType: 'meaning', examDate: '', targetPasses: 4, voiceMode: 'file' },
   words: {},
   days: {},
   session: null,
@@ -173,7 +173,11 @@ const Audio_ = {
   },
 
   /** 누른 버튼에 상태를 입혀 준다. 눌렸는지, 받는 중인지, 실패했는지가 보여야 한다. */
-  play(file, btn) {
+  play(file, btn, word) {
+    // 설정이 '내장 음성만'이거나 녹음이 없으면 기기 음성으로 읽는다
+    if ((Store.settings.voiceMode === 'tts' || !file) && word && Speech.supported()) {
+      return Speech.speak(word, btn);
+    }
     if (!file) return;
     const el = this._audio();
     if (this.primed !== file) { this.primed = file; el.src = audioURL(file); }
@@ -204,9 +208,16 @@ const Audio_ = {
              .catch(() => { mark('failed'); setTimeout(clear, 1200); });
   },
 
-  speakerHTML(file, cls = 'speak') {
-    if (!file) return '';
-    return `<button class="${cls}" type="button" data-audio="${escapeHTML(file)}" aria-label="발음 듣기">`
+  /** 발음 버튼. 녹음이 없으면 내장 음성으로 읽을 수 있게 단어를 넘긴다.
+   *  추가 어휘 1,033개는 녹음이 아예 없어 지금까지 버튼조차 없었다. */
+  speakerHTML(file, cls = 'speak', word = '') {
+    if (!file && !(word && Speech.supported())) return '';
+    if (!file) {
+      return `<button class="${cls} tts" type="button" data-say="${escapeHTML(word)}" aria-label="발음 듣기">`
+        + `<svg viewBox="0 0 24 24" class="ico"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>`
+        + `</button>`;
+    }
+    return `<button class="${cls}" type="button" data-audio="${escapeHTML(file)}" data-word="${escapeHTML(word)}" aria-label="발음 듣기">`
       + `<svg viewBox="0 0 24 24" class="ico"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>`
       + `</button>`;
   },
@@ -241,13 +252,29 @@ const Audio_ = {
 const Speech = {
   voice: undefined,
 
+  /* macOS·iOS에는 Albert, Bad News, Bubbles 같은 효과음 목소리가 en-US로
+     등록돼 있다. 알파벳순 첫 번째를 집으면 Albert가 걸려 단어를 로봇처럼
+     읽는다. 실제로 그랬다. 그래서 순서를 정해 고른다. */
   pick() {
     if (this.voice !== undefined) return this.voice;
     const all = speechSynthesis.getVoices();
     if (!all.length) return undefined;      // 아직 안 불러왔다. 다음에 다시.
-    // 미국 영어를 먼저, 없으면 아무 영어나
-    this.voice = all.find(v => v.lang === 'en-US')
-      || all.find(v => v.lang && v.lang.startsWith('en'))
+    const en = all.filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
+    if (!en.length) { this.voice = null; return null; }
+
+    // 플랫폼마다 이름이 다르다. 기본 읽기 음성으로 쓰이는 것들.
+    const GOOD = /^(samantha|alex|google us english|google uk english|microsoft (zira|aria|david|guy)|karen|daniel|moira|tessa|siri)/i;
+    // macOS 효과음 목소리. 이름이 곧 정체다.
+    const JOKE = /^(albert|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|jester|organ|superstar|trinoids|whisper|wobble|zarvox|junior|kathy|princess|ralph|fred|hysterical|pipe organ|bruce|agnes|vicki|victoria)$/i;
+
+    const usable = en.filter(v => !JOKE.test(v.name.trim()));
+    const pool = usable.length ? usable : en;
+    this.voice =
+      pool.find(v => v.default)                                        // 시스템 기본
+      || pool.find(v => GOOD.test(v.name) && v.lang === 'en-US')       // 이름으로 아는 것
+      || pool.find(v => GOOD.test(v.name))
+      || pool.find(v => v.lang === 'en-US')
+      || pool[0]
       || null;
     return this.voice;
   },
@@ -737,7 +764,7 @@ function cardBackHTML(w) {
     </div>` : '';
 
   return `
-    <div class="head"><h3>${escapeHTML(w.headword)}</h3>${Audio_.speakerHTML(w.audio)}</div>
+    <div class="head"><h3>${escapeHTML(w.headword)}</h3>${Audio_.speakerHTML(w.audio, 'speak', w.headword)}</div>
     ${sensesHTML(w)}
     ${examples || colloc ? '<div class="divider"></div>' : ''}
     ${examples}${colloc}`;
@@ -929,12 +956,13 @@ function renderStudy() {
   $('#card-back').innerHTML = cardBackHTML(w);
 
   const speak = $('#card-speak');
-  speak.hidden = !(dir === 'en2ko' && w.audio);
+  speak.hidden = !(dir === 'en2ko' && (w.audio || Speech.supported()));
   speak.dataset.audio = w.audio || '';
+  speak.dataset.word = w.headword;
   speak.classList.remove('loading', 'playing', 'failed');   // 앞 카드 상태를 물려받지 않게
   // 카드가 뜨면 그 단어 발음을 미리 받아 둔다. 눌렀을 때 바로 나게.
   Audio_.prime(w.audio);
-  if (dir === 'en2ko' && Store.settings.autoplay) Audio_.play(w.audio, speak);
+  if (dir === 'en2ko' && Store.settings.autoplay) Audio_.play(w.audio, speak, w.headword);
 
   $('#study-counter').textContent = `${s.index + 1}/${s.queue.length}`;
   $('#study-progress').style.transform = `scaleX(${s.index / s.queue.length})`;
@@ -965,7 +993,7 @@ function flipCard() {
   $('#grade-note').hidden = !early;
   // 이미 마지막 박스에 있으면 '이미 앎'은 의미가 없다
   $('[data-grade="known"]').disabled = Store.record(w.id) && clampBox(Store.record(w.id).box) >= MAX_BOX;
-  if (Store.settings.autoplay && directionFor(w.id) === 'ko2en') Audio_.play(w.audio, $('#card-back .speak'));
+  if (Store.settings.autoplay && directionFor(w.id) === 'ko2en') Audio_.play(w.audio, $('#card-back .speak'), w.headword);
 }
 
 function gradeCard(result) {
@@ -1180,7 +1208,7 @@ function rowHTML(w) {
     // ✕는 오답 기호다. 여기 숫자는 모름을 몇 번 눌렀나이지 오답 횟수가 아니다.
     + `<span class="miss">${rec && rec.wrong ? '모름 ' + rec.wrong : ''}</span>`
     + `<span class="box">${rec ? '박스 ' + rec.box : ''}</span>`
-    + `<span class="spk">${w.audio ? Audio_.speakerHTML(w.audio) : ''}</span>`
+    + `<span class="spk">${Audio_.speakerHTML(w.audio, 'speak', w.headword)}</span>`
     + `</span></div>`
     + `<div class="mean">${escapeHTML(meaningText(w))}</div>`
     + (ex ? `<div class="ex">${escapeHTML(ex.en)}${ex.generated ? '<span class="gen">생성</span>' : ''}`
@@ -1514,9 +1542,16 @@ function renderSettings() {
     '왔습니다. 추가 등급에는 발음이 없습니다.';
   for (const b of $$('#set-autoplay button'))
     b.classList.toggle('on', (b.dataset.autoplay === 'on') === Store.settings.autoplay);
-  $('#audio-hint').textContent =
-    `${(State.meta.withAudio || 0).toLocaleString()}단어에 발음이 있습니다. ` +
-    '들은 발음은 자동으로 저장되고, 내려받아 두면 오프라인에서도 들립니다.';
+  const vm = Store.settings.voiceMode || 'file';
+  for (const b of $$('#set-voice button')) b.classList.toggle('on', b.dataset.voice === vm);
+  const withAudio = State.meta.withAudio || 0;
+  const noAudio = (State.meta.wordCount || 0) - withAudio;
+  $('#audio-hint').textContent = vm === 'tts'
+    ? '녹음을 쓰지 않고 기기에 내장된 음성으로 읽습니다. 내려받을 것이 없고 모든 단어에서 납니다. '
+      + '녹음보다 기계음에 가깝습니다.'
+    : `${withAudio.toLocaleString()}단어는 녹음(mp3)으로, `
+      + `녹음이 없는 ${noAudio.toLocaleString()}단어는 기기 내장 음성으로 읽습니다. `
+      + '들은 녹음은 자동으로 저장되고, 내려받아 두면 오프라인에서도 들립니다.';
 
   // homeStats가 이미 한 바퀴로 세어 준다. split()을 또 돌려 정렬까지 할 일이 아니다.
   const { freshTotal } = homeStats();
@@ -1766,7 +1801,7 @@ function bind() {
     if (!speak) return;
     e.stopPropagation();
     e.preventDefault();
-    Audio_.play(speak.dataset.audio, speak);
+    Audio_.play(speak.dataset.audio, speak, speak.dataset.word || '');
   }, true);
 
   document.addEventListener('click', e => {
@@ -1874,6 +1909,14 @@ function bind() {
     $('#quiz-count').value = '';        // 버튼을 고르면 직접 입력은 비운다
     renderQuizSetup();
   };
+  $('#set-voice').onclick = e => {
+    const b = e.target.closest('[data-voice]');
+    if (!b) return;
+    Store.settings.voiceMode = b.dataset.voice;
+    Store.save();
+    renderSettings();
+  };
+
   $('#exam-date').addEventListener('change', e => {
     Store.settings.examDate = e.target.value || '';
     Store.save();
