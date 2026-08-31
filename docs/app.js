@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = 'b6587207';
+const BUILD = 'e514c16b';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -1633,12 +1633,16 @@ async function exportProgress() {
   const name = `toeic-voca-progress-${todayISO()}.json`;
   const text = JSON.stringify(Store.data, null, 1);
 
-  if (navigator.canShare) {
+  // 공유 시트는 폰에서만 쓴다. 데스크톱에서도 canShare는 true를 주지만,
+  // OS 공유 시트를 거치면 파일 이름을 잃고 UUID로 떨어진다. PC에서는
+  // 그냥 내려받는 편이 낫다 - 이름이 남아야 나중에 찾는다.
+  const touch = matchMedia('(pointer: coarse)').matches;
+  if (touch && navigator.canShare) {
     try {
       const file = new File([text], name, { type: 'application/json' });
       if (navigator.canShare({ files: [file] })) {
         await navigator.share({ files: [file], title: '토익 단어 진도' });
-        return;                       // 취소해도 여기서 끝낸다 (아래 catch로 감)
+        return;                       // 취소해도 여기서 끝낸다
       }
     } catch (e) {
       if (e && e.name === 'AbortError') return;   // 사용자가 취소한 것
@@ -1652,7 +1656,7 @@ async function exportProgress() {
   a.download = name;
   a.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
-  toast('진도를 파일로 저장했습니다');
+  toast(`${name} 으로 저장했습니다`);
 }
 
 function importProgress(file) {
