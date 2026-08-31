@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = '75b2468d';
+const BUILD = 'ddb64eb3';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -286,21 +286,50 @@ const Speech = {
     return typeof speechSynthesis !== 'undefined' && typeof SpeechSynthesisUtterance !== 'undefined';
   },
 
+  warned: false,
+
+  /** iOS는 첫 발화가 반드시 사용자 손짓 안에서 일어나야 한다. 그 전에
+   *  아무것도 안 시켜 두면 나중에 눌러도 조용하다. 빈 문장을 한 번 흘려
+   *  엔진을 깨워 둔다. */
+  prime() {
+    if (this.primed || !this.supported()) return;
+    this.primed = true;
+    try {
+      const u = new SpeechSynthesisUtterance(' ');
+      u.volume = 0;
+      speechSynthesis.speak(u);
+    } catch (e) {}
+  },
+
   speak(text, btn) {
     if (!this.supported() || !text) return;
-    speechSynthesis.cancel();               // 앞엣것이 남아 겹치지 않게
+    this.prime();
+    // cancel()을 무조건 부르면 iOS에서 큐가 멎는다. 정말 말하는 중일 때만.
+    if (speechSynthesis.speaking || speechSynthesis.pending) speechSynthesis.cancel();
+    if (speechSynthesis.paused) speechSynthesis.resume();
+
     const u = new SpeechSynthesisUtterance(text);
     const v = this.pick();
     if (v) u.voice = v;
     u.lang = (v && v.lang) || 'en-US';
     u.rate = 0.95;                          // 토익 성우보다 아주 조금 느리게
-    if (btn) {
-      btn.classList.add('playing');
-      const done = () => btn.classList.remove('playing');
-      u.onend = done;
-      u.onerror = done;
-    }
+
+    const clear = () => btn && btn.classList.remove('playing');
+    if (btn) btn.classList.add('playing');
+    u.onend = clear;
+    u.onerror = clear;
+
     speechSynthesis.speak(u);
+
+    // 소리가 안 나는 기기가 있다. 조용히 실패하면 고장인지 무음인지 알 수 없다.
+    setTimeout(() => {
+      if (speechSynthesis.speaking || speechSynthesis.pending) return;
+      clear();
+      if (!this.warned) {
+        this.warned = true;
+        toast('소리가 안 나면 무음 스위치와 볼륨을 확인해 주세요');
+      }
+    }, 700);
   },
 };
 
@@ -2490,6 +2519,9 @@ async function checkVersion() {
     await loadData();
     Store.prune(new Set(State.byId.keys()));
     bind();
+    // iOS는 첫 발화가 사용자 손짓 안에서 일어나야 한다. 아무 데나 한 번
+    // 닿는 순간 엔진을 깨워 둔다.
+    addEventListener('pointerdown', () => Speech.prime(), { once: true, passive: true });
     // 저장을 미뤄 두는 대신, 앱이 가려지거나 닫히는 순간에는 반드시 비운다.
     // 폰에서는 홈 버튼을 누르면 그대로 종료될 수 있어 pagehide가 마지막 기회다.
     addEventListener('pagehide', () => Store.flush());
