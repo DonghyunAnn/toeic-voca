@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = 'efdffae4';
+const BUILD = '1acffeb4';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -1448,10 +1448,12 @@ function renderQuiz() {
   const qEl = $('#quiz-question');
   qEl.textContent = cur.prompt;
   qEl.classList.toggle('cloze', !!cur.cloze);
-  // 빈칸 문제에는 해석을 밑에 깔아 준다. 문장을 못 읽으면 문제가 안 된다.
+  // 해석은 답을 고른 뒤에 편다. 먼저 보여 주면 답을 알려 주는 셈이고,
+  // 실제 시험지에도 해석은 없다.
   const subEl = $('#quiz-sub');
-  subEl.hidden = !cur.sub;
-  subEl.textContent = cur.sub || '';
+  subEl.hidden = true;
+  subEl.classList.remove('open');
+  subEl.textContent = '';
   $('#quiz-next').hidden = true;
 
   const box = $('#quiz-options');
@@ -1476,6 +1478,15 @@ function answerQuiz(choice) {
     if (btn.dataset.opt === cur.answer) btn.classList.add('correct');
     else if (btn.dataset.opt === choice) btn.classList.add('wrong');
   }
+  // 이제 해석을 펴 준다. 틀렸으면 왜 틀렸는지 문장에서 확인해야 한다.
+  const subEl = $('#quiz-sub');
+  if (cur.sub) {
+    subEl.textContent = cur.sub;
+    subEl.hidden = false;
+    // 다음 프레임에 클래스를 붙여야 높이 전환이 걸린다
+    requestAnimationFrame(() => subEl.classList.add('open'));
+  }
+
   $('#quiz-next').hidden = false;
   $('#quiz-next').textContent = q.index + 1 >= q.total ? '결과 보기' : '다음';
 }
