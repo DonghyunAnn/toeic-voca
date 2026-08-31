@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = '9e9c5b3e';
+const BUILD = '1f2a2967';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -490,6 +490,16 @@ const Store = {
     }
   },
 
+  /** 되돌리기로 채점을 취소하면 그날 개수도 함께 되돌린다.
+   *  안 그러면 열 번 누르고 세 번 되돌려도 '오늘 10개'로 남는다. */
+  unlog(date, wasFresh) {
+    const day = this.data.log[date];
+    if (!day) return;
+    day.n = Math.max(0, day.n - 1);
+    if (wasFresh) day.f = Math.max(0, day.f - 1);
+    if (!day.n && !day.f) delete this.data.log[date];
+  },
+
   /** 최근 며칠간의 기록. 오늘부터 거슬러 올라간다. */
   recent(days) {
     const out = [];
@@ -591,7 +601,9 @@ const Scheduler = {
       if (!rec) fresh.push(w);
       else if (rec.due <= today) due.push(w);
     }
-    if (!fresh.length && !due.length) return shuffle(pool);
+    // 다 끝냈고 기한도 안 됐으면 빈 채로 돌려준다. 예전에는 여기서 그 DAY를
+    // 통째로 다시 내줬는데, 끝낸 DAY를 눌렀을 때 101장이 처음부터 또 나와
+    // '끝냈는데 왜 또 나오지'가 됐다. 전부 다시 보려면 길게 눌러 고른다.
     // 기한이 된 복습을 먼저 털고 새 단어로 넘어간다
     return [...shuffle(due), ...fresh];
   },
@@ -1085,10 +1097,14 @@ function renderStudy() {
       nothing ? '볼 단어가 없습니다'
       : s.mode === 'learned' ? '복습 완료'
       : day ? `DAY ${String(day).padStart(2, '0')} 완료` : '오늘 학습 완료';
+    // 건너뛴 카드는 기록이 안 남아 다음에 또 나온다. 끝내고 나서
+    // '분명 다 했는데 두 장 남았다'가 되지 않게 여기서 밝힌다.
+    const skipped = s ? s.queue.filter(w => !Store.record(w.id)).length : 0;
     $('#study-done-sub').textContent = s && s.graded
-      ? `${s.graded}번 채점했습니다` +
-        (s.relearn ? ` (${s.relearn}장은 세션 안에서 다시 냈습니다)` : '')
-      : '오늘 볼 단어가 없습니다. 홈에서 DAY를 누르면 기한과 상관없이 다시 볼 수 있습니다.';
+      ? `${s.graded}번 채점했습니다`
+        + (s.relearn ? ` · 세션 안에서 다시 낸 카드 ${s.relearn}장` : '')
+        + (skipped ? ` · 건너뛴 카드 ${skipped}장은 기록이 남지 않아 다음에 또 나옵니다` : '')
+      : '오늘 볼 단어가 없습니다. 길게 눌러 전체 다시 보기를 고르면 기한과 상관없이 볼 수 있습니다.';
 
     // 바로 다음 DAY로 넘어갈 수 있게 한다. 홈까지 갔다 오지 않아도 된다.
     const next = day && !nothing ? State.days.find(d => d.day === day + 1) : null;
@@ -1198,6 +1214,8 @@ function prevCard() {
   s.index--;
   const id = s.queue[s.index].id;
   if (s.undo[s.index] !== undefined) {
+    // 채점 전에 기록이 없었으면 그때 '처음 본 단어'로 셌다는 뜻이다
+    Store.unlog(todayISO(), s.undo[s.index] === null);
     if (s.undo[s.index]) Store.data.words[id] = s.undo[s.index];
     else delete Store.data.words[id];
     delete s.undo[s.index];
