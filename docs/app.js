@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = 'a1d965e7';
+const BUILD = '9e9c5b3e';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -913,10 +913,7 @@ function sensesHTML(w) {
 function cardBackHTML(w) {
   const examples = w.examples.map(e => `
     <div class="ex">
-      <div class="en">${escapeHTML(e.en)}${e.generated ? '<span class="gen">생성</span>' : ''}${
-        Speech.supported() ? `<button class="say" data-say="${escapeHTML(e.en)}" aria-label="예문 듣기">`
-          + `<svg viewBox="0 0 24 24" class="ico"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>`
-          + `</button>` : ''}</div>
+      <div class="en">${escapeHTML(e.en)}${e.generated ? '<span class="gen">생성</span>' : ''}</div>
       ${e.ko ? `<div class="ko">${escapeHTML(e.ko)}${
         // 영어는 원문 그대로고 해석만 우리가 붙인 경우. 예문 자체를 만든
         // '생성'과는 다르므로 구분해서 표시한다.
