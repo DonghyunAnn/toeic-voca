@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = 'c6c83ac4';
+const BUILD = 'ec8dc3fb';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -32,7 +32,8 @@ const DEFAULTS = {
   // 처음 켰을 때의 값. 영->한으로 시작하고 등급은 교재(필수·만점)까지만 켠다.
   // 추가 어휘는 교재를 뗀 뒤에 켜는 것이라 기본으로 섞지 않는다.
   settings: { direction: 'en2ko', newPerDay: -1, onlyWithExample: false, autoplay: false,
-              tiers: ['core', 'bonus'], theme: 'system', quizAffectsBox: false },
+              tiers: ['core', 'bonus'], theme: 'system', quizAffectsBox: false,
+              quizType: 'meaning', examDate: '', targetPasses: 4 },
   words: {},
   days: {},
   session: null,
@@ -46,6 +47,49 @@ const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 const todayISO = () => new Date().toLocaleDateString('sv-SE');  // YYYY-MM-DD (로컬)
 
 /** 저장된 박스 값을 1~5 정수로 강제한다. 손상된 값이 스케줄을 망가뜨리지 않게. */
+/** 목표 회독을 채우려면 마지막 새 단어를 시험 며칠 전에 시작해야 하나.
+ *
+ *  이 앱에서 회독은 계획에 넣는 숫자가 아니라 박스가 오른 결과다.
+ *  '안다'만 눌러 올라간다고 보면 이렇게 된다:
+ *
+ *      1회 D+0  -> 박스 2      3회 D+6  -> 박스 4
+ *      2회 D+2  -> 박스 3      4회 D+15 -> 박스 5
+ *
+ *  그래서 4회독이 목표면 시험 15일 전까지는 그 단어를 처음 봐야 한다.
+ *  간격(BOX_INTERVALS)이 바뀌면 이 표도 따라 바뀌도록 계산해 둔다.
+ */
+const PASS_LEAD = (() => {
+  const out = {};
+  let day = 0, box = 1;
+  for (let pass = 1; pass <= 6; pass++) {
+    out[pass] = day;
+    box = Math.min(MAX_BOX, box + 1);
+    day += BOX_INTERVALS[box];
+  }
+  return out;
+})();
+
+/** 시험까지 남은 날. 시험일이 없으면 null. */
+function daysToExam() {
+  const iso = Store.settings.examDate;
+  if (!iso) return null;
+  const exam = new Date(iso + 'T00:00:00');
+  const today = new Date(todayISO() + 'T00:00:00');
+  if (isNaN(exam)) return null;
+  return Math.round((exam - today) / 86400000);
+}
+
+/** 시험일과 목표 회독으로 하루 새 단어 수를 역산한다. */
+function examPlan(freshLeft) {
+  const left = daysToExam();
+  if (left === null) return null;
+  const passes = Math.min(6, Math.max(1, Store.settings.targetPasses || 4));
+  const lead = PASS_LEAD[passes];
+  const usable = left - lead;
+  return { left, passes, lead, usable, freshLeft,
+           perDay: usable > 0 ? Math.ceil(freshLeft / usable) : null };
+}
+
 const clampBox = v => Math.min(MAX_BOX, Math.max(1, Math.round(Number(v)) || 1));
 
 function addDays(iso, n) {
@@ -185,6 +229,48 @@ const Audio_ = {
       }
     }));
     return { total: files.length, failed };
+  },
+};
+
+/** 예문을 기기 내장 음성으로 읽어 준다.
+ *
+ *  단어 발음은 mp3로 받아 뒀지만 예문은 없다. 4,305문장을 녹음해 실으면
+ *  수백 MB다. 토익은 절반이 듣기라 눈으로만 보는 것보다는 읽어 주는 편이
+ *  낫고, 내장 음성은 파일도 통신도 0이다. 오프라인에서도 된다.
+ */
+const Speech = {
+  voice: undefined,
+
+  pick() {
+    if (this.voice !== undefined) return this.voice;
+    const all = speechSynthesis.getVoices();
+    if (!all.length) return undefined;      // 아직 안 불러왔다. 다음에 다시.
+    // 미국 영어를 먼저, 없으면 아무 영어나
+    this.voice = all.find(v => v.lang === 'en-US')
+      || all.find(v => v.lang && v.lang.startsWith('en'))
+      || null;
+    return this.voice;
+  },
+
+  supported() {
+    return typeof speechSynthesis !== 'undefined' && typeof SpeechSynthesisUtterance !== 'undefined';
+  },
+
+  speak(text, btn) {
+    if (!this.supported() || !text) return;
+    speechSynthesis.cancel();               // 앞엣것이 남아 겹치지 않게
+    const u = new SpeechSynthesisUtterance(text);
+    const v = this.pick();
+    if (v) u.voice = v;
+    u.lang = (v && v.lang) || 'en-US';
+    u.rate = 0.95;                          // 토익 성우보다 아주 조금 느리게
+    if (btn) {
+      btn.classList.add('playing');
+      const done = () => btn.classList.remove('playing');
+      u.onend = done;
+      u.onerror = done;
+    }
+    speechSynthesis.speak(u);
   },
 };
 
@@ -519,6 +605,42 @@ function inScope(words) {
     (!onlyWithExample || w.examples.length));
 }
 
+/** 시험일을 넣어 두었으면 남은 날과 하루 몫을 알려 준다.
+ *
+ *  '하루에 몇 개'를 감으로 정하는 대신 시험일에서 역산한다. 회독은 박스가
+ *  오른 결과라, 목표 회독마다 마지막 새 단어를 시작해야 하는 시점이 정해진다.
+ */
+function renderExamLine(freshLeft) {
+  const el = $('#exam-line');
+  const plan = examPlan(freshLeft);
+  if (!plan) { el.hidden = true; return; }
+  el.hidden = false;
+
+  if (plan.left < 0) {
+    el.innerHTML = `시험일이 지났습니다 <span class="dim">· 설정에서 날짜를 바꾸거나 지우세요</span>`;
+    return;
+  }
+  const dday = plan.left === 0 ? '오늘이 시험일입니다' : `시험까지 <b>D-${plan.left}</b>`;
+  if (!freshLeft) {
+    el.innerHTML = `${dday} <span class="dim">· 새로 볼 단어가 없습니다. 복습만 하면 됩니다</span>`;
+    return;
+  }
+  if (plan.perDay === null) {
+    // 남은 날이 목표 회독에 필요한 기간보다 짧다
+    const can = Object.entries(PASS_LEAD)
+      .filter(([, lead]) => plan.left - lead > 0)
+      .map(([n]) => Number(n));
+    const best = can.length ? Math.max(...can) : 0;
+    el.innerHTML = `${dday} <span class="dim">· ${plan.passes}회독은 ${plan.lead}일이 필요해 시간이 모자랍니다`
+      + (best ? ` (${best}회독까지 가능)` : '') + `</span>`;
+    return;
+  }
+  el.innerHTML = `${dday} <span class="dim">·</span> ${plan.passes}회독하려면 `
+    + `하루 <b>${plan.perDay.toLocaleString()}개</b> `
+    + `<span class="dim">(${plan.usable}일 안에 ${freshLeft.toLocaleString()}개, `
+    + `마지막 ${plan.lead}일은 복습)</span>`;
+}
+
 /** 홈에 필요한 숫자를 한 번에 센다.
  *
  *  예전에는 전체·본 것·외운 것·틀린 것·기한·박스 분포를 각각 세느라
@@ -571,6 +693,13 @@ const groupTitle = title => (title || '')
 const meaningText = w => w.meaning;
 const posText = w => w.pos;
 
+/** id를 숫자로 바꾼다. 같은 단어가 매번 같은 판정을 받게 하려고 쓴다. */
+function hashOf(id) {
+  let h = 0;
+  for (const ch of id) h = (h * 31 + ch.charCodeAt(0)) | 0;
+  return Math.abs(h);
+}
+
 /** 이 카드를 어느 방향으로 낼지 결정한다. */
 function directionFor(id) {
   const dir = Store.settings.direction;
@@ -592,7 +721,10 @@ function sensesHTML(w) {
 function cardBackHTML(w) {
   const examples = w.examples.map(e => `
     <div class="ex">
-      <div class="en">${escapeHTML(e.en)}${e.generated ? '<span class="gen">생성</span>' : ''}</div>
+      <div class="en">${escapeHTML(e.en)}${e.generated ? '<span class="gen">생성</span>' : ''}${
+        Speech.supported() ? `<button class="say" data-say="${escapeHTML(e.en)}" aria-label="예문 듣기">`
+          + `<svg viewBox="0 0 24 24" class="ico"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>`
+          + `</button>` : ''}</div>
       ${e.ko ? `<div class="ko">${escapeHTML(e.ko)}${
         // 영어는 원문 그대로고 해석만 우리가 붙인 경우. 예문 자체를 만든
         // '생성'과는 다르므로 구분해서 표시한다.
@@ -634,6 +766,8 @@ function renderHome() {
     ? (due && fresh ? `복습 ${due}개 + 새 단어 ${fresh}개`
       : due ? `복습 ${due}개` : `새 단어 ${fresh}개`)
     : (freshTotal ? '오늘 몫은 끝났습니다' : '모든 단어를 다 봤습니다');
+
+  renderExamLine(freshTotal);
   $('#start-review').disabled = !(due || fresh);
 
   const learned = seen;
@@ -1113,6 +1247,13 @@ function quizPool() {
 }
 
 function renderQuizSetup() {
+  const qtype = Store.settings.quizType || 'meaning';
+  for (const b of $$('#quiz-type button')) b.classList.toggle('on', b.dataset.qtype === qtype);
+  $('#quiz-type-hint').textContent =
+    qtype === 'cloze' ? '예문에서 단어를 지우고 고르게 합니다. 토익 Part 5와 같은 모양입니다.'
+    : qtype === 'both' ? '단어마다 둘 중 하나로 냅니다.'
+    : '단어를 주고 뜻을 고르게 합니다. 방향은 설정의 출제 방향을 따릅니다.';
+
   const scope = $('#quiz-scope button.on').dataset.scope;
   const chips = $('#quiz-day-chips');
   chips.hidden = scope !== 'day';
@@ -1138,8 +1279,39 @@ function renderQuizSetup() {
   $('#quiz-start').disabled = n < 4;
 }
 
+/** 예문에서 표제어를 찾아 빈칸으로 바꾼다.
+ *
+ *  토익 Part 5가 정확히 이 모양이다. 뜻만 맞히면 'hold = 들다'는 알아도
+ *  "A man is ___ a piece of wood"에서는 못 고른다.
+ *
+ *  표제어가 그대로 있지는 않다. hold -> holding, pass -> passing처럼 변형돼
+ *  있어서 앞부분만 보고 찾는다. 여러 단어짜리 표제어(take off)는 첫 단어를
+ *  기준으로 잡고 뒤는 그대로 둔다.
+ *
+ *  못 찾으면 null. 그런 단어는 뜻 맞히기로 낸다.
+ */
+function clozeFrom(word) {
+  const first = (word.headword.match(/[A-Za-z][A-Za-z'-]*/) || [])[0];
+  if (!first || first.length < 3) return null;
+  // 어간만 남긴다. hold->hol, arrange->arran (굴절돼도 앞부분은 남는다)
+  const stem = first.slice(0, Math.max(3, first.length - 3));
+  const re = new RegExp('\\b' + stem.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + "[A-Za-z'-]*", 'i');
+  for (const e of word.examples) {
+    const m = e.en.match(re);
+    if (!m) continue;
+    // 너무 짧게 남은 문장은 문제가 안 된다
+    if (e.en.split(/\s+/).length < 4) continue;
+    return { sentence: e.en.replace(re, '______'), ko: e.ko || '', hit: m[0] };
+  }
+  return null;
+}
+
 function buildQuestion(word, pool, dayCache) {
-  const dir = directionFor(word.id);
+  // 빈칸 모드에서는 문장을 주고 단어를 고르게 한다. 방향 설정과 무관하다.
+  const wantCloze = Store.settings.quizType === 'cloze'
+    || (Store.settings.quizType === 'both' && (hashOf(word.id) & 1));
+  const cloze = wantCloze ? clozeFrom(word) : null;
+  const dir = cloze ? 'ko2en' : directionFor(word.id);
   const answer = dir === 'en2ko' ? meaningText(word) : word.headword;
 
   // 오답 선택지도 지금 범위 안에서만 뽑는다.
@@ -1171,7 +1343,9 @@ function buildQuestion(word, pool, dayCache) {
 
   return {
     id: word.id,
-    prompt: dir === 'en2ko' ? word.headword : meaningText(word),
+    prompt: cloze ? cloze.sentence : (dir === 'en2ko' ? word.headword : meaningText(word)),
+    sub: cloze ? cloze.ko : '',
+    cloze: !!cloze,
     answer,
     options: shuffle([answer, ...distractors]),
   };
@@ -1208,7 +1382,13 @@ function renderQuiz() {
 
   $('#quiz-counter').textContent = `${q.index + 1}/${q.total}`;
   $('#quiz-progress').style.transform = `scaleX(${q.index / q.total})`;
-  $('#quiz-question').textContent = cur.prompt;
+  const qEl = $('#quiz-question');
+  qEl.textContent = cur.prompt;
+  qEl.classList.toggle('cloze', !!cur.cloze);
+  // 빈칸 문제에는 해석을 밑에 깔아 준다. 문장을 못 읽으면 문제가 안 된다.
+  const subEl = $('#quiz-sub');
+  subEl.hidden = !cur.sub;
+  subEl.textContent = cur.sub || '';
   $('#quiz-next').hidden = true;
 
   const box = $('#quiz-options');
@@ -1309,6 +1489,19 @@ function renderSettings() {
 
   // homeStats가 이미 한 바퀴로 세어 준다. split()을 또 돌려 정렬까지 할 일이 아니다.
   const { freshTotal } = homeStats();
+
+  const examEl = $('#exam-date');
+  if (document.activeElement !== examEl) examEl.value = Store.settings.examDate || '';
+  $('#exam-clear').hidden = !Store.settings.examDate;
+  const passes = Math.min(6, Math.max(1, Store.settings.targetPasses || 4));
+  for (const b of $$('#set-passes button')) b.classList.toggle('on', Number(b.dataset.passes) === passes);
+  const plan = examPlan(freshTotal);
+  $('#exam-hint').textContent = !plan
+    ? '시험 날짜를 넣으면 남은 단어를 며칠에 나눠 볼지 역산해 알려 줍니다. 안 넣어도 됩니다.'
+    : plan.perDay
+      ? `${plan.passes}회독은 마지막 새 단어를 시험 ${plan.lead}일 전까지 시작해야 채워집니다. `
+        + `박스가 1→${Math.min(MAX_BOX, plan.passes + 1)}까지 오르는 데 그만큼 걸립니다.`
+      : `남은 ${plan.left}일로는 ${plan.passes}회독이 어렵습니다. 회독을 줄이거나 범위를 좁히세요.`;
   $('#new-count-max').textContent = freshTotal ? `1 ~ ${freshTotal.toLocaleString()}` : '';
   if (newPerDay < 0) {
     $('#limit-hint').textContent =
@@ -1354,12 +1547,33 @@ function renderSettings() {
     <div><dt>앱 버전</dt><dd>${escapeHTML(BUILD)}</dd></div>`;
 }
 
-function exportProgress() {
-  const blob = new Blob([JSON.stringify(Store.data, null, 1)], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
+/** 진도를 내보낸다.
+ *
+ *  기기마다 저장소가 따로라 폰에서 본 진도가 PC에는 없다. 파일로 떨어뜨리면
+ *  다시 찾아 옮겨야 하는데, 공유 시트를 쓸 수 있으면 에어드롭이나 메신저로
+ *  한 번에 보낼 수 있다. 안 되는 기기에서는 예전처럼 파일로 떨어진다.
+ */
+async function exportProgress() {
+  const name = `toeic-voca-progress-${todayISO()}.json`;
+  const text = JSON.stringify(Store.data, null, 1);
+
+  if (navigator.canShare) {
+    try {
+      const file = new File([text], name, { type: 'application/json' });
+      if (navigator.canShare({ files: [file] })) {
+        await navigator.share({ files: [file], title: '토익 단어 진도' });
+        return;                       // 취소해도 여기서 끝낸다 (아래 catch로 감)
+      }
+    } catch (e) {
+      if (e && e.name === 'AbortError') return;   // 사용자가 취소한 것
+      // 공유가 안 되는 상황이면 파일로 떨어뜨린다
+    }
+  }
+
+  const url = URL.createObjectURL(new Blob([text], { type: 'application/json' }));
   const a = document.createElement('a');
   a.href = url;
-  a.download = `toeic-voca-progress-${todayISO()}.json`;
+  a.download = name;
   a.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
   toast('진도를 파일로 저장했습니다');
@@ -1510,6 +1724,13 @@ function bind() {
   bindLongPress();
   // 발음 버튼은 카드 안에 있다. 캡처 단계에서 잡아야 뒤집기보다 먼저 처리된다.
   document.addEventListener('click', e => {
+    const say = e.target.closest('[data-say]');
+    if (say) {
+      e.stopPropagation();
+      e.preventDefault();
+      Speech.speak(say.dataset.say, say);
+      return;
+    }
     const speak = e.target.closest('[data-audio]');
     if (!speak) return;
     e.stopPropagation();
@@ -1622,6 +1843,35 @@ function bind() {
     $('#quiz-count').value = '';        // 버튼을 고르면 직접 입력은 비운다
     renderQuizSetup();
   };
+  $('#exam-date').addEventListener('change', e => {
+    Store.settings.examDate = e.target.value || '';
+    Store.save();
+    renderSettings();
+    renderHome();
+  });
+  $('#exam-clear').onclick = () => {
+    Store.settings.examDate = '';
+    Store.save();
+    renderSettings();
+    renderHome();
+  };
+  $('#set-passes').onclick = e => {
+    const b = e.target.closest('[data-passes]');
+    if (!b) return;
+    Store.settings.targetPasses = Number(b.dataset.passes);
+    Store.save();
+    renderSettings();
+    renderHome();
+  };
+
+  $('#quiz-type').onclick = e => {
+    const b = e.target.closest('[data-qtype]');
+    if (!b) return;
+    Store.settings.quizType = b.dataset.qtype;
+    Store.save();
+    renderQuizSetup();
+  };
+
   const quizCountLater = debounce(renderQuizSetup, 250);
   $('#quiz-count').addEventListener('input', () => {
     for (const x of $$('#quiz-length button')) x.classList.remove('on');

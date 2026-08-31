@@ -178,6 +178,16 @@ button { background: none; border: 0; cursor: pointer; }
 .review-row { display: flex; gap: .5rem; margin-top: .5rem; }
 .review-row .btn { flex: 1; }
 .word-item .miss { font-size: .625rem; color: var(--again); flex: none; }
+/* 시험일 안내. 홈 통계 바로 위에 한 줄. */
+.exam-line {
+  margin-top: .75rem; padding: .625rem .75rem;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--muted); font-size: .8125rem; color: var(--fg); line-height: 1.5;
+}
+.exam-line b { font-weight: 650; }
+.exam-line .dim { color: var(--muted-fg); }
+.sub-label { margin: .875rem 0 .375rem; font-size: .8125rem; color: var(--muted-fg); }
+
 .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; margin-top: .75rem; }
 /* 통계와 박스 칸은 누르면 그 단어들의 목록이 열린다.
    숫자만 보이고 무슨 단어인지 알 수 없으면 분포를 봐도 할 일이 없다. */
@@ -281,6 +291,19 @@ button { background: none; border: 0; cursor: pointer; }
   font-style: normal; min-width: 0;
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
+/* 예문 읽어주기. 문장 끝에 조용히 붙는 작은 버튼이라
+   단어 발음 버튼처럼 테두리를 두르지 않는다. */
+.say {
+  display: inline-grid; place-items: center; vertical-align: -.1875rem;
+  width: 1.375rem; height: 1.375rem; margin-left: .25rem;
+  border-radius: 999px; color: var(--muted-fg); background: none;
+}
+.say .ico { width: .875rem; height: .875rem; }
+.say::after { content: ''; position: absolute; inset: -.375rem; border-radius: inherit; }
+.say { position: relative; }
+.say:active { background: var(--accent); color: var(--fg); }
+.say.playing { background: var(--primary); color: var(--primary-fg); }
+
 /* 듣기 버튼.
  *
  * 예전에는 테두리도 배경도 없이 아이콘만 있어 버튼으로 보이지 않았고,
@@ -475,6 +498,13 @@ button { background: none; border: 0; cursor: pointer; }
   font-size: 1.5rem; font-weight: 600; letter-spacing: -.02em;
   text-align: center; padding: 2.25rem 1rem 2.5rem; word-break: break-word;
 }
+/* 빈칸 문제는 문장이라 길다. 뜻 한 단어일 때보다 작고 왼쪽 정렬로 둔다. */
+.quiz-question.cloze { font-size: 1.125rem; text-align: left; line-height: 1.5; }
+.quiz-sub {
+  margin: -.5rem 0 1rem; text-align: center;
+  font-size: .8125rem; color: var(--muted-fg); line-height: 1.5;
+}
+.quiz-question.cloze + .quiz-sub { text-align: left; }
 .options { display: grid; gap: .5rem; }
 .options button {
   border: 1px solid var(--border); border-radius: var(--radius);
