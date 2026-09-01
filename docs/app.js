@@ -4,11 +4,14 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = 'bbd59a61';
+const BUILD = '56a1c88d';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
 const THEME_KEY = 'toeic-voca-theme';
+// sw.js의 AUDIO와 같은 이름이어야 한다. 사용자가 직접 내려받은 24MB라
+// 앱을 갈아엎을 때도 이것만은 남긴다.
+const AUDIO_CACHE = 'toeic-voca-audio';
 // 상자별 복습 간격(일). 원본 Leitner는 칸 너비(1·2·5·8·14cm)로 정했고,
 // 널리 쓰이는 변형은 1·2·4·7·14다. 그 사이값을 쓴다.
 const BOX_INTERVALS = { 1: 1, 2: 2, 3: 4, 4: 9, 5: 14 };
@@ -86,12 +89,24 @@ function daysToExam() {
 function examPlan(freshLeft) {
   const left = daysToExam();
   if (left === null) return null;
-  const passes = Math.min(6, Math.max(1, Store.settings.targetPasses || 4));
+  const passes = clampPasses(Store.settings.targetPasses);
   const lead = PASS_LEAD[passes];
   const usable = left - lead;
   return { left, passes, lead, usable, freshLeft,
            perDay: usable > 0 ? Math.ceil(freshLeft / usable) : null };
 }
+
+/** 저장소에서 온 값이 진짜 평범한 객체일 때만 쓴다.
+ *  배열이나 null이 들어오면 기록이 배열인 채로 살아남아 조용히 어긋난다. */
+const plainObject = v =>
+  (v && typeof v === 'object' && !Array.isArray(v)) ? v : {};
+
+/** 목표 회독. 숫자가 아니면 Math.max가 NaN을 내고 PASS_LEAD[NaN]이
+ *  undefined가 되어 '몇 일이 필요해'가 undefined로 찍힌다. clampBox와 같은 자리다. */
+const clampPasses = v => {
+  const n = Math.round(Number(v));
+  return Number.isFinite(n) ? Math.min(6, Math.max(1, n)) : 4;
+};
 
 const clampBox = v => Math.min(MAX_BOX, Math.max(1, Math.round(Number(v)) || 1));
 
@@ -388,9 +403,11 @@ const Store = {
           settings: { ...DEFAULTS.settings,
                       ...(parsed.settings && typeof parsed.settings === 'object'
                           && !Array.isArray(parsed.settings) ? parsed.settings : {}) },
-          words: parsed.words || {},
-          days: parsed.days || {},
-          log: parsed.log || {},
+          // 손상된 저장소에서 배열이나 원시값이 들어오면 그대로 굳는다.
+          // 배열도 typeof는 'object'라 그것만으로는 못 거른다.
+          words: plainObject(parsed.words),
+          days: plainObject(parsed.days),
+          log: plainObject(parsed.log),
         };
       }
       // 이어보기는 따로 담아 두었다 (본 진도와 함께 쓰면 카드마다 62KB가 더 붙는다)
@@ -676,8 +693,12 @@ const Scheduler = {
     }
     rec.lastSeen = today;
 
-    const day = Number(id.slice(1, 3));
-    Store.data.days[day] = { lastStudied: todayISO() };
+    // 예전에는 id에서 'd01'을 잘라 썼는데, 추가 어휘는 'x-voucher' 꼴이라
+    // Number('-v')가 NaN이 되어 days.NaN에 쌓였다. 단어가 제 DAY를 알고 있다.
+    const w = State.byId.get(id);
+    if (w && Number.isFinite(w.day)) {
+      Store.data.days[w.day] = { lastStudied: todayISO() };
+    }
     Store.save();
     return rec;
   },
@@ -1676,9 +1697,16 @@ function renderQuiz() {
 
 function answerQuiz(choice) {
   const q = State.quiz;
-  const cur = q.questions[q.index];
+  if (!q || q.index >= q.total) return;
   const box = $('#quiz-options');
+  // locked는 pointer-events만 막는다. 답을 고른 뒤에도 그 버튼에 포커스가
+  // 남아 있어 Enter나 Space로 다시 눌리면 같은 문항이 거듭 채점됐다.
+  // 점수·틀린 목록·오늘 개수·박스까지 전부 부풀려진다.
+  if (box.classList.contains('locked')) return;
   box.classList.add('locked');
+  for (const b of $$('button', box)) b.disabled = true;
+
+  const cur = q.questions[q.index];
 
   const ok = choice === cur.answer;
   if (ok) q.correct++;
@@ -1813,7 +1841,7 @@ function renderSettings() {
     : '날짜 선택';
   $('#exam-dday').textContent = left === null ? ''
     : left > 0 ? `D-${left}` : left === 0 ? 'D-DAY' : `D+${-left}`;
-  const passes = Math.min(6, Math.max(1, Store.settings.targetPasses || 4));
+  const passes = clampPasses(Store.settings.targetPasses);
   for (const b of $$('#set-passes button')) b.classList.toggle('on', Number(b.dataset.passes) === passes);
   const plan = examPlan(freshTotal);
   // 계획이 낸 숫자를 하루 몫에 바로 넣는다. 예전에는 홈에서 '하루 127개'를
@@ -2587,7 +2615,11 @@ async function checkVersion() {
     sessionStorage.setItem('toeic-voca-healing', build);
     Store.flush();
     for (const r of await navigator.serviceWorker.getRegistrations()) await r.unregister();
-    for (const k of await caches.keys()) await caches.delete(k);
+    // 발음 캐시는 남긴다. sw.js의 activate는 이걸 지키는데 여기서 통째로
+    // 지워 버리면, 앱을 고칠 때마다 사용자가 24MB를 셀룰러로 다시 받는다.
+    for (const k of await caches.keys()) {
+      if (k !== AUDIO_CACHE) await caches.delete(k);
+    }
     location.reload();
   } catch (e) {
     // 오프라인이면 그냥 넘어간다. 다음에 연결됐을 때 다시 본다.
