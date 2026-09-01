@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = '1aeb7a4d';
+const BUILD = 'fb261a6b';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -359,22 +359,6 @@ const Speech = {
   },
 
   /** 왜 조용한지 알아야 고칠 수 있다. 설정에서 이걸 보여 준다. */
-  probe() {
-    const standalone = matchMedia('(display-mode: standalone)').matches
-      || navigator.standalone === true;
-    const voices = this.supported() ? speechSynthesis.getVoices() : [];
-    const en = voices.filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
-    const v = this.pick();
-    return {
-      지원: this.supported(),
-      홈화면앱: standalone,
-      목소리: voices.length,
-      영어목소리: en.length,
-      고른것: v ? `${v.name} (${v.lang})` : '없음',
-      말하는중: this.supported() ? speechSynthesis.speaking : false,
-      멈춤: this.supported() ? speechSynthesis.paused : false,
-    };
-  },
 
   speak(text, btn) {
     if (!this.supported() || !text) return;
@@ -2472,15 +2456,7 @@ function bindSettings() {
 
   $('#voice-test').onclick = () => {
     Speech.prime();
-    const p = Speech.probe();
-    const lines = [
-      `내장 음성 ${p.지원 ? '지원함' : '지원 안 함'}`,
-      `${p.홈화면앱 ? '홈 화면 앱' : '브라우저'}에서 실행 중`,
-      `영어 목소리 ${p.영어목소리}개 · ${p.고른것}`,
-    ];
-    $('#voice-report').textContent = lines.join(' · ');
-    $('#voice-report').hidden = false;
-    Speech.warned = false;
+    Speech.warned = false;         // 안 되면 이번엔 다시 알려 준다
     Speech.speak('This is a test sentence for the pronunciation check.', $('#voice-test'));
   };
 
