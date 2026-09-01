@@ -9,7 +9,15 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="TOEIC VOCA">
-<link rel="preload" href="words.json" as="fetch" crossorigin>
+<!-- 첫 방문에만 미리 받는다. 서비스워커가 붙은 뒤에는 preload한 응답이 캐시에서
+     온 응답과 짝이 맞지 않아 그대로 버려지는데, 그게 매 실행마다 425KB 헛걸음이 된다. -->
+<script>
+  if (!navigator.serviceWorker || !navigator.serviceWorker.controller) {
+    const l = document.createElement('link');
+    l.rel = 'preload'; l.as = 'fetch'; l.href = 'words.json'; l.crossOrigin = '';
+    document.head.appendChild(l);
+  }
+</script>
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
