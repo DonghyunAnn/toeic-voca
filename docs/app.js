@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = '1f2a2967';
+const BUILD = 'bbd59a61';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -1355,7 +1355,24 @@ function filteredWords() {
     });
   }
   if (!q) return pool;
-  return pool.filter(w => w.q.includes(q));
+
+  // 찾은 것을 가까운 순서로 내놓는다. 검색어는 표제어·뜻·예문을 통째로
+  // 뒤지기 때문에, 그냥 두면 'transfer'를 쳤을 때 예문에 그 말이 든
+  // 다른 단어가 먼저 나오고 정작 transfer가 세 번째에 온다.
+  return pool.filter(w => w.q.includes(q))
+    .map((w, i) => [searchRank(w, q), i, w])          // i로 같은 순위 안의 차례를 지킨다
+    .sort((a, b) => a[0] - b[0] || a[1] - b[1])
+    .map(x => x[2]);
+}
+
+/** 검색어와 얼마나 가까운가. 작을수록 위로 온다. */
+function searchRank(w, q) {
+  const hw = w.headword.toLowerCase();
+  if (hw === q) return 0;                              // 딱 그 단어
+  if (hw.startsWith(q)) return 1;                      // transfer -> transferable
+  if (hw.includes(q)) return 2;                        // 표제어 안에 들어 있음
+  if ((w.meaning || '').toLowerCase().includes(q)) return 3;   // 뜻에 있음
+  return 4;                                            // 예문에만 있음
 }
 
 function renderList() {
