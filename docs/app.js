@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = '56a1c88d';
+const BUILD = '9cde12a6';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -135,6 +135,30 @@ function shuffle(arr) {
 function escapeHTML(s) {
   return String(s).replace(/[&<>"']/g, c =>
     ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+/** data-속성 이름을 dataset 키로. theme-opt → themeOpt */
+const dataKey = a => a.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+
+/** 세그먼트 버튼 묶음을 배선한다. 눌린 버튼의 data 값을 넘겨 준다. */
+function bindPick(sel, attr, fn) {
+  const key = dataKey(attr);
+  $(sel).onclick = e => {
+    const b = e.target.closest(`[data-${attr}]`);
+    if (b && !b.disabled) fn(b.dataset[key], b);
+  };
+}
+
+/** 세그먼트 버튼 묶음에서 지금 값에 해당하는 것만 켠다. */
+function markPick(sel, attr, on) {
+  const key = dataKey(attr);
+  for (const b of $$(`${sel} button`)) b.classList.toggle('on', !!on(b.dataset[key], b));
+}
+
+/** 등급 하나를 켜고 끈다. 전부 끄는 것은 막는다 — 하나는 남겨둔다. */
+function toggleTier(cur, tier) {
+  const next = cur.includes(tier) ? cur.filter(t => t !== tier) : [...cur, tier];
+  return next.length ? next : null;
 }
 
 let toastTimer;
@@ -908,13 +932,6 @@ const dayTitle = day => {
 };
 // 원본 표기가 들쭉날쭉하다. '필수 어휘'와 '필수어휘'가 섞여 있고 ETS 접두어도
 // 붙었다 말았다 한다. 그대로 묶으면 DAY 5·6·7이 세 덩어리로 갈린다.
-const groupTitle = title => (title || '')
-  .replace(/\s*\(\d+\)\s*$/, '')
-  .replace(/^ETS\s+/, '')
-  .replace(/필수\s*어휘/, '필수 어휘')
-  .replace(/\s+/g, ' ')
-  .trim();
-
 const meaningText = w => w.meaning;
 const posText = w => w.pos;
 
@@ -1347,8 +1364,7 @@ function bindSwipe(el) {
 /* ── 목록 ─────────────────────────────────────────── */
 
 function renderListTier() {
-  for (const b of $$('#list-tier button'))
-    b.classList.toggle('on', State.list.tiers.includes(b.dataset.tier));
+  markPick('#list-tier', 'tier', v => State.list.tiers.includes(v));
 }
 
 function renderDayChips() {
@@ -1500,7 +1516,7 @@ function quizPool() {
 
 function renderQuizSetup() {
   const qtype = Store.settings.quizType || 'meaning';
-  for (const b of $$('#quiz-type button')) b.classList.toggle('on', b.dataset.qtype === qtype);
+  markPick('#quiz-type', 'qtype', v => v === qtype);
   $('#quiz-type-hint').textContent =
     qtype === 'cloze' ? '예문에서 단어를 지우고 고르게 합니다. 토익 Part 5와 같은 모양입니다.'
     : qtype === 'both' ? '단어마다 둘 중 하나로 냅니다.'
@@ -1789,33 +1805,27 @@ function tierCounts() {
 
 function renderSettings() {
   const { direction, newPerDay, onlyWithExample } = Store.settings;
-  for (const b of $$('#set-direction button')) b.classList.toggle('on', b.dataset.dir === direction);
+  markPick('#set-direction', 'dir', v => v === direction);
   // 프리셋에 없는 값은 직접 입력 칸에 담는다
   const presets = $$('#set-limit button').map(b => Number(b.dataset.limit));
   const custom = !presets.includes(newPerDay);
-  for (const b of $$('#set-limit button'))
-    b.classList.toggle('on', !custom && Number(b.dataset.limit) === newPerDay);
+  markPick('#set-limit', 'limit', v => !custom && Number(v) === newPerDay);
   const nc = $('#new-count');
   if (document.activeElement !== nc) nc.value = custom ? String(newPerDay) : '';
-  for (const b of $$('#set-scope button'))
-    b.classList.toggle('on', (b.dataset.scope === 'example') === onlyWithExample);
+  markPick('#set-scope', 'scope', v => (v === 'example') === onlyWithExample);
 
-  for (const b of $$('#set-quizgrade button'))
-    b.classList.toggle('on', (b.dataset.quizgrade === 'on') === !!Store.settings.quizAffectsBox);
-  for (const b of $$('#set-theme button'))
-    b.classList.toggle('on', b.dataset.themeOpt === (Store.settings.theme || 'system'));
-  for (const b of $$('#set-tier button'))
-    b.classList.toggle('on', Store.settings.tiers.includes(b.dataset.tier));
+  markPick('#set-quizgrade', 'quizgrade', v => (v === 'on') === !!Store.settings.quizAffectsBox);
+  markPick('#set-theme', 'theme-opt', v => v === (Store.settings.theme || 'system'));
+  markPick('#set-tier', 'tier', v => Store.settings.tiers.includes(v));
   const counts = tierCounts();
   $('#tier-hint').textContent =
     `필수 ${counts.core.toLocaleString()} → 만점 ${counts.bonus.toLocaleString()} → ` +
     `추가 ${counts.extra.toLocaleString()} 순서로 끝내면 됩니다. ` +
     '필수와 만점은 ETS 공식 교재(DAY 1~30), 추가는 독종반 모바일 단어장(DAY 31~40)에서 ' +
     '왔습니다. 추가 등급에는 발음이 없습니다.';
-  for (const b of $$('#set-autoplay button'))
-    b.classList.toggle('on', (b.dataset.autoplay === 'on') === Store.settings.autoplay);
+  markPick('#set-autoplay', 'autoplay', v => (v === 'on') === Store.settings.autoplay);
   const vm = Store.settings.voiceMode || 'file';
-  for (const b of $$('#set-voice button')) b.classList.toggle('on', b.dataset.voice === vm);
+  markPick('#set-voice', 'voice', v => v === vm);
   const withAudio = State.meta.withAudio || 0;
   const noAudio = (State.meta.wordCount || 0) - withAudio;
   $('#audio-hint').textContent = vm === 'tts'
@@ -1842,7 +1852,7 @@ function renderSettings() {
   $('#exam-dday').textContent = left === null ? ''
     : left > 0 ? `D-${left}` : left === 0 ? 'D-DAY' : `D+${-left}`;
   const passes = clampPasses(Store.settings.targetPasses);
-  for (const b of $$('#set-passes button')) b.classList.toggle('on', Number(b.dataset.passes) === passes);
+  markPick('#set-passes', 'passes', v => Number(v) === passes);
   const plan = examPlan(freshTotal);
   // 계획이 낸 숫자를 하루 몫에 바로 넣는다. 예전에는 홈에서 '하루 127개'를
   // 읽고 여기에 직접 127을 쳐 넣어야 했다.
@@ -2102,7 +2112,7 @@ function navigate(view) {
   Sheet.close();
   State.view = view;
   for (const v of $$('.view')) v.classList.toggle('on', v.dataset.view === view);
-  for (const b of $$('#tabbar button')) b.classList.toggle('on', b.dataset.nav === view);
+  markPick('#tabbar', 'nav', v => v === view);
   window.scrollTo(0, 0);
 
   if (view === 'home') renderHome();
@@ -2207,6 +2217,16 @@ function bindLongPress() {
 }
 
 function bind() {
+  bindShell();
+  bindHome();
+  bindStudy();
+  bindList();
+  bindQuiz();
+  bindSettings();
+}
+
+/** 화면을 가리지 않는 배선: 발음, 이동, 단축키, 시스템 테마 */
+function bindShell() {
   bindLongPress();
   // 발음 버튼은 카드 안에 있다. 캡처 단계에서 잡아야 뒤집기보다 먼저 처리된다.
   document.addEventListener('click', e => {
@@ -2240,18 +2260,40 @@ function bind() {
     }
   });
 
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    if ((Store.settings.theme || 'system') === 'system') Theme.apply('system');
+  });
+
+  // 데스크톱 단축키
+  document.addEventListener('keydown', e => {
+    if (State.view !== 'study' || e.target.matches('input, select, textarea')) return;
+    if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCard(); }
+    if (e.key === '1') gradeCard('again');
+    if (e.key === '2') gradeCard('hard');
+    if (e.key === '3') gradeCard('good');
+    if (e.key === 'ArrowLeft') prevCard();
+    if (e.key === 'ArrowRight') skipCard();
+  });
+}
+
+function bindHome() {
   $('#start-review').onclick = () => startStudy();
   $('#review-learned').onclick = () => startStudy(null, 'learned', { resume: false });
   // 외우지 않고 훑어만 보고 싶을 때가 있다
   $('#review-learned').oncontextmenu = e => { e.preventDefault(); openStage('seen'); };
   $('#review-weak').onclick = () => startStudy(null, 'weak', { resume: false });
-  $('#toggle-weak').onclick = e => {
-    State.list.weakOnly = !State.list.weakOnly;
-    e.currentTarget.setAttribute('aria-pressed', String(State.list.weakOnly));
-    e.currentTarget.classList.toggle('on', State.list.weakOnly);
-    State.list.shown = LIST_PAGE;
-    renderList();
-  };
+  // 홈의 박스 칸과 통계 칸을 누르면 그 단어들을 목록으로 연다
+  for (const sel of ['#boxbar', '#home-stats']) {
+    $(sel).addEventListener('click', e => {
+      const b = e.target.closest('[data-stage]');
+      if (!b || b.disabled) return;
+      const v = b.dataset.stage;
+      openStage(v === 'all' ? null : (v === 'seen' || v === 'new') ? v : Number(v));
+    });
+  }
+}
+
+function bindStudy() {
   $('#flashcard').onclick = () => { if (!justSwiped()) flipCard(); };
   bindSwipe($('#flashcard'));
   $('#study-exit').onclick = () => { State.study = null; navigate('home'); };
@@ -2273,29 +2315,10 @@ function bind() {
     const day = State.study && State.study.dayFilter;
     if (day) startStudy(day, 'all', { resume: false });
   };
-  $('#list-to-study').onclick = () => {
-    if (State.list.day) startStudy(State.list.day, 'day');
-  };
-  // 홈의 박스 칸과 통계 칸을 누르면 그 단어들을 목록으로 연다
-  for (const sel of ['#boxbar', '#home-stats']) {
-    $(sel).addEventListener('click', e => {
-      const b = e.target.closest('[data-stage]');
-      if (!b || b.disabled) return;
-      const v = b.dataset.stage;
-      openStage(v === 'all' ? null : (v === 'seen' || v === 'new') ? v : Number(v));
-    });
-  }
-  $('#list-stage').onclick = () => {
-    State.list.stage = null;
-    State.list.shown = LIST_PAGE;
-    renderList();
-  };
+  bindPick('#grade-bar', 'grade', v => gradeCard(v));
+}
 
-  $('#grade-bar').onclick = e => {
-    const b = e.target.closest('[data-grade]');
-    if (b) gradeCard(b.dataset.grade);
-  };
-
+function bindList() {
   const searchLater = debounce(renderList, 150);
   $('#search').addEventListener('input', e => {
     State.list.query = e.target.value;
@@ -2309,26 +2332,144 @@ function bind() {
     e.currentTarget.textContent = State.list.masked ? '뜻 보이기' : '뜻 가리기';
     renderList();
   };
+  $('#toggle-weak').onclick = e => {
+    State.list.weakOnly = !State.list.weakOnly;
+    e.currentTarget.setAttribute('aria-pressed', String(State.list.weakOnly));
+    e.currentTarget.classList.toggle('on', State.list.weakOnly);
+    State.list.shown = LIST_PAGE;
+    renderList();
+  };
+  bindPick('#list-tier', 'tier', v => {
+    const next = toggleTier(State.list.tiers, v);
+    if (!next) return;
+    State.list.tiers = next;
+    State.list.shown = LIST_PAGE;
+    renderListTier();
+    renderList();
+  });
+  $('#list-stage').onclick = () => {
+    State.list.stage = null;
+    State.list.shown = LIST_PAGE;
+    renderList();
+  };
+  $('#list-to-study').onclick = () => {
+    if (State.list.day) startStudy(State.list.day, 'day');
+  };
+}
 
-  $('#quiz-scope').onclick = e => {
-    const b = e.target.closest('[data-scope]');
-    if (!b) return;
-    for (const x of $$('#quiz-scope button')) x.classList.toggle('on', x === b);
+function bindQuiz() {
+  bindPick('#quiz-scope', 'scope', (v, b) => {
+    markPick('#quiz-scope', 'scope', (_, x) => x === b);
     renderQuizSetup();
-  };
-  $('#quiz-day-chips').onclick = e => {
-    const b = e.target.closest('[data-quizday]');
-    if (!b) return;
-    State.quizDay = Number(b.dataset.quizday);
+  });
+  bindPick('#quiz-day-chips', 'quizday', v => {
+    State.quizDay = Number(v);
     renderQuizSetup();
-  };
-  $('#quiz-length').onclick = e => {
-    const b = e.target.closest('[data-len]');
-    if (!b) return;
-    for (const x of $$('#quiz-length button')) x.classList.toggle('on', x === b);
+  });
+  bindPick('#quiz-length', 'len', (v, b) => {
+    markPick('#quiz-length', 'len', (_, x) => x === b);
     $('#quiz-count').value = '';        // 버튼을 고르면 직접 입력은 비운다
     renderQuizSetup();
+  });
+  const quizCountLater = debounce(renderQuizSetup, 250);
+  $('#quiz-count').addEventListener('input', () => {
+    for (const x of $$('#quiz-length button')) x.classList.remove('on');
+    quizCountLater();
+  });
+  bindPick('#quiz-type', 'qtype', v => {
+    Store.settings.quizType = v;
+    Store.save();
+    renderQuizSetup();
+  });
+  $('#quiz-start').onclick = startQuiz;
+  $('#quiz-next').onclick = nextQuiz;
+  $('#quiz-again').onclick = () => { $('#quiz-result').hidden = true; $('#quiz-setup').hidden = false; renderQuizSetup(); };
+  $('#quiz-exit').onclick = () => { $('#quiz-run').hidden = true; $('#quiz-setup').hidden = false; renderQuizSetup(); };
+  bindPick('#quiz-options', 'opt', v => answerQuiz(v));
+}
+
+function bindSettings() {
+  bindPick('#set-direction', 'dir', v => {
+    Store.settings.direction = v;
+    Store.save();
+    renderSettings();
+  });
+  bindPick('#set-quizgrade', 'quizgrade', v => {
+    Store.settings.quizAffectsBox = v === 'on';
+    Store.save();
+    renderSettings();
+  });
+  bindPick('#set-autoplay', 'autoplay', v => {
+    Store.settings.autoplay = v === 'on';
+    Store.save();
+    renderSettings();
+  });
+  bindPick('#set-voice', 'voice', v => {
+    Store.settings.voiceMode = v;
+    Store.save();
+    renderSettings();
+  });
+  bindPick('#set-theme', 'theme-opt', v => {
+    Store.settings.theme = v;
+    Store.save();
+    Theme.apply(v);
+    renderSettings();
+  });
+  bindPick('#set-passes', 'passes', v => {
+    Store.settings.targetPasses = Number(v);
+    Store.save();
+    renderSettings();
+    renderHome();
+  });
+  bindPick('#set-limit', 'limit', v => {
+    Store.settings.newPerDay = Number(v);
+    $('#new-count').value = '';
+    Store.save();
+    renderSettings();
+    renderHome();
+  });
+  bindPick('#set-tier', 'tier', v => {
+    const next = toggleTier(Store.settings.tiers, v);
+    if (!next) return;
+    Store.settings.tiers = next;
+    delete Store.data.session;         // 범위가 바뀌면 이어보기도 무효다
+    Store.save();
+    State.study = null;
+    renderSettings();
+    renderHome();
+  });
+  bindPick('#set-scope', 'scope', v => {
+    Store.settings.onlyWithExample = v === 'example';
+    delete Store.data.session;
+    Store.save();
+    State.study = null;
+    renderSettings();
+    renderHome();
+  });
+
+  // 화면 다시 그리기는 미룬다. '150'을 치면 1, 15, 150 세 번이 들어오는데
+  // 그때마다 설정과 홈을 통째로 다시 그릴 이유가 없다.
+  const newCountLater = debounce(() => { renderSettings(); renderHome(); }, 250);
+  $('#new-count').addEventListener('input', e => {
+    const v = Math.floor(Number(e.target.value));
+    if (!Number.isFinite(v) || v < 1) return;      // 비우는 중이면 건드리지 않는다
+    Store.settings.newPerDay = v;
+    Store.save();
+    newCountLater();
+  });
+
+  bindCalendar();
+
+  $('#apply-plan').onclick = () => {
+    const plan = examPlan(homeStats().freshTotal);
+    if (!plan || !plan.perDay) return;
+    Store.settings.newPerDay = plan.perDay;
+    Store.save();
+    renderSettings();
+    renderHome();
+    toast(`하루 새 단어를 ${plan.perDay.toLocaleString()}개로 맞췄습니다`);
   };
+
   $('#voice-test').onclick = () => {
     Speech.prime();
     const p = Speech.probe();
@@ -2343,14 +2484,32 @@ function bind() {
     Speech.speak('This is a test sentence for the pronunciation check.', $('#voice-test'));
   };
 
-  $('#set-voice').onclick = e => {
-    const b = e.target.closest('[data-voice]');
-    if (!b) return;
-    Store.settings.voiceMode = b.dataset.voice;
-    Store.save();
-    renderSettings();
+  $('#prefetch-audio').onclick = async e => {
+    const btn = e.currentTarget;
+    btn.disabled = true;
+    const label = btn.textContent;
+    const { total, failed } = await Audio_.prefetch((done, all) => {
+      btn.textContent = `내려받는 중 ${done}/${all}`;
+    });
+    btn.textContent = label;
+    btn.disabled = false;
+    toast(failed ? `${total - failed}개 저장, ${failed}개 실패` : `발음 ${total}개를 저장했습니다`);
   };
 
+  $('#export').onclick = exportProgress;
+  $('#import').onclick = () => $('#import-file').click();
+  $('#import-file').onchange = e => { if (e.target.files[0]) importProgress(e.target.files[0]); };
+  $('#reset').onclick = () => {
+    if (!confirm('학습 진도를 모두 지웁니다. 계속할까요?')) return;
+    Store.reset();
+    State.study = null;
+    renderAll();
+    toast('진도를 초기화했습니다');
+  };
+}
+
+/** 시험일 달력. 필드를 누르면 열리고, 팝오버 안의 모든 조작을 한곳에서 받는다. */
+function bindCalendar() {
   $('#exam-date').onclick = () => {
     if (!$('#calendar').hidden) return Calendar.close();
     Calendar.open(Store.settings.examDate, iso => {
@@ -2391,169 +2550,6 @@ function bind() {
     renderSettings();
     renderHome();
   };
-  $('#apply-plan').onclick = () => {
-    const plan = examPlan(homeStats().freshTotal);
-    if (!plan || !plan.perDay) return;
-    Store.settings.newPerDay = plan.perDay;
-    Store.save();
-    renderSettings();
-    renderHome();
-    toast(`하루 새 단어를 ${plan.perDay.toLocaleString()}개로 맞췄습니다`);
-  };
-
-  $('#set-passes').onclick = e => {
-    const b = e.target.closest('[data-passes]');
-    if (!b) return;
-    Store.settings.targetPasses = Number(b.dataset.passes);
-    Store.save();
-    renderSettings();
-    renderHome();
-  };
-
-  $('#quiz-type').onclick = e => {
-    const b = e.target.closest('[data-qtype]');
-    if (!b) return;
-    Store.settings.quizType = b.dataset.qtype;
-    Store.save();
-    renderQuizSetup();
-  };
-
-  const quizCountLater = debounce(renderQuizSetup, 250);
-  $('#quiz-count').addEventListener('input', () => {
-    for (const x of $$('#quiz-length button')) x.classList.remove('on');
-    quizCountLater();
-  });
-  $('#quiz-start').onclick = startQuiz;
-  $('#quiz-next').onclick = nextQuiz;
-  $('#quiz-again').onclick = () => { $('#quiz-result').hidden = true; $('#quiz-setup').hidden = false; renderQuizSetup(); };
-  $('#quiz-exit').onclick = () => { $('#quiz-run').hidden = true; $('#quiz-setup').hidden = false; renderQuizSetup(); };
-  $('#quiz-options').onclick = e => {
-    const b = e.target.closest('[data-opt]');
-    if (b) answerQuiz(b.dataset.opt);
-  };
-
-  $('#set-direction').onclick = e => {
-    const b = e.target.closest('[data-dir]');
-    if (!b) return;
-    Store.settings.direction = b.dataset.dir;
-    Store.save();
-    renderSettings();
-  };
-  $('#set-quizgrade').onclick = e => {
-    const b = e.target.closest('[data-quizgrade]');
-    if (!b) return;
-    Store.settings.quizAffectsBox = b.dataset.quizgrade === 'on';
-    Store.save();
-    renderSettings();
-  };
-  $('#set-theme').onclick = e => {
-    const b = e.target.closest('[data-theme-opt]');
-    if (!b) return;
-    Store.settings.theme = b.dataset.themeOpt;
-    Store.save();
-    Theme.apply(Store.settings.theme);
-    renderSettings();
-  };
-  $('#set-tier').onclick = e => {
-    const b = e.target.closest('[data-tier]');
-    if (!b) return;
-    const cur = Store.settings.tiers;
-    const next = cur.includes(b.dataset.tier)
-      ? cur.filter(t => t !== b.dataset.tier)
-      : [...cur, b.dataset.tier];
-    if (!next.length) return;            // 하나는 남겨둔다
-    Store.settings.tiers = next;
-    delete Store.data.session;          // 범위가 바뀌면 이어보기도 무효다
-    Store.save();
-    State.study = null;
-    renderSettings();
-    renderHome();
-  };
-  $('#list-tier').onclick = e => {
-    const b = e.target.closest('[data-tier]');
-    if (!b) return;
-    const cur = State.list.tiers;
-    const next = cur.includes(b.dataset.tier)
-      ? cur.filter(t => t !== b.dataset.tier)
-      : [...cur, b.dataset.tier];
-    if (!next.length) return;
-    State.list.tiers = next;
-    State.list.shown = LIST_PAGE;
-    renderListTier();
-    renderList();
-  };
-  $('#set-autoplay').onclick = e => {
-    const b = e.target.closest('[data-autoplay]');
-    if (!b) return;
-    Store.settings.autoplay = b.dataset.autoplay === 'on';
-    Store.save();
-    renderSettings();
-  };
-  $('#prefetch-audio').onclick = async e => {
-    const btn = e.currentTarget;
-    btn.disabled = true;
-    const label = btn.textContent;
-    const { total, failed } = await Audio_.prefetch((done, all) => {
-      btn.textContent = `내려받는 중 ${done}/${all}`;
-    });
-    btn.textContent = label;
-    btn.disabled = false;
-    toast(failed ? `${total - failed}개 저장, ${failed}개 실패` : `발음 ${total}개를 저장했습니다`);
-  };
-  $('#set-scope').onclick = e => {
-    const b = e.target.closest('[data-scope]');
-    if (!b) return;
-    Store.settings.onlyWithExample = b.dataset.scope === 'example';
-    delete Store.data.session;
-    Store.save();
-    State.study = null;
-    renderSettings();
-    renderHome();
-  };
-  $('#set-limit').onclick = e => {
-    const b = e.target.closest('[data-limit]');
-    if (!b) return;
-    Store.settings.newPerDay = Number(b.dataset.limit);
-    $('#new-count').value = '';
-    Store.save();
-    renderSettings();
-    renderHome();
-  };
-  // 화면 다시 그리기는 미룬다. '150'을 치면 1, 15, 150 세 번이 들어오는데
-  // 그때마다 설정과 홈을 통째로 다시 그릴 이유가 없다.
-  const newCountLater = debounce(() => { renderSettings(); renderHome(); }, 250);
-  $('#new-count').addEventListener('input', e => {
-    const v = Math.floor(Number(e.target.value));
-    if (!Number.isFinite(v) || v < 1) return;      // 비우는 중이면 건드리지 않는다
-    Store.settings.newPerDay = v;
-    Store.save();
-    newCountLater();
-  });
-  $('#export').onclick = exportProgress;
-  $('#import').onclick = () => $('#import-file').click();
-  $('#import-file').onchange = e => { if (e.target.files[0]) importProgress(e.target.files[0]); };
-  $('#reset').onclick = () => {
-    if (!confirm('학습 진도를 모두 지웁니다. 계속할까요?')) return;
-    Store.reset();
-    State.study = null;
-    renderAll();
-    toast('진도를 초기화했습니다');
-  };
-
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-    if ((Store.settings.theme || 'system') === 'system') Theme.apply('system');
-  });
-
-  // 데스크톱 단축키
-  document.addEventListener('keydown', e => {
-    if (State.view !== 'study' || e.target.matches('input, select, textarea')) return;
-    if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCard(); }
-    if (e.key === '1') gradeCard('again');
-    if (e.key === '2') gradeCard('hard');
-    if (e.key === '3') gradeCard('good');
-    if (e.key === 'ArrowLeft') prevCard();
-    if (e.key === 'ArrowRight') skipCard();
-  });
 }
 
 /* ── 시작 ─────────────────────────────────────────── */
