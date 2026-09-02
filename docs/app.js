@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = '2b8049bb';
+const BUILD = 'd9af5a27';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -729,7 +729,8 @@ const State = {
   quiz: null,
   quizDay: 1,
   // stage: null(전체) | 1~5(그 박스) | 'new'(아직 안 봄) | 'seen'(한 번 이상 봄)
-  list: { day: null, tiers: ['core', 'bonus', 'extra'], query: '', masked: false, weakOnly: false,
+  // boxes: 고른 박스들(비면 전체). stage: null | 'new'(아직 안 봄) | 'seen'(한 번 이상 봄)
+  list: { day: null, boxes: [], query: '', masked: false, weakOnly: false,
           stage: null, shown: LIST_PAGE },
 };
 
@@ -908,10 +909,7 @@ function homeStats() {
 const TIER_LABEL = { core: '필수', bonus: '만점', extra: '추가' };
 
 const stageLabel = st =>
-  st === null ? '' :
-  st === 'new' ? '아직 안 본 단어' :
-  st === 'seen' ? '본 단어' :
-  st === MAX_BOX ? `박스 ${st} · 암기 완료` : `박스 ${st}`;
+  st === 'new' ? '아직 안 본 단어' : st === 'seen' ? '본 단어' : '';
 
 /** DAY의 단원명. '동사 (1)'처럼 번호가 붙은 것은 묶을 때 번호를 뗀다. */
 const dayTitle = day => {
@@ -1366,8 +1364,8 @@ function bindSwipe(el) {
 
 /* ── 목록 ─────────────────────────────────────────── */
 
-function renderListTier() {
-  markPick('#list-tier', 'tier', v => State.list.tiers.includes(v));
+function renderListBox() {
+  markPick('#list-box', 'box', v => State.list.boxes.includes(Number(v)));
 }
 
 function renderDayChips() {
@@ -1380,19 +1378,19 @@ function renderDayChips() {
 }
 
 function filteredWords() {
-  const { day, tiers, query } = State.list;
+  const { day, query, boxes, stage } = State.list;
+  const tiers = Store.settings.tiers;
   const q = query.trim().toLowerCase();
   let pool = day === null ? State.words : (State.byDay.get(day) || []);
+  // 등급은 설정에서 정한 범위를 그대로 따른다. 여기서 또 고르게 두면
+  // '설정에서 껐는데 목록에서 켜면?'이 생긴다. 목록은 범위 안을 보여 주는 곳이다.
   if (tiers.length < 3) pool = pool.filter(w => tiers.includes(w.tier));
   if (State.list.weakOnly) pool = pool.filter(w => (Store.record(w.id) || {}).wrong > 0);
-  const st = State.list.stage;
-  if (st !== null) {
-    pool = pool.filter(w => {
-      const rec = Store.record(w.id);
-      if (st === 'new') return !rec;
-      if (st === 'seen') return !!rec;
-      return rec && clampBox(rec.box) === st;
-    });
+  if (boxes.length) {
+    pool = pool.filter(w => { const r = Store.record(w.id); return r && boxes.includes(clampBox(r.box)); });
+  }
+  if (stage !== null) {
+    pool = pool.filter(w => stage === 'new' ? !Store.record(w.id) : !!Store.record(w.id));
   }
   if (!q) return pool;
 
@@ -1607,8 +1605,12 @@ function appendMore(wrap, words) {
 }
 
 /** 홈에서 어떤 단계를 눌렀을 때 그 단어들을 목록으로 연다. */
+/** 홈의 칸을 눌러 목록을 연다. 박스는 목록의 박스 고르기에 걸리고,
+ *  안 본/본 단어는 위쪽 태그로 보여 준다. */
 function openStage(stage) {
-  State.list.stage = stage;
+  const isBox = typeof stage === 'number';
+  State.list.boxes = isBox ? [stage] : [];
+  State.list.stage = isBox ? null : stage;
   State.list.day = null;
   State.list.query = '';
   State.list.weakOnly = false;
@@ -2251,7 +2253,7 @@ function navigate(view) {
   window.scrollTo(0, 0);
 
   if (view === 'home') renderHome();
-  if (view === 'list') { renderListTier(); renderDayChips(); renderList(); }
+  if (view === 'list') { renderListBox(); renderDayChips(); renderList(); }
   if (view === 'quiz') renderQuizSetup();
   if (view === 'settings') renderSettings();
   if (view === 'study' && !State.study) startStudy();
@@ -2490,12 +2492,13 @@ function bindList() {
     State.list.shown = LIST_PAGE;
     renderList();
   };
-  bindPick('#list-tier', 'tier', v => {
-    const next = toggleTier(State.list.tiers, v);
-    if (!next) return;
-    State.list.tiers = next;
+  bindPick('#list-box', 'box', v => {
+    const n = Number(v);
+    const cur = State.list.boxes;
+    // 여러 개 겹쳐 고른다. 전부 끄면 전체다.
+    State.list.boxes = cur.includes(n) ? cur.filter(b => b !== n) : [...cur, n].sort();
     State.list.shown = LIST_PAGE;
-    renderListTier();
+    renderListBox();
     renderList();
   });
   $('#list-stage').onclick = () => {
