@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = 'd9af5a27';
+const BUILD = 'bd2fcbd7';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -1046,15 +1046,31 @@ function renderHome() {
 
 /* ── 학습 (플래시카드) ────────────────────────────── */
 
+/** 오늘 이어볼 수 있는 세션. 없으면 null.
+ *
+ *  어제 만든 세션을 오늘 이어보면 안 된다. 그 카드들은 이미 채점돼 기한이 미래라
+ *  아무리 눌러도 박스가 움직이지 않고, 오늘 볼 것은 그대로 남는다.
+ *  손댄 적 없는 세션도 잇지 않는다. 새로 만드는 것과 같다. */
+function savedSession() {
+  const s = Store.data.session;
+  return s && s.date === todayISO() && s.ids
+      && (s.index > 0 || s.touched) && s.index < s.ids.length ? s : null;
+}
+
+/** 학습 탭. 하던 세션이 있으면 범위와 상관없이 그걸 잇고, 없으면 오늘 학습을 시작한다.
+ *  전에는 늘 오늘 학습을 시작해서, DAY 04를 하다 나와 탭을 누르면 DAY 04의
+ *  이어보기 지점이 새 세션에 덮어써졌다. */
+function resumeOrStart() {
+  const saved = savedSession();
+  if (saved) return startStudy(saved.dayFilter, saved.mode);
+  startStudy();
+}
+
 function startStudy(dayFilter = null, mode = 'due', { resume = true } = {}) {
   // 홈의 '오늘 학습 시작'은 기한이 된 것과 새 단어만,
   // DAY를 직접 고르면 그 DAY 전부를 본다.
-  const saved = Store.data.session;
-  // 어제 만든 세션을 오늘 이어보면 안 된다. 그 카드들은 이미 채점돼 기한이 미래라
-  // 아무리 눌러도 박스가 움직이지 않고, 오늘 볼 것은 그대로 남는다.
-  if (resume && saved && saved.date === todayISO()
-      && saved.dayFilter === dayFilter && saved.mode === mode
-      && saved.ids && (saved.index > 0 || saved.touched) && saved.index < saved.ids.length) {
+  const saved = resume ? savedSession() : null;
+  if (saved && saved.dayFilter === dayFilter && saved.mode === mode) {
     // 중간에 나갔던 세션을 이어서 연다
     const queue = saved.ids.map(id => State.byId.get(id)).filter(Boolean);
     if (queue.length) {
@@ -2256,7 +2272,7 @@ function navigate(view) {
   if (view === 'list') { renderListBox(); renderDayChips(); renderList(); }
   if (view === 'quiz') renderQuizSetup();
   if (view === 'settings') renderSettings();
-  if (view === 'study' && !State.study) startStudy();
+  if (view === 'study' && !State.study) resumeOrStart();
 }
 
 function renderAll() {
