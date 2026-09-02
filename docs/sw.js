@@ -5,7 +5,7 @@
  * 하나로 합쳐두면 앱을 고칠 때마다 발음이 날아가 셀룰러로 다시 받게 된다.
  */
 
-const SHELL = 'toeic-voca-fb261a6b';
+const SHELL = 'toeic-voca-cdec5340';
 const AUDIO = 'toeic-voca-audio';       // 버전을 붙이지 않는다. 지우면 안 되니까.
 
 /* 이게 없으면 앱이 아예 안 뜬다. 하나라도 실패하면 설치를 실패시킨다. */

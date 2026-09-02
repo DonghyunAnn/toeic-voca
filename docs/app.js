@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = 'fb261a6b';
+const BUILD = 'cdec5340';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -550,6 +550,9 @@ const Store = {
     this.data = structuredClone(DEFAULTS);
     this.data.settings = keep;
     try { localStorage.removeItem(SESSION_KEY); } catch (e) {}
+    // 목록 채점의 되돌리기 버퍼에는 지우기 전 기록이 들어있다. 그대로 두면
+    // 초기화한 뒤 목록에서 등급을 바꿀 때 그 기록이 되살아난다.
+    listGrades.clear();
     this.flush();
   },
 
@@ -726,7 +729,7 @@ const State = {
   quizDay: 1,
   // stage: null(전체) | 1~5(그 박스) | 'new'(아직 안 봄) | 'seen'(한 번 이상 봄)
   list: { day: null, tiers: ['core', 'bonus', 'extra'], query: '', masked: false, weakOnly: false,
-          stage: null, shown: LIST_PAGE },
+          grading: false, stage: null, shown: LIST_PAGE },
 };
 
 async function loadData() {
@@ -1423,7 +1426,7 @@ function rowHTML(w) {
   // 첫 줄만 보이면 나머지 뜻은 예문 없이 외우게 된다 (pass = 지나가다 / 건네다).
   // 4,187개 중 108개뿐이라 목록이 길어지지도 않는다.
   const shown = w.examples.slice(0, 2);
-  return `<div class="word-item"><div class="row">`
+  return `<div class="word-item" data-id="${escapeHTML(w.id)}"><div class="row">`
     + `<span class="hw">${escapeHTML(w.headword)}</span>`
     + (pos ? `<span class="pos">${escapeHTML(pos)}</span>` : '')
     + `<span class="tags">`
@@ -1437,7 +1440,62 @@ function rowHTML(w) {
     + shown.map(ex =>
         `<div class="ex">${escapeHTML(ex.en)}${ex.generated ? '<span class="gen">생성</span>' : ''}`
         + (ex.ko ? `<div class="ko">${escapeHTML(ex.ko)}</div>` : '') + `</div>`).join('')
+    + (State.list.grading ? gradeBarHTML(w) : '')
     + `</div>`;
+}
+
+/** 목록에서 매긴 채점. id -> { before: 매기기 전 기록|null, picked: 등급 }
+ *
+ *  목록은 촘촘해서 옆 버튼을 잘못 누르기 쉽다. 그대로 두면 박스가 두 번
+ *  움직이므로, 다시 누르면 앞의 채점을 되돌리고 새로 매길 수 있게 들고 있는다.
+ */
+const listGrades = new Map();
+
+/** 목록 안의 채점 줄. 학습 화면과 같은 네 등급을 쓴다. */
+function gradeBarHTML(w) {
+  const g = listGrades.get(w.id);
+  // '이미 앎'을 켤지는 이 화면에서 매기기 전 상태로 정한다. 방금 누른 '안다'
+  // 때문에 마지막 박스가 되어 마음을 바꿀 길이 막히면 안 된다.
+  const base = g ? g.before : Store.record(w.id);
+  const maxed = base && clampBox(base.box) >= MAX_BOX;
+  const btn = (v, label) =>
+    `<button type="button" class="${v}${g && g.picked === v ? ' on' : ''}"`
+    + (v === 'known' && maxed && !(g && g.picked === 'known') ? ' disabled' : '')
+    + ` data-lgrade="${v}">${label}</button>`;
+  return `<div class="lgrade">`
+    + btn('again', '모름') + btn('hard', '애매')
+    + btn('good', '안다') + btn('known', '이미 앎')
+    + `</div>`;
+}
+
+/** 목록에서 바로 채점한다.
+ *
+ *  플래시카드는 한 장씩 넘겨야 해서 훑는 속도가 안 난다. 뜻을 가려 놓고
+ *  목록을 내려가며 바로 매기는 편이 빠른 사람이 있다. 박스 계산은 학습
+ *  화면과 똑같은 Scheduler.grade를 쓴다. 경로만 다르지 다른 규칙이 아니다.
+ */
+function gradeFromList(id, result) {
+  const w = State.byId.get(id);
+  if (!w) return;
+  const prev = listGrades.get(id);
+  if (prev && prev.picked === result) return;         // 같은 걸 또 눌렀다
+
+  if (prev) {
+    // 앞서 매긴 것을 걷어내고 다시 매긴다. 되돌리지 않으면 박스가 두 번 움직인다.
+    Store.unlog(todayISO(), prev.before === null);
+    if (prev.before) Store.data.words[id] = { ...prev.before };
+    else delete Store.data.words[id];
+  }
+  const rec = Store.record(id);
+  const before = prev ? prev.before : (rec ? { ...rec } : null);
+  Scheduler.grade(id, result);
+  listGrades.set(id, { before, picked: result });
+
+  // 목록을 통째로 다시 그리면 스크롤이 튀고 80줄이 매번 새로 만들어진다.
+  // 방금 매긴 줄만 갈아끼운다.
+  const row = $(`#word-list .word-item[data-id="${id.replace(/"/g, '\\"')}"]`);
+  if (row) row.outerHTML = rowHTML(w);
+  renderListCount();      // 홈은 navigate가 다시 그린다. 여기서 4,187개를 훑지 않는다.
 }
 
 /** '더 보기'는 새로 나올 몫만 뒤에 붙인다.
@@ -1473,14 +1531,20 @@ function openStage(stage) {
   navigate('list');
 }
 
+// 채점할 때마다 4,187개를 다시 세지 않도록 마지막 값을 들고 있는다.
+let listCount = { total: 0, withEx: 0 };
+
 function renderListCount(words) {
-  const withEx = words.reduce((n, w) => n + (w.examples.length ? 1 : 0), 0);
+  if (words) listCount = { total: words.length,
+                           withEx: words.reduce((n, w) => n + (w.examples.length ? 1 : 0), 0) };
+  const { total, withEx } = listCount;
   // DAY를 골랐으면 단원명을 앞에 붙인다. 홈 칸에는 넣을 자리가 없어
   // 어느 단원인지 알 수 있는 자리가 여기와 학습 화면뿐이다.
   const head = State.list.day !== null ? `${dayTitle(State.list.day)} · ` : '';
   $('#list-count').textContent = head +
-    `${words.length.toLocaleString()}단어 · 예문 ${withEx.toLocaleString()}` +
-    (words.length > State.list.shown ? ` · ${State.list.shown}개 표시 중` : '');
+    `${total.toLocaleString()}단어 · 예문 ${withEx.toLocaleString()}` +
+    (total > State.list.shown ? ` · ${State.list.shown}개 표시 중` : '') +
+    (listGrades.size ? ` · 목록에서 ${listGrades.size}개 채점` : '');
 
   // 홈에서 넘어온 필터는 눈에 보여야 한다. 안 그러면 왜 목록이 짧은지 모른다.
   const tag = $('#list-stage');
@@ -1950,6 +2014,7 @@ function importProgress(file) {
       // 이어보기는 별도 키에 있다. 지우지 않으면 불러온 진도 위에 남의 세션이 얹힌다.
       localStorage.removeItem(SESSION_KEY);
       State.study = null;
+      listGrades.clear();                        // 불러온 진도 위에 옛 되돌리기가 남으면 안 된다
       Store.load();                              // 마이그레이션을 그대로 태운다
       Store.prune(new Set(State.byId.keys()));   // 없어진 단어의 기록을 정리한다
       Theme.apply(Store.settings.theme);
@@ -2330,6 +2395,19 @@ function bindList() {
     State.list.shown = LIST_PAGE;
     renderListTier();
     renderList();
+  });
+  $('#toggle-grade').onclick = e => {
+    State.list.grading = !State.list.grading;
+    e.currentTarget.setAttribute('aria-pressed', String(State.list.grading));
+    e.currentTarget.classList.toggle('on', State.list.grading);
+    if (!State.list.grading) listGrades.clear();   // 되돌릴 창이 닫힌다
+    renderList();
+  };
+  $('#word-list').addEventListener('click', e => {
+    const b = e.target.closest('[data-lgrade]');
+    if (!b || b.disabled) return;
+    const row = b.closest('.word-item');
+    if (row) gradeFromList(row.dataset.id, b.dataset.lgrade);
   });
   $('#list-stage').onclick = () => {
     State.list.stage = null;

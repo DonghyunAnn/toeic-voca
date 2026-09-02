@@ -360,7 +360,9 @@ button { background: none; border: 0; cursor: pointer; }
   color: var(--fg); z-index: 2;
   transition: background .12s, border-color .12s;
 }
-/* 실제로 눌리는 범위를 44px 이상으로 넓힌다. 보이는 원은 그대로다. */
+/* 실제로 눌리는 범위를 44px 이상으로 넓힌다. 보이는 원은 그대로다.
+ * 자리를 static으로 되돌리는 곳에서는 relative를 쓴다. static이면 이 ::after가
+ * 기준 삼을 조상을 잃고 줄 전체를 덮어, 뜻이나 예문을 눌러도 발음이 났다. */
 .speak::after { content: ''; position: absolute; inset: -.25rem; border-radius: inherit; }
 .speak:active { background: var(--accent); border-color: var(--ring); }
 
@@ -375,10 +377,10 @@ button { background: none; border: 0; cursor: pointer; }
 /* 실패 — 발음을 아직 안 받았거나 오프라인 */
 .speak.failed { border-color: var(--again); color: var(--again); }
 
-.back .head .speak { position: static; width: 2rem; height: 2rem; margin-left: auto; }
+.back .head .speak { position: relative; width: 2rem; height: 2rem; margin-left: auto; }
 .back .head .speak .ico { width: 1.0625rem; height: 1.0625rem; }
 
-.word-item .speak { position: static; width: 1.875rem; height: 1.875rem; flex: none; }
+.word-item .speak { position: relative; width: 1.875rem; height: 1.875rem; flex: none; }
 .word-item .speak .ico { width: 1rem; height: 1rem; }
 /* 목록은 줄 간격이 좁다. 위아래로만 더 넓혀 옆줄을 침범하지 않게 한다. */
 .word-item .speak::after { inset: -.4375rem -.25rem; }
@@ -491,6 +493,30 @@ button { background: none; border: 0; cursor: pointer; }
    text-shadow는 원래 타일에 그대로 그려진다. */
 .masked .mean { color: transparent; text-shadow: 0 0 7px var(--muted-fg); }
 .masked .mean:active { color: var(--muted-fg); text-shadow: none; }
+
+/* 목록 안의 채점 줄.
+ *
+ *  학습 화면의 채점 바(3rem)를 그대로 쓰면 줄마다 그만큼 키가 커져
+ *  훑는 속도가 죽는다. 여기서는 절반 높이로 눌러 담는다. 대신 위아래
+ *  여백을 넉넉히 둬서 손가락으로 누를 자리는 남긴다.
+ */
+.lgrade { display: flex; gap: .25rem; margin-top: .5rem; }
+.lgrade button {
+  position: relative; flex: 1; height: 2.125rem; padding: 0 .25rem;
+  border: 1px solid var(--border); border-radius: calc(var(--radius) - 2px);
+  background: var(--card); color: var(--muted-fg);
+  font-size: .8125rem; font-weight: 550; letter-spacing: -.01em;
+}
+/* 보이는 키는 34px로 두고 누를 자리만 위아래로 넓힌다. 44px을 다 칠하면
+   목록이 그만큼 길어져 훑는 속도가 죽는다. */
+.lgrade button::after { content: ''; position: absolute; inset: -.3125rem 0; }
+.lgrade button:active { background: var(--accent); }
+.lgrade .again { color: var(--again); }
+.lgrade .hard  { color: var(--hard); }
+.lgrade .good  { color: var(--good); }
+.lgrade button[disabled] { opacity: .3; }
+/* 방금 무엇을 눌렀는지 목록을 내려가며 알아볼 수 있어야 한다 */
+.lgrade .on { background: var(--fg); border-color: var(--fg); color: var(--bg); }
 
 /* ── 퀴즈 ─────────────────────────────────────────── */
 
