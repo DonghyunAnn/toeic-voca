@@ -10,3 +10,6 @@ data/reference/
 # 원본 출처와 압축 비밀번호. 공개 저장소에 올리면 안 된다.
 .sources.md
 .vercel
+
+# QA 리포트·스크린샷 (로컬 전용)
+.gstack/

@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = 'bd2fcbd7';
+const BUILD = 'c03224e6';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -442,11 +442,59 @@ const Store = {
         delete this.data.settings.dailyLimit;
         migrated = true;
       }
+      if (this.normalize()) migrated = true;
     } catch (e) {
       console.warn('진도를 읽지 못했습니다. 새로 시작합니다.', e);
     }
     if (migrated) this.save();
     return this.data;
+  },
+
+  /** 저장소에서 온 값의 모양을 바로잡는다.
+   *
+   *  손상된 저장소나 손으로 고친 파일에서 온 값은 무엇이든 될 수 있다. 쓰는
+   *  자리마다 막으면 하나는 꼭 빠진다. 실제로 due가 쓰레기 문자열인 기록은
+   *  기한이 영영 오지 않아 그 단어가 다시는 안 나왔고, 기록이 문자열이면
+   *  채점이 조용히 버려지면서 오늘 개수만 올라갔다. 들어올 때 한 번에 정리한다. */
+  normalize() {
+    const s = this.data.settings, d = DEFAULTS.settings;
+    let changed = false;
+    const fix = (k, ok, fallback) => { if (!ok(s[k])) { s[k] = fallback; changed = true; } };
+    const oneOf = list => v => list.includes(v);
+    const isISO = v => typeof v === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(v) && !Number.isNaN(Date.parse(v));
+    fix('direction', oneOf(['en2ko', 'ko2en', 'mixed']), d.direction);
+    fix('theme', oneOf(['system', 'light', 'dark']), d.theme);
+    fix('studyMode', oneOf(['card', 'list']), d.studyMode);
+    fix('quizType', oneOf(['meaning', 'cloze', 'both']), d.quizType);
+    fix('voiceMode', oneOf(['file', 'tts']), d.voiceMode);
+    fix('newPerDay', v => Number.isInteger(v) && v >= -1, d.newPerDay);
+    fix('targetPasses', v => Number.isInteger(v) && v >= 1 && v <= 6, clampPasses(s.targetPasses));
+    fix('examDate', v => v === '' || isISO(v), '');
+    for (const k of ['onlyWithExample', 'autoplay', 'quizAffectsBox']) fix(k, v => typeof v === 'boolean', d[k]);
+    // tiers는 위의 마이그레이션이 배열로 맞췄다. 값만 거른다.
+    const tiers = s.tiers.filter(oneOf(['core', 'bonus', 'extra']));
+    if (tiers.length !== s.tiers.length) { s.tiers = tiers.length ? tiers : [...d.tiers]; changed = true; }
+
+    const today = todayISO();
+    for (const [id, r] of Object.entries(this.data.words)) {
+      if (!r || typeof r !== 'object' || Array.isArray(r)) { delete this.data.words[id]; changed = true; continue; }
+      const n = { box: clampBox(r.box),
+                  due: isISO(r.due) ? r.due : today,          // 기한을 모르면 오늘. 영영 안 오는 것보다 낫다.
+                  correct: Math.max(0, Math.floor(Number(r.correct)) || 0),
+                  wrong: Math.max(0, Math.floor(Number(r.wrong)) || 0),
+                  lastSeen: isISO(r.lastSeen) ? r.lastSeen : null };
+      if (n.box !== r.box || n.due !== r.due || n.correct !== r.correct || n.wrong !== r.wrong || n.lastSeen !== r.lastSeen) {
+        this.data.words[id] = n; changed = true;
+      }
+    }
+    for (const [k, v] of Object.entries(this.data.log)) {
+      if (!isISO(k) || !v || typeof v !== 'object' || !Number.isInteger(v.n) || !Number.isInteger(v.f)) { delete this.data.log[k]; changed = true; }
+    }
+    const ss = this.data.session;
+    if (ss && (typeof ss !== 'object' || !Array.isArray(ss.ids) || !Number.isInteger(ss.index) || ss.index < 0 || !isISO(ss.date))) {
+      this.data.session = null; changed = true;
+    }
+    return changed;
   },
 
   /** 단어 데이터가 바뀌어 없어진 id의 기록을 정리한다. */
@@ -1147,6 +1195,7 @@ function renderStudy() {
     $('#study-done-title').textContent =
       nothing ? '볼 단어가 없습니다'
       : s.mode === 'learned' ? '복습 완료'
+      : s.mode === 'weak' ? '안 떠오른 단어 복습 완료'
       : day ? `DAY ${String(day).padStart(2, '0')} 완료` : '오늘 학습 완료';
     // 건너뛴 카드는 기록이 안 남아 다음에 또 나온다. 끝내고 나서
     // '분명 다 했는데 두 장 남았다'가 되지 않게 여기서 밝힌다.
@@ -2344,7 +2393,13 @@ function bindLongPress() {
       Sheet.open(Number(cell.dataset.day));
     }, 500);
   };
-  const cancel = () => { clearTimeout(timer); timer = null; };
+  // 시트를 연 뒤의 click 하나는 삼킨다(학습이 같이 시작되지 않게). 다만 그 click이
+  // 안 올 수도 있다(iOS는 길게 누른 뒤 click을 안 쏘기도 한다). 그러면 fired가 다음
+  // 탭까지 살아남아 엉뚱한 DAY 탭을 먹는다. 손을 뗀 뒤 잠깐만 기다리고 푼다.
+  const cancel = () => {
+    clearTimeout(timer); timer = null;
+    if (fired) setTimeout(() => { fired = false; }, 400);
+  };
 
   for (const g of [$('#day-grid'), $('#day-grid-extra')]) {
     if (!g) continue;
@@ -2419,8 +2474,9 @@ function bindShell() {
 
   // 데스크톱 단축키
   document.addEventListener('keydown', e => {
+    // 합성 이벤트는 target이 document라 matches가 없다. 실제 키 입력은 늘 요소가 받는다.
     if (State.view !== 'study' || studyMode() === 'list'
-        || e.target.matches('input, select, textarea')) return;
+        || !(e.target instanceof Element) || e.target.matches('input, select, textarea')) return;
     if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCard(); }
     if (e.key === '1') gradeCard('again');
     if (e.key === '2') gradeCard('hard');
