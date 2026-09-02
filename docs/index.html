@@ -116,7 +116,10 @@ try {
       </header>
       <div class="scope-row">
         <p class="study-scope" id="study-scope"></p>
-        <button class="btn btn-outline btn-sm" id="study-to-list" hidden>목록으로 훑기</button>
+        <div class="toggles compact" id="study-mode" aria-label="학습 방식">
+          <button data-smode="card">카드</button>
+          <button data-smode="list">목록</button>
+        </div>
       </div>
 
       <div class="card-stage" id="card-stage">
@@ -132,6 +135,7 @@ try {
           <div class="face back" id="card-back"></div>
         </article>
       </div>
+      <div class="word-list study-list" id="study-list" hidden></div>
 
       <p class="grade-note" id="grade-note" hidden>기한 전이라 <b>안다·애매</b>는 박스를 올리지 않습니다. <b>모름</b>은 반영됩니다.</p>
       <div class="grade-bar" id="grade-bar" hidden>
@@ -165,7 +169,6 @@ try {
       <div class="toolbar">
         <button class="btn btn-outline btn-sm" id="toggle-mask" aria-pressed="false">뜻 가리기</button>
         <button class="btn btn-outline btn-sm" id="toggle-weak" aria-pressed="false">안 떠오른 것만</button>
-        <button class="btn btn-outline btn-sm" id="toggle-grade" aria-pressed="false">채점하기</button>
       </div>
 
       <div class="toggles compact" id="list-tier">

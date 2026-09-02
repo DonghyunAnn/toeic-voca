@@ -308,6 +308,8 @@ button { background: none; border: 0; cursor: pointer; }
 
 .scope-row { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin: -.5rem 0 .75rem; }
 .study-scope { font-size: .75rem; color: var(--muted-fg); }
+/* 범위줄 옆의 카드/목록 전환. 글자 폭만큼이면 23px라 엄지로 못 누른다. */
+.scope-row .toggles button { min-width: 3.5rem; }
 .list-head { display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding-bottom: .5rem; }
 .done-actions { margin-top: 1.5rem; width: 100%; max-width: 18rem; margin-left: auto; margin-right: auto; }
 /* 3D 뒤집기를 쓰지 않는다(display 전환이다). perspective만 남아 있으면
@@ -518,6 +520,18 @@ button { background: none; border: 0; cursor: pointer; }
 .lgrade button[disabled] { opacity: .3; }
 /* 방금 무엇을 눌렀는지 목록을 내려가며 알아볼 수 있어야 한다 */
 .lgrade .on { background: var(--fg); border-color: var(--fg); color: var(--bg); }
+
+/* ── 학습: 목록 방식 ───────────────────────────────────
+ *
+ *  찾아보기 목록의 카드 모양(word-item)을 그대로 쓴다. 다른 점은 하나다.
+ *  누르기 전에는 단어 줄만 보이고, 누르면 뜻·예문·채점이 펼쳐진다.
+ *  그래야 한 화면에 단어가 많이 들어와 훑는 속도가 난다.
+ */
+.srow .row { cursor: pointer; }
+.srow .srow-body { display: none; }
+.srow.open .srow-body { display: block; }
+/* 매긴 줄은 단어 줄을 눌러 둔다. 안 한 줄이 도드라져야 어디까지 했는지 보인다. */
+.srow.done .row { opacity: .55; }
 
 /* ── 퀴즈 ─────────────────────────────────────────── */
 

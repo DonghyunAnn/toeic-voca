@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = '544d7a23';
+const BUILD = '2b8049bb';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -36,7 +36,8 @@ const DEFAULTS = {
   // 추가 어휘는 교재를 뗀 뒤에 켜는 것이라 기본으로 섞지 않는다.
   settings: { direction: 'en2ko', newPerDay: -1, onlyWithExample: false, autoplay: false,
               tiers: ['core', 'bonus'], theme: 'system', quizAffectsBox: false,
-              quizType: 'meaning', examDate: '', targetPasses: 4, voiceMode: 'file' },
+              quizType: 'meaning', examDate: '', targetPasses: 4, voiceMode: 'file',
+              studyMode: 'card' },
   words: {},
   days: {},
   // 날짜별 학습량. {"2026-08-31": {n: 채점 수, f: 처음 본 단어 수}}
@@ -729,7 +730,7 @@ const State = {
   quizDay: 1,
   // stage: null(전체) | 1~5(그 박스) | 'new'(아직 안 봄) | 'seen'(한 번 이상 봄)
   list: { day: null, tiers: ['core', 'bonus', 'extra'], query: '', masked: false, weakOnly: false,
-          grading: false, stage: null, shown: LIST_PAGE },
+          stage: null, shown: LIST_PAGE },
 };
 
 async function loadData() {
@@ -1055,7 +1056,7 @@ function startStudy(dayFilter = null, mode = 'due', { resume = true } = {}) {
   // 아무리 눌러도 박스가 움직이지 않고, 오늘 볼 것은 그대로 남는다.
   if (resume && saved && saved.date === todayISO()
       && saved.dayFilter === dayFilter && saved.mode === mode
-      && saved.ids && saved.index > 0 && saved.index < saved.ids.length) {
+      && saved.ids && (saved.index > 0 || saved.touched) && saved.index < saved.ids.length) {
     // 중간에 나갔던 세션을 이어서 연다
     const queue = saved.ids.map(id => State.byId.get(id)).filter(Boolean);
     if (queue.length) {
@@ -1068,7 +1069,7 @@ function startStudy(dayFilter = null, mode = 'due', { resume = true } = {}) {
       // 되고, 재출제 한도(모름 3번·애매 1번)도 리셋돼 무한히 다시 나온다.
       State.study = { queue, index, floor: index,
                       graded: saved.graded || 0, dayFilter, mode,
-                      relearn: saved.relearn || 0,
+                      relearn: saved.relearn || 0, touched: !!saved.touched,
                       undo: [], retries: { ...(saved.retries || {}) } };
       navigate('study');
       return renderStudy();
@@ -1089,7 +1090,7 @@ function startStudy(dayFilter = null, mode = 'due', { resume = true } = {}) {
 /** 중간에 나가도 이어서 볼 수 있도록 위치를 남긴다. */
 function saveSession() {
   const s = State.study;
-  if (!s || s.index >= s.queue.length) {
+  if (!s || s.index >= s.queue.length || s.finished) {
     delete Store.data.session;
   } else {
     // 큐는 고정이 아니다. 모름·애매를 누르면 그 카드가 뒤에 다시 끼워지고,
@@ -1098,6 +1099,7 @@ function saveSession() {
     Store.data.session = { date: todayISO(), dayFilter: s.dayFilter, mode: s.mode,
                            index: s.index, graded: s.graded,
                            relearn: s.relearn || 0, retries: s.retries || {},
+                           touched: !!s.touched,
                            ids: s.queue.map(w => w.id) };
   }
   Store.save();
@@ -1107,14 +1109,24 @@ function renderStudy() {
   const s = State.study;
   const done = $('#study-done');
   const stage = $('#card-stage');
+  const list = $('#study-list');
   const bar = $('#grade-bar');
+  const listMode = studyMode() === 'list';
+  markPick('#study-mode', 'smode', v => v === studyMode());
 
-  if (!s || s.index >= s.queue.length) {
+  // 목록 방식에는 순서가 없다. 큐의 단어를 오늘 다 매겼으면 끝이다.
+  const words = listMode && s ? uniqueQueue(s) : null;
+  const gradedToday = words ? words.filter(w => seenToday(w.id)).length : 0;
+  if (words) s.graded = gradedToday;
+  const finished = !s || (listMode ? gradedToday >= words.length : s.index >= s.queue.length);
+
+  if (finished) {
     stage.hidden = true;
+    list.hidden = true;
     bar.hidden = true;
     done.hidden = false;
     $('.scope-row').hidden = true;
-    if (s) saveSession();
+    if (s) { if (listMode) s.finished = true; saveSession(); }
 
     const day = s && s.dayFilter;
     const nothing = !s || !s.queue.length;
@@ -1143,9 +1155,21 @@ function renderStudy() {
     return;
   }
   $('.scope-row').hidden = false;
-
-  stage.hidden = false;
   done.hidden = true;
+  $('#grade-note').hidden = true;
+  // 순서 넘기기는 카드에서만 뜻이 있다
+  $('#study-prev').hidden = listMode;
+  $('#study-next').hidden = listMode;
+
+  if (listMode) {
+    stage.hidden = true;
+    bar.hidden = true;
+    list.hidden = false;
+    renderStudyList(s, words, gradedToday);
+    return;
+  }
+  list.hidden = true;
+  stage.hidden = false;
 
   const w = s.queue[s.index];
   const card = $('#flashcard');
@@ -1171,19 +1195,11 @@ function renderStudy() {
 
   $('#study-counter').textContent = `${s.index + 1}/${s.queue.length}`;
   $('#study-progress').style.transform = `scaleX(${s.index / s.queue.length})`;
+  // 단원명은 카드 칩에만 둔다. 여기 또 쓰면 DAY로 들어왔을 때 같은 말이
+  // 40px 간격으로 두 번 나오고, 정작 이 줄의 본업인 '몇 장 남음'이 뒤로 밀린다.
   const left = s.queue.length - s.index;
-  $('#study-scope').textContent =
-    (s.mode === 'weak' ? '자주 안 떠오른 단어'
-      : s.mode === 'learned' ? '본 단어 복습'
-      // 단원명은 카드 칩에만 둔다. 여기 또 쓰면 DAY로 들어왔을 때 같은 말이
-      // 40px 간격으로 두 번 나오고, 정작 이 줄의 본업인 '몇 장 남음'이 뒤로 밀린다.
-      // 칩은 어느 경로로 들어와도 늘 같은 자리에 있다.
-      : s.dayFilter ? `DAY ${String(s.dayFilter).padStart(2, '0')}`
-                    + (s.mode === 'all' ? ' 전체' : '')
-      : '오늘 학습') +
-    ` · ${left}장 남음` + (s.relearn ? ` · 다시 낸 카드 ${s.relearn}장` : '');
-  $('#study-to-list').hidden = !s.dayFilter;
-  $('#grade-note').hidden = true;
+  $('#study-scope').textContent = `${scopeLabel(s)} · ${left}장 남음`
+    + (s.relearn ? ` · 다시 낸 카드 ${s.relearn}장` : '');
   $('#study-prev').disabled = s.index <= (s.floor || 0);
   $('#study-next').disabled = s.index >= s.queue.length - 1;
 }
@@ -1440,18 +1456,39 @@ function rowHTML(w) {
     + shown.map(ex =>
         `<div class="ex">${escapeHTML(ex.en)}${ex.generated ? '<span class="gen">생성</span>' : ''}`
         + (ex.ko ? `<div class="ko">${escapeHTML(ex.ko)}</div>` : '') + `</div>`).join('')
-    + (State.list.grading ? gradeBarHTML(w) : '')
     + `</div>`;
 }
 
-/** 목록에서 매긴 채점. id -> { before: 매기기 전 기록|null, picked: 등급 }
+/* ── 학습: 목록 방식 ───────────────────────────────── */
+
+/** 목록 방식에서 매긴 채점. id -> { before, after, picked, date }
  *
  *  목록은 촘촘해서 옆 버튼을 잘못 누르기 쉽다. 그대로 두면 박스가 두 번
  *  움직이므로, 다시 누르면 앞의 채점을 되돌리고 새로 매길 수 있게 들고 있는다.
+ *  before는 매기기 전 기록(없었으면 null), after는 매긴 직후 기록이다.
  */
 const listGrades = new Map();
 
-/** 목록 안의 채점 줄. 학습 화면과 같은 네 등급을 쓴다. */
+const studyMode = () => Store.settings.studyMode === 'list' ? 'list' : 'card';
+const seenToday = (id, today = todayISO()) => {
+  const r = Store.record(id);
+  return !!r && r.lastSeen === today;
+};
+/** 카드 방식은 모름·애매를 뒤에 다시 끼운다. 목록에는 한 번만 보인다. */
+function uniqueQueue(s) {
+  const seen = new Set();
+  return s.queue.filter(w => !seen.has(w.id) && seen.add(w.id));
+}
+
+/** 학습 범위 한 줄. 카드와 목록이 같은 말을 쓴다. */
+function scopeLabel(s) {
+  return s.mode === 'weak' ? '자주 안 떠오른 단어'
+    : s.mode === 'learned' ? '본 단어 복습'
+    : s.dayFilter ? `DAY ${String(s.dayFilter).padStart(2, '0')}` + (s.mode === 'all' ? ' 전체' : '')
+    : '오늘 학습';
+}
+
+/** 줄 안의 채점 버튼. 카드 화면과 같은 네 등급을 쓴다. */
 function gradeBarHTML(w) {
   const g = listGrades.get(w.id);
   // '이미 앎'을 켤지는 이 화면에서 매기기 전 상태로 정한다. 방금 누른 '안다'
@@ -1468,26 +1505,57 @@ function gradeBarHTML(w) {
     + `</div>`;
 }
 
-/** 목록에서 바로 채점한다.
- *
- *  플래시카드는 한 장씩 넘겨야 해서 훑는 속도가 안 난다. 뜻을 가려 놓고
- *  목록을 내려가며 바로 매기는 편이 빠른 사람이 있다. 박스 계산은 학습
- *  화면과 똑같은 Scheduler.grade를 쓴다. 경로만 다르지 다른 규칙이 아니다.
- */
+/** 목록 방식의 한 줄. 누르기 전에는 단어만, 누르면 뜻·예문·채점이 펼쳐진다.
+ *  찾아보기 목록의 word-item 모양을 그대로 빌린다. 같은 카드 모양이어야 한다. */
+function studyRowHTML(w, today = todayISO()) {
+  const rec = Store.record(w.id);
+  const done = seenToday(w.id, today);
+  const ex = w.examples[0];
+  return `<div class="word-item srow${done ? ' done open' : ''}" data-id="${escapeHTML(w.id)}">`
+    + `<div class="row">`
+    + `<span class="hw">${escapeHTML(w.headword)}</span>`
+    + (w.pos ? `<span class="pos">${escapeHTML(w.pos)}</span>` : '')
+    + `<span class="tags">`
+    + `<span class="box">${rec ? '박스 ' + clampBox(rec.box) : ''}</span>`
+    + `<span class="spk">${Audio_.speakerHTML(w.audio, 'speak', w.headword)}</span>`
+    + `</span></div>`
+    + `<div class="srow-body">`
+    + `<div class="mean">${escapeHTML(w.meaning)}</div>`
+    + (ex ? `<div class="ex">${escapeHTML(ex.en)}${ex.generated ? '<span class="gen">생성</span>' : ''}`
+          + (ex.ko ? `<div class="ko">${escapeHTML(ex.ko)}</div>` : '') + `</div>` : '')
+    + gradeBarHTML(w)
+    + `</div></div>`;
+}
+
+function renderStudyList(s, words, graded) {
+  $('#study-counter').textContent = `${graded}/${words.length}`;
+  $('#study-progress').style.transform = `scaleX(${words.length ? graded / words.length : 0})`;
+  $('#study-scope').textContent = `${scopeLabel(s)} · ${words.length - graded}개 남음`;
+  const today = todayISO();
+  $('#study-list').innerHTML = words.map(w => studyRowHTML(w, today)).join('');
+}
+
 /** 두 기록이 같은가. 되돌려도 되는지 판단할 때만 쓴다. */
 const sameRecord = (a, b) => (!a === !b) &&
   (!a || (a.box === b.box && a.due === b.due && a.correct === b.correct
           && a.wrong === b.wrong && a.lastSeen === b.lastSeen));
 
-function gradeFromList(id, result) {
+/** 목록 방식에서 채점한다.
+ *
+ *  카드는 한 장씩 넘겨야 해서 훑는 속도가 안 난다. 단어만 보고 떠올린 뒤
+ *  줄을 눌러 확인하고 그 자리에서 매기는 편이 빠른 사람이 있다. 박스 계산은
+ *  카드와 똑같은 Scheduler.grade를 쓴다. 경로만 다르지 다른 규칙이 아니다.
+ */
+function gradeInList(id, result) {
+  const s = State.study;
   const w = State.byId.get(id);
-  if (!w) return;
+  if (!s || !w) return;
   const prev = listGrades.get(id);
   if (prev && prev.picked === result) return;         // 같은 걸 또 눌렀다
 
   const cur = Store.record(id);
   // 되돌려도 되는 것은 '내가 매긴 뒤로 아무도 손대지 않은' 기록뿐이다.
-  // 목록에서 매긴 단어를 학습이나 퀴즈에서 또 채점했다면, 여기서 되돌리는 순간
+  // 목록에서 매긴 단어를 카드나 퀴즈에서 또 채점했다면, 여기서 되돌리는 순간
   // 그 사이의 진도가 통째로 사라진다. 그럴 때는 지금 값을 그대로 두고 새로 매긴다.
   const mine = prev && sameRecord(cur, prev.after);
   if (mine) {
@@ -1500,16 +1568,21 @@ function gradeFromList(id, result) {
   Scheduler.grade(id, result);
   listGrades.set(id, { before, after: { ...Store.record(id) }, picked: result, date });
 
-  // 목록을 통째로 다시 그리면 스크롤이 튀고 80줄이 매번 새로 만들어진다.
-  // 방금 매긴 줄만 갈아끼운다.
-  const row = $(`#word-list .word-item[data-id="${id.replace(/"/g, '\\"')}"]`);
-  if (row) row.outerHTML = rowHTML(w);
+  const words = uniqueQueue(s);
+  const graded = words.filter(x => seenToday(x.id, date)).length;
+  s.graded = graded;
+  s.touched = true;
+  if (graded >= words.length) s.finished = true;      // 다 했다. 이어보기 저장도 지운다.
+  saveSession();
+  if (s.finished) return renderStudy();
 
-  // 박스·아직 안 봄·안 떠오른 것으로 거른 목록은 채점하는 순간 구성이 바뀐다.
-  // 줄은 그대로 둔다 — 훑는 중에 사라지면 손가락 밑에서 목록이 밀린다.
-  // 대신 개수는 사실대로 다시 센다. 그 필터가 아닐 때는 셀 이유가 없다.
-  const byProgress = State.list.stage !== null || State.list.weakOnly;
-  renderListCount(byProgress ? filteredWords() : undefined);
+  // 목록을 통째로 다시 그리면 스크롤이 튀고 줄이 전부 새로 만들어진다.
+  // 방금 매긴 줄만 갈아끼운다. 매긴 줄은 펼친 채로 남는다.
+  const row = $(`#study-list .srow[data-id="${id.replace(/"/g, '\\"')}"]`);
+  if (row) row.outerHTML = studyRowHTML(w, date);
+  $('#study-counter').textContent = `${graded}/${words.length}`;
+  $('#study-progress').style.transform = `scaleX(${graded / words.length})`;
+  $('#study-scope').textContent = `${scopeLabel(s)} · ${words.length - graded}개 남음`;
 }
 
 /** '더 보기'는 새로 나올 몫만 뒤에 붙인다.
@@ -1557,8 +1630,7 @@ function renderListCount(words) {
   const head = State.list.day !== null ? `${dayTitle(State.list.day)} · ` : '';
   $('#list-count').textContent = head +
     `${total.toLocaleString()}단어 · 예문 ${withEx.toLocaleString()}` +
-    (total > State.list.shown ? ` · ${State.list.shown}개 표시 중` : '') +
-    (listGrades.size ? ` · 목록에서 ${listGrades.size}개 채점` : '');
+    (total > State.list.shown ? ` · ${State.list.shown}개 표시 중` : '');
 
   // 홈에서 넘어온 필터는 눈에 보여야 한다. 안 그러면 왜 목록이 짧은지 모른다.
   const tag = $('#list-stage');
@@ -2329,7 +2401,8 @@ function bindShell() {
 
   // 데스크톱 단축키
   document.addEventListener('keydown', e => {
-    if (State.view !== 'study' || e.target.matches('input, select, textarea')) return;
+    if (State.view !== 'study' || studyMode() === 'list'
+        || e.target.matches('input, select, textarea')) return;
     if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCard(); }
     if (e.key === '1') gradeCard('again');
     if (e.key === '2') gradeCard('hard');
@@ -2362,14 +2435,29 @@ function bindStudy() {
   $('#study-exit').onclick = () => { State.study = null; navigate('home'); };
   $('#study-prev').onclick = prevCard;
   $('#study-next').onclick = skipCard;
-  $('#study-to-list').onclick = () => {
-    const day = State.study && State.study.dayFilter;
-    if (!day) return;
-    State.list.day = day;
-    State.list.tiers = ['core', 'bonus', 'extra'];
-    State.list.shown = LIST_PAGE;
-    navigate('list');
-  };
+  // 카드 ↔ 목록. 같은 큐를 다르게 보여줄 뿐이라 범위는 그대로다.
+  bindPick('#study-mode', 'smode', v => {
+    if (studyMode() === v) return;
+    Store.settings.studyMode = v;
+    Store.save();
+    const s = State.study;
+    if (s && v === 'card') {
+      // 목록에서 이미 매긴 단어는 카드로 다시 내지 않는다. 오늘 한 것 다음부터.
+      const today = todayISO();
+      while (s.index < s.queue.length && seenToday(s.queue[s.index].id, today)) s.index++;
+      s.floor = s.index;                 // 되돌리기로 그 아래로는 못 간다
+    }
+    if (s) saveSession();                // 앞당긴 자리를 남긴다. 안 그러면 껐다 켜면 되돌아간다.
+    renderStudy();
+  });
+  $('#study-list').addEventListener('click', e => {
+    const row = e.target.closest('.srow');
+    if (!row) return;
+    const b = e.target.closest('[data-lgrade]');
+    if (b) { if (!b.disabled) gradeInList(row.dataset.id, b.dataset.lgrade); return; }
+    if (e.target.closest('[data-audio], [data-say]')) return;   // 발음은 캡처 단계가 처리했다
+    row.classList.toggle('open');
+  });
   $('#study-next-day').onclick = () => {
     const day = State.study && State.study.dayFilter;
     if (day) startStudy(day + 1, 'day', { resume: false });
@@ -2409,19 +2497,6 @@ function bindList() {
     State.list.shown = LIST_PAGE;
     renderListTier();
     renderList();
-  });
-  $('#toggle-grade').onclick = e => {
-    State.list.grading = !State.list.grading;
-    e.currentTarget.setAttribute('aria-pressed', String(State.list.grading));
-    e.currentTarget.classList.toggle('on', State.list.grading);
-    if (!State.list.grading) listGrades.clear();   // 되돌릴 창이 닫힌다
-    renderList();
-  };
-  $('#word-list').addEventListener('click', e => {
-    const b = e.target.closest('[data-lgrade]');
-    if (!b || b.disabled) return;
-    const row = b.closest('.word-item');
-    if (row) gradeFromList(row.dataset.id, b.dataset.lgrade);
   });
   $('#list-stage').onclick = () => {
     State.list.stage = null;
