@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = '8faf3810';
+const BUILD = '544d7a23';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -1474,28 +1474,42 @@ function gradeBarHTML(w) {
  *  목록을 내려가며 바로 매기는 편이 빠른 사람이 있다. 박스 계산은 학습
  *  화면과 똑같은 Scheduler.grade를 쓴다. 경로만 다르지 다른 규칙이 아니다.
  */
+/** 두 기록이 같은가. 되돌려도 되는지 판단할 때만 쓴다. */
+const sameRecord = (a, b) => (!a === !b) &&
+  (!a || (a.box === b.box && a.due === b.due && a.correct === b.correct
+          && a.wrong === b.wrong && a.lastSeen === b.lastSeen));
+
 function gradeFromList(id, result) {
   const w = State.byId.get(id);
   if (!w) return;
   const prev = listGrades.get(id);
   if (prev && prev.picked === result) return;         // 같은 걸 또 눌렀다
 
-  if (prev) {
-    // 앞서 매긴 것을 걷어내고 다시 매긴다. 되돌리지 않으면 박스가 두 번 움직인다.
-    Store.unlog(todayISO(), prev.before === null);
+  const cur = Store.record(id);
+  // 되돌려도 되는 것은 '내가 매긴 뒤로 아무도 손대지 않은' 기록뿐이다.
+  // 목록에서 매긴 단어를 학습이나 퀴즈에서 또 채점했다면, 여기서 되돌리는 순간
+  // 그 사이의 진도가 통째로 사라진다. 그럴 때는 지금 값을 그대로 두고 새로 매긴다.
+  const mine = prev && sameRecord(cur, prev.after);
+  if (mine) {
+    Store.unlog(prev.date, prev.before === null);     // 자정을 넘겼을 수 있다. 그때 그 날짜에서 뺀다.
     if (prev.before) Store.data.words[id] = { ...prev.before };
     else delete Store.data.words[id];
   }
-  const rec = Store.record(id);
-  const before = prev ? prev.before : (rec ? { ...rec } : null);
+  const before = mine ? prev.before : (cur ? { ...cur } : null);
+  const date = todayISO();
   Scheduler.grade(id, result);
-  listGrades.set(id, { before, picked: result });
+  listGrades.set(id, { before, after: { ...Store.record(id) }, picked: result, date });
 
   // 목록을 통째로 다시 그리면 스크롤이 튀고 80줄이 매번 새로 만들어진다.
   // 방금 매긴 줄만 갈아끼운다.
   const row = $(`#word-list .word-item[data-id="${id.replace(/"/g, '\\"')}"]`);
   if (row) row.outerHTML = rowHTML(w);
-  renderListCount();      // 홈은 navigate가 다시 그린다. 여기서 4,187개를 훑지 않는다.
+
+  // 박스·아직 안 봄·안 떠오른 것으로 거른 목록은 채점하는 순간 구성이 바뀐다.
+  // 줄은 그대로 둔다 — 훑는 중에 사라지면 손가락 밑에서 목록이 밀린다.
+  // 대신 개수는 사실대로 다시 센다. 그 필터가 아닐 때는 셀 이유가 없다.
+  const byProgress = State.list.stage !== null || State.list.weakOnly;
+  renderListCount(byProgress ? filteredWords() : undefined);
 }
 
 /** '더 보기'는 새로 나올 몫만 뒤에 붙인다.
