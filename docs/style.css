@@ -361,8 +361,9 @@ button { background: none; border: 0; cursor: pointer; }
   transition: background .12s, border-color .12s;
 }
 /* 실제로 눌리는 범위를 44px 이상으로 넓힌다. 보이는 원은 그대로다.
- * 자리를 static으로 되돌리는 곳에서는 relative를 쓴다. static이면 이 ::after가
- * 기준 삼을 조상을 잃고 줄 전체를 덮어, 뜻이나 예문을 눌러도 발음이 났다. */
+ * 자리를 되돌리는 곳에서는 static이 아니라 relative + inset:auto를 쓴다.
+ * static이면 이 ::after가 기준 삼을 조상을 잃고 줄 전체를 덮어 뜻이나 예문을
+ * 눌러도 발음이 났고, inset을 안 지우면 위 top/right가 되살아나 원이 밀렸다. */
 .speak::after { content: ''; position: absolute; inset: -.25rem; border-radius: inherit; }
 .speak:active { background: var(--accent); border-color: var(--ring); }
 
@@ -377,10 +378,10 @@ button { background: none; border: 0; cursor: pointer; }
 /* 실패 — 발음을 아직 안 받았거나 오프라인 */
 .speak.failed { border-color: var(--again); color: var(--again); }
 
-.back .head .speak { position: relative; width: 2rem; height: 2rem; margin-left: auto; }
+.back .head .speak { position: relative; inset: auto; width: 2rem; height: 2rem; margin-left: auto; }
 .back .head .speak .ico { width: 1.0625rem; height: 1.0625rem; }
 
-.word-item .speak { position: relative; width: 1.875rem; height: 1.875rem; flex: none; }
+.word-item .speak { position: relative; inset: auto; width: 1.875rem; height: 1.875rem; flex: none; }
 .word-item .speak .ico { width: 1rem; height: 1rem; }
 /* 목록은 줄 간격이 좁다. 위아래로만 더 넓혀 옆줄을 침범하지 않게 한다. */
 .word-item .speak::after { inset: -.4375rem -.25rem; }
