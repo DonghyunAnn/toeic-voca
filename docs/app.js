@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = 'c03224e6';
+const BUILD = '08702dfb';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
@@ -482,8 +482,10 @@ const Store = {
                   due: isISO(r.due) ? r.due : today,          // 기한을 모르면 오늘. 영영 안 오는 것보다 낫다.
                   correct: Math.max(0, Math.floor(Number(r.correct)) || 0),
                   wrong: Math.max(0, Math.floor(Number(r.wrong)) || 0),
-                  lastSeen: isISO(r.lastSeen) ? r.lastSeen : null };
-      if (n.box !== r.box || n.due !== r.due || n.correct !== r.correct || n.wrong !== r.wrong || n.lastSeen !== r.lastSeen) {
+                  lastSeen: isISO(r.lastSeen) ? r.lastSeen : null,
+                  last: ['again', 'hard', 'good', 'known'].includes(r.last) ? r.last : null };
+      if (n.box !== r.box || n.due !== r.due || n.correct !== r.correct || n.wrong !== r.wrong || n.lastSeen !== r.lastSeen
+          || (n.last ?? null) !== (r.last ?? null)) {
         this.data.words[id] = n; changed = true;
       }
     }
@@ -752,6 +754,7 @@ const Scheduler = {
       rec.due = addDays(today, BOX_INTERVALS[rec.box]);
     }
     rec.lastSeen = today;
+    rec.last = result;       // 목록 방식이 어느 버튼을 눌렀는지 되살리는 데 쓴다
 
     // 예전에는 id에서 'd01'을 잘라 썼는데, 추가 어휘는 'x-voucher' 꼴이라
     // Number('-v')가 NaN이 되어 days.NaN에 쌓였다. 단어가 제 DAY를 알고 있다.
@@ -1552,15 +1555,20 @@ function scopeLabel(s) {
 }
 
 /** 줄 안의 채점 버튼. 카드 화면과 같은 네 등급을 쓴다. */
-function gradeBarHTML(w) {
+function gradeBarHTML(w, today = todayISO()) {
   const g = listGrades.get(w.id);
+  const rec = Store.record(w.id);
+  // 어느 버튼을 눌렀는지는 기록의 last에서 되살린다. 메모리(listGrades)에만 두었더니
+  // 폰이 앱을 죽였다 살리면 켜진 버튼이 전부 사라져 '저장이 안 됐다'로 보였다.
+  // 이미 앎만 박스 5라 버튼이 잠겨 회색으로 남았고, 그래서 그것만 남은 듯 보였다.
+  const picked = g ? g.picked : (rec && rec.lastSeen === today ? rec.last : null);
   // '이미 앎'을 켤지는 이 화면에서 매기기 전 상태로 정한다. 방금 누른 '안다'
   // 때문에 마지막 박스가 되어 마음을 바꿀 길이 막히면 안 된다.
-  const base = g ? g.before : Store.record(w.id);
+  const base = g ? g.before : rec;
   const maxed = base && clampBox(base.box) >= MAX_BOX;
   const btn = (v, label) =>
-    `<button type="button" class="${v}${g && g.picked === v ? ' on' : ''}"`
-    + (v === 'known' && maxed && !(g && g.picked === 'known') ? ' disabled' : '')
+    `<button type="button" class="${v}${picked === v ? ' on' : ''}"`
+    + (v === 'known' && maxed && picked !== 'known' ? ' disabled' : '')
     + ` data-lgrade="${v}">${label}</button>`;
   return `<div class="lgrade">`
     + btn('again', '모름') + btn('hard', '애매')
@@ -1579,6 +1587,7 @@ function studyRowHTML(w, today = todayISO()) {
     + `<span class="hw">${escapeHTML(w.headword)}</span>`
     + (w.pos ? `<span class="pos">${escapeHTML(w.pos)}</span>` : '')
     + `<span class="tags">`
+    + `<span class="miss">${rec && rec.wrong ? '모름 ' + rec.wrong : ''}</span>`
     + `<span class="box">${rec ? '박스 ' + clampBox(rec.box) : ''}</span>`
     + `<span class="spk">${Audio_.speakerHTML(w.audio, 'speak', w.headword)}</span>`
     + `</span></div>`
@@ -1586,7 +1595,7 @@ function studyRowHTML(w, today = todayISO()) {
     + `<div class="mean">${escapeHTML(w.meaning)}</div>`
     + (ex ? `<div class="ex">${escapeHTML(ex.en)}${ex.generated ? '<span class="gen">생성</span>' : ''}`
           + (ex.ko ? `<div class="ko">${escapeHTML(ex.ko)}</div>` : '') + `</div>` : '')
-    + gradeBarHTML(w)
+    + gradeBarHTML(w, today)
     + `</div></div>`;
 }
 
@@ -1617,6 +1626,12 @@ function gradeInList(id, result) {
   if (prev && prev.picked === result) return;         // 같은 걸 또 눌렀다
 
   const cur = Store.record(id);
+  // 앱을 다시 켠 뒤라 메모리는 비었지만 오늘 같은 등급을 이미 매긴 단어다.
+  // 그냥 두면 채점이 또 들어가 오늘 개수만 두 번 오른다.
+  if (!prev && cur && cur.lastSeen === todayISO() && cur.last === result) return;
+  // 다시 켠 뒤 다른 등급으로 바꾸는 경우. 앞의 채점을 되돌릴 기록은 없지만
+  // 오늘 개수만은 한 번으로 세야 한다. 처음 본 단어였는지는 모르니 f는 둔다.
+  if (!prev && cur && cur.lastSeen === todayISO()) Store.unlog(todayISO(), false);
   // 되돌려도 되는 것은 '내가 매긴 뒤로 아무도 손대지 않은' 기록뿐이다.
   // 목록에서 매긴 단어를 카드나 퀴즈에서 또 채점했다면, 여기서 되돌리는 순간
   // 그 사이의 진도가 통째로 사라진다. 그럴 때는 지금 값을 그대로 두고 새로 매긴다.
