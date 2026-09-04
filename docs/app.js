@@ -4,7 +4,7 @@
 
 // 배포할 때 bump_sw.py가 docs/ 내용 해시로 채운다. 설정에서 보여 주기 위한 것으로,
 // 기기가 새 버전을 받았는지 눈으로 확인할 수 있다.
-const BUILD = '08702dfb';
+const BUILD = 'd2a4cf5f';
 
 const STORAGE_KEY = 'toeic-voca-progress';
 const SESSION_KEY = 'toeic-voca-session';
